@@ -1,0 +1,197 @@
+# Extensions Data Template
+# Store one per person at: readings/<person_name>/extensions.yaml
+# This file holds system-specific pre-computed data beyond birth_data.yaml.
+# Fill from jyotish software. Not all sections are required —
+# specialist agents will work with whatever data is available.
+
+# =============================================================================
+# KP (Krishnamurti Paddhati) System
+# =============================================================================
+# Source: KP software (e.g., Jagannatha Hora, Parashara's Light KP module)
+
+kp_cusps:
+  cusp_1:  {sign: , degree: , star_lord: , sub_lord: }
+  cusp_2:  {sign: , degree: , star_lord: , sub_lord: }
+  cusp_3:  {sign: , degree: , star_lord: , sub_lord: }
+  cusp_4:  {sign: , degree: , star_lord: , sub_lord: }
+  cusp_5:  {sign: , degree: , star_lord: , sub_lord: }
+  cusp_6:  {sign: , degree: , star_lord: , sub_lord: }
+  cusp_7:  {sign: , degree: , star_lord: , sub_lord: }
+  cusp_8:  {sign: , degree: , star_lord: , sub_lord: }
+  cusp_9:  {sign: , degree: , star_lord: , sub_lord: }
+  cusp_10: {sign: , degree: , star_lord: , sub_lord: }
+  cusp_11: {sign: , degree: , star_lord: , sub_lord: }
+  cusp_12: {sign: , degree: , star_lord: , sub_lord: }
+
+kp_planet_positions:
+  surya:   {star_lord: , sub_lord: , sub_sub_lord: }
+  chandra: {star_lord: , sub_lord: , sub_sub_lord: }
+  mangal:  {star_lord: , sub_lord: , sub_sub_lord: }
+  budha:   {star_lord: , sub_lord: , sub_sub_lord: }
+  guru:    {star_lord: , sub_lord: , sub_sub_lord: }
+  shukra:  {star_lord: , sub_lord: , sub_sub_lord: }
+  shani:   {star_lord: , sub_lord: , sub_sub_lord: }
+  rahu:    {star_lord: , sub_lord: , sub_sub_lord: }
+  ketu:    {star_lord: , sub_lord: , sub_sub_lord: }
+
+# =============================================================================
+# Jaimini System
+# =============================================================================
+# Source: Jagannatha Hora or equivalent Jaimini-capable software
+
+chara_karakas:
+  atmakaraka:     {graha: , degree: }
+  amatyakaraka:   {graha: , degree: }
+  bhratrukaraka:  {graha: , degree: }
+  matrukaraka:    {graha: , degree: }
+  putrakaraka:    {graha: , degree: }
+  gnatikaraka:    {graha: , degree: }
+  darakaraka:     {graha: , degree: }
+
+chara_dasha:
+  sequence:
+    - {rasi: , start: , end: }
+    - {rasi: , start: , end: }
+    - {rasi: , start: , end: }
+    - {rasi: , start: , end: }
+    - {rasi: , start: , end: }
+    - {rasi: , start: , end: }
+    - {rasi: , start: , end: }
+    - {rasi: , start: , end: }
+    - {rasi: , start: , end: }
+    - {rasi: , start: , end: }
+    - {rasi: , start: , end: }
+    - {rasi: , start: , end: }
+
+narayana_dasha:
+  sequence:
+    - {rasi: , start: , end: }
+    - {rasi: , start: , end: }
+    - {rasi: , start: , end: }
+    - {rasi: , start: , end: }
+    - {rasi: , start: , end: }
+    - {rasi: , start: , end: }
+    - {rasi: , start: , end: }
+    - {rasi: , start: , end: }
+    - {rasi: , start: , end: }
+    - {rasi: , start: , end: }
+    - {rasi: , start: , end: }
+    - {rasi: , start: , end: }
+
+arudha_padas:
+  AL:  {rasi: }  # Arudha Lagna
+  A2:  {rasi: }
+  A3:  {rasi: }
+  A4:  {rasi: }
+  A5:  {rasi: }
+  A6:  {rasi: }
+  A7:  {rasi: }  # Darapada
+  A8:  {rasi: }
+  A9:  {rasi: }
+  A10: {rasi: }  # Rajapada
+  A11: {rasi: }
+  A12: {rasi: }
+  UL:  {rasi: }  # Upapada
+
+# =============================================================================
+# Divisional Charts
+# =============================================================================
+# Source: Any standard Jyotish software
+
+navamsa:  # D-9
+  lagna:   {rasi: , degree: }
+  surya:   {rasi: }
+  chandra: {rasi: }
+  mangal:  {rasi: }
+  budha:   {rasi: }
+  guru:    {rasi: }
+  shukra:  {rasi: }
+  shani:   {rasi: }
+  rahu:    {rasi: }
+  ketu:    {rasi: }
+
+dasamsa:  # D-10
+  lagna:   {rasi: , degree: }
+  surya:   {rasi: }
+  chandra: {rasi: }
+  mangal:  {rasi: }
+  budha:   {rasi: }
+  guru:    {rasi: }
+  shukra:  {rasi: }
+  shani:   {rasi: }
+  rahu:    {rasi: }
+  ketu:    {rasi: }
+
+siddhamsa:  # D-24 (education)
+  lagna:   {rasi: , degree: }
+  surya:   {rasi: }
+  chandra: {rasi: }
+  mangal:  {rasi: }
+  budha:   {rasi: }
+  guru:    {rasi: }
+  shukra:  {rasi: }
+  shani:   {rasi: }
+  rahu:    {rasi: }
+  ketu:    {rasi: }
+
+# Add other divisional charts as needed:
+# saptamsa (D-7), dwadasamsa (D-12), trimsamsa (D-30), shashtiamsa (D-60)
+
+# =============================================================================
+# Ashtakavarga
+# =============================================================================
+# Source: Any standard Jyotish software
+# SAV: Sarvashtakavarga (total bindus per bhava, 12 values)
+# BAV: Bhinna Ashtakavarga (per-graha contribution per bhava, 12 values each)
+
+ashtakavarga:
+  sav: []  # 12 integer values, one per bhava [bhava1, bhava2, ..., bhava12]
+  bav:
+    surya:   []  # 12 integer values
+    chandra: []
+    mangal:  []
+    budha:   []
+    guru:    []
+    shukra:  []
+    shani:   []
+
+# =============================================================================
+# Shadbala (Six-fold Strength)
+# =============================================================================
+# Source: Any standard Jyotish software
+# total: total shadbala in rupas
+# rank: relative rank among the 7 grahas (1 = strongest)
+
+shadbala:
+  surya:   {total: , rank: }
+  chandra: {total: , rank: }
+  mangal:  {total: , rank: }
+  budha:   {total: , rank: }
+  guru:    {total: , rank: }
+  shukra:  {total: , rank: }
+  shani:   {total: , rank: }
+
+# =============================================================================
+# Additional Dasha Systems
+# =============================================================================
+
+yogini_dasha:
+  sequence:
+    - {yogini: , lord: , start: , end: }
+    - {yogini: , lord: , start: , end: }
+    - {yogini: , lord: , start: , end: }
+    - {yogini: , lord: , start: , end: }
+    - {yogini: , lord: , start: , end: }
+    - {yogini: , lord: , start: , end: }
+    - {yogini: , lord: , start: , end: }
+    - {yogini: , lord: , start: , end: }
+
+# Parivritti dasha (Nadi system) — if available
+parivritti_dasha:
+  sequence:
+    - {nakshatra: , lord: , start: , end: }
+
+notes: |
+  # Software used for computation:
+  # Date of computation:
+  # Any notes about data quality or missing sections:
