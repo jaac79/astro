@@ -1,0 +1,433 @@
+source: "Vedic Astrology: An Integrated Approach, P.V.R. Narasimha Rao"
+chapter: 7
+pages: "56-65"
+
+# Section 7.2 - Significations of Houses
+significations:
+  house_1:
+    name: "First House (Lagna)"
+    keywords:
+      - physical body
+      - complexion
+      - appearance
+      - head
+      - intelligence
+      - strength
+      - energy
+      - fame
+      - success
+      - nature of birth
+      - caste
+    body_part: head
+    category: [kendra, trikona, dharma_trikona]
+    natural_karaka: Sun
+    karaka_signification: "Self, physical constitution, soul, health"
+
+  house_2:
+    name: "Second House"
+    keywords:
+      - wealth
+      - assets
+      - family
+      - speech
+      - eyes
+      - mouth
+      - face
+      - voice
+      - food
+    body_part: face, eyes, mouth
+    category: [panapahara, artha_trikona, maraka]
+    natural_karaka: Jupiter
+    karaka_signification: "Family, wealth"
+
+  house_3:
+    name: "Third House"
+    keywords:
+      - younger co-borns
+      - confidants
+      - courage
+      - mental strength
+      - communication skills
+      - creativity
+      - throat
+      - ears
+      - arms
+      - father's death (7th from 9th)
+      - expenditure on vehicles and house (12th from 4th)
+      - travels
+    body_part: throat, ears, arms
+    category: [apoklima, upachaya, kama_trikona]
+    natural_karaka: Mars
+    karaka_signification: "Younger siblings, courage"
+
+  house_4:
+    name: "Fourth House"
+    keywords:
+      - mother
+      - vehicles
+      - house
+      - lands
+      - immovable property
+      - motherland
+      - childhood
+      - wealth from real estate
+      - education
+      - relatives
+      - happiness
+      - comforts
+      - pleasures
+      - peace
+      - state of mind
+      - heart
+    body_part: heart
+    category: [kendra, moksha_trikona, chaturasra]
+    natural_karaka: Moon
+    karaka_signification: "Mother"
+
+  house_5:
+    name: "Fifth House"
+    keywords:
+      - children
+      - poorvapunya (good deeds of previous lives)
+      - intelligence
+      - knowledge
+      - scholarship
+      - devotion
+      - mantras (prayers)
+      - stomach
+      - digestive system
+      - authority
+      - power
+      - fame
+      - love
+      - affection
+      - emotions
+      - judgment
+      - speculation
+    body_part: stomach
+    category: [trikona, panapahara, dharma_trikona]
+    natural_karaka: Jupiter
+    karaka_signification: "Children"
+
+  house_6:
+    name: "Sixth House"
+    keywords:
+      - enemies
+      - service
+      - servants
+      - relatives
+      - mental tension
+      - injuries
+      - health
+      - diseases
+      - agriculture
+      - accidents
+      - mental affliction
+      - mother's younger brother
+      - hips
+    body_part: hips
+    category: [upachaya, dusthana, apoklima, artha_trikona]
+    natural_karaka: Mars
+    karaka_signification: "Enemies"
+
+  house_7:
+    name: "Seventh House"
+    keywords:
+      - marriage
+      - marital life
+      - life partner
+      - sex
+      - passion
+      - related happiness
+      - long journeys
+      - partners
+      - business
+      - death
+      - portion of body below the navel
+    body_part: portion of body below the navel
+    category: [kendra, maraka, kama_trikona]
+    natural_karaka: Venus
+    karaka_signification: "Wife, husband, marital bliss, relationships"
+
+  house_8:
+    name: "Eighth House"
+    keywords:
+      - longevity
+      - debts
+      - disease
+      - ill-fame
+      - inheritance
+      - loss of friends
+      - occult studies
+      - evils
+      - gifts
+      - unearned wealth
+      - windfall
+      - disgrace
+      - secrets
+      - genitals
+    body_part: genitals
+    category: [dusthana, panapahara, moksha_trikona, chaturasra]
+    natural_karaka: Saturn
+    karaka_signification: "Longevity, troubles"
+
+  house_9:
+    name: "Ninth House"
+    keywords:
+      - father
+      - teacher
+      - boss
+      - fortune
+      - religiousness
+      - spirituality
+      - God
+      - higher studies
+      - high knowledge
+      - fortune in a foreign land
+      - foreign trips
+      - diksha (joining a religious order)
+      - past life and the cause of birth
+      - grandchildren
+      - principles
+      - dharma
+      - intuition
+      - compassion
+      - sympathy
+      - leadership
+      - charity
+      - thighs
+    body_part: thighs
+    category: [trikona, dharma_trikona, apoklima]
+    natural_karaka: Jupiter
+    karaka_signification: "Teacher, religion, fortune"
+
+  house_10:
+    name: "Tenth House"
+    keywords:
+      - growth
+      - profession
+      - career
+      - karma (action)
+      - conduct in society
+      - fame
+      - honors
+      - awards
+      - self-respect
+      - dignity
+      - knees
+    body_part: knees
+    category: [kendra, upachaya, artha_trikona]
+    natural_karaka: Mercury
+    karaka_signification: "Work, achievements, honors"
+
+  house_11:
+    name: "Eleventh House"
+    keywords:
+      - elder co-borns
+      - income
+      - gains
+      - realization of hopes
+      - friends
+      - ankles
+    body_part: ankles
+    category: [upachaya, panapahara, kama_trikona]
+    natural_karaka: Jupiter
+    karaka_signification: "Elder siblings"
+
+  house_12:
+    name: "Twelfth House"
+    keywords:
+      - losses
+      - expenditure
+      - punishment
+      - imprisonment
+      - hospitalization
+      - pleasures in bed
+      - misfortune
+      - bad habits
+      - sleep
+      - meditation
+      - donation
+      - secret enemies
+      - heaven
+      - left eye
+      - feet
+      - residence away from the place of birth
+      - moksha (emancipation/liberation)
+    body_part: feet, left eye
+    category: [dusthana, apoklima, moksha_trikona]
+    natural_karaka: Saturn
+    karaka_signification: "Losses"
+
+# Section 7.4 - Special Categories of Houses
+categories:
+  trikonas:
+    houses: [1, 5, 9]
+    also_known_as: ["konas", "trines"]
+    description: "Abode of Goddess Lakshmi who rules prosperity. Beneficial to the reference. Bring prosperity and well-being."
+    quick_summary: "Prosperity and flourishing"
+
+  kendras:
+    houses: [1, 4, 7, 10]
+    also_known_as: ["quadrants", "angles"]
+    description: "Abode of Sri Maha Vishnu who sustains the universe. Sustaining effect on the reference."
+    quick_summary: "Sustenance and vital activity"
+
+  panapharas:
+    houses: [2, 5, 8, 11]
+    also_known_as: ["succedants"]
+    description: "Basically the quadrants from the 2nd house."
+
+  apoklimas:
+    houses: [3, 6, 9, 12]
+    also_known_as: ["precedants"]
+    description: "Basically the quadrants from the 3rd house."
+
+  upachayas:
+    houses: [3, 6, 10, 11]
+    also_known_as: []
+    description: "Forces causing gains and growth to the matters signified by the reference."
+    quick_summary: "Gains and growth"
+
+  dusthanas:
+    houses: [6, 8, 12]
+    also_known_as: ["trik sthanas", "bad/evil houses"]
+    description: "Forces causing setbacks to the matters signified by the reference. If fortified or afflicted by malefics, may show serious obstacles. If weak, obstacles will be easily overcome."
+    quick_summary: "Setbacks and obstacles"
+
+  chaturasras:
+    houses: [4, 8]
+    also_known_as: []
+    description: "The 4th and 8th houses."
+
+  marakas:
+    houses: [2, 7]
+    also_known_as: ["maraka sthanas", "killer houses"]
+    description: "Houses associated with death and ending of life. The 2nd and 7th houses and their lords can act as marakas (death-inflicting agents)."
+
+  # Trikona sub-categories based on 4 Purushaarthas (purposes of human existence)
+  dharma_trikona:
+    houses: [1, 5, 9]
+    also_known_as: ["trines of duty"]
+    description: "Show prosperity of self, intelligence and dharma. The character of a person, intelligence and righteousness decide how one follows dharma - the first purpose of human existence."
+    purushaarta: "Dharma - righteousness and adherence to one's duty"
+
+  artha_trikona:
+    houses: [2, 6, 10]
+    also_known_as: ["trines of money"]
+    description: "Show money related activities. 2nd house shows wealth, 6th house shows service, 10th house shows career and activities in society. These show how one follows artha - the second purpose of human existence."
+    purushaarta: "Artha - money and career"
+
+  kama_trikona:
+    houses: [3, 7, 11]
+    also_known_as: ["trines of desire"]
+    description: "Show one's desires and how one gets them. 3rd house shows one's persistence, 7th house shows relations and sex, 11th house shows gains. These show how one follows kaama - the third purpose of human existence."
+    purushaarta: "Kaama - desiring things and getting them"
+
+  moksha_trikona:
+    houses: [4, 8, 12]
+    also_known_as: ["trines of liberation"]
+    description: "4th house - harmony, 8th house - occult studies and spiritual awakening, 12th house - moksha. These show how one follows moksha - the fourth purpose of human existence."
+    purushaarta: "Moksha - final liberation of soul"
+
+# Section 7.4.5 - Visible and Invisible Halves
+zodiac_halves:
+  visible_half:
+    houses: [7, 8, 9, 10, 11, 12]
+    description: "Results that can be seen in the material world."
+  invisible_half:
+    houses: [1, 2, 3, 4, 5, 6]
+    description: "Results that cannot be easily seen."
+  note: "Bases of dharma trikona (1st) and moksha trikona (4th) are in the invisible half. Bases of artha trikona (10th) and kaama trikona (7th) are in the visible half."
+
+# Section 7.4.6 - Quick Summary of Categories
+quick_summary:
+  trines: "Prosperity and flourishing"
+  quadrants: "Sustenance and vital activity"
+  upachayas: "Gains and growth"
+  dusthanas: "Setbacks and obstacles"
+  argala_sthanas: "Decisive influences"
+
+# Table 15 from Chapter 8 (Karakas) - Primary Naisargika Karakas per house
+# Included here for cross-reference
+primary_naisargika_karakas:
+  house_1: { planet: Sun, signifies: "Self, physical constitution, soul, health" }
+  house_2: { planet: Jupiter, signifies: "Family, wealth" }
+  house_3: { planet: Mars, signifies: "Younger siblings, courage" }
+  house_4: { planet: Moon, signifies: "Mother" }
+  house_5: { planet: Jupiter, signifies: "Children" }
+  house_6: { planet: Mars, signifies: "Enemies" }
+  house_7: { planet: Venus, signifies: "Wife, husband, marital bliss, relationships" }
+  house_8: { planet: Saturn, signifies: "Longevity, troubles" }
+  house_9: { planet: Jupiter, signifies: "Teacher, religion, fortune" }
+  house_10: { planet: Mercury, signifies: "Work, achievements, honors" }
+  house_11: { planet: Jupiter, signifies: "Elder siblings" }
+  house_12: { planet: Saturn, signifies: "Losses" }
+
+# Table 12 from Section 7.3.9 - Houses signified by planets (Graha Lagnas)
+houses_signified_by_planets:
+  Sun: [9, 10, 11]
+  Moon: [4, 1, 2, 11, 9]
+  Mars: [3]
+  Mercury: [6]
+  Jupiter: [5]
+  Venus: [7]
+  Saturn: [8, 12]
+
+# Section 7.3 - Common References for Houses
+common_references:
+  lagna:
+    description: "Default reference. Shows true self. The overall spirit of 'I' (self)."
+  chandra_lagna:
+    description: "Moon taken as reference. Shows things from the perspective of mind."
+  ravi_lagna:
+    description: "Sun taken as reference. Shows things from the perspective of soul. Important for physical vitality."
+  arudha_lagna:
+    description: "Shows how a native is perceived in the world. Also shows status of a native."
+  paaka_lagna:
+    description: "Lagna lord taken as reference. Important for natal chart, dasas and transits. Shows matters related to physical self."
+  karakamsa_lagna:
+    description: "Atma karaka's navamsa rasi. Important for inner self analysis. 12th from Karakamsa shows liberation of soul."
+  ghati_lagna:
+    description: "Shows self from point of view of power, authority and fame. Important for career/political power analysis."
+  hora_lagna:
+    description: "Shows self from point of view of wealth. Important for wealth analysis."
+  graha_lagnas:
+    description: "Planetary references. Each planet as natural significator can be taken as reference for its house."
+    planet_house_mapping:
+      Sun: "9th (father), 10th (career, achievements)"
+      Moon: "4th (mother), 1st (mind), 2nd, 11th, 9th"
+      Mars: "3rd (courage, siblings)"
+      Mercury: "6th (enemies, service)"
+      Jupiter: "5th (children)"
+      Venus: "7th (marriage)"
+      Saturn: "8th (longevity), 12th (losses)"
+
+# Four Purushaarthas (purposes/goals of human existence)
+purushaarthas:
+  dharma:
+    meaning: "Righteousness and adherence to one's duty"
+    trikona: [1, 5, 9]
+    order: 1
+  artha:
+    meaning: "Money and career"
+    trikona: [2, 6, 10]
+    order: 2
+  kaama:
+    meaning: "Desiring things and getting them"
+    trikona: [3, 7, 11]
+    order: 3
+  moksha:
+    meaning: "Final liberation of soul"
+    trikona: [4, 8, 12]
+    order: 4
+
+notes:
+  - "Houses are found with respect to lagna, special lagnas, and some planets."
+  - "Houses are found in rasi chart and in all the divisional charts."
+  - "The matters signified by a house depend on the reference used and the divisional chart."
+  - "Each rasi is a house. The rasi containing the reference point is the 1st house."
+  - "Trines, quadrants, etc. can be found from any house, not just lagna."
+  - "Planets in mutual trines make each other prosper."
+  - "Planets in mutual quadrants have a sustaining effect on each other."
+  - "Derived houses: We can concatenate house meanings. E.g., 2nd from 3rd (=4th) shows wealth/speech of younger brother."

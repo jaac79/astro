@@ -1,0 +1,486 @@
+# Arudha Padas - Chapter 9
+# Source: Vedic Astrology: An Integrated Approach by P.V.R. Narasimha Rao
+# Book pages: 72-84, PDF pages: 81-93
+
+source:
+  book: "Vedic Astrology: An Integrated Approach"
+  author: "P.V.R. Narasimha Rao"
+  chapter: 9
+  title: "Arudha Padas"
+  book_pages: "72-84"
+  pdf_pages: "81-93"
+
+# ---------------------------------------------------------------------------
+# Section 9.1 - Introduction (book page 72, PDF page 81)
+# ---------------------------------------------------------------------------
+introduction:
+  section: "9.1"
+  page_ref: "book p.72 / PDF p.81"
+  concept: >
+    Lagna shows true self. However, people's perceptions of a person can be
+    different from reality. Usually, how one is perceived by others is more
+    important in material life than who one really is.
+  key_principle: >
+    Arudha padas help astrologers separate reality from perceptions and
+    understand both correctly - the true nature of a person and how he is
+    perceived by the world.
+  distinction:
+    lagna: "Shows true self (reality)"
+    arudha_padas: "Show maya (illusion) - how one is perceived in the material world"
+  when_to_use_perceptions:
+    - "Success of a politician in elections"
+    - "Success in a competitive examination"
+    - "Promotion at office"
+  when_to_use_true_self:
+    - "Predicting internal matters"
+    - "Understanding the true nature of a person"
+
+# ---------------------------------------------------------------------------
+# Section 9.2 - Computation of Bhava Arudhas (book pages 72-75, PDF pages 81-84)
+# ---------------------------------------------------------------------------
+computation_of_bhava_arudhas:
+  section: "9.2"
+  page_ref: "book p.72-75 / PDF p.81-84"
+  definition: >
+    Arudha padas of all the 12 houses (bhavas) in all the divisional charts
+    are computed using a specific formula.
+  steps:
+    - step: 1
+      instruction: >
+        Take the sign containing the house of interest in the divisional
+        chart of interest.
+    - step: 2
+      instruction: >
+        Find the sign occupied by the lord of that house.
+      note: >
+        Aquarius is owned by Saturn and Rahu. Scorpio is owned by Mars and
+        Ketu. Take the stronger lord in the case of houses falling in these
+        two signs. Refer to the chapter on "Strength of Planets and Rasis"
+        for comparison rules.
+    - step: 3
+      instruction: >
+        Count signs from the house of interest to the sign containing its
+        lord. Counting is in the zodiacal direction always.
+      example: >
+        If the house is in Gemini and its lord Mercury is in Aquarius, count
+        signs from Gemini to Aquarius and get 9.
+    - step: 4
+      instruction: >
+        Count the same number of signs from the sign containing the lord and
+        find the ending sign.
+      example: >
+        Count 9 signs from Aquarius and end up in Libra.
+    - step: 5
+      instruction: >
+        EXCEPTION: If the sign found in step (4) is in the 1st or 7th from
+        the original sign in step (1), then take the 10th sign from the sign
+        found in step (4). Otherwise, make no change.
+    - step: 6
+      instruction: >
+        The resulting sign contains the arudha pada of the house of interest.
+
+  notation:
+    general: "Arudha pada of nth house is denoted as An (e.g., A4, A9)"
+    special_cases:
+      AL: "Arudha pada of lagna (1st house) = Arudha Lagna"
+      UL: "Arudha pada of 12th house = Upapada Lagna"
+
+  formula_summary: >
+    If house H is in sign S, and lord of S is in sign L:
+    Count N = number of signs from S to L (zodiacal).
+    Count N signs from L to get result sign R.
+    If R is the same as S (1st) or 7th from S, take the 10th from R instead.
+
+# ---------------------------------------------------------------------------
+# Table 18 - Specific Names of Arudha Padas (book page 75, PDF page 84)
+# ---------------------------------------------------------------------------
+arudha_pada_names:
+  section: "Table 18"
+  page_ref: "book p.75 / PDF p.84"
+  title: "Specific names of arudha padas"
+  padas:
+    A1:
+      house: 1
+      alternate_names:
+        - "Arudha lagna"
+        - "Pada lagna"
+        - "Arudha"
+        - "Pada"
+      abbreviation: "AL"
+      signifies: "Self as perceived by the world; status; material image"
+    A2:
+      house: 2
+      alternate_names:
+        - "Dhanarudha"
+        - "Vittarudha"
+        - "Dhana pada"
+        - "Vitta pada"
+      signifies: "Maya related to wealth and family"
+    A3:
+      house: 3
+      alternate_names:
+        - "Bhatrarudha"
+        - "Bhratri pada"
+        - "Vikramarudha"
+        - "Vikrama pada"
+      signifies: "Maya related to boldness, courage, communication, weapons, books/articles written"
+    A4:
+      house: 4
+      alternate_names:
+        - "Matri pada"
+        - "Vahana pada"
+        - "Sukha pada"
+        - "Matrarudha"
+        - "Vahanarudha"
+        - "Sukharudha"
+      signifies: "Maya related to happiness, vehicles, education environment (school/university in D-24)"
+    A5:
+      house: 5
+      alternate_names:
+        - "Mantra pada"
+        - "Mantrarudha"
+        - "Putrarudha"
+        - "Putra pada"
+        - "Buddhi pada"
+      signifies: "Maya related to intelligence, following, mantras, religious rituals (D-20), power/awards (D-10), exam scores (D-24)"
+    A6:
+      house: 6
+      alternate_names:
+        - "Roga pada"
+        - "Satru pada"
+        - "Rogarudha"
+        - "Satrarudha"
+      signifies: "Maya related to disease and enemies"
+    A7:
+      house: 7
+      alternate_names:
+        - "Dara pada"
+        - "Dararudha"
+      signifies: "Maya related to relationships; kind of people one associates with"
+    A8:
+      house: 8
+      alternate_names:
+        - "Mrityu pada"
+        - "Kashta pada"
+        - "Kashtarudha"
+        - "Randhrarudha"
+      signifies: "Maya related to death and hardships"
+    A9:
+      house: 9
+      alternate_names:
+        - "Bhagya pada"
+        - "Bhagyarudha"
+        - "Pitri pada"
+        - "Pitrarudha"
+        - "Dharma pada"
+        - "Guru pada"
+      signifies: "Maya related to fortune, father, guru; higher degrees (D-24)"
+    A10:
+      house: 10
+      alternate_names:
+        - "Karma pada"
+        - "Karmarudha"
+        - "Swarga pada"
+        - "Swargarudha"
+        - "Rajya pada"
+      signifies: "Maya related to career; workplace (in D-10)"
+    A11:
+      house: 11
+      alternate_names:
+        - "Labha pada"
+        - "Labharudha"
+      signifies: "Maya related to gains"
+    A12:
+      house: 12
+      alternate_names:
+        - "Upapada lagna"
+        - "Upapada"
+        - "Gaunapada"
+        - "Vyayarudha"
+        - "Moksha pada"
+      abbreviation: "UL"
+      signifies: "Marriage and spouse"
+
+# ---------------------------------------------------------------------------
+# Section 9.3 - Use of Arudha Lagna (book pages 75-76, PDF pages 84-85)
+# ---------------------------------------------------------------------------
+arudha_lagna:
+  section: "9.3"
+  page_ref: "book p.75-76 / PDF p.84-85"
+  definition: >
+    While lagna stands for true self, arudha lagna (AL) stands for the maya
+    associated with self. It shows how the native is perceived in the material
+    world. It shows the status of the native.
+  importance: >
+    Because AL deals with maya, illusions, perceptions and impressions, it
+    is very important in judging various materialistic things.
+  interpretation_rules:
+    houses_from_AL:
+      11th_house: "Financial gains"
+      12th_house: "Financial expenditures"
+      3rd_house:
+        natural_malefics: "Bold person who hits enemies hard; materially successful"
+        natural_benefics: "Very gentle and restrained in public behavior; saintly and mild-natured"
+      6th_house:
+        natural_malefics: "Bold and materially successful; perceived as one who defeats enemies"
+        natural_benefics: "Very gentle; does not fight boldly; found in charts of saints"
+      10th_house_D10:
+        from_lagna: "True conduct in society; career; true nature of karma"
+        from_AL: "Perceptions about conduct in society; status in career"
+  key_teaching: "Parasara and Jaimini taught these principles"
+
+# ---------------------------------------------------------------------------
+# Section 9.4 - Use of Bhava Arudhas (book pages 76-80, PDF pages 85-89)
+# ---------------------------------------------------------------------------
+bhava_arudha_usage:
+  section: "9.4"
+  page_ref: "book p.76-80 / PDF p.85-89"
+  principle: >
+    Arudha padas show the maya (illusion) of material world. Arudha pada
+    of nth house shows the maya associated with the matters signified by
+    the nth house.
+  detailed_significations:
+    A4_in_D16:
+      topic: "Vehicles"
+      description: >
+        4th house in D-16 shows true happiness from vehicle. A4 in D-16
+        shows what people perceive about one's happiness with vehicles, i.e.
+        the physical vehicle owned.
+      examples:
+        - "Venus in own sign in A4 + Saturn in 4th (D-16): owns luxurious vehicles but not happy"
+        - "Saturn in A4 + Venus/Jupiter in 4th (D-16): owns small vehicle but is happy with it"
+    A4_in_D24:
+      topic: "Education environment"
+      description: >
+        A4 in D-24 shows the school or university and the environment in
+        which one's learning takes place. This usually decides what impression
+        people form about one's learning.
+    A10_in_D10:
+      topic: "Workplace"
+      description: >
+        A10 in D-10 shows the maya associated with one's karma (career). It
+        shows one's workplace.
+      planet_effects:
+        Mars: "May work at dynamic places or engineering companies"
+        Jupiter: "May work at a university, college, court of law, or temple"
+    A7_darapada:
+      topic: "Relationships and associates"
+      description: >
+        A7 (darapada) shows the illusion associated with relations, i.e. the
+        kind of people one usually interacts with.
+      in_divisional_charts:
+        D10: "Professional associates"
+        D24: "Friends at college or colleagues in pursuit of knowledge"
+        D20: "Colleagues or friends in religious activities"
+    A3:
+      topic: "Boldness, weapons, writing"
+      description: >
+        A3 shows the maya surrounding one's boldness. It shows what drives
+        the perceptions about one's boldness (e.g., weapons one possesses).
+      writing:
+        description: >
+          A3 in D-24 and D-10 may show the books or articles written by
+          the person. The exact books written decide the world's perceptions
+          about one's writing skills.
+    A5:
+      topic: "Intelligence, following, devotion"
+      in_divisional_charts:
+        D20: "Mantras recited, poojas performed, religious rituals"
+        D10: "Trappings of power enjoyed; awards"
+        D24: "Exam performances, test scores, academic distinctions"
+    A9:
+      topic: "Fortune, degrees"
+      description: >
+        In D-24, A9 can show one's higher degrees. One with an advanced
+        degree is assumed to be more fortunate with respect to learning.
+
+  upapada_lagna:
+    topic: "Marriage and spouse"
+    description: >
+      Upapada lagna (UL) is the arudha pada of the 12th house. It shows
+      one's marriage and spouse.
+    planets_in_UL:
+      Mercury:
+        good: "Intelligent spouse"
+        bad: "Indecisive spouse"
+      Ketu:
+        good: "Spiritual spouse"
+        bad: "Short-tempered spouse"
+      Sun: "Charming spouse from respectable family; can also show authoritative spouse"
+      Mars:
+        good: "Bold spouse"
+        bad: "Quarrelsome spouse"
+    houses_from_UL:
+      8th_house: "Longevity of marriage"
+      2nd_house: "End of marriage"
+      7th_house: "End of marriage"
+      malefics_in_2_7_8: >
+        Mars, Saturn and nodes in the 2nd, 7th, or 8th from UL can result
+        in troubles for the marriage and even a divorce.
+    examples:
+      - scenario: "Mars and Saturn in UL, Jupiter in 8th from UL"
+        result: "Long marriage to an argumentative and mean spouse"
+      - scenario: "Jupiter in UL, Mars and Saturn in 8th from UL"
+        result: "Noble spouse but very rough marital life; possible divorce"
+        remedy: "Propitiating Saturn and Mars can help"
+
+  context_principle:
+    desa: "Country/place"
+    kaala: "Time/age"
+    paatra: "Nature and class of the persons involved"
+    description: >
+      All principles should be understood and applied in the context of desa,
+      kaala, and paatra. The things that drive the world's perceptions can be
+      different based on which world we are living in.
+
+# ---------------------------------------------------------------------------
+# Section 9.5 - Computation of Graha Arudhas (book pages 79-81, PDF pages 88-90)
+# ---------------------------------------------------------------------------
+computation_of_graha_arudhas:
+  section: "9.5"
+  page_ref: "book p.79-81 / PDF p.88-90"
+  definition: >
+    Just as arudha padas of all houses (bhavas) are defined, arudha padas
+    of all the nine planets (grahas) are also defined and they are called
+    graha arudhas.
+  steps:
+    - step: 1
+      instruction: >
+        Take the sign containing the planet of interest in the divisional
+        chart of interest.
+    - step: 2
+      instruction: >
+        Find the sign owned by that planet.
+      note: >
+        Mars, Mercury, Jupiter, Venus and Saturn own 2 signs each. In their
+        case, take the stronger sign owned by the planet. Refer to the chapter
+        on "Strength of Planets and Rasis" for comparison rules.
+    - step: 3
+      instruction: >
+        Count signs from the sign containing the planet of interest to the
+        stronger sign owned by it. Counting is in the zodiacal direction always.
+      example: >
+        If the planet is Sun in Gemini, count from Gemini to Leo and get 3.
+    - step: 4
+      instruction: >
+        Count the same number of signs from the stronger sign owned and find
+        the ending sign.
+      example: >
+        Count 3 signs from Leo and end up in Libra.
+    - step: 5
+      instruction: >
+        EXCEPTION: If the sign found in step (4) is in the 1st or 7th from
+        the original sign containing the planet, then take the 10th sign from
+        the sign found in step (4). Otherwise, make no change.
+    - step: 6
+      instruction: >
+        The resulting sign contains the arudha pada of the planet of interest.
+
+  sign_ownership:
+    Sun: ["Leo"]
+    Moon: ["Cancer"]
+    Mars: ["Aries", "Scorpio"]
+    Mercury: ["Gemini", "Virgo"]
+    Jupiter: ["Sagittarius", "Pisces"]
+    Venus: ["Taurus", "Libra"]
+    Saturn: ["Capricorn", "Aquarius"]
+    Rahu: ["Aquarius"]
+    Ketu: ["Scorpio"]
+
+  rahu_ketu_note: >
+    In divisional charts in which Ketu is in the 7th from Rahu, his maya
+    (arudha pada) is with Rahu's maya. In divisional charts in which Rahu
+    and Ketu are together, their mayas are in opposite rasis.
+
+# ---------------------------------------------------------------------------
+# Section 9.6 - Use of Graha Arudhas (book pages 81-83, PDF pages 90-92)
+# ---------------------------------------------------------------------------
+graha_arudha_usage:
+  section: "9.6"
+  page_ref: "book p.81-83 / PDF p.90-92"
+  principle: >
+    Just as arudha padas of various houses show the illusions of the world
+    related to the matters signified by various houses, arudha padas of
+    various planets show the illusions of the native related to the matters
+    signified by various planets.
+  distinction:
+    houses: "Show various aspects of the person's life"
+    house_arudhas: "Show how those aspects are perceived by the world"
+    planets: "Show various persons, forces and situations that impact life"
+    planet_arudhas: "Show the native's perceptions about those persons/forces/situations"
+  key_insight: >
+    Graha arudhas show how the native feels. The perceptions of a native
+    about himself, about the world, and about the situations that (s)he goes
+    through can be totally different from the reality.
+
+  three_aspects_of_analysis:
+    - aspect: "Planets with respect to lagna"
+      reveals: "Real situation (reality)"
+    - aspect: "Planets with respect to AL"
+      reveals: "Perceptions of people and material situation"
+    - aspect: "Arudha padas of planets with respect to lagna"
+      reveals: "How the native perceives the situation; how the native feels"
+
+  counselling_importance: >
+    Unless we understand how the person feels and what drives those feelings,
+    we cannot offer good astrological counselling. Each of the 3 aspects is
+    important in its own right. A good student of Vedic astrology will master
+    all 3 aspects.
+
+# ---------------------------------------------------------------------------
+# Section 9.7 - Summary (book page 84, PDF page 93)
+# ---------------------------------------------------------------------------
+summary:
+  section: "9.7"
+  page_ref: "book p.84 / PDF p.93"
+  points:
+    - >
+      Arudha pada of a house shows the maya surrounding the matters
+      signified by that house. It shows the factors based on which
+      impressions of people are formed.
+    - "AL shows people's impressions about a native and one's status in the material world."
+    - "Darapada (A7) shows one's relationships."
+    - "Upapada (UL) shows one's marriage and spouse."
+    - "A4 in D-16 shows one's vehicle."
+    - "A4 in D-24 shows one's school/college/university (place of education)."
+    - "A10 in D-10 shows one's workplace."
+    - >
+      Arudha padas of planets show the perceptions of the native about
+      the world, about himself/herself, and about developing situations.
+  analysis_framework:
+    planets_from_lagna: "Shows reality"
+    planets_from_AL: "Shows perceptions of the world and material situation"
+    individual_bhava_arudhas: "Shows things based on which world forms impressions"
+    graha_arudha_padas_from_lagna: "Shows the perceptions of the native"
+
+# ---------------------------------------------------------------------------
+# Section 9.8 - Exercise Answers (book page 84, PDF page 93)
+# ---------------------------------------------------------------------------
+exercise_answers:
+  section: "9.8"
+  page_ref: "book p.84 / PDF p.93"
+  exercise_12:
+    description: "Bhava arudhas for Chart 2"
+    AL: "Aquarius"
+    A2: "Aries"
+    A3: "Sagittarius"
+    A4: "Scorpio"
+    A5: "Sagittarius"
+    A6: "Aquarius"
+    A7: "Pisces"
+    A8: "Virgo"
+    A9: "Taurus"
+    A10: "Sagittarius"
+    A11: "Sagittarius"
+    UL: "Aquarius"
+  exercise_13:
+    description: "Graha arudhas for Chart 2"
+    Sun: "Scorpio"
+    Moon: "Sagittarius"
+    Mars: "Gemini"
+    Mercury: "Pisces"
+    Jupiter: "Scorpio"
+    Venus: "Aquarius"
+    Saturn: "Sagittarius"
+    Rahu: "Virgo"
+    Ketu: "Pisces"

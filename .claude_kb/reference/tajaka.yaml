@@ -1,0 +1,1203 @@
+# Tajaka / Varshaphala System Reference
+# Source: "Vedic Astrology: An Integrated Approach" by P.V.R. Narasimha Rao
+# Chapters 27-31 (Part 4: Tajaka Analysis), Book pages 324-366, PDF pages 329-371
+
+source:
+  book: "Vedic Astrology: An Integrated Approach"
+  author: "P.V.R. Narasimha Rao"
+  part: 4
+  part_title: "Tajaka Analysis"
+  chapters: [27, 28, 29, 30, 31]
+  book_pages: "324-366"
+  pdf_pages: "329-371"
+
+# ==============================================================================
+# Chapter 27: Tajaka Chart Basics (Book pages 325-330, PDF pages 330-335)
+# ==============================================================================
+chapter_27_tajaka_chart_basics:
+  title: "Tajaka Chart Basics"
+  book_pages: "325-330"
+  pdf_pages: "330-335"
+
+  overview: >
+    The Tajaka system (also called Varshaphala) is a sub-system of Indian astrology
+    useful for precise and pointed predictions. It considers planetary aspects and
+    yogas different from classical Parashari methods and is closer to western astrology
+    in terms of aspects and yogas. The oldest reference is in "Tajaka Neelakanthi"
+    by Neelakantha. The system is based on solar return charts.
+
+  what_is_tajaka_chart: >
+    When Sun returns every year to the exact zodiacal position he occupied at the
+    time of one's birth, a new year is said to commence for that person. A chart
+    cast for the exact moment of this solar return is called a "Tajaka Varsha Chakra"
+    or "Tajaka Annual Chart" (also called "solar return" in western astrology or
+    "Varshaphal" chart by some Indian astrologers). The longitude and latitude of
+    the birthplace must be used, irrespective of the current place of living.
+
+  casting_annual_charts:
+    description: >
+      Find the exact date and time when Sun returns to the same longitude it
+      occupied at the time of birth. Cast the chart for that moment using the
+      birth longitude and latitude.
+    key_points:
+      - "Sun returns to natal position approximately once every year"
+      - "Use birthplace coordinates, not current residence"
+      - "The commencement of a new year is called 'varsha pravesh'"
+      - "Along with rasi chart, all divisional charts can be drawn"
+
+  approximate_method:
+    description: >
+      An approximate method based on the average sidereal solar year of
+      365 days 6 hours 9 minutes 12 seconds. Add computed time offset
+      to birth data to find approximate varsha pravesh data.
+    table_71_approximate_annual_chart_data:
+      header: "Age(years) | Days | Hours | Minutes | Seconds"
+      entries:
+        - {age: 1, days: 1, hours: 6, minutes: 9, seconds: 12}
+        - {age: 2, days: 2, hours: 12, minutes: 18, seconds: 18}
+        - {age: 3, days: 3, hours: 18, minutes: 27, seconds: 30}
+        - {age: 4, days: 5, hours: 0, minutes: 36, seconds: 36}
+        - {age: 5, days: 6, hours: 6, minutes: 45, seconds: 48}
+        - {age: 6, days: 0, hours: 12, minutes: 55, seconds: 0}
+        - {age: 7, days: 1, hours: 19, minutes: 4, seconds: 6}
+        - {age: 8, days: 3, hours: 1, minutes: 13, seconds: 18}
+        - {age: 9, days: 4, hours: 7, minutes: 22, seconds: 30}
+        - {age: 10, days: 5, hours: 13, minutes: 31, seconds: 36}
+        - {age: 20, days: 4, hours: 3, minutes: 3, seconds: 12}
+        - {age: 30, days: 2, hours: 16, minutes: 34, seconds: 54}
+        - {age: 40, days: 1, hours: 6, minutes: 6, seconds: 30}
+        - {age: 50, days: 6, hours: 19, minutes: 38, seconds: 6}
+        - {age: 60, days: 5, hours: 9, minutes: 9, seconds: 42}
+        - {age: 70, days: 3, hours: 22, minutes: 41, seconds: 24}
+        - {age: 80, days: 2, hours: 12, minutes: 13, seconds: 0}
+        - {age: 90, days: 1, hours: 1, minutes: 44, seconds: 36}
+        - {age: 100, days: 6, hours: 15, minutes: 16, seconds: 12}
+    procedure:
+      - "Find birthday as per western calendar in the required year"
+      - "Find years completed and corresponding days/hours/minutes/seconds from table (combine entries by addition)"
+      - "Add the days to the weekday of birth and find resulting weekday; find nearest date to birthday on this weekday; use birthtime on this date as reference"
+      - "Add the hours/minutes/seconds to the reference date/time to get varsha pravesh data"
+      - "Find planetary positions, lagna etc at this time for birthplace coordinates"
+    note: >
+      The weekday in Hindu calendar changes at sunrise, not at midnight.
+      Errors due to ayanamsa and approximations in Sun's longitude calculation
+      cause greater errors than this approximation. Lagna moves 360 times faster
+      than Sun, so small errors in Sun's longitude result in 360x larger errors in lagna.
+
+  casting_monthly_charts:
+    description: >
+      A year is divided into 12 months. A new month commences when Sun
+      moves by exactly 30 degrees from the previous month start. This is called
+      a "Tajaka Maasa Chakra" or Tajaka monthly chart.
+    key_points:
+      - "One month = period in which Sun moves by 30 degrees"
+      - "The commencement of a new month is called 'maasa pravesh'"
+      - "No good approximate method exists for monthly charts (Sun's speed varies monthly)"
+      - "Cast 12 monthly charts for the first year exactly, then use approximate method for later years"
+
+  casting_sixty_hour_charts:
+    description: >
+      A month is divided into 12 shashti-horas. Each shashti-hora consists of
+      60 hours (2.5 days). Sun moves by 2 degrees 30 minutes in each shashti-hora.
+    key_points:
+      - "Popularly known as 'Tajaka Hora Chakra'"
+      - "12 such charts in a one-month period"
+      - "Each chart covers a 2.5-day period"
+
+# ==============================================================================
+# Chapter 28: Techniques of Tajaka Charts (Book pages 331-341, PDF pages 336-346)
+# ==============================================================================
+chapter_28_techniques:
+  title: "Techniques of Tajaka Charts"
+  book_pages: "331-341"
+  pdf_pages: "336-346"
+
+  # --------------------------------------------------------------------------
+  # 28.1 Muntha
+  # --------------------------------------------------------------------------
+  muntha:
+    section: "28.1"
+    definition: >
+      Muntha is a concept specific to Tajaka charts. Progress lagna in the
+      natal chart at the rate of one rasi per year to get muntha in an annual chart.
+      If someone finishes N years and starts the (N+1)th year, muntha is the
+      (N+1)th house from natal lagna (after expunging multiples of 12).
+    importance: >
+      Muntha is as important a reference point in an annual chart as lagna.
+      It is linked to Sudarsana Chakra Dasa.
+    planets_in_muntha:
+      jupiter: "Good results, happiness from children and knowledge (if strong)"
+      saturn: "Sluggishness, unhealthy, frustrated, sorrowful"
+      afflicted_jupiter: "Loss of position, bad name, scandals"
+    muntha_in_houses:
+      excellent: {9: "Prosperity", 10: "Status", 11: "Gains"}
+      good: {1: "Health", 2: "Wealth", 3: "Success", 5: "Fame"}
+      bad: {6: "Illness", 8: "Troubles", 12: "Expenditures"}
+      mixed: {4: "Disputes and loss of position", 7: "Troubles in marriage and hardships"}
+
+  # --------------------------------------------------------------------------
+  # 28.2 Tajaka Aspects (different from Parashari!)
+  # --------------------------------------------------------------------------
+  tajaka_aspects:
+    section: "28.2"
+    note: >
+      These aspects are similar to western astrology aspects and are DIFFERENT
+      from the Parashari graha drishti and rasi drishti aspects. The exact meaning
+      and use of these special aspects needs further research.
+    aspect_types:
+      - name: "Trinal (Trine)"
+        houses: [5, 9]
+        nature: "Strong benefic"
+      - name: "Sextile"
+        houses: [3, 11]
+        nature: "Weak benefic"
+      - name: "Square"
+        houses: [4, 10]
+        nature: "Weak malefic"
+      - name: "Conjunction"
+        houses: [1]
+        nature: "Strong malefic"
+        note: "Aspect on planets in the same house"
+      - name: "Opposition"
+        houses: [7]
+        nature: "Strong malefic"
+      - name: "Semi-sextile"
+        houses: [2, 12]
+        nature: "Neutral"
+    deeptamsa_orbs:
+      description: "Deeptamsa is the orb of an aspect; same for all kinds of aspects"
+      Sun: 15
+      Moon: 12
+      Mars: 8
+      Mercury: 7
+      Jupiter: 9
+      Venus: 7
+      Saturn: 9
+
+  # --------------------------------------------------------------------------
+  # 28.3 Harsha Bala
+  # --------------------------------------------------------------------------
+  harsha_bala:
+    section: "28.3"
+    meaning: "Harsha means 'cheerful'; bala means 'strength'. Strength of cheerfulness."
+    sources_of_strength:
+      source_1_prescribed_house:
+        description: "Planet in prescribed house gets 5 units (else 0)"
+        Sun: "9th house"
+        Moon: "3rd house"
+        Mars: "6th house"
+        Mercury: "1st house"
+        Jupiter: "11th house"
+        Venus: "5th house"
+        Saturn: "12th house"
+      source_2_dignity:
+        description: "Planet in exaltation or own sign gets 5 units (else 0)"
+      source_3_gender_placement:
+        description: "Based on gender of planet and house position"
+        feminine_planets: ["Moon", "Mercury", "Venus", "Saturn"]
+        feminine_strong_houses: [1, 2, 3, 7, 8, 9]
+        masculine_planets: ["Sun", "Mars", "Jupiter"]
+        masculine_strong_houses: [4, 5, 6, 10, 11, 12]
+        units: 5
+      source_4_day_night:
+        description: "Based on whether new year starts during day or night"
+        daytime: "Masculine planets get 5 units each"
+        nighttime: "Feminine planets get 5 units each"
+    interpretation:
+      20: "Exceedingly strong"
+      15: "Fully strong"
+      10: "Average strength"
+      5: "Only a little strength"
+      0: "No strength at all"
+
+  # --------------------------------------------------------------------------
+  # 28.4 Pancha Vargeeya Bala
+  # --------------------------------------------------------------------------
+  pancha_vargeeya_bala:
+    section: "28.4"
+    meaning: "Pancha means 'five'; from the group of five strengths"
+    components:
+      kshetra_bala:
+        section: "28.4.1"
+        description: "Strength in rasi chart"
+        own_rasi: 30
+        friends_rasi: 15
+        enemys_rasi: 7.5
+      uchcha_bala:
+        section: "28.4.2"
+        description: "How close a planet is to its exaltation point"
+        max_units: 20
+        formula: "20 x (distance_from_debilitation / 180)"
+        deep_exaltation_points:
+          Sun: "10 deg Aries"
+          Moon: "3 deg Taurus"
+          Mars: "28 deg Capricorn"
+          Mercury: "15 deg Virgo"
+          Jupiter: "5 deg Cancer"
+          Venus: "27 deg Pisces"
+          Saturn: "20 deg Libra"
+      hadda_bala:
+        section: "28.4.3"
+        description: "Strength in hadda (similar to D-30)"
+        own_hadda: 15
+        friends_hadda: 7.5
+        enemys_hadda: 3.75
+      drekkana_bala:
+        section: "28.4.4"
+        description: "Strength in drekkana chart (D-3)"
+        own_rasi_in_D3: 10
+        friends_rasi_in_D3: 5
+        enemys_rasi_in_D3: 2.5
+      navamsa_bala:
+        section: "28.4.5"
+        description: "Strength in navamsa chart (D-9)"
+        own_rasi_in_D9: 5
+        friends_rasi_in_D9: 2.5
+        enemys_rasi_in_D9: 1.25
+    final_computation:
+      section: "28.4.6"
+      formula: "(kshetra_bala + uchcha_bala + hadda_bala + drekkana_bala + navamsa_bala) / 4"
+      interpretation:
+        below_5: "Weak"
+        5_to_10: "Ordinary strength"
+        10_to_15: "Strong"
+        15_to_20: "Very strong"
+        above_20: "Extraordinarily strong"
+
+  # --------------------------------------------------------------------------
+  # Table 72: Hadda Lords
+  # --------------------------------------------------------------------------
+  table_72_hadda_lords:
+    description: >
+      Each rasi is divided into several haddas with different lords.
+      Hadda is similar to D-30. Used for computing Hadda Bala.
+    rasis:
+      Aries:
+        - {range: "0-6", lord: "Jupiter"}
+        - {range: "6-12", lord: "Venus"}
+        - {range: "12-20", lord: "Mercury"}
+        - {range: "20-25", lord: "Mars"}
+        - {range: "25-30", lord: "Saturn"}
+      Taurus:
+        - {range: "0-8", lord: "Venus"}
+        - {range: "8-14", lord: "Mercury"}
+        - {range: "14-22", lord: "Jupiter"}
+        - {range: "22-27", lord: "Saturn"}
+        - {range: "27-30", lord: "Mars"}
+      Gemini:
+        - {range: "0-6", lord: "Mercury"}
+        - {range: "6-12", lord: "Venus"}
+        - {range: "12-17", lord: "Jupiter"}
+        - {range: "17-24", lord: "Mars"}
+        - {range: "24-30", lord: "Saturn"}
+      Cancer:
+        - {range: "0-7", lord: "Mars"}
+        - {range: "7-13", lord: "Venus"}
+        - {range: "13-19", lord: "Mercury"}
+        - {range: "19-26", lord: "Jupiter"}
+        - {range: "26-30", lord: "Saturn"}
+      Leo:
+        - {range: "0-6", lord: "Jupiter"}
+        - {range: "6-11", lord: "Venus"}
+        - {range: "11-18", lord: "Saturn"}
+        - {range: "18-24", lord: "Mercury"}
+        - {range: "24-30", lord: "Mars"}
+      Virgo:
+        - {range: "0-7", lord: "Mercury"}
+        - {range: "7-17", lord: "Venus"}
+        - {range: "17-21", lord: "Jupiter"}
+        - {range: "21-28", lord: "Mars"}
+        - {range: "28-30", lord: "Saturn"}
+      Libra:
+        - {range: "0-6", lord: "Saturn"}
+        - {range: "6-14", lord: "Mercury"}
+        - {range: "14-21", lord: "Jupiter"}
+        - {range: "21-28", lord: "Venus"}
+        - {range: "28-30", lord: "Mars"}
+      Scorpio:
+        - {range: "0-7", lord: "Mars"}
+        - {range: "7-11", lord: "Venus"}
+        - {range: "11-19", lord: "Mercury"}
+        - {range: "19-24", lord: "Jupiter"}
+        - {range: "24-30", lord: "Saturn"}
+      Sagittarius:
+        - {range: "0-12", lord: "Jupiter"}
+        - {range: "12-17", lord: "Venus"}
+        - {range: "17-21", lord: "Mercury"}
+        - {range: "21-26", lord: "Mars"}
+        - {range: "26-30", lord: "Saturn"}
+      Capricorn:
+        - {range: "0-7", lord: "Mercury"}
+        - {range: "7-14", lord: "Jupiter"}
+        - {range: "14-22", lord: "Venus"}
+        - {range: "22-26", lord: "Saturn"}
+        - {range: "26-30", lord: "Mars"}
+      Aquarius:
+        - {range: "0-7", lord: "Mercury"}
+        - {range: "7-13", lord: "Venus"}
+        - {range: "13-20", lord: "Jupiter"}
+        - {range: "20-25", lord: "Mars"}
+        - {range: "25-30", lord: "Saturn"}
+      Pisces:
+        - {range: "0-12", lord: "Venus"}
+        - {range: "12-16", lord: "Jupiter"}
+        - {range: "16-19", lord: "Mercury"}
+        - {range: "19-28", lord: "Mars"}
+        - {range: "28-30", lord: "Saturn"}
+
+  # --------------------------------------------------------------------------
+  # 28.5 Dwaadasa Vargeeya Bala
+  # --------------------------------------------------------------------------
+  dwaadasa_vargeeya_bala:
+    section: "28.5"
+    meaning: "Dwaadasa means 'twelve'; from the 12 groups"
+    charts_used: ["D-1", "D-2", "D-3", "D-4", "D-5", "D-6", "D-7", "D-8", "D-9", "D-10", "D-11", "D-12"]
+    method: >
+      Count charts where planet is strong (exaltation, own rasi, or friend's rasi)
+      and charts where planet is weak (debilitation or enemy's rasi). The difference
+      gives Dwadasavargeeya bala. Positive = strong overall; negative = weak overall.
+
+  # --------------------------------------------------------------------------
+  # 28.6 Lord of the Year (Varsheswara)
+  # --------------------------------------------------------------------------
+  lord_of_the_year:
+    section: "28.6"
+    description: "Varsheswara is the most important planet during the year. His dasa brings important results."
+    candidates:
+      1: "Lord of rasi occupied by Sun (day) or Moon (night) in the annual chart"
+      2: "Lord of natal lagna"
+      3: "Lord of Muntha"
+      4: "Lord of lagna in the annual chart"
+      5: "Triraasi lord of lagna in the annual chart (see Table 73)"
+    selection_procedure:
+      - "Find all five candidates"
+      - "Short-list candidates having a benefic aspect on lagna"
+      - "Among those, pick the one with highest panchavargeeya bala"
+      - "If tie in bala, pick the one appearing as candidate in more categories"
+      - "If none has benefic aspect, accept malefic aspect"
+      - "If none has any aspect, take the candidate with strongest panchavargeeya bala"
+      - "If none is strong, take the first candidate"
+
+  # --------------------------------------------------------------------------
+  # Table 73: Triraasi Lords
+  # --------------------------------------------------------------------------
+  table_73_triraasi_lords:
+    description: "Used for finding the 5th candidate for Lord of the Year"
+    format: "Lagna: Day Lord / Night Lord"
+    entries:
+      Aries: {day: "Sun", night: "Jupiter"}
+      Taurus: {day: "Venus", night: "Moon"}
+      Gemini: {day: "Saturn", night: "Mercury"}
+      Cancer: {day: "Venus", night: "Mars"}
+      Leo: {day: "Jupiter", night: "Sun"}
+      Virgo: {day: "Moon", night: "Venus"}
+      Libra: {day: "Mercury", night: "Saturn"}
+      Scorpio: {day: "Mars", night: "Venus"}
+      Sagittarius: {day: "Saturn", night: "Saturn"}
+      Capricorn: {day: "Mars", night: "Mars"}
+      Aquarius: {day: "Jupiter", night: "Jupiter"}
+      Pisces: {day: "Moon", night: "Moon"}
+
+  # --------------------------------------------------------------------------
+  # 28.7 Lord of the Month
+  # --------------------------------------------------------------------------
+  lord_of_the_month:
+    section: "28.7"
+    description: "Found the same way as Lord of the Year but for monthly charts"
+    candidates:
+      1: "Lord of rasi occupied by Sun (day) or Moon (night) in the monthly chart"
+      2: "Lord of natal lagna"
+      3: "Lord of Muntha"
+      4: "Lord of lagna in the monthly chart"
+      5: "Triraasi lord of lagna in the monthly chart"
+      6: "Lord of the year"
+    note: "Same selection rules as Lord of the Year apply"
+
+  # --------------------------------------------------------------------------
+  # 28.8 Sahams (Special Points) - TABLE 74
+  # --------------------------------------------------------------------------
+  sahams:
+    section: "28.8"
+    description: >
+      Sahams are significant points in the zodiac related to specific matters.
+      Each saham has a formula of the form (A - B + C), meaning: find how far
+      A is from B, then take the same distance from C. If C is not between B and A
+      (going zodiacally from B to A), add 30 degrees to the result.
+    day_night_rule: >
+      For most sahams, the formula (A - B + C) is for daytime charts.
+      For nighttime charts, it changes to (B - A + C), UNLESS noted
+      "same for day and night".
+    similar_to: "Arabian Parts in western astrology (e.g. Part of Fortune)"
+    usage:
+      in_annual_charts: >
+        If good yogas in an annual chart involve the lord of the rasi containing
+        an important saham and lagna lord, important events related to the saham
+        matter may materialize during the year.
+      in_natal_charts: >
+        Sahams can also be used in natal charts with transits. Saturn or Rahu
+        transiting close to natal paradesa saham or jalapatana saham may indicate
+        going abroad. Jupiter transiting vivaha saham may indicate marriage.
+
+    table_74_sahams:
+      - number: 1
+        name: "Punya"
+        meaning: "Fortune / good deeds"
+        formula_day: "Moon - Sun + Lagna"
+        formula_night: "Sun - Moon + Lagna"
+        notes: null
+
+      - number: 2
+        name: "Vidya"
+        meaning: "Education"
+        formula_day: "Sun - Moon + Lagna"
+        formula_night: "Moon - Sun + Lagna"
+        notes: null
+
+      - number: 3
+        name: "Yasas"
+        meaning: "Fame"
+        formula_day: "Jupiter - PunyaSaham + Lagna"
+        formula_night: "PunyaSaham - Jupiter + Lagna"
+        notes: null
+
+      - number: 4
+        name: "Mitra"
+        meaning: "Friend"
+        formula_day: "Jupiter - PunyaSaham + Venus"
+        formula_night: "PunyaSaham - Jupiter + Venus"
+        notes: null
+
+      - number: 5
+        name: "Mahatmya"
+        meaning: "Greatness"
+        formula_day: "PunyaSaham - Mars + Lagna"
+        formula_night: "Mars - PunyaSaham + Lagna"
+        notes: null
+
+      - number: 6
+        name: "Asha"
+        meaning: "Desires"
+        formula_day: "Saturn - Mars + Lagna"
+        formula_night: "Mars - Saturn + Lagna"
+        notes: null
+
+      - number: 7
+        name: "Samartha"
+        meaning: "Enterprise / ability"
+        formula_day: "Mars - LagnaLord + Lagna"
+        formula_night: "LagnaLord - Mars + Lagna"
+        notes: "If Mars owns lagna, use: Jupiter - Mars + Lagna (day) / Mars - Jupiter + Lagna (night)"
+
+      - number: 8
+        name: "Bhratri"
+        meaning: "Brothers"
+        formula_day: "Jupiter - Saturn + Lagna"
+        formula_night: "Jupiter - Saturn + Lagna"
+        notes: "Same formula for day and night"
+
+      - number: 9
+        name: "Gaurava"
+        meaning: "Respect / regard"
+        formula_day: "Jupiter - Moon + Sun"
+        formula_night: "Moon - Jupiter + Sun"
+        notes: null
+
+      - number: 10
+        name: "Pitri"
+        meaning: "Father"
+        formula_day: "Saturn - Sun + Lagna"
+        formula_night: "Sun - Saturn + Lagna"
+        notes: null
+
+      - number: 11
+        name: "Rajya"
+        meaning: "Kingdom"
+        formula_day: "Saturn - Sun + Lagna"
+        formula_night: "Sun - Saturn + Lagna"
+        notes: null
+
+      - number: 12
+        name: "Matri"
+        meaning: "Mother"
+        formula_day: "Moon - Venus + Lagna"
+        formula_night: "Venus - Moon + Lagna"
+        notes: null
+
+      - number: 13
+        name: "Putra"
+        meaning: "Children"
+        formula_day: "Jupiter - Moon + Lagna"
+        formula_night: "Moon - Jupiter + Lagna"
+        notes: null
+
+      - number: 14
+        name: "Jeeva"
+        meaning: "Life"
+        formula_day: "Saturn - Jupiter + Lagna"
+        formula_night: "Jupiter - Saturn + Lagna"
+        notes: null
+
+      - number: 15
+        name: "Karma"
+        meaning: "Action (work)"
+        formula_day: "Mars - Mercury + Lagna"
+        formula_night: "Mercury - Mars + Lagna"
+        notes: null
+
+      - number: 16
+        name: "Roga"
+        meaning: "Disease"
+        formula_day: "Lagna - Moon + Lagna"
+        formula_night: "Moon - Lagna + Lagna"
+        notes: null
+
+      - number: 17
+        name: "Kali"
+        meaning: "Great misfortune"
+        formula_day: "Jupiter - Mars + Lagna"
+        formula_night: "Mars - Jupiter + Lagna"
+        notes: null
+
+      - number: 18
+        name: "Sastra"
+        meaning: "Sciences"
+        formula_day: "Jupiter - Saturn + Mercury"
+        formula_night: "Saturn - Jupiter + Mercury"
+        notes: null
+
+      - number: 19
+        name: "Bandhu"
+        meaning: "Relatives"
+        formula_day: "Mercury - Moon + Lagna"
+        formula_night: "Moon - Mercury + Lagna"
+        notes: null
+
+      - number: 20
+        name: "Mrityu"
+        meaning: "Death"
+        formula_day: "8thHouse - Moon + Lagna"
+        formula_night: "8thHouse - Moon + Lagna"
+        notes: "Same formula for day and night"
+
+      - number: 21
+        name: "Paradesa"
+        meaning: "Foreign countries"
+        formula_day: "9thHouse - 9thLord + Lagna"
+        formula_night: "9thHouse - 9thLord + Lagna"
+        notes: "Same formula for day and night"
+
+      - number: 22
+        name: "Artha"
+        meaning: "Money"
+        formula_day: "2ndHouse - 2ndLord + Lagna"
+        formula_night: "2ndHouse - 2ndLord + Lagna"
+        notes: "Same formula for day and night"
+
+      - number: 23
+        name: "Paradara"
+        meaning: "Adultery"
+        formula_day: "Venus - Sun + Lagna"
+        formula_night: "Sun - Venus + Lagna"
+        notes: null
+
+      - number: 24
+        name: "Vanik"
+        meaning: "Commerce"
+        formula_day: "Moon - Mercury + Lagna"
+        formula_night: "Mercury - Moon + Lagna"
+        notes: null
+
+      - number: 25
+        name: "Karyasiddhi"
+        meaning: "Success in endeavours"
+        formula_day: "Saturn - Sun + Lord of Sun-sign"
+        formula_night: "Saturn - Moon + Lord of Moon-sign"
+        notes: "Day/night formulas are different (not simply reversed)"
+
+      - number: 26
+        name: "Vivaha"
+        meaning: "Marriage"
+        formula_day: "Venus - Saturn + Lagna"
+        formula_night: "Saturn - Venus + Lagna"
+        notes: null
+
+      - number: 27
+        name: "Santapa"
+        meaning: "Sadness"
+        formula_day: "Saturn - Moon + 6thHouse"
+        formula_night: "Moon - Saturn + 6thHouse"
+        notes: null
+
+      - number: 28
+        name: "Sraddha"
+        meaning: "Devotion / sincerity"
+        formula_day: "Venus - Mars + Lagna"
+        formula_night: "Mars - Venus + Lagna"
+        notes: null
+
+      - number: 29
+        name: "Preeti"
+        meaning: "Love / attachment"
+        formula_day: "SastraSaham - PunyaSaham + Lagna"
+        formula_night: "PunyaSaham - SastraSaham + Lagna"
+        notes: null
+
+      - number: 30
+        name: "Jadya"
+        meaning: "Chronic disease"
+        formula_day: "Mars - Saturn + Mercury"
+        formula_night: "Saturn - Mars + Mercury"
+        notes: null
+
+      - number: 31
+        name: "Vyapara"
+        meaning: "Business"
+        formula_day: "Mars - Saturn + Lagna"
+        formula_night: "Mars - Saturn + Lagna"
+        notes: "Same formula for day and night"
+
+      - number: 32
+        name: "Satru"
+        meaning: "Enemy"
+        formula_day: "Mars - Saturn + Lagna"
+        formula_night: "Saturn - Mars + Lagna"
+        notes: null
+
+      - number: 33
+        name: "Jalapatana"
+        meaning: "Crossing an ocean"
+        formula_day: "Cancer15deg - Saturn + Lagna"
+        formula_night: "Saturn - Cancer15deg + Lagna"
+        notes: "Cancer 15 degrees is a fixed reference point"
+
+      - number: 34
+        name: "Bandhana"
+        meaning: "Imprisonment"
+        formula_day: "PunyaSaham - Saturn + Lagna"
+        formula_night: "Saturn - PunyaSaham + Lagna"
+        notes: null
+
+      - number: 35
+        name: "Apamrityu"
+        meaning: "Bad death"
+        formula_day: "8thHouse - Mars + Lagna"
+        formula_night: "Mars - 8thHouse + Lagna"
+        notes: null
+
+      - number: 36
+        name: "Labha"
+        meaning: "Material gains"
+        formula_day: "11thHouse - 11thLord + Lagna"
+        formula_night: "11thHouse - 11thLord + Lagna"
+        notes: "Same formula for day and night"
+
+# ==============================================================================
+# Chapter 29: Tajaka Yogas (Book pages 342-349, PDF pages 347-354)
+# ==============================================================================
+chapter_29_tajaka_yogas:
+  title: "Tajaka Yogas"
+  book_pages: "342-349"
+  pdf_pages: "347-354"
+  overview: >
+    Special combinations with special results applicable to Tajaka annual/monthly
+    charts as well as prasna (horary) charts. There are 16 Tajaka yogas. Some
+    yogas overlap and an ithasala may be converted to another yoga under
+    additional conditions.
+
+  planet_speed_order: >
+    In increasing order of speed: Saturn, Rahu/Ketu, Jupiter, Mars, Sun,
+    Venus, Mercury, Moon.
+
+  yogas:
+    # ------ 1. Ishkavala (Ikbaal) Yoga ------
+    - number: 1
+      name: "Ishkavala (Ikbaal)"
+      section: "29.2.1"
+      definition: >
+        Planets occupy only kendras (1st, 4th, 7th, 10th houses) and
+        panapharas (2nd, 5th, 8th, 11th houses) while apoklimas
+        (3rd, 6th, 9th, 12th houses) are empty.
+      formation_conditions:
+        - "All planets must be in kendras or panapharas"
+        - "All apoklimas must be empty"
+      results: "Wealth, happiness and good fortune"
+
+    # ------ 2. Induvara Yoga ------
+    - number: 2
+      name: "Induvara"
+      section: "29.2.2"
+      definition: >
+        Planets occupy only apoklimas (3rd, 6th, 9th, 12th houses)
+        while kendras and panapharas are empty.
+      formation_conditions:
+        - "All planets must be in apoklimas (3, 6, 9, 12)"
+        - "Kendras and panapharas must be empty"
+      results: "Disappointments, worries and illnesses"
+
+    # ------ 3. Ithasala Yoga ------
+    - number: 3
+      name: "Ithasala"
+      section: "29.2.3"
+      definition: >
+        Two planets have an aspect and the faster moving planet is less
+        advanced in its rasi than the slower moving planet. In western
+        astrology this is called an "applying aspect".
+      formation_conditions:
+        - "Two planets must have an aspect (conjunction, sextile, square, trine, opposition, semi-sextile)"
+        - "The faster moving planet must be less advanced in its rasi than the slower one"
+        - "Both planets should be within the deeptaamsa (orb) of each other"
+      results: >
+        Good yoga showing fulfilment of matters represented by the two planets.
+        Ithasala between lagna lord and 7th lord (or vivaha saham lord or Venus)
+        shows possible marriage.
+      types:
+        vartamaana:
+          meaning: "Present (current)"
+          condition: "Planets aspect each other and both are within the deeptaamsa of the other"
+          result: "Fulfilment of matters"
+        poorna:
+          meaning: "Complete"
+          condition: "Planets aspect closely and their advancements in respective rasis are within 1 degree of each other"
+          result: "Most powerful ithasala; speedy fulfilment"
+        bhavishya:
+          meaning: "Future"
+          condition: "Vartamaana ithasala is about to be formed when the faster moving planet moves by 1 degree or less"
+          result: "Fulfilment after obstructions or delay"
+      retrogression_notes:
+        - "If faster planet is retrograde, generally no ithasala (planets won't reach same advancement)"
+        - "If slower planet is retrograde, no problem - faster realization actually"
+        - "If faster planet is retrograde AND more advanced, both move toward each other = ithasala"
+        - "If faster planet is about to become retrograde before reaching exact aspect, no ithasala"
+
+    # ------ 4. Eesarpha Yoga ------
+    - number: 4
+      name: "Eesarpha"
+      section: "29.2.4"
+      definition: >
+        The opposite of ithasala. Two planets have an aspect and the faster
+        moving planet has a higher advancement in its rasi than the slower planet.
+      formation_conditions:
+        - "Two planets have an aspect"
+        - "Faster moving planet is MORE advanced in its rasi than the slower planet"
+      results: >
+        Bad yoga causing failures and disappointments. Lagna lord eesarpha with
+        5th lord/putra saham lord/Jupiter = disappointments related to children.
+        Lagna lord eesarpha with 10th/5th lord or rajya saham lord or Sun for a
+        leader = loss of power.
+      retrogression_notes:
+        - "If faster planet is retrograde and less advanced = eesarpha"
+        - "If faster planet is retrograde and more advanced = ithasala (not eesarpha)"
+
+    # ------ 5. Nakta Yoga ------
+    - number: 5
+      name: "Nakta"
+      section: "29.2.5"
+      definition: >
+        Two planets have an aspect but no ithasala or eesarpha. A third planet
+        that moves faster than both has an aspect with both and forms ithasala
+        with both.
+      formation_conditions:
+        - "Two planets have an aspect but no ithasala or eesarpha"
+        - "A third faster planet forms ithasala with both"
+      results: >
+        Fulfilment of matters represented by the first two planets with the help
+        of someone shown by the third planet.
+
+    # ------ 6. Yamaya Yoga ------
+    - number: 6
+      name: "Yamaya"
+      section: "29.2.6"
+      definition: >
+        Two planets have an aspect but no ithasala or eesarpha. A third planet
+        that moves slower than both has an aspect with both and forms ithasala
+        with both.
+      formation_conditions:
+        - "Two planets have an aspect but no ithasala or eesarpha"
+        - "A third SLOWER planet forms ithasala with both"
+      results: >
+        Fulfilment of matters represented by the first two planets with help
+        from someone shown by the third planet, but after obstacles and delays.
+
+    # ------ 7. Manahoo (Manaau) Yoga ------
+    - number: 7
+      name: "Manahoo (Manaau)"
+      section: "29.2.7"
+      definition: >
+        Two planets have an ithasala yoga but Saturn or Mars is in conjunction
+        with the faster moving planet within the latter's deeptaamsa.
+      formation_conditions:
+        - "Two planets have an ithasala yoga"
+        - "Saturn or Mars is in conjunction with the faster moving planet"
+        - "Saturn/Mars must be within the deeptaamsa of the faster planet"
+        - "If Mars or Saturn is one of the two ithasala planets, the other (Saturn/Mars) is needed"
+      results: >
+        Cancels the ithasala yoga. Gives failures, disappointments, quarrels,
+        loss of wealth. One of Mars or Saturn is enough to spoil ithasala.
+      note: >
+        Some authors suggest aspect (not just conjunction) of Saturn/Mars within
+        deeptaamsa is sufficient. However, readers are advised to consider only conjunction.
+
+    # ------ 8. Kamboola Yoga ------
+    - number: 8
+      name: "Kamboola"
+      section: "29.2.8"
+      definition: >
+        Two planets have an ithasala yoga and Moon has an ithasala with one
+        of the planets (or both).
+      formation_conditions:
+        - "Two planets have an ithasala yoga"
+        - "Moon has an ithasala with one or both of those planets"
+      results: >
+        Adds power to the ithasala yoga. The power added varies based on the
+        strength of Moon and other planets.
+
+    # ------ 9. Gairi-Kamboola Yoga ------
+    - number: 9
+      name: "Gairi-Kamboola"
+      section: "29.2.9"
+      definition: >
+        Moon is in the last degree of a rasi and will form ithasala with one of
+        the planets in an ithasala after moving to the next rasi. Essentially
+        Kamboola yoga in waiting.
+      formation_conditions:
+        - "Two planets have an ithasala yoga"
+        - "Moon is in the last degree of a rasi"
+        - "Moon will form ithasala with one of the ithasala planets after entering the next rasi"
+        - "Moon must also form ithasala with a strong planet"
+        - "Moon should NOT be exalted, debilitated, or in own navamsa/drekkana/hadda"
+      results: "Realization of the matter with help from others, after some delay"
+
+    # ------ 10. Khallasara Yoga ------
+    - number: 10
+      name: "Khallasara"
+      section: "29.2.10"
+      definition: >
+        Lagna lord is in the rasi between Moon and another planet X without
+        ithasala with either.
+      formation_conditions:
+        - "Lagna lord is positioned in the zodiac between Moon and planet X"
+        - "Lagna lord has no ithasala with Moon or planet X"
+      results: "Destroys the signification of planet X"
+
+    # ------ 11. Radda Yoga ------
+    - number: 11
+      name: "Radda"
+      section: "29.2.11"
+      definition: >
+        An ithasala yoga involves a planet in debilitation, retrogression,
+        combustion, or otherwise weak.
+      formation_conditions:
+        - "An ithasala yoga exists"
+        - "One of the planets is debilitated, retrograde, combust, or otherwise weak"
+      results: "Negates ithasala and gives bad results"
+
+    # ------ 12. Duhphali-Kutta Yoga ------
+    - number: 12
+      name: "Duhphali-Kutta"
+      section: "29.2.12"
+      definition: >
+        In an ithasala, the faster planet is exalted or in own rasi or has good
+        panchavargeeya bala, while the slower planet is not exalted, not in own
+        rasi, and weak in panchavargeeya bala.
+      formation_conditions:
+        - "Two planets have ithasala"
+        - "Faster planet is strong (exalted/own rasi/good PVB)"
+        - "Slower planet is weak (not exalted/not own rasi/low PVB)"
+      results: "Realization of ambitions and dreams"
+      note: "The text description mentions Saturn (slower) exalted and Mars (faster) weak for this yoga name, suggesting the naming convention may focus on the contrast."
+
+    # ------ 13. Duttota (Dutthotttha Davira) Yoga ------
+    - number: 13
+      name: "Duttota"
+      section: "29.2.13"
+      definition: >
+        Two planets in an ithasala are both weak (debilitated or in inimical
+        rasis, low PVB), but one of them has an ithasala with a strong planet
+        (exalted or own rasi, high PVB).
+      formation_conditions:
+        - "Two weak planets have ithasala"
+        - "One of the two has ithasala with a strong planet"
+      results: "Good results despite initial weakness"
+
+    # ------ 14. Thambira (Tambira) Yoga ------
+    - number: 14
+      name: "Thambira (Tambira)"
+      section: "29.2.14"
+      definition: >
+        A planet is in the last degree of a rasi and forms ithasala with a
+        slower moving planet after moving to the next rasi.
+      formation_conditions:
+        - "Planet is in the last degree of a rasi (e.g. 29 deg+)"
+        - "Currently no ithasala with slower planet"
+        - "After moving to next rasi, ithasala will form"
+      results: "Realization of hopes after delay and hard work"
+
+    # ------ 15. Kutta Yoga ------
+    - number: 15
+      name: "Kutta"
+      section: "29.2.15"
+      definition: >
+        A planet occupying lagna is aspected by a planet in own or exaltation
+        rasi in a kendra or a panaphara.
+      formation_conditions:
+        - "A planet occupies lagna"
+        - "It is aspected by a planet in own/exaltation rasi"
+        - "The aspecting planet must be in a kendra or panaphara"
+      results: "Desires related to the matters signified by the planet in lagna are fulfilled"
+      note: "This yoga was interpreted differently by various scholars"
+
+    # ------ 16. Durupha Yoga ------
+    - number: 16
+      name: "Durupha"
+      section: "29.2.16"
+      definition: >
+        Ithasala given by two planets in dusthanas (6th, 8th, 12th house)
+        in combustion or retrogression or debilitation.
+      formation_conditions:
+        - "Two planets have ithasala"
+        - "Both are in dusthanas (6th, 8th, or 12th house)"
+        - "Both are in combustion, retrogression, or debilitation"
+      results: "Planets are powerless to give any good results"
+
+# ==============================================================================
+# Chapter 30: Annual Dasas (Book pages 350-359, PDF pages 355-364)
+# ==============================================================================
+chapter_30_annual_dasas:
+  title: "Annual Dasas"
+  book_pages: "350-359"
+  pdf_pages: "355-364"
+  overview: >
+    Dasa systems compressed to a one-year period for timing events within
+    a Tajaka annual chart. Three systems are covered: Patyayini dasa,
+    Mudda dasa (Varsha Vimsottari dasa), and Varsha Narayana dasa.
+
+  # --------------------------------------------------------------------------
+  # 30.3 Patyayini Dasa
+  # --------------------------------------------------------------------------
+  patyayini_dasa:
+    section: "30.3"
+    also_known_as: "Varsha dasa (per Dr. B.V. Raman)"
+    description: >
+      Based on the longitudes of lagna and all seven planets.
+      Specifically meant for Tajaka charts. Applicable to both annual
+      and monthly charts.
+    procedure:
+      step_1: >
+        Consider lagna and seven planets. Find their advancement from
+        the beginning of the respective signs. Arrange in ascending order.
+        These are called "Krisamsas".
+      step_2: >
+        Leave the krisamsa of the first planet (lowest value). For all
+        others, subtract the krisamsa of the previous planet. These
+        differences are called "Patyamsas".
+      step_3: >
+        Dasas run in the order found in step 1. Duration of each dasa
+        (in days) = 365.2425 x (its patyamsa / sum of all patyamsas).
+        The sum of all patyamsas equals the largest krisamsa.
+      step_4: >
+        Antardasas use the same ratios and order as dasas (like Vimsottari).
+        First antardasa within a dasa is the dasa planet itself.
+    example_table_75:
+      description: "Patyayini Dasa Calculation (Example 122)"
+      entries:
+        - {planet: "Venus", krisamsa: "1d38m", patyamsa: "1d38m", fraction: 0.0684, days: 24.98}
+        - {planet: "Mercury", krisamsa: "4d47m", patyamsa: "3d09m", fraction: 0.1319, days: 48.17}
+        - {planet: "Moon", krisamsa: "4d49m", patyamsa: "0d02m", fraction: 0.0014, days: 0.51}
+        - {planet: "Saturn", krisamsa: "6d30m", patyamsa: "1d41m", fraction: 0.0705, days: 25.74}
+        - {planet: "Lagna", krisamsa: "7d14m", patyamsa: "0d44m", fraction: 0.0307, days: 11.21}
+        - {planet: "Jupiter", krisamsa: "10d59m", patyamsa: "3d45m", fraction: 0.1570, days: 57.35}
+        - {planet: "Sun", krisamsa: "17d05m", patyamsa: "6d06m", fraction: 0.2554, days: 93.29}
+        - {planet: "Mars", krisamsa: "23d53m", patyamsa: "6d48m", fraction: 0.2847, days: 103.99}
+
+  # --------------------------------------------------------------------------
+  # 30.4 Mudda Dasa (Varsha Vimsottari Dasa)
+  # --------------------------------------------------------------------------
+  mudda_dasa:
+    section: "30.4"
+    also_known_as: "Varsha Vimsottari Dasa"
+    description: >
+      Vimsottari dasa with 120 years compressed to a solar year (360 solar days,
+      where each solar day = period in which Sun moves by 1 degree). Dasa days
+      for a planet = normal dasa years x 3.
+    table_76_dasa_days:
+      description: "Varsha Vimsottari Dasa durations in solar days"
+      entries:
+        Sun: 18
+        Moon: 30
+        Mars: 21
+        Rahu: 54
+        Jupiter: 48
+        Saturn: 57
+        Mercury: 51
+        Ketu: 21
+        Venus: 60
+      total_solar_days: 360
+    dasa_order:
+      description: >
+        Progress Moon's natal constellation at the rate of one constellation
+        per year. Alternatively:
+      planet_numbering:
+        Sun: 1
+        Moon: 2
+        Mars: 3
+        Rahu: 4
+        Jupiter: 5
+        Saturn: 6
+        Mercury: 7
+        Ketu: 8
+        Venus: 9
+      procedure: >
+        Take the number corresponding to the lord of Moon's natal constellation
+        (first Vimsottari dasa lord in natal chart). Add the number of completed
+        years. Divide by 9 and take the remainder (0 = Venus/9). That planet's
+        dasa comes first, followed by the normal Vimsottari order.
+    dasa_balance: >
+      The fraction of natal Moon's constellation yet to be traversed gives
+      the balance of the first dasa.
+
+  # --------------------------------------------------------------------------
+  # 30.5 Varsha Narayana Dasa
+  # --------------------------------------------------------------------------
+  varsha_narayana_dasa:
+    section: "30.5"
+    description: >
+      Narayana dasa compressed from 120 years to 360 solar days.
+      If a rasi's dasa is n years in Narayana dasa, it becomes (3 x n)
+      solar days in Varsha Narayana dasa. This is the best dasa for
+      Tajaka annual charts according to the author.
+    key_difference_from_natal: >
+      Progress natal lagna by one rasi per year (i.e. use muntha as lagna)
+      instead of using lagna in the annual chart. This links the natal chart
+      to the Tajaka chart.
+    dasa_order: >
+      Same as Narayana dasa of the relevant divisional chart but using
+      muntha (progressed natal lagna) instead of annual chart lagna.
+    applicability:
+      - "Can be computed for any divisional chart"
+      - "For D-9: use 9th lord in rasi chart to determine starting sign"
+      - "For D-4: use 4th lord in rasi chart"
+      - "For D-7: use 7th lord in rasi chart"
+      - "For D-24: use 12th lord from muntha"
+    saturn_exception: >
+      The Saturn exception from Narayana dasa applies. If Saturn is in the
+      starting sign, dasa order direction may reverse.
+    ranking: "Best annual dasa (better than Patyayini, which is better than Mudda)"
+
+  conclusion: >
+    Patyayini dasa is applicable to both annual and monthly charts.
+    For annual charts, Varsha Narayana dasa and Patyayini dasa give
+    the best results. If a result seems likely in an annual chart, the
+    exact month or week of the event can be found using these dasas.
+
+# ==============================================================================
+# Chapter 31: Sudarsana Chakra Dasa (Book pages 360-366, PDF pages 365-371)
+# ==============================================================================
+chapter_31_sudarsana_chakra_dasa:
+  title: "Sudarsana Chakra Dasa"
+  book_pages: "360-366"
+  pdf_pages: "365-371"
+  overview: >
+    Parasara said Sudarsana Chakra dasa was taught by Brahma Himself and is
+    a great tool for predicting daily, monthly and annual fortune. Though
+    covered in the Tajaka part, this is actually a natal dasa like Vimsottari
+    dasa, Narayana dasa and Kalachakra dasa.
+
+  # --------------------------------------------------------------------------
+  # 31.2 Sudarsana Chakra
+  # --------------------------------------------------------------------------
+  sudarsana_chakra:
+    section: "31.2"
+    description: >
+      Three concentric circles drawn with bhava chakra from three
+      reference points: lagna (inner, physical body), Moon (middle, mind),
+      and Sun (outer, soul). All three together represent one's self.
+    three_references:
+      lagna: "Physical body"
+      moon: "Mind"
+      sun: "Soul"
+    drawing: >
+      Draw 3 concentric circles. Write the bhava chakra with respect to
+      lagna, Moon and Sun in the inner, middle and outer charts respectively.
+
+  # --------------------------------------------------------------------------
+  # 31.3 Dasa Computation
+  # --------------------------------------------------------------------------
+  dasa_computation:
+    section: "31.3"
+    description: >
+      Dasas of the 12 houses run in cycles throughout life. Each dasa
+      lasts one year (solar year).
+    rules:
+      - "Dasa of the 1st house runs in the 1st year, 2nd house in the 2nd year, etc."
+      - "After 12 years, the cycle repeats (1st house dasa returns in 13th year)"
+      - "A new SC dasa starts at each solar return (Tajaka annual chart timing)"
+    formula: >
+      Take (completed_years + 1), divide by 12, take remainder.
+      If remainder is 0, make it 12. The remainder gives the house
+      whose dasa runs in that year.
+    three_references: >
+      The Nth house is reckoned from lagna, Moon, and Sun. Ideally all
+      three should be analyzed, but for simplification one may choose the
+      strongest reference among lagna, Moon, and Sun.
+
+  # --------------------------------------------------------------------------
+  # Antardasas and Pratyantardasas
+  # --------------------------------------------------------------------------
+  antardasas:
+    description: >
+      Each dasa is divided into 12 antardasas. Take the dasa sign as lagna
+      and assign the 1st, 2nd, 3rd etc. houses from it to successive antardasas.
+    timing: "Tajaka monthly charts give the date and time when an antardasa starts"
+    pratyantardasas: >
+      Similarly found from antardasas. Tajaka sixty-hour charts give the
+      timing of pratyantardasas.
+
+  # --------------------------------------------------------------------------
+  # Link to Tajaka System
+  # --------------------------------------------------------------------------
+  link_to_tajaka:
+    description: >
+      Tajaka annual, monthly and sixty-hour charts are the entry charts
+      of dasas, antardasas and pratyantardasas as per Sudarsana Chakra dasa.
+    muntha_connection: >
+      Muntha in Tajaka annual charts is the SC dasa sign reckoned from lagna.
+      If we redefine muntha to be progressed from the strongest of lagna, Moon
+      and Sun (instead of always from lagna), it exactly becomes the SC dasa sign.
+
+  # --------------------------------------------------------------------------
+  # 31.4 Dasa Interpretation
+  # --------------------------------------------------------------------------
+  dasa_interpretation:
+    section: "31.4"
+    method: >
+      Take the dasa sign (or antardasa/pratyantardasa sign) as lagna and
+      analyze planetary positions at the commencement of the dasa
+      (i.e. from the Tajaka chart), NOT natal positions.
+    favorable_placements:
+      - "Benefics in quadrants (1, 4, 7, 10) from dasa sign"
+      - "Benefics in trines (5, 9) from dasa sign"
+      - "Benefics in 8th from dasa sign"
+      - "Benefics in houses other than 6th and 12th"
+      - "Malefics in the 3rd, 6th, and 11th houses"
+    unfavorable_placements:
+      - "Malefics in houses other than 3rd, 6th, 11th"
+      - "Rahu destroys the house he occupies"
+    note: >
+      Using natal positions would suggest same results every 12 years, which
+      is not logical. Parasara clearly advised using transit positions at dasa
+      commencement.
+
+  # --------------------------------------------------------------------------
+  # SC Dasa for Divisional Charts
+  # --------------------------------------------------------------------------
+  divisional_chart_application:
+    description: >
+      SC dasa can be found for all divisional charts. Take the strongest of
+      lagna, Moon and Sun, then start SC dasa from there, moving one house
+      per year.
+    special_attention: "Pay special attention to rasi chart"
+
+  conclusion: >
+    Sudarsana Chakra dasa is good at showing favorable and unfavorable
+    periods in a general sense. There may be missing links between
+    Sudarsana Chakra dasa and Tajaka analysis that need further research.

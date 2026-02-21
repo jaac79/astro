@@ -1,0 +1,595 @@
+source: "Vedic Astrology: An Integrated Approach, P.V.R. Narasimha Rao"
+chapter: 2
+pages: "6, 19-23"
+
+# Classification groupings for reference
+classifications:
+  odd_even:
+    odd:
+      aliases: [vishama, oja, male]
+      rasis: [Ar, Ge, Le, Li, Sg, Aq]
+    even:
+      aliases: [sama, yugma, female]
+      rasis: [Ta, Cn, Vi, Sc, Cp, Pi]
+    usage: "Used in some dasas and in determination of the sex of children."
+
+  odd_footed_even_footed:
+    odd_footed:
+      aliases: [vishamapada, ojapada]
+      rasis: [Ar, Ta, Ge, Li, Sc, Sg]
+    even_footed:
+      aliases: [samapada, yugmapada]
+      rasis: [Cn, Le, Vi, Cp, Aq, Pi]
+    usage: "Used in some dasas."
+
+  movable_fixed_dual:
+    movable:
+      sanskrit: chara
+      ruler: Brahma
+      nature: "To move and to be dynamic"
+      rasis: [Ar, Cn, Li, Cp]
+    fixed:
+      sanskrit: sthira
+      ruler: Shiva
+      nature: "To be stable and constant"
+      rasis: [Ta, Le, Sc, Aq]
+    dual:
+      sanskrit: dwiswabhava
+      ruler: Vishnu
+      nature: "Stable sometimes and dynamic sometimes"
+      rasis: [Ge, Vi, Sg, Pi]
+
+  elements:
+    fire:
+      sanskrit: agni
+      rasis: [Ar, Le, Sg]
+    earth:
+      sanskrit: bhoo
+      rasis: [Ta, Vi, Cp]
+    air:
+      sanskrit: vaayu
+      rasis: [Ge, Li, Aq]
+    water:
+      sanskrit: jala
+      rasis: [Cn, Sc, Pi]
+    note: "The 5th element of aakaasa (ether) is present in every rasi."
+
+  ayurveda_nature:
+    pitta:
+      aliases: [bilious]
+      description: "Combination of fire and water. Shows transformation/digestion."
+      rasis: [Ar, Le, Sg]
+    vaata:
+      aliases: [windy]
+      description: "Combination of air and ether. Shows movement in and out of a system, e.g. breathing."
+      rasis: [Ta, Vi, Cp]
+    kapha:
+      aliases: [phlegmatic]
+      description: "Combination of earth and water. Binds a system together, e.g. bones, muscles, fat."
+      rasis: [Cn, Sc, Pi]
+    mixed:
+      rasis: [Ge, Li, Aq]
+
+  gunas:
+    saattwik:
+      quality: "Purity, truthfulness"
+      rasis: [Cn, Le, Sg, Pi]
+    raajasik:
+      quality: "Energy, passion"
+      rasis: [Ar, Ta, Li, Sc]
+    taamasik:
+      quality: "Darkness, depravity"
+      rasis: [Ge, Vi, Cp, Aq]
+
+  directions:
+    east: [Ar, Le, Sg]
+    south: [Ta, Vi, Cp]
+    west: [Ge, Li, Aq]
+    north: [Cn, Sc, Pi]
+
+  day_night:
+    night:
+      sanskrit: nishaa
+      note: "Strong during night time. Moon governs all nishaa rasis."
+      rasis: [Ar, Ta, Ge, Cn, Sg, Cp]
+    day:
+      sanskrit: divaa
+      note: "Strong during day time. Sun governs all divaa rasis."
+      rasis: [Le, Vi, Li, Sc, Aq, Pi]
+    note: "Of the two rasis owned by a planet, one is a day sign and one is a night sign."
+
+  rising:
+    seershodaya:
+      meaning: "Head first (rises with head)"
+      note: "Planets in Seershodaya rasis give results in the first half of their dasas."
+      rasis: [Ge, Le, Vi, Li, Sc, Aq]
+    prishthodaya:
+      meaning: "Feet first (rises with feet; strictly 'prishtha' means back)"
+      note: "Planets in Prishthodaya rasis give results in the second half of their dasas."
+      rasis: [Ar, Ta, Cn, Sg, Cp]
+    both:
+      meaning: "Rises with both head and feet"
+      rasis: [Pi]
+
+  varna:
+    brahmana:
+      meaning: "Scholars, priests, ministers"
+      element: water
+      rasis: [Cn, Sc, Pi]
+    kshatriya:
+      meaning: "Warriors, kings, army chiefs, soldiers"
+      element: fire
+      rasis: [Ar, Le, Sg]
+    vaisya:
+      meaning: "Traders, suppliers of services"
+      element: earth
+      rasis: [Ta, Vi, Cp]
+    sudra:
+      meaning: "Workers, menial tasks"
+      element: air
+      rasis: [Ge, Li, Aq]
+
+  limbs_of_vishnu:
+    note: "The whole zodiac is a manifestation of Lord Vishnu's body."
+    mapping:
+      Ar: head
+      Ta: face
+      Ge: arms
+      Cn: heart
+      Le: stomach
+      Vi: hip
+      Li: "navel (space below navel)"
+      Sc: private parts
+      Sg: thighs
+      Cp: knees
+      Aq: ankles
+      Pi: feet
+
+# Lordship / Rulership
+lords:
+  Sun: [Le]
+  Moon: [Cn]
+  Mars: [Ar, Sc]
+  Mercury: [Ge, Vi]
+  Jupiter: [Sg, Pi]
+  Venus: [Ta, Li]
+  Saturn: [Cp, Aq]
+  Rahu: [Aq]    # co-lord
+  Ketu: [Sc]    # co-lord
+  note: "Rahu co-lords Aquarius with Saturn. Ketu co-lords Scorpio with Mars."
+
+rasis:
+  Mesha:
+    english: Aries
+    symbol: Ar
+    number: 1
+    degree_range: "0-30"
+    lord: Mars
+    co_lord: null
+    odd_even: odd
+    odd_footed_even_footed: odd_footed
+    mobility: movable
+    element: fire
+    ayurveda: pitta
+    guna: raajasik
+    direction: east
+    day_night: night
+    rising: prishthodaya
+    varna: kshatriya
+    color: blood-red
+    limb_of_vishnu: head
+    indications:
+      - dynamic
+      - enterprising
+      - valiant
+      - ruddy
+      - head
+      - forests
+      - large forehead
+      - hasty
+      - impulsive
+      - restless
+      - thick eyebrows
+      - leadership
+      - overbearing
+      - dry
+      - lean
+      - tall
+
+  Vrishabha:
+    english: Taurus
+    symbol: Ta
+    number: 2
+    degree_range: "30-60"
+    lord: Venus
+    co_lord: null
+    odd_even: even
+    odd_footed_even_footed: odd_footed
+    mobility: fixed
+    element: earth
+    ayurveda: vaata
+    guna: raajasik
+    direction: south
+    day_night: night
+    rising: prishthodaya
+    varna: vaisya
+    color: white
+    limb_of_vishnu: face
+    indications:
+      - beautiful
+      - face
+      - stable
+      - sluggish
+      - loyal
+      - meadows
+      - plains
+      - luxury halls
+      - dining halls
+      - eating places
+      - fine teeth
+      - large eyes
+      - luxurious
+      - faithful
+      - thick hair
+      - stout
+
+  Mithuna:
+    english: Gemini
+    symbol: Ge
+    number: 3
+    degree_range: "60-90"
+    lord: Mercury
+    co_lord: null
+    odd_even: odd
+    odd_footed_even_footed: odd_footed
+    mobility: dual
+    element: air
+    ayurveda: mixed
+    guna: taamasik
+    direction: west
+    day_night: night
+    rising: seershodaya
+    varna: sudra
+    color: grass green
+    limb_of_vishnu: arms
+    indications:
+      - chest
+      - garden
+      - communication
+      - journalism
+      - schools
+      - colleges
+      - study rooms
+      - cables
+      - telephone
+      - newspapers
+      - tall
+      - well-built
+      - prominent cheeks
+      - thick hair
+      - broad chest
+      - curious
+      - learned
+      - jovial
+
+  Karkataka:
+    english: Cancer
+    symbol: Cn
+    number: 4
+    degree_range: "90-120"
+    lord: Moon
+    co_lord: null
+    odd_even: even
+    odd_footed_even_footed: even_footed
+    mobility: movable
+    element: water
+    ayurveda: kapha
+    guna: saattwik
+    direction: north
+    day_night: night
+    rising: prishthodaya
+    varna: brahmana
+    color: pale red
+    limb_of_vishnu: heart
+    indications:
+      - heart
+      - breast
+      - watery fields
+      - rivers
+      - canals
+      - kitchen
+      - food
+      - attractive
+      - small build
+      - emotional
+      - deeply attached
+      - mother-like
+      - sensitive
+
+  Simha:
+    english: Leo
+    symbol: Le
+    number: 5
+    degree_range: "120-150"
+    lord: Sun
+    co_lord: null
+    odd_even: odd
+    odd_footed_even_footed: even_footed
+    mobility: fixed
+    element: fire
+    ayurveda: pitta
+    guna: saattwik
+    direction: east
+    day_night: day
+    rising: seershodaya
+    varna: kshatriya
+    color: white
+    limb_of_vishnu: stomach
+    indications:
+      - stomach
+      - digestion
+      - navel
+      - mountains
+      - forests
+      - caves
+      - deserts
+      - palaces
+      - parks
+      - forts
+      - boilers
+      - steel factories
+      - thin
+      - dry
+      - hot
+      - royal
+      - self-pride
+      - insolent
+      - domineering
+
+  Kanya:
+    english: Virgo
+    symbol: Vi
+    number: 6
+    degree_range: "150-180"
+    lord: Mercury
+    co_lord: null
+    odd_even: even
+    odd_footed_even_footed: even_footed
+    mobility: dual
+    element: earth
+    ayurveda: vaata
+    guna: taamasik
+    direction: south
+    day_night: day
+    rising: seershodaya
+    varna: vaisya
+    color: variegated
+    limb_of_vishnu: hip
+    indications:
+      - hip
+      - appendix
+      - lush gardens
+      - fields
+      - orchards
+      - libraries
+      - bookstores
+      - farms
+      - intelligent
+      - sharp
+      - orator
+      - nervous
+      - physically weak
+      - discretion
+      - tactfulness
+
+  Tula:
+    english: Libra
+    symbol: Li
+    number: 7
+    degree_range: "180-210"
+    lord: Venus
+    co_lord: null
+    odd_even: odd
+    odd_footed_even_footed: odd_footed
+    mobility: movable
+    element: air
+    ayurveda: mixed
+    guna: raajasik
+    direction: west
+    day_night: day
+    rising: seershodaya
+    varna: sudra
+    color: black
+    limb_of_vishnu: "navel (space below)"
+    indications:
+      - groins
+      - businessmen
+      - markets
+      - trade centers
+      - banks
+      - hotels
+      - amusement parks
+      - entertainment
+      - toilets
+      - cosmetics
+      - balanced
+      - wise
+      - good talker
+
+  Vrischika:
+    english: Scorpio
+    symbol: Sc
+    number: 8
+    degree_range: "210-240"
+    lord: Mars
+    co_lord: Ketu
+    odd_even: even
+    odd_footed_even_footed: odd_footed
+    mobility: fixed
+    element: water
+    ayurveda: kapha
+    guna: raajasik
+    direction: north
+    day_night: day
+    rising: seershodaya
+    varna: brahmana
+    color: reddish brown
+    limb_of_vishnu: private parts
+    indications:
+      - private parts
+      - holes
+      - deep caves
+      - mines
+      - garrages
+      - small build
+      - dusky complexion
+      - bright eyes
+      - secretive
+      - scheming
+      - occult
+      - best friend or a worst enemy
+      - peevish
+      - sensitive
+
+  Dhanus:
+    english: Sagittarius
+    symbol: Sg
+    number: 9
+    degree_range: "240-270"
+    lord: Jupiter
+    co_lord: null
+    odd_even: odd
+    odd_footed_even_footed: odd_footed
+    mobility: dual
+    element: fire
+    ayurveda: pitta
+    guna: saattwik
+    direction: east
+    day_night: night
+    rising: prishthodaya
+    varna: kshatriya
+    color: "husk of grass color"
+    limb_of_vishnu: thighs
+    indications:
+      - thighs
+      - royal
+      - attorneys
+      - government offices
+      - aircraft
+      - falling
+      - sparse hair
+      - muscular
+      - deep eyes
+      - upright
+      - honest
+      - genial
+      - gambler
+
+  Makara:
+    english: Capricorn
+    symbol: Cp
+    number: 10
+    degree_range: "270-300"
+    lord: Saturn
+    co_lord: null
+    odd_even: even
+    odd_footed_even_footed: even_footed
+    mobility: movable
+    element: earth
+    ayurveda: vaata
+    guna: taamasik
+    direction: south
+    day_night: night
+    rising: prishthodaya
+    varna: vaisya
+    color: variegated
+    limb_of_vishnu: knees
+    indications:
+      - knees
+      - marsh lands
+      - watery places
+      - alligators
+      - beasts
+      - bushes
+      - slender builds
+      - long neck
+      - prominent teeth
+      - witty
+      - perfectionist
+      - patient
+      - organizer
+      - cautious
+      - secretive
+      - pragmatic
+
+  Kumbha:
+    english: Aquarius
+    symbol: Aq
+    number: 11
+    degree_range: "300-330"
+    lord: Saturn
+    co_lord: Rahu
+    odd_even: odd
+    odd_footed_even_footed: even_footed
+    mobility: fixed
+    element: air
+    ayurveda: mixed
+    guna: taamasik
+    direction: west
+    day_night: day
+    rising: seershodaya
+    varna: sudra
+    color: "brown (mongoose)"
+    limb_of_vishnu: ankles
+    indications:
+      - ankles
+      - charity
+      - philosophy
+      - tall
+      - bony
+      - small eyes
+      - mountain spring
+      - places with water
+      - ill-formed teeth
+      - coarse hair
+      - hard-working
+      - stoic
+      - honest
+
+  Meena:
+    english: Pisces
+    symbol: Pi
+    number: 12
+    degree_range: "330-360"
+    lord: Jupiter
+    co_lord: null
+    odd_even: even
+    odd_footed_even_footed: even_footed
+    mobility: dual
+    element: water
+    ayurveda: kapha
+    guna: saattwik
+    direction: north
+    day_night: day
+    rising: both
+    varna: brahmana
+    color: "cream (fish color)"
+    limb_of_vishnu: feet
+    indications:
+      - feet
+      - oceans
+      - seas
+      - prisons
+      - hospitals
+      - hermitages
+      - short
+      - plump
+      - large eyes
+      - large eyebrows
+      - lazy
+      - emotional
+      - timid
+      - honest
+      - irresolute
+      - talkative
+      - intuitive

@@ -1,0 +1,620 @@
+# Vimsottari Dasa Reference
+# Source: Vedic Astrology - An Integrated Approach by P.V.R. Narasimha Rao
+# Chapter 16, Book pages 181-194 (PDF pages 188-201)
+
+source:
+  book: "Vedic Astrology: An Integrated Approach"
+  author: "P.V.R. Narasimha Rao"
+  chapter: 16
+  chapter_title: "Vimsottari Dasa"
+  book_pages: "181-194"
+  pdf_pages: "188-201"
+  table_reference: "Table 38: Vimsottari Dasa Lengths"
+
+# ---------------------------------------------------------------------------
+# OVERVIEW
+# ---------------------------------------------------------------------------
+overview:
+  meaning: "Vimsottari means 120. Total dasa cycle spans 120 years."
+  significance: >
+    Most popular dasa system among Vedic astrologers of today. Sage Parasara
+    mentions in Brihat Parasara Hora Sastram that this dasa system is the most
+    suitable dasa system in Kali yuga, because paramaayush (maximum longevity)
+    of human beings in Kali yuga is supposed to be 120 years.
+  basis: "Constellation (nakshatra) occupied by Moon at birth"
+  total_years: 120
+  type: "Nakshatra-based dasa (constellation-based)"
+  usage:
+    - "Phalita dasa (general predictive results)"
+    - "Ayur dasa (longevity determination)"
+
+# ---------------------------------------------------------------------------
+# DASA PERIOD HIERARCHY (terminology)
+# ---------------------------------------------------------------------------
+period_hierarchy:
+  - level: 1
+    name: "Mahadasa (MD)"
+    meaning: "Master period"
+    also_called: "Dasa"
+  - level: 2
+    name: "Antardasa (AD)"
+    meaning: "Sub-period within mahadasa"
+  - level: 3
+    name: "Pratyantardasa (PD)"
+    meaning: "Sub-sub-period within antardasa"
+  - level: 4
+    name: "Sookshma Dasa (SD)"
+    meaning: "Sub-period within pratyantardasa"
+    also_called: "Sookshma-antardasa"
+  - level: 5
+    name: "Prana Dasa (PAD)"
+    meaning: "Sub-period within sookshma dasa"
+    also_called: "Prana-antardasa"
+  - level: 6
+    name: "Deha Dasa (DAD)"
+    meaning: "Sub-period within prana dasa"
+    also_called: "Deha-antardasa"
+
+# ---------------------------------------------------------------------------
+# DASA SEQUENCE AND LENGTHS (Table 38)
+# ---------------------------------------------------------------------------
+# The order below is the fixed cyclic sequence.
+# The first dasa planet is determined by Moon's nakshatra lord at birth.
+# Subsequent dasas follow this cyclic order.
+dasa_sequence:
+  - planet: Sun
+    years: 6
+  - planet: Moon
+    years: 10
+  - planet: Mars
+    years: 7
+  - planet: Rahu
+    years: 18
+  - planet: Jupiter
+    years: 16
+  - planet: Saturn
+    years: 19
+  - planet: Mercury
+    years: 17
+  - planet: Ketu
+    years: 7
+  - planet: Venus
+    years: 20
+
+total_years_check: 120  # 6+10+7+18+16+19+17+7+20 = 120
+
+# ---------------------------------------------------------------------------
+# NAKSHATRA-TO-PLANET MAPPING (Table 2 from book)
+# ---------------------------------------------------------------------------
+# Each planet rules 3 nakshatras. The nakshatras repeat the planet
+# sequence (Ketu, Venus, Sun, Moon, Mars, Rahu, Jupiter, Saturn, Mercury)
+# three times across the 27 nakshatras.
+nakshatra_lords:
+  # --- Cycle 1: Nakshatras 1-9 ---
+  - nakshatra: Aswini
+    number: 1
+    start: "00 Ar 00"
+    end: "13 Ar 20"
+    lord: Ketu
+    deity: Aswini Kumara
+
+  - nakshatra: Bharani
+    number: 2
+    start: "13 Ar 20"
+    end: "26 Ar 40"
+    lord: Venus
+    deity: Yama
+
+  - nakshatra: Krittika
+    number: 3
+    start: "26 Ar 40"
+    end: "10 Ta 00"
+    lord: Sun
+    deity: Agni
+
+  - nakshatra: Rohini
+    number: 4
+    start: "10 Ta 00"
+    end: "23 Ta 20"
+    lord: Moon
+    deity: Bramha
+
+  - nakshatra: Mrigasira
+    number: 5
+    start: "23 Ta 20"
+    end: "06 Ge 40"
+    lord: Mars
+    deity: Moon
+
+  - nakshatra: Aardra
+    number: 6
+    start: "06 Ge 40"
+    end: "20 Ge 00"
+    lord: Rahu
+    deity: Shiva
+
+  - nakshatra: Punarvasu
+    number: 7
+    start: "20 Ge 00"
+    end: "03 Cn 20"
+    lord: Jupiter
+    deity: Aditi
+
+  - nakshatra: Pushyami
+    number: 8
+    start: "03 Cn 20"
+    end: "16 Cn 40"
+    lord: Saturn
+    deity: Jupiter
+
+  - nakshatra: Aasresha
+    number: 9
+    start: "16 Cn 40"
+    end: "30 Cn 00"
+    lord: Mercury
+    deity: Rahu
+
+  # --- Cycle 2: Nakshatras 10-18 ---
+  - nakshatra: Makha
+    number: 10
+    start: "00 Le 00"
+    end: "13 Le 20"
+    lord: Ketu
+    deity: Sun
+
+  - nakshatra: Poorva Phalguni
+    number: 11
+    start: "13 Le 20"
+    end: "26 Le 40"
+    lord: Venus
+    deity: Aryaman
+
+  - nakshatra: Uttara Phalguni
+    number: 12
+    start: "26 Le 40"
+    end: "10 Vi 00"
+    lord: Sun
+    deity: Sun
+
+  - nakshatra: Hasta
+    number: 13
+    start: "10 Vi 00"
+    end: "23 Vi 20"
+    lord: Moon
+    deity: Viswakarma
+
+  - nakshatra: Chitra
+    number: 14
+    start: "23 Vi 20"
+    end: "06 Li 40"
+    lord: Mars
+    deity: Vaayu
+
+  - nakshatra: Swaati
+    number: 15
+    start: "06 Li 40"
+    end: "20 Li 00"
+    lord: Rahu
+    deity: Indra
+
+  - nakshatra: Visaakha
+    number: 16
+    start: "20 Li 00"
+    end: "03 Sc 20"
+    lord: Jupiter
+    deity: Mitra
+
+  - nakshatra: Anooraadha
+    number: 17
+    start: "03 Sc 20"
+    end: "16 Sc 40"
+    lord: Saturn
+    deity: Indra
+
+  - nakshatra: Jyeshtha
+    number: 18
+    start: "16 Sc 40"
+    end: "30 Sc 00"
+    lord: Mercury
+    deity: Nirriti
+
+  # --- Cycle 3: Nakshatras 19-27 ---
+  - nakshatra: Moola
+    number: 19
+    start: "00 Sg 00"
+    end: "13 Sg 20"
+    lord: Ketu
+    deity: Varuna
+
+  - nakshatra: Poorvaashaadha
+    number: 20
+    start: "13 Sg 20"
+    end: "26 Sg 40"
+    lord: Venus
+    deity: Viswadeva
+
+  - nakshatra: Uttaraashaadha
+    number: 21
+    start: "26 Sg 40"
+    end: "10 Cp 00"
+    lord: Sun
+    deity: Brahma
+
+  - nakshatra: Sravanam
+    number: 22
+    start: "10 Cp 00"
+    end: "23 Cp 20"
+    lord: Moon
+    deity: Vishnu
+
+  - nakshatra: Dhanishtha
+    number: 23
+    start: "23 Cp 20"
+    end: "06 Aq 40"
+    lord: Mars
+    deity: Vasu
+
+  - nakshatra: Satabhishak
+    number: 24
+    start: "06 Aq 40"
+    end: "20 Aq 00"
+    lord: Rahu
+    deity: Varuna
+
+  - nakshatra: Poorvaabhaadra
+    number: 25
+    start: "20 Aq 00"
+    end: "03 Pi 20"
+    lord: Jupiter
+    deity: Ajacharana
+
+  - nakshatra: Uttaraabhaadra
+    number: 26
+    start: "03 Pi 20"
+    end: "16 Pi 40"
+    lord: Saturn
+    deity: Ahirbudhanya
+
+  - nakshatra: Revati
+    number: 27
+    start: "16 Pi 40"
+    end: "30 Pi 00"
+    lord: Mercury
+    deity: Pooshan
+
+# Planet-to-nakshatras summary (each planet rules 3 nakshatras)
+planet_nakshatras:
+  Sun:     [Krittika, Uttara Phalguni, Uttaraashaadha]
+  Moon:    [Rohini, Hasta, Sravanam]
+  Mars:    [Mrigasira, Chitra, Dhanishtha]
+  Rahu:    [Aardra, Swaati, Satabhishak]
+  Jupiter: [Punarvasu, Visaakha, Poorvaabhaadra]
+  Saturn:  [Pushyami, Anooraadha, Uttaraabhaadra]
+  Mercury: [Aasresha, Jyeshtha, Revati]
+  Ketu:    [Aswini, Makha, Moola]
+  Venus:   [Bharani, Poorva Phalguni, Poorvaashaadha]
+
+# ---------------------------------------------------------------------------
+# COMPUTATION OF DASA BALANCE AT BIRTH
+# ---------------------------------------------------------------------------
+dasa_balance_at_birth:
+  description: >
+    The fraction of the first dasa remaining at birth is computed from how
+    much of the birth nakshatra Moon has yet to traverse.
+  nakshatra_length: "13 degrees 20 minutes (13d20m = 800 arc-minutes)"
+  steps:
+    - step: 1
+      action: "Find the constellation (nakshatra) occupied by Moon at birth."
+    - step: 2
+      action: "Find the advancement of Moon within that constellation."
+    - step: 3
+      action: >
+        Compute the fraction of the constellation yet to be traversed by Moon:
+        fraction = (nakshatra_length - moon_advancement) / nakshatra_length
+    - step: 4
+      action: "First dasa belongs to the lord of that constellation."
+    - step: 5
+      action: "Find the dasa sequence starting from this lord using the cyclic order in Table 38."
+    - step: 6
+      action: >
+        Multiply the full dasa length of the first planet by the fraction from step 3.
+        This gives the remaining dasa balance at birth. The rest of that planet's
+        dasa was already over before birth.
+  example:
+    birth: "2000 April 28, 5:50 AM (TZ: 4W of GMT)"
+    moon_position: "2 deg 23 min in Aquarius"
+    nakshatra: "Dhanishtha (23Cp20 to 06Aq40)"
+    moon_advancement: "9 deg 03 min"
+    fraction_remaining: "(13d20m - 9d03m) / 13d20m = 4d17m / 13d20m = 257/800 = 0.32125"
+    first_dasa_lord: "Mars (lord of Dhanishtha)"
+    mars_dasa_balance: "7 x 0.32125 = 2.24875 years = 2 years 2 months 29 days 33 ghatis"
+    note: "1 ghati = 1/60th of a day = 24 minutes"
+
+  year_definition_controversy:
+    description: >
+      What constitutes a 'year' in dasa computation is debated.
+    options:
+      - "Solar year: 365.2425 days (used by most scholars including Pt. Sanjay Rath)"
+      - "Savana year: 360 days (used by the author P.V.R. Narasimha Rao, based on his father's teaching)"
+      - "Moon traversing 360 constellations"
+      - "360 tithis (luni-solar days)"
+    book_preference: "Savana years (360 days) used in all nakshatra dasa calculations in this book"
+
+# ---------------------------------------------------------------------------
+# ANTARDASA (BHUKTI) COMPUTATION
+# ---------------------------------------------------------------------------
+antardasa_computation:
+  description: >
+    Each mahadasa is divided into 9 antardasas (sub-periods), one for each planet.
+  rules:
+    - "First antardasa within a mahadasa belongs to the same planet as the mahadasa lord."
+    - "Subsequent antardasas follow the same cyclic order as the mahadasa sequence."
+    - >
+      The total mahadasa length is distributed among the 9 antardasas in the
+      ratio of the respective mahadasa years of the planets.
+  formula: >
+    Length of antardasa of planet X in mahadasa of planet Y =
+    (dasa_years_of_Y * dasa_years_of_X) / 120
+  example:
+    mahadasa: Venus
+    mahadasa_years: 20
+    antardasa_order:
+      - planet: Venus
+        duration: "20*20/120 = 3 years 4 months"
+      - planet: Sun
+        duration: "20*6/120 = 1 year"
+      - planet: Moon
+        duration: "20*10/120 = 1 year 8 months"
+      - planet: Mars
+        duration: "20*7/120 = 1 year 2 months"
+      - planet: Rahu
+        duration: "20*18/120 = 3 years"
+      - planet: Jupiter
+        duration: "20*16/120 = 2 years 8 months"
+      - planet: Saturn
+        duration: "20*19/120 = 3 years 2 months"
+      - planet: Mercury
+        duration: "20*17/120 = 2 years 10 months"
+      - planet: Ketu
+        duration: "20*7/120 = 1 year 2 months"
+  first_dasa_note: >
+    For the first dasa at birth, do NOT divide the remainder into antardasas.
+    Instead, divide the COMPLETE duration of the first dasa into 9 antardasas.
+    Some antardasas may have already been over before birth; only the
+    remaining ones apply.
+
+# ---------------------------------------------------------------------------
+# PRATYANTARDASA COMPUTATION
+# ---------------------------------------------------------------------------
+pratyantardasa_computation:
+  description: >
+    Each antardasa is further divided into 9 pratyantardasas using the
+    same proportional method. The same procedure applies recursively for
+    sookshma dasas, prana dasas, and deha dasas.
+  formula: >
+    Length of pratyantardasa of planet Z in antardasa of planet X in
+    mahadasa of planet Y =
+    (dasa_years_of_Y * dasa_years_of_X * dasa_years_of_Z) / (120 * 120)
+  recursive_principle: >
+    The same proportional subdivision method applies at every level:
+    antardasa -> pratyantardasa -> sookshma dasa -> prana dasa -> deha dasa.
+
+# ---------------------------------------------------------------------------
+# VIMSOTTARI DASA VARIATIONS
+# ---------------------------------------------------------------------------
+dasa_variations:
+  description: >
+    The dasa can be started not only from the lord of Moon's birth nakshatra
+    but also from the lord of the 4th, 5th, or 8th nakshatra from Moon's star.
+    The fraction remaining at birth is always computed from Moon's position
+    in the birth nakshatra; only the starting planet changes.
+  variation_stars:
+    - name: "Janma star (birth star)"
+      offset_from_moon: 1
+      description: "Standard computation from the lord of Moon's own constellation."
+
+    - name: "Kshema star"
+      offset_from_moon: 4
+      description: "4th constellation from Moon's star."
+      usage: "Longevity determination (ayur dasa)"
+
+    - name: "Utpanna star"
+      offset_from_moon: 5
+      description: "5th constellation from Moon's star."
+      usage: >
+        General results (phalita dasa). Preferred if the sign containing the
+        5th star from Moon is stronger than the sign containing Moon.
+      sign_comparison_note: >
+        If the 5th star spans 2 signs, take the sign containing the same
+        quarter (pada) as occupied by Moon in the birthstar.
+
+    - name: "Adhana star"
+      offset_from_moon: 8
+      description: "8th constellation from Moon's star."
+      usage: "Longevity determination (ayur dasa)"
+
+  longevity_analysis:
+    description: >
+      For longevity determination, compare signs containing Moon's star,
+      4th star (kshema), and 8th star (adhana). Start dasa from the star
+      in the strongest of these 3 signs. A sign aspected by marakas and
+      malefics becomes stronger for longevity analysis.
+
+  dasa_from_lagna:
+    description: >
+      Some authorities recommend computing Vimsottari dasa from the
+      longitude of lagna instead of Moon. In practice, this gives better
+      results only when lagna is considerably more powerful than Moon.
+
+# ---------------------------------------------------------------------------
+# INTERPRETATION GUIDELINES
+# ---------------------------------------------------------------------------
+interpretation:
+  general_principles:
+    description: >
+      Vimsottari dasa is a very general phalita dasa that can also be used
+      as an ayur dasa. A planet gives the results promised by its positions
+      in various divisional charts during its dasa/antardasa periods.
+    examples:
+      - "Period of the 5th lord in D-7 can give a child."
+      - "Period of the 8th lord in rasi chart can give troubles and frustration."
+      - "Period of a planet exalted in GL in D-10 can give power and authority in career."
+      - "Period of an exalted planet in the 12th from AK in D-9 can give serious thoughts related to spiritual liberation."
+      - "Period of the 7th lord in D-9 can give marriage."
+      - "Period of a planet with Rahu in the 9th in D-4 can give foreign residence."
+      - "Period of an exalted planet aspecting HL from the 11th from AL in rasi chart can give a lot of wealth."
+      - "Period of a planet joined by Moon and Saturn in the 8th house in D-30 may give serious psychological problems and suicidal tendencies."
+      - "Period of a well-disposed planet aspecting A3 in D-10 may make one write books."
+    dasa_lord_as_lagna: >
+      When analyzing antardasas, the dasa lord can be taken as a temporary
+      lagna and the chart can be analyzed from that reference point.
+
+  tripod_of_life_principle:
+    source: "Rath's Tripod of Life Principle"
+    description: >
+      Sun, Moon, and lagna form the 'tripod of life'. Parasara advised
+      analyzing all charts with respect to positions of Sun, Moon, and lagna
+      (Sudarsana chakra).
+    reference_points:
+      mahadasa:
+        reference: Sun
+        reason: "Results experienced due to soul (Sun) last long and change slowly."
+        note: "Sun is the important reference point in rasi and divisional charts when judging mahadasa results."
+      antardasa:
+        reference: Moon
+        reason: "Results experienced due to mind (Moon) last shorter and change fast."
+        note: "Moon is the important reference point when judging antardasa results."
+      pratyantardasa:
+        reference: Lagna
+        reason: "Results experienced due to body (lagna) change even faster."
+        note: "Lagna is the important reference point when judging pratyantardasa results."
+    yoga_activation:
+      - "Ravi yoga (solar combination) gives results in mahadasa of the participating planet."
+      - "Chandra yoga (lunar combination) gives results in antardasa of the participating planet."
+      - "Other yogas (e.g. Raja Yoga) give results primarily in pratyantardasa of the participating planet."
+    additional: >
+      Dasa lord can also be taken as a reference point when interpreting antardasas.
+
+  house_lordship_and_placement:
+    description: >
+      A planet's functional nature is determined by its house lordship and
+      placement. Results depend on which houses the planet rules, which
+      house it occupies, and what aspects it receives or casts.
+    factors:
+      - "House lordship determines functional benefic/malefic nature."
+      - "Placement in houses (quadrants, trines, dusthanas, upachayas) modifies results."
+      - "Aspects received and given by the planet."
+      - "Conjunction with other planets."
+      - "Position relative to special lagnas (AL, GL, HL, etc.)."
+      - "Position in divisional charts (D-7, D-9, D-10, D-30, etc.)."
+
+  yogakaraka_in_dasa:
+    description: >
+      When a yogakaraka planet's dasa or antardasa runs, it should bring
+      favorable results especially related to the houses it rules and the
+      yogas it participates in.
+    example: >
+      Saturn as an exalted yogakaraka from Moon: his antardasa should
+      bring gains (Example 55 in the book).
+
+  functional_nature_effects:
+    description: >
+      Whether a planet is a functional benefic or malefic for a given lagna
+      significantly affects the results experienced during its dasa period.
+    examples:
+      - context: "Functional benefic in quadrant/trine"
+        result: "Favorable period, gains and success."
+      - context: "8th lord dasa"
+        result: "Can bring troubles and frustration."
+      - context: "Planet in upachaya from AL"
+        result: "Improvement in status."
+      - context: "Planet in 8th from AL"
+        result: "Fall in status."
+      - context: "Debilitated planet in 12th house"
+        result: "Losses, setbacks."
+
+  maraka_dasa_rules:
+    description: >
+      Rules for determining which dasa periods can cause death. Used when
+      Vimsottari dasa is applied as an ayur dasa (longevity dasa).
+    maraka_houses:
+      - house: 2
+        role: "Primary maraka (killer) house. Parasara emphasized the 2nd house as particularly a maraka."
+      - house: 7
+        role: "Secondary maraka house."
+    life_houses:
+      - house: 3
+        role: "House of life"
+      - house: 8
+        role: "House of life"
+    maraka_planets:
+      - "Lords of the 2nd and 7th houses."
+      - "Occupants of the 2nd and 7th houses."
+      - "Malefics in the 2nd house are strong marakas."
+      - "Planet owning 8th and occupying 7th is a very strong maraka."
+      - "3rd lord in 7th house is also a maraka."
+      - "Planet in mrityu bhaga (death degree) gains killing power."
+    special_roles:
+      maheswara: "The 8th lord from Atmakaraka (AK). Acts as a strong maraka."
+      rudra: "Planet joined with Maheswara also has maraka potential."
+    longevity_dasa_variation: >
+      For longevity analysis, compare signs of Moon's star, 4th star, and
+      8th star. The sign aspected by marakas and malefics is strongest.
+      Start Vimsottari dasa from the star in the strongest sign and use
+      that variation for death timing.
+    examples:
+      - name: "JFK Jr."
+        dasa: "Saturn-Mercury antardasa"
+        details: >
+          Mercury (2nd lord in mrityu bhaga in 3rd house) is strong maraka.
+          Saturn (7th lord, Maheswara as 8th lord from AK Mars, joined Rudra Jupiter)
+          is also a strong maraka. Death occurred in Saturn-Mercury AD.
+      - name: "Lady who committed suicide"
+        dasa: "Jupiter-Venus antardasa"
+        details: >
+          Jupiter is 7th lord (exalted, very strong maraka). Venus is 2nd lord
+          in 2nd house. Dasa started from 4th star (kshema) because the sign of
+          the 4th star was strongest (aspected by both marakas Jupiter and Venus).
+      - name: "Dr. B.V. Raman"
+        dasa: "Mercury-Rahu antardasa (from 8th star variation)"
+        details: >
+          Mercury owns 8th and occupies 7th (strongest maraka). Rahu in 2nd
+          house is also a maraka. Using the 8th star (adhana) variation, Mercury-Rahu
+          AD was running at death in December 1998.
+
+# ---------------------------------------------------------------------------
+# SPECIAL NOTES AND CAVEATS
+# ---------------------------------------------------------------------------
+special_notes:
+  kendradi_graha_dasa: >
+    If all the quadrants from the stronger of lagna and Moon are occupied
+    by planets, 'Kendradi Graha Dasa' is more appropriate than Vimsottari
+    dasa. Results from Vimsottari dasa may not be very good in such cases.
+
+  birthtime_error_sensitivity:
+    formula: "Error in dasa dates (days) = approximately (m * n) / 4"
+    variables:
+      m: "Error in birthtime (minutes)"
+      n: "Complete duration of the first dasa (years)"
+    example: "If first dasa is Venus (n=20), an error of 5 minutes in birthtime results in approximately 5*20/4 = 25 days error in dasa dates."
+    implication: >
+      Low-level sub-periods like sookshma dasas cannot be used confidently
+      unless the birthtime is rectified. It is a good idea to allow a margin
+      of error when examining dasa start/end dates.
+
+  divisional_chart_usage:
+    description: >
+      Each planet gives results indicated by its placement in divisional charts.
+      The relevant divisional chart depends on the area of life being examined.
+    chart_applications:
+      D-7: "Progeny (children)"
+      D-9: "Marriage, dharma, spiritual liberation"
+      D-10: "Career, achievements in society (dasamsa)"
+      D-30: "Psychological issues, misfortunes"
+      D-4: "Property, residence (foreign or domestic)"
+      Rasi: "General life events, status, health"
+
+  pratyantardasa_significance: >
+    The pratyantardasa running at the time of an event usually belongs to the
+    most important planet influencing the house of interest in the divisional
+    chart of interest.

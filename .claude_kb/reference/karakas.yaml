@@ -1,0 +1,388 @@
+# Karakas - Significators in Vedic Astrology
+# Source: "Vedic Astrology: An Integrated Approach" by P.V.R. Narasimha Rao
+# Chapter 8: Karakas (Book pages 66-75, PDF pages 76-85)
+
+source:
+  book: "Vedic Astrology: An Integrated Approach"
+  author: "P.V.R. Narasimha Rao"
+  chapter: 8
+  chapter_title: "Karakas"
+  book_pages: "66-75"
+  pdf_pages: "76-85"
+
+overview:
+  definition: >
+    Karaka means "one who causes". Karaka of a matter is the significator of
+    that matter -- the one who causes events related to it.
+  types:
+    - name: Naisargika Karakas
+      translation: Natural significators
+      count: 9
+      description: >
+        Include Rahu, Ketu, and the seven planets. Presided by Brahma.
+        Show everything that exists in Brahma's creation. Very useful in
+        phalita jyotish (general results analysis). Show various impersonal
+        things and matters, not just human beings.
+    - name: Chara Karakas
+      translation: Variable significators
+      count: 8
+      description: >
+        Include Rahu and the seven planets (not Ketu, as Ketu stands for
+        moksha/emancipation). Presided by Vishnu. Show people who play a
+        role in one's life -- mother, father, wife, advisors, etc. Very
+        useful in Raja Yogas and spiritual progress. Show how karma
+        (cumulative sum of actions) is carried from one life to another.
+    - name: Sthira Karakas
+      translation: Fixed significators
+      count: 7
+      description: >
+        Include only 7 planets (those with physical bodies). Presided by
+        Shiva. As Shiva presides over death, they show the destruction of
+        body. Useful in timing the death of various near relatives.
+  important_note: >
+    One should not mix the three types. Karakas of each type have a specific
+    purpose. Understand the distinction between chara, sthira, and naisargika
+    karakas clearly and use them accordingly.
+
+# ---------------------------------------------------------------------------
+# Section 8.2: Chara Karakas (Variable Significators)
+# Book page 67, Table 13
+# ---------------------------------------------------------------------------
+chara_karakas:
+  page_ref:
+    book: 67
+    pdf: 77
+    table: "Table 13: Chara karakas"
+
+  determination_procedure:
+    step_1: >
+      Take the eight planets: Sun, Moon, Mars, Mercury, Jupiter, Venus,
+      Saturn, and Rahu. For each planet, find its advancement (longitude
+      traversed) from the beginning of the rasi (sign) it occupies.
+      SPECIAL RULE FOR RAHU: Measure advancement from the END of his rasi
+      (i.e., 30 degrees minus Rahu's longitude within the sign).
+    step_2: >
+      Arrange the planets in decreasing order of advancement.
+    step_3: >
+      The planet with the highest advancement is Atma Karaka (AK).
+      Assign the remaining karakas in decreasing order per Table 13.
+
+  tie_breaking_rules:
+    same_degrees: "Compare minutes."
+    same_minutes: "Compare seconds."
+    exact_same_longitude: >
+      Both planets hold the same karakatwa (signification) jointly and
+      the next karakatwa has no ruler. Use the corresponding sthira karaka
+      in that case. However, this rarely becomes necessary as two planets
+      are rarely at exactly the same longitude.
+
+  # Table 13: Chara Karakas
+  list:
+    - order: 1
+      advancement: highest
+      karaka: Atma Karaka
+      symbol: AK
+      persons_shown: Self
+      description: >
+        Represents the self of the native. AK throws light on the inner
+        self. Can show a spiritually advanced person, a saint, a
+        revolutionary, or an outcast.
+
+    - order: 2
+      karaka: Amatya Karaka
+      symbol: AmK
+      persons_shown: Ministers (advisors, counsellors)
+      description: >
+        Shows people who give advice. PK (AmK) can also show subordinates,
+        followers, or a boss.
+
+    - order: 3
+      karaka: Bhratri Karaka
+      symbol: BK
+      persons_shown: Siblings
+
+    - order: 4
+      karaka: Matri Karaka
+      symbol: MK
+      persons_shown: Mother
+
+    - order: 5
+      advancement: lowest
+      karaka: Pitri Karaka
+      symbol: PiK
+      persons_shown: Father
+
+    - order: 6
+      karaka: Putra Karaka
+      symbol: PK
+      persons_shown: Children
+
+    - order: 7
+      karaka: Jnaati Karaka
+      symbol: "GK (JK)"
+      persons_shown: Rivals (paternal cousins)
+      notes: >
+        Commonly used for enemies or rivals, but the literal meaning of
+        "jnaati" is "paternal cousin". The symbol "jn" uses the voiced
+        palatal consonant 'j' and the palatal nasal 'n'. Some approximate
+        it as "gnaati" or "gyaati".
+
+    - order: 8
+      karaka: Dara Karaka
+      symbol: DK
+      persons_shown: Spouse
+
+  rahu_special_rule: >
+    For Rahu, the advancement is measured from the END of the rasi, not the
+    beginning. This is because Rahu moves in retrograde motion. The formula
+    is: advancement = 30 degrees - (Rahu's longitude within the sign).
+
+  # Example 28 from book (page 67-68)
+  example_28:
+    page_ref:
+      book: "67-68"
+      pdf: "77-78"
+      table: "Table 14: Chara karakas in Example 28"
+    planetary_positions:
+      Sun: "12Ge47"
+      Moon: "20Ar28"
+      Mars: "13Ge51"
+      Mercury: "25Ge18"
+      Jupiter: "5Ta40"
+      Venus: "17Ge21"
+      Saturn: "2Ta28"
+      Rahu: "1Cn43"
+    advancements_in_rasi:
+      - planet: Rahu
+        advancement: "30 - 1d43m = 28d17m"
+        order: 1
+        karaka: AK
+      - planet: Mercury
+        advancement: "25d18m"
+        order: 2
+        karaka: AmK
+      - planet: Moon
+        advancement: "20d28m"
+        order: 3
+        karaka: BK
+      - planet: Venus
+        advancement: "17d21m"
+        order: 4
+        karaka: MK
+      - planet: Mars
+        advancement: "13d51m"
+        order: 5
+        karaka: PiK
+      - planet: Sun
+        advancement: "12d47m"
+        order: 6
+        karaka: PK
+      - planet: Jupiter
+        advancement: "5d40m"
+        order: 7
+        karaka: "GK (JK)"
+      - planet: Venus
+        advancement: "2d28m"
+        order: 8
+        karaka: DK
+    interpretation: >
+      Rahu is AK. Rahu represents the self of the native for the purpose
+      of raja yogas, analysis of sustenance, achievements, and spiritual
+      evolution. AK throws light on the inner self. Rahu as AK can show a
+      spiritually advanced person or a saint on one hand and a revolutionary
+      or an outcast on the other. Mercury as AmK shows intellectuals, orators,
+      journalists, good communicators, people who can move with anyone, people
+      who are liked by everyone, and fickle-minded people.
+
+  usage_notes:
+    raja_yogas: "Chara karakas are very useful in Raja Yogas."
+    spiritual_progress: "Used for analyzing spiritual progress."
+    karma: "Show how karma is carried from one life to another."
+    spouse: >
+      We do not take the 7th from DK for spouse; DK himself shows spouse.
+
+# ---------------------------------------------------------------------------
+# Section 8.3: Sthira Karakas (Fixed Significators)
+# Book page 68-69
+# ---------------------------------------------------------------------------
+sthira_karakas:
+  page_ref:
+    book: "68-69"
+    pdf: "78-79"
+
+  presiding_deity: Shiva
+  purpose: >
+    Used in timing the death of various near relatives. They represent the
+    physical bodies of the relatives. Should not be used in general
+    predictive astrology in place of naisargika karakas.
+
+  list:
+    - planets: "Sun or Venus (stronger)"
+      signifies: Father
+      notes: >
+        Some opine that Sun is the fixed significator for father in daytime
+        births and Venus for nighttime births. Similarly, Moon for mother in
+        nighttime births and Mars for daytime births.
+
+    - planet: "Moon or Mars (stronger)"
+      signifies: Mother
+
+    - planet: Mars
+      signifies: "Younger siblings, brother-in-law, sister-in-law (spouses of siblings)"
+
+    - planet: Mercury
+      signifies: "Maternal relatives (uncles and aunts)"
+
+    - planet: Jupiter
+      signifies: "Husband, sons, paternal grandparents, and other paternal relatives (uncles and aunts)"
+      notes: >
+        Some scholars take Jupiter as the sthira karaka of spouse in male
+        charts also.
+
+    - planet: Venus
+      signifies: "Wife, father-in-law, mother-in-law, and maternal grandparents"
+
+    - planet: Saturn
+      signifies: Elder siblings
+      notes: "Some scholars give Saturn as the sthira karaka for children instead of elder siblings."
+
+  important_rules:
+    death_timing: >
+      When predicting the death of spouse, use Jupiter in female charts and
+      Venus in male charts.
+    physical_body: >
+      Sthira karakas themselves represent the physical bodies of the relatives.
+      In the case of naisargika karakas, we must take the relevant house from
+      the karaka. For example, Jupiter represents the physical body of husband
+      in a female chart for purpose of timing death. For timing marriage, the
+      7th from Venus (not Venus himself) shows husband.
+    vs_naisargika: >
+      Some astrologers use the 7th from Jupiter instead of the 7th from Venus
+      to predict marriage. However, Venus is the natural significator of
+      marriage and the 7th from Venus should be used for predicting marriage
+      in both male and female charts.
+
+# ---------------------------------------------------------------------------
+# Section 8.4: Naisargika Karakas (Natural Significators)
+# Book page 70-71, Tables 15 and 16
+# ---------------------------------------------------------------------------
+naisargika_karakas:
+  page_ref:
+    book: "70-71"
+    pdf: "80-81"
+    tables:
+      - "Table 15: Primary Naisargika Karakas"
+      - "Table 16: List of Naisargika Karakatwas"
+
+  presiding_deity: Brahma
+  purpose: >
+    Natural significators of various matters. Used in general phalita
+    jyotish (predictive astrology). For example, the 4th house from Moon
+    shows mother. The 5th house from Jupiter shows sons.
+
+  usage_example: >
+    If we want to analyze the birth of children or analyze some simple events
+    from their lives, we should take the 5th from Jupiter. If we want to
+    analyze some children-related troubles that punish one's soul or if we
+    want to analyze some achievements and happiness related to children, they
+    will be more closely related to PK (putra karaka of chara karakas). If
+    we want to time the death of a child, sthira karaka for children (Jupiter)
+    should be used.
+
+  # Table 15: Primary Naisargika Karakas (one planet per house)
+  primary_by_house:
+    - house: 1
+      planet: Sun
+      matters: "Self, physical constitution, soul, health"
+
+    - house: 2
+      planet: Jupiter
+      matters: "Family, wealth"
+
+    - house: 3
+      planet: Mars
+      matters: "Younger siblings, courage"
+
+    - house: 4
+      planet: Moon
+      matters: Mother
+
+    - house: 5
+      planet: Jupiter
+      matters: Children
+
+    - house: 6
+      planet: Mars
+      matters: Enemies
+
+    - house: 7
+      planet: Venus
+      matters: "Wife, husband, marital bliss, relationships"
+
+    - house: 8
+      planet: Saturn
+      matters: "Longevity, troubles"
+
+    - house: 9
+      planet: Jupiter
+      matters: "Teacher, religion, fortune"
+
+    - house: 10
+      planet: Mercury
+      matters: "Work, achievements, honors"
+
+    - house: 11
+      planet: Jupiter
+      matters: Elder siblings
+
+    - house: 12
+      planet: Saturn
+      matters: Losses
+
+  # Table 16: Extended list of naisargika karakatwas (matters + associated houses)
+  extended_by_planet:
+    - planet: Sun
+      matters_and_houses: >
+        Self, soul, constitution, health (1st); fame, power (5th); father,
+        boss (9th); career, achievements (10th)
+
+    - planet: Moon
+      matters_and_houses: >
+        Mind (1st); mother, peace of mind (4th); friends (11th)
+
+    - planet: Mars
+      matters_and_houses: >
+        Courage, younger siblings (3rd); real estate (4th); scholarship in
+        Nyaya sastra, speculation (5th); enemies, diseases, accidents,
+        loans (6th)
+
+    - planet: Mercury
+      matters_and_houses: >
+        Speech (2nd); learning (4th); memory, scholarship, students (5th);
+        work, achievements, honors (10th); credits (11th)
+
+    - planet: Jupiter
+      matters_and_houses: >
+        Family, wealth (2nd); traditional learning (4th); children,
+        intelligence (5th); teacher, religion, fortune (9th); elder
+        brother, gains (11th)
+
+    - planet: Venus
+      matters_and_houses: >
+        Vehicles (4th); wife, husband, marital bliss (7th); bed
+        pleasures (12th)
+
+    - planet: Saturn
+      matters_and_houses: >
+        Following (5th); servants (6th); longevity, troubles (8th);
+        losses, hospitalization (12th)
+
+    - planet: Rahu
+      matters_and_houses: >
+        Accidents (6th); occult knowledge (8th); pilgrimages, going
+        abroad (9th)
+
+    - planet: Ketu
+      matters_and_houses: >
+        Occult knowledge (8th); pilgrimages, going abroad (9th);
+        moksha (12th)

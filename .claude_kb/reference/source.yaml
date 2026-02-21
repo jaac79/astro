@@ -1,0 +1,90 @@
+title: "Vedic Astrology: An Integrated Approach"
+author: "P.V.R. Narasimha Rao"
+publisher: "Sagar Publications"
+publisher_address: "72 Janpath, Ved Mansion, New Delhi 110001"
+first_published: 2001
+reprinted: 2004
+isbn: null  # not listed in the edition scanned
+
+author_background: |
+  B.Tech in Electrical & Electronics Engineering from IIT Madras (1987-1991).
+  Masters from Rice University, Houston, USA (1991-1993).
+  Software engineer near Boston, USA.
+  Two Sanskrit diplomas: Sansh-ita Bhaashaa Kovida (Bharatiya Vidya Bhavan, age 10)
+  and Sanskrita Bhaashaa Visaarada (Baroda, age 11, with distinction).
+  Designated Jyotish Guru at Sri Jagannath Vedic Centre.
+
+dedication:
+  - "Sri P. Venkata Subrahmanyachalapathi Rao (father and first guru)"
+  - "Dr. B.V. Raman (immortal author)"
+  - "Pt. Sanjay Rath (guru, founder of Sri Jagannath Vedic Centre)"
+
+approach: |
+  Integrated approach combining Parasara and Jaimini traditions.
+  De-emphasizes the incorrect "Parasari vs Jaimini" distinction.
+  All concepts (arudha padas, argalas, chara karakas, rasi dasas)
+  were taught by Sage Parasara in Brihat Parasara Hora Sastram.
+
+companion_software: "Jagannatha Hora Lite (free, www.sjvc.net)"
+
+structure:
+  parts:
+    - name: "Part 1: Chart Analysis"
+      chapters: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+      page_range: "1-178"
+    - name: "Part 2: Dasa Analysis"
+      chapters: [16, 17, 18, 19, 20, 21, 22, 23, 24]
+      page_range: "179-272"
+    - name: "Part 3: Transit Analysis"
+      chapters: [25, 26]
+      page_range: "273-322"
+    - name: "Part 4: Tajaka Analysis"
+      chapters: [27, 28, 29, 30, 31]
+      page_range: "323-366"
+    - name: "Part 5: Special Topics"
+      chapters: [32, 33, 34, 35, 36, 37]
+      page_range: "367-422"
+    - name: "Part 6: Real-life Examples"
+      chapters: []
+      page_range: "423+"
+
+pdf_page_offset: 10  # PDF page = book page + 10
+
+chapters:
+  1: { title: "Basic Concepts", page: 3 }
+  2: { title: "Rasis", page: 19 }
+  3: { title: "Planets", page: 24 }
+  4: { title: "Upagrahas", page: 34 }
+  5: { title: "Special Lagnas", page: 38 }
+  6: { title: "Divisional Charts", page: 43 }
+  7: { title: "Houses", page: 56 }
+  8: { title: "Karakas", page: 66 }
+  9: { title: "Arudha Padas", page: 72 }
+  10: { title: "Aspects and Argalas", page: 85 }
+  11: { title: "Yogas", page: 96 }
+  12: { title: "Ashtakavarga", page: 123 }
+  13: { title: "Interpreting Charts", page: 142 }
+  14: { title: "Topics Related to Longevity", page: 155 }
+  15: { title: "Strength of Planets and Rasis", page: 161 }
+  16: { title: "Vimsottari Dasa", page: 181 }
+  17: { title: "Ashtottari Dasa", page: 195 }
+  18: { title: "Narayana Dasa", page: 200 }
+  19: { title: "Lagna Kendradi Rasi Dasa", page: 226 }
+  20: { title: "Sudasa", page: 230 }
+  21: { title: "Drigdasa", page: 234 }
+  22: { title: "Niryaana Shoola Dasa", page: 239 }
+  23: { title: "Shoola Dasa", page: 246 }
+  24: { title: "Kalachakra Dasa", page: 253 }
+  25: { title: "Transits and Natal References", page: 275 }
+  26: { title: "Transits: Miscellaneous Topics", page: 306 }
+  27: { title: "Tajaka Chart Basics", page: 325 }
+  28: { title: "Techniques of Tajaka Charts", page: 331 }
+  29: { title: "Tajaka Yogas", page: 342 }
+  30: { title: "Annual Dasas", page: 350 }
+  31: { title: "Sudarsana Chakra Dasa", page: 360 }
+  32: { title: "Impact of Birthtime Error", page: 369 }
+  33: { title: "Rational Thinking", page: 386 }
+  34: { title: "Remedial Measures", page: 394 }
+  35: { title: "Mundane Astrology", page: 402 }
+  36: { title: "Muhurta or Electional Astrology", page: 412 }
+  37: { title: "Ethical Behavior of a Jyotishi", page: 421 }

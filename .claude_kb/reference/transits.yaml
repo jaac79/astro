@@ -1,0 +1,1032 @@
+# =============================================================================
+# Vedic Astrology: An Integrated Approach
+# Chapters 25-26: Transit Analysis
+# Source: P.V.R. Narasimha Rao
+# Book Pages: 275-322 (PDF Pages: 280-328)
+# =============================================================================
+
+source:
+  book: "Vedic Astrology: An Integrated Approach"
+  author: "P.V.R. Narasimha Rao"
+  chapters: [25, 26]
+  chapter_titles:
+    25: "Transits and Natal References"
+    26: "Transits: Miscellaneous Topics"
+  book_pages: "275-322"
+  pdf_pages: "280-328"
+  part: "Part 3: Transit Analysis"
+
+# =============================================================================
+# CHAPTER 25: TRANSITS AND NATAL REFERENCES
+# =============================================================================
+
+chapter_25:
+  title: "Transits and Natal References"
+
+  # ---------------------------------------------------------------------------
+  # 25.1 Introduction
+  # ---------------------------------------------------------------------------
+  introduction:
+    definitions:
+      transit: >
+        By transits or gochaara, we mean the motion of planets in the skies.
+        The transit or chaara or gochaara position of a planet is the position
+        occupied by a planet at a given time.
+      natal: >
+        The natal or radical or birth or janma position of a planet is the
+        position occupied by a planet at the time of one's birth.
+    principle: >
+      By correlating the transit positions on a given day with the natal
+      positions of several reference points, we can draw conclusions about
+      the nature of results experienced by the native then.
+
+  # ---------------------------------------------------------------------------
+  # 25.2 Transits from Moon (Janma Rasi)
+  # ---------------------------------------------------------------------------
+  transits_from_moon:
+    description: >
+      The most popular natal reference in transit analysis is Moon. Moon is
+      the significator of mind. Analysis of planetary positions with respect
+      to Moon shows the mental state. The rasi occupied by Moon in the natal
+      chart is called janma rasi. The transit of Vimsottari dasa lord is
+      particularly important.
+    note: >
+      These results are given only for reference. In reality, not everyone
+      with the same janma rasi experiences the same results on a given day.
+      The results given by planets depend on what they stand for in the
+      natal chart. For example, if Mars is the 5th lord, worries during his
+      8th house transit may pertain to children. If Mars is the 10th lord,
+      they may pertain to career.
+
+    # Table 53: Sun's Transit from Janma Rasi
+    sun_transit:
+      table_number: 53
+      title: "Sun's Transit from Janma Rasi"
+      results:
+        1st:  { snapshot: "Bad",  result: "Financial loss, many travels, discomfort" }
+        2nd:  { snapshot: "Bad",  result: "Unhappiness, eye troubles, fear" }
+        3rd:  { snapshot: "Good", result: "Wealth, good health, victory" }
+        4th:  { snapshot: "Bad",  result: "Marital disharmony, loss of name" }
+        5th:  { snapshot: "Bad",  result: "Bad health, fear from enemies" }
+        6th:  { snapshot: "Good", result: "Success over enemies, good health" }
+        7th:  { snapshot: "Bad",  result: "Travels, physical pain" }
+        8th:  { snapshot: "Bad",  result: "Disease, setbacks in marriage" }
+        9th:  { snapshot: "Bad",  result: "Mental worries, obstacles" }
+        10th: { snapshot: "Good", result: "Success, honors, gains" }
+        11th: { snapshot: "Good", result: "Good health, prosperity, honors" }
+        12th: { snapshot: "Bad",  result: "Expenditure, losses" }
+
+    # Table 54: Moon's Transit from Janma Rasi
+    moon_transit:
+      table_number: 54
+      title: "Moon's Transit from Janma Rasi"
+      results:
+        1st:  { snapshot: "Good", result: "Comfort, good spirits" }
+        2nd:  { snapshot: "Bad",  result: "Obstacles, losses" }
+        3rd:  { snapshot: "Good", result: "Gains, happiness" }
+        4th:  { snapshot: "Bad",  result: "Lack of peace of mind, distrust" }
+        5th:  { snapshot: "Bad",  result: "Failures, disappointments, sadness" }
+        6th:  { snapshot: "Good", result: "Happiness, health, wealth" }
+        7th:  { snapshot: "Good", result: "Respect, gains" }
+        8th:  { snapshot: "Bad",  result: "Losses, tension, worries" }
+        9th:  { snapshot: "Bad",  result: "Mental uneasiness" }
+        10th: { snapshot: "Good", result: "Success, gains, authority" }
+        11th: { snapshot: "Good", result: "Prosperity, comforts, gains" }
+        12th: { snapshot: "Bad",  result: "Injuries, expenditure, sadness" }
+
+    # Table 55: Mars's Transit from Janma Rasi
+    mars_transit:
+      table_number: 55
+      title: "Mars's Transit from Janma Rasi"
+      results:
+        1st:  { snapshot: "Bad",  result: "Troubles, bodily afflictions" }
+        2nd:  { snapshot: "Bad",  result: "Accidents, losses, thefts, quarrels" }
+        3rd:  { snapshot: "Good", result: "Gains, power, wealth" }
+        4th:  { snapshot: "Bad",  result: "Stomach problems, fevers, bad health" }
+        5th:  { snapshot: "Bad",  result: "Troubles from enemies, trouble with children" }
+        6th:  { snapshot: "Good", result: "Success over enemies, wealth, success, well-being" }
+        7th:  { snapshot: "Bad",  result: "Quarrels, marital troubles, eye problems" }
+        8th:  { snapshot: "Bad",  result: "Worries, accidents, bad name, losses" }
+        9th:  { snapshot: "Bad",  result: "Losses, insults, illness" }
+        10th: { snapshot: "Bad",  result: "Change of place, unexpected wealth" }
+        11th: { snapshot: "Good", result: "Authority, gains, good name" }
+        12th: { snapshot: "Bad",  result: "Expenses, quarrels with wife, diseases" }
+
+    # Table 56: Mercury's Transit from Janma Rasi
+    mercury_transit:
+      table_number: 56
+      title: "Mercury's Transit from Janma Rasi"
+      results:
+        1st:  { snapshot: "Bad",  result: "Quarrels, imprisonment, losses, poor advice" }
+        2nd:  { snapshot: "Good", result: "Success, wealth, gains" }
+        3rd:  { snapshot: "Bad",  result: "Wandering, losses, trouble from authorities" }
+        4th:  { snapshot: "Good", result: "Prosperity in family, gains" }
+        5th:  { snapshot: "Bad",  result: "Quarrels with wife and children, suffering" }
+        6th:  { snapshot: "Good", result: "Renown, success, ornaments" }
+        7th:  { snapshot: "Bad",  result: "Quarrels, mental discomfort, addictions" }
+        8th:  { snapshot: "Good", result: "Childbirth, happiness, gains, success" }
+        9th:  { snapshot: "Bad",  result: "Mental worries, obstacles" }
+        10th: { snapshot: "Good", result: "Money, happiness, domestic harmony, success" }
+        11th: { snapshot: "Good", result: "Childbirth, happiness, wealth" }
+        12th: { snapshot: "Bad",  result: "Disease, domestic disharmony, disease, losses" }
+
+    # Table 57: Jupiter's Transit from Janma Rasi
+    jupiter_transit:
+      table_number: 57
+      title: "Jupiter's Transit from Janma Rasi"
+      results:
+        1st:  { snapshot: "Bad",  result: "Loss of money and intelligence, wandering" }
+        2nd:  { snapshot: "Good", result: "Happiness, domestic harmony, success" }
+        3rd:  { snapshot: "Bad",  result: "Obstacles, loss of position, travels" }
+        4th:  { snapshot: "Bad",  result: "Troubles, defeat, losses" }
+        5th:  { snapshot: "Good", result: "Childbirth, intelligence, prosperity, wealth" }
+        6th:  { snapshot: "Bad",  result: "Mental uneasiness, enemies, worries" }
+        7th:  { snapshot: "Good", result: "Health, happiness, erotic pleasures, sense of well-being" }
+        8th:  { snapshot: "Bad",  result: "Disease, imprisonment, illness, grief" }
+        9th:  { snapshot: "Good", result: "Success, wealth, childbirth, religiousness" }
+        10th: { snapshot: "Bad",  result: "Loss of position and money, ill-health, wandering" }
+        11th: { snapshot: "Good", result: "Recovery of health and position, happiness" }
+        12th: { snapshot: "Bad",  result: "Fall from grace, misconduct, grief" }
+
+    # Table 58: Venus's Transit from Janma Rasi
+    venus_transit:
+      table_number: 58
+      title: "Venus's Transit from Janma Rasi"
+      results:
+        1st:  { snapshot: "Good", result: "Comforts, pleasures, happiness, good spirits" }
+        2nd:  { snapshot: "Good", result: "Money, fortune, erotic pleasures, childbirth" }
+        3rd:  { snapshot: "Good", result: "Respect, wealth, good spirits" }
+        4th:  { snapshot: "Good", result: "Prosperity, success of enemies, comforts" }
+        5th:  { snapshot: "Good", result: "Fame, power, good name" }
+        6th:  { snapshot: "Bad",  result: "Loss of fame, bad name, quarrels" }
+        7th:  { snapshot: "Bad",  result: "Humiliation, disease, troubles" }
+        8th:  { snapshot: "Bad",  result: "Fears, mental worries, injuries, troubles from women" }
+        9th:  { snapshot: "Good", result: "Fortune, luxuries, marital happiness" }
+        10th: { snapshot: "Bad",  result: "Virtuous acts, troubles, unpleasant events, disgrace" }
+        11th: { snapshot: "Good", result: "Gains, happiness, prosperity, comforts" }
+        12th: { snapshot: "Bad",  result: "New friends, money, pleasures, gains" }
+
+    # Table 59: Saturn's Transit from Janma Rasi
+    saturn_transit:
+      table_number: 59
+      title: "Saturn's Transit from Janma Rasi"
+      results:
+        1st:  { snapshot: "Bad",  result: "Fear of incarceration, worries, foreign trips" }
+        2nd:  { snapshot: "Bad",  result: "Physical weakness, discomfort, wealth, unhappiness" }
+        3rd:  { snapshot: "Good", result: "Wealth, health, happiness, all-round success" }
+        4th:  { snapshot: "Bad",  result: "Stomach problems, wickedness, separation from family" }
+        5th:  { snapshot: "Bad",  result: "Separation from children, uneasiness, quarrels" }
+        6th:  { snapshot: "Good", result: "Freedom from disease and enemies, success" }
+        7th:  { snapshot: "Bad",  result: "Wandering, quarrels with spouse, trouble from authorities" }
+        8th:  { snapshot: "Bad",  result: "Suffering, loss of status and balance, imprisonment" }
+        9th:  { snapshot: "Bad",  result: "Diseases, suffering, loss of status" }
+        10th: { snapshot: "Bad",  result: "Loss of money, bad name, changes in career, laziness" }
+        11th: { snapshot: "Good", result: "Wealth, success, gains" }
+        12th: { snapshot: "Bad",  result: "Grief, misery, losses, ill-health, frustration" }
+
+    rahu_ketu_note: >
+      Rahu's behavior is similar to that of Saturn's and Ketu's behavior
+      to Mars's.
+
+    # Summary of auspicious transit houses from janma rasi
+    auspicious_houses_summary:
+      Sun:     [3, 6, 10, 11]
+      Moon:    [1, 3, 6, 7, 10, 11]
+      Mars:    [3, 6, 11]
+      Mercury: [2, 4, 6, 8, 10, 11]
+      Jupiter: [2, 5, 7, 9, 11]
+      Venus:   [1, 2, 3, 4, 5, 9, 11, 12]
+      Saturn:  [3, 6, 11]
+
+  # ---------------------------------------------------------------------------
+  # 25.3 Other Natal References
+  # ---------------------------------------------------------------------------
+  other_natal_references:
+    lagna:
+      description: >
+        Lagna is the hub of vitality and one's personality in a chart.
+        Using ashtakavarga tables, we can decipher whether the transit
+        of a planet in a house from lagna is favorable or not. A planet
+        occupying or aspecting a rasi in transit influences the matters
+        signified by the houses and planets stationed in that rasi in
+        the natal chart.
+      examples:
+        - "Jupiter transiting in Ta may give marriage to someone born in Sc lagna (Ta is 7th from Sc)"
+        - "Saturn transiting in Ar may give relationship problems for someone born in Li lagna (Ar is 7th from Li)"
+
+    paaka_lagna:
+      description: >
+        Paaka lagna explicitly stands for the physical self. A malefic
+        planet transiting in paaka lagna may give bodily complaints.
+
+    arudha_padas:
+      description: >
+        Planets occupying or aspecting arudha padas in transit may give
+        relevant results.
+      examples:
+        - "Saturn's transit in A10 can be bad for career"
+        - "Jupiter's transit in A9 is good for fortune"
+
+    sahams:
+      description: >
+        Sahams are significant points in the zodiac useful in transit analysis.
+      examples:
+        - "When the 7th lord or Venus transits close to vivaha saham, one may get married"
+        - "When the 6th lord or 8th lord or Mars or Rahu transits close to kali saham, one may have an accident"
+
+    transit_aspects:
+      description: >
+        We should look at the aspects cast by transiting planets on the
+        rasis containing natal houses and natal planets. Jupiter transiting
+        in Vi aspects Ta (via rasi aspect). So Jupiter can influence the
+        7th house of someone with Sc lagna during his Vi transit also.
+
+    general_principle: >
+      A planet occupying or aspecting a rasi in transit influences the
+      matters signified by the houses and planets stationed in that rasi
+      in the natal chart. The exact nature of influence depends on the
+      planet's inherent nature and the matters it stands for in the natal chart.
+
+    malefic_transit_effects:
+      janma_rasi: "Mental worries"
+      natal_lagna: "Affects vitality, creates obstacles in efforts"
+      paaka_lagna: "Bodily complaints"
+
+  # ---------------------------------------------------------------------------
+  # 25.4 Transits and Divisional Charts
+  # ---------------------------------------------------------------------------
+  transits_and_divisional_charts:
+    description: >
+      This approach correlates transit positions in divisional charts with
+      natal positions. The author notes this is based on his own researches
+      and is related to the tradition of Bhrigu transits, which correlate
+      transit positions in navamsa chart with natal positions in rasi chart.
+
+    key_principle: >
+      We do not have different zodiacs for different divisional charts.
+      All the divisional charts use the same zodiac. So Cancer in natal
+      navamsa chart and Cancer in transit rasi chart are one and the same.
+      If Jupiter transiting in Cancer can influence the house and planets
+      stationed in Cancer in rasi chart, he should be able to influence
+      the house and planets stationed in Cancer in navamsa chart too.
+
+    two_important_interactions:
+      interaction_1:
+        description: "Natal divisional chart + Transit rasi chart"
+        shows: >
+          How innate potential in a particular area of life is influenced
+          at a given time to result in action at the physical level.
+          Helps in coarse timing of events.
+      interaction_2:
+        description: "Natal rasi chart + Transit divisional chart"
+        shows: >
+          How the potential at the physical level is transformed into
+          an event in a particular area of life. Helps in fine-tuning
+          the timing of events.
+
+    divisional_chart_applications:
+      D-7: "Children and happiness from them - 5th house shows children"
+      D-9: "Marriage - 7th house and 9th lord (dharma)"
+      D-10: "Career and profession"
+      D-11: "Death and destruction (Rudramsa)"
+      D-4: "Residence and fortune (property)"
+      D-24: "Knowledge and learning"
+      D-12: "Parents"
+
+    examples:
+      - number: 105
+        description: >
+          Wedding timing: In natal navamsa, Pi contains 7th house. At wedding,
+          Venus (significator of marriage and 9th lord in navamsa) occupied Aq,
+          which is 7th lord Jupiter's natal navamsa position. Jupiter was in
+          own sign Pi in transit (the 7th house in natal navamsa).
+      - number: 106
+        description: >
+          Child birth: In natal D-7, 5th house is Vi with Jupiter and Mercury.
+          At time of child-birth, both Jupiter and Mercury were in Vi in transit
+          rasi chart, activating the 5th house of D-7.
+      - number: 107
+        description: >
+          Death of JFK Jr: D-11 (Rudramsa) shows death and destruction.
+          Planets of life (Mercury, Sun) in transit occupied 2nd house (death)
+          in natal D-11. Saturn debilitated. Houses and planets of life in
+          D-11 afflicted or weak in transit rasi chart.
+
+  # ---------------------------------------------------------------------------
+  # 25.5 Transits and Ashtakavarga
+  # ---------------------------------------------------------------------------
+  transits_and_ashtakavarga:
+    description: >
+      The most important purpose of ashtakavarga is the interpretation of
+      transits. We look at the houses occupied by a transit planet with
+      respect to all eight references used in ashtakavarga.
+
+    bav_transit_rules:
+      favorable: "If a planet has 5 or more rekhas in its transit rasi in its BAV, it produces good results"
+      unfavorable: "If a planet has 3 or less rekhas in its transit rasi in its BAV, it produces bad results"
+      excellent: "A planet with 6 or 7 rekhas invariably brings excellent results"
+      very_poor: "A planet with 1 or 0 rekhas invariably brings very poor results"
+
+    divisional_chart_extension: >
+      The same logic can be extended to divisional charts. If Jupiter has
+      8 rekhas in Ar in natal D-10 chart, then his transit in Aries in
+      rasi chart invariably brings excellent results in career.
+
+    # 25.5.1 Samudaaya Ashtakavarga
+    samudaaya_ashtakavarga:
+      section: "25.5.1"
+      description: >
+        In addition to individual BAVs, we should look at the natal SAV.
+        SAV will dominate over individual BAVs if it has too many or too
+        few rekhas.
+      rules:
+        favorable: "Planets transiting in rasis with more than 30 rekhas in SAV usually bring favorable results"
+        unfavorable: "Planets transiting in rasis with less than 25 rekhas in SAV usually bring unfavorable results"
+      note: >
+        If SAV has 40 bindus in Pisces, it means Pisces is very strong.
+        Planets transiting in Pisces tend to give good results irrespective
+        of their individual strength.
+
+    example_vajpayee_d10_ashtakavarga:
+      title: "Example 108: Sri A.B. Vajpayee D-10 Ashtakavarga"
+      table_number: "Vajpayee D-10 BAV"
+      data:
+        Sun:  { Ar: 5, Ta: 3, Ge: 6, Cn: 2, Le: 3, Vi: 4, Li: 7, Sc: 6, Sg: 3, Cp: 3, Aq: 2, Pi: 4 }
+        Moon: { Ar: 2, Ta: 4, Ge: 2, Cn: 3, Le: 6, Vi: 6, Li: 4, Sc: 4, Sg: 4, Cp: 6, Aq: 3, Pi: 5 }
+        Mars: { Ar: 3, Ta: 4, Ge: 4, Cn: 3, Le: 4, Vi: 2, Li: 2, Sc: 5, Sg: 3, Cp: 4, Aq: 1, Pi: 4 }
+        Mercury: { Ar: 4, Ta: 4, Ge: 6, Cn: 4, Le: 6, Vi: 5, Li: 3, Sc: 6, Sg: 4, Cp: 5, Aq: 4, Pi: 3 }
+        Jupiter: { Ar: 4, Ta: 6, Ge: 4, Cn: 2, Le: 3, Vi: 8, Li: 3, Sc: 6, Sg: 4, Cp: 3, Aq: 7, Pi: 6 }
+        Venus: { Ar: 2, Ta: 4, Ge: 6, Cn: 4, Le: 3, Vi: 5, Li: 3, Sc: 5, Sg: 5, Cp: 6, Aq: 5, Pi: 4 }
+        Saturn: { Ar: 3, Ta: 1, Ge: 5, Cn: 2, Le: 3, Vi: 3, Li: 4, Sc: 3, Sg: 5, Cp: 4, Aq: 2, Pi: 4 }
+        SAV: { Ar: 23, Ta: 26, Ge: 33, Cn: 20, Le: 28, Vi: 33, Li: 26, Sc: 35, Sg: 28, Cp: 31, Aq: 24, Pi: 30 }
+
+    # 25.5.2 Kakshyas and Prastaara Ashtakavarga
+    kakshyas:
+      section: "25.5.2"
+      description: >
+        Each rasi is divided into eight kakshyas of 3 degrees 45 minutes each.
+        Kakshya literally means orbit. When a planet is in a particular
+        kakshya lord's kakshya, its placement with respect to that lord
+        is the most important.
+
+      table_60_kakshyas:
+        table_number: 60
+        title: "Kakshyas"
+        divisions:
+          - { start: "0:00",  end: "3:45",  lord: "Saturn" }
+          - { start: "3:45",  end: "7:30",  lord: "Jupiter" }
+          - { start: "7:30",  end: "11:15", lord: "Mars" }
+          - { start: "11:15", end: "15:00", lord: "Sun" }
+          - { start: "15:00", end: "18:45", lord: "Venus" }
+          - { start: "18:45", end: "22:30", lord: "Mercury" }
+          - { start: "22:30", end: "26:15", lord: "Moon" }
+          - { start: "26:15", end: "30:00", lord: "Lagna" }
+
+      pav_principle: >
+        To find out whether a planet is benefic with respect to a kakshya
+        lord in a rasi, look at the Prastaara Ashtakavarga (PAV). A kakshya
+        has a rekha in a planet's PAV if that planet is benefic in that rasi
+        with respect to the kakshya lord.
+
+      favorable_days_method: >
+        A popular method of delineating favorable and unfavorable days is to
+        look at the number of planets that are in a kakshya with a rekha.
+        If too many planets are in a kakshya with a rekha, favorable results.
+        If too few, unfavorable results. This should be used only in
+        conjunction with dasas, Tajaka charts and other transit techniques.
+        Can only fine-tune a prediction to a few days.
+
+      example_indira_gandhi:
+        number: 110
+        description: >
+          At Indira Gandhi's assassination: Sun in Sun's kakshya, Moon in
+          Sun's kakshya, Mars in Moon's kakshya, Mercury in lagna's kakshya,
+          Jupiter in Venus's kakshya, Venus in Mercury's kakshya, Saturn in
+          Moon's kakshya. Only Moon and Mercury were in kakshyas with rekhas.
+          With 5 out of 7 planets transiting in kakshyas without rekhas
+          (including Vimsottari dasa lord Saturn), not a favorable time.
+
+  # ---------------------------------------------------------------------------
+  # 25.6 Timing with Sodhya Pindas
+  # ---------------------------------------------------------------------------
+  timing_with_sodhya_pindas:
+    section: "25.6"
+    description: >
+      Parasara taught techniques of timing events based on sodhya pindas.
+      Take the number of rekhas in any house from a planet, multiply by
+      the planet's sodhya pinda (also called yoga pinda).
+
+    method:
+      step_1: "Fix the relevant planet for the matter of interest"
+      step_2: "Fix the relevant house from that planet"
+      step_3: "Find the number of rekhas in that house in the planet's BAV"
+      step_4: "Multiply rekhas by the planet's sodhya pinda (yoga pinda)"
+      nakshatra_method: >
+        Divide the product by 27, take the remainder, count nakshatras
+        from Aswini. Benefics transiting in that nakshatra give good results;
+        malefics give bad results. The 10th and 19th nakshatras from the
+        result also apply (same Vimsottari lord).
+      rasi_method: >
+        Divide the product by 12, take the remainder, count rasis from
+        Aries. Saturn's transit in the resultant rasi brings misfortune
+        for the original house matters.
+
+    planet_significations_in_houses:
+      Sun: "Soul, inherent nature, personality, will power, father"
+      Moon: "Mind, wisdom, peace, happiness, mother"
+      Mars: "Siblings, land, strength"
+      Mercury: "Business, commerce, profession, friends, good behavior"
+      Jupiter: "Nourishment of body, learning, children, wealth"
+      Venus: "Marriage, comforts, luxuries, vehicles, sexual pleasures"
+      Saturn: "Longevity, livelihood, fears, sadness, dangers, sorrows"
+
+    table_61_timing_areas:
+      table_number: 61
+      title: "Timing with Sodhya Pinda"
+      entries:
+        - { planet: "Sun",     house: "9th",  area: "Father" }
+        - { planet: "Moon",    house: "4th",  area: "Mother" }
+        - { planet: "Mars",    house: "3rd",  area: "Siblings" }
+        - { planet: "Mercury", house: "10th", area: "Profession" }
+        - { planet: "Jupiter", house: "5th",  area: "Children" }
+        - { planet: "Venus",   house: "7th",  area: "Marriage" }
+        - { planet: "Saturn",  house: "8th",  area: "Longevity" }
+
+    examples:
+      - number: 111
+        name: "Princess Diana"
+        description: >
+          To see longevity: 8th house from Saturn is Le. Le has 0 rekhas
+          in Saturn's BAV. Saturn's sodhya pinda is 203. Product is 0.
+          0 / 27 remainder = 27 = Revathi star. 0 / 12 remainder = 12 = Pisces.
+          When Saturn was transiting in Revathi star in Pisces, she passed away.
+        saturn_bav: { Ar: 3, Ta: 4, Ge: 6, Cn: 3, Le: 0, Vi: 2, Li: 2, Sc: 5, Sg: 4, Cp: 3, Aq: 2, Pi: 5 }
+
+      - number: 112
+        name: "Bill Gates - Legal Setback"
+        description: >
+          Moon in Pisces, Pisces has 6 rekhas in Moon's BAV. Moon's sodhya
+          pinda is 122. Product = 732. 732 / 27 remainder = 3 = Krittika star.
+          Saturn's transit in Krittika attacks the 1st house from Moon.
+          Also: 6th from Saturn is Pi, 3 rekhas in Saturn's BAV. Saturn's
+          sodhya pinda is 145. Product = 435. 435 / 27 remainder = 3 = Krittika.
+          Saturn's transit in Krittika brings sadness and setbacks in litigation.
+        moon_bav: { Ar: 4, Ta: 3, Ge: 4, Cn: 4, Le: 6, Vi: 3, Li: 1, Sc: 5, Sg: 5, Cp: 4, Aq: 4, Pi: 6 }
+        saturn_bav: { Ar: 3, Ta: 3, Ge: 4, Cn: 4, Le: 7, Vi: 2, Li: 1, Sc: 3, Sg: 2, Cp: 4, Aq: 3, Pi: 3 }
+
+    research_note: >
+      This approach does not give consistent results. The topic of sodhya
+      pindas is open to research. Issues include: Should we use divisional
+      charts (e.g. D-12 for father)? Should we use sodhya pinda and rekha
+      count from the divisional chart? Inconsistencies between Parasara
+      and Varahamihira in ashtakavarga definitions can alter sodhya pindas.
+      Controversies in exact definitions of reductions from Bhinna to
+      Sodhita Ashtakavarga can also alter sodhya pindas.
+
+  # ---------------------------------------------------------------------------
+  # 25.7 Conclusion
+  # ---------------------------------------------------------------------------
+  conclusion: >
+    Transit positions of planets are the positions occupied by them at a given
+    time. Natal positions stand for the innate potential. Transit positions show
+    the temporary influences (planetary pulls and pushes). The interaction
+    between natal divisional charts and transit rasi chart helps in coarse
+    timing of events. The interaction between natal rasi chart and transit
+    divisional charts helps in fine timing of events.
+
+# =============================================================================
+# CHAPTER 26: TRANSITS - MISCELLANEOUS TOPICS
+# =============================================================================
+
+chapter_26:
+  title: "Transits: Miscellaneous Topics"
+
+  # ---------------------------------------------------------------------------
+  # 26.1 Introduction
+  # ---------------------------------------------------------------------------
+  introduction: >
+    In Chapter 25, we concentrated on correlating the natal chart and the
+    transit chart using the rasis occupied by planets. There are additional
+    principles about rasi transits and nakshatra-based transit interactions
+    covered in this chapter.
+
+  # ---------------------------------------------------------------------------
+  # 26.2 Murthis (Forms/Idols) - Moorti Nirnaya
+  # ---------------------------------------------------------------------------
+  murthis:
+    section: "26.2"
+    title: "Murthis (Forms/Idols)"
+    description: >
+      To judge the results given by a planet during its transit in a
+      particular rasi, find exactly when the planet enters the rasi.
+      Find the house occupied by transit Moon at that time with respect
+      to Moon's natal position. Based on the house, the planet is said
+      to be in a golden, silver, copper or iron form during that transit.
+
+    table_62_murthis:
+      table_number: 62
+      title: "Murthis"
+      classifications:
+        swarna:
+          houses: [1, 6, 11]
+          name: "Swarna"
+          meaning: "Golden form"
+          results: "Highly favorable"
+        rajata:
+          houses: [2, 5, 9]
+          name: "Rajata"
+          meaning: "Silver form"
+          results: "Favorable"
+        taamra:
+          houses: [3, 7, 10]
+          name: "Taamra"
+          meaning: "Copper form"
+          results: "Unfavorable"
+        loha:
+          houses: [4, 8, 12]
+          name: "Loha"
+          meaning: "Iron form"
+          results: "Highly unfavorable"
+
+    usage_note: >
+      Even if a transit is favorable otherwise, a loha murthi (iron form)
+      planet may not give its full results. If the transit is unfavorable
+      otherwise, the planet will make the native suffer much. It is
+      important to consider vedhas and murthis to understand why a planet
+      expected to produce brilliant results gives only marginal results.
+
+  # ---------------------------------------------------------------------------
+  # 26.3 Rasi Gochara Vedha (Obstruction Points)
+  # ---------------------------------------------------------------------------
+  rasi_gochara_vedha:
+    section: "26.3"
+    title: "Rasi Gochara Vedha"
+    description: >
+      Even when a planet is transiting in a favorable house from natal Moon,
+      it may be obstructed by another planet transiting in the vedha sthana
+      (house of obstruction). In that case, the planet cannot give its
+      good results.
+
+    table_63_vedha_sthaanas:
+      table_number: 63
+      title: "Vedha Sthaanas"
+      note: "Auspicious houses from natal Moon with corresponding vedha sthanas in parentheses"
+      vedha_pairs:
+        Sun:
+          - { auspicious_house: 3,  vedha_house: 9 }
+          - { auspicious_house: 6,  vedha_house: 12 }
+          - { auspicious_house: 10, vedha_house: 4 }
+          - { auspicious_house: 11, vedha_house: 5 }
+        Moon:
+          - { auspicious_house: 1,  vedha_house: 5 }
+          - { auspicious_house: 3,  vedha_house: 9 }
+          - { auspicious_house: 6,  vedha_house: 12 }
+          - { auspicious_house: 7,  vedha_house: 2 }
+          - { auspicious_house: 10, vedha_house: 4 }
+          - { auspicious_house: 11, vedha_house: 8 }
+        Mars:
+          - { auspicious_house: 3,  vedha_house: 12 }
+          - { auspicious_house: 6,  vedha_house: 9 }
+          - { auspicious_house: 11, vedha_house: 5 }
+        Mercury:
+          - { auspicious_house: 2,  vedha_house: 5 }
+          - { auspicious_house: 4,  vedha_house: 3 }
+          - { auspicious_house: 6,  vedha_house: 9 }
+          - { auspicious_house: 8,  vedha_house: 1 }
+          - { auspicious_house: 10, vedha_house: 8 }
+          - { auspicious_house: 11, vedha_house: 12 }
+        Jupiter:
+          - { auspicious_house: 2,  vedha_house: 12 }
+          - { auspicious_house: 5,  vedha_house: 4 }
+          - { auspicious_house: 7,  vedha_house: 3 }
+          - { auspicious_house: 9,  vedha_house: 10 }
+          - { auspicious_house: 11, vedha_house: 8 }
+        Venus:
+          - { auspicious_house: 1,  vedha_house: 8 }
+          - { auspicious_house: 2,  vedha_house: 7 }
+          - { auspicious_house: 3,  vedha_house: 1 }
+          - { auspicious_house: 4,  vedha_house: 10 }
+          - { auspicious_house: 5,  vedha_house: 9 }
+          - { auspicious_house: 8,  vedha_house: 5 }
+          - { auspicious_house: 9,  vedha_house: 11 }
+          - { auspicious_house: 11, vedha_house: 6 }
+          - { auspicious_house: 12, vedha_house: 3 }
+        Saturn:
+          - { auspicious_house: 3,  vedha_house: 12 }
+          - { auspicious_house: 6,  vedha_house: 9 }
+          - { auspicious_house: 11, vedha_house: 5 }
+
+    vedha_exceptions:
+      description: "Father and son pairs do not cause vedha on each other"
+      pairs:
+        - "Sun and Saturn do not cause vedha on each other"
+        - "Moon and Mercury do not cause vedha on each other"
+
+  # ---------------------------------------------------------------------------
+  # 26.4 Taras (Stars)
+  # ---------------------------------------------------------------------------
+  taras:
+    section: "26.4"
+    title: "Taras (Stars)"
+
+    # 26.4.1 Basic Tara Classification
+    basic_classification:
+      section: "26.4.1"
+      description: >
+        Count constellations from the constellation of natal Moon to the
+        constellation occupied by a planet in transit. Different constellations
+        stand for different things. If dasa lord and antardasa lord are in
+        bad taras, bad results can be expected.
+
+      table_64_taras:
+        table_number: 64
+        title: "Taras"
+        classifications:
+          - { constellations: "1st, 10th, 19th",  name: "Janma Tara",          meaning: "Birth (mixed)" }
+          - { constellations: "2nd, 11th, 20th",  name: "Sampat Tara",         meaning: "Wealth (good)" }
+          - { constellations: "3rd, 12th, 21st",  name: "Vipat Tara",          meaning: "Danger (bad)" }
+          - { constellations: "4th, 13th, 22nd",  name: "Kshema Tara",         meaning: "Well-being (good)" }
+          - { constellations: "5th, 14th, 23rd",  name: "Pratyak Tara",        meaning: "Obstacles (bad)" }
+          - { constellations: "6th, 15th, 24th",  name: "Saadhana Tara",       meaning: "Achievement (good)" }
+          - { constellations: "7th, 16th, 25th",  name: "Naidhana/Vadha Tara", meaning: "Death (bad)" }
+          - { constellations: "8th, 17th, 26th",  name: "Mitra Tara",          meaning: "Friend (good)" }
+          - { constellations: "9th, 18th, 27th",  name: "Parama Mitra Tara",   meaning: "Best friend (good)" }
+
+      muhurta_usage: >
+        Taras are also used in muhurtas. At the time of an auspicious effort
+        or when a new project is launched, transit Moon should not be in a
+        bad constellation with respect to the natal Moon's constellation.
+
+    # 26.4.2 Special Nakshatras/Taras
+    special_nakshatras:
+      section: "26.4.2"
+      description: "Special nakshatras for each person based on janma nakshatra"
+      list:
+        - { position: "1st",  name: "Janma nakshatra",       meaning: "Birth",            shows: "General well-being" }
+        - { position: "4th",  name: "Jaati nakshatra",        meaning: "Community",         shows: "One's community and people of same class, nature and profession" }
+        - { position: "7th",  name: "Naidhana nakshatra",     meaning: "Death",             shows: "Death and suffering" }
+        - { position: "10th", name: "Karma nakshatra",        meaning: "Profession",        shows: "Profession and workplace" }
+        - { position: "12th", name: "Desa nakshatra",         meaning: "Country",           shows: "One's country" }
+        - { position: "13th", name: "Abhisheka nakshatra",    meaning: "Coronation",        shows: "Power and authority (also called Raajya nakshatra)" }
+        - { position: "16th", name: "Sanghaatika nakshatra",  meaning: "Belonging to group", shows: "Group/social activities" }
+        - { position: "18th", name: "Saamudaayika nakshatra", meaning: "Related to a crowd", shows: "Group activities" }
+        - { position: "19th", name: "Aadhaana nakshatra",     meaning: "Epoch/conception",  shows: "Well-being of family" }
+        - { position: "22nd", name: "Vainaasika/Vinaasana nakshatra", meaning: "Destructive", shows: "One's destruction" }
+        - { position: "25th", name: "Maanasa nakshatra",      meaning: "Mind",              shows: "One's mental state" }
+
+      usage: >
+        Benefics or malefics situated in these constellations in transit bring
+        good or bad results related to the area covered by the nakshatra.
+        Results are with respect to the native (e.g., malefics in desa nakshatra
+        may drive one away from one's country, not ruin the country itself).
+        Sometimes, using these nakshatras gives special insights that cannot
+        be gained by looking at any divisional chart.
+
+  # ---------------------------------------------------------------------------
+  # 26.5 Nakshatra-based Aspects
+  # ---------------------------------------------------------------------------
+  nakshatra_based_aspects:
+    section: "26.5"
+    title: "Nakshatra-based Aspects"
+    description: >
+      A natural benefic gives good results related to the constellations
+      aspected by it and a natural malefic gives bad results.
+    aspects:
+      Sun:     "Aspects the 14th and 15th constellations from him"
+      Moon:    "Aspects the 14th and 15th constellations from her"
+      Mars:    "Aspects the 1st, 3rd, 7th, 8th and 15th constellations from him"
+      Mercury: "Aspects the 1st and 15th constellations from him"
+      Venus:   "Aspects the 1st and 15th constellations from him"
+      Jupiter: "Aspects the 10th, 15th and 19th constellations from him"
+      Saturn:  "Aspects the 3rd, 5th, 15th and 19th constellations from him"
+
+  # ---------------------------------------------------------------------------
+  # 26.6 Constellations and Body Parts
+  # ---------------------------------------------------------------------------
+  constellations_and_body_parts:
+    section: "26.6"
+    title: "Constellations and Body Parts"
+    description: >
+      When transiting in various constellations counted from janma nakshatra,
+      planets are said to dwell in different parts of one's body with
+      corresponding standard results. Two purposes: (1) Find standard results
+      for planetary transits in different constellations. (2) If a native has
+      a disease in a particular body part, figure out the planet causing it
+      for remedial and preventive measures.
+
+    # Table 65: Body Parts in the Transit of Sun
+    table_65_sun:
+      table_number: 65
+      title: "Body Parts in the Transit of Sun"
+      entries:
+        - { nakshatras: "1st",                                           body_part: "Mouth/Face",    result: "Destruction" }
+        - { nakshatras: "2nd, 3rd, 4th, 5th",                           body_part: "Head",          result: "Influx of wealth" }
+        - { nakshatras: "6th, 7th, 8th, 9th",                           body_part: "Chest",         result: "Victory" }
+        - { nakshatras: "10th, 11th, 12th, 13th",                       body_part: "Right hand",    result: "Wealth" }
+        - { nakshatras: "14th, 15th, 16th, 17th, 18th, 19th",           body_part: "Two feet",      result: "Poverty" }
+        - { nakshatras: "20th, 21st, 22nd, 23rd",                       body_part: "Left hand",     result: "Physical ailments" }
+        - { nakshatras: "24th, 25th",                                    body_part: "Eyes",          result: "Gains" }
+        - { nakshatras: "26th, 27th",                                    body_part: "Private parts", result: "Death" }
+
+    # Table 66: Body Parts in the Transit of Moon
+    table_66_moon:
+      table_number: 66
+      title: "Body Parts in the Transit of Moon"
+      entries:
+        - { nakshatras: "1st, 2nd",                                      body_part: "Face",          result: "Great fear" }
+        - { nakshatras: "3rd, 4th, 5th, 6th",                           body_part: "Head",          result: "Well-being" }
+        - { nakshatras: "7th, 8th",                                      body_part: "Back",          result: "Victory over enemies" }
+        - { nakshatras: "9th, 10th",                                     body_part: "Eyes",          result: "Money" }
+        - { nakshatras: "11th, 12th, 13th, 14th, 15th",                 body_part: "Heart",         result: "Comforts and peace" }
+        - { nakshatras: "16th, 17th, 18th",                              body_part: "Left hand",     result: "Quarrels" }
+        - { nakshatras: "19th, 20th, 21st, 22nd, 23rd, 24th",           body_part: "Two feet",      result: "Going abroad" }
+        - { nakshatras: "25th, 26th, 27th",                              body_part: "Right hand",    result: "Financial gains" }
+
+    # Table 67: Body Parts in the Transit of Mars
+    table_67_mars:
+      table_number: 67
+      title: "Body Parts in the Transit of Mars"
+      entries:
+        - { nakshatras: "1st, 2nd",                                      body_part: "Mouth/Face",    result: "Death" }
+        - { nakshatras: "3rd, 4th, 5th, 6th, 7th, 8th",                 body_part: "Two feet",      result: "Separation" }
+        - { nakshatras: "9th, 10th, 11th",                               body_part: "Chest",         result: "Victory" }
+        - { nakshatras: "12th, 13th, 14th, 15th",                       body_part: "Left hand",     result: "Poverty" }
+        - { nakshatras: "16th, 17th",                                    body_part: "Head",          result: "Gains" }
+        - { nakshatras: "18th, 19th, 20th, 21st",                       body_part: "Face",          result: "Great fear" }
+        - { nakshatras: "22nd, 23rd, 24th, 25th",                       body_part: "Right hand",    result: "Well-being" }
+        - { nakshatras: "26th, 27th",                                    body_part: "Eyes",          result: "Going abroad" }
+
+    # Table 68: Body Parts in the Transit of Mercury, Jupiter and Venus
+    table_68_mercury_jupiter_venus:
+      table_number: 68
+      title: "Body Parts in the Transit of Mercury, Jupiter and Venus"
+      entries:
+        - { nakshatras: "1st, 2nd, 3rd",                                body_part: "Head",          result: "Grief" }
+        - { nakshatras: "4th, 5th, 6th",                                body_part: "Face",          result: "Gains" }
+        - { nakshatras: "7th, 8th, 9th, 10th, 11th, 12th",             body_part: "Two hands",     result: "Misfortune" }
+        - { nakshatras: "13th, 14th, 15th, 16th, 17th",                 body_part: "Stomach",       result: "Amassing of wealth" }
+        - { nakshatras: "18th, 19th",                                    body_part: "Private parts", result: "Destruction" }
+        - { nakshatras: "20th, 21st, 22nd, 23rd, 24th, 25th, 26th, 27th", body_part: "Two feet",  result: "Honor and fame" }
+
+    # Table 69: Body Parts in the Transit of Saturn, Rahu and Ketu
+    table_69_saturn_rahu_ketu:
+      table_number: 69
+      title: "Body Parts in the Transit of Saturn, Rahu and Ketu"
+      entries:
+        - { nakshatras: "1st",                                           body_part: "Face",          result: "Grief" }
+        - { nakshatras: "2nd, 3rd, 4th, 5th",                           body_part: "Right hand",    result: "Comforts" }
+        - { nakshatras: "6th, 7th, 8th",                                body_part: "Right leg",     result: "Travels" }
+        - { nakshatras: "9th, 10th, 11th",                              body_part: "Left leg",      result: "Destruction" }
+        - { nakshatras: "12th, 13th, 14th, 15th",                       body_part: "Left hand",     result: "Gains" }
+        - { nakshatras: "16th, 17th, 18th, 19th, 20th",                 body_part: "Stomach",       result: "Pleasures" }
+        - { nakshatras: "21st, 22nd, 23rd",                              body_part: "Head",          result: "Comforts" }
+        - { nakshatras: "24th, 25th",                                    body_part: "Eyes",          result: "Comforts" }
+        - { nakshatras: "26th, 27th",                                    body_part: "Back",          result: "Death" }
+
+    usage_note: >
+      If a planet dwells in the left hand in transit and some natural malefics
+      aspect it or cause vedha on it, then the planet may give suffering
+      related to the left hand. Some injuries to the left hand are possible.
+
+  # ---------------------------------------------------------------------------
+  # 26.7 Latta (Kick)
+  # ---------------------------------------------------------------------------
+  latta:
+    section: "26.7"
+    title: "Latta (Kick)"
+    description: >
+      Latta is a nakshatra-based planetary kick. Each planet has latta (kick)
+      on a constellation based on its transit position. If a transit planet
+      has latta on the constellation occupied by Moon (or lagna) in natal
+      chart, unfavorable results related to the signification of the planet
+      in natal chart may be expected.
+
+    purolatta_forward_kick:
+      description: "Forward kick - counted in the forward direction from transit nakshatra"
+      planets:
+        - { planet: "Sun",     count: "12th nakshatra forward", example: "Sun in Mrigasira has latta on Visakha" }
+        - { planet: "Mars",    count: "3rd nakshatra forward",  example: "Mars in Mrigasira has latta on Punarvasu" }
+        - { planet: "Jupiter", count: "6th nakshatra forward",  example: "Jupiter in Krittika has latta on Pushyami" }
+        - { planet: "Saturn",  count: "8th nakshatra forward",  example: "Saturn in Krittika has latta on Makha" }
+
+    prishtha_latta_backward_kick:
+      description: "Backward kick - counted in the backward direction from transit nakshatra"
+      planets:
+        - { planet: "Moon",    count: "22nd nakshatra backward", example: "Moon in Anuradha has latta on Dhanishtha" }
+        - { planet: "Mercury", count: "7th nakshatra backward",  example: "Mercury in Punarvasu has latta on Aswini" }
+        - { planet: "Venus",   count: "5th nakshatra backward",  example: "Venus in Mrigasira has latta on Aswini" }
+        - { planet: "Rahu",    count: "9th nakshatra backward",  example: "Rahu in Punarvasu has latta on Uttarabhadrapada" }
+
+    latta_summary:
+      Sun:     { direction: "Forward",  count: 12 }
+      Mars:    { direction: "Forward",  count: 3 }
+      Jupiter: { direction: "Forward",  count: 6 }
+      Saturn:  { direction: "Forward",  count: 8 }
+      Moon:    { direction: "Backward", count: 22 }
+      Mercury: { direction: "Backward", count: 7 }
+      Venus:   { direction: "Backward", count: 5 }
+      Rahu:    { direction: "Backward", count: 9 }
+
+    interpretation: >
+      If the 6th lord has latta on janma nakshatra or lagna nakshatra,
+      troubles related to litigation, disease or enemies. If the 7th lord
+      has latta, troubles related to marriage, spouse or relations. If an
+      important planet in the 10th house has latta, troubles in career.
+      We usually see some loss related to the natal significations of a
+      planet having latta on janma nakshatra or lagna nakshatra.
+
+    note: "Latta on janma nakshatra is more important than on lagna nakshatra."
+
+    table_70_example:
+      table_number: 70
+      title: "Latta Calculation for Example 113"
+      description: "Janma nakshatra: Poorvabhadrapada, Lagna nakshatra: Hasta"
+      entries:
+        - { planet: "Sun",     transit_nakshatra: "Jyeshtha",           latta_count: "12th", direction: "Forward",  latta_on: "Bharani" }
+        - { planet: "Moon",    transit_nakshatra: "Hasta",              latta_count: "22nd", direction: "Backward", latta_on: "Moola" }
+        - { planet: "Mars",    transit_nakshatra: "Poorva Phalguni",    latta_count: "3rd",  direction: "Forward",  latta_on: "Hasta" }
+        - { planet: "Mercury", transit_nakshatra: "Moola",              latta_count: "7th",  direction: "Backward", latta_on: "Hasta" }
+        - { planet: "Jupiter", transit_nakshatra: "Poorvaashaadha",     latta_count: "6th",  direction: "Forward",  latta_on: "Poorvabhadrapada" }
+        - { planet: "Venus",   transit_nakshatra: "Visaakha",           latta_count: "5th",  direction: "Backward", latta_on: "Uttaraphalguni" }
+        - { planet: "Saturn",  transit_nakshatra: "Uttarabhadrapada",   latta_count: "8th",  direction: "Forward",  latta_on: "Aardra" }
+        - { planet: "Rahu",    transit_nakshatra: "Hasta",              latta_count: "9th",  direction: "Backward", latta_on: "Mrigasira" }
+      analysis: >
+        Two lattas on lagna nakshatra (Hasta) by 8th lord Mars and lagna
+        lord Mercury. Bad results relating to 1st and 8th houses possible
+        (accidents). Jupiter has latta on janma nakshatra (Poorvabhadrapada);
+        Jupiter owns 4th and 7th houses. Misfortune related to vehicle,
+        house or marital life possible. Native had a vehicular accident on
+        evening of 5th December 1996.
+
+  # ---------------------------------------------------------------------------
+  # 26.8 Sarvatobhadra Chakra
+  # ---------------------------------------------------------------------------
+  sarvatobhadra_chakra:
+    section: "26.8"
+    title: "Sarvatobhadra Chakra"
+    definition: >
+      Sarvatah means "everywhere" or "entirely". Bhadra means "auspicious"
+      or "well". Sarvatobhadra chakra is a chart that shows all-round
+      well-being and all kinds of auspicious and inauspicious results.
+
+    structure:
+      total_squares: 81
+      layout: "9 x 9 grid"
+      contents:
+        border_squares: "Middle 7 squares on outer borders contain 7 nakshatras each (28 total, including Abhijit)"
+        inner_squares: "Innermost 5 squares contain weekdays and tithis"
+        diagonal_squares: "All squares on diagonals (except central) contain vowels (16 total)"
+        consonant_squares: "Squares just inside the border contain consonants (20 total)"
+        rasi_squares: "12 rasis are included"
+      total_breakdown: "16 vowels + 20 consonants + 12 rasis + 28 nakshatras + 5 tithis/weekdays = 81"
+
+    tithis:
+      nanda:  "1st, 6th, 11th, 16th, 21st, 26th tithis"
+      bhadra: "2nd, 7th, 12th, 17th, 22nd, 27th tithis"
+      jaya:   "3rd, 8th, 13th, 18th, 23rd, 28th tithis"
+      rikta:  "4th, 9th, 14th, 19th, 24th, 29th tithis"
+      poorna: "5th, 10th, 15th, 20th, 30th tithis"
+
+    vedha_mechanism: >
+      When a planet occupies a nakshatra, it causes vedha (obstruction)
+      on the contents of the squares along 3 lines: one vertical or
+      horizontal line and two crossward (diagonal) lines starting at
+      the nakshatra.
+
+    special_principles:
+      - >
+        A planet in the first quarter of Krittika or the last quarter of
+        Bharani has vedha on the vowel "a" in the northeastern corner.
+        Similar thing applies to all vowels in corners.
+      - >
+        If a vowel has vedha, its similar vowel (e.g. a and aa, i and ee,
+        u and uu) also has vedha from the same planet.
+      - >
+        Some consonants are not covered in the main chart. Planets in Ardra
+        have vedha on g, chh and ng (nasal). Planets in Hasta have vedha
+        on h, n (alveolar) and th (alveolar). Planets in Poorvashadha have
+        vedha on dh (dental), ph and dh (alveolar). Planets in Uttara
+        Bhadrapada have vedha on th (dental), jh and nch (nasal).
+      - >
+        If a planet has vedha on one of the following pairs of consonants,
+        it has vedha on the other too: b & v; s & sh (palatal); kh & sh
+        (alveolar); j & y; ng & tr.
+
+    using_sarvatobhadra_chakra:
+      natal_references:
+        - "The constellation occupied by Moon or any special tara"
+        - "The rasi occupied by lagna or any house of interest"
+        - "The first/prominent consonant and vowel in the native's name"
+        - "The tithi of birth (janma tithi) or a special tithi"
+        - "The weekday of birth (janma vaara)"
+      transit_analysis: >
+        Study the vedha caused on these natal references by different
+        planets in their transit. Vedha by benefics (Moon, Mercury,
+        Jupiter, Venus) is favorable. Vedha by malefics (Sun, Mars,
+        Saturn, Rahu, Ketu) is unfavorable. If several transiting benefics
+        have simultaneous vedha on several natal points, good results
+        may be expected.
+
+    special_tithis:
+      description: >
+        In addition to janma tithi, we can consider special tithis related
+        to the matter of interest.
+      karma_tithi:
+        description: "Lunar day of profession"
+        formula: >
+          Multiply (Moon longitude - Sun longitude) by 10, reduce to 0-360
+          range, divide by 12, add 1 to quotient. Gives a number 1-30.
+          Changes 10 times as fast as normal tithi.
+      dhana_tithi:
+        description: "Lunar day of wealth"
+        note: "Changes twice as fast as normal tithi"
+
+    prediction_principle: >
+      If 2-3 natal references have vedha from a couple of benefic/malefic
+      transit planets, we can be more confident. However, a prediction
+      should be made only if dasas and Tajaka charts also show an event.
+      Just one natal reference with vedha from just one planet is
+      insufficient for predictions.
+
+    examples:
+      - number: 115
+        title: "Death of JFK Jr."
+        description: >
+          Janma tithi: Sukla Ashtami (Jaya group). Janma vaara: Thursday.
+          Janma nakshatra: Dhanishtha. Vainasika nakshatra: Anooradha.
+          Naidhana nakshatra: Bharani.
+          In transit: Saturn in Bharani (naidhana nakshatra). Ketu in
+          Sravanam. Crossward lines from Ketu and Saturn intersect at
+          Jaya and Thursday (janma tithi and janma vaara have vedha from
+          Ketu and Saturn). Dhanishtha (janma nakshatra) has vedha from
+          Ketu and Rahu. Anooradha (vainaasika nakshatra) has vedha from
+          Saturn and Rahu. Cp (house of accidents) has vedha from Ketu and Mars.
+
+      - number: 116
+        title: "Rajiv Gandhi's ascension to power (Oct 31, 1984)"
+        description: >
+          Jupiter and Mercury both have vedha on Nanda (tithi group) and
+          Sunday (janma vaara). The tithi of power (5th) is Sukla Shashthi
+          (Nanda group). Mercury and Moon both have vedha on Dhanishtha
+          (abhisheka nakshatra). Jupiter and Venus both have vedha on Sg
+          (5th house of power). Mercury and Venus both have vedha on Libra
+          (contains GL). Several key natal references have vedha from two
+          benefic planets each.
+
+      - number: 117
+        title: "Rajiv Gandhi's defeat (Nov 22, 1989)"
+        description: >
+          When he became PM in 1984, Jupiter was in Poorvashadha (karma
+          nakshatra). At defeat in 1989, Saturn was in that constellation.
+          Nanda and Sunday have vedha from 3 malefics. Dhanishtha
+          (Abhisheka nakshatra) occupied by Rahu with vedha from Ketu.
+          5th house Sg has vedha from Mars and Saturn.
+
+  # ---------------------------------------------------------------------------
+  # 26.9 Conclusion
+  # ---------------------------------------------------------------------------
+  conclusion: >
+    Several important topics related to transits in nakshatras were covered.
+    One should carefully learn and practice all these classical nakshatra-based
+    techniques. However, new students should not make predictions just based
+    on these techniques. Any technique that divides people into 27 groups
+    and gives the same result for everyone in the same group can be correct
+    only to a limited extent. These methods should be used in conjunction
+    with other chart-sensitive methods.
+
+# =============================================================================
+# KEY TRANSIT PRINCIPLES SUMMARY
+# =============================================================================
+
+transit_principles_summary:
+  primary_natal_reference: "Moon (janma rasi) - shows mental state"
+  other_natal_references:
+    - "Lagna - vitality and personality"
+    - "Paaka Lagna - physical self"
+    - "Arudha Lagna and Arudha Padas - worldly perception"
+    - "Sahams - specific life events"
+
+  transit_analysis_layers:
+    layer_1: "Transit from Moon (janma rasi) - basic good/bad assessment"
+    layer_2: "Vedha check - obstruction from other transiting planets"
+    layer_3: "Murthi check - golden/silver/copper/iron form based on Moon at rasi entry"
+    layer_4: "Ashtakavarga - BAV rekhas and SAV bindus for strength assessment"
+    layer_5: "Kakshya - fine-tuning within each rasi (3 deg 45 min divisions)"
+    layer_6: "Tara - nakshatra-based assessment (good/bad stars)"
+    layer_7: "Special nakshatras - karma, naidhana, abhisheka, etc."
+    layer_8: "Latta - planetary kicks on janma/lagna nakshatras"
+    layer_9: "Sarvatobhadra Chakra - comprehensive vedha analysis"
+    layer_10: "Divisional chart transits - coarse and fine timing of events"
+    layer_11: "Sodhya pindas - timing with ashtakavarga products"
+
+  timing_hierarchy:
+    coarse: "Natal divisional chart + Transit rasi chart"
+    fine: "Natal rasi chart + Transit divisional chart"
+    fine_tuning: "Kakshya-based analysis for prediction to specific days"
+
+  important_caveats:
+    - "No single technique should be used in isolation for predictions"
+    - "Dasas and Tajaka charts should also support any prediction"
+    - "Techniques dividing people into 27 groups (nakshatra-based) are limited"
+    - "Results depend on what each planet stands for in the individual natal chart"
+    - "Sodhya pinda timing is an area open to further research"

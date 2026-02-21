@@ -1,0 +1,1581 @@
+# =============================================================================
+# Yogas - Chapter 11 of "Vedic Astrology: An Integrated Approach"
+# by P.V.R. Narasimha Rao
+# Book pages 96-122, PDF pages 105-131
+# =============================================================================
+
+source:
+  book: "Vedic Astrology: An Integrated Approach"
+  author: "P.V.R. Narasimha Rao"
+  chapter: 11
+  title: "Yogas"
+  book_pages: "96-122"
+  pdf_pages: "105-131"
+
+general_notes:
+  - "Yogas are particular combinations that give specific results."
+  - "Many yogas are applicable in divisional charts. When used in divisional charts, interpret results based on the matters signified by that divisional chart."
+  - "Readers are advised to refer to Brihat Parasara Hora Sastram and Dr. B.V. Raman's Three Hundred Important Combinations."
+  - "Results of other yogas may be felt primarily during dasas of the planets and signs involved, but Naabhasa Yoga results are felt in all dasas."
+  - "For yogas with many conditions, partial results may sometimes be experienced if all conditions are not satisfied."
+  - "Unless a yoga is very strong, all the ascribed results cannot be expected."
+  - "Just one yoga cannot make or break a personality unless it is very powerful."
+
+# =============================================================================
+# RAVI YOGAS (Solar Combinations) - Section 11.2
+# =============================================================================
+ravi_yogas:
+  section: "11.2"
+  description: "Solar combinations based on Sun. Because Mercury and Venus are often with Sun or a sign away, these yogas are very common in rasi chart but less common in divisional charts. Apply especially in D-9 and D-10."
+
+  yogas:
+    - name: "Vesi Yoga"
+      section: "11.2.1"
+      formation:
+        - "A planet other than Moon is in the 2nd house from Sun."
+      example: "Sun in Gemini, Jupiter and Mercury in Cancer."
+      results:
+        - "Balanced outlook"
+        - "Truthful, tall and sluggish"
+        - "Happy and comfortable even with little wealth"
+
+    - name: "Vosi Yoga"
+      section: "11.2.2"
+      formation:
+        - "A planet other than Moon is in the 12th house from Sun."
+      example: "Sun in Aries, Jupiter and Venus in Pisces."
+      results:
+        - "Skilful and charitable"
+        - "Famous, learned and strong"
+
+    - name: "Ubhayachara Yoga"
+      section: "11.2.3"
+      formation:
+        - "Planets other than Moon are in the 2nd and 12th houses from Sun."
+      example: "Sun in Cancer, Mars in Leo, Venus in Gemini."
+      results:
+        - "Has all comforts"
+        - "Becomes a king or an equal"
+
+    - name: "Budha-Aaditya Yoga"
+      also_known_as: "Nipuna Yoga"
+      section: "11.2.4"
+      formation:
+        - "Sun and Mercury are together (in one sign)."
+      results:
+        - "Intelligent and skilful in all works"
+        - "Well-known, respected and happy"
+        - "Nipuna means an expert"
+      notes:
+        - "If Mercury is too close to Sun, he is combust (asta/astangata). Yogas formed by combust planets lose some of their power to do good."
+        - "Most powerful in divisional charts like D-10."
+        - "In rasi chart, can give results if Mercury is not combust."
+
+# =============================================================================
+# CHANDRA YOGAS (Lunar Combinations) - Section 11.3
+# =============================================================================
+chandra_yogas:
+  section: "11.3"
+  description: "Lunar combinations based on Moon."
+
+  general_guidelines:
+    - guideline: "Moon's distance from Sun"
+      details:
+        - "Moon in a quadrant from Sun: one may possess little wealth, intelligence and skills."
+        - "Moon in a panapara from Sun: one may possess average wealth, intelligence and skills."
+        - "Moon in an apoklima from Sun: one may possess a lot of wealth, intelligence and skills."
+
+    - guideline: "Moon in own navamsa or adhimitra's navamsa"
+      details:
+        - "Daytime birth: Jupiter's aspect on Moon brings wealth and comforts."
+        - "Night birth: Venus's aspect on Moon brings wealth and comforts."
+        - "Jupiter's aspect on Moon in night birth and Venus's aspect in daytime birth are detrimental."
+
+    - guideline: "Benefics in upachayas from Moon"
+      details:
+        - "All natural benefics in upachayas (3rd, 6th, 10th, 11th) from Moon: great wealth."
+        - "Two benefics in upachayas from Moon: medium wealth."
+        - "One benefic in upachaya from Moon: little wealth."
+
+  yogas:
+    - name: "Sunaphaa Yoga"
+      section: "11.3.1"
+      formation:
+        - "Planets other than Sun are in the 2nd house from Moon."
+      example: "Moon in Gemini, Jupiter and Mercury in Cancer."
+      results:
+        - "Becomes a king or an equal"
+        - "Intelligent, wealthy and famous"
+        - "Has self-earned wealth"
+
+    - name: "Anaphaa Yoga"
+      section: "11.3.2"
+      formation:
+        - "Planets other than Sun are in the 12th house from Moon."
+      example: "Moon in Aries, Jupiter and Venus in Pisces."
+      results:
+        - "Becomes a king with good looks"
+        - "Body free from disease"
+        - "Man of character with great reputation"
+        - "Surrounded by comforts"
+
+    - name: "Duradhara Yoga"
+      section: "11.3.3"
+      formation:
+        - "Planets other than Sun are in the 2nd and 12th houses from Moon."
+      example: "Moon in Cancer, Mars in Leo, Venus in Gemini."
+      results:
+        - "Enjoys many pleasures"
+        - "Charitable"
+        - "Owns wealth and vehicles"
+        - "Has good servants"
+
+    - name: "Kemadruma Yoga"
+      section: "11.3.4"
+      type: "malefic"
+      formation:
+        - "No planets other than Sun in the 1st, 2nd and 12th houses from Moon."
+        - "No planets other than Moon in the quadrants from lagna."
+      example: "Lagna in Taurus, Moon in Virgo, no planets other than Sun in Leo/Virgo/Libra, no planets in Taurus/Leo/Scorpio/Aquarius."
+      results:
+        - "Unlucky, bereft of intelligence and learning"
+        - "Afflicted by poverty and trouble"
+        - "Kills the results of other good yogas, especially Chandra yogas"
+        - "Has to work hard and succeed through great efforts"
+
+    - name: "Chandra-Mangala Yoga"
+      section: "11.3.5"
+      formation:
+        - "Moon and Mars are together (in one sign)."
+      results:
+        - "Worldly wise and materially successful"
+        - "May earn money through unscrupulous means"
+        - "May treat mother or other women badly"
+
+    - name: "Adhi Yoga"
+      section: "11.3.6"
+      formation:
+        - "Natural benefics occupy 6th, 7th and 8th from Moon."
+      example: "Moon in Taurus, Mercury and Jupiter in Virgo, Venus in Leo."
+      results:
+        - "Becomes a king or a minister or an army chief, depending on the strength of the planets involved."
+
+# =============================================================================
+# PANCHA MAHAPURUSHA YOGAS - Section 11.4
+# =============================================================================
+pancha_mahapurusha_yogas:
+  section: "11.4"
+  description: "Five combinations producing five kinds of great persons, each associated with one of the pancha bhootas (five elements): Agni (fire), Bhoo (earth), Vaayu (air), Jala (water), Aakaasa (ether). Mars, Mercury, Saturn, Venus and Jupiter represent these five elements respectively."
+  general_rule: "The respective planet must be in a quadrant (1st, 4th, 7th, 10th) from lagna in its own sign or exaltation sign. These yogas do not apply from Moon. They apply mainly in rasi chart."
+
+  yogas:
+    - name: "Ruchaka Yoga"
+      section: "11.4.1"
+      planet: "Mars"
+      element: "Agni tattva (fiery nature)"
+      formation:
+        - "Mars is in a quadrant (1st, 4th, 7th or 10th from lagna) in own sign or exaltation sign."
+        - "Mars must be in Aries, Scorpio or Capricorn."
+      example: "Lagna in Libra, Mars in Aries."
+      results:
+        - "Great man of fiery nature"
+        - "Lot of enthusiasm"
+        - "Natural leader"
+        - "Loves to fight wars and is victorious over enemies"
+        - "Discriminative and a devotee of learned people"
+        - "Well-versed in occult sciences"
+        - "Has good taste"
+        - "Always successful"
+
+    - name: "Bhadra Yoga"
+      section: "11.4.2"
+      planet: "Mercury"
+      element: "Bhoo tattva (earthy nature)"
+      formation:
+        - "Mercury is in a quadrant (1st, 4th, 7th or 10th from lagna) in own sign or exaltation sign."
+        - "Mercury must be in Gemini or Virgo."
+      example: "Lagna in Gemini, Mercury in Virgo."
+      results:
+        - "Great man of earthy nature"
+        - "Lion-like, learned in all respects"
+        - "Good build of body and deep voice"
+        - "Has sattwa guna"
+        - "Knows yoga well"
+        - "Surrounded by relatives, friends and family and enjoys wealth with them"
+        - "Maintains cleanliness and is very systematic"
+        - "Spirit of independence"
+        - "Religious"
+
+    - name: "Sasa Yoga"
+      section: "11.4.3"
+      planet: "Saturn"
+      element: "Vaayu tattva (airy nature)"
+      formation:
+        - "Saturn is in a quadrant (1st, 4th, 7th or 10th from lagna) in own sign or exaltation sign."
+        - "Saturn must be in Capricorn, Aquarius or Libra."
+      example: "Lagna in Capricorn, Saturn in Libra."
+      results:
+        - "Great man of airy nature"
+        - "Rabbit-like (Sasa means hare or rabbit)"
+        - "Wise and enjoys wandering"
+        - "Comfortable in forests, mountains and forts"
+        - "Valorous with slender build"
+        - "Knows the weaknesses of others"
+        - "Lively but has some vacillation"
+        - "Charitable"
+
+    - name: "Maalavya Yoga"
+      section: "11.4.4"
+      planet: "Venus"
+      element: "Jala tattva (watery nature)"
+      formation:
+        - "Venus is in a quadrant (1st, 4th, 7th or 10th from lagna) in own sign or exaltation sign."
+        - "Venus must be in Taurus, Libra or Pisces."
+      example: "Lagna in Gemini, Venus in Pisces."
+      results:
+        - "Great man of watery nature"
+        - "Emits a lustre akin to moonlight"
+        - "Enjoys tasty food"
+        - "Has luxuries"
+        - "Excellent health"
+        - "Well-versed in arts"
+
+    - name: "Hamsa Yoga"
+      section: "11.4.5"
+      planet: "Jupiter"
+      element: "Aakaasa tattva (ethery nature)"
+      formation:
+        - "Jupiter is in a quadrant (1st, 4th, 7th or 10th from lagna) in own sign or exaltation sign."
+        - "Jupiter must be in Sagittarius, Pisces or Cancer."
+      example: "Lagna in Sagittarius, Jupiter in Pisces."
+      results:
+        - "Great man of ethery nature"
+        - "Swan-like (Hamsa means swan)"
+        - "Spiritual strength and purity"
+        - "Respected by everyone"
+        - "Very passionate"
+        - "Becomes a king with all comforts"
+        - "Enjoys life fully"
+        - "Clever conversationalist and endowed with good speech"
+
+# =============================================================================
+# NAABHASA YOGAS (Classified Celestial Combinations) - Section 11.5
+# =============================================================================
+naabhasa_yogas:
+  section: "11.5"
+  description: "Classified celestial combinations. Results of Naabhasa yogas are felt in all dasas, unlike other yogas."
+  note: "In Aakriti and Sankhya yogas, Rahu and Ketu are not counted as planets by many authors."
+
+  categories:
+    - name: "Aasraya Yogas"
+      count: 3
+      description: "Based on the signs occupied by planets (movable, fixed, or dual)."
+
+    - name: "Dala Yogas"
+      count: 2
+      description: "Based on benefics/malefics in quadrants."
+
+    - name: "Aakriti Yogas"
+      count: 20
+      description: "Based on the shape of the arrangement of planets in a chart."
+
+    - name: "Sankhya Yogas"
+      count: 7
+      description: "Based on the number of distinct signs occupied by seven planets (excluding Rahu and Ketu)."
+
+  # ---------------------------------------------------------------------------
+  # Aasraya Yogas - Section 11.5.1
+  # ---------------------------------------------------------------------------
+  aasraya_yogas:
+    section: "11.5.1"
+    meaning: "Aasraya means dwelling or asylum."
+
+    yogas:
+      - name: "Rajju Yoga"
+        formation:
+          - "All planets are exclusively in movable signs."
+        meaning: "Rajju means a rope."
+        results:
+          - "Likes to travel"
+          - "Has good looks"
+          - "Flourishes in foreign countries"
+          - "Cruel"
+
+      - name: "Musala Yoga"
+        formation:
+          - "All planets are exclusively in fixed signs."
+        meaning: "Musala means a pestle."
+        results:
+          - "Has honor, wisdom and wealth"
+          - "Kings like him"
+          - "Famous"
+          - "Has many children"
+          - "Has a firm spirit"
+
+      - name: "Nala Yoga"
+        formation:
+          - "All planets are exclusively in dual signs."
+        results:
+          - "Has a poor physique"
+          - "Accumulates money"
+          - "Has good looks and helps relatives"
+          - "Skilful"
+
+  # ---------------------------------------------------------------------------
+  # Dala Yogas - Section 11.5.2
+  # ---------------------------------------------------------------------------
+  dala_yogas:
+    section: "11.5.2"
+
+    yogas:
+      - name: "Maalaa Yoga"
+        formation:
+          - "Three quadrants are occupied by natural benefics."
+        cancellation: "If a malefic also occupies one of the quadrants, this yoga may not operate well."
+        meaning: "Maalaa means a garland."
+        example: "Lagna in Aries, Jupiter in Cancer, Venus in Capricorn, Mercury in Libra."
+        results:
+          - "Always happy"
+          - "Has nice clothes, vehicles, luxuries"
+          - "Friendship of many women"
+
+      - name: "Sarpa Yoga"
+        type: "malefic"
+        formation:
+          - "Three quadrants are occupied by natural malefics."
+        cancellation: "If a benefic also occupies one of the quadrants, this yoga may not operate well."
+        meaning: "Sarpa means a serpent."
+        example: "Lagna in Scorpio, Mars in Taurus, Rahu in Leo, Ketu in Aquarius."
+        results:
+          - "Miserable, unhappy, cruel, poor"
+          - "Dependent on others for food"
+          - "Very bad combination"
+
+  # ---------------------------------------------------------------------------
+  # Aakriti Yogas - Section 11.5.3
+  # ---------------------------------------------------------------------------
+  aakriti_yogas:
+    section: "11.5.3"
+    note: "Aakriti means a shape. Rahu and Ketu are not counted as planets by many authors."
+
+    yogas:
+      - name: "Gadaa Yoga"
+        formation:
+          - "All planets occupy two successive quadrants from lagna."
+        example: "All planets in 4th and 7th (or 10th and 1st)."
+        meaning: "Gadaa means a mace or a bludgeon."
+        results:
+          - "Possesses wealth, gold and gems"
+          - "Performs yajnas (sacrificial rites)"
+          - "Knows sastras (sciences) and songs"
+
+      - name: "Sakata Yoga"
+        formation:
+          - "All planets occupy 1st and 7th houses from lagna."
+        meaning: "Sakata means a cart."
+        type: "malefic"
+        results:
+          - "Suffers from diseases"
+          - "Has ugly nails"
+          - "Foolish"
+          - "Does not have friends and family"
+          - "Lives pulling carts"
+
+      - name: "Vihanga Yoga"
+        also_known_as: "Vihaga Yoga"
+        formation:
+          - "All planets occupy 4th and 10th houses from lagna."
+        meaning: "Vihanga means a bird."
+        results:
+          - "Loves to wander"
+          - "Works as a messenger"
+          - "Likes sex"
+          - "Has no shame and likes to quarrel"
+
+      - name: "Sringaataka Yoga"
+        formation:
+          - "All planets occupy trines (1st, 5th and 9th) from lagna."
+        meaning: "Sringaataka means a cross-road junction."
+        results:
+          - "Happy and liked by kings"
+          - "Has a noble wife"
+          - "Wealthy"
+
+      - name: "Hala Yoga"
+        formation:
+          - "All planets occupy mutual trines but not trines from lagna."
+          - "All planets in 2nd, 6th and 10th; OR all in 3rd, 7th and 11th; OR all in 4th, 8th and 12th."
+        meaning: "Hala means a plough."
+        type: "malefic"
+        results:
+          - "Becomes a farmer"
+          - "Eats a lot of food"
+          - "Poor"
+          - "Deserted by friends and relatives"
+          - "Unhappy and worried"
+
+      - name: "Vajra Yoga"
+        formation:
+          - "Lagna and 7th houses are occupied by natural benefics."
+          - "4th and 10th houses are occupied by natural malefics."
+        meaning: "Vajra means a diamond."
+        results:
+          - "Happy in the early and late parts of life"
+          - "Has valour"
+          - "Not fortunate, but has no desires either"
+          - "Fights"
+
+      - name: "Yava Yoga"
+        formation:
+          - "Lagna and 7th houses are occupied by natural malefics."
+          - "4th and 10th houses are occupied by natural benefics."
+        meaning: "Yava means a grain."
+        results:
+          - "Observes religious rules"
+          - "Happy in the middle part of life"
+          - "Has wealth and good children"
+          - "Charitable and strong-minded"
+
+      - name: "Kamala Yoga"
+        formation:
+          - "All planets are in quadrants from lagna."
+        meaning: "Kamala means a lotus."
+        results:
+          - "Becomes a king"
+          - "Strong character"
+          - "Famous and long-lived"
+          - "Pure and performs many good deeds"
+
+      - name: "Vaapi Yoga"
+        formation:
+          - "All planets are in panaparas or in apoklimas."
+        meaning: "Vaapi means a pond or a water tank or a well."
+        results:
+          - "Mind capable of amassing wealth"
+          - "Has all comforts"
+          - "Becomes a king"
+
+      - name: "Yoopa Yoga"
+        formation:
+          - "All planets are in 1st, 2nd, 3rd and 4th houses from lagna."
+        meaning: "Yoopa means a pillar, in particular a sacrificial post."
+        results:
+          - "Has spiritual knowledge and knowledge of yajnas (sacrificial rites)"
+          - "His wife is with him always"
+          - "Has sattwa guna"
+          - "Observes all religious rules"
+
+      - name: "Sara Yoga"
+        formation:
+          - "All planets are in 4th, 5th, 6th and 7th houses from lagna."
+        meaning: "Sara means an arrow."
+        results:
+          - "Makes arrows"
+          - "Heads prisons"
+          - "Is a hunter"
+          - "Eats meat"
+          - "Tortures people"
+
+      - name: "Sakti Yoga"
+        formation:
+          - "All planets are in 7th, 8th, 9th and 10th houses from lagna."
+        meaning: "Sakti means energy and it is also a powerful weapon."
+        results:
+          - "Unhappy, poor, unsuccessful, unworthy, lazy"
+          - "Long-lived and firm"
+          - "Has sharp mind in war"
+
+      - name: "Danda Yoga"
+        formation:
+          - "All planets are in 10th, 11th, 12th and 1st houses from lagna."
+        meaning: "Danda means a stick used to punish people."
+        type: "malefic"
+        results:
+          - "Loses wife and children"
+          - "People desert him"
+          - "Unhappy and serves mean people"
+
+      - name: "Naukaa Yoga"
+        formation:
+          - "All planets occupy the 7 signs from lagna."
+        meaning: "Naukaa means a ship."
+        results:
+          - "Makes money on things related to water"
+          - "Has many desires and is well-known"
+          - "Wicked, rough and miserly"
+
+      - name: "Koota Yoga"
+        formation:
+          - "All planets occupy the 7 signs from the 4th house."
+        meaning: "Koota means a group."
+        results:
+          - "Becomes a jailer"
+          - "Is a liar"
+          - "Lives in hills and forts"
+          - "Poor and cruel"
+
+      - name: "Chatra Yoga"
+        formation:
+          - "All planets occupy the 7 signs from the 7th house."
+        meaning: "Chatra means an umbrella."
+        results:
+          - "Helps his people"
+          - "Kind and liked by many kings"
+          - "Intelligent"
+          - "Happy in the early and late parts of life"
+          - "Long-lived"
+
+      - name: "Chaapa Yoga"
+        formation:
+          - "All planets occupy the 7 signs from the 10th house."
+        meaning: "Chaapa means a bow."
+        results:
+          - "Becomes a liar, thief and protector of secrets"
+          - "Wanders in forests"
+          - "Unfortunate"
+          - "Happy in the middle part of life"
+
+      - name: "Ardha Chandra Yoga"
+        formation:
+          - "All planets occupy the 7 signs starting from a panapara or an apoklima."
+        meaning: "Ardha Chandra means half-Moon."
+        results:
+          - "Becomes an army chief"
+          - "Has a good physique"
+          - "Kings like him"
+          - "Strong and possesses gems, gold and many ornaments"
+
+      - name: "Chakra Yoga"
+        formation:
+          - "All planets occupy 1st, 3rd, 5th, 7th, 9th and 11th houses."
+        meaning: "Chakra means a wheel. Chakravarti means an emperor."
+        results:
+          - "Becomes a great emperor"
+          - "Diamond-studded crowns of many kings touch his feet"
+
+      - name: "Samudra Yoga"
+        formation:
+          - "All planets occupy 2nd, 4th, 6th, 8th, 10th and 12th houses."
+        meaning: "Samudra means a sea or an ocean. Also the name of the God of Ocean."
+        results:
+          - "Owns a lot of wealth and many gems"
+          - "Has luxuries"
+          - "Likes people"
+          - "Fortune and greatness are stable"
+          - "Soft-natured"
+
+  # ---------------------------------------------------------------------------
+  # Sankhya Yogas - Section 11.5.4
+  # ---------------------------------------------------------------------------
+  sankhya_yogas:
+    section: "11.5.4"
+    description: "Based on the number of distinct signs occupied by the seven planets combined (excluding Rahu and Ketu). Apply only if no other Naabhasa yogas mentioned previously are applicable. These are the least important of all Naabhasa yogas."
+
+    yogas:
+      - name: "Veenaa Yoga"
+        also_known_as: "Vallaki Yoga"
+        formation:
+          - "Seven planets occupy exactly 7 distinct signs."
+        meaning: "Veenaa is a stringed musical instrument."
+        results:
+          - "Likes music, dance and songs"
+          - "Has many servants"
+          - "Wealthy, skilful and a leader of men"
+
+      - name: "Daama Yoga"
+        also_known_as: "Daamini Yoga"
+        formation:
+          - "Seven planets occupy exactly 6 distinct signs."
+        meaning: "Daama means a wreath."
+        results:
+          - "Very rich and famous"
+          - "Has many children and gems"
+          - "Helps others"
+
+      - name: "Paasa Yoga"
+        formation:
+          - "Seven planets occupy exactly 5 distinct signs."
+        meaning: "Paasa means a noose."
+        results:
+          - "Risk of being imprisoned"
+          - "Capable in work"
+          - "Talkative"
+          - "Has many servants"
+          - "Lacks character"
+
+      - name: "Kedaara Yoga"
+        formation:
+          - "Seven planets occupy exactly 4 distinct signs."
+        meaning: "Kedaara means a field."
+        results:
+          - "Is an agriculturist"
+          - "Happy, wealthy and helpful to others"
+
+      - name: "Soola Yoga"
+        formation:
+          - "Seven planets occupy exactly 3 distinct signs."
+        meaning: "Soola is Shiva's weapon."
+        results:
+          - "Sharp, lazy, violent, poor, prohibited and valiant"
+          - "Wins accolades in wars"
+
+      - name: "Yuga Yoga"
+        formation:
+          - "Seven planets occupy exactly 2 distinct signs."
+        meaning: "Yuga means a pair."
+        type: "malefic"
+        results:
+          - "Heretic"
+          - "Poor and discarded in the world"
+          - "Irreligious"
+          - "No happiness from children and mother"
+
+      - name: "Gola Yoga"
+        formation:
+          - "Seven planets are in one sign."
+        meaning: "Gola means a sphere or a globe."
+        type: "malefic"
+        results:
+          - "Strong, poor, dirty and uneducated"
+          - "Always sad"
+
+# =============================================================================
+# OTHER POPULAR YOGAS - Section 11.6
+# =============================================================================
+other_popular_yogas:
+  section: "11.6"
+  description: "Other important combinations. For a yoga to be fully present, all the required combinations must be present and the participating planets must be strong."
+  note_on_kartari: "Kartari literally means scissors. The 12th and 2nd houses from a house cast kartari on it. Benefics in 2nd and 12th from a house give subha (benefic) kartari. Malefics in the same places cause paapa (malefic) kartari."
+
+  yogas:
+    - name: "Subha Yoga"
+      formation:
+        - "Lagna has benefics, OR"
+        - "Lagna has subha kartari (benefics in 12th and 2nd from lagna)."
+      results:
+        - "Eloquence, good looks and character"
+
+    - name: "Asubha Yoga"
+      type: "malefic"
+      formation:
+        - "Lagna has malefics, OR"
+        - "Lagna has paapa kartari (malefics in 12th and 2nd from lagna)."
+      results:
+        - "Has many desires"
+        - "Sinful and enjoys the wealth of others"
+
+    - name: "Gaja-Kesari Yoga"
+      formation:
+        - "Jupiter is in a quadrant from Moon."
+        - "A benefic planet conjoins or aspects Jupiter."
+        - "Jupiter is not debilitated or combust or in an enemy's house."
+      results:
+        - "Famous, wealthy and intelligent"
+        - "Great character, liked by kings"
+        - "Key yoga for virtuousness and ever-lasting fame"
+      notes:
+        - "Some authors consider it present when Jupiter is in a quadrant from lagna, not Moon."
+        - "If Jupiter is strong, this yoga can be present even without a benefic's aspect or conjunction."
+
+    - name: "Guru-Mangala Yoga"
+      formation:
+        - "Jupiter and Mars are together OR in the 7th house from each other."
+      results:
+        - "Righteous and energetic"
+        - "Energies channelled in dharmic paths"
+
+    - name: "Amala Yoga"
+      formation:
+        - "Only natural benefics are in the 10th house from lagna or Moon."
+      meaning: "Amala means pure."
+      results:
+        - "Everlasting fame"
+        - "Respected by kings"
+        - "Has luxuries and is virtuous"
+        - "Helps others"
+      notes:
+        - "10th house shows one's conduct in society; only benefics there make conduct very pure."
+
+    - name: "Parvata Yoga"
+      formation:
+        - "Quadrants are occupied only by benefics."
+        - "7th and 8th houses are either vacant or occupied only by benefics."
+      meaning: "Parvata means a mountain."
+      results:
+        - "Fortunate, eloquent, famous"
+        - "Charitable, easy-going and likes humour"
+
+    - name: "Kaahala Yoga"
+      formation:
+        - "The 4th lord and Jupiter are in mutual quadrants AND lagna lord is strong."
+        - "OR: The 4th lord is exalted or in own sign and the 10th lord joins him."
+      meaning: "Kaahala means excessive or mischievous."
+      results:
+        - "Strong, bold, cunning"
+        - "Leads a large army"
+        - "Owns a few villages"
+      notes:
+        - "Some say 9th lord instead of Jupiter."
+
+    - name: "Chaamara Yoga"
+      formation:
+        - "Lagna lord is exalted in a quadrant with Jupiter's aspect, OR"
+        - "Two benefics join in 7th, 9th or 10th."
+      meaning: "Chaamara is akin to a plume on a horse's head; stands for trappings of power."
+      results:
+        - "A king or respected by kings"
+        - "Long-lived, scholarly, eloquent"
+        - "Learned in many arts"
+
+    - name: "Sankha Yoga"
+      formation:
+        - "Lagna lord is strong AND 5th and 6th lords are in mutual quadrants."
+        - "OR: Lagna lord and 10th lord are together in a movable sign AND 9th lord is strong."
+      meaning: "Sankha means a conch shell."
+      results:
+        - "Blessed with wealth, spouse and children"
+        - "Kind, pious, intelligent and long-lived"
+
+    - name: "Bheri Yoga"
+      formation:
+        - "9th lord is strong AND 1st, 2nd, 7th and 12th houses are occupied by planets."
+        - "OR: 9th lord is strong AND Jupiter, Venus and lagna lord are in mutual quadrants."
+      meaning: "Bheri means a kettledrum."
+      results:
+        - "Blessed with wealth, spouse and children"
+        - "Can be a king"
+        - "Has fame and character"
+        - "Virtuous, religious, enjoys pleasures"
+
+    - name: "Mridanga Yoga"
+      formation:
+        - "Planets are in own and exaltation signs in quadrants and trines."
+        - "Lagna lord is strong."
+      meaning: "Mridanga is a rich percussion instrument popular in south India."
+      results:
+        - "A king or an equal"
+        - "Happy"
+
+    - name: "Sreenaatha Yoga"
+      formation:
+        - "7th lord is exalted in 10th."
+        - "10th lord is with 9th lord."
+      meaning: "Sreenaatha means the lord of great wealth and prosperity. Also means Vishnu."
+      results:
+        - "Becomes a great king equal to Indra (king of gods)"
+      notes:
+        - "If applied strictly, 7th lord can be exalted in 10th only for Sagittarius lagna."
+
+    - name: "Matsya Yoga"
+      formation:
+        - "Benefics are in lagna and 9th."
+        - "Some planets are in 5th."
+        - "Malefics are in chaturasras (4th and 8th houses)."
+      meaning: "Matsya means a fish."
+      results:
+        - "Becomes an astrologer or a seer"
+        - "Personification of kindness, character and intelligence"
+        - "Strong and good-looking"
+        - "Famous and learned"
+        - "A tapasvi (austere pursuer)"
+
+    - name: "Koorma Yoga"
+      formation:
+        - "5th, 6th and 7th houses are occupied by benefics who are in own, exaltation or friendly signs."
+        - "1st, 3rd and 11th houses are occupied by malefics who are in own or exaltation signs."
+      meaning: "Koorma means a tortoise."
+      results:
+        - "Becomes a king"
+        - "Has piety and character"
+        - "Happy, helpful and famous"
+
+    - name: "Khadga Yoga"
+      formation:
+        - "2nd lord is in the 9th house."
+        - "9th lord is in the 2nd house."
+        - "Lagna lord is in a quadrant or a trine."
+      meaning: "Khadga means a sword."
+      results:
+        - "Skilful, wealthy, learned, happy"
+        - "Fortunate, intelligent, grateful and mighty"
+
+    - name: "Kusuma Yoga"
+      formation:
+        - "Lagna is in a fixed sign."
+        - "Venus is in a quadrant."
+        - "Moon is in a trine with a benefic."
+        - "Saturn is in the 10th house."
+      meaning: "Kusuma means a flower."
+      results:
+        - "Becomes a king or an equal"
+        - "Charitable"
+        - "Endowed with pleasures and happiness"
+        - "Leader of his community"
+        - "Has character and scholarship"
+
+    - name: "Kalaanidhi Yoga"
+      formation:
+        - "Jupiter is in the 2nd house or the 5th house."
+        - "Jupiter is conjoined or aspected by Mercury and Venus."
+      meaning: "Kalaanidhi means a treasure of arts and skills."
+      results:
+        - "Endowed with character, happiness, good health, wealth and learning"
+        - "Respected by kings"
+
+    - name: "Kalpadruma Yoga"
+      also_known_as: "Paarijaata Yoga"
+      formation:
+        - "Consider (1) lagna lord, (2) his dispositor, (3) the latter's dispositor in rasi, and (4) the latter's dispositor in navamsa."
+        - "All four planets must be in quadrants, trines or exaltation signs."
+      meaning: "Kalpadruma is a celestial tree of heaven. Paarijaata is a celestial flower."
+      results:
+        - "Becomes a king"
+        - "Very prosperous, principled, strong and kind"
+        - "Likes wars (in a positive, dharmic sense)"
+      example: "Chatrapati Shivaji: Lagna lord Sun, dispositor Saturn (in Libra, exalted), Saturn's dispositor Venus (in a trine), Saturn's navamsa dispositor Saturn himself."
+      notes:
+        - "Some authors simplified this yoga requiring only one of the last two planets to be in a quadrant, trine or exaltation."
+        - "Parasara's original requires all four planets."
+
+    - name: "Lagnaadhi Yoga"
+      formation:
+        - "7th and 8th houses from lagna are occupied by benefics."
+        - "No malefics conjoin or aspect these planets."
+      meaning: "Adhi means over or above. This is Adhi Yoga from lagna."
+      results:
+        - "Becomes a great person"
+        - "Learned and happy"
+
+    - name: "Hari Yoga"
+      formation:
+        - "Benefics occupy the 2nd, 12th and 8th houses counted from the 2nd lord."
+      meaning: "Hari is a name of Lord Vishnu. 2nd house lord represents Hari (Sustainer) in a chart."
+      results:
+        - "Happy, learned"
+        - "Blessed with wealth and children"
+
+    - name: "Hara Yoga"
+      formation:
+        - "Benefics occupy the 4th, 9th and 8th houses counted from the 7th lord."
+      meaning: "Hara is a name of Lord Shiva. 7th house rules death and Shiva is represented by its lord."
+      results:
+        - "Happy, learned"
+        - "Blessed with wealth and children"
+
+    - name: "Brahma Yoga"
+      formation:
+        - "Benefics occupy the 4th, 10th and 11th houses counted from lagna lord."
+      alternate_formation:
+        - "Jupiter is in a quadrant from the 9th lord."
+        - "Venus is in a quadrant from the 11th lord."
+        - "Mercury is in a quadrant from the 1st lord or 10th lord."
+      meaning: "Brahma is the creator of the universe. Lagna rules birth and the Creator is represented by lagna lord."
+      results:
+        - "Happy, learned"
+        - "Blessed with wealth and children"
+      notes:
+        - "Hari, Hara and Brahma yogas together are called Hari Hara Brahma Yoga or Trimurthi Yogas."
+        - "Brahma is the Creator; Hari is the Sustainer; Shiva is the Destroyer - forming the Trinity of Gods (Trimurthis)."
+
+    - name: "Vishnu Yoga"
+      formation:
+        - "9th and 10th lords are in the 2nd house."
+        - "The lord of the sign occupied in navamsa by the 9th lord in rasi chart is also in the 2nd house."
+      results:
+        - "Fortunate, learned, long-lived"
+        - "Liked by kings"
+        - "Worshipper of Vishnu"
+
+    - name: "Siva Yoga"
+      formation:
+        - "5th lord is in the 9th house."
+        - "9th lord is in the 10th house."
+        - "10th lord is in the 5th house."
+      results:
+        - "Wise and virtuous"
+        - "A conqueror"
+        - "Can be an army chief or a businessman"
+
+    - name: "Trilochana Yoga"
+      formation:
+        - "Sun, Moon and Mars are in mutual trines."
+      meaning: "Trilochana means one with three eyes, another name of Lord Siva."
+      results:
+        - "Wealthy, intelligent, long-lived"
+        - "Victorious over enemies"
+        - "Achieves everything without many obstacles"
+
+    - name: "Gouri Yoga"
+      formation:
+        - "The lord of the sign occupied in navamsa by the 10th lord is exalted in the 10th house."
+        - "Lagna lord joins him."
+      meaning: "Gouri is a form of Parvati (Lord Siva's wife), an epitome of marital bliss and purity."
+      results:
+        - "From a respectable family"
+        - "Religious and virtuous"
+        - "Blessed with happiness from family"
+
+    - name: "Chandikaa Yoga"
+      formation:
+        - "Lagna is in a fixed sign aspected by 6th lord."
+        - "Sun joins the lords of the signs occupied in navamsa by 6th and 9th lords."
+      meaning: "Chandika is an aggressive form of Parvati. She kills demons mercilessly."
+      results:
+        - "Aggressive, charitable"
+        - "Wealthy, famous and long-lived"
+
+    - name: "Lakshmi Yoga"
+      formation:
+        - "9th lord is in own sign or exaltation sign that happens to be a quadrant from lagna."
+        - "Lagna lord is strong."
+      meaning: "Lakshmi is Vishnu's wife, the goddess of prosperity."
+      results:
+        - "Becomes a king"
+        - "Good looks, character, wealth and many children"
+        - "Principled and famous"
+
+    - name: "Saarada Yoga"
+      formation:
+        - "10th lord is in the 5th house."
+        - "Mercury is in a quadrant."
+        - "Sun is strong in Leo."
+        - "Mercury or Jupiter is in a trine from Moon."
+        - "Mars is in 11th."
+      meaning: "Saarada is another name of Saraswathi, the goddess of learning."
+      results:
+        - "Blessed with wealth, spouse and children"
+        - "Happy, learned, principled"
+        - "Liked by kings"
+        - "A tapaswi (austere pursuer of knowledge)"
+
+    - name: "Bhaarathi Yoga"
+      formation:
+        - "The lord of the sign occupied in navamsa by 2nd, 5th or 11th lord is exalted and joins the 9th lord."
+      meaning: "Bhaarathi is another name of Saraswathi, the goddess of learning."
+      results:
+        - "Great scholar"
+        - "Intelligent, religious, good-looking and famous"
+
+    - name: "Saraswathi Yoga"
+      formation:
+        - "Each of Mercury, Jupiter and Venus occupies a quadrant or a trine or the 2nd house (not necessarily together)."
+        - "Jupiter is in an own or friendly or exaltation sign."
+      meaning: "Saraswathi is the goddess of learning."
+      results:
+        - "Very learned, skilful, intelligent, rich and famous"
+        - "Praised by all"
+
+    - name: "Amsaavatara Yoga"
+      formation:
+        - "Jupiter, Venus and exalted Saturn are in quadrants."
+      meaning: "Amsaavatara means one who is an incarnation of a part of the Lord."
+      results:
+        - "Becomes a king or an equal"
+        - "Learned and pleasure-loving"
+        - "Unsullied reputation"
+
+    - name: "Devendra Yoga"
+      formation:
+        - "Lagna is in a fixed sign."
+        - "2nd and 10th lords have an exchange (parivartana)."
+        - "Lagna and 11th lords have an exchange."
+      meaning: "Devendra is the ruler of gods."
+      results:
+        - "Leader of men"
+        - "Handsome, romantic, long-lived and famous"
+
+    - name: "Indra Yoga"
+      formation:
+        - "5th and 11th lords have an exchange."
+        - "Moon occupies the 5th house."
+      meaning: "Indra is the ruler of gods."
+      results:
+        - "Becomes a king"
+        - "Bold, famous and long-lived"
+
+    - name: "Ravi Yoga"
+      section_note: "Listed under Other Popular Yogas, distinct from the Ravi Yogas section"
+      formation:
+        - "Sun is in the 10th house."
+        - "10th lord is in the 3rd house with Saturn."
+      meaning: "Ravi means Sun."
+      results:
+        - "Learned, passionate"
+        - "Respected by kings"
+
+    - name: "Bhaaskara Yoga"
+      formation:
+        - "Moon is in the 12th from Sun."
+        - "Mercury is in the 2nd from Sun."
+        - "Jupiter is in the 5th or 9th from Moon."
+      meaning: "Bhaaskara means one with bright rays, a name of Sun."
+      results:
+        - "Wealthy, valorous and aristocratic"
+        - "Learned in sastras, astrology and music"
+        - "Has a good personality"
+
+    - name: "Kulavardhana Yoga"
+      formation:
+        - "Each planet occupies the 5th house from either lagna or Moon or Sun."
+      meaning: "Kula means lineage or community; Vardhana means one who makes it grow and prosper."
+      results:
+        - "Happy, wealthy"
+        - "Brings name to his lineage and community"
+        - "Has an unbroken line of worthy successors"
+
+    - name: "Vasumati Yoga"
+      formation:
+        - "Benefics occupy upachayas (3rd, 6th, 10th, 11th)."
+      notes:
+        - "For full results, malefics should not occupy upachayas and the benefics should be strong."
+      meaning: "Vasumati means earth."
+      results:
+        - "Has abundant wealth"
+
+    - name: "Gandharva Yoga"
+      formation:
+        - "10th lord is in a trine from the 7th house."
+        - "Lagna lord is conjoined or aspected by Jupiter."
+        - "Sun is exalted and strong."
+        - "Moon is in the 9th house."
+      meaning: "Gandharvas are a class of gods with excellent skills in singing and fine arts."
+      results:
+        - "Skilful and famous in fine arts"
+
+    - name: "Go Yoga"
+      formation:
+        - "Jupiter is strong in his moolatrikona."
+        - "Lord of the 2nd house is with Jupiter."
+        - "Lagna lord is exalted."
+      meaning: "Go means a cow."
+      results:
+        - "From a respectable family"
+        - "Wealthy and respected by all"
+
+    - name: "Vidyut Yoga"
+      formation:
+        - "11th lord is in deep exaltation."
+        - "11th lord joins Venus."
+        - "The two are in a quadrant from lagna lord."
+      meaning: "Vidyut means a lightning bolt or electricity."
+      results:
+        - "Becomes a king or an equal"
+        - "Wealthy, pleasure-loving and charitable"
+
+    - name: "Chapa Yoga"
+      section_note: "Listed under Other Popular Yogas, distinct from the Naabhasa Chaapa Yoga"
+      formation:
+        - "4th and 10th lords have an exchange."
+        - "Lagna lord is exalted."
+      meaning: "Chapa means a bow."
+      results:
+        - "Works for a king"
+        - "Commands a lot of wealth"
+
+    - name: "Pushkala Yoga"
+      formation:
+        - "Lagna lord is with Moon."
+        - "Dispositor of Moon is in a quadrant or in the house of an adhimitra (good friend)."
+        - "Dispositor of Moon aspects lagna."
+        - "There is a planet in lagna."
+      meaning: "Pushkala means abundant."
+      results:
+        - "Eloquent, wealthy, famous"
+        - "Respected by kings"
+
+    - name: "Makuta Yoga"
+      formation:
+        - "Jupiter is in the 9th house from the 9th lord."
+        - "9th house from Jupiter has a benefic."
+        - "Saturn is in the 10th house."
+      meaning: "Makuta means crown."
+      results:
+        - "Powerful leader of men"
+        - "Often manages unruly activities"
+
+    - name: "Jaya Yoga"
+      formation:
+        - "10th lord is in deep exaltation."
+        - "6th lord is debilitated."
+      meaning: "Jaya means victorious."
+      results:
+        - "Happy, successful"
+        - "Victorious over enemies"
+        - "Long-lived"
+
+    - name: "Harsha Yoga"
+      formation:
+        - "6th lord occupies the 6th house."
+      meaning: "Harsha means joyous."
+      results:
+        - "Happy, strong, good-natured"
+        - "Invincible"
+
+    - name: "Sarala Yoga"
+      formation:
+        - "8th lord occupies the 8th house."
+      meaning: "Sarala means straightforward."
+      results:
+        - "Long-lived, fearless, learned"
+        - "Celebrated and prosperous"
+        - "Terror to his enemies"
+
+    - name: "Vimala Yoga"
+      formation:
+        - "12th lord occupies the 12th house."
+      meaning: "Vimala means pure."
+      results:
+        - "Noble, frugal, happy and independent"
+
+# =============================================================================
+# RAAJA YOGAS (Combinations Giving Power) - Section 11.7
+# =============================================================================
+raaja_yogas:
+  section: "11.7"
+  description: "Raaja means a king. Raaja yogas give power and prosperity to a native. They make one the best in something."
+
+  # ---------------------------------------------------------------------------
+  # Basic Raaja Yoga - Section 11.7.1
+  # ---------------------------------------------------------------------------
+  basics:
+    section: "11.7.1"
+
+    yogas:
+      - name: "Basic Raaja Yoga"
+        formation:
+          - "Lord of a quadrant is associated with lord of a trine."
+          - "Association means: (1) conjunction, (2) mutual graha drishti aspect, or (3) parivartana (exchange)."
+          - "Lagna can be taken as a quadrant or a trine (it is both)."
+        explanation: "Lord Vishnu sits in the quadrants and Goddess Lakshmi sits in the trines. Their lords' association brings combined blessings of Lakshmi and Vishnu."
+        results:
+          - "The native is powerful and prosperous."
+
+      - name: "Dharma-Karmadhipati Yoga"
+        formation:
+          - "Lords of dharma sthana (9th) and karma sthana (10th) form a raja yoga."
+        explanation: "9th house is the most important trine, 10th house is the most important quadrant."
+        results:
+          - "Sincere, devoted and righteous"
+          - "Fortunate"
+
+      - name: "Vipareeta Raaja Yoga"
+        formation:
+          - "Lords of dusthanas (6th, 8th, 12th) occupy dusthanas or conjoin dusthana lords."
+          - "Ideal case: lords of 6th, 8th and 12th are all together in one of the three dusthanas (or 3rd or 11th house), with no other planets conjoining them."
+        explanation: "Dusthanas show obstacles; their lords in dusthanas means obstacles run into obstacles themselves."
+        results:
+          - "Tremendous success, typically after an initial struggle"
+        notes:
+          - "Results may be experienced with just one or two dusthana lords occupying a dusthana."
+
+  # ---------------------------------------------------------------------------
+  # Magnitude of a Raaja Yoga - Section 11.7.2
+  # ---------------------------------------------------------------------------
+  magnitude:
+    section: "11.7.2"
+    description: "The magnitude to which a raja yoga fructifies depends on the strength of the two planets."
+
+    factors:
+      - "The two planets should be free from afflictions from functional malefics."
+      - "The conjunction or aspect responsible for the yoga should be close (within about 6 degrees)."
+      - "The two planets should not be combust, debilitated, in an inimical house, or in bad avasthas."
+
+    amsa_classification:
+      description: "Based on Dasa Varga scheme - count divisional charts in which a planet occupies own, exaltation or moolatrikona sign."
+      levels:
+        - count: "0-1"
+          amsa: "Ordinary"
+          result: "Gives good results depending on other factors."
+        - count: 2
+          amsa: "Paarijaataamsa"
+          result: "One becomes a king who rules his people well."
+        - count: 3
+          amsa: "Uttamaamsa"
+          result: "One becomes a good king with tremendous assets."
+        - count: 4
+          amsa: "Gopuraamsa"
+          result: "One becomes a great king respected by many kings."
+        - count: 5
+          amsa: "Simhaasanaamsa"
+          result: "One becomes a great emperor who rules the whole world."
+        - count: 6
+          amsa: "Paaraavataamsa"
+          result: "Only for divine persons."
+        - count: 7
+          amsa: "Devalokaamsa"
+          result: "Only for divine persons."
+        - count: 8
+          amsa: "Brahmalokaamsa"
+          result: "Only for divine persons."
+        - count: 9
+          amsa: "Airaavataamsa"
+          result: "Only for divine persons such as Vishnu's incarnations."
+
+    note: "None of the factors influences the end result completely. Look at all factors and make the final judgment."
+
+  # ---------------------------------------------------------------------------
+  # More Raaja Yogas - Section 11.7.3
+  # ---------------------------------------------------------------------------
+  advanced_raaja_yogas:
+    section: "11.7.3"
+    description: "Advanced Raaja Yogas listed by Parasara."
+
+    yogas:
+      - number: 1
+        formation:
+          - "Chara putra karaka (PK) and chara atma karaka (AK) are conjoined."
+          - "Lagna lord and 5th lord conjoin."
+        results: "Native enjoys power and prosperity."
+        notes: "If only one condition is satisfied, results may be felt but not fully."
+
+      - number: 2
+        formation:
+          - "Lagna lord is in 5th."
+          - "5th lord is in lagna."
+          - "AK and PK are in lagna or the 5th house."
+          - "Those planets are in own rasi or amsa or in exaltation or aspected by benefics."
+        results: "Becomes a great king (Maharajah) loved by associates."
+
+      - number: 3
+        formation:
+          - "9th lord and AK are in lagna, 5th or 7th, aspected by benefics."
+        results: "Raaja Yoga is present."
+
+      - number: 4
+        formation:
+          - "2nd, 4th and 5th houses from lagna lord and AK are occupied by benefics."
+        results: "One becomes a king."
+
+      - number: 5
+        formation:
+          - "3rd and 6th houses from lagna lord and AK are occupied or aspected by malefics."
+        results: "One becomes a king."
+
+      - number: 6
+        formation:
+          - "Lagna, HL and GL are joined or aspected by the same planet."
+        results: "That planet gives a Raaja Yoga."
+        notes:
+          - "One may add 'owned' to 'joined or aspected'."
+          - "Planets aspecting or joining HL and GL give wealth and power respectively."
+          - "Results may be experienced if a planet has association with lagna (or lagna lord), HL (or HL lord) and GL (or GL lord)."
+
+      - number: 7
+        formation:
+          - "The same planet aspects lagna in the six divisional charts of shad vargas (Rasi, Navamsa, Hora, Drekkana, Dwadasamsa, Trimsamsa)."
+        results: "That planet gives a Raaja Yoga."
+
+      - number: 8
+        formation:
+          - "Lagna, HL and GL are occupied by a planet in own or exaltation sign (can be different planets)."
+        results: "Native becomes a king."
+
+      - number: 9
+        formation:
+          - "Lagna in Rasi, Navamsa and Drekkana charts is occupied by a planet in own or exaltation sign (can be different planets)."
+        results: "Native becomes a king."
+
+      - number: 10
+        formation:
+          - "3rd, 6th and 8th houses are occupied by one or two planets in debilitation."
+          - "Lagna lord is in own or exaltation sign and aspects lagna."
+        results: "Raaja Yoga is formed."
+
+      - number: 11
+        formation:
+          - "6th, 8th and 12th lords are debilitated or combust or in inimical signs."
+          - "Lagna lord is in own or exaltation sign and aspects lagna."
+        results: "Raaja Yoga is formed."
+
+      - number: 12
+        formation:
+          - "5th and 9th lords are in conjunction or mutual aspect."
+        results: "Makes one prosperous."
+
+      - number: 13
+        formation:
+          - "4th lord is in 10th house and 10th lord is in 4th house."
+          - "Both are aspected by the 5th lord or the 9th lord."
+        results: "Raaja Yoga is formed."
+
+      - number: 14
+        formation:
+          - "5th lord is in 1st, 4th or 10th house."
+          - "Lagna lord or 9th lord joins him."
+        results: "Native becomes a king."
+
+      - number: 15
+        formation:
+          - "Moon is strong and occupies vargottamamsa."
+          - "Four or more planets aspect Moon."
+        results: "One becomes a king."
+        notes: "Vargottamamsa means a planet occupies the same sign in Rasi and Navamsa charts."
+
+      - number: 16
+        formation:
+          - "Four or more planets occupy moolatrikonas or exaltation signs."
+        results: "One becomes a king even if from a lowly family."
+
+      - number: 17
+        formation:
+          - "Benefics are in quadrants."
+          - "Malefics are in 3rd, 6th and 11th houses."
+        results: "One becomes a king even if from a lowly family."
+
+      - number: 18
+        formation:
+          - "Arudha lagna and darapada (A7 - arudha pada of the 7th house) are not in mutual 2nd/12th or 6th/8th positions."
+        results: "Raja Yogas in the chart will be more effective."
+
+# =============================================================================
+# RAAJA SAMBANDHA YOGAS (Association with Rulers) - Section 11.8
+# =============================================================================
+raaja_sambandha_yogas:
+  section: "11.8"
+  description: "Raaja means a king, Sambandha means relation or association. These yogas give association with rulers - typically powerful ministers, secretaries, counsellors and bureaucrats. These yogas are very common. The magnitude of success depends on the strength of the planets involved."
+
+  yogas:
+    - number: 1
+      formation:
+        - "10th lord is conjoined or aspected by AmK (chara amaatya kaaraka) or his dispositor."
+      results: "Becomes an important person in the court of a king."
+
+    - number: 2
+      formation:
+        - "11th lord aspects the 11th house."
+        - "No malefic planets joining or aspecting the 10th and 11th houses."
+      results: "Becomes an important person in the court of a king."
+
+    - number: 3
+      formation:
+        - "AK and AmK conjoin."
+      results: "Very intelligent and becomes a minister."
+
+    - number: 4
+      formation:
+        - "AmK is very strong in own sign or exaltation sign."
+      results: "Becomes a minister."
+
+    - number: 5
+      formation:
+        - "AmK is in a trine from lagna."
+      results: "Becomes a famous minister."
+
+    - number: 6
+      formation:
+        - "AmK is in a quadrant or a trine from AK."
+      results: "An associate liked by a king."
+
+    - number: 7
+      formation:
+        - "Malefics occupy the 3rd and 6th houses from lagna, AL and AK."
+      results: "Becomes a powerful chief of army."
+
+    - number: 8
+      formation:
+        - "AK is in own or exaltation sign in a quadrant or a trine."
+        - "9th lord is conjoined or aspected by AK."
+      results: "Becomes a minister."
+
+    - number: 9
+      formation:
+        - "AK happens to be Moon's dispositor and occupies lagna along with a benefic."
+      results: "Becomes a minister at an old age."
+
+    - number: 10
+      formation:
+        - "AK is in 5th, 7th, 9th or 10th houses with a benefic."
+      results: "Associated with kings and earns money thus."
+
+    - number: 11
+      formation:
+        - "Bhagyapada (A9 - arudha pada of the 9th house) is in lagna, OR AK is in 9th."
+      results: "Fortunate and associates with kings."
+
+    - number: 12
+      formation:
+        - "11th lord is in the 11th house without aspects from any malefics."
+        - "AK is with benefics."
+      results: "Has gains from a king."
+
+    - number: 13
+      formation:
+        - "Lagna lord is in the 10th house."
+        - "10th lord is in lagna."
+      results: "Powerful and associated with kings."
+
+    - number: 14
+      formation:
+        - "Moon and Venus are in the 4th house from AK."
+      results: "Endowed with royal insignia."
+
+    - number: 15
+      formation:
+        - "Lagna lord or AK conjoins the 5th lord in a quadrant or a trine."
+      results: "Becomes a king's friend."
+
+# =============================================================================
+# DHANA YOGAS (Wealth Combinations) - Section 11.9
+# =============================================================================
+dhana_yogas:
+  section: "11.9"
+  description: "Dhana means wealth. Dhana yogas are combinations that give abundant riches."
+
+  basic_principles:
+    - "5th and 9th lords and planets joining them are capable of giving money in their dasas."
+    - "11th house is important for material gains and should be strong."
+    - "2nd house is also important. Moon, Mercury, Jupiter or Venus exalted in 2nd house makes the native very rich."
+    - "Strength of participating planets decides the magnitude of results."
+
+  lagna_specific_combinations:
+    - lagna: "Aries"
+      combinations:
+        - "Sun in 5th house AND Saturn, Moon and Jupiter in 11th house: very affluent."
+        - "Mars in lagna conjoined or aspected by Mercury, Venus and Saturn: very rich."
+
+    - lagna: "Taurus"
+      combinations:
+        - "Mercury in 5th house AND Moon, Mars and Jupiter in 11th house: very affluent."
+        - "Venus in lagna conjoined or aspected by Mercury and Saturn: very rich."
+
+    - lagna: "Gemini"
+      combinations:
+        - "Venus in 5th house AND Mars in 11th house: very affluent."
+        - "Mercury in lagna conjoined or aspected by Jupiter and Saturn: very rich."
+
+    - lagna: "Cancer"
+      combinations:
+        - "Mars in 5th house AND Venus in 11th house: very affluent."
+        - "Moon in lagna conjoined or aspected by Mercury and Jupiter: very rich."
+
+    - lagna: "Leo"
+      combinations:
+        - "Jupiter in 5th house AND Mercury in 11th house: very affluent."
+        - "Sun in lagna conjoined or aspected by Mars and Jupiter: very rich."
+
+    - lagna: "Virgo"
+      combinations:
+        - "Saturn in 5th house AND Sun and Moon in 11th house: very affluent."
+        - "Mercury in lagna conjoined or aspected by Jupiter and Saturn: very rich."
+
+    - lagna: "Libra"
+      combinations:
+        - "Saturn in 5th house AND Sun and Moon in 11th house: very affluent."
+        - "Venus in lagna conjoined or aspected by Mercury and Saturn: very rich."
+
+    - lagna: "Scorpio"
+      combinations:
+        - "Jupiter in 5th house AND Mercury in 11th house: very affluent."
+        - "Mars in lagna conjoined or aspected by Mercury, Venus and Saturn: very rich."
+
+    - lagna: "Sagittarius"
+      combinations:
+        - "Mars in 5th house AND Venus in 11th house: very affluent."
+        - "Jupiter in lagna conjoined or aspected by Mars and Mercury: very rich."
+
+    - lagna: "Capricorn"
+      combinations:
+        - "Venus in 5th house AND Mars in 11th house: very affluent."
+        - "Saturn in lagna conjoined or aspected by Mars and Jupiter: very rich."
+
+    - lagna: "Aquarius"
+      combinations:
+        - "Mercury in 5th house AND Moon, Mars and Jupiter in 11th house: very affluent."
+        - "Saturn in lagna conjoined or aspected by Mars and Jupiter: very rich."
+
+    - lagna: "Pisces"
+      combinations:
+        - "Moon in 5th house AND planets in 11th house: very affluent."
+        - "Jupiter in lagna conjoined or aspected by Mars and Mercury: very rich."
+
+# =============================================================================
+# DARIDRA YOGAS (Poverty Combinations) - Section 11.10
+# =============================================================================
+daridra_yogas:
+  section: "11.10"
+  description: "Combinations that produce poverty."
+  note_on_marakas: "2nd and 7th houses are maraka (killer houses). Their lords are marakas (killers). Any malefics occupying 2nd and 7th or associating with 2nd and 7th lords also become marakas."
+
+  yogas:
+    - number: 1
+      formation:
+        - "Lagna lord is in 12th and 12th lord is in lagna."
+        - "They are conjoined or aspected by a maraka planet."
+
+    - number: 2
+      formation:
+        - "Lagna lord is in 6th and 6th lord is in lagna."
+        - "They are conjoined or aspected by a maraka planet."
+
+    - number: 3
+      formation:
+        - "Lagna or Moon is with Ketu."
+        - "Lagna lord is in 8th."
+        - "A maraka planet conjoins or aspects lagna lord."
+
+    - number: 4
+      formation:
+        - "Lagna lord is with a malefic in a dusthana (6th, 8th or 12th)."
+        - "2nd lord is debilitated or in an enemy's sign."
+      note: "Even a royal scion with this combination becomes poor."
+
+    - number: 5
+      formation:
+        - "5th lord is in 6th and 9th lord is in 12th, with aspects from marakas."
+
+    - number: 6
+      formation:
+        - "Malefics occupy lagna without 9th and 10th lords, aspected or conjoined by marakas."
+
+    - number: 7
+      formation:
+        - "Lords of the signs occupied by 6th, 8th and 12th lords are in 6th, 8th and 12th houses."
+        - "Conjoined or aspected by malefics."
+
+    - number: 8
+      formation:
+        - "Lord of the sign occupied by Moon in navamsa is with a maraka or occupies a maraka house (2nd or 7th)."
+
+    - number: 9
+      formation:
+        - "Lords of lagna in rasi and navamsa are conjoined or aspected by marakas."
+
+    - number: 10
+      formation:
+        - "Benefics are in malefic houses and malefics are in benefic houses."
+
+    - number: 11
+      formation:
+        - "Planets conjoined by 6th, 8th and 12th lords give loss of wealth in their dasas."
+      exception: "If they are conjoined or aspected by lords of trines, this is mitigated."
+
+    - number: 12
+      formation:
+        - "Mars and Saturn are in 2nd and Mercury does not aspect them."
+      exception: "If Mercury aspects Mars and Saturn in 2nd, great wealth is generated instead."
+
+    - number: 13
+      formation:
+        - "Sun in 2nd is aspected by Saturn."
+      exception: "If Saturn does not aspect, Sun in 2nd gives wealth."
+
+  general_principles:
+    - "Dusthanas (6th, 8th, 12th) and their lords are detrimental to wealth."
+    - "If lagna, lagna lord and trine lords are afflicted by dusthana lords, one may be poor."
+    - "Conjunction or aspect of marakas clinches the issue."
+    - "Conjunction or aspect of trine lords is a saving factor."
+    - "Planets in the 2nd house and the strength of 2nd lord matter."
+
+# =============================================================================
+# CONCLUSION - Section 11.11
+# =============================================================================
+conclusion:
+  section: "11.11"
+  key_points:
+    - "Practice yogas on real charts to develop quick identification ability."
+    - "When looking at results ascribed to yogas, fit them into today's world (e.g., Kamala yoga may make one a Prime Minister, not literally a king)."
+    - "When using yogas in divisional charts, adapt results to the matters signified by that chart."
+    - "All great results may not materialize due to weaknesses in the yoga."
+    - "Unless a yoga is very strong, all results cannot be expected."
+    - "Just one yoga cannot make or break a personality unless it is very powerful."
+    - "In yogas with many conditions, partial results may be experienced even if not all conditions are satisfied."

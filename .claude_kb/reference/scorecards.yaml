@@ -1,0 +1,826 @@
+# =============================================================================
+# Floodlight Scorecard Framework
+# =============================================================================
+# Source: Methodology derived from P.V.R. Narasimha Rao's "Vedic Astrology:
+#         An Integrated Approach" — synthesizing dignities (Ch 3), functional
+#         nature (Ch 13), yogas (Ch 11), aspects (Ch 10), and strength (Ch 15).
+#
+# Purpose: For ANY specific question, enumerate ALL indicators on both sides,
+#          weight each by strength, sum, and let the majority rule.
+#          The scorecard IS the analysis; the narrative explains it.
+# =============================================================================
+
+framework:
+  name: "Floodlight Scorecard"
+  principle: >
+    Spotlight analysis finds 1-3 strong combinations and builds a narrative.
+    Floodlight analysis enumerates ALL relevant combinations on both sides,
+    weights each by dignity and condition, sums the tallies, and lets the
+    majority rule. The scorecard is constructed BEFORE the narrative.
+    The narrative EXPLAINS the scorecard — it does not replace it.
+
+  # ---------------------------------------------------------------------------
+  # Weight Scale — 5-point base, modified by conditions
+  # ---------------------------------------------------------------------------
+  weight_scale:
+    description: "Base weight assigned to each indicator based on the graha's dignity/condition"
+    levels:
+      - score: 5
+        label: "Exalted / Own sign / Yogakaraka"
+        description: "Graha in uccha rasi, swakshetra, or designated yogakaraka for lagna"
+      - score: 4
+        label: "Moolatrikona / Great friend sign"
+        description: "Graha in moolatrikona or in a great friend's rasi"
+      - score: 3
+        label: "Friend sign / Moderate dignity"
+        description: "Graha in a friend's rasi, functionally well-placed"
+      - score: 2
+        label: "Neutral sign / Mixed condition"
+        description: "Graha in a neutral rasi, neither helped nor harmed"
+      - score: 1
+        label: "Enemy sign / Debilitated / Combust"
+        description: "Graha in neecha rasi, enemy sign, or combust"
+
+  # ---------------------------------------------------------------------------
+  # Modifiers — applied on top of base weight
+  # ---------------------------------------------------------------------------
+  modifiers:
+    positive:
+      - modifier: "+1.0"
+        condition: "Yogakaraka for lagna"
+        reference: "Table 30, Ch 13"
+      - modifier: "+0.5"
+        condition: "Functional benefic for lagna"
+        reference: "Table 30, Ch 13"
+      - modifier: "+0.5"
+        condition: "Receiving benefic aspect (Guru/Shukra/waxing Chandra/unafflicted Budha)"
+        reference: "Ch 10"
+      - modifier: "+0.5"
+        condition: "Retrograde in own or exalted sign (amplified strength)"
+        reference: "Ch 15"
+      - modifier: "+0.5"
+        condition: "Vargottama (same rasi in D-1 and D-9)"
+        reference: "Ch 6"
+      - modifier: "+0.5"
+        condition: "High SAV in occupied bhava (28+ bindus)"
+        reference: "Ch 12"
+    negative:
+      - modifier: "-1.0"
+        condition: "Combust (within Sun's combustion orb)"
+        reference: "Ch 15"
+      - modifier: "-0.5"
+        condition: "Functional malefic for lagna"
+        reference: "Table 30, Ch 13"
+      - modifier: "-0.5"
+        condition: "Receiving malefic aspect (Shani/Mangal/Rahu)"
+        reference: "Ch 10"
+      - modifier: "-0.5"
+        condition: "Retrograde in debilitation (amplified weakness)"
+        reference: "Ch 15"
+      - modifier: "-0.5"
+        condition: "Low SAV in occupied bhava (below 25 bindus)"
+        reference: "Ch 12"
+      - modifier: "-0.5"
+        condition: "In planetary war (graha yuddha) and losing"
+        reference: "Ch 15"
+      - modifier: "-0.5"
+        condition: "In gandanta (junctional degrees between water-fire signs)"
+        reference: "Ch 15"
+
+  # ---------------------------------------------------------------------------
+  # Verdict Computation
+  # ---------------------------------------------------------------------------
+  computation:
+    formula: "NET = FAV_TOTAL - UNFAV_TOTAL"
+    margin_formula: "MARGIN = |NET| / (FAV_TOTAL + UNFAV_TOTAL)"
+    direction: >
+      If NET > 0, direction is FAVORABLE.
+      If NET < 0, direction is UNFAVORABLE.
+      If NET = 0, direction is INDETERMINATE.
+
+  # ---------------------------------------------------------------------------
+  # Confidence Thresholds
+  # ---------------------------------------------------------------------------
+  confidence:
+    thresholds:
+      - level: "HIGH"
+        margin: "≥ 0.60"
+        description: "Strong majority on one side — verdict is clear"
+      - level: "MODERATE"
+        margin: "0.35 – 0.59"
+        description: "Clear lean but minority factors are meaningful"
+      - level: "LOW"
+        margin: "0.15 – 0.34"
+        description: "Slight lean — outcome genuinely uncertain"
+      - level: "INDETERMINATE"
+        margin: "< 0.15"
+        description: "Too close to call — factors nearly balanced"
+    integration: >
+      Final reading confidence = LOWER of:
+        (1) Dasha convergence confidence (from multi-system convergence)
+        (2) Scorecard margin confidence
+      This prevents a high-margin scorecard from masking low dasha convergence.
+
+  # ---------------------------------------------------------------------------
+  # Transparency Rules
+  # ---------------------------------------------------------------------------
+  transparency:
+    rules:
+      - "Always show Shadbala column — use 'N/A' when not computed, never omit"
+      - "Always show AV/SAV column — use 'N/A' when not computed, never omit"
+      - "List ALL indicators found, even weak ones — do not cherry-pick"
+      - "If fewer than 5 indicators on either side, flag as 'THIN EVIDENCE'"
+      - "Always include a Limitations section listing what was NOT checked"
+      - "Never manufacture narrative certainty the numbers do not support"
+      - "The scorecard table MUST appear BEFORE the narrative explanation"
+
+  # ---------------------------------------------------------------------------
+  # Scorecard Table Format
+  # ---------------------------------------------------------------------------
+  table_format:
+    favorable:
+      columns:
+        - "# (row number)"
+        - "Indicator (what factor and why favorable)"
+        - "Graha/Bhava (which graha or bhava)"
+        - "Dignity (uccha/swa/moola/friend/neutral/enemy/neecha)"
+        - "Shadbala (rank or N/A)"
+        - "AV (bindus or N/A)"
+        - "Base (1-5)"
+        - "Modifiers (+/- adjustments)"
+        - "Final Score"
+    unfavorable:
+      columns:
+        - "# (row number)"
+        - "Indicator (what factor and why unfavorable)"
+        - "Graha/Bhava (which graha or bhava)"
+        - "Dignity"
+        - "Shadbala (rank or N/A)"
+        - "AV (bindus or N/A)"
+        - "Base (1-5)"
+        - "Modifiers (+/- adjustments)"
+        - "Final Score"
+    verdict:
+      fields:
+        - "Favorable Total"
+        - "Unfavorable Total"
+        - "NET"
+        - "MARGIN"
+        - "Confidence (HIGH / MODERATE / LOW / INDETERMINATE)"
+        - "Direction (FAVORABLE / UNFAVORABLE / INDETERMINATE)"
+
+# =============================================================================
+# Topic Checklists — Starting Points for Indicator Enumeration
+# =============================================================================
+# Each checklist provides 10-12 favorable and 8-10 unfavorable indicators.
+# The agent MUST also add any additional relevant factors found in the chart.
+# These are starting points, not exhaustive lists.
+# =============================================================================
+
+checklists:
+
+  # ===========================================================================
+  # 1. Financial Gain / Loss
+  # ===========================================================================
+  financial:
+    topic: "Financial Gain / Loss"
+    query_triggers:
+      - "money"
+      - "income"
+      - "wealth"
+      - "financial"
+      - "earnings"
+      - "profit"
+      - "loss"
+      - "investment"
+    primary_bhavas: [2, 11, 5, 9]
+    primary_karakas: ["Guru (wealth)", "Shukra (luxuries)", "Budha (commerce)"]
+
+    favorable:
+      - indicator: "2nd lord strong and well-placed"
+        rationale: "2nd house = accumulated wealth, savings, family resources"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "11th lord strong and well-placed"
+        rationale: "11th house = gains, income, fulfillment of desires"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "9th lord strong (bhagya — fortune)"
+        rationale: "9th house = luck, fortune, divine grace supporting wealth"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "5th lord strong (purva punya — past merit)"
+        rationale: "5th house = past-life credit, speculative gains, windfalls"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "Guru strong by dignity and placement"
+        rationale: "Guru is naisargika karaka for wealth and expansion"
+        reference: "Ch 8 — karakas.yaml"
+      - indicator: "Dhana yogas present and activated"
+        rationale: "Combinations of 2nd/11th lords with kendras/trikonas"
+        reference: "Ch 11 — yogas.yaml"
+      - indicator: "Dasha lord owns or aspects 2nd/11th"
+        rationale: "Current timing activates wealth houses"
+        reference: "Ch 16 — vimsottari_dasa.yaml"
+      - indicator: "Guru transiting favorable position from Chandra"
+        rationale: "Guru transit in 2/5/7/9/11 from Moon is classically favorable"
+        reference: "Ch 25 — transits.yaml"
+      - indicator: "Benefics in 2nd or 11th bhava"
+        rationale: "Natural benefics strengthen wealth houses from within"
+        reference: "Ch 10 — aspects_argalas.yaml"
+      - indicator: "Strong argala on 2nd/11th from benefics"
+        rationale: "Benefic intervention supporting wealth houses"
+        reference: "Ch 10 — aspects_argalas.yaml"
+      - indicator: "Lagna lord connected to 2nd/11th lords"
+        rationale: "Self-effort aligned with wealth potential"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "High SAV in 2nd/11th bhavas (28+)"
+        rationale: "Quantified strength of wealth houses"
+        reference: "Ch 12 — ashtakavarga.yaml"
+
+    unfavorable:
+      - indicator: "12th lord strong or activating"
+        rationale: "12th house = expenses, losses, dissipation of wealth"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "6th lord afflicting 2nd/11th"
+        rationale: "Debts, litigation draining finances"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "8th lord connected to 2nd/11th"
+        rationale: "Sudden losses, financial shocks, hidden liabilities"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "Shani aspecting 2nd/11th without dignity"
+        rationale: "Restriction and delay in financial matters"
+        reference: "Ch 10 — aspects_argalas.yaml"
+      - indicator: "2nd/11th lords debilitated or combust"
+        rationale: "Wealth significators weakened at source"
+        reference: "Ch 3 — planets.yaml"
+      - indicator: "Dasha lord owns or aspects 12th/6th/8th"
+        rationale: "Current timing activates loss/debt/shock houses"
+        reference: "Ch 16 — vimsottari_dasa.yaml"
+      - indicator: "Malefic aspects on 2nd/11th without cancellation"
+        rationale: "Mangal/Shani/Rahu damaging wealth houses"
+        reference: "Ch 10 — aspects_argalas.yaml"
+      - indicator: "Daridra yoga or other poverty combinations"
+        rationale: "Classical combinations indicating financial difficulty"
+        reference: "Ch 11 — yogas.yaml"
+      - indicator: "Guru weak or afflicted"
+        rationale: "Wealth karaka compromised"
+        reference: "Ch 8 — karakas.yaml"
+      - indicator: "Shani transiting 8th from Chandra (Ashtama Shani)"
+        rationale: "Classical indicator of financial pressure period"
+        reference: "Ch 25 — transits.yaml"
+
+  # ===========================================================================
+  # 2. Career Success / Stagnation
+  # ===========================================================================
+  career:
+    topic: "Career Success / Stagnation"
+    query_triggers:
+      - "career"
+      - "job"
+      - "promotion"
+      - "business"
+      - "profession"
+      - "work"
+      - "employment"
+    primary_bhavas: [10, 6, 2, 7]
+    primary_karakas: ["Surya (authority)", "Shani (service/karma)", "Budha (skill)"]
+
+    favorable:
+      - indicator: "10th lord strong and well-placed"
+        rationale: "10th house = karma sthana, profession, public action"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "6th lord strong (service, competition)"
+        rationale: "6th as upachaya = victory over competitors"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "Lagna lord strong and connected to 10th"
+        rationale: "Self-effort aligned with career potential"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "Yogakaraka strong and connected to 10th"
+        rationale: "Best functional benefic supporting career house"
+        reference: "Table 30, Ch 13 — functional_nature.yaml"
+      - indicator: "Raja yogas activated in current dasha"
+        rationale: "Classical combinations for authority and success"
+        reference: "Ch 11 — yogas.yaml"
+      - indicator: "Surya strong (authority karaka)"
+        rationale: "Naisargika karaka for authority, government, leadership"
+        reference: "Ch 8 — karakas.yaml"
+      - indicator: "Dasha lord owns or aspects 10th"
+        rationale: "Current timing activates career house"
+        reference: "Ch 16 — vimsottari_dasa.yaml"
+      - indicator: "Guru transiting 10th/11th from Chandra or Lagna"
+        rationale: "Expansion and blessing in career area"
+        reference: "Ch 25 — transits.yaml"
+      - indicator: "D-10 (Dasamsa) lagna lord strong"
+        rationale: "Career divisional chart confirms professional strength"
+        reference: "Ch 6 — divisional_charts.yaml"
+      - indicator: "High SAV in 10th bhava (28+)"
+        rationale: "Quantified strength of career house"
+        reference: "Ch 12 — ashtakavarga.yaml"
+      - indicator: "Arudha Lagna (AL) well-aspected"
+        rationale: "Worldly reputation and professional image supported"
+        reference: "Ch 9 — arudha_padas.yaml"
+
+    unfavorable:
+      - indicator: "8th lord afflicting 10th"
+        rationale: "Sudden career disruptions, hidden obstacles"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "Malefic aspects on 10th without benefic relief"
+        rationale: "Shani/Mangal/Rahu damaging career house"
+        reference: "Ch 10 — aspects_argalas.yaml"
+      - indicator: "10th lord debilitated or combust"
+        rationale: "Career significator weakened at source"
+        reference: "Ch 3 — planets.yaml"
+      - indicator: "Ketu in 10th (confusion, detachment from career)"
+        rationale: "Ketu brings headlessness, disinterest in worldly karma"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "Dasha lord owns or aspects 8th/12th"
+        rationale: "Current timing activates obstruction or withdrawal"
+        reference: "Ch 16 — vimsottari_dasa.yaml"
+      - indicator: "Shani transiting unfavorable from Chandra"
+        rationale: "Restriction and delay in professional matters"
+        reference: "Ch 25 — transits.yaml"
+      - indicator: "D-10 afflicted — lagna lord or 10th lord weak"
+        rationale: "Career divisional chart shows professional weakness"
+        reference: "Ch 6 — divisional_charts.yaml"
+      - indicator: "Sade Sati active (if Moon relates to 10th)"
+        rationale: "Saturn transiting over natal Moon — pressure on mind affecting career"
+        reference: "Ch 25 — transits.yaml"
+      - indicator: "12th lord activated — withdrawal from action"
+        rationale: "12th house activation reduces worldly engagement"
+        reference: "Ch 7 — houses.yaml"
+
+  # ===========================================================================
+  # 3. Health / Vitality
+  # ===========================================================================
+  health:
+    topic: "Health / Vitality"
+    query_triggers:
+      - "health"
+      - "illness"
+      - "disease"
+      - "surgery"
+      - "vitality"
+      - "medical"
+      - "body"
+    primary_bhavas: [1, 6, 8]
+    primary_karakas: ["Surya (vitality)", "Chandra (mind/body fluids)", "Lagna lord"]
+
+    favorable:
+      - indicator: "Lagna lord strong and well-placed"
+        rationale: "Lagna lord = vitality, constitution, life force"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "Surya strong (vitality karaka)"
+        rationale: "Surya is naisargika karaka for health, bones, heart"
+        reference: "Ch 8 — karakas.yaml"
+      - indicator: "Chandra strong (mind-body connection)"
+        rationale: "Chandra governs body fluids, mental health, immunity cycle"
+        reference: "Ch 8 — karakas.yaml"
+      - indicator: "6th as upachaya — malefics improving it"
+        rationale: "Malefics in 6th = victory over disease"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "Benefic aspects on lagna"
+        rationale: "Guru/Shukra aspects protect the body"
+        reference: "Ch 10 — aspects_argalas.yaml"
+      - indicator: "Lagna receiving high SAV (28+)"
+        rationale: "Quantified constitutional strength"
+        reference: "Ch 12 — ashtakavarga.yaml"
+      - indicator: "Dasha lord does NOT own 6th/8th/12th"
+        rationale: "Current timing not activating disease/crisis houses"
+        reference: "Ch 16 — vimsottari_dasa.yaml"
+      - indicator: "No marakas activated in current period"
+        rationale: "2nd/7th lords not active as dasha lords"
+        reference: "Ch 14 — longevity.yaml"
+      - indicator: "Guru transiting favorable from Chandra"
+        rationale: "Jupiter's protective transit supporting health"
+        reference: "Ch 25 — transits.yaml"
+      - indicator: "No combust or gandanta lagna lord"
+        rationale: "Lagna lord free from burning or junctional weakness"
+        reference: "Ch 15 — strength.yaml"
+
+    unfavorable:
+      - indicator: "6th lord afflicting lagna or lagna lord"
+        rationale: "Disease significator attacking constitution"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "8th lord afflicting lagna"
+        rationale: "Chronic illness, crisis, surgical indications"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "Surya combust or debilitated"
+        rationale: "Vitality karaka compromised — low energy, weak constitution"
+        reference: "Ch 3 — planets.yaml"
+      - indicator: "Malefic aspects on lagna without benefic relief"
+        rationale: "Shani/Mangal/Rahu damaging physical body"
+        reference: "Ch 10 — aspects_argalas.yaml"
+      - indicator: "Marakas activated (2nd/7th lords as dasha lords)"
+        rationale: "Classical death-inflicting planets active"
+        reference: "Ch 14 — longevity.yaml"
+      - indicator: "Lagna lord debilitated or combust"
+        rationale: "Constitutional weakness at source"
+        reference: "Ch 3 — planets.yaml"
+      - indicator: "Dasha lord owns 6th/8th and is weak"
+        rationale: "Timing activates disease/crisis AND lord can't manage it"
+        reference: "Ch 16 — vimsottari_dasa.yaml"
+      - indicator: "Sade Sati active (mental health pressure)"
+        rationale: "Saturn transiting Moon — depression, anxiety, exhaustion"
+        reference: "Ch 25 — transits.yaml"
+      - indicator: "Low SAV in lagna bhava (below 25)"
+        rationale: "Weak constitutional support by ashtakavarga"
+        reference: "Ch 12 — ashtakavarga.yaml"
+      - indicator: "Eclipse activating lagna or 6th/8th"
+        rationale: "Eclipse on health houses = vulnerability window"
+        reference: "Ch 25 — transits.yaml"
+
+  # ===========================================================================
+  # 4. Marriage / Relationships
+  # ===========================================================================
+  marriage:
+    topic: "Marriage / Relationships"
+    query_triggers:
+      - "marriage"
+      - "relationship"
+      - "spouse"
+      - "partner"
+      - "love"
+      - "wedding"
+      - "divorce"
+    primary_bhavas: [7, 2, 5, 4]
+    primary_karakas: ["Shukra (marriage/love)", "Guru (husband for female)", "Darakaraka"]
+
+    favorable:
+      - indicator: "7th lord strong and well-placed"
+        rationale: "7th house = marriage, partnerships, spouse"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "Shukra strong by dignity and placement"
+        rationale: "Shukra is naisargika karaka for marriage and love"
+        reference: "Ch 8 — karakas.yaml"
+      - indicator: "Darakaraka well-placed in D-1 and D-9"
+        rationale: "Jaimini spouse significator strong in both charts"
+        reference: "Ch 8 — karakas.yaml"
+      - indicator: "Upapada (UL) well-aspected and its lord strong"
+        rationale: "Arudha of 12th = manifest marriage, worldly experience of partnership"
+        reference: "Ch 9 — arudha_padas.yaml"
+      - indicator: "Benefics in or aspecting 7th"
+        rationale: "Guru/Shukra supporting the marriage house"
+        reference: "Ch 10 — aspects_argalas.yaml"
+      - indicator: "Dasha lord owns or aspects 7th/5th"
+        rationale: "Current timing activates love/marriage houses"
+        reference: "Ch 16 — vimsottari_dasa.yaml"
+      - indicator: "D-9 lagna lord strong and well-placed"
+        rationale: "Navamsa is the marriage chart — its lagna lord matters"
+        reference: "Ch 6 — divisional_charts.yaml"
+      - indicator: "Guru transiting 7th from Chandra or Lagna"
+        rationale: "Jupiter blessing the marriage house — auspicious for relationships"
+        reference: "Ch 25 — transits.yaml"
+      - indicator: "Vivaha yogas (marriage combinations) activated"
+        rationale: "Classical marriage-supporting yogas in play"
+        reference: "Ch 11 — yogas.yaml"
+      - indicator: "5th lord strong (romance, love affairs)"
+        rationale: "5th house = love, romance leading to marriage"
+        reference: "Ch 7 — houses.yaml"
+
+    unfavorable:
+      - indicator: "Malefics in 7th without benefic aspect"
+        rationale: "Shani/Mangal/Rahu in 7th = difficulty in partnerships"
+        reference: "Ch 10 — aspects_argalas.yaml"
+      - indicator: "6th lord afflicting 7th"
+        rationale: "Conflict, litigation in marriage"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "8th lord connected to 7th"
+        rationale: "Sudden disruption, hidden issues in marriage"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "Rahu-Ketu axis on 1-7 line"
+        rationale: "Nodal axis across self-partner houses = karmic relationship struggles"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "Shukra combust or debilitated"
+        rationale: "Marriage karaka weakened — difficulty in love"
+        reference: "Ch 3 — planets.yaml"
+      - indicator: "7th lord in 6th/8th/12th (dusthana placement)"
+        rationale: "Marriage significator in houses of conflict/crisis/loss"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "Mangal dosha without cancellation"
+        rationale: "Classical marriage difficulty indicator"
+        reference: "Ch 11 — yogas.yaml"
+      - indicator: "Dasha lord owns 6th/8th and aspects 7th"
+        rationale: "Timing activates conflict/crisis in relationship area"
+        reference: "Ch 16 — vimsottari_dasa.yaml"
+      - indicator: "D-9 lagna lord weak or afflicted"
+        rationale: "Marriage chart shows fundamental weakness"
+        reference: "Ch 6 — divisional_charts.yaml"
+
+  # ===========================================================================
+  # 5. Education / Exams
+  # ===========================================================================
+  education:
+    topic: "Education / Exams"
+    query_triggers:
+      - "education"
+      - "exam"
+      - "study"
+      - "school"
+      - "university"
+      - "degree"
+      - "learning"
+      - "academic"
+    primary_bhavas: [4, 5, 9]
+    primary_karakas: ["Budha (intellect)", "Guru (higher learning)", "Chandra (memory)"]
+
+    favorable:
+      - indicator: "4th lord strong (formal education)"
+        rationale: "4th house = school education, foundational learning"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "5th lord strong (intelligence, merit)"
+        rationale: "5th house = intellect, purva punya, creative intelligence"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "9th lord strong (higher education, guru)"
+        rationale: "9th house = higher learning, philosophy, guru's blessing"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "Budha strong (intellect karaka)"
+        rationale: "Budha governs analytical thinking, communication, examination skill"
+        reference: "Ch 8 — karakas.yaml"
+      - indicator: "Guru strong (knowledge karaka)"
+        rationale: "Guru governs wisdom, higher learning, academic guidance"
+        reference: "Ch 8 — karakas.yaml"
+      - indicator: "Saraswati yoga or Vidya yogas present"
+        rationale: "Classical combinations for learning and scholarship"
+        reference: "Ch 11 — yogas.yaml"
+      - indicator: "Dasha lord owns or aspects 4th/5th/9th"
+        rationale: "Current timing activates education houses"
+        reference: "Ch 16 — vimsottari_dasa.yaml"
+      - indicator: "D-24 (Siddhamsa) lagna lord strong"
+        rationale: "Education divisional chart confirms academic potential"
+        reference: "Ch 6 — divisional_charts.yaml"
+      - indicator: "Benefic aspects on 4th/5th"
+        rationale: "Guru/Shukra supporting learning houses"
+        reference: "Ch 10 — aspects_argalas.yaml"
+      - indicator: "Chandra strong (memory and retention)"
+        rationale: "Strong Moon aids concentration, memory, exam performance"
+        reference: "Ch 8 — karakas.yaml"
+      - indicator: "High SAV in 4th/5th bhavas"
+        rationale: "Quantified strength of education houses"
+        reference: "Ch 12 — ashtakavarga.yaml"
+
+    unfavorable:
+      - indicator: "Malefic aspects on 4th/5th without benefic relief"
+        rationale: "Shani/Mangal/Rahu damaging education houses"
+        reference: "Ch 10 — aspects_argalas.yaml"
+      - indicator: "Budha afflicted (combust/debilitated/aspected by malefics)"
+        rationale: "Intellect karaka compromised — difficulty in exams"
+        reference: "Ch 3 — planets.yaml"
+      - indicator: "4th/5th lords in dusthanas (6th/8th/12th)"
+        rationale: "Education significators in houses of conflict/crisis/loss"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "Rahu in 4th/5th (confusion in learning)"
+        rationale: "Rahu brings confusion, unconventional approach, distraction"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "Dasha lord owns 6th/8th and afflicts 4th/5th"
+        rationale: "Timing activates difficulty in education area"
+        reference: "Ch 16 — vimsottari_dasa.yaml"
+      - indicator: "Guru weak or afflicted"
+        rationale: "Knowledge and higher learning karaka compromised"
+        reference: "Ch 8 — karakas.yaml"
+      - indicator: "Ketu in 4th (detachment from formal learning)"
+        rationale: "Ketu in education house = disinterest, breaks in study"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "Shani transiting 4th/5th from Chandra"
+        rationale: "Restriction and pressure in learning environment"
+        reference: "Ch 25 — transits.yaml"
+
+  # ===========================================================================
+  # 6. Travel / Relocation
+  # ===========================================================================
+  travel:
+    topic: "Travel / Relocation"
+    query_triggers:
+      - "travel"
+      - "relocation"
+      - "abroad"
+      - "foreign"
+      - "move"
+      - "immigration"
+      - "visa"
+    primary_bhavas: [9, 12, 3, 4]
+    primary_karakas: ["Rahu (foreign lands)", "Guru (long journeys)", "Chandra (movement)"]
+
+    favorable:
+      - indicator: "9th lord strong and activated"
+        rationale: "9th house = long-distance travel, pilgrimage, foreign lands"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "12th lord activated (foreign residence)"
+        rationale: "12th house = foreign lands, settlement abroad"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "Rahu strong and connected to 9th/12th"
+        rationale: "Rahu is karaka for foreign lands and unconventional journeys"
+        reference: "Ch 8 — karakas.yaml"
+      - indicator: "3rd lord activated (short travel)"
+        rationale: "3rd house = short trips, movement, communication travel"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "Dasha lord owns or aspects 9th/12th/3rd"
+        rationale: "Current timing activates travel houses"
+        reference: "Ch 16 — vimsottari_dasa.yaml"
+      - indicator: "Movable signs (Mesha/Kataka/Thula/Makara) prominent"
+        rationale: "Chara rasis indicate movement, travel, change of place"
+        reference: "Ch 2 — rasis.yaml"
+      - indicator: "Guru transiting 9th/12th from Chandra"
+        rationale: "Jupiter blessing travel/foreign houses — auspicious journeys"
+        reference: "Ch 25 — transits.yaml"
+      - indicator: "4th lord weak or afflicted"
+        rationale: "Weak 4th lord = less attachment to homeland, easier relocation"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "Chandra in movable sign with travel-house connections"
+        rationale: "Moon in chara rasi inclines toward movement"
+        reference: "Ch 2 — rasis.yaml"
+      - indicator: "Graha in 9th/12th in transit"
+        rationale: "Transit activation of travel houses"
+        reference: "Ch 25 — transits.yaml"
+
+    unfavorable:
+      - indicator: "4th lord strong and well-placed (roots at home)"
+        rationale: "Strong 4th lord = attachment to homeland, comfort at home"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "No dasha connection to 9th/12th"
+        rationale: "Current timing does not activate travel houses"
+        reference: "Ch 16 — vimsottari_dasa.yaml"
+      - indicator: "Fixed signs dominant (Rishabha/Simha/Vrishchika/Kumbha)"
+        rationale: "Sthira rasis indicate stability, resistance to change"
+        reference: "Ch 2 — rasis.yaml"
+      - indicator: "Shani in 4th (settled, difficult to move)"
+        rationale: "Saturn anchoring the native to current location"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "Benefics in 4th (happy at home)"
+        rationale: "Guru/Shukra in 4th = domestic contentment reducing travel urge"
+        reference: "Ch 10 — aspects_argalas.yaml"
+      - indicator: "9th lord in dusthana"
+        rationale: "Travel significator weakened — journeys bring difficulty"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "Rahu weak or badly placed"
+        rationale: "Foreign-lands karaka not supporting relocation"
+        reference: "Ch 3 — planets.yaml"
+      - indicator: "8th lord aspecting 9th/12th"
+        rationale: "Obstacles, visa problems, travel disruptions"
+        reference: "Ch 7 — houses.yaml"
+
+  # ===========================================================================
+  # 7. Timing / Muhurta
+  # ===========================================================================
+  timing:
+    topic: "Timing / Muhurta (Is this a good day/period?)"
+    query_triggers:
+      - "good day"
+      - "auspicious"
+      - "muhurta"
+      - "when should"
+      - "best time"
+      - "timing"
+      - "should I do X on date Y"
+    primary_bhavas: ["depends on activity"]
+    primary_karakas: ["Chandra (transit mind)", "Lagna lord (transit self)"]
+
+    favorable:
+      - indicator: "Transit Moon in favorable tara from natal Moon"
+        rationale: "Tarabala — Moon's nakshatra distance favorable (1,3,5,7 = good)"
+        reference: "Ch 26 — transits.yaml"
+      - indicator: "Transit Moon strong (Chandrabala)"
+        rationale: "Moon in 1/3/6/7/10/11 from natal Moon = good"
+        reference: "Ch 26 — transits.yaml"
+      - indicator: "Transit lagna lord in kendra/trikona"
+        rationale: "Self-significator well-placed on the chosen day"
+        reference: "Ch 36 — muhurta.yaml"
+      - indicator: "Benefics in transit kendras (1/4/7/10)"
+        rationale: "Guru/Shukra/Budha/Moon in angular houses = auspicious foundation"
+        reference: "Ch 36 — muhurta.yaml"
+      - indicator: "Relevant house lord transiting favorably"
+        rationale: "Lord of the house governing the activity well-placed in transit"
+        reference: "Ch 25 — transits.yaml"
+      - indicator: "No vedha to favorable transits"
+        rationale: "Favorable transit not obstructed by vedha planet"
+        reference: "Ch 26 — transits.yaml"
+      - indicator: "Panchanga shuddhi (tithi/vara/nakshatra/yoga/karana clean)"
+        rationale: "Five elements of the day auspicious"
+        reference: "Ch 36 — muhurta.yaml"
+      - indicator: "Transit dasha-lord well-placed on the day"
+        rationale: "Current period lord favorably transiting = supported timing"
+        reference: "Ch 16 — vimsottari_dasa.yaml"
+      - indicator: "Activity-relevant bhava not afflicted in transit"
+        rationale: "The house governing the planned activity clear of malefics"
+        reference: "Ch 36 — muhurta.yaml"
+      - indicator: "Guru aspect on transit lagna or relevant house"
+        rationale: "Jupiter's protective aspect on the moment chart"
+        reference: "Ch 36 — muhurta.yaml"
+
+    unfavorable:
+      - indicator: "Malefics in transit kendras (1/4/7/10)"
+        rationale: "Shani/Mangal/Rahu in angular houses = inauspicious foundation"
+        reference: "Ch 36 — muhurta.yaml"
+      - indicator: "Transit Moon in unfavorable tara (2,4,6)"
+        rationale: "Tarabala unfavorable — danger, obstacles, enmity"
+        reference: "Ch 26 — transits.yaml"
+      - indicator: "Vedha to favorable transit"
+        rationale: "A seemingly favorable transit is obstructed"
+        reference: "Ch 26 — transits.yaml"
+      - indicator: "Rahu-Ketu on transit lagna axis"
+        rationale: "Nodal axis across the moment chart lagna = karmic interference"
+        reference: "Ch 36 — muhurta.yaml"
+      - indicator: "Rahu kalam / Yamagandam active"
+        rationale: "Inauspicious time segments within the day"
+        reference: "Ch 36 — muhurta.yaml"
+      - indicator: "Transit Moon waning and weak (amavasya proximity)"
+        rationale: "Weak Moon = low mental clarity and auspiciousness"
+        reference: "Ch 36 — muhurta.yaml"
+      - indicator: "8th lord transiting activity-relevant house"
+        rationale: "Crisis/obstacle lord over the activity house"
+        reference: "Ch 25 — transits.yaml"
+      - indicator: "Malefic aspects on transit Moon"
+        rationale: "Shani/Mangal aspecting transit Moon = mental pressure on the day"
+        reference: "Ch 10 — aspects_argalas.yaml"
+      - indicator: "Panchanga dosha (inauspicious tithi/vara/nakshatra)"
+        rationale: "One or more panchanga elements unsuitable"
+        reference: "Ch 36 — muhurta.yaml"
+
+  # ===========================================================================
+  # 8. Spiritual Growth
+  # ===========================================================================
+  spiritual:
+    topic: "Spiritual Growth"
+    query_triggers:
+      - "spiritual"
+      - "meditation"
+      - "moksha"
+      - "dharma"
+      - "guru"
+      - "mantra"
+      - "sadhana"
+      - "inner growth"
+    primary_bhavas: [9, 12, 5, 8]
+    primary_karakas: ["Ketu (moksha)", "Guru (dharma/guru)", "Surya (atma)"]
+
+    favorable:
+      - indicator: "9th lord strong and well-placed"
+        rationale: "9th house = dharma, guru, higher truth, spiritual teaching"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "12th lord strong (moksha house)"
+        rationale: "12th house = liberation, transcendence, surrender"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "Ketu strong and well-placed"
+        rationale: "Ketu is moksha karaka — spiritual detachment and insight"
+        reference: "Ch 8 — karakas.yaml"
+      - indicator: "Atmakaraka well-placed in Navamsa (Karakamsa)"
+        rationale: "Soul-level orientation toward spiritual growth"
+        reference: "Ch 8 — karakas.yaml"
+      - indicator: "5th lord connected to 9th/12th"
+        rationale: "Past-life merit supporting spiritual progress"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "Guru strong (dharma karaka)"
+        rationale: "Guru governs wisdom, teaching, spiritual guidance"
+        reference: "Ch 8 — karakas.yaml"
+      - indicator: "Dasha lord owns or aspects 9th/12th"
+        rationale: "Current timing activates dharma/moksha houses"
+        reference: "Ch 16 — vimsottari_dasa.yaml"
+      - indicator: "Moksha trikona activation (4th/8th/12th)"
+        rationale: "Water houses activated = emotional/spiritual transformation"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "Guru transiting 9th/12th from Chandra"
+        rationale: "Jupiter blessing spiritual houses"
+        reference: "Ch 25 — transits.yaml"
+      - indicator: "Hamsa yoga or other sattvic yogas present"
+        rationale: "Classical combinations for spiritual attainment"
+        reference: "Ch 11 — yogas.yaml"
+      - indicator: "Surya strong (Atma karaka in general sense)"
+        rationale: "Strong soul-force supporting inner development"
+        reference: "Ch 8 — karakas.yaml"
+
+    unfavorable:
+      - indicator: "Materialistic yogas dominating (Dhana/Raja without moksha)"
+        rationale: "Chart energy channeled toward worldly success, not transcendence"
+        reference: "Ch 11 — yogas.yaml"
+      - indicator: "Rahu stronger than Ketu and connected to lagna"
+        rationale: "Rahu = worldly desire overpowering Ketu's spiritual pull"
+        reference: "Ch 8 — karakas.yaml"
+      - indicator: "9th lord in 6th/8th (dharma afflicted)"
+        rationale: "Spiritual path meets obstacles, conflict with guru"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "Ketu afflicted or in unfavorable house"
+        rationale: "Moksha karaka unable to function — spiritual confusion"
+        reference: "Ch 3 — planets.yaml"
+      - indicator: "No dasha connection to 9th/12th"
+        rationale: "Current timing not activating spiritual houses"
+        reference: "Ch 16 — vimsottari_dasa.yaml"
+      - indicator: "Malefic aspects on 9th/12th"
+        rationale: "Shani/Mangal/Rahu damaging dharma/moksha houses"
+        reference: "Ch 10 — aspects_argalas.yaml"
+      - indicator: "Strong 3rd/6th/10th activation (action-oriented period)"
+        rationale: "Energy directed toward competition, career, worldly effort"
+        reference: "Ch 7 — houses.yaml"
+      - indicator: "Guru combust or debilitated"
+        rationale: "Dharma and spiritual guidance karaka compromised"
+        reference: "Ch 3 — planets.yaml"
+
+# =============================================================================
+# Usage Notes for the Agent
+# =============================================================================
+usage_notes:
+  - "These checklists are STARTING POINTS — always add chart-specific indicators"
+  - "Every indicator must be assessed against the ACTUAL chart, not assumed"
+  - "An indicator not found in the chart is OMITTED, not scored as zero"
+  - "Weight each found indicator using the 5-point scale + modifiers"
+  - "Present the scorecard table BEFORE writing narrative"
+  - "The narrative EXPLAINS the scorecard — it does not override it"
+  - "If fewer than 5 indicators on either side, flag as THIN EVIDENCE"
+  - "Cross-check with dasha convergence — final confidence is the LOWER of both"
+  - "For timing/muhurta questions, use both the timing checklist AND the topic checklist"
+  - "Mini-scorecards (3-5 indicators per side) are acceptable for sub-sections of larger readings"

@@ -1,0 +1,3 @@
+# Encrypt sensitive personal data (names, DOB, birth details, readings)
+readings/**/*.yaml filter=git-crypt diff=git-crypt
+readings/**/*.md filter=git-crypt diff=git-crypt

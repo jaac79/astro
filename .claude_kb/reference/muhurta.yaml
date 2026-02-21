@@ -1,0 +1,463 @@
+# =============================================================================
+# Muhurta (Electional Astrology) - Reference
+# Source: Vedic Astrology: An Integrated Approach by P.V.R. Narasimha Rao
+# Chapter 36 - Muhurta or Electional Astrology
+# Book pages: 412-420 | PDF pages: 416-424
+# =============================================================================
+
+source:
+  book: "Vedic Astrology: An Integrated Approach"
+  author: "P.V.R. Narasimha Rao"
+  chapter: 36
+  chapter_title: "Muhurta or Electional Astrology"
+  book_pages: "412-420"
+  pdf_pages: "416-424"
+  recommended_reference: "Dr. B.V. Raman's book on muhurta (modern English language)"
+
+# =============================================================================
+# 36.1 - Introduction: What is Muhurta
+# =============================================================================
+definition:
+  meaning: >
+    Muhurta is the practice of choosing an auspicious time (electional astrology)
+    for starting new ventures. When a new task is freshly started, the planetary
+    position at that time decides how the task progresses, just as the planetary
+    position at birth decides how a person's life progresses.
+  alternate_name: "Electional Astrology"
+  panchaanga_note: >
+    Panchaanga means an almanac that lists auspicious and inauspicious times.
+    It literally means 'one with five limbs'.
+
+  applications:
+    - "Getting married"
+    - "Joining a new job"
+    - "Swearing-in ceremonies (political leaders)"
+    - "Starting a new company"
+    - "Starting a child's formal education"
+    - "Baby's first eating of cooked rice (annaprasana)"
+    - "Buying a vehicle"
+    - "Buying a house"
+    - "Housewarming (entering a new house)"
+    - "Baby showers"
+    - "Getting a haircut"
+    - "Cutting nails"
+
+  controversies: >
+    Different guidelines are given in different classics and different conventions
+    are in vogue in different regions of India.
+
+# =============================================================================
+# 36.2 - Definition of Muhurta: What Constitutes the Moment
+# =============================================================================
+defining_the_moment:
+  general_principle: >
+    The muhurta moment is when actual work or purpose begins, not merely
+    signing papers or formalities. One must decide intelligently on a case-by-case
+    basis what constitutes 'starting' the task.
+
+  specific_definitions:
+    joining_a_new_job:
+      description: >
+        Accepting a job offer is like conception. Starting the actual work is akin
+        to a baby being born. One should start doing actual work at the muhurta time,
+        not just sign papers.
+
+    marriage:
+      hindu: >
+        The time when the bridegroom ties the mangal sutra knot, as the purpose
+        of marriage is living together and the mangal sutra symbolizes this.
+      christian: >
+        The time when the bride and bridegroom are pronounced man and wife
+        after saying 'I do'.
+
+    entering_a_new_house:
+      description: >
+        The correct time is when one starts 'living' in the house, not merely
+        entering with suitcases. In Hindu tradition, only a house where cooking
+        is done is a place of living. Traditionally, people warm milk on a stove
+        at the time of muhurta. If milk is warmed for making sweet rice for
+        offering Gods as prasaad, that symbolizes the starting of life in the house.
+
+# =============================================================================
+# 36.3 - Basics of Muhurta: Panchanga Elements
+# =============================================================================
+panchanga_five_limbs:
+  description: >
+    Tithi, yoga, karana, weekday, and nakshatra form the 5 limbs of panchaanga.
+    When deciding a muhurta, we try to choose a good tithi, weekday, yoga,
+    karana, nakshatra, and lagna.
+
+  elements:
+    - name: "Tithi"
+      role: "Lunar day - specific tithis are preferred for different tasks"
+    - name: "Vaara (Weekday)"
+      role: "Day of the week - certain weekdays are auspicious for certain tasks"
+    - name: "Nakshatra"
+      role: "Lunar mansion occupied by Moon - must be favorable for the task"
+    - name: "Yoga"
+      role: "Luni-solar combination - one of the 5 limbs of panchaanga"
+    - name: "Karana"
+      role: "Half of a tithi - one of the 5 limbs of panchaanga"
+
+  additional_factors:
+    lagna: "The ascendant at the time of muhurta; specific lagnas preferred per task"
+
+    tarabala:
+      description: >
+        The nakshatra occupied by Moon at the time of muhurta should be a good
+        tara (star) with respect to the person's janma nakshatra (birth nakshatra).
+
+    hora:
+      description: >
+        The lord of the running hora (hour) should be a favorable planet in the
+        natal chart, especially with respect to the house to which the activity belongs.
+      importance: "Hora is a very important quantum of time."
+      examples:
+        - task: "Wedding"
+          hora_requirement: >
+            Should belong to a favorable planet in the natal chart with respect
+            to the 7th house and upapada.
+        - task: "Moving to a new house"
+          hora_requirement: >
+            Should belong to a favorable planet in the natal chart with respect
+            to the 4th house and A4.
+          warning: >
+            If a planet owns the 8th house from the 4th house and occupies a
+            badhaka sthana from A4, then it may be disastrous to move into
+            a new house in that planet's hora.
+
+# =============================================================================
+# Table 79: Muhurta Guidelines per Task
+# =============================================================================
+muhurta_guidelines_table_79:
+  description: >
+    Common guidelines for selecting muhurtas. These are merely guidelines and
+    not final recommendations. Planetary strength is more important than strictly
+    following these thumb rules. Expert astrologers flout these norms often with
+    considerable success.
+
+  tasks:
+    - task: "Construction of a new house"
+      tithis: [2, 3, 5, 7, 11, 13, 15]
+      weekdays: ["Monday", "Wednesday", "Thursday", "Friday"]
+      lagnas: ["Taurus", "Gemini", "Virgo", "Sagittarius", "Aquarius", "Pisces"]
+      lagnas_also_acceptable: ["Leo", "Scorpio"]
+      nakshatras:
+        - "Aswini"
+        - "Rohini"
+        - "Mrigasira"
+        - "Punarvasu"
+        - "Uttaraphalguni"
+        - "Hasta"
+        - "Chitra"
+        - "Swati"
+        - "Anuradha"
+        - "Uttarashadha"
+        - "Sravanam"
+        - "Dhanishtha"
+        - "Satabhisha"
+        - "Uttarabhadra"
+        - "Revati"
+
+    - task: "Entering a new house (housewarming)"
+      tithis: [2, 3, 5, 7, 10, 11, 13, 15]
+      weekdays: ["Monday", "Wednesday", "Thursday", "Friday"]
+      lagnas: ["Taurus", "Gemini", "Leo", "Virgo", "Scorpio", "Sagittarius", "Aquarius", "Pisces"]
+      nakshatras:
+        - "Rohini"
+        - "Mrigasira"
+        - "Uttaraphalguni"
+        - "Chitra"
+        - "Anuradha"
+        - "Uttarashadha"
+        - "Dhanishtha"
+        - "Satabhisha"
+        - "Uttarabhadra"
+        - "Revati"
+
+    - task: "Naming a child"
+      tithis: [2, 3, 5, 7, 10, 11, 13]
+      weekdays: ["Sunday", "Monday", "Wednesday", "Thursday", "Saturday"]
+      lagnas: "Benefic planet owned signs"
+      nakshatras:
+        - "Aswini"
+        - "Rohini"
+        - "Mrigasira"
+        - "Punarvasu"
+        - "Pushyami"
+        - "Uttaraphalguni"
+        - "Hasta"
+        - "Chitra"
+        - "Swati"
+        - "Anuradha"
+        - "Uttarashadha"
+        - "Sravanam"
+        - "Dhanishtha"
+        - "Satabhisha"
+        - "Uttarabhadra"
+        - "Revati"
+
+    - task: "Baby's first eating of rice (Annaprasana)"
+      tithis: [2, 3, 5, 7, 10, 13, 15]
+      weekdays: ["Sunday", "Monday", "Wednesday", "Thursday", "Friday"]
+      lagnas: "Benefic planet owned signs"
+      nakshatras:
+        - "Aswini"
+        - "Rohini"
+        - "Mrigasira"
+        - "Punarvasu"
+        - "Pushyami"
+        - "Uttaraphalguni"
+        - "Hasta"
+        - "Chitra"
+        - "Swati"
+        - "Anuradha"
+        - "Uttarashadha"
+        - "Sravanam"
+        - "Dhanishtha"
+        - "Satabhisha"
+        - "Uttarabhadra"
+        - "Revati"
+
+    - task: "Teaching alphabet (Aksharabhyasam / Vidyarambham)"
+      tithis: [2, 3, 5, 7, 10, 11, 12]
+      weekdays: ["Monday", "Wednesday", "Thursday", "Friday"]
+      lagnas: ["Gemini", "Virgo", "Sagittarius", "Pisces"]
+      nakshatras_primary:
+        - "Aswini"
+        - "Punarvasu"
+        - "Hasta"
+        - "Chitra"
+        - "Swati"
+        - "Anuradha"
+        - "Sravanam"
+        - "Revati"
+      nakshatras_secondary:
+        - "Mrigasira"
+        - "Ardra"
+        - "Dhanishtha"
+        - "Satabhisha"
+
+    - task: "Sacred thread ceremony (Upanayanam)"
+      tithis: [2, 3, 5, 10, 11]
+      tithis_also_acceptable: [6, 12]
+      weekdays: ["Monday", "Wednesday", "Thursday", "Friday"]
+      lagnas: "Benefic planet owned signs"
+      nakshatras:
+        - "Aswini"
+        - "Rohini"
+        - "Mrigasira"
+        - "Punarvasu"
+        - "Pushyami"
+        - "Uttaraphalguni"
+        - "Hasta"
+        - "Chitra"
+        - "Swati"
+        - "Anuradha"
+        - "Uttarashadha"
+        - "Sravanam"
+        - "Dhanishtha"
+        - "Satabhisha"
+        - "Uttarabhadra"
+        - "Revati"
+
+    - task: "Wedding"
+      tithis: [2, 3, 5, 7, 10, 11, 12, 13, 15]
+      weekdays: ["Monday", "Wednesday", "Thursday", "Friday"]
+      lagnas: "Benefic planet owned signs"
+      special_note: >
+        The recommendation is to keep the 7th house empty to avoid afflictions.
+        However, if the 7th house is occupied by benefics giving great yogas,
+        that should not cause problems in marriage.
+      nakshatras:
+        - "Rohini"
+        - "Mrigasira"
+        - "Makha"
+        - "Uttaraphalguni"
+        - "Hasta"
+        - "Swati"
+        - "Anuradha"
+        - "Moola"
+        - "Uttarashadha"
+        - "Uttarabhadra"
+        - "Revati"
+
+    - task: "Placing new idols in pooja (Pratishtha)"
+      tithis: [2, 3, 5, 7, 8, 10, 11, 12, 13]
+      weekdays: ["Sunday", "Monday", "Wednesday", "Thursday", "Friday"]
+      lagnas: ["Taurus", "Gemini", "Leo", "Virgo", "Scorpio", "Sagittarius", "Aquarius", "Pisces"]
+      nakshatras:
+        - "Aswini"
+        - "Rohini"
+        - "Mrigasira"
+        - "Punarvasu"
+        - "Pushyami"
+        - "Uttaraphalguni"
+        - "Hasta"
+        - "Chitra"
+        - "Swati"
+        - "Anuradha"
+        - "Uttarashadha"
+        - "Sravanam"
+        - "Dhanishtha"
+        - "Satabhisha"
+        - "Uttarabhadra"
+        - "Revati"
+
+# =============================================================================
+# 36.4 - Planetary Strength: Key Principles
+# =============================================================================
+planetary_strength:
+  core_principle: >
+    An intelligent astrologer gives more importance to the strength of planets
+    in the muhurta chart than thumb rules. Not only should the rasi chart be
+    strong, but also the concerned divisional chart should be strong. Planetary
+    strength is more important than strictly following thumb rules.
+
+  divisional_chart_guidelines:
+    - task: "Joining a new job"
+      strong_houses: ["1st (Lagna)", "6th house", "10th house"]
+      charts: ["Rasi", "D-10 (Dasamsa)"]
+
+    - task: "Starting a child's education"
+      strong_houses: ["1st", "2nd", "4th", "5th"]
+      charts: ["Rasi", "D-24 (Siddhamsa)"]
+
+    - task: "Buying a new vehicle"
+      strong_houses: ["1st", "4th", "A4 (Arudha of 4th)"]
+      charts: ["Rasi", "D-16 (Shodasamsa)"]
+
+    - task: "Entering a new house"
+      strong_factors: ["1st and 4th from lagna", "Venus in D-4"]
+      charts: ["Rasi", "D-4 (Chaturthamsa)"]
+
+    - task: "Buying real estate"
+      strong_factors: ["1st and 4th from lagna", "Mars in D-4"]
+      charts: ["Rasi", "D-4 (Chaturthamsa)"]
+
+# =============================================================================
+# Vimsottari Dasa in Muhurta
+# =============================================================================
+vimsottari_dasa_in_muhurta:
+  description: >
+    Vimsottari dasa can be used to time the progress of a task started at a muhurta.
+    If the maximum time period for which the task can last is known, Vimsottari dasa
+    can be compressed to that period. If the task has no fixed time period of effect,
+    the standard 120-year Vimsottari dasa is used.
+
+  computation_reference: "Topic 35.4 in the chapter on Mundane Astrology"
+
+  first_dasa_importance: >
+    The first dasa as per Vimsottari dasa should belong to a favorable planet
+    in the chart. The effect of a muhurta lasts only for a few months or a couple
+    of years; the strength of one's natal chart is more important in the long run.
+    For example, selecting a muhurta with excellent rasi and D-10 charts for
+    joining a new job may still yield bad results if the first dasa belongs to the
+    8th lord in D-10.
+
+# =============================================================================
+# Transits with Muhurtas
+# =============================================================================
+transits_with_muhurtas:
+  description: >
+    Transits can be used with muhurta charts just as with natal charts.
+    The meanings of divisional charts can be adapted to muhurtas.
+
+  chart_roles:
+    rasi: "Chart of physical manifestation - transits show when physical events occur"
+    navamsa: "Chart of dharma and inner self - transits show when the intended purpose is served"
+    dasamsa: "Chart of achievements in society - transits show how the venture is received and when it becomes popular"
+
+# =============================================================================
+# Illustrative Examples from the Book
+# =============================================================================
+examples:
+  - number: 141
+    description: "Muhurta for Sri A.B. Vajpayee's swearing-in as India's PM (May 1996)"
+    chart_reference: "Chart 84"
+    analysis: >
+      Rasi chart was strong: lagna lord Sun in 10th, 10th lord Venus in 11th,
+      5th lord Jupiter in 5th, strong 9th house. However, unfavorable sakuna
+      karana was running and Chaturdasi tithi (14th lunar day) is usually
+      not considered auspicious. D-30 was weak with Venus as a strong maraka
+      afflicting lagna. Venus dasa was running (Moon in Venusian constellation).
+    outcome: >
+      Vajpayee remained in power only 13 days due to D-30 weakness.
+      However, the strength of the rasi chart ensured his return within
+      a couple of years.
+    lesson: "D-30 weakness can indicate premature end despite strong rasi chart."
+
+  - number: 142
+    description: "Muhurta for Vajpayee's second swearing-in (March 1998)"
+    chart_reference: "Chart 85"
+    analysis: >
+      Lagna lord in 9th with Uttamaamsa. Saturn owns 9th and 10th in 11th
+      with Uttamaamsa. Basically strong chart. However, 3rd lord Moon debilitated
+      in 7th (not conducive to long life). Gulika within 1 degree from lagna
+      is undesirable.
+    outcome: >
+      Lost vote of confidence in April 1999 but remained as caretaker PM.
+      Position improved in October 1999 elections.
+    vimsottari_analysis: >
+      Compressed to 5 years. 8th constellation Satabhisha stronger than Moon's
+      constellation. Ketu antardasa in Jupiter dasa ran during April 3-17, 1999.
+      Jupiter owns 8th house (troubles). Ketu co-lord of 7th, afflicts 8th lord
+      (fall of government). Next antardasa belonged to lagna lord Venus,
+      lord of Sanjivani mantra - Vajpayee remained as caretaker PM.
+
+  - number: 143
+    description: "Muhurta for the author starting to write this book"
+    chart_reference: "Chart 86"
+    tithi: "Saptami (7th lunar day - auspicious)"
+    yoga: "Vriddhi yoga (growth)"
+    karana: "Vanija"
+    rasi_analysis: >
+      Lagna lord Moon in lagna in Paarijaataamsa. Moon in constellation of
+      Mercury (significator of writing). Venus in 11th in own sign in Gopuraamsa.
+      Exalted 2nd lord Sun and 3rd lord Mercury in 10th. Mars (10th lord, yogakaraka)
+      in Gopuraamsa in 2nd. Parivartana between 2nd and 10th lords favorable
+      for karma related to astrology. Jupiter aspects lagna and Moon closely,
+      also aspects 3rd house of writing, though debilitated.
+    navamsa_analysis: >
+      Lagna in Pisces (saattwik sign owned by Jupiter). Jupiter aspects lagna
+      from 7th. Exalted 3rd lord Venus in lagna, owns 11th in rasi. Mercury
+      in 3rd in navamsa, owns 3rd in rasi. Mars strong in 9th in own sign.
+      Sun in 10th in both rasi and navamsa.
+    hora_analysis: >
+      Hora of Jupiter running at muhurta time. Jupiter in author's natal
+      2nd house of speech. In natal D-24, Jupiter in Pisces (10th house)
+      showing saattwik activities related to fine knowledge.
+    transit_effects: >
+      Saturn transiting Aries (containing 2nd lord Sun and 3rd lord Mercury)
+      during 1998-2000 delayed progress. After Jupiter entered Aries, author
+      restarted. In April 2000 Sun entered its muhurta position (Aries) and
+      the project restarted with vigor. Almost 40% of the book was written
+      in April-May 2000. After Saturn left Aries, the other 60% was finished.
+    lesson: "Navamsa strength is crucial for dharmik activities; transits over muhurta positions time events."
+
+# =============================================================================
+# 36.5 - Conclusion and Key Takeaways
+# =============================================================================
+conclusion:
+  key_emphasis: >
+    The importance of analyzing planetary positions in muhurta charts just as
+    in natal charts is emphasized, as many books leave out this important aspect.
+    One should analyze the rasi and relevant divisional charts of a muhurta
+    just as in the case of natal charts.
+
+  practical_guidelines:
+    - "Planetary strength in the muhurta chart matters more than rigid thumb rules."
+    - "Both the rasi chart and the relevant divisional chart should be strong."
+    - "The first Vimsottari dasa planet should be favorable in the muhurta chart."
+    - "Hora lord at the muhurta time should be favorable in the native's natal chart."
+    - "Tarabala (nakshatra compatibility) of Moon at muhurta time should be checked against birth nakshatra."
+    - "Transits over muhurta chart positions can be used to time future developments."
+    - "Navamsa chart strength is especially important for dharmic activities."
+    - "Divisional chart meanings can be adapted for muhurta analysis (D-10 for career, D-4 for property, etc.)."
+
+  note_on_thumb_rules: >
+    The guidelines in Table 79 are merely thumb rules. Expert astrologers
+    often flout these norms with considerable success. The basic point behind
+    rules like 'keep the 7th house empty in wedding muhurta' is to avoid
+    afflictions. If the 7th house has benefics giving great yogas, that
+    should not cause problems.

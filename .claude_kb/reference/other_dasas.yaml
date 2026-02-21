@@ -1,0 +1,1016 @@
+# Other Dasa Systems - Vedic Astrology: An Integrated Approach
+# Chapters 17-24 (Book pages 195-270, PDF pages 202-277)
+# Extracted from Part 2: Dasa Analysis
+
+source:
+  book: "Vedic Astrology: An Integrated Approach"
+  author: "P.V.R. Narasimha Rao"
+  chapters: "17-24"
+  book_pages: "195-270"
+  pdf_pages: "202-277"
+  section: "Part 2: Dasa Analysis - Other Dasa Systems"
+  note: >
+    This reference covers eight dasa systems beyond Vimsottari dasa.
+    Each system has specific applicability conditions, computation methods,
+    and interpretation rules. Different dasas show events from different
+    angles and should not be used interchangeably without understanding
+    their distinct purposes.
+
+# =============================================================================
+# CHAPTER 17: ASHTOTTARI DASA
+# =============================================================================
+ashtottari_dasa:
+  chapter: 17
+  book_pages: "195-199"
+  pdf_pages: "202-206"
+  name: "Ashtottari Dasa"
+  meaning: "Ashtottara sata = one hundred and eight"
+  type: "Nakshatra-based graha dasa"
+  total_cycle: "108 years (poornaayush of man)"
+
+  overview: >
+    Most popular dasa system after Vimsottari. Parasara listed it as a
+    conditional dasa. Only 8 planets have dasas (Rahu and the 7 planets,
+    i.e. the chara karakas). Ketu is excluded.
+
+  applicability:
+    controversial: true
+    views:
+      - view: "Universal"
+        description: "Applicable in all charts"
+      - view: "Conditional on Rahu"
+        description: >
+          Applicable if Rahu (not in lagna) is in a quadrant or
+          trine from lagna lord
+      - view: "Based on paksha and birth time"
+        description: >
+          Applicable for daytime births in Krishna paksha (darker fortnight)
+          and nighttime births in Sukla paksha (brighter fortnight)
+
+  usage_views:
+    - "Some use as ayur dasa (longevity timing)"
+    - "Some use as phalita dasa (general results)"
+    - >
+      Because only chara karakas have dasas, it may show events related
+      to sustenance, achievements, raja yogas and moksha
+    - "Some prefer to see all matters in it"
+
+  computation:
+    dasa_order_and_periods:
+      description: >
+        Each planet covers an arc of either 53d20m (4 nakshatras) or
+        40d0m (3 nakshatras). Note Moon's longitude, find which arc it
+        belongs to. The ruling planet starts the dasa. The fraction of
+        arc yet to be traversed gives the fraction of first dasa remaining.
+      table:
+        - seq: 1
+          nakshatras: ["Aardra", "Punarvasu", "Pushyami", "Aasresha"]
+          arc: "66d40m - 120d0m"
+          arc_length: "53d20m"
+          planet: Sun
+          dasa_years: 6
+        - seq: 2
+          nakshatras: ["Makha", "P.Phalguni", "U.Phalguni"]
+          arc: "120d0m - 160d0m"
+          arc_length: "40d0m"
+          planet: Moon
+          dasa_years: 15
+        - seq: 3
+          nakshatras: ["Hasta", "Chitra", "Swaati", "Visaakha"]
+          arc: "160d0m - 213d20m"
+          arc_length: "53d20m"
+          planet: Mars
+          dasa_years: 8
+        - seq: 4
+          nakshatras: ["Anooradha", "Jyeshtha", "Moola"]
+          arc: "213d20m - 253d20m"
+          arc_length: "40d0m"
+          planet: Mercury
+          dasa_years: 17
+        - seq: 5
+          nakshatras: ["P.Ashadha", "U.Ashadha", "Sravanam"]
+          arc: "253d20m - 293d20m"
+          arc_length: "40d0m"
+          planet: Saturn
+          dasa_years: 10
+        - seq: 6
+          nakshatras: ["Dhanishtha", "Satabhisha", "P.Bhadra"]
+          arc: "293d20m - 333d20m"
+          arc_length: "40d0m"
+          planet: Jupiter
+          dasa_years: 19
+        - seq: 7
+          nakshatras: ["U.Bhadra", "Revati", "Aswini", "Bharani"]
+          arc: "333d20m - 26d40m (386d40m)"
+          arc_length: "53d20m"
+          planet: Rahu
+          dasa_years: 12
+        - seq: 8
+          nakshatras: ["Krittika", "Rohini", "Mrigasira"]
+          arc: "26d40m - 66d40m"
+          arc_length: "40d0m"
+          planet: Venus
+          dasa_years: 21
+
+    rahu_arc_note: >
+      Rahu's arc crosses 0 degrees (333d20m to 26d40m). When calculating
+      the remaining arc, use 26d40m if Moon is in early Aries, or use
+      386d40m (= 26d40m + 360) if Moon is in late Pisces.
+
+    total_years_check: 108  # 6+15+8+17+10+19+12+21 = 108
+
+    antardasas:
+      description: >
+        First antardasa belongs to the planet AFTER the dasa lord in the
+        table order. Then antardasas follow the same order as dasas.
+        Last antardasa belongs to the dasa lord itself.
+      example_jupiter: ["Rahu", "Venus", "Sun", "Moon", "Mars", "Mercury", "Saturn", "Jupiter"]
+      example_moon: ["Mars", "Mercury", "Saturn", "Jupiter", "Rahu", "Venus", "Sun", "Moon"]
+      length_formula: "dasa_length x antardasa_planet_dasa_length / 108"
+
+  interpretation:
+    maraka_analysis: >
+      Standard maraka principles apply. The 2nd and 7th lords and occupants
+      are marakas. Death timing follows the same logic as Vimsottari dasa.
+    raja_yoga: >
+      Planets connecting lagna to GL by aspect, ownership and occupancy
+      bring power. Vipareeta Raja Yoga planets can give permanent results
+      if they have conjunction or rasi aspect with lagna lord.
+
+  conclusion: >
+    Applicability and application are controversial. Keep an open mind
+    to alternative views.
+
+# =============================================================================
+# CHAPTER 18: NARAYANA DASA
+# =============================================================================
+narayana_dasa:
+  chapter: 18
+  book_pages: "200-225"
+  pdf_pages: "207-232"
+  name: "Narayana Dasa"
+  type: "Rasi dasa (phalita dasa)"
+  purpose: "Shows general results; most important phalita dasa"
+
+  overview: >
+    Based on the progression of lagna in one's life. As one dasa ends
+    and another starts, one rasi stops being the progressed lagna and
+    another becomes the progressed lagna. Computed differently for
+    different divisional charts. Extremely versatile.
+
+  applicability: "Applicable to all charts. Can be computed for each divisional chart separately."
+
+  computation:
+    dasa_seed:
+      description: >
+        Dasas start from lagna or the 7th house, whichever is stronger.
+        The stronger is called the 'dasa seed'.
+
+    dasa_progression:
+      sign_types:
+        movable:
+          deity: "Brahma (God of creation)"
+          movement: "Regular (1st, 2nd, 3rd, etc.)"
+        fixed:
+          deity: "Shiva (God of destruction)"
+          movement: "Every 6th house"
+        dual:
+          deity: "Vishnu (God of sustenance)"
+          movement: "Trinal (1st, 5th, 9th, then 10th, 2nd, 6th, etc.)"
+
+      direction:
+        rule: >
+          Based on the 9th house from dasa seed. If 9th house is
+          odd-footed (Ar, Ta, Ge, Li, Sc, Sg), direction is forward.
+          If 9th house is even-footed (Cn, Le, Vi, Cp, Aq, Pi),
+          direction is backward.
+
+      saturn_exception: >
+        If Saturn occupies dasa seed, progression becomes regular
+        zodiacal (forward direction, Brahma's progression).
+
+      ketu_exception: >
+        If Ketu occupies dasa seed, the basic direction reverses.
+        Forward becomes backward and vice versa.
+
+    dasa_progression_table:
+      note: "Three cases for each seed: (a) Normal, (b) Saturn exception, (c) Ketu exception"
+      Ar:
+        normal:  "Ar, Ta, Ge, Cn, Le, Vi, Li, Sc, Sg, Cp, Aq, Pi"
+        saturn:  "Ar, Ta, Ge, Cn, Le, Vi, Li, Sc, Sg, Cp, Aq, Pi"
+        ketu:    "Ar, Pi, Aq, Cp, Sg, Sc, Li, Vi, Le, Cn, Ge, Ta"
+      Ta:
+        normal:  "Ta, Sg, Cn, Aq, Vi, Ar, Sc, Ge, Cp, Le, Pi, Li"
+        saturn:  "Ta, Ge, Cn, Le, Vi, Li, Sc, Sg, Cp, Aq, Pi, Ar"
+        ketu:    "Ta, Li, Pi, Le, Cp, Ge, Sc, Ar, Vi, Aq, Cn, Sg"
+      Ge:
+        normal:  "Ge, Aq, Li, Vi, Ta, Cp, Sg, Le, Ar, Pi, Sc, Cn"
+        saturn:  "Ge, Cn, Le, Vi, Li, Sc, Sg, Cp, Aq, Pi, Ar, Ta"
+        ketu:    "Ge, Li, Aq, Pi, Cn, Sc, Sg, Ar, Le, Vi, Cp, Ta"
+      Cn:
+        normal:  "Cn, Ge, Ta, Ar, Pi, Aq, Cp, Sg, Sc, Li, Vi, Le"
+        saturn:  "Cn, Le, Vi, Li, Sc, Sg, Cp, Aq, Pi, Ar, Ta, Ge"
+        ketu:    "Cn, Le, Vi, Li, Sc, Sg, Cp, Aq, Pi, Ar, Ta, Ge"
+      Le:
+        normal:  "Le, Cp, Ge, Sc, Ar, Vi, Aq, Cn, Sg, Ta, Li, Pi"
+        saturn:  "Le, Vi, Li, Sc, Sg, Cp, Aq, Pi, Ar, Ta, Ge, Cn"
+        ketu:    "Le, Pi, Li, Ta, Sg, Cn, Aq, Vi, Ar, Sc, Ge, Cp"
+      Vi:
+        normal:  "Vi, Cp, Ta, Ge, Li, Aq, Pi, Cn, Sc, Sg, Ar, Le"
+        saturn:  "Vi, Li, Sc, Sg, Cp, Aq, Pi, Ar, Ta, Ge, Cn, Le"
+        ketu:    "Vi, Ta, Cp, Sg, Le, Ar, Pi, Sc, Cn, Ge, Aq, Li"
+      Li:
+        normal:  "Li, Sc, Sg, Cp, Aq, Pi, Ar, Ta, Ge, Cn, Le, Vi"
+        saturn:  "Li, Sc, Sg, Cp, Aq, Pi, Ar, Ta, Ge, Cn, Le, Vi"
+        ketu:    "Li, Vi, Le, Cn, Ge, Ta, Ar, Pi, Aq, Cp, Sg, Sc"
+      Sc:
+        normal:  "Sc, Ge, Cp, Le, Pi, Li, Ta, Sg, Cn, Aq, Vi, Ar"
+        saturn:  "Sc, Sg, Cp, Aq, Pi, Ar, Ta, Ge, Cn, Le, Vi, Li"
+        ketu:    "Sc, Ar, Vi, Aq, Cn, Sg, Ta, Li, Pi, Le, Cp, Ge"
+      Sg:
+        normal:  "Sg, Le, Ar, Pi, Sc, Cn, Ge, Aq, Li, Vi, Ta, Cp"
+        saturn:  "Sg, Cp, Aq, Pi, Ar, Ta, Ge, Cn, Le, Vi, Li, Sc"
+        ketu:    "Sg, Ar, Le, Vi, Cp, Ta, Ge, Li, Aq, Pi, Cn, Sc"
+      Cp:
+        normal:  "Cp, Sg, Sc, Li, Vi, Le, Cn, Ge, Ta, Ar, Pi, Aq"
+        saturn:  "Cp, Aq, Pi, Ar, Ta, Ge, Cn, Le, Vi, Li, Sc, Sg"
+        ketu:    "Cp, Aq, Pi, Ar, Ta, Ge, Cn, Le, Vi, Li, Sc, Sg"
+      Aq:
+        normal:  "Aq, Cn, Sg, Ta, Li, Pi, Le, Cp, Ge, Sc, Ar, Vi"
+        saturn:  "Aq, Pi, Ar, Ta, Ge, Cn, Le, Vi, Li, Sc, Sg, Cp"
+        ketu:    "Aq, Vi, Ar, Sc, Ge, Cp, Le, Pi, Li, Ta, Sg, Cn"
+      Pi:
+        normal:  "Pi, Cn, Sc, Sg, Ar, Le, Vi, Cp, Ta, Ge, Li, Aq"
+        saturn:  "Pi, Ar, Ta, Ge, Cn, Le, Vi, Li, Sc, Sg, Cp, Aq"
+        ketu:    "Pi, Sc, Cn, Ge, Aq, Li, Vi, Ta, Cp, Sg, Le, Ar"
+
+    dasa_length:
+      method: >
+        Count houses from dasa rasi to its lord. Direction: forward if
+        dasa rasi is odd-footed, backward if even-footed.
+        Dasa length = count - 1 (in years).
+      exceptions:
+        lord_in_own_sign: >
+          If count is 1 (lord in own sign), dasa length = 12 years
+          (not 0 years).
+        exalted_lord: "Add 1 year to dasa length"
+        debilitated_lord: "Subtract 1 year from dasa length"
+      dual_lordship: >
+        For Aq and Sc (two lords), take the stronger lord for computation.
+      second_cycle: >
+        After all 12 rasi dasas complete, second cycle starts.
+        Second cycle dasa length = 12 - first_cycle_dasa_length.
+
+    antardasas:
+      count: 12
+      length: "Each antardasa = n months (where n = dasa length in years)"
+      starting_point: >
+        Antardasa seed = stronger of dasa rasi and 7th from it.
+        Antardasas start from the rasi containing the lord of the
+        antardasa seed. Proceed 1st, 2nd, 3rd etc houses from there.
+      direction: >
+        Forward if the starting rasi is an odd sign. Backward if even sign.
+        NOTE: odd/even signs, NOT odd-footed/even-footed.
+      saturn_exception: "Saturn in antardasa seed rasi makes antardasas go forward"
+      ketu_exception: "Ketu in antardasa seed rasi reverses antardasa direction"
+
+  interpretation:
+    core_principle: >
+      Narayana dasa gives the progression of lagna in life. During a
+      rasi's dasa, that rasi acts as lagna (if dasas started from lagna).
+      If dasas started from 7th house, then 7th from dasa rasi gives
+      the progressed lagna (dasa lagna).
+
+    key_terms:
+      dasa_lagna: "The rasi acting as lagna during a dasa"
+      paaka_rasi: "The rasi containing the lord of dasa lagna"
+
+    parasara_rules:
+      - "Natural malefics in 3rd and 6th from dasa lagna give success in ventures"
+      - "Natural benefics in 3rd and 6th give failures"
+      - "Natural benefics in trines and 8th from dasa lagna give happiness and success"
+      - "Natural malefics in trines and 8th give failures, obstructions, unhappiness"
+      - "Any planet in 11th from dasa lagna ensures gains"
+      - "Rahu in 8th and 12th from dasa lagna gives constant fear"
+      - "Exalted or own-house lord of dasa lagna/trine/quadrant gives excellent results"
+      - "Debilitated dusthana lord from dasa lagna gives good results"
+      - "Malefics in 4th from dasa lagna cause discomfort"
+      - "Benefics in 2nd and 5th from dasa lagna give fame and favors from authorities"
+      - "Afflicted 7th from dasa lagna and paaka rasi brings marriage troubles"
+      - "Raja yogas and dhana yogas with respect to dasa lagna bring success"
+
+    natal_reference_rules:
+      - "Dasa of raajya pada (A10) gives career success"
+      - "Dasa of upapada (UL) may bring marriage"
+      - "Dasa of 2nd or 7th from UL may bring marriage troubles"
+      - "Dasa of GL may bring power"
+      - "Antardasas aspected by GL may bring promotions"
+      - "Antardasas aspecting UL may bring marriage"
+
+    three_parts_rule: >
+      Divide each dasa into three equal parts: (1) The rasi dominates
+      in the first part, (2) its lord dominates and gives his results
+      in the second part, (3) occupants and aspecting planets dominate
+      in the third part.
+
+  narayana_dasa_of_vargas:
+    description: >
+      Can be computed for any divisional chart. Shows progress of matters
+      related to that varga.
+    seed_house: >
+      Seed of D-n is the nth house. If n > 12, subtract multiples of 12.
+    examples:
+      D4: "Seed = 4th house. Shows residence, happiness from home, foreign stay"
+      D7: "Seed = 7th house. Shows happiness from children"
+      D9: "Seed = 9th house. Shows marriage and marital life"
+      D10: "Seed = 10th house. Shows career events"
+      D12: "Seed = 12th house (12-0). Shows relations with parents"
+      D16: "Seed = 4th house (16-12). Shows vehicles and pleasures"
+      D24: "Seed = 12th house (24-12). Shows learning and knowledge"
+      D27: "Seed = 3rd house (27-24). Shows strengths"
+      D30: "Seed = 6th house (30-24). Shows evils"
+      D40: "Seed = 4th house (40-36). Shows maternal legacy"
+
+    procedure:
+      - "Find the seed house of the divisional chart"
+      - "Take that house in rasi chart"
+      - "Find its lord (stronger lord for Aq and Sc)"
+      - "Take the rasi occupied by that lord in the divisional chart as lagna"
+      - "Compute Narayana dasa of the divisional chart as if it were a rasi chart"
+
+    interpretation_warning: >
+      Narayana dasa of vargas is NOT the progression of lagna or 7th house.
+      Taking dasa rasi or 7th from it as lagna and analyzing dasas has no
+      technical basis for vargas. This approach applies only to the rasi chart.
+
+  subdivisions:
+    hierarchy:
+      - "Mahadasa (main dasa)"
+      - "Antardasa (12 equal sub-periods)"
+      - "Pratyantardasa (12 equal subdivisions of antardasa)"
+      - "Sookshma-antardasa (12 equal subdivisions of pratyantardasa)"
+      - "Praana-antardasa (12 equal subdivisions of sookshma)"
+      - "Deha-antardasa (12 equal subdivisions of praana)"
+    time_measurement: >
+      Length of sub-periods measured by the arc traversed by Sun,
+      not by calendar days. 1 year = 12 months, 1 month = 30 days,
+      where 1 day = time in which Sun moves by 1 degree.
+      This is the basis for measuring time in all rasi dasas.
+    guidance: >
+      Events playing a role for just a week are seen in pratyantardasa.
+      Events lasting a few months are seen in antardasa.
+      Mahadasa shows the mood of longer periods.
+      Events lasting an hour are seen in praana or deha antardasa.
+
+  conclusion: >
+    The most important phalita dasa. Its versatility lies in separate
+    computation for each divisional chart. Multiple Narayana dasas can
+    be computed for each divisional chart using different seeds, examining
+    events from different angles.
+
+# =============================================================================
+# CHAPTER 19: LAGNA KENDRADI RASI DASA
+# =============================================================================
+lagna_kendradi_rasi_dasa:
+  chapter: 19
+  book_pages: "226-229"
+  pdf_pages: "233-236"
+  name: "Lagna Kendradi Rasi Dasa"
+  type: "Rasi dasa (phalita dasa)"
+  purpose: "Shows material success; ruled by Sri Maha Lakshmi"
+
+  overview: >
+    A rasi dasa covering kendras (quadrants), then panapharas, then
+    apoklimas from lagna. Based on the trine-based movement ruled by
+    Lakshmi, goddess of wealth and prosperity. Shows periods of prosperity.
+    Related to but distinct from Moola dasa (Kendradi Graha Dasa).
+
+  computation:
+    dasa_seed: "Stronger of lagna and 7th house"
+    direction: >
+      Forward if lagna is in an odd sign. Backward if even sign.
+      NOTE: odd/even signs, NOT odd-footed/even-footed.
+    saturn_exception: "If Saturn is in the stronger of lagna/7th, order is forward"
+    ketu_exception: "If Ketu is in the stronger of lagna/7th, order is reversed"
+
+    dasa_sequence:
+      - group: "Kendras (1st, 4th, 7th, 10th from dasa seed)"
+        position: "First 4 dasas"
+      - group: "Panapharas (2nd, 5th, 8th, 11th from dasa seed)"
+        position: "Next 4 dasas"
+      - group: "Apoklimas (3rd, 6th, 9th, 12th from dasa seed)"
+        position: "Last 4 dasas"
+
+    dasa_periods: "Found exactly as in Narayana dasa"
+
+    example_odd_lagna: >
+      Lagna in Ge (odd, stronger than Sg):
+      Ge(1st), Vi(4th), Sg(7th), Pi(10th), Cn(2nd), Li(5th), Cp(8th),
+      Ar(11th), Le(3rd), Sc(6th), Aq(9th), Ta(12th)
+
+    example_even_lagna: >
+      Lagna in Ta (even, stronger than Sc):
+      Ta(1st), Aq(4th), Sc(7th), Le(10th), Ar(2nd), Cp(5th), Li(8th),
+      Cn(11th), Pi(3rd), Sg(6th), Vi(9th), Ge(12th)
+
+  interpretation:
+    core_principle: >
+      Uses the movement ruled by Lakshmi (trine-based). Shows the
+      progression of lagna using Lakshmi's movement, hence shows
+      prosperity periods. Quadrants (Vishnu-ruled) progressed through
+      trines (Lakshmi-ruled).
+    note: >
+      Sudasa (next chapter) is a superior version, starting from
+      Sree Lagna instead of lagna.
+
+  mandooka_dasa_note: >
+    A noted author presented a variation of Lagna Kendradi Rasi Dasa
+    as "Mandooka dasa". However, the quadrants-panapharas-apoklimas
+    movement is "kendraadi gati", not "mandooki gati". True Mandooki gati
+    is the 3rd/11th jump explained in Kalachakra dasa. True Mandooka dasa
+    of Rudramsa is used for predicting results of wars and death.
+
+# =============================================================================
+# CHAPTER 20: SUDASA
+# =============================================================================
+sudasa:
+  chapter: 20
+  book_pages: "230-233"
+  pdf_pages: "237-240"
+  name: "Sudasa"
+  alternate_names:
+    - "Sree Lagna Kendradi Rasi Dasa"
+    - "Rasi Dasa"
+  type: "Rasi dasa"
+  purpose: "Financial matters, status, power and authority"
+
+  overview: >
+    Computation based on kendras from Sree Lagna (SL). Important for
+    materialistic things like money, power and authority. If a political
+    leader holds power, or a businessman sees increasing profits, they
+    must have a favorable Sudasa dasa running. Superior to Lagna Kendradi
+    Rasi Dasa for material prosperity.
+
+  computation:
+    starting_point: "Sign containing Sree Lagna (SL)"
+    direction: >
+      Forward if SL is in an odd sign. Backward if SL is in an even sign.
+      NOTE: odd/even signs, NOT odd-footed/even-footed.
+
+    dasa_sequence:
+      - group: "Kendras (1st, 4th, 7th, 10th from SL sign)"
+        position: "First 4 dasas"
+      - group: "Panapharas (2nd, 5th, 8th, 11th from SL sign)"
+        position: "Next 4 dasas"
+      - group: "Apoklimas (3rd, 6th, 9th, 12th from SL sign)"
+        position: "Last 4 dasas"
+
+    dasa_periods: "Found as in Narayana dasa"
+
+    first_dasa_fraction: >
+      Only a fraction of first dasa remains at birth.
+      Formula: remainder = full_dasa_length x (30 - SL_degrees_in_sign) / 30
+
+  interpretation:
+    hora_lagna_rules:
+      - "Dasas of HL, 7th from HL, and signs aspecting HL bring financial prosperity"
+      - "If lord of dasa sign occupies/aspects HL, financial prosperity improves"
+      - "If lord of HL occupies/aspects dasa sign, financial prosperity improves"
+
+    ghatika_lagna_rules:
+      - "Same rules as HL but for power and authority instead of finances"
+      - "GL involvement brings power and authority"
+
+    arudha_lagna_rules:
+      - "Dasas of upachayas (3,6,10,11) from AL bring growth of status"
+      - "Dasa of 11th from AL is particularly favorable"
+      - "8th and 12th from AL bring setbacks to status"
+
+    combined_use: >
+      Always check Narayana dasa along with Sudasa. Narayana (Vishnu)
+      is important for power, while Sri Lakshmi gives prosperity.
+
+# =============================================================================
+# CHAPTER 21: DRIGDASA
+# =============================================================================
+drigdasa:
+  chapter: 21
+  book_pages: "234-238"
+  pdf_pages: "241-245"
+  name: "Drigdasa"
+  meaning: "Drik = vision; dasa based on aspects"
+  type: "Rasi dasa"
+  purpose: "Shows spiritual vision development and evolution of soul"
+
+  overview: >
+    Shows how spiritual vision develops and steers one's life. If a chart
+    promises spiritual growth, this dasa shows religious and spiritual
+    activities and the evolution of the soul.
+
+  computation:
+    starting_point: "9th house"
+
+    dasa_sequence:
+      - step: 1
+        description: >
+          First 4 dasas: 9th house and the 3 signs aspected by it.
+          Order forward/backward based on whether 9th house is
+          odd-footed or even-footed.
+      - step: 2
+        description: >
+          Next 4 dasas: 10th house and the 3 signs aspected by it.
+          Order forward/backward based on whether 10th house is
+          odd-footed or even-footed.
+      - step: 3
+        description: >
+          Last 4 dasas: 11th house and the 3 signs aspected by it.
+          Order forward/backward based on whether 11th house is
+          odd-footed or even-footed.
+
+    dasa_periods: "Found as in Narayana dasa"
+
+    example: >
+      Lagna in Li: 9th=Ge (odd-footed, go forward). Rasis aspecting Ge
+      forward: Vi, Sg, Pi. First 4 dasas: Ge, Vi, Sg, Pi.
+      10th=Cn (even-footed, go backward). Rasis aspecting Cn backward:
+      Ta, Aq, Sc. Next 4 dasas: Cn, Ta, Aq, Sc.
+      11th=Le (even-footed, go backward). Rasis aspecting Le backward:
+      Ar, Cp, Li. Last 4 dasas: Le, Ar, Cp, Li.
+
+  interpretation:
+    rules:
+      - rule: "Dasa of arudha lagna"
+        result: "Can bring renunciation if parivraja yogas exist in chart"
+      - rule: "Dasas of signs aspecting AL"
+        result: "Bring external activities important for spiritual evolution"
+      - rule: "Dasa of lagna and 7th house"
+        result: "Can bring internal awakening and self-realization"
+      - rule: "Dasa of lagna"
+        result: "Can bring fame/power related to spreading spiritual knowledge; a monk may become Chief Pontiff"
+      - rule: "Dasas of signs containing or aspecting mantrapada (A5)"
+        result: "Can bring religious initiation or mantra sadhana (rigorous practice)"
+      - rule: "Dasa of sign containing mrityupada (A8)"
+        result: "Can bring yogic sadhana; can activate Kundalini sakti"
+      - rule: "Dasa of sign containing Ketu"
+        result: "Can bring spiritual activities toward liberation; Ketu alone gives real spiritual awakening"
+      - rule: "Dasa of sign containing Rahu (favorable)"
+        result: "Can create progress after internal turmoil"
+      - rule: "Dasa of sign containing Rahu (unfavorable)"
+        result: "Can take native toward materialism"
+
+# =============================================================================
+# CHAPTER 22: NIRYAANA SHOOLA DASA
+# =============================================================================
+niryaana_shoola_dasa:
+  chapter: 22
+  book_pages: "239-245"
+  pdf_pages: "246-252"
+  name: "Niryaana Shoola Dasa"
+  meaning: "Niryaana = death; Shoola = weapon of Lord Shiva"
+  type: "Rasi dasa (ayur dasa)"
+  purpose: "Timing of death; one of the most reliable systems for death timing"
+
+  overview: >
+    Parasara originally called this simply "Shoola dasa". This is one of
+    the most reliable dasa systems for timing death. Usually dasa of one
+    of the three Trishoola rasis brings death. Best ayur dasa for death
+    timing in the author's opinion.
+
+  computation:
+    starting_point: >
+      Stronger of the 2nd and 8th houses. If 2nd house has more
+      planets or stronger aspects, it starts. Otherwise 8th house starts.
+    direction: >
+      If starting rasi is odd, go forward (zodiacal). If even, go backward.
+    saturn_exception: >
+      If Saturn occupies the starting rasi, progression becomes regular
+      zodiacal (forward).
+    dasa_periods:
+      movable_signs: "7 years"
+      fixed_signs: "8 years"
+      dual_signs: "9 years"
+    thumbrule: "Sum of any 3 consecutive dasas = 24 years (7+8+9)"
+    antardasas: "Computed using the same rules as Narayana dasa"
+
+  interpretation:
+    trishoola_principle: >
+      Dasa of a Trishoola rasi brings death. There are three Trishoola
+      rasis (trines from Rudra). The correct one is identified based on
+      the longevity category (short, middle, or long life).
+
+    rudra_fallback: >
+      If Trishoola rasis don't bring death, the rasi containing Rudra
+      in the 12th house can bring death.
+
+    antardasa_at_death:
+      options:
+        - "6th, 7th, 8th, or 12th rasi from dasa rasi"
+        - "Rasi aspecting the rasi that, in navamsa, contains the 8th lord from dasa rasi"
+      example: >
+        If dasa rasi is Ta and Jupiter (8th lord from Ta) is in Le in navamsa,
+        then death antardasas: Li, Sc, Sg, Ar (6th/7th/8th/12th from Ta),
+        or Ar, Le, Li, Cp (rasis aspecting Le). Common rasis between
+        the two principles are strong candidates.
+
+  conclusion: >
+    Best dasa for timing death. Usually a Trishoola rasi brings death.
+    Many special cases, exceptions and rules from maharshis were omitted.
+    What is taught here is only the tip of the iceberg.
+
+# =============================================================================
+# CHAPTER 23: SHOOLA DASA
+# =============================================================================
+shoola_dasa:
+  chapter: 23
+  book_pages: "246-252"
+  pdf_pages: "253-259"
+  name: "Shoola Dasa"
+  type: "Rasi dasa (ayur dasa)"
+  purpose: "Death, diseases, suffering, and death of relatives"
+
+  overview: >
+    Different from Niryaana Shoola dasa. Shows Shiva's force/punishment.
+    Motion is constant (9 years per dasa) and always zodiacal. Shows
+    misfortune, suffering, and death.
+
+  computation:
+    starting_point: "Stronger of lagna and 7th house"
+    direction: "Always forward (zodiacal order)"
+    dasa_periods: "Always 9 years for every dasa"
+    antardasas:
+      count: 12
+      length: "9 months each"
+      method: >
+        Found using same rules as dasas, treating dasa rasi as lagna.
+        Start from stronger of dasa rasi and 7th from it.
+
+    mundane_compression: >
+      In mundane astrology, compress 108 years to the chart's effective
+      period. E.g., for a Prime Minister's 5-year term: 108 years
+      compressed to 60 months, so each dasa = 5 months.
+
+    animal_charts: >
+      For animals with average gestation of n months, each dasa = n years,
+      each antardasa = n months.
+
+  interpretation:
+    philosophical_basis: >
+      Niryaana Shoola dasa shows the motion of praana (life). Death occurs
+      when praana hits maraka rasis and Trishoola rasis. Shoola dasa is the
+      reverse: it shows the motion of Shiva's force, which starts from self
+      and moves at a constant rate in a fixed direction. Shiva destroys
+      the maya (illusion) of existence (AL), not the physical body (lagna).
+
+    death_indicators:
+      primary:
+        - "AL or trines from AL can give death"
+        - "If malefics/marakas occupy/aspect 3rd from AL, that house can give death"
+        - "If malefics/marakas occupy/aspect 8th from AL, that house can give death"
+      note_on_8th_from_AL: >
+        The 8th house for Rudra, three pairs, and ayur dasa interpretation
+        should be found from the table of strength (Table 32 in the book),
+        not the regular 8th house.
+      exclusion: >
+        A rasi occupied or aspected by AK or Jupiter usually does not
+        kill, unless that planet is Rudra.
+
+    longevity_ranges:
+      short_life: "First 4 dasas (0-36 years)"
+      middle_life: "Middle 4 dasas (36-72 years)"
+      long_life: "Last 4 dasas (72-108 years)"
+
+  death_of_relatives:
+    principle: >
+      For each relative, treat the relevant house as lagna and find
+      Shoola dasa from stronger of that house and 7th from it.
+      Death occurs when Shiva's force strikes trines from the sthira
+      karaka of that relative, or trines from the corresponding
+      arudha pada.
+
+    types:
+      pitri_shoola_dasa:
+        meaning: "Father's Shoola dasa"
+        starting_point: "Stronger of 9th and 3rd houses"
+        karaka: "Sthira karaka of father (Sun/Venus based on rasi type)"
+        death_timing: "Trines from sthira karaka; trines from A9"
+
+      bhratri_shoola_dasa:
+        meaning: "Brother/younger sibling's Shoola dasa"
+        starting_point: "Stronger of 3rd and 9th houses"
+
+      matri_shoola_dasa:
+        meaning: "Mother's Shoola dasa"
+        starting_point: "Stronger of 4th and 10th houses"
+
+      dara_shoola_dasa:
+        meaning: "Wife's Shoola dasa"
+        starting_point: "Stronger of 7th and 1st houses"
+        note: "Identical to native's normal Shoola dasa"
+        karaka: "Jupiter (sthira karaka of husband)"
+
+      putra_shoola_dasa:
+        meaning: "Child's Shoola dasa"
+        starting_point: "Stronger of 5th and 11th houses"
+        karaka: "Jupiter (sthira karaka of children)"
+
+    violence_indicator: >
+      The 3rd house from sthira karaka of the relative indicates whether
+      death was violent or peaceful. Malefics (Mars, Rahu, etc.) in or
+      aspecting the 3rd from sthira karaka suggest violent death.
+
+# =============================================================================
+# CHAPTER 24: KALACHAKRA DASA
+# =============================================================================
+kalachakra_dasa:
+  chapter: 24
+  book_pages: "253-270"
+  pdf_pages: "260-277"
+  name: "Kalachakra Dasa"
+  meaning: "Wheel of Time"
+  type: "Nakshatra-based rasi dasa"
+  purpose: >
+    Shows how the wheel of time unfolds events. Shows how one's inner
+    self relates to life events and how connected one feels.
+
+  overview: >
+    Called by Parasara "the most respectable dasa of all dasa systems".
+    Based on Moon's navamsa position. Lord Shiva explained this dasa to
+    Goddess Parvati. Focuses on the inner self and sense of connectedness.
+
+  applicability: >
+    Some authors say applicable only when Moon is stronger in navamsa
+    than rasi. The author opines it is applicable to all, as Parasara
+    imposed no conditions and called it "most respectable".
+
+  computation:
+    nakshatra_classification:
+      savya_group:
+        meaning: "Zodiacal"
+        nakshatras:
+          - ["Aswini", "Bharani", "Krittika"]
+          - ["Punarvasu", "Pushyami", "Aasresha"]
+          - ["Hasta", "Chitra", "Swaati"]
+          - ["Moola", "Poorvaashaadha", "Uttaraashaadha"]
+          - ["Poorvabhaadrapada", "Uttarabhaadrapada", "Revati"]
+      apasavya_group:
+        meaning: "Anti-zodiacal"
+        nakshatras:
+          - ["Rohini", "Mrigasira", "Aardra"]
+          - ["Makha", "Poorva Phalguni", "Uttara Phalguni"]
+          - ["Visaakha", "Anooraadha", "Jyeshtha"]
+          - ["Sravanam", "Dhanishtha", "Satabhisha"]
+
+    kalachakra_basis:
+      description: >
+        Two sets of 12 rasis: main sequence and mirrored sequence.
+        Mirror = other sign owned by the same planet. Cn mirrors Cn,
+        Le mirrors Le (only signs of their lords).
+      savya:
+        main:     "Ar, Ta, Ge, Cn, Le, Vi, Li, Sc, Sg, Cp, Aq, Pi"
+        mirrored: "Sc, Li, Vi, Cn, Le, Ge, Ta, Ar, Pi, Aq, Cp, Sg"
+      apasavya:
+        mirrored: "Sg, Cp, Aq, Pi, Ar, Ta, Ge, Le, Cn, Vi, Li, Sc"
+        main:     "Pi, Aq, Cp, Sg, Sc, Li, Vi, Le, Cn, Ge, Ta, Ar"
+
+    dasa_years_by_rasi_lord:
+      Sun:     { rasis: "Le",      years: 5 }
+      Moon:    { rasis: "Cn",      years: 21 }
+      Mars:    { rasis: "Ar, Sc",  years: 7 }
+      Mercury: { rasis: "Ge, Vi",  years: 9 }
+      Jupiter: { rasis: "Sg, Pi",  years: 10 }
+      Venus:   { rasis: "Ta, Li",  years: 16 }
+      Saturn:  { rasis: "Cp, Aq",  years: 4 }
+
+    nakshatra_pada_assignments:
+      savya_1:
+        title: "Savya-1 Nakshatras"
+        nakshatras: "Aswini, Krittika, Punarvasu, Aasresha, Hasta, Swaati, Moola, Uttarashadha, Poorvabhadrapada"
+        padas:
+          - pada: 1
+            rasis: "Ar, Ta, Ge, Cn, Le, Vi, Li, Sc, Sg"
+            deha: Ar
+            jeeva: Sg
+            paramayush: 100
+          - pada: 2
+            rasis: "Cp, Aq, Pi, Sc, Li, Vi, Cn, Le, Ge"
+            deha: Cp
+            jeeva: Ge
+            paramayush: 85
+          - pada: 3
+            rasis: "Ta, Ar, Pi, Aq, Cp, Sg, Ar, Ta, Ge"
+            deha: Ta
+            jeeva: Ge
+            paramayush: 83
+          - pada: 4
+            rasis: "Cn, Le, Vi, Li, Sc, Sg, Cp, Aq, Pi"
+            deha: Cn
+            jeeva: Pi
+            paramayush: 86
+
+      savya_2:
+        title: "Savya-2 Nakshatras"
+        nakshatras: "Bharani, Pushyami, Chitra, Poorvashadha, Revati"
+        padas:
+          - pada: 1
+            rasis: "Sc, Li, Vi, Cn, Le, Ge, Ta, Ar, Pi"
+            deha: Sc
+            jeeva: Pi
+            paramayush: 100
+          - pada: 2
+            rasis: "Aq, Cp, Sg, Ar, Ta, Ge, Cn, Le, Vi"
+            deha: Aq
+            jeeva: Vi
+            paramayush: 85
+          - pada: 3
+            rasis: "Li, Sc, Sg, Cp, Aq, Pi, Sc, Li, Vi"
+            deha: Li
+            jeeva: Vi
+            paramayush: 83
+          - pada: 4
+            rasis: "Cn, Le, Ge, Ta, Ar, Pi, Aq, Cp, Sg"
+            deha: Cn
+            jeeva: Sg
+            paramayush: 86
+
+      apasavya_1:
+        title: "Apasavya-1 Nakshatras"
+        nakshatras: "Rohini, Makha, Visakha, Sravanam"
+        padas:
+          - pada: 1
+            rasis: "Sg, Cp, Aq, Pi, Ar, Ta, Ge, Le, Cn"
+            deha: Cn
+            jeeva: Sg
+            paramayush: 86
+          - pada: 2
+            rasis: "Vi, Li, Sc, Pi, Aq, Cp, Sg, Sc, Li"
+            deha: Li
+            jeeva: Vi
+            paramayush: 83
+          - pada: 3
+            rasis: "Vi, Le, Cn, Ge, Ta, Ar, Sg, Cp, Aq"
+            deha: Aq
+            jeeva: Vi
+            paramayush: 85
+          - pada: 4
+            rasis: "Pi, Ar, Ta, Ge, Le, Cn, Vi, Li, Sc"
+            deha: Sc
+            jeeva: Pi
+            paramayush: 100
+
+      apasavya_2:
+        title: "Apasavya-2 Nakshatras"
+        nakshatras: "Mrigasira, Ardra, Poorvaphalguni, Uttaraphalguni, Anuradha, Jyeshtha, Dhanishtha, Satabhisha"
+        padas:
+          - pada: 1
+            rasis: "Pi, Aq, Cp, Sg, Sc, Li, Vi, Le, Cn"
+            deha: Cn
+            jeeva: Pi
+            paramayush: 86
+          - pada: 2
+            rasis: "Ge, Ta, Ar, Sg, Cp, Aq, Pi, Ar, Ta"
+            deha: Ta
+            jeeva: Ge
+            paramayush: 83
+          - pada: 3
+            rasis: "Ge, Le, Cn, Vi, Li, Sc, Pi, Aq, Cp"
+            deha: Cp
+            jeeva: Ge
+            paramayush: 85
+          - pada: 4
+            rasis: "Sg, Sc, Li, Vi, Le, Cn, Ge, Ta, Ar"
+            deha: Ar
+            jeeva: Sg
+            paramayush: 100
+
+    procedure:
+      - step: 1
+        description: >
+          Find nakshatra pada of natal Moon. Identify the 9-rasi sequence
+          and paramayush from Tables 44-47.
+      - step: 2
+        description: "Find the fraction of the nakshatra pada covered by Moon at birth."
+      - step: 3
+        description: >
+          Same fraction of paramayush = portion already elapsed before birth.
+          Determine which dasa runs at birth and how much remains.
+      - step: 4
+        description: >
+          After finishing current 9-rasi set, proceed to the next nakshatra
+          pada's 9-rasi set. After 4th pada, go to the 1st pada of the other
+          sub-group in the same group (Savya-1 to Savya-2, Apasavya-2 to
+          Apasavya-1, etc.).
+      - step: 5
+        description: >
+          Antardasas start from dasa rasi itself. Count 9 rasis from dasa
+          rasi along the Kalachakra sequence. Distribute dasa length among
+          9 antardasas proportionally to their dasa years (Table 48).
+          If 9-rasi set boundary is reached, proceed to next pada as in step 4.
+
+    year_type: "Author prefers savana years for all nakshatra dasas including Kalachakra"
+
+  deha_and_jeeva:
+    description: >
+      Deha rasi (body sign) and Jeeva rasi (spirit/life sign) are
+      determined by the first and ninth dasas.
+    savya_nakshatras:
+      deha: "First dasa rasi"
+      jeeva: "Ninth dasa rasi"
+    apasavya_nakshatras:
+      deha: "Ninth dasa rasi"
+      jeeva: "First dasa rasi"
+    note: >
+      These hold for birth at beginning of pada. Actual deha/jeeva
+      depend on the elapsed portion of pada at birth.
+    transit_effects:
+      benefics_in_jeeva: "Positive spirit, cheerfulness"
+      malefics_in_jeeva: "No enthusiasm"
+      malefics_in_deha: "Accidents or death"
+
+  gatis:
+    description: >
+      Special leaps (irregularities) in the Kalachakra progression.
+      Rasis reached after an irregular leap have special results.
+
+    simhaavalokana_gati:
+      name: "Lion's leap"
+      meaning: "Trinal leap"
+      leaps: "Sg to Ar (or vice versa); Pi to Sc (or vice versa)"
+      results_savya: >
+        Fear of animals, loss of friends, distress to near relations,
+        fall in dungeons, danger from poison and weapons, fall from
+        vehicle, fever, destruction of house
+      results_apasavya: "Death of father or elders, loss of position"
+
+    markati_gati:
+      name: "Monkey's leap"
+      meaning: "Temporary reversal of direction"
+      savya_example: "Cn to Le (temporary reversal in Sc, Li, Vi, Cn, Le, Ge sequence)"
+      apasavya_example: "Le to Cn (temporary reversal in Ar, Ta, Ge, Le, Cn, Vi sequence)"
+      results_savya: "Loss of wealth, agriculture and animals, death of father or elders"
+      results_apasavya: >
+        Danger from water, distress to father, loss of position,
+        anger of rulers, wandering in forests
+
+    mandooki_gati:
+      name: "Frog's leap"
+      meaning: "Jumping over one rasi"
+      savya_rasis: "Cn and Ge (from Vi to Cn skips Le; from Le to Ge skips Cn)"
+      apasavya_rasis: "Le and Vi (from Ge to Le skips Cn; from Cn to Vi skips Le)"
+      results_savya: >
+        Distress to relatives, elders and father; trouble from poison,
+        weapons, enemies, thieves. In Le-to-Ge leap: death of mother
+        or native, trouble from rulers and diseases possible.
+      results_apasavya: >
+        Distress to wife, loss of children, fever, sickness, loss of position
+
+    directional_guidance:
+      - leap: "Vi to Cn"
+        favorable: "East gives great results; auspicious journey northward"
+      - leap: "Le to Ge"
+        avoid: "East"
+        favorable: "Southwest"
+      - leap: "Cn to Le"
+        avoid: "South (causes losses)"
+        favorable: "West"
+      - leap: "Pi to Sc and Sg to Cp (normal)"
+        warning: "Troubles in northern direction"
+      - leap: "Sg to Ar"
+        warning: "Avoid journeys - may result in sickness, imprisonment or death"
+      - leap: "Sg to Sc (normal movement)"
+        favorable: "Journeys bring comforts, wealth and sexual pleasures"
+      - leap: "Le to Cn"
+        avoid: "Western direction"
+
+  interpretation:
+    basic_principles:
+      - "Dasa of a rasi gives the natural results of that rasi"
+      - "Dasa gives results of the house and planets in that rasi"
+      - "Dasa gives results of its lord's placement"
+      - "SAV (Samudaaya Ashtakavarga) plays important role"
+      - "30+ rekhas in SAV of a divisional chart = favorable dasa for those significations"
+      - "30+ rekhas in D-10 SAV = best career phases"
+      - "30+ rekhas in D-24 SAV = best periods for learning"
+
+    divisional_chart_usage: >
+      Kalachakra dasa can be applied to any divisional chart.
+      Results are interpreted according to the significations of
+      the houses in that divisional chart.
+
+  three_main_dasas_compared:
+    narayana_dasa: >
+      Shows progression of lagna; shows what happens in one's life.
+      Focus: real happenings and direction of life.
+    vimsottari_dasa: >
+      Based on nakshatra of Moon; shows state of mind as time progresses.
+      Focus: mind and mental state.
+    kalachakra_dasa: >
+      Based on Moon's navamsa; shows inner self and sense of connectedness.
+      Focus: how connected one feels to events in life; whether one
+      feels engaged or experiences a void.
+
+  conclusion: >
+    Called "most respectable dasa" by Parasara. Different dasas provide
+    different angles to view the same kaleidoscope that life is. They
+    should not be used interchangeably. An intelligent astrologer will
+    realize that different dasas show different kinds of events, or the
+    same event from different perspectives.

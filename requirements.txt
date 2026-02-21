@@ -1,0 +1,6 @@
+pyswisseph
+pandas
+geopy
+pyyaml
+pymupdf
+pdfplumber

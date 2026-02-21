@@ -1,0 +1,572 @@
+# =============================================================================
+# Remedial Measures - Chapter 34
+# Source: Vedic Astrology: An Integrated Approach by P.V.R. Narasimha Rao
+# Extracted from PDF pages 398-405 (book pages 394-401)
+# =============================================================================
+
+source:
+  book: "Vedic Astrology: An Integrated Approach"
+  author: "P.V.R. Narasimha Rao"
+  publisher: "Sagar Publications, New Delhi"
+  chapter: 34
+  chapter_title: "Remedial Measures"
+  book_pages: "394-401"
+  pdf_pages: "398-405"
+  part: "Part 5: Special Topics"
+  tables:
+    - number: 77
+      title: "Gemstones of planets"
+      book_page: 395
+    - number: 78
+      title: "Planets and deities"
+      book_page: 400
+  recommended_further_reading: "Vedic Remedies in Astrology by Pt. Sanjay Rath"
+
+# =============================================================================
+# Overview
+# =============================================================================
+
+introduction:
+  summary: >
+    Remedial measures are measures taken to remedy unfortunate situations
+    that a native is going through or is expected to go through. The pattern
+    of one's life is decided at birth by planetary positions, which are in
+    turn decided by karma (actions) accumulated in past lives. However, only
+    the basic pattern is fixed, not the minute details. The exact details
+    can be altered by exercising free will. Remedial measures manipulate the
+    exact details to be relatively favorable.
+
+  principle: >
+    Though the basic pattern of life cannot be easily altered, the exact
+    details can be altered by exercising free will. For example, one may be
+    destined to have a vehicular accident on a particular day, but it can
+    be a minor accident or a major one. Actions taken by free will have a
+    role, along with accumulated karma of past lives, in deciding the exact
+    details.
+
+# =============================================================================
+# Types of Remedial Measures
+# =============================================================================
+
+types_of_remedies:
+  commonsense_remedies:
+    section: "34.1.1"
+    description: >
+      When we anticipate good happenings, we can afford to take a few risks.
+      When we anticipate bad happenings, we can take extra precautions. If an
+      accident is possible in a period, drive very carefully or avoid travel.
+      If quarrels with authorities are possible, be extra careful and
+      consciously try to restrain oneself.
+
+  pacifying_planets:
+    section: "34.1.2"
+    description: >
+      In Hinduism, we can remedy a bad result by the pacification of planets.
+      There are 4 ways to make planets happy.
+    methods:
+      - method: "Wearing a gemstone"
+        note: "Works only for planets that are favorable in one's horoscope"
+      - method: "Good deeds"
+        note: "By committing good deeds, we can pacify planets"
+      - method: "Planetary propitiation"
+        note: >
+          By reciting the mantras and stotras of planets. Mantra is a
+          combination of sounds with a special power to produce beneficial
+          spiritual waves within us. Stotras are hymns in praise of planets.
+      - method: "Propitiation of deities"
+        note: "By propitiating various deities, we can pacify various planets"
+
+# =============================================================================
+# Section 34.2 - Gemstones (Table 77)
+# =============================================================================
+
+gemstones:
+  section: "34.2"
+  table_number: 77
+  table_title: "Gemstones of planets"
+
+  prescription_guidelines:
+    - >
+      Look at the functional benefics in one's rasi chart and prescribe
+      their gemstones.
+    - >
+      If a planet's dasa is running or if a planet is taking part in a
+      favorable yoga, we may choose that planet.
+    - >
+      Wearing the gemstone of a planet speeds up the fructification of
+      the good results promised in a chart by that planet.
+    - >
+      If one wants good results in a particular area of life, strengthen
+      favorable planets in the relevant divisional chart (e.g., yogakaraka
+      in D-10 for career improvement).
+    - >
+      If a functional benefic is badly placed or weak, its gemstone can
+      still be used to make it powerful enough to give good results.
+    - >
+      Gemstones of functional malefics in a chart should be avoided as
+      far as possible.
+    - >
+      Gemstones of marakas should be avoided when running maraka dasas.
+
+  planets:
+    Sun:
+      gemstone: "Ruby"
+      metal: "Gold"
+    Moon:
+      gemstone: "White pearl"
+      metal: "Gold"
+    Mars:
+      gemstone: "Red coral"
+      metal: "Copper"
+    Mercury:
+      gemstone: "Emerald"
+      metal: "Silver/Platinum"
+    Jupiter:
+      gemstone: "Yellow sapphire"
+      metal: "Gold"
+    Venus:
+      gemstone: "Diamond"
+      metal: "Silver/Platinum"
+    Saturn:
+      gemstone: "Blue sapphire"
+      metal: "Iron (or silver)"
+    Rahu:
+      gemstone: "Hessonite (gomedh)"
+      metal: "Silver"
+    Ketu:
+      gemstone: "Cat's eye"
+      metal: "Silver"
+
+  wearing_guidelines:
+    first_wearing: >
+      The ring must be worn for the first time on the weekday of the planet.
+      The planetary strength should be good at that time. The planet ruling
+      the gemstone should be strong at that time.
+    combining_gemstones: >
+      We can combine two gemstones and wear them if the corresponding
+      planets are friends and functional benefics. This is particularly
+      recommended when the two planets form a yoga.
+    combining_examples:
+      - >
+        Virgo lagna: If 10th lord Mercury and 9th lord Venus are together
+        forming dharma-karmadhipati yoga, a ring with emerald and diamond
+        may be advised.
+      - >
+        Aries lagna: If Sun and Moon conjoin forming a raja yoga, a ring
+        with ruby and pearl may be recommended.
+
+  finger_assignments:
+    traditional:
+      index_finger: "Jupiter"
+      middle_finger: "Saturn"
+      ring_finger: "Sun"
+      little_finger: "Mercury"
+    traditional_wearing_practice:
+      little_finger: "Mercury and Venus gemstones"
+      middle_finger: "Saturn gemstone"
+      ring_finger: "Sun gemstone"
+      index_finger: "Jupiter gemstone"
+    purushaartha_based:
+      ring_finger: "Dharma"
+      middle_finger: "Artha"
+      little_finger: "Kama"
+      index_finger: "Moksha (usually left ringless)"
+    purushaartha_examples:
+      - "One desiring marriage may wear the ring of his 7th lord on the little finger (kama)"
+      - "One desiring good career results may wear the ring of a yogakaraka in D-10 on the middle finger (artha)"
+
+# =============================================================================
+# Section 34.3 - Good Deeds (Daana / Charity)
+# =============================================================================
+
+good_deeds:
+  section: "34.3"
+  principle: >
+    One can pacify planets by good deeds. Good deeds of this life can
+    compensate for the sins of past lives. One can commit a good deed in
+    an area ruled by a planet to please it.
+
+  deeds_by_planet:
+    Sun:
+      good_deeds:
+        - "Go to a temple"
+        - "Donate money to a temple"
+        - "Help in the administration of a temple"
+    Moon:
+      good_deeds:
+        - "Donate money to a music institute"
+        - "Help a fair lady"
+    Mars:
+      good_deeds:
+        - "Engage in physical exercise"
+        - "Donate money to a school gym"
+    Mercury:
+      good_deeds:
+        - "Donate money to an organization of scholars"
+        - "Get blessings from a scholar"
+    Jupiter:
+      good_deeds:
+        - "Respect and donate money to a learned Brahmin or a priest"
+        - "Donate cows to a priest"
+    Venus:
+      good_deeds:
+        - "Read poetry"
+        - "Help a poet"
+    Saturn:
+      good_deeds:
+        - "Perform some physical labor"
+        - "Help people who live on manual labor"
+    Rahu:
+      good_deeds:
+        - "Donate money to a research organization"
+        - "Go on a pilgrimage"
+    Ketu:
+      good_deeds:
+        - "Do meditation"
+
+  charity_grains:
+    description: >
+      One can give away (as charity) the grains ruled by different planets
+      to propitiate them. For example, one can please Jupiter by giving away
+      a big bowl of chick peas on a Thursday morning.
+    planets:
+      Sun:
+        grain: "Wheat"
+      Moon:
+        grain: "Rice"
+      Mars:
+        grain: "Toor daal (a dark yellow lentil)"
+      Mercury:
+        grain: "Moong daal (smaller yellow lentils of a lighter shade - they have a dark green skin)"
+      Jupiter:
+        grain: "Chick peas"
+      Venus:
+        grain: "A whitish grain"
+      Saturn:
+        grain: "Sesame seeds"
+      Rahu:
+        grain: "Black gram daal (white lentils with a black skin)"
+
+# =============================================================================
+# Fasting
+# =============================================================================
+
+fasting:
+  section: "34.3"
+  description: >
+    Fasting is a popular remedial measure. By punishing ourselves by denying
+    the basic necessity of food, we reduce other punishments.
+  guidelines:
+    - >
+      Fasting on the weekday ruled by upapada lord in rasi chart mitigates
+      troubles in one's marriage.
+    - >
+      Fasting on the weekday ruled by rajyapada lord may mitigate troubles
+      in career.
+
+# =============================================================================
+# Section 34.4 - Propitiation of Planets (Mantras)
+# =============================================================================
+
+mantras:
+  section: "34.4"
+  description: >
+    We can propitiate planets by reciting mantras and stotras. Mantra is a
+    combination of sounds with a special power to produce beneficial
+    spiritual waves within us.
+
+  guidelines:
+    pronunciation: >
+      A mantra should be recited with accurate pronunciation and intonation.
+      Some mantras do not have any intonation, but pronunciation of sounds
+      must be perfect.
+    saattwik_mantras: >
+      Some saattwik mantras are self-correcting, in the sense that one
+      reading it will eventually be forced to learn the correct pronunciation
+      and intonation.
+    caution: >
+      Some other mantras can produce negative effects with improper
+      recitation. One should be careful with mantras.
+    stotras_vs_mantras: >
+      Stotras are hymns in praise of planets and God. There is no correct
+      intonation to read a stotra and devotion is important when reciting a
+      stotra. Recitation of a stotra gives results very slowly.
+    daily_practice: >
+      Interested readers can read the 108 names of various planets everyday.
+    lagna_lord_worship: >
+      As lagna is the most important house in a chart and lagna lord shows
+      the vitality of the chart, one may worship the planet owning lagna in
+      the divisional chart representing the area of life that one wants to
+      improve. For example, if one wants spiritual progress, lagna lord in
+      D-20 should be worshipped. If one wants pleasures and comforts, lagna
+      lord in D-16 should be worshipped.
+    types_available: >
+      There are different mantras for propitiating planets. In addition,
+      there are kavachas, stotras and 108 names of all planets.
+    recitation_method: >
+      One should read the stanza given first a few times and then repeat
+      the basic mantra thousands of times. The weekday ruled by a planet is
+      ideal for repeating its mantra.
+    script_note: >
+      The stanzas and mantras are given only in Devanagari script used by
+      Sanskrit and Hindi languages. Those who cannot read this script should
+      consult a competent astrologer or a Hindu priest to learn these stanzas
+      and mantras.
+
+  planet_mantras:
+    Sun:
+      section: "34.4.1"
+      beeja_mantra: "Om Hreem Hree Suryaaya Namah"
+      recommended_repetitions: 6000
+      weekday: "Sunday"
+    Moon:
+      section: "34.4.2"
+      beeja_mantra: "Om Kleen Somaaya Namah"
+      recommended_repetitions: 10000
+      weekday: "Monday"
+    Mars:
+      section: "34.4.3"
+      beeja_mantra: "Om Hum Shreem Mangalaaya Namah"
+      recommended_repetitions: 7000
+      weekday: "Tuesday"
+    Mercury:
+      section: "34.4.4"
+      beeja_mantra: "Om Aim Stree Budhaaya Namah"
+      recommended_repetitions: 7000
+      weekday: "Wednesday"
+    Jupiter:
+      section: "34.4.5"
+      beeja_mantra: "Om Graam Greem Graum Sah Guruve Namah"
+      note: "Previous entry was incorrectly duplicated from Mercury's mantra"
+      recommended_repetitions: 17000
+      weekday: "Thursday"
+      note: "Listed under section 34.4.5 in the book"
+    Venus:
+      section: "34.4.4 (labeled as Venus)"
+      beeja_mantra: "Om Hreen Shree Shukraaya Namah"
+      recommended_repetitions: 20000
+      weekday: "Friday"
+    Saturn:
+      section: "34.4.7"
+      beeja_mantra: "Om Hreen Shree Shanaicharaaya Namah"
+      recommended_repetitions: 19000
+      weekday: "Saturday"
+    Rahu:
+      section: "34.4.8"
+      beeja_mantra: "Om Aim Hreen Raahave Namah"
+      recommended_repetitions: 18000
+      weekday: "Saturday (Rahu's associated day)"
+    Ketu:
+      section: "34.4.9"
+      beeja_mantra: "Om Aim Kleen Ketave Namah"
+      recommended_repetitions: 7000
+      weekday: "Tuesday (Ketu's associated day)"
+
+  note_on_mantras: >
+    The mantras are provided in Devanagari script in the original text.
+    The transliterations above are approximate. Consult a competent
+    astrologer or Hindu priest for correct pronunciation. There are many
+    other mantras and one can refer to other books for the details. When
+    reading a stotra, devotion is of utmost importance. When reading a
+    mantra, devotion as well as the correct pronunciation are important.
+
+# =============================================================================
+# Section 34.5 - Propitiation of Deities (Table 78)
+# =============================================================================
+
+deity_propitiation:
+  section: "34.5"
+  table_number: 78
+  table_title: "Planets and deities"
+
+  guidelines:
+    divisional_chart: >
+      Propitiating the deity corresponding to lagna lord in a particular
+      divisional chart brings excellent results in the area of life shown
+      by that divisional chart.
+    liberation: >
+      Propitiation of the deity corresponding to the strongest planet
+      occupying or owning or aspecting the 12th house from AK in D-9
+      takes one's soul closer to liberation.
+    intuitive_selection: >
+      The guidelines given in books are merely guidelines. The exact
+      application depends on an astrologer's knowledge of mythology and
+      classics and familiarity with the natures of various deities. By
+      propitiating a deity who closely represents the spirit of a planet
+      in a particular chart, one can please the planet more effectively.
+
+  planetary_significations_for_deity_selection:
+    Mercury_and_Saturn: "Usually denote a Vaishnava deity"
+    Sun: "Denotes a Shaiva deity"
+    Moon_and_Venus: "Denote a goddess"
+    Mars: "Denotes a fiery form"
+    Rahu: "Denotes an aggressive deity"
+
+  planets:
+    Sun:
+      deities:
+        - "Shiva"
+        - "Rama"
+    Moon:
+      deities:
+        - "Gauri"
+        - "Lalita"
+        - "Saraswati"
+        - "Krishna"
+    Mars:
+      deities:
+        - "Hanuman"
+        - "Rudra"
+        - "Kartikeya (Subrahmanya)"
+        - "Narasimha"
+    Mercury:
+      deities:
+        - "Vishnu"
+        - "Narayana"
+        - "Buddha"
+    Jupiter:
+      deities:
+        - "Hayagreeva"
+        - "Vishnu"
+        - "Parameswara"
+        - "Dattatreya"
+        - "Any guru"
+    Venus:
+      deities:
+        - "Lakshmi"
+        - "Parvati"
+    Saturn:
+      deities:
+        - "Vishnu"
+        - "Brahma"
+    Rahu:
+      deities:
+        - "Durga"
+        - "Narasimha"
+    Ketu:
+      deities:
+        - "Ganesa"
+
+  examples_of_deity_selection:
+    - scenario: "Rahu with Mars in Gemini, aspected by Saturn and Mercury"
+      reasoning: >
+        Rahu can denote Durga, but Saturnine and Mercurian influence
+        suggests a Vaishnava deity. Martian influence on Rahu shows an
+        angry deity.
+      recommended_deity: "Ugra Narasimha (an angry form of Vishnu)"
+    - scenario: "Rahu in Cancer"
+      recommended_deity: "Durga"
+    - scenario: "Mars in a fiery rasi in all vargas with Mercury joining"
+      recommended_deity: "Jwala Narasimha"
+    - scenario: "Mars with Rahu (serpent)"
+      recommended_deity: "Subrahmanya (Kartikeya)"
+    - scenario: "Mars with Saturnine influence"
+      reasoning: >
+        Saturn shows a Vaishnava deity and he has humility and the spirit
+        of a servant.
+      recommended_deity: "Hanuman"
+
+# =============================================================================
+# Weekdays Ruled by Planets (for fasting, mantra recitation, gemstone wearing)
+# =============================================================================
+
+weekdays:
+  Sunday: "Sun"
+  Monday: "Moon"
+  Tuesday: "Mars"
+  Wednesday: "Mercury"
+  Thursday: "Jupiter"
+  Friday: "Venus"
+  Saturday: "Saturn"
+
+# =============================================================================
+# Comprehensive Planet-to-Remedy Mapping
+# =============================================================================
+
+planet_remedy_summary:
+  Sun:
+    weekday: "Sunday"
+    gemstone: "Ruby"
+    metal: "Gold"
+    charity_grain: "Wheat"
+    good_deeds: "Temple service, donate to temples"
+    deities: ["Shiva", "Rama"]
+    mantra_repetitions: 6000
+  Moon:
+    weekday: "Monday"
+    gemstone: "White pearl"
+    metal: "Gold"
+    charity_grain: "Rice"
+    good_deeds: "Donate to music institutes, help a fair lady"
+    deities: ["Gauri", "Lalita", "Saraswati", "Krishna"]
+    mantra_repetitions: 10000
+  Mars:
+    weekday: "Tuesday"
+    gemstone: "Red coral"
+    metal: "Copper"
+    charity_grain: "Toor daal"
+    good_deeds: "Physical exercise, donate to school gym"
+    deities: ["Hanuman", "Rudra", "Kartikeya (Subrahmanya)", "Narasimha"]
+    mantra_repetitions: 7000
+  Mercury:
+    weekday: "Wednesday"
+    gemstone: "Emerald"
+    metal: "Silver/Platinum"
+    charity_grain: "Moong daal"
+    good_deeds: "Donate to scholarly organizations, get blessings from a scholar"
+    deities: ["Vishnu", "Narayana", "Buddha"]
+    mantra_repetitions: 7000
+  Jupiter:
+    weekday: "Thursday"
+    gemstone: "Yellow sapphire"
+    metal: "Gold"
+    charity_grain: "Chick peas"
+    good_deeds: "Respect/donate to learned Brahmins or priests, donate cows"
+    deities: ["Hayagreeva", "Vishnu", "Parameswara", "Dattatreya", "Any guru"]
+    mantra_repetitions: 17000
+  Venus:
+    weekday: "Friday"
+    gemstone: "Diamond"
+    metal: "Silver/Platinum"
+    charity_grain: "A whitish grain"
+    good_deeds: "Read poetry, help a poet"
+    deities: ["Lakshmi", "Parvati"]
+    mantra_repetitions: 20000
+  Saturn:
+    weekday: "Saturday"
+    gemstone: "Blue sapphire"
+    metal: "Iron (or silver)"
+    charity_grain: "Sesame seeds"
+    good_deeds: "Perform physical labor, help manual laborers"
+    deities: ["Vishnu", "Brahma"]
+    mantra_repetitions: 19000
+  Rahu:
+    weekday: "Saturday (associated)"
+    gemstone: "Hessonite (gomedh)"
+    metal: "Silver"
+    charity_grain: "Black gram daal"
+    good_deeds: "Donate to research organizations, go on pilgrimage"
+    deities: ["Durga", "Narasimha"]
+    mantra_repetitions: 18000
+  Ketu:
+    weekday: "Tuesday (associated)"
+    gemstone: "Cat's eye"
+    metal: "Silver"
+    charity_grain: "Not specified"
+    good_deeds: "Do meditation"
+    deities: ["Ganesa"]
+    mantra_repetitions: 7000
+
+# =============================================================================
+# Section 34.6 - Conclusion
+# =============================================================================
+
+conclusion:
+  section: "34.6"
+  note: >
+    This book is only an introductory textbook of integrated Vedic astrology.
+    No topic has been covered exhaustively. The coverage of the topics in
+    Part 5 (Special Topics) is particularly brief. The purpose is to make
+    readers familiar with some practical aspects of Vedic astrology. Readers
+    should refer to other books for more details, particularly Vedic Remedies
+    in Astrology by Pt. Sanjay Rath.

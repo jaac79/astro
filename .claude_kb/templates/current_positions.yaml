@@ -1,0 +1,35 @@
+# Current Positions Template
+# Generate one per reading at: readings/<person_name>/YYYY-MM-DD_current_positions.yaml
+# Captures transit positions and dasha state at the time of reading.
+# Paired with birth_data.yaml (fixed natal data) to separate concerns.
+
+reading_date:       # YYYY-MM-DD
+reading_type:       # full_reading | transit_reading | dasha_reading | annual_prediction | quick_query | etc.
+birth_data_file:    # relative path to the person's birth_data.yaml
+
+# Current Vimshottari dasha at reading date
+current_dasha:
+  mahadasha:        {lord: , start: , end: }
+  antardasha:       {lord: , start: , end: }
+  pratyantardasha:  {lord: , start: , end: }
+
+# Current transit positions of all nine grahas
+transit_positions:
+  surya:   {rasi: , degree: , nakshatra: , retrograde: false}
+  chandra: {rasi: , degree: , nakshatra: , retrograde: false}
+  mangal:  {rasi: , degree: , nakshatra: , retrograde: false}
+  budha:   {rasi: , degree: , nakshatra: , retrograde: false}
+  guru:    {rasi: , degree: , nakshatra: , retrograde: false}
+  shukra:  {rasi: , degree: , nakshatra: , retrograde: false}
+  shani:   {rasi: , degree: , nakshatra: , retrograde: false}
+  rahu:    {rasi: , degree: , nakshatra: , retrograde: true}
+  ketu:    {rasi: , degree: , nakshatra: , retrograde: true}
+
+# Special timing flags
+special_timing:
+  sade_sati:     {active: false, phase: }  # rising | peak | setting
+  ashtama_shani: false
+  kantaka_shani: false
+
+notes: |
+  # Any context for this snapshot — upcoming ingresses, eclipses, etc.

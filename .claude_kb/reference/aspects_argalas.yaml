@@ -1,0 +1,531 @@
+# =============================================================================
+# Chapter 10: Aspects and Argalas
+# Source: Vedic Astrology - An Integrated Approach (P.V.R. Narasimha Rao)
+# Book Pages: 85-95 | PDF Pages: 94-104
+# =============================================================================
+
+source:
+  book: "Vedic Astrology: An Integrated Approach"
+  author: "P.V.R. Narasimha Rao"
+  chapter: 10
+  title: "Aspects and Argalas"
+  book_pages: "85-95"
+  pdf_pages: "94-104"
+  page_offset: 9  # book_page + 9 = pdf_page
+
+# =============================================================================
+# Section 10.1: Introduction (Book p.85, PDF p.94)
+# =============================================================================
+introduction:
+  section: "10.1"
+  summary: >
+    Planets aspect other planets, rasis and houses. A planet aspecting a house
+    or planet has some influence on the matters signified by that house or planet.
+    The nature and degree of influence depends on the individual situation.
+  types_of_aspects:
+    - graha_drishti: "Planetary aspect - based on the inherent nature of the planet"
+    - rasi_drishti: "Sign aspect - based on the sign (rasi) a planet occupies"
+  hierarchy_of_influence:
+    rasi_drishti: "Small influence (analogous to influence on neighbors)"
+    graha_drishti: "More concrete influence (analogous to influence in one's profession)"
+    argala: "Decisive influence (simply decides parts of the matter)"
+
+# =============================================================================
+# Section 10.2: Graha Drishti - Planetary Aspects (Book p.85, PDF p.94)
+# =============================================================================
+graha_drishti:
+  section: "10.2"
+  description: >
+    Each planet aspects certain houses from it with graha drishti (planetary aspect).
+    The houses aspected are fixed based on the planet. Influence exerted by graha
+    drishti is due to the inherent nature of a planet.
+
+  universal_aspect:
+    house: 7
+    applies_to: "All planets (Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn)"
+    note: "Every planet aspects the 7th house from itself"
+
+  special_aspects:
+    jupiter:
+      aspects: [5, 7, 9]
+      special: [5, 9]
+      description: "Jupiter aspects the 5th and 9th houses in addition to the 7th"
+    mars:
+      aspects: [4, 7, 8]
+      special: [4, 8]
+      description: "Mars aspects the 4th and 8th houses in addition to the 7th"
+    saturn:
+      aspects: [3, 7, 10]
+      special: [3, 10]
+      description: "Saturn aspects the 3rd and 10th houses in addition to the 7th"
+
+  planets_without_special_aspects:
+    - Sun    # only 7th house
+    - Moon   # only 7th house
+    - Mercury  # only 7th house
+    - Venus  # only 7th house
+
+  rules:
+    - "All planets aspect the 7th house from them"
+    - "If any planet occupies the aspected house, that planet is also aspected"
+    - "Only Mars, Jupiter, and Saturn have special (additional) aspects"
+
+  # Exercise 14 Answer Table - Graha Drishti aspects in Chart 5
+  example_chart5_graha_drishti:
+    reference: "Exercise 14 answer (Book p.93, PDF p.102)"
+    data:
+      - planet: Sun
+        aspected_rasis: [Sc]
+        aspected_houses: [1st]
+        aspected_planets: [Mars, Saturn]
+      - planet: Moon
+        aspected_rasis: [Li]
+        aspected_houses: [12th]
+        aspected_planets: []
+      - planet: Mars
+        aspected_rasis: [Aq, Ta, Ge]
+        aspected_houses: [4th, 7th, 8th]
+        aspected_planets: [Ketu, Sun]
+      - planet: Mercury
+        aspected_rasis: [Ge]
+        aspected_houses: [8th]
+        aspected_planets: []
+      - planet: Jupiter
+        aspected_rasis: [Cp, Pi, Ta]
+        aspected_houses: [3rd, 5th, 7th]
+        aspected_planets: [Venus, Sun]
+      - planet: Venus
+        aspected_rasis: [Cn]
+        aspected_houses: [9th]
+        aspected_planets: []
+      - planet: Saturn
+        aspected_rasis: [Cp, Ta, Le]
+        aspected_houses: [3rd, 7th, 10th]
+        aspected_planets: [Venus, Sun, Rahu]
+
+# =============================================================================
+# Section 10.3: Rasi Drishti - Sign Aspects (Book p.86, PDF p.95)
+# =============================================================================
+rasi_drishti:
+  section: "10.3"
+  description: >
+    Rasis aspect other rasis based on their modality (movable, fixed, dual).
+    A planet aspects the rasis aspected by the sign it occupies. This aspect
+    is called rasi drishti (sign aspect). Influence exerted by rasi drishti is
+    due to the sign a planet is in.
+
+  rules:
+    - "A movable rasi aspects all fixed rasis EXCEPT the one adjacent to it"
+    - "A fixed rasi aspects all movable rasis EXCEPT the one adjacent to it"
+    - "A dual rasi aspects all other dual rasis"
+    - "Sign aspects are mutual: if sign X aspects sign Y, then Y also aspects X"
+    - "All planets in a sign (including Rahu and Ketu) have rasi drishti on the same signs"
+
+  sign_classifications:
+    movable: [Ar, Cn, Li, Cp]
+    fixed: [Ta, Le, Sc, Aq]
+    dual: [Ge, Vi, Sg, Pi]
+
+  aspect_map:
+    # Movable signs -> Fixed signs (except adjacent)
+    Ar:
+      type: movable
+      aspects: [Le, Sc, Aq]
+      excludes: Ta  # adjacent fixed sign
+    Cn:
+      type: movable
+      aspects: [Sc, Aq, Ta]
+      excludes: Le  # adjacent fixed sign
+    Li:
+      type: movable
+      aspects: [Aq, Ta, Le]
+      excludes: Sc  # adjacent fixed sign
+    Cp:
+      type: movable
+      aspects: [Ta, Le, Sc]
+      excludes: Aq  # adjacent fixed sign
+
+    # Fixed signs -> Movable signs (except adjacent)
+    Ta:
+      type: fixed
+      aspects: [Cn, Li, Cp]
+      excludes: Ar  # adjacent movable sign
+    Le:
+      type: fixed
+      aspects: [Li, Cp, Ar]
+      excludes: Cn  # adjacent movable sign
+    Sc:
+      type: fixed
+      aspects: [Cp, Ar, Cn]
+      excludes: Li  # adjacent movable sign
+    Aq:
+      type: fixed
+      aspects: [Ar, Cn, Li]
+      excludes: Cp  # adjacent movable sign
+
+    # Dual signs -> All other dual signs
+    Ge:
+      type: dual
+      aspects: [Vi, Sg, Pi]
+    Vi:
+      type: dual
+      aspects: [Ge, Sg, Pi]
+    Sg:
+      type: dual
+      aspects: [Ge, Vi, Pi]
+    Pi:
+      type: dual
+      aspects: [Ge, Vi, Sg]
+
+  # Exercise 15 Answer Table - Rasi Drishti aspects in Chart 5
+  example_chart5_rasi_drishti:
+    reference: "Exercise 15 answer (Book p.94, PDF p.103)"
+    note: "Rahu and Ketu also have rasi drishti (sign-based aspects)"
+    data:
+      - planet: Sun
+        aspected_rasis: [Cn, Li, Cp]
+        aspected_houses: [9th, 12th, 3rd]
+        aspected_planets: [Venus]
+      - planet: Moon
+        aspected_rasis: [Le, Sc, Aq]
+        aspected_houses: [10th, 1st, 4th]
+        aspected_planets: [Rahu, Mars, Saturn, Ketu]
+      - planet: Mars
+        aspected_rasis: [Cp, Ar, Cn]
+        aspected_houses: [3rd, 6th, 9th]
+        aspected_planets: [Venus, Moon]
+      - planet: Mercury
+        aspected_rasis: [Pi, Ge, Vi]
+        aspected_houses: [5th, 8th, 11th]
+        aspected_planets: [Jupiter]
+      - planet: Jupiter
+        aspected_rasis: [Sg, Pi, Ge]
+        aspected_houses: [2nd, 5th, 8th]
+        aspected_planets: [Mercury]
+      - planet: Venus
+        aspected_rasis: [Ta, Le, Sc]
+        aspected_houses: [7th, 10th, 1st]
+        aspected_planets: [Sun, Rahu, Mars, Saturn]
+      - planet: Saturn
+        aspected_rasis: [Cp, Ar, Cn]
+        aspected_houses: [3rd, 6th, 9th]
+        aspected_planets: [Venus, Moon]
+      - planet: Rahu
+        aspected_rasis: [Li, Cp, Ar]
+        aspected_houses: [12th, 3rd, 6th]
+        aspected_planets: [Venus, Moon]
+      - planet: Ketu
+        aspected_rasis: [Ar, Cn, Li]
+        aspected_houses: [6th, 9th, 12th]
+        aspected_planets: [Moon]
+
+# =============================================================================
+# Section 10.4: Graha Drishti vs Rasi Drishti (Book p.87, PDF p.96)
+# =============================================================================
+graha_vs_rasi_drishti:
+  section: "10.4"
+  analogy: >
+    Think of planets as people. Rasi drishti is like the influence people exert
+    on their neighbors simply by living in a house. All people in the same house
+    influence the same neighbors (similarly, all planets in a sign have rasi drishti
+    on the same signs). Graha drishti is like the influence a person exerts through
+    their profession or inherent nature - a priest influences temple devotees,
+    while his movie-loving brother influences his fan club. Different planets in
+    the same sign may aspect different houses with graha drishti.
+  key_differences:
+    rasi_drishti:
+      basis: "Sign occupied by the planet"
+      scope: "All planets in a sign aspect the same signs"
+      strength: "Smaller, more diffuse influence"
+    graha_drishti:
+      basis: "Inherent nature of the planet"
+      scope: "Different planets in the same sign may aspect different houses"
+      strength: "More concrete and specific influence"
+      universal: "All planets aspect the 7th house (common graha drishti)"
+
+# =============================================================================
+# Section 10.5: Argala - Intervention (Book p.88, PDF p.97)
+# =============================================================================
+argala:
+  section: "10.5"
+  definition: >
+    Argala literally means "a bolt". Argala on a house shows the influences
+    that intervene in its affairs, decide some parts of it and close the bolt on it.
+    The influence caused by argala is decisive.
+
+  primary_argala:
+    description: "Primary argala houses from a planet or house"
+    houses:
+      - position: 2nd
+        meaning: "Basic ingredient for the sustenance of a matter"
+        example: "2nd house (food) sustains the 1st (self); 5th house (intelligence) sustains the 4th (learning)"
+      - position: 4th
+        meaning: "Basic factor that drives the mood, state and progress of a matter"
+        example: "4th house (comfort) drives mood of 1st (self); 7th house (interaction) drives 4th (learning)"
+      - position: 11th
+        meaning: "Catalyst that can result in gains for a matter"
+        example: "2nd house (character/samskara) is catalyst for 4th (learning)"
+
+  secondary_argala:
+    description: "Secondary argala from the 5th house"
+    houses:
+      - position: 5th
+        meaning: "Additional contributing factors"
+        example: "5th house (emotional situation) contributes to 1st (self); 8th house (hard work) contributes to 4th (learning)"
+
+  types:
+    subha_argala:
+      name: "Subhaargala"
+      meaning: "Benefic intervention"
+      caused_by: "Benefic planets in argala-causing houses"
+      effect: "Positive, helpful intervention in the matter"
+    papa_argala:
+      name: "Paapaargala"
+      meaning: "Malefic intervention"
+      caused_by: "Malefic planets in argala-causing houses"
+      effect: "Negative, obstructive intervention in the matter"
+
+  examples:
+    education_4th_house:
+      matter: "Education (4th house)"
+      argala_from_2nd: "5th house (intelligence) - basic ingredient"
+      argala_from_4th: "7th house (interaction with others) - driving factor"
+      argala_from_11th: "2nd house (character and samskara) - catalyst"
+      secondary_argala_from_5th: "8th house (hard work) - additional factor"
+    short_journeys_3rd_house:
+      matter: "Short journeys (3rd house)"
+      argala_from_2nd: "4th house (vehicle) - basic ingredient"
+      argala_from_4th: "6th house (servants/driver) - driving factor"
+      secondary_argala_from_5th: "7th house (partners) - additional factor"
+    domestic_harmony_4th_house:
+      matter: "Domestic harmony (4th house)"
+      argala_from_2nd: "5th house (children)"
+      argala_from_4th: "7th house (spouse/partner)"
+      argala_from_11th: "2nd house (family members)"
+
+# =============================================================================
+# Section 10.6: Virodhaargala - Obstruction (Book p.90, PDF p.99)
+# =============================================================================
+virodha_argala:
+  section: "10.6"
+  definition: >
+    Virodhaargala shows the obstruction of argala. Planets and houses
+    in certain positions obstruct the argala from corresponding positions.
+
+  obstruction_pairs:
+    - argala_from: 2nd
+      obstructed_by: 12th
+      description: "12th house obstructs argala from the 2nd house"
+    - argala_from: 4th
+      obstructed_by: 10th
+      description: "10th house obstructs argala from the 4th house"
+    - argala_from: 11th
+      obstructed_by: 3rd
+      description: "3rd house obstructs argala from the 11th house"
+    - argala_from: 5th
+      obstructed_by: 9th
+      description: "9th house obstructs secondary argala from the 5th house"
+
+  special_rules:
+    ketu_reversal:
+      description: >
+        If a sign contains Ketu, argalas and virodhaargalas on it are counted
+        anti-zodiacally (in reverse). For example, if Ketu is in Vi, then Le (2nd
+        reverse), Ge (4th reverse), Sc (11th reverse) and Ta (5th reverse) cause
+        argala on Vi.
+    third_house_exception:
+      description: >
+        If there are several malefics in the 3rd house from a house or planet,
+        they cause argala INSTEAD OF virodhaargala on that house or planet.
+        This is a special principle regarding 3rd house obstruction.
+
+# =============================================================================
+# Section 10.7: Use of Argala (Book p.90, PDF p.99)
+# =============================================================================
+use_of_argala:
+  section: "10.7"
+  method:
+    - "Take the relevant house or karaka for the matter of interest"
+    - "Find argalas and virodhaargalas on it"
+    - "If both exist, see if more planets cause argala or virodhaargala"
+    - "If equal number of planets, compare strengths to decide which dominates"
+    - "Based on signs, houses and planets involved, interpret the argala or virodhaargala"
+
+  argala_meanings:
+    from_2nd: "Basic ingredient for sustenance of the matter"
+    from_4th: "Basic factor driving mood, state and progress of the matter"
+    from_11th: "Catalyst that can result in gains for the matter"
+    from_5th: "Additional contributing factors (secondary argala)"
+
+  livelihood_analysis:
+    description: >
+      Saturn is the significator of livelihood and karma. Argalas on Saturn
+      denote decisive influences on the nature of one's livelihood and karma.
+    examples:
+      - native: "P.V. Narasimha Rao (India's former Prime Minister)"
+        chart: "Chart 6"
+        argalas_on_saturn: "Mercury, Mars and Sun in 11th from Saturn"
+        interpretation: "Mercury = writing/scholarliness; Sun + Mars = politics"
+      - native: "Ronald Reagan (Hollywood actor and US President)"
+        chart: "Chart 7"
+        argalas_on_saturn: "Venus in 11th from Saturn"
+        interpretation: "Venus = actor, entertainer, showman; entered politics late (Sun has no argala on Saturn)"
+      - native: "Famous fashion designer (unnamed)"
+        chart: "Chart 8"
+        argalas_on_saturn:
+          - "Venus in 4th (creative/aesthetic work - driving factor)"
+          - "Mercury also has influence (intelligent and logical aesthetic work)"
+          - "Mars in 5th (discipline, systematicity, design work - secondary)"
+          - "Rahu in 11th (pathbreaking innovation, shady elements - catalyst)"
+        interpretation: "Famous fashion designer with mafia connections; was shot dead"
+
+# =============================================================================
+# Exercise 16 Answer: Complete Argala/Virodhaargala Table for Chart 5
+# (Book p.94, PDF p.103-104)
+# =============================================================================
+exercise16_argala_table:
+  reference: "Exercise 16 answer (Book pp.94-95, PDF pp.103-104)"
+  chart: "Chart 5"
+  note: "4th house (Aq) has Ketu, so counting is in reverse for that house"
+  columns:
+    argala: "2nd, 4th, 5th (secondary), 11th"
+    virodha_argala: "12th, 10th, 9th, 3rd"
+  data:
+    - house: "1st (Sc)"
+      argala_2nd: Mercury
+      argala_4th: Ketu
+      argala_5th: null
+      argala_11th: Jupiter
+      virodha_12th: null
+      virodha_10th: Rahu
+      virodha_9th: null
+      virodha_3rd: Venus
+    - house: "2nd (Sg)"
+      argala_2nd: Venus
+      argala_4th: null
+      argala_5th: Moon
+      argala_11th: null
+      virodha_12th: "Mars, Saturn"
+      virodha_10th: Jupiter
+      virodha_9th: Rahu
+      virodha_3rd: Ketu
+    - house: "3rd (Cp)"
+      argala_2nd: Ketu
+      argala_4th: Moon
+      argala_5th: Sun
+      argala_11th: "Mars, Saturn"
+      virodha_12th: Mercury
+      virodha_10th: null
+      virodha_9th: Jupiter
+      virodha_3rd: null
+    - house: "4th (Aq) [Ketu present - reverse counting]"
+      argala_2nd: Venus
+      argala_4th: "Mars, Saturn"
+      argala_5th: null
+      argala_11th: Moon
+      virodha_12th: null
+      virodha_10th: Sun
+      virodha_9th: null
+      virodha_3rd: Mercury
+    - house: "5th (Pi)"
+      argala_2nd: Moon
+      argala_4th: null
+      argala_5th: null
+      argala_11th: Venus
+      virodha_12th: Ketu
+      virodha_10th: Mercury
+      virodha_9th: "Mars, Saturn"
+      virodha_3rd: Sun
+    - house: "6th (Ar)"
+      argala_2nd: Sun
+      argala_4th: null
+      argala_5th: Rahu
+      argala_11th: Ketu
+      virodha_12th: null
+      virodha_10th: Venus
+      virodha_9th: Mercury
+      virodha_3rd: null
+    - house: "7th (Ta)"
+      argala_2nd: null
+      argala_4th: Rahu
+      argala_5th: Jupiter
+      argala_11th: null
+      virodha_12th: Moon
+      virodha_10th: Ketu
+      virodha_9th: Venus
+      virodha_3rd: null
+    - house: "8th (Ge)"
+      argala_2nd: null
+      argala_4th: Jupiter
+      argala_5th: null
+      argala_11th: Moon
+      virodha_12th: Sun
+      virodha_10th: null
+      virodha_9th: Ketu
+      virodha_3rd: Rahu
+    - house: "9th (Cn)"
+      argala_2nd: Rahu
+      argala_4th: null
+      argala_5th: "Mars, Saturn"
+      argala_11th: Sun
+      virodha_12th: null
+      virodha_10th: Moon
+      virodha_9th: null
+      virodha_3rd: Jupiter
+    - house: "10th (Le)"
+      argala_2nd: Jupiter
+      argala_4th: "Mars, Saturn"
+      argala_5th: Mercury
+      argala_11th: null
+      virodha_12th: null
+      virodha_10th: Sun
+      virodha_9th: Moon
+      virodha_3rd: null
+    - house: "11th (Vi)"
+      argala_2nd: null
+      argala_4th: Mercury
+      argala_5th: Venus
+      argala_11th: null
+      virodha_12th: Rahu
+      virodha_10th: null
+      virodha_9th: Sun
+      virodha_3rd: "Mars, Saturn"
+    - house: "12th (Li)"
+      argala_2nd: "Mars, Saturn"
+      argala_4th: Venus
+      argala_5th: Ketu
+      argala_11th: Rahu
+      virodha_12th: Jupiter
+      virodha_10th: null
+      virodha_9th: null
+      virodha_3rd: Mercury
+
+# =============================================================================
+# Quick Reference Summary
+# =============================================================================
+quick_reference:
+  graha_drishti_summary:
+    all_planets: [7]
+    mars: [4, 7, 8]
+    jupiter: [5, 7, 9]
+    saturn: [3, 7, 10]
+
+  rasi_drishti_summary:
+    movable_to_fixed: "Aspects all fixed signs except adjacent one"
+    fixed_to_movable: "Aspects all movable signs except adjacent one"
+    dual_to_dual: "Aspects all other dual signs"
+
+  argala_summary:
+    primary_argala: [2, 4, 11]
+    secondary_argala: [5]
+    virodha_argala: [12, 10, 3, 9]
+    argala_virodha_pairs:
+      - {argala: 2, virodha: 12}
+      - {argala: 4, virodha: 10}
+      - {argala: 11, virodha: 3}
+      - {argala: 5, virodha: 9}
+
+  special_rules:
+    - "Ketu in a sign causes argala/virodhaargala to be counted anti-zodiacally"
+    - "Multiple malefics in 3rd house cause argala instead of virodhaargala"
+    - "Saturn is karaka for livelihood and karma; argalas on Saturn show decisive career influences"

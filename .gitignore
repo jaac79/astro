@@ -205,3 +205,8 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Large files and scratch
+*.pdf
+samplecode.txt
+familytree.txt

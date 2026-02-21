@@ -1,0 +1,65 @@
+# Birth Data Template
+# Store one per person at: readings/<person_name>/birth_data.yaml
+# This file is the single source of truth for a native's birth details.
+# All readings for this person reference this file.
+
+native:
+  name:
+  relationship:  # e.g., self, daughter, son, spouse, friend, client
+  gender:
+  date_of_birth:  # YYYY-MM-DD
+  time_of_birth:  # HH:MM:SS
+  timezone:       # e.g., IST, EST, UTC+5:30
+  place_of_birth:
+    city:
+    state:
+    country:
+    latitude:
+    longitude:
+
+# Computed once, reused across all readings
+lagna:
+  rasi:
+  degree:
+  nakshatra:
+  pada:
+
+chandra:
+  rasi:
+  degree:
+  nakshatra:
+  pada:
+
+# All nine grahas — fill once from a reliable jyotish software
+planetary_positions:
+  surya: {rasi: , degree: , nakshatra: , pada: , retrograde: false}
+  chandra: {rasi: , degree: , nakshatra: , pada: , retrograde: false}
+  mangal: {rasi: , degree: , nakshatra: , pada: , retrograde: false}
+  budha: {rasi: , degree: , nakshatra: , pada: , retrograde: false}
+  guru: {rasi: , degree: , nakshatra: , pada: , retrograde: false}
+  shukra: {rasi: , degree: , nakshatra: , pada: , retrograde: false}
+  shani: {rasi: , degree: , nakshatra: , pada: , retrograde: false}
+  rahu: {rasi: , degree: , nakshatra: , pada: , retrograde: true}
+  ketu: {rasi: , degree: , nakshatra: , pada: , retrograde: true}
+
+# Vimshottari dasha sequence — fill from jyotish software
+vimshottari_dasha:
+  balance_at_birth:
+    lord:
+    remaining_years:
+    remaining_months:
+    remaining_days:
+  sequence:
+    - {lord: , start: , end: }
+    - {lord: , start: , end: }
+    - {lord: , start: , end: }
+    - {lord: , start: , end: }
+    - {lord: , start: , end: }
+    - {lord: , start: , end: }
+    - {lord: , start: , end: }
+    - {lord: , start: , end: }
+    - {lord: , start: , end: }
+
+notes: |
+  # Any additional notes about the native — birth time rectification,
+  # twin sibling, special circumstances, etc.

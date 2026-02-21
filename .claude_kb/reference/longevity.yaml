@@ -1,0 +1,357 @@
+# Chapter 14: Topics Related to Longevity
+# Source: Vedic Astrology - An Integrated Approach
+# Book pages 155-160, PDF pages 164-169
+
+source:
+  book: "Vedic Astrology: An Integrated Approach"
+  chapter: 14
+  title: "Topics Related to Longevity"
+  book_pages: "155-160"
+  pdf_pages: "164-169"
+  tables:
+    - number: 32
+      title: "Eighth House for Rudra Calculation"
+      book_page: 156
+    - number: 33
+      title: "Longevity Category for Each Pair"
+      book_page: 158
+    - number: 34
+      title: "Paramaayush Reckoner"
+      book_page: 158
+
+# ---------------------------------------------------------------------------
+# Section 14.1: Introduction
+# ---------------------------------------------------------------------------
+introduction:
+  section: "14.1"
+  key_points:
+    - "Ethical astrologers should not scare clients by predicting death; they should caution gently and suggest remedial measures."
+    - "Longevity estimation is helpful in matchmaking to ensure comparable lifespans."
+    - "Longevity determination is based on natal chart and dasas."
+    - "Shoola dasa is covered for timing death."
+    - "Ashtakavarga-based longevity formulas exist but are unreliable and not covered."
+
+# ---------------------------------------------------------------------------
+# Section 14.2: Marakas (Killers)
+# ---------------------------------------------------------------------------
+marakas:
+  section: "14.2"
+  description: "Planets and rasis that signify death in a chart."
+  relevant_charts:
+    - name: "Rasi chart (D-1)"
+      importance: "Most important for seeing death (physical existence)"
+    - name: "Rudramsa (D-11)"
+      importance: "Shows forces of death and destruction"
+    - name: "Trimsamsa (D-30)"
+      importance: "Shows evils and punishment; death can be punishment for evils"
+
+  houses_of_life:
+    - house: 3
+      signification: "Vitality of one's existence"
+    - house: 8
+      signification: "Longevity"
+  note_life_houses: "For good longevity, 3rd and 8th houses and their lords should be strong."
+
+  houses_of_death:
+    - house: 2
+      derived_as: "12th from the 3rd house (loss of vitality)"
+    - house: 7
+      derived_as: "12th from the 8th house (loss of longevity)"
+  note_death_houses: "For good longevity, 2nd and 7th houses and their lords should be weak."
+
+  maraka_sthanas:
+    definition: "Rasis containing the 2nd and 7th houses."
+    usage: "In rasi-ruled dasas, dasas of these rasis can bring death."
+
+  maraka_grahas:
+    primary:
+      definition: "Lords of the 2nd and 7th houses."
+      usage: "In planet-ruled dasas, dasas of these planets can bring death."
+    secondary:
+      definition: "A malefic planet that powerfully conjoins or aspects (graha drishti) the 2nd and 7th houses or their lords."
+      examples:
+        - scenario: "Lagna in Leo, Saturn in Sagittarius, Mars in Gemini"
+          explanation: >
+            Saturn is maraka (owns 7th house Aquarius).
+            Mars is malefic in Gemini; aspects 2nd house Virgo (4th aspect)
+            and 7th lord Saturn in Sagittarius (7th aspect). Mars qualifies as maraka.
+        - scenario: "Lagna in Pisces, Mars in Gemini, Mercury in Capricorn, Saturn in Aries"
+          explanation: >
+            Mars and Mercury are marakas (own 2nd and 7th houses).
+            Saturn is in the 2nd house, aspects 2nd lord Mars (3rd aspect)
+            and 7th lord Mercury (10th aspect). Saturn is also a maraka
+            and may be stronger than Mars and Mercury.
+
+  timing_death:
+    - "Look for involvement of maraka sthanas and maraka grahas in dasas."
+    - "Marakas can also be used when timing death via transits."
+
+# ---------------------------------------------------------------------------
+# Section 14.3: Rudra, Trishoola, and Maheswara
+# ---------------------------------------------------------------------------
+rudra_trishoola_maheswara:
+  section: "14.3"
+  mythology:
+    rudras: "Eleven Rudras, all different forms of Lord Shiva, bringing suffering and death."
+    trishoola: "Trident, the weapon of Lord Shiva."
+    maheswara: "Supreme form of Lord Shiva, gives emancipation to the soul."
+
+  eleven_rudras:
+    description: "For every person, there are eleven rasis representing the eleven Rudras, bringing suffering related to various areas of life."
+
+  eighth_house_table:
+    table_number: 32
+    title: "Eighth House for Rudra Calculation"
+    note: >
+      For odd rasis, count houses zodiacally. For even rasis, count houses
+      anti-zodiacally. This uses Shiva's motion for Shiva rasis. Differs from
+      normal 8th house computation.
+    mapping:
+      Ar: Sc
+      Ta: Ge
+      Ge: Cp
+      Cn: Sg
+      Le: Cn
+      Vi: Aq
+      Li: Ta
+      Sc: Sg
+      Sg: Cn
+      Cp: Ge
+      Aq: Cp
+      Pi: Le
+
+  rudra:
+    definition: "The planet representing suffering and destruction of the native."
+    calculation:
+      step_1: "Find the lord of the 8th house from lagna (using Table 32)."
+      step_2: "Find the lord of the 8th house from the 7th house (using Table 32)."
+      step_3: "The stronger of the two becomes Rudra."
+      exception: "If the weaker planet is debilitated or in an inimical sign and conjoined/aspected by malefics (Mars, Saturn, Rahu, Ketu), then the weaker planet becomes Rudra."
+    strength_determination:
+      - "Planet conjoining more planets is stronger."
+      - "If equal conjunctions, planet in exaltation or own rasi is stronger."
+      - "Planet joining exalted planets is stronger."
+      - "Planet aspected by many planets (rasi aspect) is stronger."
+      - "Planet more advanced in its rasi (higher degree) is stronger."
+
+  trishoola_rasis:
+    definition: "The three trines from the rasi occupied by Rudra in rasi chart."
+    significance: "Represent the three spikes of Shiva's trident."
+    usage: "Depending on short/middle/long life, one of the three Trishoola rasis kills the native during its Shoola dasa."
+
+  maheswara:
+    definition: "The lord of the 8th house from AK (chara atma karaka)."
+    significance: "Represents channels through which the soul strives for liberation."
+    exceptions:
+      - number: 1
+        condition: "If the 8th lord from AK is in own rasi or exaltation rasi"
+        action: "Take the stronger of the 8th and 12th lords from that planet."
+        example: >
+          AK is Mars in Gemini. 8th house from AK is Capricorn; Saturn is Maheswara.
+          If Saturn is exalted in Libra: from Saturn (Libra), Venus owns 8th (Taurus)
+          and Mercury owns 12th (Virgo). Stronger of Mercury and Venus becomes Maheswara.
+      - number: 2
+        condition: "If Rahu or Ketu joins AK or the 8th from AK"
+        action: "Find the 6th lord from AK instead of the 8th lord (equivalent to 8th lord in anti-zodiacal order)."
+        example: >
+          AK is Mars in Taurus. 8th house is Sagittarius; Jupiter is Maheswara.
+          If Ketu is in Taurus or Sagittarius, find 6th from Mars instead: Libra.
+          Venus (lord of Libra) becomes Maheswara.
+      - number: 3
+        condition: "If Rahu becomes Maheswara"
+        action: "Take Mercury instead."
+      - number: 4
+        condition: "If Ketu becomes Maheswara"
+        action: "Take Jupiter instead."
+
+# ---------------------------------------------------------------------------
+# Section 14.4: The Method of Three Pairs
+# ---------------------------------------------------------------------------
+method_of_three_pairs:
+  section: "14.4"
+  description: "Determines the approximate range of longevity by examining 3 pairs of planets/points."
+
+  pairs:
+    - number: 1
+      name: "Lagna lord and 8th lord"
+      note: "Find the 8th house and its lord using Table 32 (Rudra calculation), not normal 8th."
+    - number: 2
+      name: "Moon and Saturn"
+    - number: 3
+      name: "Lagna and Horalagna (HL)"
+
+  longevity_category_table:
+    table_number: 33
+    title: "Longevity Category for Each Pair"
+    entries:
+      - combinations: ["Fixed + Dual", "Movable + Movable"]
+        result: "Long life"
+      - combinations: ["Movable + Fixed", "Dual + Dual"]
+        result: "Middle life"
+      - combinations: ["Movable + Dual", "Fixed + Fixed"]
+        result: "Short life"
+
+  longevity_ranges:
+    long_life: "72-108 years"
+    middle_life: "36-72 years"
+    short_life: "0-36 years"
+
+  combining_results:
+    rule_1: "If all three pairs give the same result, that is the final classification."
+    rule_2: "If two pairs agree and the third differs, the majority result dominates."
+    rule_3: >
+      If all three pairs give different results (one short, one middle, one long),
+      give preference to the third pair (lagna and horalagna). Exception: if Moon
+      is in lagna or the 7th house, give preference to the second pair (Moon and Saturn).
+
+  paramaayush_reckoner:
+    table_number: 34
+    title: "Paramaayush Reckoner"
+    description: "When two pairs agree, use this table with the third pair to find maximum longevity."
+    columns: ["Two Pairs result", "Third Pair: Short life", "Third Pair: Middle life", "Third Pair: Long life"]
+    rows:
+      - two_pairs: "Short life"
+        third_short: "32 years"
+        third_middle: "64 years"
+        third_long: "96 years"
+      - two_pairs: "Middle life"
+        third_short: "36 years"
+        third_middle: "72 years"
+        third_long: "108 years"
+      - two_pairs: "Long life"
+        third_short: "40 years"
+        third_middle: "80 years"
+        third_long: "120 years"
+
+  example_47:
+    title: "Example 47"
+    given:
+      lagna: Ta
+      horalagna: Ar
+      moon: Ta
+      mercury: Cn
+      venus: Cp
+      saturn: Ge
+    pair_1:
+      planets: "Lagna lord Venus (Cp, movable) and 8th lord Mercury (Cn, movable)"
+      combination: "Movable + Movable"
+      result: "Long life"
+    pair_2:
+      planets: "Moon (Ta, fixed) and Saturn (Ge, dual)"
+      combination: "Fixed + Dual"
+      result: "Long life"
+    pair_3:
+      planets: "Lagna (Ta, fixed) and Horalagna (Ar, movable)"
+      combination: "Movable + Fixed"
+      result: "Middle life"
+    final_result: "Long life (two pairs dominate)"
+    paramaayush: "108 years"
+
+# ---------------------------------------------------------------------------
+# Section 14.5: The Eighth Lord Method
+# ---------------------------------------------------------------------------
+eighth_lord_method:
+  section: "14.5"
+  attributed_to: "Parasara and Jaimini"
+  description: "Another method for estimating the longevity category."
+  procedure:
+    step_1: "Find the stronger of lagna and the 7th house; take it as reference."
+    step_2: "Find the 8th lord from the reference."
+    step_3: "See where the 8th lord is placed from the reference."
+  results:
+    - placement: "Quadrant (1st, 4th, 7th, 10th from reference)"
+      result: "Long life"
+    - placement: "Panaphara (2nd, 5th, 8th, 11th from reference)"
+      result: "Middle life"
+    - placement: "Apoklima (3rd, 6th, 9th, 12th from reference)"
+      result: "Short life"
+
+  example_48:
+    title: "Example 48"
+    given:
+      lagna: Ar
+      stronger: Li
+    reference: Li
+    eighth_lord: Venus
+    placements:
+      - houses: ["Li", "Cp", "Ar", "Cn"]
+        type: "Quadrant"
+        result: "Long life"
+      - houses: ["Sc", "Aq", "Ta", "Le"]
+        type: "Panaphara"
+        result: "Middle life"
+      - houses: ["Sg", "Pi", "Ge", "Vi"]
+        type: "Apoklima"
+        result: "Short life"
+
+# ---------------------------------------------------------------------------
+# Section 14.6: Conclusion
+# ---------------------------------------------------------------------------
+conclusion:
+  section: "14.6"
+  key_points:
+    - "The methods for determining longevity category are not infallible; there are exceptions."
+    - "One should not be biased by these calculations alone."
+    - "Knowledge should not be misused for fame or for scaring clients."
+    - "Only gently caution clients and prescribe remedial measures."
+    - "Sages warned that misusing astrological knowledge leads to misery and distress."
+
+# ---------------------------------------------------------------------------
+# Section 14.7: Answer to Exercise 23
+# ---------------------------------------------------------------------------
+exercise_23_answer:
+  section: "14.7"
+  chart_reference: "Chart 8"
+
+  marakas:
+    primary:
+      - planet: Jupiter
+        reason: "Owns the 2nd house"
+      - planet: Venus
+        reason: "Owns the 7th house"
+      - planet: Rahu
+        reason: "Placed in the 7th house"
+    secondary:
+      - planet: Mercury
+        reason: "Owns 8th house and joins Jupiter and Venus"
+
+  rudra:
+    eighth_from_lagna:
+      house: Sg
+      lord: Jupiter
+    eighth_from_7th:
+      house: Ge
+      lord: Mercury
+    determination: "Mercury is stronger (more advanced in rasi). Mercury is Rudra."
+    rudra_rasi: Li
+
+  trishoola_rasis:
+    spikes: [Ge, Li, Aq]
+    note: "Trines from Rudra's rasi (Libra)"
+
+  maheswara:
+    atma_karaka: Mercury
+    eighth_from_ak: Ta
+    exception_applied: "Rahu is in the 8th from AK, so take 6th from Libra instead"
+    sixth_from_ak_rasi: Pi
+    maheswara_planet: Jupiter
+
+  longevity_three_pairs:
+    pair_1:
+      combination: "Fixed + Movable"
+      result: "Middle life"
+    pair_2:
+      combination: "Fixed + Movable"
+      result: "Middle life"
+    pair_3:
+      combination: "Fixed + Fixed"
+      result: "Short life"
+    final_result: "Middle life (36-72 years)"
+    actual_death_age: 50
+
+  eighth_lord_method:
+    reference: "Scorpio (lagna is stronger)"
+    eighth_lord: Mercury
+    placement: "Apoklima from Scorpio (12th house)"
+    result: "Short life"
+    note: "This method did not work for this chart."

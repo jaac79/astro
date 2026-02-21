@@ -1,0 +1,102 @@
+source: "Vedic Astrology: An Integrated Approach, P.V.R. Narasimha Rao"
+chapter: 13
+pages: "144-145"
+table: 31
+title: "Baadhakas"
+
+# Rules for determining badhaka sthana (troubling spot):
+# For a house falling in a movable/fixed/dual rasi, the 11th/9th/7th house
+# (respectively) from there becomes baadhaka sthaana (troubling spot).
+# Its lord is called a "baadhaka" (troublemaker) for the original house.
+#
+# Summary:
+#   Movable signs (chara rasis): 11th house is badhaka sthana
+#   Fixed signs (sthira rasis):   9th house is badhaka sthana
+#   Dual signs (dwiswabhava):     7th house is badhaka sthana
+#
+# Usage notes from the text:
+# - The periods of the badhaka lord and planets in the badhaka rasi can create
+#   some obstructions and troubles related to the matters of the original house.
+# - Baadhaka can be considered from every house and arudha pada in every
+#   divisional chart.
+# - Example: If lagna in someone's D-10 is in Mithuna, then Jupiter is baadhaka
+#   for lagna. The periods of Jupiter and planets in Dhanus can create some
+#   obstructions and troubles in career.
+
+rules:
+  movable_signs: "11th house is badhaka sthana"
+  fixed_signs: "9th house is badhaka sthana"
+  dual_signs: "7th house is badhaka sthana"
+
+baadhakas:
+  Mesha:
+    sign_type: movable
+    badhaka_sthana: 11
+    badhaka_rasi: Kumbha
+    badhaka_lord: "Saturn & Rahu"
+
+  Vrishabha:
+    sign_type: fixed
+    badhaka_sthana: 9
+    badhaka_rasi: Makara
+    badhaka_lord: Saturn
+
+  Mithuna:
+    sign_type: dual
+    badhaka_sthana: 7
+    badhaka_rasi: Dhanus
+    badhaka_lord: Jupiter
+
+  Karka:
+    sign_type: movable
+    badhaka_sthana: 11
+    badhaka_rasi: Vrishabha
+    badhaka_lord: Venus
+
+  Simha:
+    sign_type: fixed
+    badhaka_sthana: 9
+    badhaka_rasi: Mesha
+    badhaka_lord: Mars
+
+  Kanya:
+    sign_type: dual
+    badhaka_sthana: 7
+    badhaka_rasi: Meena
+    badhaka_lord: Jupiter
+
+  Thula:
+    sign_type: movable
+    badhaka_sthana: 11
+    badhaka_rasi: Simha
+    badhaka_lord: Sun
+
+  Vrischika:
+    sign_type: fixed
+    badhaka_sthana: 9
+    badhaka_rasi: Karka
+    badhaka_lord: Moon
+
+  Dhanus:
+    sign_type: dual
+    badhaka_sthana: 7
+    badhaka_rasi: Mithuna
+    badhaka_lord: Mercury
+
+  Makara:
+    sign_type: movable
+    badhaka_sthana: 11
+    badhaka_rasi: Vrischika
+    badhaka_lord: "Mars & Ketu"
+
+  Kumbha:
+    sign_type: fixed
+    badhaka_sthana: 9
+    badhaka_rasi: Thula
+    badhaka_lord: Venus
+
+  Meena:
+    sign_type: dual
+    badhaka_sthana: 7
+    badhaka_rasi: Kanya
+    badhaka_lord: Mercury

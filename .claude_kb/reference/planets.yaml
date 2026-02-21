@@ -1,0 +1,695 @@
+# =============================================================================
+# Planetary Reference Data - Chapter 3: Planets
+# Source: "Vedic Astrology: An Integrated Approach" by P.V.R. Narasimha Rao
+# Book pages 24-33, PDF pages 34-43
+# =============================================================================
+
+metadata:
+  source_chapter: 3
+  source_title: "Planets"
+  book_pages: "24-33"
+  pdf_pages: "34-43"
+
+# -----------------------------------------------------------------------------
+# Section 3.1: Introduction (book page 24)
+# -----------------------------------------------------------------------------
+# There are 7 grahas + 2 chaayaa grahas (shadow planets) = 9 total
+# Rahu and Ketu are mathematical points (north and south nodes of Moon's orbit)
+# 11 upagrahas (sub-planets/satellites) defined by Sage Parasara (Chapter 4)
+
+# -----------------------------------------------------------------------------
+# Section 3.2.1: Vishnu's Avataras (book page 24)
+# Planets represent Vishnu's incarnations (avataras)
+# -----------------------------------------------------------------------------
+avataras:
+  # source: section 3.2.1, book page 24
+  Ketu: "Meena/Matsya (fish)"
+  Saturn: "Koorma (tortoise)"
+  Rahu: "Varaaha/Sookara (boar)"
+  Mars: "Narasimha/Nrisimha (half-man, half-lion)"
+  Jupiter: "Vaamana (learned dwarf)"
+  Venus: "Parasu Rama / Bhaargava Rama"
+  Sun: "Rama"
+  Moon: "Krishna"
+  Mercury: "Buddha"
+  # Note: Rama, Krishna, Narasimha and Varaha avataras had only paramaatmaamsa.
+  # All incarnations came with significant jeevaamsa (living essence) and
+  # thanjeevaatmaamsa (supreme essence). Other living beings are born with
+  # significant jeevaamsa and a little paramaatmaamsa from the planets.
+
+# -----------------------------------------------------------------------------
+# Section 3.2.2: Benefics and Malefics (book pages 24-25)
+# -----------------------------------------------------------------------------
+benefic_malefic:
+  # source: section 3.2.2, book pages 24-25
+  natural_benefics:
+    always: [Jupiter, Venus]
+    conditional:
+      Mercury: "Benefic when alone or with other natural benefics"
+      Moon: "Benefic when waxing (Sukla paksha)"
+    sanskrit_term: "saumya grahas / subha grahas"
+
+  natural_malefics:
+    always: [Sun, Mars, Rahu, Ketu]
+    conditional:
+      Mercury: "Malefic when joined with natural malefics"
+      Moon: "Malefic when waning (Krishna paksha)"
+    sanskrit_term: "kroora grahas / paapa grahas"
+
+# -----------------------------------------------------------------------------
+# Section 3.2.3: Main Governance (book page 25)
+# -----------------------------------------------------------------------------
+governance:
+  # source: section 3.2.3, book page 25
+  Sun: "soul"
+  Moon: "mind"
+  Mars: "strength"
+  Mercury: "speech"
+  Jupiter: "knowledge and happiness"
+  Venus: "potency"
+  Saturn: "grief"
+
+# -----------------------------------------------------------------------------
+# Section 3.2.4: Colors (book page 25)
+# -----------------------------------------------------------------------------
+colors:
+  # source: section 3.2.4, book page 25
+  Sun: "blood-red"
+  Moon: "tawny"
+  Mars: "blood-red"
+  Mercury: "grass green"
+  Jupiter: "tawny"
+  Venus: "variegated"
+  Saturn: "black"
+
+# -----------------------------------------------------------------------------
+# Section 3.2.5: Planetary Cabinet (book page 25)
+# -----------------------------------------------------------------------------
+cabinet:
+  # source: section 3.2.5, book page 25
+  king: [Sun, Moon]
+  army_chief: Mars        # leader (army chief)
+  prince: Mercury
+  ministers: [Jupiter, Venus]
+  servant: Saturn
+  army: [Rahu, Ketu]
+
+# -----------------------------------------------------------------------------
+# Section 3.2.6: Planetary Deities (book page 25)
+# -----------------------------------------------------------------------------
+deities:
+  # source: section 3.2.6, book page 25
+  Sun: "Agni (fire god)"
+  Moon: "Varuna (rain god)"
+  Mars: "Subrahmanya (army chief of gods)"
+  Mercury: "Maha Vishnu (supreme sustaining force)"
+  Jupiter: "Indra (ruler of gods)"
+  Venus: "Sachi Devi (Indra's wife)"
+  Saturn: "Brahma (Creator)"
+
+# -----------------------------------------------------------------------------
+# Section 3.2.7: Sex of Planets (book page 25)
+# -----------------------------------------------------------------------------
+sex:
+  # source: section 3.2.7, book page 25
+  male: [Sun, Mars, Jupiter]
+  female: [Moon, Venus]
+  eunuch: [Saturn, Mercury]
+  # Useful for predicting sex of children. If house ruling first child is
+  # influenced by Jupiter, Mars, Mercury -> predict a son.
+  # If influenced by Moon and Mercury -> predict a daughter.
+
+# -----------------------------------------------------------------------------
+# Section 3.2.8: Planets and Five Elements (book pages 25-26)
+# -----------------------------------------------------------------------------
+elements:
+  # source: section 3.2.8, book pages 25-26
+  # tattva: element
+  agni_tattva:
+    element: "fire"
+    ruler: Mars
+    also: Sun  # Sun also has the same nature
+  bhoo_tattva:
+    element: "earth"
+    ruler: Mercury
+  vaayu_tattva:
+    element: "air"
+    ruler: Saturn
+  aakaasa_tattva:
+    element: "ether"
+    ruler: Jupiter
+  jala_tattva:
+    element: "water"
+    ruler: Venus
+    also: Moon  # Moon also has the same nature
+  # Implications: Mars/Sun -> fiery, leadership, enterprise
+  # Mercury -> memory, logical abilities
+  # Saturn -> wandering, free spirit
+  # Venus/Moon -> imaginative, creative work
+  # Jupiter -> wisdom, intelligence, perceiving knowledge
+
+# -----------------------------------------------------------------------------
+# Section 3.2.9: Varnas (Castes) (book page 26)
+# -----------------------------------------------------------------------------
+varnas:
+  # source: section 3.2.9, book page 26
+  brahmana:  # learned class
+    planets: [Jupiter, Venus]
+    forte: "Learning and intelligence"
+  kshatriya:  # warrior class
+    planets: [Sun, Mars]
+    forte: "Bravery"
+  vaisya:  # trader class
+    planets: [Moon, Mercury]
+    forte: "Getting along with others"
+  sudra:  # worker class
+    planets: [Saturn]
+    forte: "Hard work"
+  # Note: Moon is king in cabinet but Vaisya in varna. Sun is a brave king
+  # (warrior who asserts himself). Moon is a king who gets along with everyone.
+
+# -----------------------------------------------------------------------------
+# Section 3.2.10: Gunas (book page 26)
+# -----------------------------------------------------------------------------
+gunas:
+  # source: section 3.2.10, book page 26
+  saattwik:  # purity and truthfulness in thoughts and action
+    planets: [Sun, Moon, Jupiter]
+  raajasik:  # passion, energy, and some impurity in thoughts and actions
+    planets: [Mercury, Venus]
+  taamasik:  # dark, mean, and depraved spirit in thoughts and actions
+    planets: [Mars, Saturn]
+  # Note: Sattwa guna = purity and truthfulness, NOT patience/non-violence.
+  # A warrior who fights a sinning person with no passion or ego is saattwik.
+  # Lord Sri Rama and Sun are examples of saattwik warriors.
+
+# -----------------------------------------------------------------------------
+# Section 3.2.11: Planetary Abodes (book page 27)
+# -----------------------------------------------------------------------------
+abodes:
+  # source: section 3.2.11, book page 27
+  Sun: "temple"
+  Moon: "watery place"
+  Mercury: "sports ground"
+  Jupiter: "treasure house"
+  Venus: "bedroom"
+  Saturn: "filthy area"
+  # Mars not explicitly listed in this section
+
+# -----------------------------------------------------------------------------
+# Section 3.2.12: Seven Dhaatus (bodily constituents) (book page 27)
+# -----------------------------------------------------------------------------
+dhaatus:
+  # source: section 3.2.12, book page 27
+  # sapta dhaatus = 7 matters that make up human body
+  Sun: "bones"
+  Moon: "blood"
+  Mars: "marrow"
+  Mercury: "skin"
+  Jupiter: "fat"
+  Venus: "semen (reproductive materials)"
+  Saturn: "muscles"
+  # If Sun is afflicted -> bone problems
+  # If Moon is afflicted -> blood related problems, etc.
+
+# -----------------------------------------------------------------------------
+# Section 3.2.13: Time Periods (book page 27)
+# -----------------------------------------------------------------------------
+time_periods:
+  # source: section 3.2.13, book page 27
+  # Useful in prasna/horary astrology
+  Sun: "ayana (half-year; Uttara ayana = Sun Cp-Ge, Dakshina ayana = Sun Cn-Sg)"
+  Moon: "minute"
+  Mars: "week"
+  Mercury: "ritu (season, ~2 months; 6 ritus per year)"
+  Jupiter: "month"
+  Venus: "fortnight (paksha)"
+  Saturn: "year"
+
+# -----------------------------------------------------------------------------
+# Section 3.2.14: Tastes (book page 27)
+# -----------------------------------------------------------------------------
+tastes:
+  # source: section 3.2.14, book page 27
+  Sun: "pungent (e.g. onion, ginger, pepper)"
+  Moon: "saline (e.g. sea salt, rock salt)"
+  Mars: "bitter (e.g. karela/bitter melon, dandelion root, rhubarb root, neem leaves)"
+  Mercury: "mixed"
+  Jupiter: "sweet (e.g. sugar, dates)"
+  Venus: "sour (e.g. lemon, tamarind)"
+  Saturn: "astringent (e.g. plantain, pomegranate)"
+  # The 2nd house shows preference in food. Planets influencing it decide taste.
+  # Avoid tastes of planets causing suffering in current dasa/antardasa.
+
+# -----------------------------------------------------------------------------
+# Section 3.2.15: Planetary Strengths (Digbalas) (book page 28)
+# -----------------------------------------------------------------------------
+strengths:
+  # source: section 3.2.15, book page 28
+
+  directional_strength_digbala:
+    east_lagna:  # eastern direction
+      planets: [Mercury, Jupiter]
+    south_10th:  # southern direction (meridian, 10th house)
+      planets: [Sun, Mars]
+    north_4th:  # northern direction (nadir, 4th house)
+      planets: [Moon, Venus]
+    west_7th:  # western direction (7th house)
+      planets: [Saturn]
+
+  time_of_day:
+    night: [Moon, Mars, Saturn]
+    daytime: [Sun, Jupiter, Venus]
+    always: [Mercury]
+
+  paksha_strength:
+    krishna_paksha: "Natural malefics are strong"
+    sukla_paksha: "Natural benefics are strong"
+
+  ayana_strength:
+    dakshina_ayana: "Natural malefics are strong"
+    uttara_ayana: "Natural benefics are strong"
+
+# -----------------------------------------------------------------------------
+# Section 3.2.16: Planets and Ritus (Seasons) (book page 28)
+# -----------------------------------------------------------------------------
+ritus:
+  # source: section 3.2.16, book page 28
+  Venus: "vasanta ritu (spring)"
+  Mars: "greeshma ritu (summer)"
+  Moon: "varsha ritu (rainy season)"
+  Mercury: "hemanta ritu (season of dew)"
+  Jupiter: "sheeta ritu (winter)"
+  Saturn: "sisira ritu (fall)"
+
+# -----------------------------------------------------------------------------
+# Section 3.2.17: Dhaatu, Moola and Jeeva (book page 28)
+# -----------------------------------------------------------------------------
+dhaatu_moola_jeeva:
+  # source: section 3.2.17, book page 28
+  dhaatus_metals_materials:
+    planets: [Rahu, Mars, Saturn, Moon]
+  moolas_roots_vegetables:
+    planets: [Sun, Venus]
+  jeevas_living_beings:
+    planets: [Mercury, Jupiter, Ketu]
+
+# =============================================================================
+# Section 3.3: Planetary Dignities - Table 6 (book page 29)
+# Source: Table 6, "Dignities of Planets", book page 29, PDF page 39
+# =============================================================================
+# Abbreviations: Ar=Aries, Ta=Taurus, Ge=Gemini, Cn=Cancer, Le=Leo,
+#   Vi=Virgo, Li=Libra, Sc=Scorpio, Sg=Sagittarius, Cp=Capricorn,
+#   Aq=Aquarius, Pi=Pisces
+
+dignities:
+  # source: Table 6, book page 29
+  Sun:
+    own_rasis: [Leo]
+    exaltation_rasi: Aries
+    deep_exaltation_degree: 10
+    debilitation_rasi: Libra
+    deep_debilitation_degree: 10
+    moolatrikona: Leo
+    moolatrikona_details: "First 20 degrees of Leo; remaining 10 degrees = own rasi"
+
+  Moon:
+    own_rasis: [Cancer]
+    exaltation_rasi: Taurus
+    deep_exaltation_degree: 3
+    debilitation_rasi: Scorpio
+    deep_debilitation_degree: 3
+    moolatrikona: Taurus
+    moolatrikona_details: "First 3 degrees = exaltation; remaining 27 degrees = moolatrikona"
+
+  Mars:
+    own_rasis: [Aries, Scorpio]
+    exaltation_rasi: Capricorn
+    deep_exaltation_degree: 28
+    debilitation_rasi: Cancer
+    deep_debilitation_degree: 28
+    moolatrikona: Aries
+    moolatrikona_details: "First 12 degrees of Aries = moolatrikona; remaining 18 degrees = own rasi"
+
+  Mercury:
+    own_rasis: [Gemini, Virgo]
+    exaltation_rasi: Virgo
+    deep_exaltation_degree: 15
+    debilitation_rasi: Pisces
+    deep_debilitation_degree: 15
+    moolatrikona: Virgo
+    moolatrikona_details: "First 15 degrees = exaltation; next 5 degrees = moolatrikona; remaining 10 degrees = own rasi"
+
+  Jupiter:
+    own_rasis: [Sagittarius, Pisces]
+    exaltation_rasi: Cancer
+    deep_exaltation_degree: 5
+    debilitation_rasi: Capricorn
+    deep_debilitation_degree: 5
+    moolatrikona: Sagittarius
+    moolatrikona_details: "First 10 degrees of Sagittarius = moolatrikona; remaining 20 degrees = own rasi"
+
+  Venus:
+    own_rasis: [Taurus, Libra]
+    exaltation_rasi: Pisces
+    deep_exaltation_degree: 27
+    debilitation_rasi: Virgo
+    deep_debilitation_degree: 27
+    moolatrikona: Libra
+    moolatrikona_details: "First half (15 degrees) of Libra = moolatrikona; second half = own rasi"
+
+  Saturn:
+    own_rasis: [Capricorn, Aquarius]
+    exaltation_rasi: Libra
+    deep_exaltation_degree: 20
+    debilitation_rasi: Aries
+    deep_debilitation_degree: 20
+    moolatrikona: Aquarius
+    moolatrikona_details: "First 20 degrees of Aquarius = moolatrikona; remaining 10 degrees = own rasi"
+
+  Rahu:
+    own_rasis: [Aquarius]
+    exaltation_rasi: Gemini
+    deep_exaltation_degree: null  # not specified in table
+    debilitation_rasi: Sagittarius
+    deep_debilitation_degree: null
+    moolatrikona: Virgo
+
+  Ketu:
+    own_rasis: [Scorpio]
+    exaltation_rasi: Sagittarius
+    deep_exaltation_degree: null  # not specified in table
+    debilitation_rasi: Gemini
+    deep_debilitation_degree: null
+    moolatrikona: Pisces
+
+  # Analogy from book page 29-30:
+  # Own rasi = home (most natural and comfortable)
+  # Moolatrikona = office (powerful and duty-minded)
+  # Exaltation = favorite party/picnic spot (excited)
+  # Debilitation = worst party (unhappy, stuck)
+
+# =============================================================================
+# Section 3.4: Planetary Relationships
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Section 3.4.1: Natural Relationships - Table 7 (book page 31)
+# Source: Table 7, "Natural relationships", book page 31, PDF page 41
+# -----------------------------------------------------------------------------
+# Rule for deriving natural relationships:
+# - Lord of moolatrikona's exaltation rasi = friend
+# - Lords of 2nd, 4th, 5th, 8th, 9th, 12th rasis from moolatrikona = friends
+# - Lords of other rasis = natural enemies
+# - If a planet becomes both friend and enemy (owns two rasis) -> neutral
+
+natural_relationships:
+  # source: Table 7, book page 31
+  Sun:
+    friends: [Moon, Mars, Jupiter]
+    neutrals: [Mercury]
+    enemies: [Venus, Saturn]
+
+  Moon:
+    friends: [Sun, Mercury]
+    neutrals: [Mars, Jupiter, Venus, Saturn]
+    enemies: []  # Moon has no natural enemies
+
+  Mars:
+    friends: [Sun, Moon, Jupiter]
+    neutrals: [Venus, Saturn]
+    enemies: [Mercury]
+
+  Mercury:
+    friends: [Sun, Venus]
+    neutrals: [Mars, Jupiter, Saturn]
+    enemies: [Moon]
+
+  Jupiter:
+    friends: [Sun, Moon, Mars]
+    neutrals: [Saturn]
+    enemies: [Mercury, Venus]
+
+  Venus:
+    friends: [Mercury, Saturn]
+    neutrals: [Mars, Jupiter]
+    enemies: [Sun, Moon]
+
+  Saturn:
+    friends: [Mercury, Venus]
+    neutrals: [Jupiter]
+    enemies: [Sun, Moon, Mars]
+
+# -----------------------------------------------------------------------------
+# Section 3.4.2: Temporary Relationships (book pages 31-32)
+# Source: section 3.4.2, book pages 31-32
+# -----------------------------------------------------------------------------
+temporary_relationships:
+  # source: section 3.4.2, book pages 31-32
+  description: >
+    Temporary relationships are chart-specific (tatkaala).
+    Planets occupying the 2nd, 3rd, 4th, 10th, 11th and 12th rasis
+    counted from the rasi occupied by a planet are its temporary friends.
+    Planets occupying other rasis are its temporary enemies.
+  rule:
+    temporary_friend_houses: [2, 3, 4, 10, 11, 12]  # counted from planet's rasi
+    temporary_enemy_houses: [1, 5, 6, 7, 8, 9]  # all other houses
+
+# -----------------------------------------------------------------------------
+# Section 3.4.3: Compound Relationships - Table 8 (book page 32)
+# Source: Table 8, "Compound Relationships", book page 32, PDF page 42
+# -----------------------------------------------------------------------------
+compound_relationships:
+  # source: Table 8, book page 32
+  # Compound relationship = natural relationship + temporary relationship
+  matrix:
+    natural_friend_plus_temporary_friend: "Adhimitra (good/best friend)"
+    natural_friend_plus_temporary_enemy: "Sama (neutral)"
+    natural_neutral_plus_temporary_friend: "Mitra (friend)"
+    natural_neutral_plus_temporary_enemy: "Satru (enemy)"
+    natural_enemy_plus_temporary_friend: "Sama (neutral)"
+    natural_enemy_plus_temporary_enemy: "Adhisatru (bad/worst enemy)"
+
+  # Practical meaning (book page 33):
+  # A planet in a rasi owned by a mitra or adhimitra is in a friendly house.
+  # A planet in a rasi owned by a satru or adhisatru is in an inimical house.
+
+# =============================================================================
+# Consolidated Planet Properties Table
+# =============================================================================
+planets:
+  Sun:
+    nature: malefic
+    sex: male
+    element: "agni (fire)"
+    governance: "soul"
+    color: "blood-red"
+    cabinet: "king"
+    deity: "Agni"
+    varna: "kshatriya"
+    guna: "saattwik"
+    abode: "temple"
+    dhaatu: "bones"
+    time_period: "ayana (half-year)"
+    taste: "pungent"
+    ritu: null  # not listed
+    dhaatu_moola_jeeva: "moola"
+    digbala: "south (10th house)"
+    strong_time: "daytime"
+    avatara: "Rama"
+    own_signs: [Leo]
+    exaltation: {sign: Aries, degree: 10}
+    debilitation: {sign: Libra, degree: 10}
+    moolatrikona: {sign: Leo, degrees: "0-20"}
+
+  Moon:
+    nature: "benefic when waxing (Sukla paksha), malefic when waning (Krishna paksha)"
+    sex: female
+    element: "jala (water)"
+    governance: "mind"
+    color: "tawny"
+    cabinet: "king"
+    deity: "Varuna"
+    varna: "vaisya"
+    guna: "saattwik"
+    abode: "watery place"
+    dhaatu: "blood"
+    time_period: "minute"
+    taste: "saline"
+    ritu: "varsha (rainy season)"
+    dhaatu_moola_jeeva: "dhaatu"
+    digbala: "north (4th house)"
+    strong_time: "night"
+    avatara: "Krishna"
+    own_signs: [Cancer]
+    exaltation: {sign: Taurus, degree: 3}
+    debilitation: {sign: Scorpio, degree: 3}
+    moolatrikona: {sign: Taurus, degrees: "3-30"}
+
+  Mars:
+    nature: malefic
+    sex: male
+    element: "agni (fire)"
+    governance: "strength"
+    color: "blood-red"
+    cabinet: "army chief"
+    deity: "Subrahmanya"
+    varna: "kshatriya"
+    guna: "taamasik"
+    abode: null  # not explicitly stated
+    dhaatu: "marrow"
+    time_period: "week"
+    taste: "bitter"
+    ritu: "greeshma (summer)"
+    dhaatu_moola_jeeva: "dhaatu"
+    digbala: "south (10th house)"
+    strong_time: "night"
+    avatara: "Narasimha"
+    own_signs: [Aries, Scorpio]
+    exaltation: {sign: Capricorn, degree: 28}
+    debilitation: {sign: Cancer, degree: 28}
+    moolatrikona: {sign: Aries, degrees: "0-12"}
+
+  Mercury:
+    nature: "benefic when alone or with benefics; malefic when with malefics"
+    sex: eunuch
+    element: "bhoo (earth)"
+    governance: "speech"
+    color: "grass green"
+    cabinet: "prince"
+    deity: "Maha Vishnu"
+    varna: "vaisya"
+    guna: "raajasik"
+    abode: "sports ground"
+    dhaatu: "skin"
+    time_period: "ritu (season, ~2 months)"
+    taste: "mixed"
+    ritu: "hemanta (season of dew)"
+    dhaatu_moola_jeeva: "jeeva"
+    digbala: "east (1st house / lagna)"
+    strong_time: "always strong"
+    avatara: "Buddha"
+    own_signs: [Gemini, Virgo]
+    exaltation: {sign: Virgo, degree: 15}
+    debilitation: {sign: Pisces, degree: 15}
+    moolatrikona: {sign: Virgo, degrees: "15-20"}
+
+  Jupiter:
+    nature: benefic
+    sex: male
+    element: "aakaasa (ether)"
+    governance: "knowledge and happiness"
+    color: "tawny"
+    cabinet: "minister"
+    deity: "Indra"
+    varna: "brahmana"
+    guna: "saattwik"
+    abode: "treasure house"
+    dhaatu: "fat"
+    time_period: "month"
+    taste: "sweet"
+    ritu: "sheeta (winter)"
+    dhaatu_moola_jeeva: "jeeva"
+    digbala: "east (1st house / lagna)"
+    strong_time: "daytime"
+    avatara: "Vaamana"
+    own_signs: [Sagittarius, Pisces]
+    exaltation: {sign: Cancer, degree: 5}
+    debilitation: {sign: Capricorn, degree: 5}
+    moolatrikona: {sign: Sagittarius, degrees: "0-10"}
+
+  Venus:
+    nature: benefic
+    sex: female
+    element: "jala (water)"
+    governance: "potency"
+    color: "variegated"
+    cabinet: "minister"
+    deity: "Sachi Devi"
+    varna: "brahmana"
+    guna: "raajasik"
+    abode: "bedroom"
+    dhaatu: "semen (reproductive materials)"
+    time_period: "fortnight (paksha)"
+    taste: "sour"
+    ritu: "vasanta (spring)"
+    dhaatu_moola_jeeva: "moola"
+    digbala: "north (4th house)"
+    strong_time: "daytime"
+    avatara: "Parasu Rama / Bhaargava Rama"
+    own_signs: [Taurus, Libra]
+    exaltation: {sign: Pisces, degree: 27}
+    debilitation: {sign: Virgo, degree: 27}
+    moolatrikona: {sign: Libra, degrees: "0-15"}
+
+  Saturn:
+    nature: malefic
+    sex: eunuch
+    element: "vaayu (air)"
+    governance: "grief"
+    color: "black"
+    cabinet: "servant"
+    deity: "Brahma"
+    varna: "sudra"
+    guna: "taamasik"
+    abode: "filthy area"
+    dhaatu: "muscles"
+    time_period: "year"
+    taste: "astringent"
+    ritu: "sisira (fall)"
+    dhaatu_moola_jeeva: "dhaatu"
+    digbala: "west (7th house)"
+    strong_time: "night"
+    avatara: "Koorma (tortoise)"
+    own_signs: [Capricorn, Aquarius]
+    exaltation: {sign: Libra, degree: 20}
+    debilitation: {sign: Aries, degree: 20}
+    moolatrikona: {sign: Aquarius, degrees: "0-20"}
+
+  Rahu:
+    nature: malefic
+    sex: null  # not explicitly listed
+    element: null
+    governance: null  # not explicitly listed for Rahu
+    color: null
+    cabinet: "army"
+    deity: null
+    varna: null
+    guna: null
+    abode: null
+    dhaatu: null
+    time_period: null
+    taste: null
+    ritu: null
+    dhaatu_moola_jeeva: "dhaatu"
+    digbala: null
+    strong_time: null
+    avatara: "Varaaha/Sookara (boar)"
+    own_signs: [Aquarius]
+    exaltation: {sign: Gemini, degree: null}
+    debilitation: {sign: Sagittarius, degree: null}
+    moolatrikona: {sign: Virgo, degrees: null}
+
+  Ketu:
+    nature: malefic
+    sex: null  # not explicitly listed
+    element: null
+    governance: null
+    color: null
+    cabinet: "army"
+    deity: null
+    varna: null
+    guna: null
+    abode: null
+    dhaatu: null
+    time_period: null
+    taste: null
+    ritu: null
+    dhaatu_moola_jeeva: "jeeva"
+    digbala: null
+    strong_time: null
+    avatara: "Meena/Matsya (fish)"
+    own_signs: [Scorpio]
+    exaltation: {sign: Sagittarius, degree: null}
+    debilitation: {sign: Gemini, degree: null}
+    moolatrikona: {sign: Pisces, degrees: null}

@@ -1,0 +1,569 @@
+# Ashtakavarga Reference
+# Extracted from: Vedic Astrology - An Integrated Approach by P.V.R. Narasimha Rao
+# Chapter 12: Ashtakavarga (Book pages 123-141, PDF pages 132-150)
+
+source:
+  book: "Vedic Astrology: An Integrated Approach"
+  author: "P.V.R. Narasimha Rao"
+  chapter: 12
+  title: "Ashtakavarga"
+  book_pages: "123-141"
+  pdf_pages: "132-150"
+  authority: "Parasara (BPHS)"
+
+# ===========================================================================
+# CONCEPT
+# ===========================================================================
+concept:
+  meaning: "Ashtaka = consisting of eight; Varga = a group"
+  definition: >
+    Ashtakavarga is the system of analyzing a chart with respect to a group
+    of 8 reference points (Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn,
+    and Lagna).
+  purpose: >
+    Tells us the benefic positions of lagna and seven planets with respect
+    to each other. Can be used to analyze the strength of a natal chart,
+    but is much more important in analyzing transits.
+  eight_references:
+    - Sun
+    - Moon
+    - Mars
+    - Mercury
+    - Jupiter
+    - Venus
+    - Saturn
+    - Lagna
+  terminology:
+    rekha:
+      symbol: 1
+      meaning: "Line - benefic position (sthana)"
+    bindu:
+      symbol: 0
+      meaning: "Dot - malefic position (karana)"
+    note: >
+      Some south Indian astrologers use opposite convention (bindu=benefic,
+      rekha=malefic). This book follows Parasara's convention.
+
+# ===========================================================================
+# BHINNASHTAKAVARGA (BAV) - Individual Planet Ashtakavarga Tables
+# ===========================================================================
+# For each planet, the table shows benefic (1) and malefic (0) positions
+# from each of the 8 reference points. Rows = houses (1st through 12th),
+# Columns = reference planets. A value of 1 means the planet is benefic
+# when placed in that house counted from the reference.
+#
+# Example: In Sun's table, house 3 from Mercury = 1 means Sun is benefic
+# when placed in the 3rd house counted from Mercury's position.
+# ===========================================================================
+
+bhinnashtakavarga:
+
+  # Table 19: Definition of Sun's Ashtakavarga
+  sun:
+    table_number: 19
+    total_benefic_points: 48
+    # Each row: [Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Lagna]
+    benefic_points_by_house:
+      house_1:  [1, 0, 1, 0, 0, 0, 1, 0]
+      house_2:  [1, 0, 1, 0, 0, 0, 1, 0]
+      house_3:  [0, 1, 0, 1, 0, 0, 0, 1]
+      house_4:  [1, 0, 1, 0, 0, 0, 1, 1]
+      house_5:  [0, 0, 0, 1, 1, 0, 0, 0]
+      house_6:  [0, 1, 0, 1, 1, 1, 0, 1]
+      house_7:  [1, 0, 1, 0, 0, 1, 1, 0]
+      house_8:  [1, 0, 1, 0, 0, 0, 1, 0]
+      house_9:  [1, 0, 1, 1, 1, 0, 1, 0]
+      house_10: [1, 1, 1, 1, 0, 0, 1, 1]
+      house_11: [1, 1, 1, 1, 1, 0, 1, 1]
+      house_12: [0, 0, 0, 1, 0, 1, 0, 1]
+    # Benefic houses listed per reference (for quick lookup)
+    benefic_houses_from:
+      sun:     [1, 2, 4, 7, 8, 9, 10, 11]
+      moon:    [3, 6, 10, 11]
+      mars:    [1, 2, 4, 7, 8, 9, 10, 11]
+      mercury: [3, 5, 6, 9, 10, 11, 12]
+      jupiter: [5, 6, 9, 11]
+      venus:   [6, 7, 12]
+      saturn:  [1, 2, 4, 7, 8, 9, 10, 11]
+      lagna:   [3, 4, 6, 10, 11, 12]
+
+  # Table 20: Definition of Moon's Ashtakavarga
+  moon:
+    table_number: 20
+    total_benefic_points: 49
+    benefic_points_by_house:
+      house_1:  [0, 1, 0, 1, 1, 0, 0, 0]
+      house_2:  [0, 0, 1, 0, 1, 0, 0, 0]
+      house_3:  [1, 1, 1, 1, 0, 1, 1, 1]
+      house_4:  [0, 0, 0, 1, 1, 1, 0, 0]
+      house_5:  [0, 0, 1, 1, 0, 1, 1, 0]
+      house_6:  [1, 1, 1, 0, 0, 0, 1, 1]
+      house_7:  [1, 1, 0, 1, 1, 1, 0, 0]
+      house_8:  [1, 0, 0, 1, 1, 0, 0, 0]
+      house_9:  [0, 1, 0, 0, 0, 1, 0, 0]
+      house_10: [1, 1, 1, 1, 1, 1, 0, 1]
+      house_11: [1, 1, 1, 1, 1, 1, 1, 1]
+      house_12: [0, 0, 0, 0, 0, 0, 0, 0]
+    benefic_houses_from:
+      sun:     [3, 6, 7, 8, 10, 11]
+      moon:    [1, 3, 6, 7, 9, 10, 11]
+      mars:    [2, 3, 5, 6, 10, 11]
+      mercury: [1, 3, 4, 5, 7, 8, 10, 11]
+      jupiter: [1, 2, 4, 7, 8, 10, 11]
+      venus:   [3, 4, 5, 7, 9, 10, 11]
+      saturn:  [3, 5, 6, 11]
+      lagna:   [3, 6, 10, 11]
+
+  # Table 21: Definition of Mars's Ashtakavarga
+  mars:
+    table_number: 21
+    total_benefic_points: 39
+    benefic_points_by_house:
+      house_1:  [0, 0, 1, 0, 0, 0, 1, 1]
+      house_2:  [0, 0, 1, 0, 0, 0, 0, 0]
+      house_3:  [1, 1, 0, 1, 0, 0, 0, 1]
+      house_4:  [0, 0, 1, 0, 0, 0, 1, 0]
+      house_5:  [1, 0, 0, 1, 0, 0, 0, 0]
+      house_6:  [1, 1, 0, 1, 1, 1, 0, 1]
+      house_7:  [0, 0, 1, 0, 0, 0, 1, 0]
+      house_8:  [0, 0, 1, 0, 0, 1, 1, 0]
+      house_9:  [0, 0, 0, 0, 0, 0, 1, 0]
+      house_10: [1, 0, 1, 0, 1, 0, 1, 1]
+      house_11: [1, 1, 1, 1, 1, 1, 1, 1]
+      house_12: [0, 0, 0, 0, 1, 1, 0, 0]
+    benefic_houses_from:
+      sun:     [3, 5, 6, 10, 11]
+      moon:    [3, 6, 11]
+      mars:    [1, 2, 4, 7, 8, 10, 11]
+      mercury: [3, 5, 6, 11]
+      jupiter: [6, 10, 11, 12]
+      venus:   [6, 8, 11, 12]
+      saturn:  [1, 4, 7, 8, 9, 10, 11]
+      lagna:   [1, 3, 6, 10, 11]
+
+  # Table 22: Definition of Mercury's Ashtakavarga
+  mercury:
+    table_number: 22
+    total_benefic_points: 54
+    benefic_points_by_house:
+      house_1:  [0, 0, 1, 1, 0, 1, 1, 1]
+      house_2:  [0, 1, 1, 0, 0, 1, 1, 1]
+      house_3:  [0, 0, 0, 1, 0, 1, 0, 0]
+      house_4:  [0, 1, 1, 0, 0, 1, 1, 1]
+      house_5:  [1, 0, 0, 1, 0, 1, 0, 0]
+      house_6:  [1, 0, 0, 1, 1, 0, 0, 1]
+      house_7:  [0, 0, 1, 0, 0, 0, 1, 0]
+      house_8:  [0, 1, 1, 0, 1, 1, 1, 1]
+      house_9:  [1, 0, 1, 1, 0, 1, 1, 0]
+      house_10: [0, 1, 1, 1, 0, 0, 1, 1]
+      house_11: [1, 1, 1, 1, 1, 1, 1, 1]
+      house_12: [1, 0, 0, 1, 1, 0, 0, 0]
+    benefic_houses_from:
+      sun:     [5, 6, 9, 11, 12]
+      moon:    [2, 4, 8, 10, 11]
+      mars:    [1, 2, 4, 7, 8, 9, 10, 11]
+      mercury: [1, 3, 5, 6, 9, 10, 11, 12]
+      jupiter: [6, 8, 11, 12]
+      venus:   [1, 2, 3, 4, 5, 8, 9, 11]
+      saturn:  [1, 2, 4, 7, 8, 9, 10, 11]
+      lagna:   [1, 2, 4, 6, 8, 10, 11]
+
+  # Table 23: Definition of Jupiter's Ashtakavarga
+  jupiter:
+    table_number: 23
+    total_benefic_points: 56
+    benefic_points_by_house:
+      house_1:  [1, 0, 1, 1, 1, 0, 0, 1]
+      house_2:  [1, 1, 1, 1, 1, 1, 0, 1]
+      house_3:  [1, 0, 0, 0, 1, 0, 1, 0]
+      house_4:  [1, 0, 1, 1, 0, 0, 0, 1]
+      house_5:  [0, 1, 0, 1, 0, 1, 1, 1]
+      house_6:  [0, 0, 0, 1, 0, 1, 1, 1]
+      house_7:  [1, 1, 1, 0, 1, 0, 0, 1]
+      house_8:  [1, 0, 1, 0, 1, 0, 0, 0]
+      house_9:  [1, 1, 0, 1, 0, 1, 0, 1]
+      house_10: [1, 0, 1, 1, 0, 1, 1, 1]
+      house_11: [1, 1, 1, 1, 1, 1, 1, 1]
+      house_12: [0, 0, 0, 0, 0, 0, 1, 0]
+    benefic_houses_from:
+      sun:     [1, 2, 3, 4, 7, 8, 9, 10, 11]
+      moon:    [2, 5, 7, 9, 11]
+      mars:    [1, 2, 4, 7, 8, 10, 11]
+      mercury: [1, 2, 4, 5, 6, 9, 10, 11]
+      jupiter: [1, 2, 3, 7, 8, 11]
+      venus:   [2, 5, 6, 9, 10, 11]
+      saturn:  [3, 5, 6, 12]
+      lagna:   [1, 2, 4, 5, 6, 7, 9, 10, 11]
+
+  # Table 24: Definition of Venus's Ashtakavarga
+  venus:
+    table_number: 24
+    total_benefic_points: 52
+    benefic_points_by_house:
+      house_1:  [0, 1, 0, 0, 0, 1, 0, 1]
+      house_2:  [0, 1, 0, 0, 0, 1, 0, 1]
+      house_3:  [0, 1, 1, 1, 0, 1, 1, 1]
+      house_4:  [0, 1, 1, 0, 0, 1, 1, 1]
+      house_5:  [0, 0, 1, 0, 1, 1, 1, 1]
+      house_6:  [0, 0, 1, 1, 0, 0, 0, 0]
+      house_7:  [0, 0, 0, 0, 0, 0, 0, 0]
+      house_8:  [1, 1, 0, 0, 1, 1, 1, 1]
+      house_9:  [0, 1, 1, 1, 1, 1, 1, 1]
+      house_10: [0, 0, 0, 0, 1, 1, 1, 0]
+      house_11: [1, 1, 1, 1, 1, 1, 1, 1]
+      house_12: [1, 1, 1, 0, 0, 0, 0, 0]
+    benefic_houses_from:
+      sun:     [8, 11, 12]
+      moon:    [1, 2, 3, 4, 8, 9, 11, 12]
+      mars:    [3, 4, 5, 6, 8, 9, 11, 12]
+      mercury: [3, 5, 6, 9, 11]
+      jupiter: [5, 8, 9, 10, 11]
+      venus:   [1, 2, 3, 4, 5, 8, 9, 10, 11]
+      saturn:  [3, 4, 5, 8, 9, 10, 11]
+      lagna:   [1, 2, 3, 4, 5, 8, 9, 11]
+
+  # Table 25: Definition of Saturn's Ashtakavarga
+  saturn:
+    table_number: 25
+    total_benefic_points: 39
+    benefic_points_by_house:
+      house_1:  [1, 0, 0, 0, 0, 0, 0, 1]
+      house_2:  [1, 0, 0, 0, 0, 0, 0, 0]
+      house_3:  [0, 1, 1, 0, 0, 0, 1, 1]
+      house_4:  [1, 0, 0, 0, 0, 0, 0, 1]
+      house_5:  [0, 0, 1, 0, 1, 0, 1, 0]
+      house_6:  [0, 1, 1, 1, 1, 1, 1, 1]
+      house_7:  [1, 0, 0, 0, 0, 0, 0, 0]
+      house_8:  [1, 0, 0, 1, 0, 0, 0, 0]
+      house_9:  [0, 0, 0, 0, 1, 0, 0, 0]
+      house_10: [1, 1, 1, 1, 1, 0, 0, 1]
+      house_11: [1, 1, 1, 1, 1, 1, 1, 1]
+      house_12: [0, 0, 0, 1, 0, 0, 0, 0]
+    benefic_houses_from:
+      sun:     [1, 2, 4, 7, 8, 10, 11]
+      moon:    [3, 6, 10, 11]
+      mars:    [3, 5, 6, 10, 11, 12]
+      mercury: [6, 8, 9, 10, 11, 12]
+      jupiter: [5, 6, 9, 10, 11]
+      venus:   [6, 11, 12]
+      saturn:  [3, 5, 6, 11]
+      lagna:   [1, 3, 4, 6, 10, 11]
+
+  # Table 26: Definition of Lagna's Ashtakavarga
+  lagna:
+    table_number: 26
+    total_benefic_points: 49
+    benefic_points_by_house:
+      house_1:  [0, 0, 1, 1, 1, 1, 1, 0]
+      house_2:  [0, 0, 0, 1, 1, 1, 0, 0]
+      house_3:  [1, 1, 1, 0, 0, 1, 1, 1]
+      house_4:  [1, 0, 0, 1, 1, 1, 1, 0]
+      house_5:  [0, 0, 0, 0, 1, 1, 0, 0]
+      house_6:  [1, 1, 1, 1, 1, 0, 1, 1]
+      house_7:  [0, 0, 0, 0, 1, 0, 0, 0]
+      house_8:  [0, 0, 0, 1, 0, 1, 0, 0]
+      house_9:  [0, 0, 0, 0, 1, 1, 0, 0]
+      house_10: [1, 1, 1, 1, 1, 0, 1, 1]
+      house_11: [1, 1, 1, 1, 1, 1, 1, 1]
+      house_12: [1, 1, 1, 0, 0, 0, 0, 0]
+    benefic_houses_from:
+      sun:     [3, 4, 6, 10, 11, 12]
+      moon:    [3, 6, 10, 11, 12]
+      mars:    [1, 3, 6, 10, 11, 12]
+      mercury: [1, 2, 4, 6, 8, 10, 11]
+      jupiter: [1, 2, 4, 5, 6, 7, 9, 10, 11]
+      venus:   [1, 2, 3, 4, 5, 8, 9, 11]
+      saturn:  [1, 3, 4, 6, 10, 11]
+      lagna:   [3, 6, 10, 11]
+
+# ===========================================================================
+# SAMUDAAYA / SARVA ASHTAKAVARGA (SAV)
+# ===========================================================================
+sarvashtakavarga:
+  abbreviation: "SAV"
+  also_known_as: "Samudaaya Ashtakavarga"
+  definition: >
+    The sum of the Bhinnashtakavargas (BAVs) of all seven planets
+    (Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn) in each rasi.
+    Lagna's BAV is NOT included in SAV.
+  computation: >
+    For each rasi, add the number of rekhas from the BAVs of Sun, Moon,
+    Mars, Mercury, Jupiter, Venus, and Saturn. The sum is the SAV value
+    for that rasi.
+  total_rekhas: 337
+  note: "Total across all 12 rasis is always 337 (sum of individual totals: 48+49+39+54+56+52+39)"
+  interpretation:
+    strong:
+      threshold: "30 or more rekhas"
+      meaning: >
+        Matters signified by the house in this rasi flourish. Planets
+        transiting this rasi bring good results.
+    average:
+      threshold: "25-30 rekhas"
+      meaning: "Average results for matters of this house and transiting planets."
+    weak:
+      threshold: "less than 25 rekhas"
+      meaning: >
+        Matters signified by the house in this rasi suffer. Planets
+        transiting this rasi bring bad results.
+  muhurta_usage: >
+    When choosing muhurtas for auspicious activities (wedding, housewarming),
+    check the SAV strengths of rasis containing lagna, Moon, and Sun in the
+    muhurta chart. Rasis with 30+ rekhas in natal SAV are favorable.
+
+# ===========================================================================
+# BHINNASHTAKAVARGA (BAV) INTERPRETATION
+# ===========================================================================
+bav_interpretation:
+  abbreviation: "BAV"
+  also_known_as: "Bhinna Ashtakavarga"
+  meaning: "Bhinna = separate"
+  definition: >
+    For each planet, count the number of references (out of 8) from which
+    the planet is benefic in each rasi. This count (0-8) is the number of
+    rekhas in that rasi for that planet's BAV.
+  thresholds:
+    favorable: "5, 6, 7, or 8 rekhas - planet is benefic from more references, favorable"
+    unfavorable: "3, 2, 1, or 0 rekhas - planet is malefic from more references, unfavorable"
+    neutral: "4 rekhas - planet is neutral"
+  usage: "Can be used in both natal charts and transit charts"
+
+# ===========================================================================
+# PRASTAARA ASHTAKAVARGA (PAV)
+# ===========================================================================
+prastaarashtakavarga:
+  abbreviation: "PAV"
+  meaning: "Prastaara = spread-out"
+  definition: >
+    A spreadsheet that shows the exact references from which a planet
+    is benefic in each rasi. One PAV is prepared for each planet.
+  purpose: >
+    When BAV count alone is not enough (e.g., you need to know if Jupiter
+    is benefic with respect to Venus specifically in a rasi for marriage
+    prediction), PAV shows the detailed breakdown by reference.
+  relationship_to_bav: >
+    The sum of all entries in each column (rasi) of a PAV gives the
+    number of rekhas in that rasi in the BAV.
+  table_number: 27
+
+# ===========================================================================
+# DIVISIONAL CHARTS
+# ===========================================================================
+divisional_charts:
+  applicability: >
+    Ashtakavarga applies to ALL divisional charts, not just rasi chart.
+    Parasara does not restrict it to rasi charts. The benefic houses for
+    each planet with respect to the 8 references are the same in all charts.
+  usage: >
+    BAV and SAV can be computed for any divisional chart using the same
+    tables. This is invaluable for interpreting transits with respect to
+    natal positions in divisional charts.
+  example: >
+    D-10 for career analysis: SAV of D-10 shows which houses are strong
+    for professional matters. D-12 for father-related matters, etc.
+
+# ===========================================================================
+# SODHYA PINDAS (Reduction Process)
+# ===========================================================================
+sodhya_pindas:
+  overview: >
+    By applying reductions on BAV values, we get Sodhita Ashtakavarga (SoAV).
+    From SoAV, we compute Sodhya Pindas which are used in transit analysis
+    for predicting key events.
+
+  # Step 1: Trikona Sodhana
+  trikona_sodhana:
+    name: "Trikona Sodhana (Trinal Reduction)"
+    section: "12.7.1"
+    description: >
+      Apply reduction on sets of mutual trines separately:
+      Set 1: Ar, Le, Sg (Fire)
+      Set 2: Ta, Vi, Cp (Earth)
+      Set 3: Ge, Li, Aq (Air)
+      Set 4: Cn, Sc, Pi (Water)
+    trinal_sets:
+      fire:  [Ar, Le, Sg]
+      earth: [Ta, Vi, Cp]
+      air:   [Ge, Li, Aq]
+      water: [Cn, Sc, Pi]
+    rules:
+      - rule: 1
+        condition: "At least one rasi has zero"
+        action: "No reduction necessary"
+      - rule: 2
+        condition: "All three rasis have the same value"
+        action: "Make all three zero"
+      - rule: 3
+        condition: "Different non-zero values"
+        action: "Take the lowest value and subtract it from all three values"
+    note: >
+      Rules (1) and (2) are special cases of (3). The idea is always to
+      subtract the lowest value from others. Following Parasara.
+
+  # Step 2: Ekaadhipatya Sodhana
+  ekaadhipatya_sodhana:
+    name: "Ekaadhipatya Sodhana (Co-owned Reduction)"
+    section: "12.7.2"
+    description: >
+      After Trikona Sodhana, apply reduction on pairs of signs owned by
+      the same planet.
+    co_owned_pairs:
+      mars:    [Ar, Sc]
+      venus:   [Ta, Li]
+      mercury: [Ge, Vi]
+      jupiter: [Sg, Pi]
+      saturn:  [Cp, Aq]
+    rules:
+      - rule: 1
+        condition: "At least one rasi has zero"
+        action: "No reduction necessary, stop"
+      - rule: 2
+        condition: "Both rasis are occupied by a planet"
+        action: "No reduction necessary, stop"
+      - rule: 3
+        condition: "One rasi occupied, other empty"
+        sub_rules:
+          - sub: "a"
+            condition: "Empty rasi has lower value"
+            action: "Replace empty rasi value with zero"
+          - sub: "b"
+            condition: "Empty rasi has higher value"
+            action: "Replace empty rasi value with the occupied rasi's value"
+      - rule: 4
+        condition: "Both rasis are empty"
+        sub_rules:
+          - sub: "a"
+            condition: "Both have same value"
+            action: "Replace both with zero"
+          - sub: "b"
+            condition: "Different values"
+            action: "Replace the higher value with the lower value"
+
+  # Step 3: Computing Sodhya Pinda
+  sodhya_pinda_computation:
+    name: "Sodhya Pinda"
+    section: "12.7.3"
+    description: >
+      After Trikona and Ekaadhipatya sodhana on BAV, we get Sodhita
+      Ashtakavarga (SoAV). From SoAV, compute Sodhya Pinda for each planet.
+    formula: "Sodhya Pinda = Rasi Pinda + Graha Pinda"
+
+    rasi_pinda:
+      description: >
+        For each rasi, multiply the SoAV value by the rasi multiplier
+        (Table 28). Sum all 12 products.
+      # Table 28: Multipliers in Rasimana
+      table_number: 28
+      multipliers:
+        Ar: 7
+        Ta: 10
+        Ge: 8
+        Cn: 4
+        Le: 10
+        Vi: 6
+        Li: 7
+        Sc: 8
+        Sg: 9
+        Cp: 5
+        Aq: 11
+        Pi: 12
+
+    graha_pinda:
+      description: >
+        For each planet, find which rasi it occupies and get the SoAV value
+        for that rasi. Multiply by the planet multiplier (Table 29). Sum
+        all 7 products.
+      # Table 29: Multipliers in Grahamana
+      table_number: 29
+      multipliers:
+        Sun: 5
+        Moon: 5
+        Mars: 8
+        Mercury: 5
+        Jupiter: 10
+        Venus: 7
+        Saturn: 5
+
+  sodhita_ashtakavarga:
+    abbreviation: "SoAV"
+    definition: >
+      The BAV after applying both Trikona Sodhana and Ekaadhipatya Sodhana.
+    usage:
+      transit_analysis: "Sodhya Pindas derived from SoAV are used to predict key events"
+      vaastu: >
+        The direction signified by rasis with most rekhas in SoAV determines
+        room placement: Venus SoAV for bedroom, Jupiter for money/jewels,
+        Moon for living room, Mercury for study room, Sun for pooja room.
+
+# ===========================================================================
+# CONTROVERSIES
+# ===========================================================================
+controversies:
+  section: "12.8"
+
+  naming_convention:
+    description: >
+      Some authors use bindu (dot) for benefic and rekha (line) for malefic,
+      which is the opposite of Parasara's convention. This is merely a
+      difference in naming, not a substantive issue.
+
+  parasara_vs_varahamihira:
+    description: >
+      There are inconsistencies between Parasara and Varahamihira (600 AD)
+      in the benefic house lists for Moon and Venus. May be due to
+      corruption of texts over time. This book follows Parasara due to
+      his superior error-resistant encoding method (triple cross-checking).
+    discrepancies:
+      - planet: Moon
+        issue: "9th from Moon"
+        parasara: "benefic"
+        varahamihira: "malefic"
+        related: "9th from Mars is reversed too"
+      - planet: Moon
+        issue: "2nd from Jupiter"
+        parasara: "benefic"
+        varahamihira: "malefic"
+        related: "12th from Jupiter is reversed too"
+      - planet: Venus
+        issue: "4th from Mars"
+        parasara: "benefic"
+        varahamihira: "malefic"
+        related: "5th from Mars is reversed too"
+
+  house_division:
+    description: >
+      This book rejects Sripathi/Porphyry house division for ashtakavarga.
+      Each rasi is one house. The 1st house is the rasi containing the
+      reference point, regardless of degree proximity.
+
+# ===========================================================================
+# WORKED EXAMPLE DATA (Exercise 22 - Chart 7)
+# ===========================================================================
+worked_example:
+  reference: "Exercise 22 (Chart 7)"
+  bav:
+    #       Ar  Ta  Ge  Cn  Le  Vi  Li  Sc  Sg  Cp  Aq  Pi
+    Sun:    [4,  2,  3,  4,  6,  5,  5,  3,  2,  6,  6,  2]
+    Moon:   [6,  3,  5,  3,  5,  5,  6,  3,  3,  4,  4,  2]
+    Mars:   [3,  2,  3,  4,  2,  5,  4,  3,  3,  4,  3,  3]
+    Mercury: [4, 6,  4,  3,  4,  7,  4,  5,  6,  3,  5,  3]
+    Jupiter: [4, 4,  3,  5,  6,  5,  6,  4,  6,  4,  3,  6]
+    Venus:  [3,  5,  5,  4,  6,  2,  5,  6,  5,  2,  7,  4]
+    Saturn: [3,  2,  2,  3,  5,  6,  3,  4,  1,  3,  6,  1]
+  sav:      [27, 24, 25, 26, 34, 35, 31, 28, 26, 26, 34, 21]
+  soav:
+    Sun:    [2,  0,  0,  2,  4,  3,  2,  1,  0,  4,  3,  0]
+    Moon:   [3,  0,  1,  1,  2,  1,  2,  1,  0,  1,  0,  0]
+    Mars:   [1,  0,  0,  1,  0,  3,  1,  0,  1,  2,  0,  0]
+    Mercury: [0, 3,  0,  0,  0,  4,  0,  2,  2,  0,  1,  0]
+    Jupiter: [0, 0,  0,  1,  2,  1,  3,  0,  2,  0,  0,  0]
+    Venus:  [0,  3,  2,  0,  3,  0,  0,  2,  2,  0,  4,  0]
+    Saturn: [2,  0,  0,  2,  4,  4,  1,  3,  0,  1,  4,  0]
+  sodhya_pindas:
+    Sun:     { rasi_pinda: 152, graha_pinda: 81,  sodhya_pinda: 233 }
+    Moon:    { rasi_pinda: 85,  graha_pinda: 55,  sodhya_pinda: 140 }
+    Mars:    { rasi_pinda: 52,  graha_pinda: 43,  sodhya_pinda: 95  }
+    Mercury: { rasi_pinda: 95,  graha_pinda: 33,  sodhya_pinda: 128 }
+    Jupiter: { rasi_pinda: 68,  graha_pinda: 56,  sodhya_pinda: 124 }
+    Venus:   { rasi_pinda: 154, graha_pinda: 54,  sodhya_pinda: 208 }
+    Saturn:  { rasi_pinda: 162, graha_pinda: 63,  sodhya_pinda: 225 }

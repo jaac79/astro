@@ -1,0 +1,574 @@
+source: "Vedic Astrology: An Integrated Approach, P.V.R. Narasimha Rao"
+chapter: 15
+pages: "161-177"
+pdf_pages: "170-186"
+topic: "Strength of Planets and Rasis"
+
+# =============================================================================
+# 15.1 Introduction
+# =============================================================================
+introduction:
+  description: >
+    There are different ways of measuring the strengths of planets and rasis
+    for different purposes. Different strength measures serve different purposes
+    and should not be used interchangeably.
+
+# =============================================================================
+# 15.2 Why Different Strengths
+# =============================================================================
+purpose_of_different_strengths:
+  shadbala:
+    purpose: >
+      Determines which planet dominates when two or more planets influence the
+      same house or participate in a yoga. The planet with the highest shadbala
+      acts as the group leader and gives the results on the group's behalf.
+  ashtakavarga_bala:
+    purpose: >
+      Shows the ability of a planet to deliver its own results in harmony with
+      other planetary forces at work in a chart. A planet with good shadbala
+      but low ashtakavarga strength will be unable to deliver its goods.
+    note: >
+      Ashtakavarga strength can differ across divisional charts. A planet may
+      be effective in one area of life (divisional chart) but not another.
+  avastha_bala:
+    purpose: >
+      Shows the state (avastha) a planet is in. A planet must be in a good
+      state to give good results. There are states related to age, alertness,
+      mood, and activity.
+  vimsopaka_bala:
+    purpose: >
+      Shows the overall strength of a planet and its ability to play an
+      important role in one's life, rather than effectiveness in a specific
+      area of life. Used when considering a planet as a partner in the
+      overall chart, not just for a specific project/house.
+  simple_strength_rules:
+    purpose: >
+      For trivial determinations like who initiates dasas, antardasas, etc.
+      Very simple rules different from shadbala, ashtakavarga, avastha, or
+      vimsopaka bala.
+
+# =============================================================================
+# 15.3 Shadbala and Astakavarga Bala
+# =============================================================================
+shadbala:
+  description: >
+    Shadbala is a measure of the strength of a planet based on six sources
+    of strength. The computation details are in "Brihat Parasara Hora Sastram"
+    by Parasara and "Graha and Bhava Balas" by Dr. B.V. Raman. Most computer
+    software programs give shadbala with minor differences between definitions.
+  six_sources:
+    - name: "Sthana Bala"
+      meaning: "Strength due to placement"
+    - name: "Kaala Bala"
+      meaning: "Strength due to time"
+    - name: "Dig Bala"
+      meaning: "Strength due to directions"
+    - name: "Drig Bala"
+      meaning: "Strength due to aspects"
+    - name: "Cheshta Bala"
+      meaning: "Strength due to motion"
+    - name: "Naisargika Bala"
+      meaning: "Strength due to inherent nature"
+  usage: >
+    When two or more planets influence the same house or participate in a yoga,
+    the planet with the highest shadbala is most likely to give the results.
+    The planet with the strongest shadbala is like a group leader who acts on
+    the group's behalf.
+  reference_texts:
+    - "Brihat Parasara Hora Sastram by Parasara"
+    - "Graha and Bhava Balas by Dr. B.V. Raman"
+  note: "Detailed computation is beyond the scope of this book."
+
+ashtakavarga_bala:
+  description: >
+    Shows how other planets support or oppose a planet. Unlike shadbala, it
+    does not show how capable a planet is of leading and giving results of a
+    group of planets. It shows how capable a planet is of giving its own
+    results, in harmony with other planetary forces.
+
+# =============================================================================
+# 15.4 Avasthas (States)
+# =============================================================================
+avasthas:
+  description: >
+    Avastha literally means "state". There are different possible states of
+    a planet. Categories include: age-related, alertness-related,
+    attitude/mood-related, and activity-related states.
+
+  # ---------------------------------------------------------------------------
+  # 15.4.1 State Related to Age
+  # ---------------------------------------------------------------------------
+  age_related:
+    section: "15.4.1"
+    description: >
+      One of the states of a planet has to do with its age. A planet in
+      childhood or old age may not be very effective, similar to how a
+      10-year-old child or 80-year-old man have limitations.
+    table_35_avasthas_related_to_age:
+      columns: ["in_odd_rasis", "in_even_rasis", "avastha", "meaning", "results"]
+      rows:
+        - in_odd_rasis: "0-6 deg"
+          in_even_rasis: "24-30 deg"
+          avastha: "Saisava"
+          meaning: "Child"
+          results: "Quarter"
+        - in_odd_rasis: "6-12 deg"
+          in_even_rasis: "18-24 deg"
+          avastha: "Kumaara"
+          meaning: "Adolescent"
+          results: "Half"
+        - in_odd_rasis: "12-18 deg"
+          in_even_rasis: "12-18 deg"
+          avastha: "Yuva"
+          meaning: "Youth"
+          results: "Full"
+        - in_odd_rasis: "18-24 deg"
+          in_even_rasis: "6-12 deg"
+          avastha: "Vriddha"
+          meaning: "Old"
+          results: "Some"
+        - in_odd_rasis: "24-30 deg"
+          in_even_rasis: "0-6 deg"
+          avastha: "Mrita"
+          meaning: "Dead"
+          results: "None"
+    note: >
+      Age is just one factor deciding a planet's effectiveness. Just as there
+      are child prodigies and wizards with wrinkles, a planet can give good
+      results irrespective of its age-related state.
+
+  # ---------------------------------------------------------------------------
+  # 15.4.2 State Related to Alertness
+  # ---------------------------------------------------------------------------
+  alertness_related:
+    section: "15.4.2"
+    description: "Three alertness-related states of planets."
+    states:
+      - name: "Jaagrita"
+        meaning: "Awake"
+        condition: "Planet in its exaltation rasi or own rasi"
+        results: "Full results"
+      - name: "Swapna"
+        meaning: "Dreaming"
+        condition: "Planet in a rasi owned by a neutral or friendly planet"
+        results: "Medium results"
+      - name: "Sushupta"
+        meaning: "Asleep"
+        condition: "Planet in its debilitation rasi or a rasi owned by an enemy"
+        results: "Negligible results"
+
+  # ---------------------------------------------------------------------------
+  # 15.4.3 State Related to Attitude and Mood
+  # ---------------------------------------------------------------------------
+  attitude_mood_related:
+    section: "15.4.3"
+    description: "Nine states of planets related to attitude and mood."
+    primary_states:
+      - index: 1
+        name: "Deepta"
+        meaning: "Bright"
+        condition: "Planet in its exaltation rasi"
+      - index: 2
+        name: "Swastha"
+        meaning: "Doing well, contented, comfortable, natural"
+        condition: "Planet in its own rasi"
+      - index: 3
+        name: "Mudita"
+        meaning: "Delighted"
+        condition: "Planet in a good friend's rasi"
+      - index: 4
+        name: "Saanta"
+        meaning: "Peaceful"
+        condition: "Planet in a friend's rasi"
+      - index: 5
+        name: "Deena"
+        meaning: "Sad, depressed"
+        condition: "Planet in a neutral planet's rasi"
+      - index: 6
+        name: "Dukhita"
+        meaning: "Distressed, miserable"
+        condition: "Planet in an enemy's rasi"
+      - index: 7
+        name: "Vikala"
+        meaning: "Crippled, confused"
+        condition: "Planet joined by malefic planets"
+      - index: 8
+        name: "Khala"
+        meaning: "Mischievous, scheming"
+        condition: "Planet in a malefic planet's rasi"
+      - index: 9
+        name: "Kopita"
+        meaning: "Angry"
+        condition: "Planet joined closely by Sun"
+
+    additional_states:
+      - name: "Lajjita"
+        meaning: "Ashamed"
+        condition: "Planet in the 5th house joined by Sun, Mars, Saturn, Rahu, and Ketu"
+      - name: "Garvita"
+        meaning: "Proud"
+        condition: "Planet in its exaltation rasi or moolatrikona rasi"
+      - name: "Kshudhita"
+        meaning: "Hungry"
+        condition: "Planet in enemy's rasi or conjoined/aspected by enemies or conjoined by Saturn"
+      - name: "Trishita"
+        meaning: "Thirsty"
+        condition: "Planet in a watery rasi, aspected by enemies, without aspect of benefics"
+      - name: "Mudita"
+        meaning: "Delighted"
+        condition: "Planet in friend's sign, conjoined/aspected by friends and conjoined by Jupiter"
+      - name: "Kshobhita"
+        meaning: "Shaken, agitated"
+        condition: "Planet conjoined by Sun and aspected by malefics or enemies"
+
+    effects_on_houses:
+      - "If a house contains planets in Kshudhita or Kshobhita avasthas, the significations of the house are affected."
+      - "If a planet in the 5th house is in Lajjita avastha, there may be losses related to progeny."
+      - "If a planet in the 7th house is in Kshobhita avastha, there may be loss of spouse."
+
+  # ---------------------------------------------------------------------------
+  # 15.4.4 States Related to Activity (Sayanaadi Avasthas)
+  # ---------------------------------------------------------------------------
+  activity_related:
+    section: "15.4.4"
+    description: >
+      There are 12 possible states of a planet related to its activity. This
+      state is the most important of all states. Sayanaadi avasthas are the
+      most important of all avasthas.
+
+    formula:
+      description: >
+        For each planet, compute the avastha using the following formula.
+      variables:
+        C: "Number of the constellation (nakshatra) occupied by the planet (1 for Aswini, 2 for Bharani, etc.)"
+        P: "Index of the planet (1 for Sun, 2 for Moon, 3 for Mars, 4 for Mercury, 5 for Jupiter, 6 for Venus, 7 for Saturn, 8 for Rahu, 9 for Ketu)"
+        A: "Index of the navamsa occupied by the planet within its rasi (1-9, i.e. which 3d20m segment the planet is in within the sign)"
+        M: "Constellation number occupied by Moon"
+        G: "Ghati running at birth (sunrise-based; 1 hour = 2.5 ghatis)"
+        L: "Rasi number occupied by lagna (1 for Ar, 2 for Ta, etc.)"
+      step_1_avastha_index: "(C x P x A) + M + G + L, divide by 12, take remainder"
+      step_1_lookup: "Use remainder as avastha index in Table 36 (Sayanaadi Avasthas)"
+
+    strength_of_activity:
+      description: >
+        After finding the avastha index, compute the strength of the activity.
+      steps:
+        - "Square the avastha index (index x index)"
+        - "Add the number corresponding to the first sound in the first syllable of the native's name (from Table 37)"
+        - "Take remainder when divided by 12"
+        - "Add planetary adjustment: 5 for Sun and Jupiter, 2 for Moon and Mars, 3 for Mercury/Venus/Saturn, 4 for Rahu and Ketu"
+        - "Divide sum by 3, take remainder"
+      result_interpretation:
+        1: "Drishti - medium results"
+        2: "Cheshta - full results"
+        0_or_3: "Vicheshta - very little results"
+
+    table_36_sayanaadi_avasthas:
+      columns: ["avastha_index", "name", "meaning"]
+      rows:
+        - avastha_index: 1
+          name: "Sayana"
+          meaning: "Lying down, resting"
+        - avastha_index: 2
+          name: "Upavesana"
+          meaning: "Sitting down"
+        - avastha_index: 3
+          name: "Netrapaani"
+          meaning: "Eyes and hands"
+        - avastha_index: 4
+          name: "Prakaasana"
+          meaning: "Shining"
+        - avastha_index: 5
+          name: "Gamana"
+          meaning: "Going (on the move)"
+        - avastha_index: 6
+          name: "Aagamana"
+          meaning: "Coming, returning"
+        - avastha_index: 7
+          name: "Sabhaa"
+          meaning: "Being at an assembly (Sabhaa vasati)"
+        - avastha_index: 8
+          name: "Aagama"
+          meaning: "Coming/Acquiring"
+        - avastha_index: 9
+          name: "Bhojana"
+          meaning: "Eating"
+        - avastha_index: 10
+          name: "Nriyalipsaa"
+          meaning: "Longing to dance"
+        - avastha_index: 11
+          name: "Kautuka"
+          meaning: "Being eager"
+        - avastha_index: 12
+          name: "Nidraa"
+          meaning: "Sleeping"
+
+    table_37_sound_numbers:
+      description: "Numbers assigned to sounds for the name-based computation."
+      rows:
+        - number: 1
+          sounds: "a, ka, chh, d (alveolar), dh (dental), bh, v"
+        - number: 2
+          sounds: "i, kh, j, dh (alveolar), n (dental), m, s/sh (palatal)"
+        - number: 3
+          sounds: "u, g, jh, t, p, y, sh (alveolar)"
+        - number: 4
+          sounds: "e, gh, t (alveolar), th (dental), ph, r, s (dental)"
+        - number: 5
+          sounds: "o, ch, th (alveolar), d (dental), b, l, h"
+
+    planetary_adjustments:
+      Sun: 5
+      Moon: 2
+      Mars: 2
+      Mercury: 3
+      Jupiter: 5
+      Venus: 3
+      Saturn: 3
+      Rahu: 4
+      Ketu: 4
+
+    importance_of_sayanaadi:
+      description: "Special rules from Parasara regarding Sayanaadi avasthas."
+      rules:
+        - "If a benefic is in Sayana avastha, the house benefits from his presence."
+        - "If a malefic is in Nidraa avastha in the 7th house without conjunction or aspect of another malefic, it is auspicious."
+        - "If a malefic is in Bhojana avastha, the house containing it is destroyed."
+        - "If a malefic is in the 5th house in Sayana or Nidraa avastha, it is auspicious."
+        - "If a malefic is in the 8th house in Sayana or Nidraa avastha, it brings death by royal wrath."
+        - "If a malefic occupies the 10th house in Bhojana or Sayana avastha, all kinds of miseries may be expected."
+        - "If a benefic or a planet in own or exaltation rasi occupies the 1st, 5th, 7th, or 10th house in Prakasana, Nrityalipsaa, or Kautuka avasthas, it brings Raja Yoga."
+        - "Parasara specifically mentioned Moon in the 10th house in Kautuka or Prakaasana avasthas (Raja Yoga)."
+
+    caution: >
+      One should not be carried away with avasthas. They are only the "states"
+      of the planet. The houses influenced by the planet in various divisional
+      charts are more important in deciding results. Avoid making predictions
+      based solely on thumbrules and look-up tables.
+
+# =============================================================================
+# 15.5 Other Simple Strengths
+# =============================================================================
+
+# ---------------------------------------------------------------------------
+# 15.5.1 Stronger Co-Lord
+# ---------------------------------------------------------------------------
+stronger_co_lord:
+  section: "15.5.1"
+  description: >
+    Used when finding the arudha pada of a house falling in Scorpio or
+    Aquarius. We need the stronger of Mars & Ketu (co-lords of Sc) and
+    Saturn & Rahu (co-lords of Aq). The stronger lord acts as the lord
+    and decides the arudha pada. Also used in finding dasa duration in
+    many rasi dasas (e.g. Narayana dasa).
+  co_lord_pairs:
+    Scorpio: ["Mars", "Ketu"]
+    Aquarius: ["Saturn", "Rahu"]
+
+  basic_rule: >
+    If one of the co-lords is in the rasi itself, take the other planet as
+    the primary lord. For example, if Saturn is in Aq and Rahu is elsewhere,
+    Rahu becomes the primary lord of Aq.
+
+  tiebreaker_rules:
+    description: >
+      If the basic rule does not apply, use the following rules in order.
+      Go from one rule to the next only if there is no winner. Stop as
+      soon as a winner is found.
+    rules:
+      - rule_number: 1
+        name: "Number of conjunctions"
+        description: >
+          If one planet is joined by more planets than the other, it is
+          stronger.
+        example: >
+          Saturn in Pi with Mars and Sun (2 companions) vs Rahu in Ar with
+          Jupiter (1 companion). Saturn is stronger, becomes primary lord of Aq.
+
+      - rule_number: 2
+        name: "Conjunction/aspect by Jupiter, Mercury, and dispositor"
+        description: >
+          Count how many of the following three planets conjoin/aspect each
+          co-lord: (1) Jupiter, (2) Mercury, (3) dispositor. The planet with
+          a higher count is stronger. Must use rasi aspects.
+        example: >
+          Saturn in Ge with Mercury (conjoined by Mercury and dispositor Mercury,
+          count=2) vs Rahu in Ar aspected by Mars/dispositor from Le (count=1).
+          Saturn wins.
+
+      - rule_number: 3
+        name: "Exaltation"
+        description: >
+          If one planet is exalted and the other is not, the exalted planet
+          is stronger.
+        example: >
+          Saturn exalted in Li vs Rahu in Cn. Saturn is stronger.
+
+      - rule_number: 4
+        name: "Natural strength of rasi"
+        description: >
+          Consider the natural strength of the rasi containing the planet.
+          Dual rasis are stronger than fixed rasis, and fixed rasis are
+          stronger than movable rasis.
+        rasi_strength_order:
+          strongest: "Dual (Ge, Vi, Sg, Pi)"
+          middle: "Fixed (Ta, Le, Sc, Aq)"
+          weakest: "Movable (Ar, Cn, Li, Cp)"
+        example: >
+          Mars in Ge (dual) vs Ketu in Aq (fixed). Mars is stronger,
+          becomes primary lord of Sc.
+
+      - rule_number: 5
+        name: "Tiebreaker for dasa duration"
+        description: >
+          (a) When finding dasa duration: take the planet giving a larger
+          length for dasa.
+          (b) When finding lord for arudha padas etc: take the planet that
+          is more advanced in its rasi. For Rahu and Ketu, measure
+          advancement from the end of the rasi.
+        example_dasa: >
+          Saturn in Ge gives 8 years, Rahu in Vi gives 5 years for Narayana
+          dasa. Saturn is used.
+        example_arudha: >
+          Mars at 23Li17 (advancement 23d17m) vs Ketu at 5Cn54
+          (advancement from end = 30d - 5d54m = 24d6m). Ketu is more
+          advanced, so Ketu is stronger and becomes primary lord of Sc.
+
+# ---------------------------------------------------------------------------
+# 15.5.2 Stronger Rasi
+# ---------------------------------------------------------------------------
+stronger_rasi:
+  section: "15.5.2"
+  description: >
+    When computing rasi dasas, we sometimes need to find the strongest rasi
+    out of 2 or more rasis. These rules are also used for finding the stronger
+    rasi owned by a planet when computing its graha arudha. Go from one rule
+    to the next only if there is no winner.
+  rules:
+    - rule_number: 1
+      name: "Number of planets"
+      description: >
+        If one rasi contains more planets than the other, it is stronger.
+      example: >
+        Ar contains Saturn and Jupiter, Li contains Venus. Ar is stronger.
+
+    - rule_number: 2
+      name: "Occupation/aspect by Jupiter, Mercury, and rasi lord"
+      description: >
+        Count how many of the following three planets occupy or aspect each
+        rasi: (1) Jupiter, (2) Mercury, (3) the rasi's lord. The rasi with
+        a higher count is stronger. Must use rasi aspects.
+      example: >
+        Jupiter in Ar (count=1 for Ar). Li aspected by Mercury and lord Venus
+        (count=2 for Li). Li is stronger.
+
+    - rule_number: 3
+      name: "Exalted planet"
+      description: >
+        If one rasi contains an exalted planet and the other does not, the
+        rasi with the exalted planet is stronger.
+      example: >
+        Saturn exalted in Li. Li is stronger than Ar.
+
+    - rule_number: 4
+      name: "Lord in rasi of different oddity"
+      description: >
+        A rasi whose lord is in a rasi with a different oddity (odd/even)
+        is stronger than a rasi whose lord is in a rasi with the same oddity.
+      example: >
+        Ar (odd) lord Mars in Le (odd) = same oddity. Li (odd) lord Venus
+        in Cn (even) = different oddity. Li is stronger.
+      note: >
+        When finding the stronger rasi owned by a planet for graha arudha,
+        this rule will surely resolve the tie after rule (3), because the
+        two rasis owned by each planet have different oddity.
+
+    - rule_number: 5
+      name: "Natural strength of rasi"
+      description: >
+        Dual rasis are stronger than fixed rasis, and fixed rasis are
+        stronger than movable rasis. Not useful in Narayana dasa (since
+        a rasi and the 7th from it are always the same type), but useful
+        in some other dasas.
+      rasi_strength_order:
+        strongest: "Dual (Ge, Vi, Sg, Pi)"
+        middle: "Fixed (Ta, Le, Sc, Aq)"
+        weakest: "Movable (Ar, Cn, Li, Cp)"
+
+    - rule_number: 6
+      name: "Longitude advancement of lords"
+      description: >
+        Compare the advancement (longitude within the rasi) of each rasi's
+        lord. The rasi whose lord has higher advancement is stronger. For
+        Rahu and Ketu, measure advancement from the end of the rasi.
+      example: >
+        Mars at 23Ge17 (advancement = 23d17m) vs Venus at 19Le51
+        (advancement = 19d51m). Mars more advanced, so Ar is stronger than Li.
+      note_scorpio_aquarius: >
+        For Aq and Sc, use the stronger lord (co-lord determination). For
+        Rahu and Ketu, advancement in rasi is measured from the end of the
+        rasi. If Rahu is at 9Sc34, advancement = 30d - 9d34m = 20d26m.
+
+  warning: >
+    The above rules are too general. One should understand the meaning of
+    each rule and adapt based on the situation. For example:
+    - Aspect of Mercury, Jupiter, and lord is important for Narayana dasa
+      and other phalita dasas.
+    - In ayur dasas (longevity), aspect of luminaries (Sun and Moon) is
+      important. Aspect of all other planets is equally important. There is
+      no significance for the aspect of lord.
+    - In dasas based on AK (e.g. Atmakaraka kendradi graha/rasi dasas),
+      the sign containing AK is stronger than any other rasi.
+    - After checking aspects of Mercury, Jupiter, and rasi lord, look at
+      placement of rasi lord from AK. A rasi whose lord is in a quadrant
+      from AK is stronger than one whose lord is in a panaphara from AK.
+    - These AK-based rules are not applicable to all dasas.
+
+# =============================================================================
+# Computation Example (Example 49 from book)
+# =============================================================================
+example_49:
+  description: "Activity-related avastha computation example"
+  birth_data:
+    time: "5:50 pm IST"
+    date: "4 April 1970"
+    place: "Machilipatnam, India (81E12, 16N15)"
+    name_starts_with: "V"
+  common_values:
+    M: 25  # Moon in Poorvabhadrapada (25th constellation)
+    G: 30  # 11h50m since sunrise = 710 min / 24 min per ghati = 29.6, so 30th ghati
+    L: 6   # Lagna in Virgo (6th rasi)
+    sound_number: 1  # "V" corresponds to number 1
+
+  mercury:
+    position: "3Ar08"
+    C: 1   # Aswini (1st constellation)
+    P: 4   # Mercury is 4th planet from Sun
+    A: 1   # First 1/9th of Ar
+    formula: "(1 x 4 x 1) + 25 + 30 + 6 = 65"
+    avastha_index: 5  # 65 mod 12 = 5
+    avastha: "Gamana (going/on the move)"
+    strength_calc: "5^2=25, +1(sound)=26, 26 mod 12=2, +3(Mercury adj)=5, 5 mod 3=2"
+    strength: "Cheshta (full results)"
+
+  jupiter:
+    position: "9Li46"
+    C: 15  # Swaati (15th constellation)
+    P: 5   # Jupiter is 5th planet from Sun
+    A: 3   # Third 1/9th of Li
+    formula: "(15 x 5 x 3) + 25 + 30 + 6 = 286"
+    avastha_index: 10  # 286 mod 12 = 10
+    avastha: "Nriyalipsaa (urge for dance)"
+    strength_calc: "10^2=100, +1(sound)=101, 101 mod 12=5, +5(Jupiter adj)=10, 10 mod 3=1"
+    strength: "Drishti (medium results)"
+
+  venus:
+    position: "7Ar55"
+    C: 1   # Aswini (1st constellation)
+    P: 6   # Venus is 6th planet from Sun
+    A: 3   # Third 1/9th of Ar
+    formula: "(1 x 6 x 3) + 25 + 30 + 6 = 79"
+    avastha_index: 7  # 79 mod 12 = 7
+    avastha: "Sabhaa (assembly/council)"
+    strength_calc: "7^2=49, +1(sound)=50, 50 mod 12=2, +3(Venus adj)=5, 5 mod 3=2"
+    strength: "Cheshta (full results)"

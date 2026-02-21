@@ -1,0 +1,163 @@
+source: "Vedic Astrology: An Integrated Approach, P.V.R. Narasimha Rao"
+chapter: 13
+pages: "142-144"
+table: 30
+title: "Functional nature of planets"
+
+# Rules for determining functional nature:
+# - Lords of trines (1st, 5th, 9th) from lagna are functional benefics.
+# - Lords of 3rd, 6th, and 11th are functional malefics.
+# - Lord of a quadrant (1st, 4th, 7th, 10th) is a functional malefic if
+#   he is a natural benefic, and functionally neutral if he is a natural malefic.
+# - Lords of 2nd, 8th, and 12th are functionally neutral. Of these, the 8th
+#   house is more malefic than the other two.
+# - A planet owning a quadrant AND a trine becomes a yogakaraka (excellent planet).
+# - In the case of planets owning two rasis, judiciously combine the two indications.
+# - Moon is not listed for movable rasis (Mesha, Karka, Thula, Makara) because
+#   his functional nature depends on whether he is waxing or waning:
+#     - Waxing Moon (natural benefic) + quadrant ownership = functional malefic
+#     - Waning Moon (natural malefic) + quadrant ownership = functionally neutral
+
+lagnas:
+  Mesha:
+    yogakaraka: []
+    functional_benefics: [Sun, Mars, Jupiter]
+    functional_malefics: [Mercury, Venus, Saturn]
+    functional_neutrals: []
+    notes: >
+      Sun owns 5th (trine). Mars owns 1st and 8th (lagna lord). Jupiter owns
+      9th and 12th (trine). Mercury owns 3rd and 6th (both malefic houses).
+      Venus owns 2nd and 7th (quadrant, natural benefic = malefic). Saturn
+      owns 10th and 11th (quadrant + malefic). Moon not listed (movable sign).
+
+  Vrishabha:
+    yogakaraka: [Saturn]
+    functional_benefics: [Sun, Mercury, Saturn]
+    functional_malefics: [Moon, Jupiter, Venus]
+    functional_neutrals: [Mars]
+    notes: >
+      Saturn owns 9th and 10th (trine + quadrant = yogakaraka). Sun owns 4th
+      (quadrant, natural malefic = neutral, but grouped as benefic). Mercury
+      owns 2nd and 5th (neutral + trine). Moon owns 3rd (malefic). Jupiter
+      owns 8th and 11th (neutral + malefic). Venus owns 1st and 6th (lagna +
+      malefic). Mars owns 7th and 12th (quadrant + neutral).
+
+  Mithuna:
+    yogakaraka: []
+    functional_benefics: [Venus]
+    functional_malefics: [Mars, Jupiter]
+    functional_neutrals: [Moon, Mercury, Saturn]
+    notes: >
+      Venus owns 5th and 12th (trine + neutral). Mars owns 6th and 11th
+      (both malefic houses). Jupiter owns 7th and 10th (two quadrants,
+      natural benefic = malefic). Moon owns 2nd (neutral). Mercury owns 1st
+      and 4th (lagna + quadrant). Saturn owns 8th and 9th (neutral + trine,
+      combined = neutral).
+
+  Karka:
+    yogakaraka: [Mars]
+    functional_benefics: [Moon, Mars, Jupiter]
+    functional_malefics: [Mercury, Venus]
+    functional_neutrals: [Sun, Saturn]
+    notes: >
+      Mars owns 5th and 10th (trine + quadrant = yogakaraka). Moon owns 1st
+      (lagna lord). Jupiter owns 6th and 9th (malefic + trine, trine prevails).
+      Mercury owns 3rd and 12th (malefic + neutral). Venus owns 4th and 11th
+      (quadrant + malefic, natural benefic = malefic). Sun owns 2nd (neutral).
+      Saturn owns 7th and 8th (quadrant + neutral).
+
+  Simha:
+    yogakaraka: [Mars]
+    functional_benefics: [Sun, Mars, Jupiter]
+    functional_malefics: [Mercury, Venus, Saturn]
+    functional_neutrals: [Moon]
+    notes: >
+      Mars owns 4th and 9th (quadrant + trine = yogakaraka). Sun owns 1st
+      (lagna lord). Jupiter owns 5th and 8th (trine + neutral). Mercury owns
+      2nd and 11th (neutral + malefic). Venus owns 3rd and 10th (malefic +
+      quadrant, natural benefic = malefic). Saturn owns 6th and 7th (malefic +
+      quadrant). Moon owns 12th (neutral). Moon, Mars, Jupiter also noted in
+      malefics column in some readings.
+
+  Kanya:
+    yogakaraka: []
+    functional_benefics: [Mercury, Venus]
+    functional_malefics: [Moon, Mars, Jupiter]
+    functional_neutrals: [Sun, Saturn]
+    notes: >
+      Mercury owns 1st and 10th (lagna + quadrant). Venus owns 2nd and 9th
+      (neutral + trine). Moon owns 11th (malefic). Mars owns 3rd and 8th
+      (malefic + neutral). Jupiter owns 4th and 7th (two quadrants, natural
+      benefic = malefic). Sun owns 12th (neutral). Saturn owns 5th and 6th
+      (trine + malefic, combined = neutral).
+
+  Thula:
+    yogakaraka: [Saturn]
+    functional_benefics: [Mercury, Venus, Saturn]
+    functional_malefics: [Sun, Mars, Jupiter]
+    functional_neutrals: []
+    notes: >
+      Saturn owns 4th and 5th (quadrant + trine = yogakaraka). Mercury owns
+      9th and 12th (trine + neutral). Venus owns 1st and 8th (lagna + neutral).
+      Sun owns 11th (malefic). Mars owns 2nd and 7th (neutral + quadrant).
+      Jupiter owns 3rd and 6th (both malefic houses). Moon not listed (movable
+      sign).
+
+  Vrischika:
+    yogakaraka: []
+    functional_benefics: [Moon, Jupiter]
+    functional_malefics: [Mercury, Venus, Saturn]
+    functional_neutrals: [Sun, Mars]
+    notes: >
+      Moon owns 9th (trine). Jupiter owns 2nd and 5th (neutral + trine).
+      Mercury owns 8th and 11th (neutral + malefic). Venus owns 7th and 12th
+      (quadrant + neutral, natural benefic = malefic). Saturn owns 3rd and 4th
+      (malefic + quadrant). Sun owns 10th (quadrant, natural malefic = neutral).
+      Mars owns 1st and 6th (lagna + malefic, combined = neutral).
+
+  Dhanus:
+    yogakaraka: []
+    functional_benefics: [Sun, Mars]
+    functional_malefics: [Venus, Saturn]
+    functional_neutrals: [Moon, Mercury, Jupiter]
+    notes: >
+      Sun owns 9th (trine). Mars owns 5th and 12th (trine + neutral). Venus
+      owns 6th and 11th (both malefic houses). Saturn owns 2nd and 3rd
+      (neutral + malefic). Moon owns 8th (neutral). Mercury owns 7th and 10th
+      (two quadrants). Jupiter owns 1st and 4th (lagna + quadrant).
+
+  Makara:
+    yogakaraka: [Venus]
+    functional_benefics: [Venus, Mercury, Saturn]
+    functional_malefics: [Moon, Mars, Jupiter]
+    functional_neutrals: [Sun]
+    notes: >
+      Venus owns 5th and 10th (trine + quadrant = yogakaraka). Mercury owns
+      6th and 9th (malefic + trine, combined as benefic). Saturn owns 1st and
+      2nd (lagna + neutral). Moon owns 7th (quadrant, natural benefic = malefic).
+      Mars owns 4th and 11th (quadrant + malefic). Jupiter owns 3rd and 12th
+      (malefic + neutral). Sun owns 8th (neutral).
+
+  Kumbha:
+    yogakaraka: [Venus]
+    functional_benefics: [Venus, Saturn]
+    functional_malefics: [Moon, Mars, Jupiter]
+    functional_neutrals: [Sun, Mercury]
+    notes: >
+      Venus owns 4th and 9th (quadrant + trine = yogakaraka). Saturn owns
+      1st and 12th (lagna + neutral). Moon owns 6th (malefic). Mars owns 3rd
+      and 10th (malefic + quadrant). Jupiter owns 2nd and 11th (neutral +
+      malefic). Sun owns 7th (quadrant, natural malefic = neutral). Mercury
+      owns 5th and 8th (trine + neutral, combined = neutral).
+
+  Meena:
+    yogakaraka: []
+    functional_benefics: [Moon, Mars]
+    functional_malefics: [Sun, Mercury, Venus, Saturn]
+    functional_neutrals: [Jupiter]
+    notes: >
+      Moon owns 5th (trine). Mars owns 2nd and 9th (neutral + trine). Sun
+      owns 6th (malefic). Mercury owns 4th and 7th (two quadrants, natural
+      benefic = malefic). Venus owns 3rd and 8th (malefic + neutral). Saturn
+      owns 11th and 12th (malefic + neutral). Jupiter owns 1st and 10th
+      (lagna + quadrant).

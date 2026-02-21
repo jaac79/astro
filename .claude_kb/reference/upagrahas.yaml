@@ -1,0 +1,278 @@
+# =============================================================================
+# Chapter 4: Upagrahas (Sub-planets / Satellites)
+# Source: Vedic Astrology - An Integrated Approach
+# Book pages: 34-37 | PDF pages: 43-46
+# =============================================================================
+
+source:
+  book: "Vedic Astrology: An Integrated Approach"
+  author: "P.V.R. Narasimha Rao"
+  chapter: 4
+  title: "Upagrahas"
+  book_pages: "34-37"
+  pdf_pages: "43-46"
+  page_offset: 9  # PDF page = book page + 9
+
+# ---------------------------------------------------------------------------
+# Section 4.1 - Introduction
+# ---------------------------------------------------------------------------
+introduction:
+  section: "4.1"
+  definition: >
+    There are 11 upagrahas (sub-planets or satellites) defined by Sage
+    Parasara. They do not appear to correspond to any physical bodies
+    (planets, stars, etc). From Sage Parasara's definition, they appear
+    to be some significant mathematical points.
+  total_count: 11
+  alternate_names:
+    - "sub-planets"
+    - "satellites"
+  authority: "Sage Parasara"
+  groups:
+    - name: "Sun-based Upagrahas"
+      section: "4.2"
+      count: 5
+      members:
+        - Dhuma
+        - Vyatipaata
+        - Parivesha
+        - Indrachaapa
+        - Upaketu
+    - name: "Time-based Upagrahas"
+      section: "4.3"
+      count: 6
+      members:
+        - Kaala
+        - Mrityu
+        - Arthaprahaara
+        - Yamaghantaka
+        - Gulika
+        - Maandi
+
+# ---------------------------------------------------------------------------
+# Section 4.2 - Sun-based Upagrahas
+# ---------------------------------------------------------------------------
+sun_based_upagrahas:
+  section: "4.2"
+  description: >
+    Five upagrahas called Dhuma, Vyatipaata, Parivesha, Indrachaapa
+    and Upaketu are defined based on Sun's longitude. The exact formulas
+    are given in Table 9. All these upagrahas are very malefic in nature.
+    Any houses occupied by them in rasi chart or divisional charts are
+    spoiled by them.
+  nature: "very malefic"
+  effect: >
+    Any houses occupied by them in rasi chart or divisional charts are
+    spoiled by them.
+
+  # Table 9: Sun-based Upagrahas - Longitude Formulas
+  table_9:
+    title: "Sun-based Upagrahas"
+    formulas:
+      - upagraha: "Dhuma"
+        formula: "Sun's longitude + 133 deg 20 min"
+        formula_symbolic: "Sun + 133:20"
+
+      - upagraha: "Vyatipaata"
+        formula: "360 deg - Dhuma's longitude"
+        formula_symbolic: "360:00 - Dhuma"
+
+      - upagraha: "Parivesha"
+        formula: "Vyatipaata's longitude + 180 deg"
+        formula_symbolic: "Vyatipaata + 180:00"
+
+      - upagraha: "Indrachaapa"
+        formula: "360 deg - Parivesha's longitude"
+        formula_symbolic: "360:00 - Parivesha"
+
+      - upagraha: "Upaketu"
+        formula: "Indrachaapa's longitude + 16 deg 40 min"
+        formula_symbolic: "Indrachaapa + 16:40"
+        formula_alternate: "Sun's longitude - 30 deg"
+        formula_alternate_symbolic: "Sun - 30:00"
+
+  relationships:
+    - pair: ["Dhuma", "Indrachaapa"]
+      separation: "180 deg"
+      note: "Dhuma and Indrachaapa are always apart by 180 degrees."
+
+    - pair: ["Vyatipaata", "Parivesha"]
+      separation: "180 deg"
+      note: "Vyatipaata and Parivesha are always apart by 180 degrees."
+
+  sign_pairs_180_degrees_apart:
+    - ["Aries", "Libra"]
+    - ["Taurus", "Scorpio"]
+    - ["Gemini", "Sagittarius"]
+    - ["Cancer", "Capricorn"]
+    - ["Leo", "Aquarius"]
+    - ["Virgo", "Pisces"]
+
+  longitude_arithmetic_note: >
+    When adding or subtracting longitudes, subtract 360 deg if the result
+    exceeds 360 deg and add 360 deg if the result is less than 0 deg.
+    Adding or subtracting 360 deg means going around the zodiac once and
+    coming to the same position. All longitudes should finally be reduced
+    to a value between 0 deg and 360 deg by adding or subtracting 360 deg
+    as many times as needed.
+
+  # Example 6 (book page 34-35)
+  example_6:
+    title: "Example 6"
+    given: "Sun is at 9 Sg 36 (i.e. 9 deg 36 min in Sagittarius)"
+    sun_longitude_calculation: "8 x 30 deg + 9 deg 36 min = 249 deg 36 min"
+    steps:
+      - step: "Dhuma"
+        calculation: "249 deg 36 min + 133 deg 20 min = 382 deg 56 min => 22 deg 56 min (subtract 360 deg)"
+        result: "22 deg 56 min in Aries"
+
+      - step: "Indrachaapa"
+        calculation: "180 deg from Dhuma"
+        result: "22 deg 56 min in Libra"
+
+      - step: "Vyatipaata"
+        calculation: "360 deg - 22 deg 56 min = 337 deg 04 min"
+        result: "7 deg 04 min in Pisces"
+
+      - step: "Parivesha"
+        calculation: "180 deg from Vyatipaata"
+        result: "7 deg 04 min in Virgo"
+
+  # Exercise 7 and answers (book page 35, 37)
+  exercise_7:
+    title: "Exercise 7"
+    given: "Sun is at 13 deg 19 min from the start of Taurus"
+    answers:
+      - upagraha: "Dhuma"
+        position: "26 deg 39 min from the start of Virgo"
+      - upagraha: "Vyatipaata"
+        position: "3 deg 21 min from the start of Libra"
+      - upagraha: "Parivesha"
+        position: "3 deg 21 min from the start of Aries"
+      - upagraha: "Indrachaapa"
+        position: "26 deg 39 min from the start of Pisces"
+      - upagraha: "Upaketu"
+        position: "19 deg 01 min from the start of Scorpio"
+
+# ---------------------------------------------------------------------------
+# Section 4.3 - Other Upagrahas (Time-based)
+# ---------------------------------------------------------------------------
+time_based_upagrahas:
+  section: "4.3"
+  description: >
+    Six upagrahas called Kaala, Mrityu, Arthaprahaara, Yamaghantaka,
+    Gulika and Maandi are more difficult to compute. They are calculated
+    based on the time of birth, the weekday, and whether the birth is
+    during the day or night.
+
+  upagrahas:
+    - name: "Kaala"
+      similar_to: "Sun"
+      nature: "malefic"
+      rises_at: "middle of Sun's part"
+      note: "Some scholars suggest Kaala rises at the beginning of Sun's part."
+
+    - name: "Mrityu"
+      similar_to: "Mars"
+      nature: "malefic"
+      rises_at: "middle of Mars's part"
+
+    - name: "Arthaprahaara"
+      alternate_name: "Artha Praharaka"
+      similar_to: "Mercury"
+      rises_at: "middle of Mercury's part"
+
+    - name: "Yamaghantaka"
+      alternate_name: "Yama ghantaka"
+      similar_to: "Jupiter"
+      rises_at: "middle of Jupiter's part"
+
+    - name: "Gulika"
+      similar_to: "Saturn"
+      rises_at: "middle of Saturn's part"
+
+    - name: "Maandi"
+      similar_to: "Saturn"
+      rises_at: "beginning of Saturn's part"
+
+  computation_method:
+    time_division:
+      description: >
+        A day starts at sunrise and ends at sunset. A night starts at
+        sunset and ends at the next day's sunrise. The length of the
+        day or night is divided into 8 equal parts depending on whether
+        the birth is during the day or night.
+      parts: 8
+
+    daytime_rule: >
+      The first part is ruled by the lord of the weekday and then
+      planets follow in the order of weekdays. The part after the one
+      ruled by Saturn is lord-less. After that, Sun's part comes.
+
+    nighttime_rule: >
+      The first part is ruled by the 5th planet from the lord of the
+      weekday (counting in weekday order). Then planets follow in the
+      order of weekdays.
+
+    weekday_planet_order:
+      - "Sun (Sunday)"
+      - "Moon (Monday)"
+      - "Mars (Tuesday)"
+      - "Mercury (Wednesday)"
+      - "Jupiter (Thursday)"
+      - "Venus (Friday)"
+      - "Saturn (Saturday)"
+
+    longitude_determination: >
+      To find the longitude of an upagraha, find the time at the middle
+      (or beginning, for Maandi) of the relevant planet's part. Then
+      determine the lagna (ascendant) rising at that time. That lagna
+      value is the upagraha's longitude.
+
+  # Table 10: Ruling planets of the 8 parts
+  table_10:
+    title: "Ruling planets"
+
+    daytime_rulers:
+      description: "Rulers of the 8 parts of the Day"
+      #              part1   part2   part3   part4   part5   part6   part7   part8
+      Sunday:      ["Sun",  "Moon", "Mars", "Merc", "Jup",  "Ven",  "Sat",  "---"]
+      Monday:      ["Moon", "Mars", "Merc", "Jup",  "Ven",  "Sat",  "---",  "Sun"]
+      Tuesday:     ["Mars", "Merc", "Jup",  "Ven",  "Sat",  "---",  "Sun",  "Moon"]
+      Wednesday:   ["Merc", "Jup",  "Ven",  "Sat",  "---",  "Sun",  "Moon", "Mars"]
+      Thursday:    ["Jup",  "Ven",  "Sat",  "---",  "Sun",  "Moon", "Mars", "Merc"]
+      Friday:      ["Ven",  "Sat",  "---",  "Sun",  "Moon", "Mars", "Merc", "Jup"]
+      Saturday:    ["Sat",  "---",  "Sun",  "Moon", "Mars", "Merc", "Jup",  "Ven"]
+
+    nighttime_rulers:
+      description: "Rulers of the 8 parts of the Night"
+      #              part1   part2   part3   part4   part5   part6   part7   part8
+      Sunday:      ["Jup",  "Ven",  "Sat",  "---",  "Sun",  "Moon", "Mars", "Merc"]
+      Monday:      ["Ven",  "Sat",  "---",  "Sun",  "Moon", "Mars", "Merc", "Jup"]
+      Tuesday:     ["Sat",  "---",  "Sun",  "Moon", "Mars", "Merc", "Jup",  "Ven"]
+      Wednesday:   ["Sun",  "Moon", "Mars", "Merc", "Jup",  "Ven",  "Sat",  "---"]
+      Thursday:    ["Moon", "Mars", "Merc", "Jup",  "Ven",  "Sat",  "---",  "Sun"]
+      Friday:      ["Mars", "Merc", "Jup",  "Ven",  "Sat",  "---",  "Sun",  "Moon"]
+      Saturday:    ["Merc", "Jup",  "Ven",  "Sat",  "---",  "Sun",  "Moon", "Mars"]
+
+  # Worked example from the book (book page 37)
+  worked_example:
+    title: "Yamaghantaka computation example"
+    given:
+      weekday: "Thursday"
+      time_of_birth: "night"
+      night_start: "6:00 PM"
+      night_end: "6:00 AM"
+    steps:
+      - "Night duration is 12 hours; each part = 12/8 = 1.5 hours."
+      - "Jupiter rules the 4th part of a Thursday night (from Table 10)."
+      - "4th part starts 4.5 hours after sunset = 10:30 PM."
+      - "4th part ends 1.5 hours later = midnight."
+      - "Jupiter's part extends from 10:30 PM to midnight."
+      - "Middle point of this part is at 11:15 PM."
+      - "Find lagna rising at 11:15 PM; that gives Yamaghantaka's longitude."
+
+  scholarly_note: >
+    Some scholars suggest that Kaala rises at the beginning of Sun's
+    part rather than the middle. The same alternative applies to the
+    other upagrahas as well. (Footnote 9, book page 36)

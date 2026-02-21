@@ -1,0 +1,873 @@
+# =============================================================================
+# Divisional Charts (Vargas) - Chapter 6
+# Source: Vedic Astrology: An Integrated Approach
+# Book pages: 43-55 | PDF pages: 52-64
+# =============================================================================
+
+source:
+  book: "Vedic Astrology: An Integrated Approach"
+  chapter: 6
+  title: "Divisional Charts"
+  book_pages: "43-55"
+  pdf_pages: "52-64"
+  page_offset: 9  # book_page + 9 = pdf_page
+
+# =============================================================================
+# Overview
+# =============================================================================
+overview:
+  description: >
+    Each rasi (sign) has many divisions. Divisions of rasis are mapped to other
+    rasis. Based on the rasis occupied by planets in various divisions,
+    divisional charts are drawn. Each divisional chart can be treated as a
+    different chart and interpreted differently. Different aspects of life are
+    seen in different divisional charts. Rasi chart is simply a special case
+    of divisional charts (no division, each rasi maps to itself).
+  notation: "D-n denotes the divisional chart based on dividing rasis into n parts."
+  parasara_divisions: 16
+  jaimini_tajaka_additions: 4
+  total_standard_divisions: 20
+  applicability: >
+    In the rest of the book, all principles described are applicable to all
+    divisional charts unless explicitly stated otherwise. We can apply all the
+    principles to all divisional charts, but we should see only specific matters
+    in each divisional chart.
+
+# =============================================================================
+# Table 11: Divisional Chart Significations
+# =============================================================================
+divisional_charts:
+  - symbol: "D-1"
+    name: "Rasi"
+    also_known_as: "Kshetra Chakra"
+    division: 1
+    arc_per_part: "30 degrees (full sign)"
+    area_of_life: "Existence at the physical level"
+    plane: "physical"
+    computation:
+      rule: "No division. Longitudes 0-30 degrees map to Aries, 30-60 degrees to Taurus, and so on."
+      reference: "Use Table 1 to find the rasi occupied by a body based on its longitude."
+
+  - symbol: "D-2"
+    name: "Hora"
+    division: 2
+    arc_per_part: "15 degrees"
+    area_of_life: "Wealth and money"
+    plane: "physical"
+    computation:
+      rule: >
+        Each rasi is divided into 2 equal parts of 15 degrees each.
+        Odd rasis: first 15 degrees = Sun's hora; second 15 degrees = Moon's hora.
+        Even rasis: first 15 degrees = Moon's hora; second 15 degrees = Sun's hora.
+      note: >
+        The author states this description is not quite complete. Proper use of
+        hora chart is beyond the scope of the book and is not used further.
+
+  - symbol: "D-3"
+    name: "Drekkana"
+    division: 3
+    arc_per_part: "10 degrees"
+    area_of_life: "Everything related to brothers and sisters"
+    plane: "physical"
+    computation:
+      rule: >
+        Each rasi is divided into 3 equal parts of 10 degrees each.
+        First 10 degrees (0-10): placed in the same rasi.
+        Middle 10 degrees (10-20): placed in the 5th from that rasi.
+        Last 10 degrees (20-30): placed in the 9th from that rasi.
+      formula: "part_rasi = count_from(natal_rasi, [1, 5, 9][part_index])"
+      example:
+        number: 11
+        description: "Mercury (3 deg), Jupiter (19 deg), Venus (21 deg) in Gemini"
+        results:
+          Mercury: "Gemini (first 10 deg -> same rasi)"
+          Jupiter: "Libra (middle 10 deg -> 5th from Gemini)"
+          Venus: "Aquarius (last 10 deg -> 9th from Gemini)"
+
+  - symbol: "D-4"
+    name: "Chaturthamsa"
+    also_known_as: "Chaturamsa, Turyamsa"
+    division: 4
+    arc_per_part: "7.5 degrees"
+    area_of_life: "Residence, houses owned, properties and fortune"
+    plane: "physical"
+    computation:
+      rule: >
+        Each rasi is divided into 4 equal parts of 7.5 degrees each.
+        Bodies in the 1st, 2nd, 3rd and 4th parts go into the 1st, 4th, 7th and
+        10th from that rasi respectively.
+      ranges:
+        - range: "0 - 7.5 deg"
+          maps_to: "1st from rasi"
+        - range: "7.5 - 15 deg"
+          maps_to: "4th from rasi"
+        - range: "15 - 22.5 deg"
+          maps_to: "7th from rasi"
+        - range: "22.5 - 30 deg"
+          maps_to: "10th from rasi"
+      formula: "part_rasi = count_from(natal_rasi, [1, 4, 7, 10][part_index])"
+      example:
+        number: 12
+        description: "Mercury (3 deg), Jupiter (14 deg), Venus (23 deg) in Taurus"
+        results:
+          Mercury: "Taurus (0-7.5 -> 1st from Taurus)"
+          Jupiter: "Leo (7.5-15 -> 4th from Taurus)"
+          Venus: "Aquarius (22.5-30 -> 10th from Taurus)"
+
+  - symbol: "D-5"
+    name: "Panchamsa"
+    division: 5
+    arc_per_part: "6 degrees"
+    area_of_life: "Fame, authority and power"
+    plane: "physical"
+    computation:
+      rule: >
+        Each rasi is divided into 5 equal parts of 6 degrees each.
+        Odd rasis: the 5 parts map to Ar, Aq, Sg, Ge, Li respectively.
+        Even rasis: the 5 parts map to Ta, Vi, Pi, Cp, Sc respectively.
+      odd_rasi_mapping:
+        - part: 1
+          range: "0 - 6 deg"
+          rasi: "Aries"
+        - part: 2
+          range: "6 - 12 deg"
+          rasi: "Aquarius"
+        - part: 3
+          range: "12 - 18 deg"
+          rasi: "Sagittarius"
+        - part: 4
+          range: "18 - 24 deg"
+          rasi: "Gemini"
+        - part: 5
+          range: "24 - 30 deg"
+          rasi: "Libra"
+      even_rasi_mapping:
+        - part: 1
+          range: "0 - 6 deg"
+          rasi: "Taurus"
+        - part: 2
+          range: "6 - 12 deg"
+          rasi: "Virgo"
+        - part: 3
+          range: "12 - 18 deg"
+          rasi: "Pisces"
+        - part: 4
+          range: "18 - 24 deg"
+          rasi: "Capricorn"
+        - part: 5
+          range: "24 - 30 deg"
+          rasi: "Scorpio"
+
+  - symbol: "D-6"
+    name: "Shashthamsa"
+    division: 6
+    arc_per_part: "5 degrees"
+    area_of_life: "Health troubles"
+    plane: "physical"
+    computation:
+      rule: >
+        Each rasi is divided into 6 equal parts of 5 degrees each.
+        Odd rasis: the 6 parts go into the 6 rasis starting from Aries.
+        Even rasis: the 6 parts go into the 6 rasis starting from Libra.
+      odd_rasi_start: "Aries"
+      even_rasi_start: "Libra"
+      formula: "part_rasi = count_from(start_rasi, part_number)"
+      example:
+        number: 13
+        description: "Mercury at 11 deg in Gemini, Jupiter at 19 deg in Scorpio"
+        results:
+          Mercury: "Gemini (Ge is odd, start from Ar, 3rd part -> 3rd from Ar = Ge)"
+          Jupiter: "Capricorn (Sc is even, start from Li, 4th part -> 4th from Li = Cp)"
+
+  - symbol: "D-7"
+    name: "Saptamsa"
+    division: 7
+    arc_per_part: "4 deg 17 min 8.57 sec"
+    area_of_life: "Everything related to children (and grand-children)"
+    plane: "physical"
+    computation:
+      rule: >
+        Each rasi is divided into 7 equal parts of 4 deg 17 min 8.57 sec.
+        Odd rasis: the 7 parts go into 7 rasis starting from the rasi itself.
+        Even rasis: the 7 parts go into 7 rasis starting from the 7th sign from it.
+      odd_rasi_start: "same rasi"
+      even_rasi_start: "7th from that rasi"
+      formula: >
+        odd: part_rasi = count_from(natal_rasi, part_number)
+        even: part_rasi = count_from(7th_from_natal_rasi, part_number)
+      example:
+        number: 14
+        description: "Mercury at 10 deg in Gemini, Jupiter at 19 deg in Virgo"
+        results:
+          Mercury: "Leo (Ge is odd, start from Ge, 3rd part -> 3rd from Ge = Le)"
+          Jupiter: "Cancer (Vi is even, start from 7th = Pi, 5th part -> 5th from Pi = Cn)"
+
+  - symbol: "D-8"
+    name: "Ashtamsa"
+    division: 8
+    arc_per_part: "3 deg 45 min"
+    area_of_life: "Sudden and unexpected troubles, litigation etc"
+    plane: "physical"
+    computation:
+      rule: >
+        Each rasi is divided into 8 equal parts of 3 deg 45 min each.
+        Movable rasis: the 8 parts go into 8 rasis starting from Aries.
+        Fixed rasis: the 8 parts go into 8 rasis starting from Sagittarius.
+        Dual rasis: the 8 parts go into 8 rasis starting from Leo.
+      start_by_modality:
+        movable: "Aries"
+        fixed: "Sagittarius"
+        dual: "Leo"
+      formula: "part_rasi = count_from(start_rasi_by_modality, part_number)"
+      note: "There are different versions of D-8 computation; variations are not covered."
+      example:
+        number: 15
+        description: "Mercury at 10 deg in Gemini, Jupiter at 19 deg in Scorpio"
+        results:
+          Mercury: "Libra (Ge is dual, start from Le, 3rd part -> 3rd from Le = Li)"
+          Jupiter: "Taurus (Sc is fixed, start from Sg, 6th part -> 6th from Sg = Ta)"
+
+  - symbol: "D-9"
+    name: "Navamsa"
+    also_known_as: "Dharmamsa, Amsa"
+    division: 9
+    arc_per_part: "3 deg 20 min"
+    area_of_life: "Marriage and everything related to spouse(s), dharma (duty and righteousness), interaction with other people, basic skills, inner self"
+    plane: "physical"
+    computation:
+      rule: >
+        Each rasi is divided into 9 equal parts of 3 deg 20 min each.
+        Fiery rasis (Ar, Le, Sg): the 9 parts go into 9 rasis starting from Aries.
+        Earthy rasis (Ta, Vi, Cp): the 9 parts go into 9 rasis starting from Capricorn.
+        Airy rasis (Ge, Li, Aq): the 9 parts go into 9 rasis starting from Libra.
+        Watery rasis (Cn, Sc, Pi): the 9 parts go into 9 rasis starting from Cancer.
+      start_by_element:
+        fiery: "Aries"
+        earthy: "Capricorn"
+        airy: "Libra"
+        watery: "Cancer"
+      formula: "part_rasi = count_from(start_rasi_by_element, part_number)"
+      importance: "Most popular chart after rasi chart. Some astrologers simply refer to it as 'Amsa' (division)."
+      example:
+        number: 16
+        description: "Mercury at 11 deg in Gemini, Jupiter at 19 deg in Scorpio"
+        results:
+          Mercury: "Capricorn (Ge is airy, start from Li, 4th part -> 4th from Li = Cp)"
+          Jupiter: "Sagittarius (Sc is watery, start from Cn, 6th part -> 6th from Cn = Sg)"
+
+  - symbol: "D-10"
+    name: "Dasamsa"
+    also_known_as: "Dasamaamsa, Karmamsa, Swargamsa"
+    division: 10
+    arc_per_part: "3 degrees"
+    area_of_life: "Career, activities and achievements in society"
+    plane: "physical"
+    computation:
+      rule: >
+        Each rasi is divided into 10 equal parts of 3 degrees each.
+        Odd rasis: the 10 parts go into 10 rasis starting from the rasi itself.
+        Even rasis: the 10 parts go into 10 rasis starting from the 9th from it.
+      odd_rasi_start: "same rasi"
+      even_rasi_start: "9th from that rasi"
+      formula: >
+        odd: part_rasi = count_from(natal_rasi, part_number)
+        even: part_rasi = count_from(9th_from_natal_rasi, part_number)
+      example:
+        number: 17
+        description: "Mercury at 10 deg in Gemini, Jupiter at 19 deg in Scorpio"
+        results:
+          Mercury: "Virgo (Ge is odd, start from Ge, 4th part -> 4th from Ge = Vi)"
+          Jupiter: "Capricorn (Sc is even, start from 9th = Cn, 7th part -> 7th from Cn = Cp)"
+
+  - symbol: "D-11"
+    name: "Rudramsa"
+    also_known_as: "Ekadasamsa"
+    division: 11
+    arc_per_part: "2 deg 43 min 38 sec"
+    area_of_life: "Death and destruction"
+    plane: "physical"
+    computation:
+      rule: >
+        Each rasi is divided into 11 equal parts of 2 deg 43 min 38 sec each.
+        Step 1: Count rasis from Aries to the rasi being divided in zodiacal order.
+        Step 2: Count the same number of rasis anti-zodiacally from Aries.
+        Step 3: Bodies in the 11 parts go into 11 rasis starting from the rasi found in Step 2.
+      zodiacal_order: "Ar, Ta, Ge, Cn, Le, Vi, Li, Sc, Sg, Cp, Aq, Pi"
+      anti_zodiacal_order: "Ar, Pi, Aq, Cp, Sg, Sc, Li, Vi, Le, Cn, Ge, Ta"
+      note: "There are different versions of D-11 computation; variations are not covered."
+      formula: >
+        count = distance_from_aries(natal_rasi)
+        start_rasi = count_anti_zodiac_from_aries(count)
+        part_rasi = count_from(start_rasi, part_number)
+      example:
+        number: 18
+        description: "Mercury at 11 deg in Gemini, Jupiter at 19 deg in Scorpio"
+        results:
+          Mercury: "Gemini (Ge is 3rd from Ar; 3rd anti-zodiac from Ar = Aq; 5th from Aq = Ge)"
+          Jupiter: "Pisces (Sc is 8th from Ar; 8th anti-zodiac from Ar = Vi; 7th from Vi = Pi)"
+
+  - symbol: "D-12"
+    name: "Dwadasamsa"
+    division: 12
+    arc_per_part: "2 deg 30 min"
+    area_of_life: "Everything related to parents (also uncles, aunts and grand-parents, i.e. blood-relatives of parents)"
+    plane: "physical"
+    computation:
+      rule: >
+        Each rasi is divided into 12 equal parts of 2 deg 30 min each.
+        The 12 parts go into the 12 rasis starting from the rasi itself.
+      start: "same rasi"
+      formula: "part_rasi = count_from(natal_rasi, part_number)"
+      example:
+        number: 19
+        description: "Mercury at 11 deg in Gemini, Jupiter at 19 deg in Scorpio"
+        results:
+          Mercury: "Libra (5th part -> 5th from Ge = Li)"
+          Jupiter: "Gemini (8th part -> 8th from Sc = Ge)"
+
+  - symbol: "D-16"
+    name: "Shodasamsa"
+    also_known_as: "Kalamsa"
+    division: 16
+    arc_per_part: "1 deg 52 min 30 sec"
+    area_of_life: "Vehicles, pleasures, comforts and discomforts"
+    plane: "mental"
+    computation:
+      rule: >
+        Each rasi is divided into 16 equal parts of 1 deg 52 min 30 sec each.
+        Movable rasis: the 16 parts go into rasis starting from Aries.
+        Fixed rasis: the 16 parts go into rasis starting from Leo.
+        Dual rasis: the 16 parts go into rasis starting from Sagittarius.
+        After going over 12 rasis, cycle back: 13th = 1st, 14th = 2nd, etc.
+      start_by_modality:
+        movable: "Aries"
+        fixed: "Leo"
+        dual: "Sagittarius"
+      formula: "part_rasi = count_from(start_rasi_by_modality, part_number) [mod 12 for parts > 12]"
+      example:
+        number: 20
+        description: "Mercury at 11 deg in Gemini, Jupiter at 19 deg in Scorpio"
+        results:
+          Mercury: "Taurus (Ge is dual, start from Sg, 6th part -> 6th from Sg = Ta)"
+          Jupiter: "Gemini (Sc is fixed, start from Le, 11th part -> 11th from Le = Ge)"
+
+  - symbol: "D-20"
+    name: "Vimsamsa"
+    division: 20
+    arc_per_part: "1 deg 30 min"
+    area_of_life: "Religious activities and spiritual matters"
+    plane: "mental"
+    computation:
+      rule: >
+        Each rasi is divided into 20 equal parts of 1 deg 30 min each.
+        Movable rasis: the 20 parts go into rasis starting from Aries.
+        Fixed rasis: the 20 parts go into rasis starting from Sagittarius.
+        Dual rasis: the 20 parts go into rasis starting from Leo.
+      start_by_modality:
+        movable: "Aries"
+        fixed: "Sagittarius"
+        dual: "Leo"
+      formula: "part_rasi = count_from(start_rasi_by_modality, part_number) [mod 12 for parts > 12]"
+      example:
+        number: 21
+        description: "Mercury at 11 deg in Gemini, Jupiter at 19 deg in Scorpio"
+        results:
+          Mercury: "Pisces (Ge is dual, start from Le, 8th part -> 8th from Le = Pi)"
+          Jupiter: "Sagittarius (Sc is fixed, start from Sg, 13th part -> 13th-12=1st from Sg = Sg)"
+
+  - symbol: "D-24"
+    name: "Chaturvimsamsa"
+    also_known_as: "Siddhamsa"
+    division: 24
+    arc_per_part: "1 deg 15 min"
+    area_of_life: "Learning, knowledge and education"
+    plane: "mental"
+    computation:
+      rule: >
+        Each rasi is divided into 24 equal parts of 1 deg 15 min each.
+        Odd rasis: the 24 parts go into rasis starting from Leo.
+        Even rasis: the 24 parts go into rasis starting from Cancer.
+      odd_rasi_start: "Leo"
+      even_rasi_start: "Cancer"
+      formula: "part_rasi = count_from(start_rasi, part_number) [mod 12 for parts > 12]"
+      example:
+        number: 22
+        description: "Mercury at 11 deg in Gemini, Jupiter at 19 deg in Scorpio"
+        results:
+          Mercury: "Aries (Ge is odd, start from Le, 9th part -> 9th from Le = Ar)"
+          Jupiter: "Libra (Sc is even, start from Cn, 16th part -> 16th-12=4th from Cn = Li)"
+
+  - symbol: "D-27"
+    name: "Nakshatramsa"
+    also_known_as: "Saptavimsamsa, Bhamsa"
+    division: 27
+    arc_per_part: "1 deg 6 min 40 sec"
+    area_of_life: "Strengths and weaknesses, inherent nature"
+    plane: "sub-conscious"
+    computation:
+      rule: >
+        Each rasi is divided into 27 equal parts of 1 deg 6 min 40 sec each.
+        Fiery rasis (Ar, Le, Sg): start counting from Aries.
+        Earthy rasis (Ta, Vi, Cp): start counting from Cancer.
+        Airy rasis (Ge, Li, Aq): start counting from Libra.
+        Watery rasis (Cn, Sc, Pi): start counting from Capricorn.
+      start_by_element:
+        fiery: "Aries"
+        earthy: "Cancer"
+        airy: "Libra"
+        watery: "Capricorn"
+      formula: "part_rasi = count_from(start_rasi_by_element, part_number) [mod 12 for parts > 12]"
+      example:
+        number: 23
+        description: "Mercury at 11 deg in Gemini, Jupiter at 19 deg in Scorpio"
+        results:
+          Mercury: "Leo (Ge is airy, start from Li, 10th part -> 10th from Li = Le)"
+          Jupiter: "Gemini (Sc is watery, start from Cp, 18th part -> 18th-12=6th from Cp = Ge)"
+
+  - symbol: "D-30"
+    name: "Trimsamsa"
+    division: 30
+    arc_per_part: "unequal parts (not uniform division)"
+    area_of_life: "Evils and punishment, sub-conscious self, some diseases"
+    plane: "sub-conscious"
+    computation:
+      rule: >
+        D-30 uses unequal divisions. The mapping is fixed and does not follow
+        the regular formula pattern of other divisional charts.
+      odd_rasi_mapping:
+        - range: "0 - 5 deg"
+          rasi: "Aries"
+          ruler: "Mars"
+          arc: "5 degrees"
+        - range: "5 - 10 deg"
+          rasi: "Aquarius"
+          ruler: "Saturn"
+          arc: "5 degrees"
+        - range: "10 - 18 deg"
+          rasi: "Sagittarius"
+          ruler: "Jupiter"
+          arc: "8 degrees"
+        - range: "18 - 25 deg"
+          rasi: "Gemini"
+          ruler: "Mercury"
+          arc: "7 degrees"
+        - range: "25 - 30 deg"
+          rasi: "Libra"
+          ruler: "Venus"
+          arc: "5 degrees"
+      even_rasi_mapping:
+        - range: "0 - 5 deg"
+          rasi: "Taurus"
+          ruler: "Venus"
+          arc: "5 degrees"
+        - range: "5 - 12 deg"
+          rasi: "Virgo"
+          ruler: "Mercury"
+          arc: "7 degrees"
+        - range: "12 - 20 deg"
+          rasi: "Pisces"
+          ruler: "Jupiter"
+          arc: "8 degrees"
+        - range: "20 - 25 deg"
+          rasi: "Capricorn"
+          ruler: "Saturn"
+          arc: "5 degrees"
+        - range: "25 - 30 deg"
+          rasi: "Scorpio"
+          ruler: "Mars"
+          arc: "5 degrees"
+
+  - symbol: "D-40"
+    name: "Khavedamsa"
+    also_known_as: "Chatvarimsamsa"
+    division: 40
+    arc_per_part: "45 minutes of arc"
+    area_of_life: "Auspicious and inauspicious events"
+    plane: "kaarmic"
+    computation:
+      rule: >
+        Each rasi is divided into 40 equal parts of 45 arcminutes each.
+        Odd rasis: the 40 parts go into rasis starting from Aries.
+        Even rasis: the 40 parts go into rasis starting from Libra.
+      odd_rasi_start: "Aries"
+      even_rasi_start: "Libra"
+      formula: "part_rasi = count_from(start_rasi, part_number) [mod 12 for parts > 12]"
+      example:
+        number: 24
+        description: "Mercury at 11 deg in Gemini, Jupiter at 19 deg in Scorpio"
+        results:
+          Mercury: "Gemini (Ge is odd, start from Ar, 15th part -> 15th-12=3rd from Ar = Ge)"
+          Jupiter: "Scorpio (Sc is even, start from Li, 26th part -> 26th-24=2nd from Li = Sc)"
+
+  - symbol: "D-45"
+    name: "Akshavedamsa"
+    also_known_as: "Pancha-chatvarimsamsa"
+    division: 45
+    arc_per_part: "40 minutes of arc"
+    area_of_life: "All matters"
+    plane: "kaarmic"
+    computation:
+      rule: >
+        Each rasi is divided into 45 equal parts of 40 arcminutes each.
+        Movable rasis: start counting from Aries.
+        Fixed rasis: start counting from Leo.
+        Dual rasis: start counting from Sagittarius.
+      start_by_modality:
+        movable: "Aries"
+        fixed: "Leo"
+        dual: "Sagittarius"
+      formula: "part_rasi = count_from(start_rasi_by_modality, part_number) [mod 12 for parts > 12]"
+      example:
+        number: 25
+        description: "Mercury at 11 deg in Gemini, Jupiter at 19 deg in Scorpio"
+        results:
+          Mercury: "Aries (Ge is dual, start from Sg, 17th part -> 17th-12=5th from Sg = Ar)"
+          Jupiter: "Sagittarius (Sc is fixed, start from Le, 29th part -> 29th-24=5th from Le = Sg)"
+
+  - symbol: "D-60"
+    name: "Shashtyamsa"
+    division: 60
+    arc_per_part: "30 minutes of arc"
+    area_of_life: "Karma of past life, all matters"
+    plane: "kaarmic"
+    computation:
+      rule: >
+        Each rasi is divided into 60 equal parts of 30 arcminutes each.
+        The 60 parts go into rasis starting from the rasi itself.
+      start: "same rasi"
+      formula: "part_rasi = count_from(natal_rasi, part_number) [mod 12 for parts > 12]"
+      shortcut: >
+        To find the part number: take longitude from beginning of occupied rasi,
+        multiply by 2, take only the degrees (ignore minutes), add 1.
+      example:
+        number: 26
+        description: "Jupiter at 222 deg 58 min, i.e. 12 deg 58 min in Scorpio"
+        steps:
+          - "12 deg 58 min * 2 = 25 deg 56 min"
+          - "Take degrees only: 25"
+          - "Add 1: 26th part"
+          - "Count 26th from Sc: 26 mod 12 = 2, so 2nd from Sc = Sg"
+        result: "Jupiter is in Sagittarius in D-60"
+
+# =============================================================================
+# Planes of Existence
+# =============================================================================
+planes_of_existence:
+  physical:
+    division_range: "1-12"
+    charts: ["D-1", "D-2", "D-3", "D-4", "D-5", "D-6", "D-7", "D-8", "D-9", "D-10", "D-11", "D-12"]
+    description: >
+      Charts operating in the physical plane show physical matters: body,
+      wealth, residence, wife, children, parents - all matters relating to
+      the physical self.
+  mental:
+    division_range: "13-24"
+    charts: ["D-16", "D-20", "D-24"]
+    description: >
+      Charts operating in the mental plane show matters that exist at the
+      mental plane: sense of pleasure and unhappiness, religiousness, learning
+      and knowledge - all matters relating to the mind and intellect.
+  sub_conscious:
+    division_range: "25-36"
+    charts: ["D-27", "D-30"]
+    description: >
+      Charts operating in the plane of sub-consciousness show one's strengths,
+      weaknesses, inherent nature, evils, certain psychological imbalances -
+      all matters relating to the sub-conscious self.
+  kaarmic:
+    division_range: "above 36"
+    charts: ["D-40", "D-45", "D-60"]
+    description: >
+      Charts operating in a kaarmic plane of existence that is above physical
+      self, mind and sub-conscious self. Based on the karma from previous lives,
+      we all have an existence at a level that goes beyond the levels of body,
+      mind and sub-consciousness. Existence at that level has a considerable
+      role in deciding the pattern of one's life.
+    note: >
+      The author notes this has philosophical undercurrents that may be
+      difficult to understand without a good background in Hindu philosophy.
+      These higher charts should be left until one finds a competent guru.
+
+# =============================================================================
+# Using Divisional Charts (Section 6.5)
+# =============================================================================
+usage_guidelines:
+  key_principle: >
+    Memorize Table 11. Choose the divisional chart to analyze based on the
+    matter of interest. If we want to know about career, analyze D-10. If
+    we want to know about luxuries and pleasures, analyze D-16. Based on
+    the matter of interest, decide which area of life is relevant and analyze
+    the corresponding divisional chart.
+  analysis_method: >
+    Remember which planets, rasis and houses show a particular matter and
+    find links between them in the divisional chart of interest.
+  examples:
+    - matter: "Going abroad"
+      chart: "D-4 (Chaturthamsa)"
+      reasoning: "Related to residence and fortune"
+      key_houses: "9th and 12th houses show foreign residence"
+      key_planets: "Rahu signifies foreign residence"
+      interpretation: >
+        If 12th lord is with Rahu in the 9th house in D-4, it can suggest
+        that one would live abroad, probably during the periods of Rahu or
+        12th lord or 9th house.
+    - matter: "Promotion at work"
+      chart: "D-10 (Dasamsa)"
+      reasoning: "D-10 shows career and achievements"
+      key_points:
+        - "GL (ghati lagna) shows power and authority; planets giving promotion are usually connected with GL"
+        - "AL shows status; planets associating with AL or the 5th or 10th from it are favorable"
+      interpretation: >
+        If the lord of AL is in the 10th from it and aspects GL, probably
+        his period will give a promotion.
+
+# =============================================================================
+# Varga Grouping and Amsabala (Section 6.6)
+# =============================================================================
+varga_grouping:
+  concept: >
+    If a planet is in its moolatrikona or an own rasi or its rasi of exaltation
+    in a chart, it makes the planet very strong in that chart. In each group of
+    divisional charts, we count the divisional charts in which a planet occupies
+    its moolatrikona or an own rasi or its rasi of exaltation. Based on the count,
+    we say the planet is in a particular amsa. The higher this number, the
+    stronger the planet.
+
+  shadvarga:
+    meaning: "six divisions"
+    charts: ["D-1", "D-2", "D-3", "D-9", "D-12", "D-30"]
+    amsas:
+      - name: "Kimsukaamsa"
+        count: 2
+      - name: "Vyanjanaamsa"
+        count: 3
+      - name: "Chaamaraamsa"
+        count: 4
+      - name: "Chatraamsa"
+        count: 5
+      - name: "Kundalaamsa"
+        count: 6
+
+  sapta_varga:
+    meaning: "seven divisions"
+    charts: ["D-1", "D-2", "D-3", "D-7", "D-9", "D-12", "D-30"]
+    amsas:
+      - name: "Kimsukaamsa"
+        count: 2
+      - name: "Vyanjanaamsa"
+        count: 3
+      - name: "Chaamaraamsa"
+        count: 4
+      - name: "Chatraamsa"
+        count: 5
+      - name: "Kundalaamsa"
+        count: 6
+      - name: "Mukutaamsa"
+        count: 7
+
+  dasa_varga:
+    meaning: "ten divisions"
+    charts: ["D-1", "D-2", "D-3", "D-7", "D-9", "D-10", "D-12", "D-16", "D-30", "D-60"]
+    note: "This group is very important and some yogas make use of these amsas."
+    amsas:
+      - name: "Paarijaataamsa"
+        count: 2
+      - name: "Uttamaamsa"
+        count: 3
+      - name: "Gopuraamsa"
+        count: 4
+      - name: "Simhaasanaamsa"
+        count: 5
+      - name: "Paaraavataamsa"
+        count: 6
+      - name: "Devalokaamsa"
+        count: 7
+      - name: "Brahmalokaamsa"
+        count: 8
+      - name: "Airaavataamsa"
+        count: 9
+      - name: "Sreedhaamaamsa"
+        count: 10
+    special_yogas:
+      - "Lagna lord or ghati lagna lord in Simhaasanaamsa makes one very famous."
+      - "A quadrant lord with good amsabala in dasavarga makes one very successful."
+
+  shodasa_varga:
+    meaning: "sixteen divisions"
+    charts: ["D-1", "D-2", "D-3", "D-4", "D-7", "D-9", "D-10", "D-12", "D-16", "D-20", "D-24", "D-27", "D-30", "D-40", "D-45", "D-60"]
+    amsas:
+      - name: "Bhedakaamsa"
+        count: 2
+      - name: "Kusumaamsa"
+        count: 3
+      - name: "Nagapurushaamsa"
+        count: 4
+      - name: "Kandukaamsa"
+        count: 5
+      - name: "Keralaamsa"
+        count: 6
+      - name: "Kalpavrikshaamsa"
+        count: 7
+      - name: "Chandanavanaamsa"
+        count: 8
+      - name: "Poornachandraamsa"
+        count: 9
+      - name: "Uchchaisravaamsa"
+        count: 10
+      - name: "Dhanvantaryamsa"
+        count: 11
+      - name: "Sooryakaantaamsa"
+        count: 12
+      - name: "Vidrumaamsa"
+        count: 13
+      - name: "Indraasanaamsa"
+        count: 14
+      - name: "Golokaamsa"
+        count: 15
+      - name: "Sree Vallabhaamsa"
+        count: 16
+
+# =============================================================================
+# Worked Example: Bill Cosby Amsabala (Example 27)
+# =============================================================================
+worked_example:
+  number: 27
+  subject: "Bill Cosby"
+  birthdata:
+    date: "12th July 1937"
+    time: "12:30 am"
+    timezone: "5:00 west of GMT"
+    longitude: "75W10"
+    latitude: "39N57"
+  analysis:
+    planet: "Jupiter"
+    longitude: "29 deg 49 min in Sagittarius"
+    context: "Jupiter owns 9th and 12th houses and occupies the 9th house, indicating charitable nature."
+    divisional_positions:
+      D-1: "Sagittarius"
+      D-2: "Cancer"
+      D-3: "Libra"
+      D-4: "Virgo"
+      D-7: "Gemini"
+      D-9: "Sagittarius"
+      D-10: "Virgo"
+      D-12: "Scorpio"
+      D-16: "Pisces"
+      D-20: "Pisces"
+      D-24: "Cancer"
+      D-27: "Gemini"
+      D-30: "Libra"
+      D-40: "Cancer"
+      D-45: "Leo"
+      D-60: "Scorpio"
+    jupiter_dignities: "Jupiter owns Sagittarius and Pisces. Moolatrikona is Sagittarius. Exalted in Cancer."
+    strong_charts: "Charts where Jupiter is in Cancer, Sagittarius, or Pisces"
+    amsabala_results:
+      shadvarga:
+        count: 3
+        charts: ["D-1 (Sg)", "D-2 (Cn)", "D-9 (Sg)"]
+        amsa: "Vyanjanaamsa"
+      sapta_varga:
+        count: 3
+        charts: ["D-1 (Sg)", "D-2 (Cn)", "D-9 (Sg)"]
+        amsa: "Vyanjanaamsa"
+      dasa_varga:
+        count: 4
+        charts: ["D-1 (Sg)", "D-2 (Cn)", "D-9 (Sg)", "D-16 (Pi)"]
+        amsa: "Gopuraamsa"
+      shodasa_varga:
+        count: 7
+        charts: ["D-1 (Sg)", "D-2 (Cn)", "D-9 (Sg)", "D-16 (Pi)", "D-20 (Pi)", "D-24 (Cn)", "D-40 (Cn)"]
+        amsa: "Kalpavrikshaamsa"
+    conclusion: "Being in Gopuraamsa and Kalpavrikshaamsa makes Jupiter very strong."
+
+# =============================================================================
+# Computation Quick Reference
+# =============================================================================
+computation_quick_reference:
+  description: >
+    Summary of starting signs for divisional chart computation.
+    For each chart, determine the part number based on the planet's position
+    within the sign, then count forward from the starting sign.
+  by_odd_even:
+    - chart: "D-3"
+      method: "fixed offsets: 1st, 5th, 9th from rasi"
+    - chart: "D-5"
+      odd: "Ar, Aq, Sg, Ge, Li"
+      even: "Ta, Vi, Pi, Cp, Sc"
+    - chart: "D-6"
+      odd: "start from Aries"
+      even: "start from Libra"
+    - chart: "D-7"
+      odd: "start from same rasi"
+      even: "start from 7th from rasi"
+    - chart: "D-10"
+      odd: "start from same rasi"
+      even: "start from 9th from rasi"
+    - chart: "D-24"
+      odd: "start from Leo"
+      even: "start from Cancer"
+    - chart: "D-40"
+      odd: "start from Aries"
+      even: "start from Libra"
+  by_modality:
+    - chart: "D-8"
+      movable: "Aries"
+      fixed: "Sagittarius"
+      dual: "Leo"
+    - chart: "D-16"
+      movable: "Aries"
+      fixed: "Leo"
+      dual: "Sagittarius"
+    - chart: "D-20"
+      movable: "Aries"
+      fixed: "Sagittarius"
+      dual: "Leo"
+    - chart: "D-45"
+      movable: "Aries"
+      fixed: "Leo"
+      dual: "Sagittarius"
+  by_element:
+    - chart: "D-9"
+      fiery: "Aries"
+      earthy: "Capricorn"
+      airy: "Libra"
+      watery: "Cancer"
+    - chart: "D-27"
+      fiery: "Aries"
+      earthy: "Cancer"
+      airy: "Libra"
+      watery: "Capricorn"
+  from_same_rasi:
+    - chart: "D-1"
+      rule: "identity mapping"
+    - chart: "D-4"
+      rule: "offsets 1, 4, 7, 10"
+    - chart: "D-12"
+      rule: "start from same rasi"
+    - chart: "D-60"
+      rule: "start from same rasi"
+  special:
+    - chart: "D-2"
+      rule: "Sun's hora / Moon's hora based on odd/even rasi and first/second half"
+    - chart: "D-11"
+      rule: "Anti-zodiacal counting from Aries to determine start rasi"
+    - chart: "D-30"
+      rule: "Unequal parts; fixed mapping for odd and even rasis"
+
+# =============================================================================
+# Chapter Conclusion (Section 6.7)
+# =============================================================================
+conclusion:
+  four_pillars: "Vedic astrology stands on 4 pillars: grahas (planets), rasis (signs), vargas (divisional charts), and bhavas (houses)."
+  this_chapter: "Third pillar - divisional charts"
+  variations_noted:
+    - "D-8 and D-11 have different versions"
+    - "D-2 and D-3 also have variations"
+    - "Different variations of divisional charts show different spheres of activities"
+    - "Variations are not covered in this book"
+  higher_charts_not_covered: ["D-108", "D-150"]
+  key_takeaway: >
+    Twenty divisional charts are covered. Each divisional chart throws light
+    on a specific sphere of activity. Choosing the correct divisional chart
+    for analyzing the matter of interest is the key to correct analysis.

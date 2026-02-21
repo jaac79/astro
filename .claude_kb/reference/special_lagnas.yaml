@@ -1,0 +1,286 @@
+# Chapter 5: Special Lagnas
+# Source: Vedic Astrology - An Integrated Approach (P.V.R. Narasimha Rao)
+# Book pages 38-42, PDF pages 47-51
+
+source:
+  book: "Vedic Astrology: An Integrated Approach"
+  author: "P.V.R. Narasimha Rao"
+  chapter: 5
+  chapter_title: "Special Lagnas"
+  book_pages: "38-42"
+  pdf_pages: "47-51"
+  page_offset: 9  # book_page + 9 = pdf_page
+
+introduction:
+  section: "5.1"
+  summary: >
+    There are some special lagnas defined by Parasara. The book widely uses
+    Hora Lagna and Ghati Lagna. This chapter defines them and other special lagnas.
+
+special_lagnas:
+
+  bhava_lagna:
+    section: "5.2"
+    abbreviation: "BL"
+    also_known_as: "Bhaava Lagna"
+    description: >
+      Bhaava Lagna is at the position of Sun at the time of sunrise.
+      It moves at the rate of one rasi per 2 hours.
+    note: "BL is defined only for the sake of completeness. It is not used further in this book."
+    movement_rate:
+      degrees_per_minute: 0.25  # 1 degree per 4 minutes
+      degrees_per_hour: 15
+      rasis_per_hour: 0.5  # one rasi per 2 hours
+    computation:
+      method: "Compute Bhaava Lagna from sunrise time, Sun longitude, and birth time"
+      steps:
+        - step: 1
+          instruction: "Find the time of sunrise and Sun's longitude at sunrise."
+        - step: 2
+          instruction: >
+            Find the difference between the birthtime (or the event time) and the
+            sunrise time found in step 1. Convert the difference into minutes.
+            The result is the advancement of Bhaava Lagna since sunrise, in degrees.
+        - step: 3
+          instruction: >
+            Add Sun's longitude at sunrise (in degrees) to the above number.
+            Expunge multiples of 360 degrees and reduce the number to the range 0-360 degrees.
+        - step: 4
+          instruction: "This is the longitude of Bhaava Lagna (BL)."
+      formula: "BL = Sun_longitude_at_sunrise + (birth_time - sunrise_time_in_minutes)"
+      formula_note: "Result modulo 360 degrees"
+    example:
+      id: 7
+      given:
+        birth_time: "7:23 pm (19:23)"
+        sunrise_time: "6:37 am"
+        sun_longitude_at_sunrise: "24 deg 17 min in Capricorn (294 deg 17 min)"
+      solution:
+        time_diff_minutes: 766  # 12 hr 46 min = 766 min
+        advancement_degrees: 766  # minutes = degrees for BL
+        raw_total: "294 deg 17 min + 766 deg = 1060 deg 17 min"
+        reduced: "1060 deg 17 min - 720 deg = 340 deg 17 min"
+        result: "10 deg 17 min in Pisces"
+
+  hora_lagna:
+    section: "5.3"
+    abbreviation: "HL"
+    also_known_as: "Hora Lagna"
+    description: >
+      Hora Lagna is at the position of Sun at the time of sunrise.
+      It moves at the rate of one rasi per hora (hour).
+    significance: "Shows money, wealth, and prosperity"
+    movement_rate:
+      degrees_per_minute: 0.5  # 1/2 degree per minute
+      degrees_per_hour: 30
+      rasis_per_hour: 1  # one rasi per hora (hour)
+    computation:
+      method: "Compute Hora Lagna from sunrise time, Sun longitude, and birth time"
+      steps:
+        - step: 1
+          instruction: "Find the time of sunrise and Sun's longitude at sunrise."
+        - step: 2
+          instruction: >
+            Find the difference between the birthtime (or the event time) and the
+            sunrise time found in step 1. Convert the difference into minutes.
+        - step: 3
+          instruction: >
+            Divide the number by 2. The result is the advancement of Hora Lagna
+            since sunrise, in degrees.
+        - step: 4
+          instruction: >
+            Add Sun's longitude at sunrise (in degrees) to the above number.
+            Expunge multiples of 360 degrees and reduce the number to the range 0-360 degrees.
+        - step: 5
+          instruction: "This is the longitude of Hora Lagna (HL)."
+      formula: "HL = Sun_longitude_at_sunrise + (birth_time - sunrise_time_in_minutes) / 2"
+      formula_note: "Result modulo 360 degrees"
+    example:
+      id: 8
+      given:
+        birth_time: "7:23 pm (19:23)"
+        sunrise_time: "6:37 am"
+        sun_longitude_at_sunrise: "24 deg 17 min in Capricorn (294 deg 17 min)"
+      solution:
+        time_diff_minutes: 766  # 12 hr 46 min
+        advancement_degrees: 383  # 766 / 2
+        raw_total: "294 deg 17 min + 383 deg = 677 deg 17 min"
+        reduced: "677 deg 17 min - 360 deg = 317 deg 17 min"
+        result: "17 deg 17 min in Aquarius"
+
+  ghati_lagna:
+    section: "5.4"
+    abbreviation: "GL"
+    also_known_as:
+      - "Ghati Lagna"
+      - "Ghatika Lagna"
+    description: >
+      Ghati Lagna is at the position of Sun at the time of sunrise.
+      It moves at the rate of one rasi per ghati (ghati = 1/60th of a day, i.e., 24 minutes).
+    significance: "Shows fame, power, and authority"
+    movement_rate:
+      degrees_per_minute: 1.25  # 1 deg 15 min per minute
+      degrees_per_24_minutes: 30
+      rasis_per_ghati: 1  # one rasi per ghati (24 minutes)
+    ghati_definition: "1 ghati = 1/60th of a day = 24 minutes"
+    computation:
+      method: "Compute Ghati Lagna from sunrise time, Sun longitude, and birth time"
+      steps:
+        - step: 1
+          instruction: "Find the time of sunrise and Sun's longitude at sunrise."
+        - step: 2
+          instruction: >
+            Find the difference between the birthtime (or the event time) and the
+            sunrise time found in step 1. Convert the difference into minutes.
+        - step: 3
+          instruction: >
+            Multiply the number by 5. Divide the result by 4. The result is the
+            advancement of Ghati Lagna since sunrise, in degrees.
+        - step: 4
+          instruction: >
+            Add Sun's longitude at sunrise (in degrees) to the above number.
+            Expunge multiples of 360 degrees and reduce the number to the range 0-360 degrees.
+        - step: 5
+          instruction: "This is the longitude of Ghati Lagna (GL)."
+      formula: "GL = Sun_longitude_at_sunrise + (birth_time - sunrise_time_in_minutes) * 5 / 4"
+      formula_note: "Result modulo 360 degrees"
+    example:
+      id: 9
+      given:
+        birth_time: "7:23 pm (19:23)"
+        sunrise_time: "6:37 am"
+        sun_longitude_at_sunrise: "24 deg 17 min in Capricorn (294 deg 17 min)"
+      solution:
+        time_diff_minutes: 766
+        advancement_degrees: 957.5  # 766 * 5 / 4
+        raw_total: "294 deg 17 min + 957 deg 30 min = 1251 deg 47 min"
+        reduced: "1251 deg 47 min - 1080 deg = 171 deg 47 min"
+        result: "21 deg 47 min in Virgo"
+
+  sree_lagna:
+    section: "5.7"
+    abbreviation: "SL"
+    also_known_as: "Sree Lagna"
+    description: >
+      In Sanskrit, the word "Sree" means wealth. It also means Lakshmi,
+      wife of Lord Narayana and goddess of wealth. Sree Lagna is important
+      for prosperity. Its use is shown in the chapter on Sudasa.
+    significance: "Important for prosperity; used in Sudasa analysis"
+    computation:
+      method: "Compute Sree Lagna from Moon's nakshatra position and lagna longitude"
+      steps:
+        - step: 1
+          instruction: "Find the constellation (nakshatra) occupied by Moon."
+        - step: 2
+          instruction: "Find the fraction of the constellation traversed by Moon."
+        - step: 3
+          instruction: "Find the same fraction of the zodiac (360 degrees)."
+        - step: 4
+          instruction: >
+            Add this amount to the longitude of lagna. Subtract multiples of 360 degrees
+            if necessary. The resulting amount is the longitude of Sree Lagna (SL).
+      formula: "SL = Lagna_longitude + (Moon_advancement_in_nakshatra / nakshatra_span) * 360"
+      formula_note: "Result modulo 360 degrees. Each nakshatra spans 13 deg 20 min (800 arc-minutes)."
+    example:
+      id: 10
+      given:
+        moon_position: "13 deg 06 min in Libra (193 deg 06 min)"
+        lagna_position: "25 deg 05 min in Virgo (175 deg 05 min)"
+        moon_nakshatra: "Swathi (runs from 6 deg 40 min to 20 deg 00 min in Libra)"
+      solution:
+        moon_advancement_in_nakshatra: "13 deg 06 min - 6 deg 40 min = 6 deg 26 min"
+        fraction_of_nakshatra: "386 / 800 = 0.4825"
+        fraction_of_zodiac: "0.4825 * 360 = 173 deg 42 min"
+        raw_total: "175 deg 05 min + 173 deg 42 min = 348 deg 47 min"
+        result: "18 deg 47 min in Pisces"
+
+comments:
+  section: "5.5"
+  points:
+    - id: 1
+      topic: "Sensitivity of Ghati Lagna to birthtime errors"
+      content: >
+        If the birthtime changes by one minute, GL will change by 1.25 degrees (1 deg 15 min).
+        This is quite large and can cause error in GL position in divisional charts. Ghati Lagna
+        is more sensitive to birthtime errors than normal lagna. When using GL in divisional charts,
+        try to correct the birthtime based on known events first.
+    - id: 2
+      topic: "Importance of finer techniques"
+      content: >
+        Birthtime errors are a fact of life. Many people born a few minutes apart in nearby
+        places lead significantly different lives. We should give importance to finer techniques
+        rather than sticking to methods that give the same results to everyone born in a
+        15-minute or one-hour or two-hour period. Sage Parasara must have written about all
+        these fine techniques only because he thought they were useful.
+    - id: 3
+      topic: "Definition of sunrise"
+      content: >
+        Some define sunrise as the time when the center of the visual disk representing Sun
+        rises on the eastern horizon (lagna and Sun at same longitude). Others consider sunrise
+        as the time when the upper tip of the visual disk appears to be rising on the eastern
+        horizon (first ray of Sun is seen). The latter approach (first ray) is recommended.
+
+use_of_special_lagnas:
+  section: "5.6"
+  summary: "Hora Lagna shows money and Ghati Lagna shows power."
+  details:
+    normal_lagna: "Shows self"
+    hora_lagna: "Shows self from the point of view of money, wealth, and prosperity"
+    ghati_lagna: "Shows self from the point of view of fame, power, and authority"
+  practical_applications:
+    - context: "Timing good and bad periods for a businessman"
+      key_lagna: "Hora Lagna (HL)"
+    - context: "Timing good and bad periods for a politician"
+      key_lagna: "Ghati Lagna (GL)"
+
+exercises:
+  - id: 8
+    section: "5.4"
+    problem: >
+      A lady was born at 3:11:48 am (hr, min, sec) in the early hours of May 28, 1961.
+      Sun was at 13 deg 01 min in Taurus then. Sunrise was at 6:19:18 am on May 27, 1961
+      at her birthplace. At that time, Sun was at 12 deg 11 min in Taurus.
+      Find the longitudes of HL and GL in her chart.
+    answer:
+      HL: "8 deg 26 min in Aquarius"
+      GL: "17 deg 48.5 min in Virgo"
+
+  - id: 9
+    section: "5.5"
+    problem: >
+      Suppose that a key event from the known past of the lady of Exercise 8
+      makes us think that her GL has to be between 16 deg 15 min and 17 deg 30 min
+      in Virgo. Correct the given birthtime accordingly.
+    answer: "Birthtime has to be between 3:10:33 am and 3:11:33 am"
+    hint: >
+      GL with given birthtime (3:11:48 am) is at 17 deg 48.5 min in Virgo. The error
+      is between 18.5 min and 1 deg 33.5 min, i.e., 0.3083 deg and 1.5583 deg. Find the
+      corresponding error in birthtime in minutes and convert it to seconds. Then
+      subtract the error from birthtime.
+
+  - id: 10
+    section: "5.7"
+    problem: >
+      Suppose someone has Moon at 15 Le 29 and lagna at 14 Sc 19.
+      Find the longitude of SL (Sree Lagna).
+    answer: "SL is at 12 deg 22 min in Capricorn"
+
+warning: >
+  There are some more special lagnas defined by Parasara, but they are beyond
+  the scope of this book. The book restricts itself to the ones defined herein.
+
+movement_rate_comparison:
+  description: "Quick reference comparing movement rates of all special lagnas"
+  lagnas:
+    - name: "Bhava Lagna (BL)"
+      rate: "15 deg/hour (1 deg per 4 min)"
+      rasi_period: "2 hours"
+      multiplier_formula: "time_diff_minutes * 1"
+    - name: "Hora Lagna (HL)"
+      rate: "30 deg/hour (0.5 deg per min)"
+      rasi_period: "1 hour"
+      multiplier_formula: "time_diff_minutes / 2"
+    - name: "Ghati Lagna (GL)"
+      rate: "75 deg/hour (1.25 deg per min)"
+      rasi_period: "24 minutes (1 ghati)"
+      multiplier_formula: "time_diff_minutes * 5 / 4"
