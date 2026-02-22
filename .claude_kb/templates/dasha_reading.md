@@ -53,14 +53,27 @@
 
 ## Multi-System Convergence
 
-| System | Current Period | Lord Natal Strength | Theme | Window |
-|--------|---------------|-------------------|-------|--------|
-| Vimshottari | | | | |
-| Yogini | | | | |
-| Chara (Jaimini) | | | | |
-| Narayana | | | | |
+### Systems Consulted
 
-**Convergence:** <!-- HIGH / MODERATE / LOW -->
+| System | Consulted | Data Available | Confidence |
+|--------|-----------|---------------|------------|
+| Parashari | YES/NO | [data status] | HIGH/MED/LOW |
+| Jaimini | YES/NO | [data status] | HIGH/MED/LOW |
+| KP | YES/NO | [data status] | HIGH/MED/LOW |
+| Nadi | YES/NO | [data status] | HIGH/MED/LOW |
+| Tajaka | YES/NO | [data status] | HIGH/MED/LOW |
+
+### Cross-System Agreement
+
+| Finding | Systems Agreeing | Systems Disagreeing | Convergence |
+|---------|-----------------|--------------------| ------------|
+| [finding] | [list] | [list] | HIGH/MOD/LOW |
+
+### Remedial Convergence
+
+| Remedy | Prescribed By | Cross-System Agreement |
+|--------|--------------|----------------------|
+| [remedy] | [list of systems] | YES (N systems) / NO (single system) |
 
 ---
 

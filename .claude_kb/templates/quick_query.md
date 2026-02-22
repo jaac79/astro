@@ -52,6 +52,32 @@
 
 ---
 
+## Multi-System Convergence
+
+### Systems Consulted
+
+| System | Consulted | Data Available | Confidence |
+|--------|-----------|---------------|------------|
+| Parashari | YES/NO | [data status] | HIGH/MED/LOW |
+| Jaimini | YES/NO | [data status] | HIGH/MED/LOW |
+| KP | YES/NO | [data status] | HIGH/MED/LOW |
+| Nadi | YES/NO | [data status] | HIGH/MED/LOW |
+| Tajaka | YES/NO | [data status] | HIGH/MED/LOW |
+
+### Cross-System Agreement
+
+| Finding | Systems Agreeing | Systems Disagreeing | Convergence |
+|---------|-----------------|--------------------| ------------|
+| [finding] | [list] | [list] | HIGH/MOD/LOW |
+
+### Remedial Convergence
+
+| Remedy | Prescribed By | Cross-System Agreement |
+|--------|--------------|----------------------|
+| [remedy] | [list of systems] | YES (N systems) / NO (single system) |
+
+---
+
 ## Scorecard Explanation
 <!-- Explains WHY the scorecard came out as it did — trace the dominant chains, highlight the strongest factors on each side, contextualize the margin and confidence -->
 
