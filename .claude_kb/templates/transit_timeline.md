@@ -1,15 +1,20 @@
 # Transit Timeline
 
 **Data sources:** `birth_data.yaml` (natal positions) | `current_positions.yaml` (transits and dasha at reading time)
-**Timeline:** <!-- start date --> to <!-- end date -->
+**Timeline:** <!-- "Month Year to Month Year" -->
+
+<!-- TWO-LAYER FORMAT: See astrobot.md "Two-Layer Output Rules" -->
 
 ---
 
-## Current Position — Where You Stand Today
-<!-- Snapshot of current dasha + transit combination, the starting point of the timeline -->
+## Where You Stand Today
+
+<!-- Plain language: snapshot of your current situation astrologically.
+     What phase of life? What planetary weather? What's the starting point? -->
+
+<details><summary>Technical basis</summary>
 
 **Current dasha:** MD / AD / PD
-**Major transits at start:**
 
 | Graha | Rasi | From Chandra | From Lagna |
 |-------|------|-------------|-----------|
@@ -18,96 +23,102 @@
 | Rahu | | | |
 | Ketu | | | |
 
+</details>
+
 ---
 
 ## The Road Ahead — Overview
-<!-- Big picture: is the next year/period trending up, down, or mixed? Major turning points -->
 
----
-
-## Key Events in the Timeline
-
-### Dasha Transitions
-
-| Date | Type | From → To | New lord natal (rasi/bhava/dignity) | Houses owned | Interaction with MD | Theme shift | Intensity |
-|------|------|-----------|-------------------------------------|-------------|--------------------|-----------|-----------
-| | AD / PD / MD | | | | support / neutral / friction | | high / moderate / low |
-
-### Major Transit Ingresses
-
-| Date | Graha | From → To | From Chandra (old → new) | From Lagna (old → new) | New bhava SAV | Natal contacts | Dasha trigger | Duration |
-|------|-------|-----------|-------------------------|----------------------|--------------|---------------|--------------|----------|
-| | | | | | | | | until: |
-
-### Saturn Special Events
-
-| Date | Event | Phase | Duration | Impact |
-|------|-------|-------|----------|--------|
-| | sade_sati / ashtama_shani / kantaka_shani start/peak/end | | | |
-
-### Rahu-Ketu Axis Shifts
-
-| Date | Rahu enters | Ketu enters | Natal house (Rahu/Ketu from lagna) | Natal grahas conjoined | Theme | Duration |
-|------|------------|------------|-----------------------------------|----------------------|-------|----------|
-| | | | | | | until: |
-
-### Significant Retrogrades
-
-| Graha | Retro start | Retro end | Rasi | Natal contact | Impact |
-|-------|------------|-----------|------|--------------|--------|
-| | | | | | |
-
-### Eclipses
-
-| Date | Type | Rasi | Degree | Natal contact | Orb | Significance |
-|------|------|------|--------|--------------|-----|-------------|
-| | solar / lunar | | | | | |
+<!-- Plain language: Is the next period trending up, down, or mixed? Where are the turning points?
+     E.g., "The next two years trend strongly positive after a difficult start.
+     June 2026 is the major turning point." -->
 
 ---
 
 ## Month-by-Month Walkthrough
 
-### YYYY-MM — [Month Name]
-**Dasha:** MD-AD-PD
-**Key transit:** <!-- most significant transit event -->
+### [Month Year] — [Plain Title]
+
+<!-- Plain language: What happens this month? What to do or avoid?
+     E.g., "February 2026 — The Heavy Stretch: Career feels stuck. Administrative obstacles pile up.
+     This is not the month for bold moves — focus on patience and execution." -->
+
 **Tone:** FAVORABLE / MIXED / DIFFICULT
-**Hot bhavas:** <!-- bhavas receiving simultaneous dasha + transit pressure -->
-**Scorecard:** F:XX vs U:YY | Margin: 0.XX | [Confidence]
 **Action or wait:** ACT / WAIT / MIXED
-<!-- What happens this month, what to do, what to avoid -->
 
-<!-- Repeat for each month in the timeline window -->
+> **Why this matters:** <!-- 1-sentence bridge -->
+
+<details><summary>Technical basis</summary>
+
+**Dasha:** <!-- MD-AD-PD -->
+**Key transit:** <!-- most significant -->
+**Hot zones:** <!-- bhavas receiving dual activation -->
+**Scorecard:** F:XX vs U:YY | Margin: 0.XX | Confidence
+
+</details>
+
+<!-- Repeat for each month -->
 
 ---
 
-## Peak Windows — When to Act
+## Best Windows — When to Act
 
-| Window | Favorable factors | Best for | Confidence |
-|--------|------------------|----------|-----------|
-| from — to | | career / marriage / education / travel / health | |
+<!-- Plain language table -->
+
+| Window | What it's good for | Confidence |
+|--------|-------------------|-----------|
+| <!-- Month Year - Month Year --> | career moves / financial decisions / relationships / travel | |
+
+<details><summary>Technical basis</summary>
+
+| Window | Favorable factors | Systems agreeing |
+|--------|------------------|-----------------|
+| | | |
+
+</details>
 
 ---
 
-## Trough Windows — When to Wait
+## Caution Windows — When to Wait
 
-| Window | Challenging factors | Caution for | Severity | Remedials |
-|--------|-------------------|-------------|----------|-----------|
-| from — to | | | mild / moderate / severe | |
+<!-- Plain language table -->
+
+| Window | What to watch out for | Severity |
+|--------|----------------------|----------|
+| <!-- Month Year - Month Year --> | accidents / conflict / financial pressure / health | mild / moderate / severe |
+
+<details><summary>Technical basis</summary>
+
+| Window | Challenging factors | Remedials |
+|--------|-------------------|-----------|
+| | | |
+
+</details>
 
 ---
 
 ## Turning Points
 
-| Date | What shifts | From tone → To tone | Trigger |
-|------|-----------|--------------------:|---------|
-| | | | transit ingress / dasha change / etc. |
+<!-- Plain language -->
+
+| When | What Changes | From → To |
+|------|-------------|-----------|
+| <!-- Month Year --> | <!-- plain description --> | difficult → favorable / favorable → mixed / etc. |
+
+<details><summary>Technical basis</summary>
+
+| Date | Trigger | Technical detail |
+|------|---------|-----------------|
+| | transit ingress / dasha change | |
+
+</details>
 
 ---
 
 ## The Honest Assessment
-<!-- Overall trajectory, what the timeline promises vs demands -->
+<!-- Plain language: overall trajectory, promises vs demands -->
 
 ---
 
 ## Key Dates to Mark
-<!-- Bullet list of the most important dates the native should be aware of -->
+<!-- Plain language bullet list: "June 2026 — financial momentum begins" -->

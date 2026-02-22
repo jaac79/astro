@@ -3,199 +3,183 @@
 **Data sources:** `birth_data.yaml` (natal positions) | `current_positions.yaml` (transits and dasha at reading time)
 **Prediction year:** <!-- e.g., 2026 -->
 
+<!-- TWO-LAYER FORMAT: See astrobot.md "Two-Layer Output Rules" -->
+
 ---
 
 ## Year at a Glance
-<!-- One paragraph: what kind of year is this? What's the dominant theme? -->
 
-**Year score:** <!-- 1-10 -->
+<!-- Plain language: one paragraph summarizing this year. Already plain — keep it that way. -->
+
+**Year rating:** <!-- 1-10, with plain meaning: 1-3 = challenging, 4-6 = mixed, 7-8 = favorable, 9-10 = exceptional -->
 **Best quarter:** <!-- Q1 / Q2 / Q3 / Q4 -->
 **Hardest quarter:** <!-- Q1 / Q2 / Q3 / Q4 -->
-**Defining theme:**
+**Defining theme:** <!-- One sentence -->
 
 ---
 
-## Dasha Context
+## The Planetary Weather This Year
+
+<!-- Plain language: "Saturn is putting pressure on your career zone this year, but Jupiter
+     is boosting your finances. The overall weather is mixed but trending positive." -->
+
+> **Why this matters:** <!-- Simplified explanation of key transits -->
+
+<details><summary>Technical basis: Dasha and Transits</summary>
 
 ### Dasha periods active this year
-
 | Period | Lord | Start | End | Lord natal (rasi/bhava/dignity) | Houses owned | Theme |
 |--------|------|-------|-----|---------------------------------|-------------|-------|
 | | | | | | | |
 
----
+### Major transits
+| Graha | Rasi at year start | Sign changes | From Chandra | From Lagna | Key contacts |
+|-------|-------------------|-------------|-------------|-----------|-------------|
+| Shani | | | | | |
+| Guru | | | | | |
+| Rahu | | | | | |
+| Ketu | | | | | |
 
-## Transit Weather
-
-### Major transits this year
-
-| Graha | Rasi at year start | Sign changes (date → rasi) | From Chandra | From Lagna | Retrograde period | Key contacts |
-|-------|-------------------|---------------------------|-------------|-----------|------------------|-------------|
-| Shani | | | | | | |
-| Guru | | | | | | |
-| Rahu | | | | | — | |
-| Ketu | | | | | — | |
-
-### Eclipses this year
-
+### Eclipses
 | Date | Type | Rasi | Natal impact | Significance |
 |------|------|------|-------------|-------------|
 | | | | | |
+
+</details>
 
 ---
 
 ## Life Area Predictions
 
-### Career & Professional Life
-**Relevant bhavas:** 10, 6, 2 | **Dasha support:** | **Transit support:** | **Overall:** FAVORABLE / MIXED / DIFFICULT
+### Career and Professional Life
+
+<!-- Plain language: What happens to your career this year?
+     Peak months, what to pursue, what to avoid.
+     E.g., "The April-September window is your strongest career period.
+     A decision you make here defines the next 3 years." -->
+
+**Overall: FAVORABLE / MIXED / DIFFICULT**
+**Peak months:** | **Caution months:**
+**Confidence:** HIGH / MODERATE / LOW
+
+> **Why this matters:** <!-- Career planet positions -->
+
+<details><summary>Technical basis</summary>
+
+| # | Indicator | Direction | Weight | Score |
+|---|-----------|-----------|--------|-------|
+| | | FAV / UNFAV | | |
+
+Favorable total: XX | Unfavorable total: YY | Margin: 0.XX
+
+</details>
+
+### Finances and Wealth
+
+<!-- Plain language: Income trajectory, investment climate, spending patterns this year. -->
+
+**Overall: FAVORABLE / MIXED / DIFFICULT**
 **Peak months:** | **Caution months:**
 
-| Indicator | Direction | Weight | Score |
-|-----------|-----------|--------|-------|
-| | FAV / UNFAV | | |
+<details><summary>Technical basis</summary>
+<!-- Scorecard table -->
+</details>
 
-**Favorable total:** XX | **Unfavorable total:** YY | **Verdict:** [Confidence] [Direction] (margin: 0.XX)
+### Health and Vitality
 
-<!-- Detailed prediction with timing -->
+<!-- Plain language: Vulnerable periods, what to watch, preventive guidance. -->
 
-### Finances & Wealth
-**Relevant bhavas:** 2, 11, 5 | **Overall:** FAVORABLE / MIXED / DIFFICULT
-**Peak months:** | **Caution months:**
-
-| Indicator | Direction | Weight | Score |
-|-----------|-----------|--------|-------|
-| | FAV / UNFAV | | |
-
-**Favorable total:** XX | **Unfavorable total:** YY | **Verdict:** [Confidence] [Direction] (margin: 0.XX)
-
-<!-- Income, expenses, investments — with months -->
-
-### Health & Vitality
-**Relevant bhavas:** 1, 6, 8 | **Overall:** FAVORABLE / MIXED / DIFFICULT
+**Overall: FAVORABLE / MIXED / DIFFICULT**
 **Vulnerable months:** | **Watch areas:**
 
-| Indicator | Direction | Weight | Score |
-|-----------|-----------|--------|-------|
-| | FAV / UNFAV | | |
+<details><summary>Technical basis</summary>
+<!-- Scorecard table -->
+</details>
 
-**Favorable total:** XX | **Unfavorable total:** YY | **Verdict:** [Confidence] [Direction] (margin: 0.XX)
+### Relationships and Marriage
 
-<!-- Vulnerable periods, what to watch, preventive guidance -->
+<!-- Plain language: Partnership dynamics, romantic developments, family. -->
 
-### Relationships & Marriage
-**Relevant bhavas:** 7, 5, 4 | **Overall:** FAVORABLE / MIXED / DIFFICULT
-**Peak months:** | **Caution months:**
+**Overall: FAVORABLE / MIXED / DIFFICULT**
 
-| Indicator | Direction | Weight | Score |
-|-----------|-----------|--------|-------|
-| | FAV / UNFAV | | |
+<details><summary>Technical basis</summary>
+<!-- Scorecard table -->
+</details>
 
-**Favorable total:** XX | **Unfavorable total:** YY | **Verdict:** [Confidence] [Direction] (margin: 0.XX)
+### Family and Home
 
-<!-- Romantic, marital, partnership dynamics this year -->
+<!-- Plain language: Family dynamics, property, domestic life. -->
 
-### Education & Learning
-**Relevant bhavas:** 4, 5, 9 | **Overall:** FAVORABLE / MIXED / DIFFICULT
-**Peak months:**
+**Overall: FAVORABLE / MIXED / DIFFICULT**
 
-| Indicator | Direction | Weight | Score |
-|-----------|-----------|--------|-------|
-| | FAV / UNFAV | | |
+<details><summary>Technical basis</summary>
+<!-- Scorecard table -->
+</details>
 
-**Favorable total:** XX | **Unfavorable total:** YY | **Verdict:** [Confidence] [Direction] (margin: 0.XX)
+### Travel and Foreign Connections
 
-<!-- Academic progress, competitive exams, skill development -->
+<!-- Plain language: Likely travel periods, international opportunities. -->
 
-### Family & Home
-**Relevant bhavas:** 4, 2, 5 | **Overall:** FAVORABLE / MIXED / DIFFICULT
+**Overall: FAVORABLE / MIXED / DIFFICULT**
 
-| Indicator | Direction | Weight | Score |
-|-----------|-----------|--------|-------|
-| | FAV / UNFAV | | |
-
-**Favorable total:** XX | **Unfavorable total:** YY | **Verdict:** [Confidence] [Direction] (margin: 0.XX)
-
-<!-- Family dynamics, property, domestic life -->
-
-### Travel
-**Relevant bhavas:** 3, 9, 12 | **Overall:** FAVORABLE / MIXED / DIFFICULT
-**Likely months:**
-
-| Indicator | Direction | Weight | Score |
-|-----------|-----------|--------|-------|
-| | FAV / UNFAV | | |
-
-**Favorable total:** XX | **Unfavorable total:** YY | **Verdict:** [Confidence] [Direction] (margin: 0.XX)
-
-<!-- Likely travel periods and nature of travel -->
-
-### Spiritual Growth
-**Relevant bhavas:** 9, 12, 5 | **Overall:** FAVORABLE / MIXED / DIFFICULT
-
-| Indicator | Direction | Weight | Score |
-|-----------|-----------|--------|-------|
-| | FAV / UNFAV | | |
-
-**Favorable total:** XX | **Unfavorable total:** YY | **Verdict:** [Confidence] [Direction] (margin: 0.XX)
-
-<!-- Inner development, practices, karmic lessons this year -->
+<details><summary>Technical basis</summary>
+<!-- Scorecard table -->
+</details>
 
 ---
 
 ## Quarter-by-Quarter Summary
 
-### Q1 (Jan-Mar)
-<!-- Tone, key events, action/wait -->
+### Q1 (January - March)
+<!-- Plain language: Tone, key developments, action or wait. Already plain — keep it. -->
 
-### Q2 (Apr-Jun)
-<!-- Tone, key events, action/wait -->
+### Q2 (April - June)
+<!-- Plain language -->
 
-### Q3 (Jul-Sep)
-<!-- Tone, key events, action/wait -->
+### Q3 (July - September)
+<!-- Plain language -->
 
-### Q4 (Oct-Dec)
-<!-- Tone, key events, action/wait -->
+### Q4 (October - December)
+<!-- Plain language -->
 
 ---
 
-## Multi-System Convergence
+## Multi-System Confidence
 
-### Systems Consulted
+<!-- Plain language: how many systems were consulted, where they agree/disagree -->
+
+<details><summary>Technical basis: System details</summary>
 
 | System | Consulted | Data Available | Confidence |
 |--------|-----------|---------------|------------|
-| Parashari | YES/NO | [data status] | HIGH/MED/LOW |
-| Jaimini | YES/NO | [data status] | HIGH/MED/LOW |
-| KP | YES/NO | [data status] | HIGH/MED/LOW |
-| Nadi | YES/NO | [data status] | HIGH/MED/LOW |
-| Tajaka | YES/NO | [data status] | HIGH/MED/LOW |
+| Parashari | YES/NO | | |
+| Jaimini | YES/NO | | |
+| KP | YES/NO | | |
+| Nadi | YES/NO | | |
+| Tajaka | YES/NO | | |
 
-### Cross-System Agreement
-
-| Finding | Systems Agreeing | Systems Disagreeing | Convergence |
-|---------|-----------------|--------------------| ------------|
-| [finding] | [list] | [list] | HIGH/MOD/LOW |
-
-### Remedial Convergence
-
-| Remedy | Prescribed By | Cross-System Agreement |
-|--------|--------------|----------------------|
-| [remedy] | [list of systems] | YES (N systems) / NO (single system) |
+</details>
 
 ---
 
 ## The Honest Assessment
-<!-- Best thing about this year, hardest thing about this year, the one thing to focus on -->
+<!-- Plain language: best and hardest things about this year, the one thing to focus on -->
 
 ---
 
 ## Remedials for the Year
 
+<!-- Plain language: what to do, when, and why. -->
+
+<details><summary>Technical basis</summary>
+
 | Graha | Weakness | Remedy type | Remedy | When to start | Duration |
 |-------|----------|------------|--------|--------------|----------|
-| | | mantra / charity / behavioral / gemstone | | | |
+| | | | | | |
+
+</details>
 
 ---
 
-## Key Dates
-<!-- Bullet list of important dates to mark on the calendar -->
+## Key Dates to Mark
+<!-- Bullet list in plain language: "June 2026 — your financial momentum begins" -->

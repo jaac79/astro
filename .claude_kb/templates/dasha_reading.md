@@ -1,16 +1,25 @@
-# Dasha Reading
+# Dasha Reading — Life Period Analysis
 
 **Data sources:** `birth_data.yaml` (natal positions) | `current_positions.yaml` (transits and dasha at reading time)
-**Query period:** <!-- e.g., "Rahu-Venus" or "Jupiter Mahadasha" -->
+**Period analyzed:** <!-- e.g., "The current 3-year phase (June 2026 - May 2029)" -->
+
+<!-- TWO-LAYER FORMAT: See astrobot.md "Two-Layer Output Rules" -->
 
 ---
 
-## Period Overview
-<!-- What is this dasha fundamentally about? What karmic theme is unfolding? -->
+## What This Period Means for Your Life
 
----
+<!-- Plain language: 2-3 paragraphs explaining what this life phase is about.
+     What themes dominate? What life areas are activated? What is the overall trajectory?
+     E.g., "You're entering a 3-year phase focused on financial growth and creative expression.
+     After years of restructuring, this is when things start paying off." -->
 
-## Dasha Lords — Natal Position
+**Overall direction:** FAVORABLE / MIXED / DIFFICULT
+**Duration:** <!-- "Month Year to Month Year (N years)" -->
+
+> **Why this matters now:** <!-- Connect the period to the native's broader life cycle -->
+
+<details><summary>Technical basis: Dasha Lords</summary>
 
 | Factor | Mahadasha Lord | Antardasha Lord |
 |--------|---------------|-----------------|
@@ -27,128 +36,133 @@
 | Aspects given | | |
 | Aspects received | | |
 
----
-
-## Mahadasha Lord Assessment
-<!-- Full analysis of the MD lord's natal condition, what it promises, what it threatens -->
-
----
-
-## Antardasha Lord Assessment
-<!-- AD lord's condition, and critically: how does it interact with the MD lord? -->
-
----
-
-## Dasha Lord Interaction — The Core Dynamic
-
+### Dasha Lord Interaction
 | Factor | Detail |
 |--------|--------|
-| MD-AD natal relationship | aspect / conjunction / dispositorship / enmity |
-| Mutual position | same / 2-12 / 6-8 / kendra / trikona |
+| MD-AD natal relationship | |
+| Mutual position | |
 | Shared nakshatra lord | |
 | Support or undermine | |
-| AD-PD relationship | |
+
+</details>
 
 ---
 
-## Multi-System Convergence
+## Life Areas Activated in This Period
 
-### Systems Consulted
+<!-- Plain language for each area. Only include areas this dasha activates. -->
 
-| System | Consulted | Data Available | Confidence |
-|--------|-----------|---------------|------------|
-| Parashari | YES/NO | [data status] | HIGH/MED/LOW |
-| Jaimini | YES/NO | [data status] | HIGH/MED/LOW |
-| KP | YES/NO | [data status] | HIGH/MED/LOW |
-| Nadi | YES/NO | [data status] | HIGH/MED/LOW |
-| Tajaka | YES/NO | [data status] | HIGH/MED/LOW |
+### Career
+<!-- What happens to your career during this period? -->
 
-### Cross-System Agreement
+### Finances
+<!-- Income trajectory, investment climate, spending patterns -->
 
-| Finding | Systems Agreeing | Systems Disagreeing | Convergence |
-|---------|-----------------|--------------------| ------------|
-| [finding] | [list] | [list] | HIGH/MOD/LOW |
+### Relationships
+<!-- Partnership dynamics, family, social life -->
 
-### Remedial Convergence
+### Health
+<!-- What to watch, vulnerable windows -->
 
-| Remedy | Prescribed By | Cross-System Agreement |
-|--------|--------------|----------------------|
-| [remedy] | [list of systems] | YES (N systems) / NO (single system) |
-
----
-
-## Yoga Activation Map
-
-### Activated Yogas
-| Yoga | Activated by | Status | Peak period |
-|------|-------------|--------|-------------|
-| | | | |
-
-### Dormant Yogas
-| Yoga | Reason dormant | Activates in |
-|------|---------------|-------------|
-| | | |
-
----
-
-## Life Areas in Focus
+<details><summary>Technical basis: Bhava Activation</summary>
 
 | Bhava | Activated by | Theme | SAV strength |
 |-------|-------------|-------|-------------|
 | | lord ownership / placement / aspect | | |
 
----
-
-## Floodlight Scorecard — Is this dasha period net favorable or unfavorable?
-
-### Favorable Indicators
-
-| # | Indicator | Graha/Bhava | Dignity | Shadbala | AV | Base | Modifiers | Score |
-|---|-----------|-------------|---------|----------|----|------|-----------|-------|
-| | | | | | | | | |
-
-### Unfavorable Indicators
-
-| # | Indicator | Graha/Bhava | Dignity | Shadbala | AV | Base | Modifiers | Score |
-|---|-----------|-------------|---------|----------|----|------|-----------|-------|
-| | | | | | | | | |
-
-### Verdict
-
-| Favorable Total | Unfavorable Total | NET | MARGIN | Confidence | Direction |
-|-----------------|-------------------|-----|--------|------------|-----------|
-| | | | | HIGH / MODERATE / LOW / INDETERMINATE | FAVORABLE / UNFAVORABLE |
-
-### Limitations
-<!-- What was NOT checked -->
+</details>
 
 ---
 
 ## Sub-Period Timeline
 
-| Period | Start | End | Lords | Theme | Intensity | Convergence |
-|--------|-------|-----|-------|-------|-----------|-------------|
-| | | | | | high / moderate / low | |
+<!-- For each sub-period, write a plain-language summary.
+     Use month/year dates. State what happens, not which planet rules. -->
+
+### [Month Year] - [Month Year]: [Plain Title]
+
+<!-- E.g., "June - December 2026: Financial Breakthrough Window"
+     Plain description of what this sub-period brings. -->
+
+**Confidence:** HIGH / MODERATE / LOW
+
+> **Why this matters now:** <!-- 1-sentence bridge -->
+
+<details><summary>Technical basis</summary>
+
+<!-- PD lord details, transit triggers, scorecard snippet -->
+
+</details>
+
+<!-- Repeat for each sub-period -->
+
+---
+
+## Strengths Active in This Period
+
+<!-- Plain language: What special advantages does this period unlock?
+     E.g., "A rare combination in your chart — where early struggle converts to unexpected success —
+     is fully activated during this phase." -->
+
+<details><summary>Technical basis: Yoga Activation</summary>
+
+| Yoga | Activated by | Status | Peak period |
+|------|-------------|--------|-------------|
+| | | | |
+
+</details>
+
+---
+
+## Scorecard Summary
+
+**Overall: FAVORABLE / MIXED / DIFFICULT**
+**Confidence:** HIGH / MODERATE / LOW
+**Strongest factor working FOR you:** <!-- plain language -->
+**Strongest factor working AGAINST you:** <!-- plain language -->
+
+<details><summary>Technical basis: Floodlight Scorecard</summary>
+
+### Favorable Indicators
+| # | Indicator | Graha/Bhava | Dignity | Base | Modifiers | Score |
+|---|-----------|-------------|---------|------|-----------|-------|
+| | | | | | | |
+
+### Unfavorable Indicators
+| # | Indicator | Graha/Bhava | Dignity | Base | Modifiers | Score |
+|---|-----------|-------------|---------|------|-----------|-------|
+| | | | | | | |
+
+| Favorable Total | Unfavorable Total | NET | MARGIN | Confidence | Direction |
+|-----------------|-------------------|-----|--------|------------|-----------|
+| | | | | | |
+
+</details>
 
 ---
 
 ## The Honest Assessment
-<!-- What this period genuinely offers, what it demands, peak challenge windows -->
+<!-- Plain language: what this period genuinely offers, demands, peak challenge windows -->
 
 ---
 
 ## Practical Guidance
 
-**WORK ON** (controllable):
-<!-- Actions aligned with the dasha theme -->
+**WORK ON:**
+<!-- Actions aligned with this period's energy -->
 
-**WAIT / SURRENDER** (karmic timing):
-<!-- What the dasha requires patience for -->
+**WAIT / SURRENDER:**
+<!-- What requires patience during this period -->
 
 **REMEDIALS:**
-<!-- Specific to the dasha lords' weaknesses -->
+<!-- Plain language remedials -->
+
+<details><summary>Technical basis for remedials</summary>
+<!-- Remedy table with classical basis -->
+</details>
 
 ---
 
-## When Does This Shift?
-<!-- When the current period ends, what comes next, how to prepare for the transition -->
+## What Comes Next
+
+<!-- Plain language: When does this period end? What follows? How to prepare? -->

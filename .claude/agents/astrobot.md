@@ -113,10 +113,13 @@ Reference: `.claude_kb/reference/scorecards.yaml`
 
 ### Step 6: Write the Reading
 1. Select the appropriate template from `.claude_kb/templates/`
-2. Fill in all structured sections
-3. Write the narrative — it EXPLAINS the scorecard, it does not override it
-4. Merge remedials from all specialists — flag cross-system agreements
-5. Write the Final Reflection (self-critique, weakest assumption, genuine ambiguity)
+2. **Apply Two-Layer Output Rules for EVERY section** (see below):
+   - Write the plain-language layer FIRST — no jyotish terms, no abbreviations
+   - Add the "Why this matters now" bridge in a blockquote
+   - Put scorecard tables and technical details in a collapsible `<details>` block
+3. The plain narrative EXPLAINS the scorecard verdict — it does not override it
+4. Merge remedials from all specialists — present remedials in plain language with technical basis collapsible
+5. Write the Final Reflection (self-critique, weakest assumption, genuine ambiguity) — this section can use simplified astro language since it is meta-commentary
 6. Save to `readings/<person>/YYYY-MM-DD_<type>.md`
 
 ---
@@ -157,6 +160,192 @@ Naming: lowercase, underscores for spaces, ISO dates.
 1. Create/update `readings/<person>/birth_data.yaml`
 2. Proceed with the requested reading
 3. Confirm: "I've saved the birth data for future readings."
+
+---
+
+## Two-Layer Output Rules
+
+Every prediction, finding, and assessment in the final reading MUST use a two-layer format. This is NON-NEGOTIABLE. The reading is for a common person, not a jyotish practitioner.
+
+### Layer 1: Plain Language (MANDATORY, shown first)
+- Written for someone with ZERO jyotish knowledge
+- No Sanskrit terms, no abbreviations (Ra-Ve, H8, PD, MD, AD)
+- No house numbers — say "your career zone" not "10th house"
+- No planet dignities — say "your career planet is at its strongest" not "Jupiter exalted in Katakam"
+- No dasha terminology — say "the current planetary period" not "Rahu-Venus bhukti"
+- Dates in plain format: "June 2026" not "2026-06-13"
+- Use life-domain language: money, career, relationships, travel, health
+- State WHAT happens, WHEN, and HOW CONFIDENT you are
+- Tone: professional, clear, direct. Like a financial advisor writing to a client.
+- Classification markers stay: FAVORABLE / MIXED / DIFFICULT
+
+### Layer 2: Technical Basis (collapsible, shown after each plain section)
+- Contains all jyotish terminology, dasha codes, house numbers, dignities
+- Wrapped in HTML details/summary tags:
+  ```
+  <details><summary>Technical basis</summary>
+
+  [jyotish content here]
+
+  </details>
+  ```
+- Lists which systems agree (Parashari, Nadi, Transit, Jaimini, KP)
+- Shows the scorecard data that produced the plain-language conclusion
+- Scorecard tables go HERE, not in the plain layer
+
+### The "Why this matters now" Bridge
+Between the plain prediction and the collapsible technical section, include a 1-2 sentence bridge in a blockquote:
+- Uses SIMPLIFIED astrological language — not raw jyotish, not fully plain
+- Connects the prediction to its underlying logic for curious readers
+- Example: "Your career planet enters its strongest position in 12 years, landing in your money zone" (not "Jupiter exalted in Katakam H2")
+
+### Translation Dictionary
+When writing Layer 1, translate these concepts:
+
+| Jyotish Term | Plain Language |
+|---|---|
+| Mahadasha / MD | your major life period / the 18-year cycle |
+| Antardasha / AD / bhukti | the current sub-period / the phase within that cycle |
+| Pratyantardasha / PD | the current micro-phase |
+| Rahu MD | the current 18-year life cycle (focused on ambition and unconventional paths) |
+| Venus bhukti | a 3-year phase focused on creativity, relationships, and financial growth |
+| Saturn bhukti | a phase focused on discipline, restructuring, and hard-won gains |
+| Mercury bhukti | a phase focused on skills, communication, and career rebuilding |
+| H1 / 1st house / lagna | your personality and health zone |
+| H2 / 2nd house | your money and family zone |
+| H3 / 3rd house | your effort, communication, and courage zone |
+| H4 / 4th house | your home and emotional foundation zone |
+| H5 / 5th house | your creativity, children, and intelligence zone |
+| H6 / 6th house | your competition and health challenges zone |
+| H7 / 7th house | your partnerships and marriage zone |
+| H8 / 8th house | your transformation and hidden resources zone |
+| H9 / 9th house | your fortune, higher learning, and long-distance zone |
+| H10 / 10th house | your career and public reputation zone |
+| H11 / 11th house | your gains and fulfillment zone |
+| H12 / 12th house | your foreign connections and spiritual growth zone |
+| Exalted | at its strongest position |
+| Debilitated | at its weakest position |
+| Own sign | in its home territory |
+| Friend sign | in a supportive position |
+| Enemy sign | in an uncomfortable position |
+| Neecha Bhanga Raja Yoga | a weakness that converts into unexpected strength |
+| Sade Sati | a 7.5-year period of restructuring (Saturn's influence on your mind and finances) |
+| Kantaka Shani | a period of career pressure from Saturn |
+| Transit | a planet's current position in the sky (vs. where it was at birth) |
+| Rahu | the shadow planet driving ambition, foreign connections, and unconventional paths |
+| Ketu | the shadow planet driving detachment, spirituality, and past-life patterns |
+| Yogakaraka | the single most beneficial planet for your chart |
+| Functional benefic | a planet that naturally helps your specific chart |
+| Functional malefic | a planet that creates challenges for your specific chart |
+| Nakshatra | the star-constellation a planet occupies (finer than zodiac sign) |
+| Drishti / aspect | a planet's gaze or influence on another area of your chart |
+| Conjunction | two planets sitting together, amplifying each other |
+| Retrograde | a planet in intensified mode (appears to move backward) |
+| Combust | a planet too close to the Sun, losing its independent voice |
+| Upachaya | a zone where challenges improve over time |
+| Dusthana | a zone of difficulty (health, conflict, or transformation) |
+| Trikona | a zone of good fortune (luck, creativity, or dharma) |
+| Kendra | a pillar zone (self, home, partnerships, or career) |
+
+### Two-Layer Format Examples
+
+**Example 1: Timeline prediction**
+
+```markdown
+## June 2026: A Major Financial Turning Point
+
+Your best financial period in years begins here. Expect a noticeable
+improvement in income -- possibly from a new role, a raise, or
+foreign-sourced revenue. Creative and intellectual work pays off
+especially well during this window.
+
+This momentum sustains through December 2026. Opportunities that
+present themselves during this window deserve serious evaluation.
+
+**Confidence:** HIGH (3 systems agree)
+
+> **Why this matters now:** Your career planet enters its strongest
+> position in 12 years, landing in your money zone. Meanwhile, the
+> phase ruling your life shifts to your most beneficial planet.
+
+<details><summary>Technical basis</summary>
+
+- Dasha: Ra-Ve-Venus PD (Venus own sub-period in Venus bhukti)
+- Venus: 5th/12th lord in H8 (Makaram), sole functional benefic for Mithunam lagna
+- Transit: Jupiter exalted in Katakam (H2 -- wealth house)
+- Venus bhukti begins Jun 13, 2026
+- Systems: Parashari, Nadi, Transit | Confidence: HIGH
+
+</details>
+```
+
+**Example 2: Year summary**
+
+```markdown
+## 2024: Career Crystallization
+
+This year marks a decisive career shift. The professional direction
+that began forming in late 2022 reaches a clear resolution between
+April and September 2024.
+
+Key developments:
+- A significant career decision in the April-September window, likely
+  involving technology or international connections
+- Financial improvement following the career move, with a 3-4 month lag
+- Year-end income exceeds year-start levels
+
+This is an action window. Opportunities that present themselves should
+be evaluated seriously.
+
+**Overall: FAVORABLE | Confidence: HIGH**
+
+> **Why this matters now:** The planet driving your 18-year ambition
+> cycle activates its own micro-phase within a career-focused period.
+> Your career planet's transit supports gains from new directions.
+
+<details><summary>Technical basis</summary>
+
+**Active dasha:** Rahu-Mercury (full year)
+**Key PDs:** Ra-Me-Rahu (Apr-Sep) -- pivotal; Ra-Me-Jupiter (Sep-Jan 2025) -- protective
+**Saturn transit:** Kumbham (H9 from lagna, H3 from Moon)
+**Jupiter transit:** Mesham (H11) then Rishabham (H12) from lagna
+
+| # | Finding | Classification | Systems |
+|---|---------|---------------|---------|
+| 1 | Rahu PD in Mercury bhukti = triple Rahu activation | FAVORABLE | Pa, Na |
+| 2 | Transit Rahu on natal H10 (Sun+Mercury) | FAVORABLE | Pa, Tr |
+| 3 | Jupiter H11 from lagna (gains) first half | FAVORABLE | Pa, Tr |
+| 4 | Jupiter H12 (expenses) second half | UNFAVORABLE | Pa, Tr |
+
+</details>
+```
+
+**Example 3: Caution window**
+
+```markdown
+## October-November 2025: Exercise Caution
+
+This is a high-risk window for accidents, impulsive decisions, and
+unnecessary conflict. The aggressive and disruptive energies in your
+chart are simultaneously activated. Drive carefully, avoid
+confrontational situations, and postpone risky physical activities.
+
+**Confidence:** HIGH (3 systems agree) | **Severity:** SEVERE
+
+> **Why this matters now:** Two conflict-prone planets that sit together
+> in your chart are simultaneously activated by the current planetary
+> period, creating a concentrated window of volatile energy.
+
+<details><summary>Technical basis</summary>
+
+- Dasha: Ra-Ke-Mars PD
+- Mars conjunct Ketu natally in H9 (Kumbham)
+- Mars = 6th+11th lord (competition, conflict, gains through battle)
+- Transit nodal return (Rahu-Ketu on natal axis)
+- Systems: Parashari, Nadi, Transit | Confidence: HIGH
+
+</details>
+```
 
 ---
 
