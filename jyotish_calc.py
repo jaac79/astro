@@ -731,6 +731,422 @@ def build_computed_analysis(lagna_rashi_idx, positions):
 
 
 # ---------------------------------------------------------------------------
+# Vimshottari Dasha: Full MD/AD/PD Computation
+# ---------------------------------------------------------------------------
+
+def compute_full_dashas(moon_lon, birth_date_obj):
+    """Compute full MD/AD/PD structure from Moon longitude.
+
+    Returns (all_periods, md_list) where all_periods is a flat list of
+    {md, ad, md_start, md_end, ad_start, ad_end, pds: [{lord, start, end}]}.
+    """
+    nak_name, nak_lord, pada, deg_in_nak = get_nakshatra(moon_lon)
+    start_index = DASHA_SEQUENCE.index(nak_lord)
+    proportion_remaining = 1 - (deg_in_nak / NAKSHATRA_SPAN)
+    first_years = DASHA_YEARS[nak_lord]
+    balance_days = first_years * proportion_remaining * 365.25
+
+    md_list = []
+    md_start = birth_date_obj
+    md_end = birth_date_obj + timedelta(days=balance_days)
+    md_list.append({"lord": nak_lord, "start": md_start, "end": md_end,
+                    "years": first_years * proportion_remaining})
+
+    for i in range(1, 9):
+        lord = DASHA_SEQUENCE[(start_index + i) % 9]
+        years = DASHA_YEARS[lord]
+        md_start = md_end
+        md_end = md_start + timedelta(days=years * 365.25)
+        md_list.append({"lord": lord, "start": md_start, "end": md_end,
+                        "years": years})
+
+    all_periods = []
+    for md in md_list:
+        md_lord = md["lord"]
+        md_start_idx = DASHA_SEQUENCE.index(md_lord)
+        md_total_days = (md["end"] - md["start"]).days
+
+        ad_start = md["start"]
+        for j in range(9):
+            ad_lord = DASHA_SEQUENCE[(md_start_idx + j) % 9]
+            ad_proportion = DASHA_YEARS[ad_lord] / 120.0
+            ad_days = md_total_days * ad_proportion
+            ad_end = ad_start + timedelta(days=ad_days)
+
+            pd_list = []
+            ad_start_idx = DASHA_SEQUENCE.index(ad_lord)
+            pd_start = ad_start
+            for k in range(9):
+                pd_lord = DASHA_SEQUENCE[(ad_start_idx + k) % 9]
+                pd_proportion = DASHA_YEARS[pd_lord] / 120.0
+                pd_days = ad_days * pd_proportion
+                pd_end = pd_start + timedelta(days=pd_days)
+                pd_list.append({"lord": pd_lord, "start": pd_start,
+                                "end": pd_end})
+                pd_start = pd_end
+
+            all_periods.append({
+                "md": md_lord, "ad": ad_lord,
+                "md_start": md["start"], "md_end": md["end"],
+                "ad_start": ad_start, "ad_end": ad_end,
+                "pds": pd_list,
+            })
+            ad_start = ad_end
+
+    return all_periods, md_list
+
+
+def find_dasha_at_date(all_periods, target_date):
+    """Find MD/AD/PD running at a given date.
+
+    Returns dict with md, ad, pd lords and their start/end dates,
+    or None if target_date is outside the computed range.
+    """
+    for period in all_periods:
+        if period["ad_start"] <= target_date <= period["ad_end"]:
+            for pd in period["pds"]:
+                if pd["start"] <= target_date <= pd["end"]:
+                    return {
+                        "md": period["md"], "ad": period["ad"],
+                        "pd": pd["lord"],
+                        "md_start": period["md_start"].isoformat(),
+                        "md_end": period["md_end"].isoformat(),
+                        "ad_start": period["ad_start"].isoformat(),
+                        "ad_end": period["ad_end"].isoformat(),
+                        "pd_start": pd["start"].isoformat(),
+                        "pd_end": pd["end"].isoformat(),
+                    }
+            return {
+                "md": period["md"], "ad": period["ad"], "pd": "?",
+                "md_start": period["md_start"].isoformat(),
+                "md_end": period["md_end"].isoformat(),
+                "ad_start": period["ad_start"].isoformat(),
+                "ad_end": period["ad_end"].isoformat(),
+                "pd_start": "?", "pd_end": "?",
+            }
+    return None
+
+
+# ---------------------------------------------------------------------------
+# Vedha Table (Table 63 from transits.yaml)
+# ---------------------------------------------------------------------------
+
+# For each planet, auspicious houses from Moon with their vedha (obstruction)
+# houses. If another planet transits the vedha house, the auspicious transit
+# is obstructed.
+VEDHA_TABLE = {
+    "Sun":     {3: 9, 6: 12, 10: 4, 11: 5},
+    "Moon":    {1: 5, 3: 9, 6: 12, 7: 2, 10: 4, 11: 8},
+    "Mars":    {3: 12, 6: 9, 11: 5},
+    "Mercury": {2: 5, 4: 3, 6: 9, 8: 1, 10: 8, 11: 12},
+    "Jupiter": {2: 12, 5: 4, 7: 3, 9: 10, 11: 8},
+    "Venus":   {1: 8, 2: 7, 3: 1, 4: 10, 5: 9, 8: 5, 9: 11, 11: 6, 12: 3},
+    "Saturn":  {3: 12, 6: 9, 11: 5},
+}
+
+# Vedha exceptions: father-son pairs don't obstruct each other
+VEDHA_EXCEPTIONS = [
+    frozenset({"Sun", "Saturn"}),
+    frozenset({"Moon", "Mercury"}),
+]
+
+
+# ---------------------------------------------------------------------------
+# Transit Computation
+# ---------------------------------------------------------------------------
+
+def compute_transit_positions(target_jd, ayanamsha, natal_lagna_idx,
+                              natal_moon_idx):
+    """Compute sidereal positions of all 9 grahas at a target Julian Day.
+
+    Returns dict keyed by English name, each with rasi, degree, nakshatra,
+    pada, house_from_lagna, house_from_moon, retrograde.
+    """
+    positions = {}
+
+    for swe_id, eng_name, sans_name, yaml_key in GRAHA_LIST:
+        pos, ret = swe.calc_ut(target_jd, swe_id)
+        sid_lon = (pos[0] - ayanamsha) % 360
+        rashi_name, rashi_idx, deg = get_rashi(sid_lon)
+        nak_name, nak_lord, pada, deg_in_nak = get_nakshatra(sid_lon)
+        house_from_lagna = ((rashi_idx - natal_lagna_idx) % 12) + 1
+        house_from_moon = ((rashi_idx - natal_moon_idx) % 12) + 1
+        retrograde = pos[3] < 0
+
+        positions[eng_name] = {
+            "sidereal_lon": sid_lon,
+            "rashi": rashi_name,
+            "rashi_idx": rashi_idx,
+            "degree": deg,
+            "nakshatra": nak_name,
+            "nak_lord": nak_lord,
+            "pada": pada,
+            "house_from_lagna": house_from_lagna,
+            "house_from_moon": house_from_moon,
+            "retrograde": retrograde,
+            "sanskrit": sans_name,
+            "yaml_key": yaml_key,
+        }
+
+    # Rahu
+    node_id = swe.MEAN_NODE
+    pos, ret = swe.calc_ut(target_jd, node_id)
+    sid_lon = (pos[0] - ayanamsha) % 360
+    rashi_name, rashi_idx, deg = get_rashi(sid_lon)
+    nak_name, nak_lord, pada, _ = get_nakshatra(sid_lon)
+    positions["Rahu"] = {
+        "sidereal_lon": sid_lon,
+        "rashi": rashi_name, "rashi_idx": rashi_idx, "degree": deg,
+        "nakshatra": nak_name, "nak_lord": nak_lord, "pada": pada,
+        "house_from_lagna": ((rashi_idx - natal_lagna_idx) % 12) + 1,
+        "house_from_moon": ((rashi_idx - natal_moon_idx) % 12) + 1,
+        "retrograde": True, "sanskrit": "Rahu", "yaml_key": "rahu",
+    }
+
+    # Ketu (180 opposite Rahu)
+    ketu_lon = (positions["Rahu"]["sidereal_lon"] + 180) % 360
+    ketu_rashi, ketu_rashi_idx, ketu_deg = get_rashi(ketu_lon)
+    ketu_nak, ketu_nak_lord, ketu_pada, _ = get_nakshatra(ketu_lon)
+    positions["Ketu"] = {
+        "sidereal_lon": ketu_lon,
+        "rashi": ketu_rashi, "rashi_idx": ketu_rashi_idx, "degree": ketu_deg,
+        "nakshatra": ketu_nak, "nak_lord": ketu_nak_lord, "pada": ketu_pada,
+        "house_from_lagna": ((ketu_rashi_idx - natal_lagna_idx) % 12) + 1,
+        "house_from_moon": ((ketu_rashi_idx - natal_moon_idx) % 12) + 1,
+        "retrograde": True, "sanskrit": "Ketu", "yaml_key": "ketu",
+    }
+
+    return positions
+
+
+def detect_sade_sati(transit_saturn_rashi_idx, natal_moon_rashi_idx):
+    """Detect Sade Sati (7.5-year Saturn transit over Moon).
+
+    Saturn in 12th, 1st, or 2nd from natal Moon = Sade Sati.
+    Returns dict with active flag and phase, or inactive.
+    """
+    house_from_moon = ((transit_saturn_rashi_idx - natal_moon_rashi_idx) % 12) + 1
+    if house_from_moon == 12:
+        return {"active": True, "phase": "rising"}
+    elif house_from_moon == 1:
+        return {"active": True, "phase": "peak"}
+    elif house_from_moon == 2:
+        return {"active": True, "phase": "setting"}
+    return {"active": False, "phase": None}
+
+
+def detect_ashtama_shani(transit_saturn_rashi_idx, natal_moon_rashi_idx):
+    """Detect Ashtama Shani (Saturn in 8th from Moon)."""
+    house_from_moon = ((transit_saturn_rashi_idx - natal_moon_rashi_idx) % 12) + 1
+    return house_from_moon == 8
+
+
+def detect_kantaka_shani(transit_saturn_rashi_idx, natal_lagna_rashi_idx):
+    """Detect Kantaka Shani (Saturn in kendra from Lagna: 1, 4, 7, 10)."""
+    house_from_lagna = ((transit_saturn_rashi_idx - natal_lagna_rashi_idx) % 12) + 1
+    return house_from_lagna in (1, 4, 7, 10)
+
+
+def check_vedha(planet_name, house_from_moon, transit_positions,
+                natal_moon_rashi_idx):
+    """Check if a planet's auspicious transit is obstructed by vedha.
+
+    Returns dict with obstructed flag, obstructing planet, and vedha house.
+    """
+    if planet_name not in VEDHA_TABLE:
+        return {"obstructed": False}
+
+    vedha_pairs = VEDHA_TABLE[planet_name]
+    if house_from_moon not in vedha_pairs:
+        return {"obstructed": False}
+
+    vedha_house = vedha_pairs[house_from_moon]
+
+    # Check if any planet is in the vedha house
+    for other_name, other_pos in transit_positions.items():
+        if other_name == planet_name:
+            continue
+        if other_name in ("Rahu", "Ketu"):
+            continue  # Nodes not typically considered for vedha
+        other_house = other_pos["house_from_moon"]
+        if other_house == vedha_house:
+            # Check exception pairs
+            pair = frozenset({planet_name, other_name})
+            if pair in VEDHA_EXCEPTIONS:
+                continue
+            return {
+                "obstructed": True,
+                "obstructing_planet": other_name,
+                "vedha_house": vedha_house,
+            }
+
+    return {"obstructed": False}
+
+
+def compute_transits(birth_data_path, target_date_str, reading_type="transit_reading"):
+    """Compute full transit data for a person at a target date.
+
+    Args:
+        birth_data_path: Path to the person's birth_data.yaml
+        target_date_str: Target date as YYYY-MM-DD string
+        reading_type: Type of reading (for metadata)
+
+    Returns:
+        (transit_data_dict, output_path) where transit_data_dict matches
+        the current_positions.yaml template.
+    """
+    # Load birth data
+    with open(birth_data_path, "r") as f:
+        birth_data = yaml.safe_load(f)
+
+    # Extract natal references
+    natal_lagna_rashi = birth_data["lagna"]["rasi"]
+    natal_lagna_idx = RASHI_NAMES.index(natal_lagna_rashi)
+    natal_moon_rashi = birth_data["chandra"]["rasi"]
+    natal_moon_idx = RASHI_NAMES.index(natal_moon_rashi)
+
+    # Extract Moon longitude for dasha computation
+    moon_pos = birth_data["planetary_positions"]["chandra"]
+    moon_lon = natal_moon_idx * 30 + moon_pos["degree"]
+
+    # Parse birth date
+    dob = birth_data["native"]["date_of_birth"]
+    if isinstance(dob, date):
+        birth_date_obj = dob
+    else:
+        birth_date_obj = date.fromisoformat(str(dob))
+
+    # Parse target date
+    target_date = date.fromisoformat(target_date_str)
+
+    # Initialize Swiss Ephemeris
+    swe.set_sid_mode(swe.SIDM_LAHIRI)
+
+    # Compute Julian Day for target date at noon UT (transit positions are
+    # location-independent; noon gives a representative mid-day snapshot)
+    target_jd = swe.julday(target_date.year, target_date.month,
+                           target_date.day, 12.0)
+    ayanamsha = swe.get_ayanamsa(target_jd)
+
+    # Compute transit positions
+    transit_pos = compute_transit_positions(
+        target_jd, ayanamsha, natal_lagna_idx, natal_moon_idx
+    )
+
+    # Compute current dasha (MD/AD/PD)
+    all_periods, md_list = compute_full_dashas(moon_lon, birth_date_obj)
+    current_dasha = find_dasha_at_date(all_periods, target_date)
+
+    # Detect special Saturn timing
+    saturn_rashi_idx = transit_pos["Saturn"]["rashi_idx"]
+    sade_sati = detect_sade_sati(saturn_rashi_idx, natal_moon_idx)
+    ashtama_shani = detect_ashtama_shani(saturn_rashi_idx, natal_moon_idx)
+    kantaka_shani = detect_kantaka_shani(saturn_rashi_idx, natal_lagna_idx)
+
+    # Check vedha for all planets
+    vedha_results = {}
+    for planet_name, pos in transit_pos.items():
+        vedha = check_vedha(planet_name, pos["house_from_moon"],
+                            transit_pos, natal_moon_idx)
+        if vedha["obstructed"]:
+            vedha_results[planet_name] = vedha
+
+    # Build output dict matching current_positions.yaml template
+    graha_order = ["Sun", "Moon", "Mars", "Mercury", "Jupiter",
+                   "Venus", "Saturn", "Rahu", "Ketu"]
+
+    transit_section = {}
+    for name in graha_order:
+        p = transit_pos[name]
+        transit_section[p["yaml_key"]] = {
+            "rasi": p["rashi"],
+            "degree": round(p["degree"], 4),
+            "nakshatra": p["nakshatra"],
+            "pada": p["pada"],
+            "retrograde": p["retrograde"],
+            "house_from_lagna": p["house_from_lagna"],
+            "house_from_moon": p["house_from_moon"],
+        }
+
+    # Build dasha section
+    dasha_section = {}
+    if current_dasha:
+        dasha_section = {
+            "mahadasha": {
+                "lord": current_dasha["md"],
+                "start": current_dasha["md_start"],
+                "end": current_dasha["md_end"],
+            },
+            "antardasha": {
+                "lord": current_dasha["ad"],
+                "start": current_dasha["ad_start"],
+                "end": current_dasha["ad_end"],
+            },
+            "pratyantardasha": {
+                "lord": current_dasha["pd"],
+                "start": current_dasha["pd_start"],
+                "end": current_dasha["pd_end"],
+            },
+        }
+
+    # Build all ADs for current MD (for worksheet Part B)
+    all_ads_for_md = []
+    if current_dasha:
+        for period in all_periods:
+            if (period["md"] == current_dasha["md"]
+                    and period["md_start"].isoformat() == current_dasha["md_start"]):
+                ad_entry = {
+                    "lord": period["ad"],
+                    "start": period["ad_start"].isoformat(),
+                    "end": period["ad_end"].isoformat(),
+                }
+                if (period["ad_start"] <= target_date <= period["ad_end"]):
+                    ad_entry["status"] = "ACTIVE"
+                elif (target_date - period["ad_end"]).days <= 1095:  # ~3 years
+                    if period["ad_end"] < target_date:
+                        ad_entry["status"] = "RECENT"
+                all_ads_for_md.append(ad_entry)
+
+    output = {
+        "reading_date": target_date_str,
+        "reading_type": reading_type,
+        "birth_data_file": os.path.basename(os.path.dirname(birth_data_path))
+                           + "/birth_data.yaml",
+        "current_dasha": dasha_section,
+        "all_antardashas_in_current_md": all_ads_for_md,
+        "transit_positions": transit_section,
+        "transit_houses_from_moon": {
+            p["yaml_key"]: p["house_from_moon"]
+            for name, p in transit_pos.items()
+            for g in graha_order if g == name
+        },
+        "special_timing": {
+            "sade_sati": sade_sati,
+            "ashtama_shani": ashtama_shani,
+            "kantaka_shani": kantaka_shani,
+        },
+        "vedha": vedha_results if vedha_results else "none",
+        "notes": (
+            f"Transit snapshot for {target_date_str}\n"
+            f"Ayanamsa: Lahiri ({round(ayanamsha, 6)})\n"
+            f"Natal Lagna: {natal_lagna_rashi} | Natal Moon: {natal_moon_rashi}\n"
+            f"Computed by jyotish_calc.py"
+        ),
+    }
+
+    # Write to file
+    person_dir = os.path.dirname(birth_data_path)
+    output_filename = f"{target_date_str}_current_positions.yaml"
+    output_path = os.path.join(person_dir, output_filename)
+
+    with open(output_path, "w") as f:
+        yaml.dump(output, f, default_flow_style=False, sort_keys=False,
+                  allow_unicode=True)
+
+    return output, output_path
+
+
+# ---------------------------------------------------------------------------
 # YAML Output
 # ---------------------------------------------------------------------------
 
@@ -911,36 +1327,154 @@ def print_chart_summary(lagna, positions, dasha, house_summary,
 
 def parse_args(argv=None):
     parser = argparse.ArgumentParser(
-        description="Jyotish Birth Chart Calculator"
+        description="Jyotish Birth Chart & Transit Calculator"
     )
-    parser.add_argument("--name", required=True,
-                        help="Name of the native")
-    parser.add_argument("--dob", required=True,
-                        help="Date of birth (YYYY-MM-DD)")
-    parser.add_argument("--tob", required=True,
-                        help="Time of birth (HH:MM:SS)")
-    parser.add_argument("--place", required=True,
-                        help="Place of birth (city, state, country)")
-    parser.add_argument("--timezone", required=True, type=float,
-                        help="Timezone offset from UTC (e.g. 5.5 for IST)")
-    parser.add_argument("--lat", type=float, default=None,
-                        help="Latitude (geocodes from place if omitted)")
-    parser.add_argument("--lon", type=float, default=None,
-                        help="Longitude (geocodes from place if omitted)")
-    parser.add_argument("--gender", default=None,
-                        help="Gender of the native")
-    parser.add_argument("--relationship", default=None,
-                        help="Relationship (self, spouse, child, etc.)")
-    parser.add_argument("--true-node", action="store_true",
-                        help="Use True Node for Rahu (default: Mean Node)")
-    parser.add_argument("--print", dest="print_summary", action="store_true",
-                        help="Print human-readable summary to stderr")
-    return parser.parse_args(argv)
+    subparsers = parser.add_subparsers(dest="command", help="Command to run")
+
+    # --- birth subcommand (default behavior) ---
+    birth_parser = subparsers.add_parser("birth", help="Compute birth chart")
+    birth_parser.add_argument("--name", required=True,
+                              help="Name of the native")
+    birth_parser.add_argument("--dob", required=True,
+                              help="Date of birth (YYYY-MM-DD)")
+    birth_parser.add_argument("--tob", required=True,
+                              help="Time of birth (HH:MM:SS)")
+    birth_parser.add_argument("--place", required=True,
+                              help="Place of birth (city, state, country)")
+    birth_parser.add_argument("--timezone", required=True, type=float,
+                              help="Timezone offset from UTC (e.g. 5.5)")
+    birth_parser.add_argument("--lat", type=float, default=None,
+                              help="Latitude (geocodes from place if omitted)")
+    birth_parser.add_argument("--lon", type=float, default=None,
+                              help="Longitude (geocodes from place if omitted)")
+    birth_parser.add_argument("--gender", default=None,
+                              help="Gender of the native")
+    birth_parser.add_argument("--relationship", default=None,
+                              help="Relationship (self, spouse, child, etc.)")
+    birth_parser.add_argument("--true-node", action="store_true",
+                              help="Use True Node for Rahu (default: Mean Node)")
+    birth_parser.add_argument("--print", dest="print_summary",
+                              action="store_true",
+                              help="Print human-readable summary to stderr")
+
+    # --- transit subcommand ---
+    transit_parser = subparsers.add_parser(
+        "transit", help="Compute transit positions for a person at a date"
+    )
+    transit_parser.add_argument(
+        "--person", required=True,
+        help="Person folder name under readings/ (e.g., jagan_mohan)"
+    )
+    transit_parser.add_argument(
+        "--date", dest="target_date", default=None,
+        help="Target date (YYYY-MM-DD). Defaults to today."
+    )
+    transit_parser.add_argument(
+        "--type", dest="reading_type", default="transit_reading",
+        help="Reading type (transit_reading, full_reading, etc.)"
+    )
+    transit_parser.add_argument(
+        "--print", dest="print_summary", action="store_true",
+        help="Print human-readable transit summary to stderr"
+    )
+
+    # For backward compatibility: if no subcommand given, check for --name
+    # which indicates old-style birth chart usage
+    args = parser.parse_args(argv)
+    if args.command is None:
+        # Legacy mode: re-parse as birth command
+        sys.argv.insert(1, "birth")
+        args = parser.parse_args()
+
+    return args
 
 
-def main(argv=None):
-    args = parse_args(argv)
+def print_transit_summary(transit_data, person_name):
+    """Print human-readable transit summary to stderr."""
+    out = sys.stderr
 
+    out.write("=" * 70 + "\n")
+    out.write(f"  TRANSIT POSITIONS \u2014 {person_name.upper()}\n")
+    out.write(f"  Date: {transit_data['reading_date']}\n")
+    out.write("=" * 70 + "\n")
+
+    # Current dasha
+    dasha = transit_data.get("current_dasha", {})
+    if dasha:
+        md = dasha.get("mahadasha", {})
+        ad = dasha.get("antardasha", {})
+        pd = dasha.get("pratyantardasha", {})
+        out.write(f"\n  ACTIVE DASHA: {md.get('lord', '?')}-"
+                  f"{ad.get('lord', '?')}-{pd.get('lord', '?')}\n")
+        out.write(f"    MD: {md.get('lord', '?')} "
+                  f"({md.get('start', '?')} to {md.get('end', '?')})\n")
+        out.write(f"    AD: {ad.get('lord', '?')} "
+                  f"({ad.get('start', '?')} to {ad.get('end', '?')})\n")
+        out.write(f"    PD: {pd.get('lord', '?')} "
+                  f"({pd.get('start', '?')} to {pd.get('end', '?')})\n")
+
+    # Transit positions
+    out.write("\n  " + "-" * 66 + "\n")
+    out.write(
+        f"  {'Graha':<10} {'Rashi':<14} {'Degree':<10} "
+        f"{'Nakshatra':<20} {'H(Lg)':>5} {'H(Mo)':>5} {'R':>2}\n"
+    )
+    out.write("  " + "-" * 66 + "\n")
+
+    for yaml_key, pos in transit_data["transit_positions"].items():
+        retro = "R" if pos.get("retrograde") else ""
+        out.write(
+            f"  {yaml_key:<10} {pos['rasi']:<14} "
+            f"{pos['degree']:>8.4f}  "
+            f"{pos['nakshatra']:<20} "
+            f"{pos['house_from_lagna']:>5} "
+            f"{pos['house_from_moon']:>5} "
+            f"{retro:>2}\n"
+        )
+
+    # Special timing
+    special = transit_data.get("special_timing", {})
+    out.write("\n  " + "-" * 66 + "\n")
+    out.write("  SPECIAL TIMING\n")
+    out.write("  " + "-" * 66 + "\n")
+
+    sade = special.get("sade_sati", {})
+    if sade.get("active"):
+        out.write(f"  Sade Sati: ACTIVE ({sade['phase']})\n")
+    else:
+        out.write("  Sade Sati: inactive\n")
+
+    out.write(f"  Ashtama Shani: "
+              f"{'YES' if special.get('ashtama_shani') else 'no'}\n")
+    out.write(f"  Kantaka Shani: "
+              f"{'YES' if special.get('kantaka_shani') else 'no'}\n")
+
+    # Vedha
+    vedha = transit_data.get("vedha", "none")
+    if vedha != "none" and vedha:
+        out.write("\n  VEDHA (Obstructions):\n")
+        for planet, info in vedha.items():
+            out.write(f"    {planet}: obstructed by {info['obstructing_planet']}"
+                      f" in house {info['vedha_house']} from Moon\n")
+
+    # All ADs in current MD
+    all_ads = transit_data.get("all_antardashas_in_current_md", [])
+    if all_ads:
+        out.write("\n  " + "-" * 66 + "\n")
+        out.write(f"  ALL ANTARDASHAS IN CURRENT MAHADASHA "
+                  f"({dasha.get('mahadasha', {}).get('lord', '?')})\n")
+        out.write("  " + "-" * 66 + "\n")
+        for ad in all_ads:
+            status = ad.get("status", "")
+            marker = f" <<< {status}" if status else ""
+            out.write(f"  {ad['lord']:<10} {ad['start']}  to  "
+                      f"{ad['end']}{marker}\n")
+
+    out.write("=" * 70 + "\n")
+
+
+def main_birth(args):
+    """Handle birth chart computation."""
     # Parse date and time
     dob_parts = [int(x) for x in args.dob.split("-")]
     tob_parts = [int(x) for x in args.tob.split(":")]
@@ -1011,6 +1545,46 @@ def main(argv=None):
         "moon_sign": positions["Moon"]["rashi"],
     }
     print(json.dumps(status))
+
+
+def main_transit(args):
+    """Handle transit computation."""
+    target_date = args.target_date or date.today().isoformat()
+    person = args.person
+    birth_data_path = os.path.join("readings", person, "birth_data.yaml")
+
+    if not os.path.exists(birth_data_path):
+        print(json.dumps({
+            "status": "error",
+            "message": f"Birth data not found: {birth_data_path}",
+        }))
+        sys.exit(1)
+
+    transit_data, output_path = compute_transits(
+        birth_data_path, target_date, args.reading_type
+    )
+
+    if args.print_summary:
+        print_transit_summary(transit_data, person)
+
+    print(json.dumps({
+        "status": "success",
+        "file": output_path,
+        "date": target_date,
+        "dasha": (f"{transit_data['current_dasha']['mahadasha']['lord']}-"
+                  f"{transit_data['current_dasha']['antardasha']['lord']}-"
+                  f"{transit_data['current_dasha']['pratyantardasha']['lord']}"
+                  if transit_data.get("current_dasha") else "unknown"),
+    }))
+
+
+def main(argv=None):
+    args = parse_args(argv)
+
+    if args.command == "transit":
+        main_transit(args)
+    else:
+        main_birth(args)
 
 
 if __name__ == "__main__":

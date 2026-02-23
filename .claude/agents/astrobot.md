@@ -65,8 +65,13 @@ Before synthesis, **re-read birth_data.yaml and extensions.yaml**. Analyze from 
 ### Step 1: Read the Native's Data
 1. Read `readings/<person>/birth_data.yaml`
 2. Read `readings/<person>/extensions.yaml` (if exists)
-3. Read `readings/<person>/YYYY-MM-DD_current_positions.yaml` (if exists, for transit data)
-4. Note which data sections are populated — this determines which specialists to consult.
+3. **Generate transit data if needed:** If no `current_positions.yaml` exists for today's date (or the requested date), run:
+   ```bash
+   python jyotish_calc.py transit --person <person_folder> --date <YYYY-MM-DD> --print
+   ```
+   This computes all transit positions, current MD/AD/PD, sade sati/ashtama shani/kantaka shani detection, vedha checks, and all ADs in the current mahadasha. It writes the output to `readings/<person>/YYYY-MM-DD_current_positions.yaml`.
+4. Read `readings/<person>/YYYY-MM-DD_current_positions.yaml`
+5. Note which data sections are populated — this determines which specialists to consult.
 
 ### Step 2: Build Pre-Analysis Worksheet
 
