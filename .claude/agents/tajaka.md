@@ -71,15 +71,14 @@ From `tajaka.yaml`, check which of the 16 Tajaka yogas are formed in the annual 
 
 ## Output Format
 
-**You MUST return your findings in the standard specialist findings format.**
-Read `.claude_kb/templates/specialist_findings.md` for the exact format.
+**You MUST return your findings as a YAML block following the schema in `.claude_kb/templates/specialist_findings.md`.**
 
 Key rules:
-- System field: "Tajaka"
-- Evidence must cite specific sahams, Tajaka yogas, Muntha position
-- Dasha assessment uses Mudda dasha (annual dasha) if available
+- `system: "Tajaka"`
+- In the `mechanism` field, cite specific sahams, Tajaka yogas, Muntha position
+- Dasha section uses Mudda dasha (annual dasha) if available
 - This system is most useful for annual predictions and year-specific queries
-- Flag if solar return chart data was not available
+- If solar return chart data was not available, note in `confidence.data_missing`
 
 ## Rules
 1. **Return data, not narrative.**

@@ -68,7 +68,43 @@ Before synthesis, **re-read birth_data.yaml and extensions.yaml**. Analyze from 
 3. Read `readings/<person>/YYYY-MM-DD_current_positions.yaml` (if exists, for transit data)
 4. Note which data sections are populated — this determines which specialists to consult.
 
-### Step 2: Determine Specialist Dispatch
+### Step 2: Build Pre-Analysis Worksheet
+
+Before dispatching to specialists, build a worksheet with three parts. This worksheet anchors all downstream analysis and prevents contradictions with computed data.
+
+**Part A: Planet Net Assessment Table**
+For EVERY graha (Su, Mo, Ma, Me, Ju, Ve, Sa, Ra, Ke), fill one row:
+
+| Planet | House | Dignity | Functional Nature | Maraka? | Badhaka? | Neecha Bhanga? | Yogas Involved | Key Aspects | NET Assessment |
+|--------|-------|---------|-------------------|---------|----------|---------------|----------------|-------------|----------------|
+
+Rules:
+- All data comes from `birth_data.yaml` `computed_analysis` section — no interpretation yet
+- NET Assessment = one of: STRONG_POSITIVE / MILD_POSITIVE / NEUTRAL / MILD_NEGATIVE / STRONG_NEGATIVE
+- If a planet has contradictory roles (e.g., Saturn as lagna lord + maraka), note BOTH and mark "CONFLICTED — resolve in analysis"
+- Do NOT double-count: if a planet appears on both favorable and unfavorable side, explicitly flag it
+
+**Part B: AD Coverage Table**
+For the current Mahadasha, list EVERY Antardasha:
+
+| AD Lord | Start | End | AD Lord's NET (from Part A) | Relationship to MD Lord | Key Themes | ACTIVE? |
+|---------|-------|-----|----------------------------|------------------------|------------|---------|
+
+Rules:
+- EVERY AD must have a row — no skipping
+- Mark currently active AD with ">>> ACTIVE <<<"
+- Mark recently completed ADs (within 3 years) with "RECENT"
+
+**Part C: Consistency Lock**
+After Parts A and B are filled, write a checklist:
+- [ ] Every planet with neecha bhanga CONFIRMED/LIKELY in computed_analysis is marked accordingly in Part A
+- [ ] Every yogakaraka/functional benefic/malefic matches computed_analysis
+- [ ] No AD in current MD is missing from Part B
+- [ ] Active AD lord's assessment is consistent with Part A
+
+**This worksheet is included in the dispatch prompt to all specialists.** Specialists must not contradict the worksheet's factual entries (they may add interpretation).
+
+### Step 3: Determine Specialist Dispatch
 **Rule: Consult every specialist whose data is available.**
 
 | Specialist | Requires | Always dispatch? |
@@ -81,28 +117,68 @@ Before synthesis, **re-read birth_data.yaml and extensions.yaml**. Analyze from 
 | prashna | Question time and place | ONLY for horary questions |
 | muhurta | birth_data.yaml (natal Moon) + proposed time | ONLY for timing questions |
 
-### Step 3: Dispatch to Specialists
+### Step 4: Dispatch to Specialists
 Use the Task tool to spawn specialist agents **in parallel**:
 
 ```
 Task tool:
   subagent_type: "parashari"
-  prompt: "[Neutral query]. Native's data: [paste relevant birth_data.yaml and extensions.yaml sections]"
+  prompt: "[Neutral query]. Native's data: [paste relevant birth_data.yaml and extensions.yaml sections]
+
+  == PRE-ANALYSIS WORKSHEET ==
+  [Paste the complete worksheet from Step 2]"
 ```
 
 Each specialist receives:
-- The neutrally-framed query (from Step 1, after User-Frame Quarantine)
+- The neutrally-framed query (from Step 3, after User-Frame Quarantine)
 - The relevant data sections (birth_data + extensions + current positions)
+- The Pre-Analysis Worksheet from Step 2
 
-### Step 4: Collect & Synthesize
-1. Wait for all specialist responses
-2. Each specialist returns structured findings in the standard format
-3. Pool ALL findings into two lists: FAVORABLE and UNFAVORABLE
-4. Deduplicate: if multiple specialists report the same finding (e.g., both Parashari and Nadi note Jupiter's strength), merge into one finding with "CONFIRMED BY: Parashari, Nadi"
+### Step 5: Collect & Synthesize
+1. Wait for all specialist responses — each returns a YAML block per the schema in `.claude_kb/templates/specialist_findings.md`
+2. Merge all `favorable` entries across systems into one list, all `unfavorable` into another, all `mixed` into a third
+3. Deduplicate: if multiple specialists report the same planet-house finding, merge into one entry and add a `confirmed_by: [Parashari, Nadi]` field
+4. Cross-check specialist YAML against the Pre-Analysis Worksheet (Step 2):
+   - If a specialist's finding contradicts a worksheet factual entry (e.g., calls a neecha bhanga CONFIRMED planet "weak"), flag the contradiction and resolve using the worksheet as ground truth
+   - If a specialist adds new interpretation or nuance not in the worksheet, accept it
 5. Build the Floodlight Scorecard (see scoring framework below)
-6. Count system convergence for each dasha assessment
+6. Count system convergence: for each planet and each dasha period, how many systems agree on direction?
 
-### Step 5: Build the Floodlight Scorecard
+### Step 5a: Event-First Recursive Validation (conditional)
+
+**This step only runs when known life events exist.** Check if `readings/<person>/` contains any previous reading files with documented life events, or if the user has provided known events in their query.
+
+If YES, run these sub-steps:
+
+**5a-i: Event-to-Dasha Mapping**
+For each known event, create a row:
+
+| Event | Date | Active MD-AD-PD | Key Planets Activated | Expected by Chart? |
+|-------|------|-----------------|----------------------|-------------------|
+
+**5a-ii: Compare Expected vs Actual**
+For each event:
+- Does the AD lord's NET assessment (from worksheet Part A) predict this outcome?
+- If YES → Mark "VALIDATED"
+- If NO → Mark "CONTRADICTION — investigate"
+
+**5a-iii: Calibrate Planet Assessments**
+For each CONTRADICTION:
+- What does the actual event tell us about the planet's real-world behavior?
+- Update the planet's NET assessment in the worksheet if warranted
+- Document the revision: "Originally MILD_NEGATIVE, upgraded to MILD_POSITIVE based on [event] during [AD]"
+
+**5a-iv: Validated Planet Behavior Model**
+Produce a summary: "Based on N known events, the following planets have demonstrated behavior:"
+
+| Planet | Worksheet Assessment | Demonstrated Behavior | Confidence |
+|--------|---------------------|----------------------|------------|
+
+**5a-v: Prediction Confidence Adjustment**
+- Predictions involving VALIDATED planets get +1 confidence tier
+- Predictions involving CONTRADICTED planets get -1 confidence tier and a "needs investigation" flag
+
+### Step 6: Build the Floodlight Scorecard
 Reference: `.claude_kb/reference/scorecards.yaml`
 
 1. Assign base weight (1-5) to each finding based on the graha's dignity
@@ -111,7 +187,7 @@ Reference: `.claude_kb/reference/scorecards.yaml`
 4. Determine Confidence (lower of scorecard margin and dasha convergence)
 5. Present the scorecard tables BEFORE any narrative
 
-### Step 6: Write the Reading
+### Step 7: Write the Reading
 1. Select the appropriate template from `.claude_kb/templates/`
 2. **Apply Two-Layer Output Rules for EVERY section** (see below):
    - Write the plain-language layer FIRST — no jyotish terms, no abbreviations
@@ -121,6 +197,38 @@ Reference: `.claude_kb/reference/scorecards.yaml`
 4. Merge remedials from all specialists — present remedials in plain language with technical basis collapsible
 5. Write the Final Reflection (self-critique, weakest assumption, genuine ambiguity) — this section can use simplified astro language since it is meta-commentary
 6. Save to `readings/<person>/YYYY-MM-DD_<type>.md`
+
+### Step 8: Critic Review
+
+After the reading is written, dispatch the **critic** agent for post-reading quality assurance.
+
+1. Dispatch the critic agent with:
+   - The completed reading text (from the file saved in Step 7)
+   - `birth_data.yaml` for the native
+   - The Pre-Analysis Worksheet from Step 2
+   - Any known life events (from Step 5a, if applicable)
+
+```
+Task tool:
+  subagent_type: "critic"
+  prompt: "Review this reading for quality issues.
+
+  == READING ==
+  [Paste completed reading text]
+
+  == BIRTH DATA ==
+  [Paste birth_data.yaml computed_analysis section]
+
+  == PRE-ANALYSIS WORKSHEET ==
+  [Paste worksheet from Step 2]
+
+  == KNOWN EVENTS (if any) ==
+  [Paste event validation results from Step 5a]"
+```
+
+2. If critic returns any **CRITICAL** issues: fix them in the reading and re-run critic (maximum 2 critic loops to prevent infinite revision)
+3. If critic returns only **WARNING/INFO**: append a "Quality Review" note at the end of the reading listing any unresolved warnings
+4. After critic approval, the reading is final
 
 ---
 

@@ -75,14 +75,13 @@ Consult `muhurta.yaml` for the specific activity:
 
 ## Output Format
 
-**You MUST return your findings in the standard specialist findings format.**
-Read `.claude_kb/templates/specialist_findings.md` for the exact format.
+**You MUST return your findings as a YAML block following the schema in `.claude_kb/templates/specialist_findings.md`.**
 
 Key rules:
-- System field: "Muhurta"
-- Include panchanga shuddhi score (X/5) prominently
-- Tarabala and Chandrabala results are critical findings
-- If the proposed time is unsuitable, suggest alternative windows in the timing section
+- `system: "Muhurta"`
+- Include panchanga shuddhi score (X/5) in the mechanism of the first finding
+- Tarabala and Chandrabala results are critical findings — each gets its own entry under favorable/unfavorable
+- If the proposed time is unsuitable, suggest alternative windows in the `timing` section
 - Confidence is HIGH if panchanga shuddhi = 5/5 + tarabala favorable + chandrabala favorable
 
 ## Rules

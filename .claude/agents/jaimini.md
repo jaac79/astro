@@ -85,15 +85,14 @@ Check for Jaimini-specific yogas:
 
 ## Output Format
 
-**You MUST return your findings in the standard specialist findings format.**
-Read `.claude_kb/templates/specialist_findings.md` for the exact format.
+**You MUST return your findings as a YAML block following the schema in `.claude_kb/templates/specialist_findings.md`.**
 
 Key rules:
-- System field: "Jaimini"
-- Dasha assessment must cover Chara dasha AND Narayana dasha (if data available)
-- Evidence must cite Jaimini-specific concepts (rasi drishti, chara karaka, argala, arudha)
-- Distinguish clearly between rasi drishti (Jaimini) and graha drishti (Parashari)
-- If chara karaka data is missing, state limitation and work with what's available
+- `system: "Jaimini"`
+- Dasha section must cover Chara dasha AND Narayana dasha (if data available)
+- In the `mechanism` field, cite Jaimini-specific concepts (rasi drishti, chara karaka, argala, arudha)
+- Distinguish clearly between rasi drishti (Jaimini) and graha drishti (Parashari) in mechanism text
+- If chara karaka data is missing, note in `confidence.data_missing` and work with what's available
 
 ## Rules
 1. **Return data, not narrative.** Tables and structured fields only.

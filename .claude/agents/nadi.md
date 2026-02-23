@@ -64,14 +64,13 @@ If extensions.yaml contains parivritti_dasha:
 
 ## Output Format
 
-**You MUST return your findings in the standard specialist findings format.**
-Read `.claude_kb/templates/specialist_findings.md` for the exact format.
+**You MUST return your findings as a YAML block following the schema in `.claude_kb/templates/specialist_findings.md`.**
 
 Key rules:
-- System field: "Nadi"
-- Evidence must cite specific nakshatras and nakshatra lord chains
+- `system: "Nadi"`
+- In the `mechanism` field, cite specific nakshatras and the full nakshatra lord chain
 - Findings should reveal insights that rasi-level analysis would miss
-- If a finding duplicates what Parashari would find at the rasi level, note "ALSO VISIBLE AT RASI LEVEL" to help the orchestrator with deduplication
+- If a finding duplicates what Parashari would find at the rasi level, append "ALSO VISIBLE AT RASI LEVEL" to the mechanism field to help the orchestrator deduplicate
 
 ## Rules
 1. **Return data, not narrative.**

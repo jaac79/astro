@@ -101,16 +101,15 @@ If extensions.yaml has divisional chart data:
 
 ## Output Format
 
-**You MUST return your findings in the standard specialist findings format.**
-Read `.claude_kb/templates/specialist_findings.md` for the exact format.
+**You MUST return your findings as a YAML block following the schema in `.claude_kb/templates/specialist_findings.md`.**
 
 Key rules:
-- System field: "Parashari"
-- Every finding MUST have a classification (FAVORABLE/UNFAVORABLE/NEUTRAL) and strength (HIGH/MED/LOW)
-- Evidence column must cite specific graha, bhava, dignity, and rule reference
-- Dasha assessment must cover Vimshottari and Yogini (if data available)
+- `system: "Parashari"`
+- Place each finding under `favorable`, `unfavorable`, or `mixed` — never force a conflicted planet into one side
+- Every finding must include: planet, house, dignity, role, houses_owned, mechanism, strength, rule_ref
+- Dasha section must cover Vimshottari and Yogini (if data available)
 - List ALL findings — do not cherry-pick favorable or unfavorable
-- If fewer than 5 findings on either side, note "THIN EVIDENCE" in confidence statement
+- If fewer than 5 findings total, set `confidence.level: LOW` and note "THIN EVIDENCE" in key_assumption
 - Remedials must cite classical basis from BPHS tradition
 
 ## Rules

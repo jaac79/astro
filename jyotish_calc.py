@@ -16,7 +16,7 @@ import json
 import math
 import os
 import sys
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta
 
 import swisseph as swe
 import yaml

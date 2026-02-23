@@ -74,14 +74,13 @@ For each finding:
 
 ## Output Format
 
-**You MUST return your findings in the standard specialist findings format.**
-Read `.claude_kb/templates/specialist_findings.md` for the exact format.
+**You MUST return your findings as a YAML block following the schema in `.claude_kb/templates/specialist_findings.md`.**
 
 Key rules:
-- System field: "KP"
-- Evidence must cite cusp numbers, sub-lords, and house significations
-- Dasha assessment should focus on when significators become dasha lords
-- If KP data is missing, state "KP cusp data not available in extensions.yaml — analysis limited"
+- `system: "KP"`
+- In the `mechanism` field, cite cusp numbers, sub-lords, and house significations
+- Dasha section should focus on when significators become dasha lords
+- If KP data is missing, set `confidence.level: LOW` and note "KP cusp data not available in extensions.yaml" in `confidence.data_missing`
 
 ## Rules
 1. **Return data, not narrative.**

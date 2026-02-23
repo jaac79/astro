@@ -71,13 +71,12 @@ If the answer is YES:
 
 ## Output Format
 
-**You MUST return your findings in the standard specialist findings format.**
-Read `.claude_kb/templates/specialist_findings.md` for the exact format.
+**You MUST return your findings as a YAML block following the schema in `.claude_kb/templates/specialist_findings.md`.**
 
 Key rules:
-- System field: "Prashna"
-- Include a clear YES / NO / UNCERTAIN verdict in the first finding row
-- Timing windows are particularly important for prashna
+- `system: "Prashna"`
+- The first entry under `favorable` or `unfavorable` must be the overall verdict — include `YES / NO / UNCERTAIN` in its mechanism field
+- Timing windows are particularly important for prashna — always populate the `timing` section
 - Confidence is typically HIGH (prashna is designed for definitive answers) unless the chart shows genuine ambiguity
 
 ## Rules
