@@ -424,11 +424,318 @@ def build_house_summary(lagna_rashi_idx, positions):
 
 
 # ---------------------------------------------------------------------------
+# Computed Analysis: Functional Nature, Badhaka, Maraka, Neecha Bhanga, Yogas
+# ---------------------------------------------------------------------------
+
+# Functional nature per lagna (Table 30) - indexed by lagna rasi index (0-11)
+# Each entry: (yogakarakas, benefics, malefics, neutrals)
+FUNCTIONAL_NATURE_TABLE = {
+    0: ([], ["Sun", "Mars", "Jupiter"], ["Mercury", "Venus", "Saturn"], []),  # Mesham
+    1: (["Saturn"], ["Sun", "Mercury", "Saturn"], ["Moon", "Jupiter", "Venus"], ["Mars"]),  # Rishabham
+    2: ([], ["Venus"], ["Mars", "Jupiter"], ["Moon", "Mercury", "Saturn"]),  # Mithunam
+    3: (["Mars"], ["Moon", "Mars", "Jupiter"], ["Mercury", "Venus"], ["Sun", "Saturn"]),  # Katakam
+    4: (["Mars"], ["Sun", "Mars", "Jupiter"], ["Mercury", "Venus", "Saturn"], ["Moon"]),  # Simham
+    5: ([], ["Mercury", "Venus"], ["Moon", "Mars", "Jupiter"], ["Sun", "Saturn"]),  # Kanni
+    6: (["Saturn"], ["Mercury", "Venus", "Saturn"], ["Sun", "Mars", "Jupiter"], []),  # Thulam
+    7: ([], ["Moon", "Jupiter"], ["Mercury", "Venus", "Saturn"], ["Sun", "Mars"]),  # Viruchikam
+    8: ([], ["Sun", "Mars"], ["Venus", "Saturn"], ["Moon", "Mercury", "Jupiter"]),  # Dhanusu
+    9: (["Venus"], ["Venus", "Mercury", "Saturn"], ["Moon", "Mars", "Jupiter"], ["Sun"]),  # Makaram
+    10: (["Venus"], ["Venus", "Saturn"], ["Moon", "Mars", "Jupiter"], ["Sun", "Mercury"]),  # Kumbham
+    11: ([], ["Moon", "Mars"], ["Sun", "Mercury", "Venus", "Saturn"], ["Jupiter"]),  # Meenam
+}
+
+# Sign types for badhaka computation
+SIGN_TYPE = ["movable", "fixed", "dual"] * 4  # Me=mov, Ri=fix, Mi=dual, Ka=mov, ...
+
+# Digbala (directional strength): planet -> house where it gets digbala
+DIGBALA = {
+    "Sun": 10, "Mars": 10,
+    "Jupiter": 1, "Mercury": 1,
+    "Moon": 4, "Venus": 4,
+    "Saturn": 7,
+}
+
+
+def compute_functional_nature(lagna_rashi_idx):
+    """Compute functional nature of planets for the given lagna (Table 30).
+
+    Returns dict with yogakarakas, functional_benefics, functional_malefics,
+    functional_neutrals.
+    """
+    yogakarakas, benefics, malefics, neutrals = FUNCTIONAL_NATURE_TABLE[lagna_rashi_idx]
+    return {
+        "yogakarakas": yogakarakas,
+        "functional_benefics": benefics,
+        "functional_malefics": malefics,
+        "functional_neutrals": neutrals,
+    }
+
+
+def compute_badhaka(lagna_rashi_idx):
+    """Compute badhaka sthana and lord for the given lagna (Table 31).
+
+    Movable sign → 11th house; Fixed → 9th house; Dual → 7th house.
+    """
+    sign_type = SIGN_TYPE[lagna_rashi_idx]
+    if sign_type == "movable":
+        badhaka_house = 11
+    elif sign_type == "fixed":
+        badhaka_house = 9
+    else:  # dual
+        badhaka_house = 7
+
+    badhaka_rashi_idx = (lagna_rashi_idx + badhaka_house - 1) % 12
+    badhaka_lord = RASI_LORD[badhaka_rashi_idx]
+    return {
+        "lagna_sign_type": sign_type,
+        "badhaka_sthana": badhaka_house,
+        "badhaka_rasi": RASHI_NAMES[badhaka_rashi_idx],
+        "badhaka_lord": badhaka_lord,
+    }
+
+
+def compute_marakas(lagna_rashi_idx):
+    """Compute maraka planets (2nd and 7th lords)."""
+    second_rashi_idx = (lagna_rashi_idx + 1) % 12
+    seventh_rashi_idx = (lagna_rashi_idx + 6) % 12
+    second_lord = RASI_LORD[second_rashi_idx]
+    seventh_lord = RASI_LORD[seventh_rashi_idx]
+
+    marakas = []
+    marakas.append({"planet": seventh_lord, "reason": f"7th lord ({RASHI_NAMES[seventh_rashi_idx]})"})
+    if second_lord != seventh_lord:
+        marakas.append({"planet": second_lord, "reason": f"2nd lord ({RASHI_NAMES[second_rashi_idx]})"})
+
+    return marakas
+
+
+def detect_neecha_bhanga(positions, lagna_rashi_idx):
+    """Detect neecha bhanga raja yoga for debilitated planets.
+
+    Checks these conditions:
+    1. Lord of debilitation sign is exalted in the chart
+    2. Debilitated planet is in a kendra (H1, H4, H7, H10) from lagna
+    3. Lord of the sign occupied by debilitated planet is in a kendra from lagna
+    """
+    kendra_houses = {1, 4, 7, 10}
+    results = []
+
+    for name, pos in positions.items():
+        if name in ("Rahu", "Ketu"):
+            continue
+        dignity = get_dignity(name, pos["rashi_idx"], pos["degree"])
+        if dignity != "debilitated":
+            continue
+
+        conditions = []
+        deb_rashi_idx = pos["rashi_idx"]
+        deb_house = pos["house"]
+
+        # Condition 1: Lord of the debilitation sign is exalted
+        sign_lord = RASI_LORD[deb_rashi_idx]
+        if sign_lord in positions:
+            lord_dignity = get_dignity(
+                sign_lord,
+                positions[sign_lord]["rashi_idx"],
+                positions[sign_lord]["degree"],
+            )
+            if lord_dignity == "exalted":
+                conditions.append(
+                    f"{sign_lord} (lord of {RASHI_NAMES[deb_rashi_idx]}) is exalted"
+                    f" in {positions[sign_lord]['rashi']}"
+                )
+
+        # Condition 2: Debilitated planet in kendra from lagna
+        if deb_house in kendra_houses:
+            conditions.append(
+                f"{name} in kendra (House {deb_house}) from lagna"
+            )
+
+        # Condition 3: Dispositor (lord of occupied sign) in kendra from lagna
+        dispositor = RASI_LORD[deb_rashi_idx]
+        if dispositor in positions and positions[dispositor]["house"] in kendra_houses:
+            conditions.append(
+                f"{dispositor} (dispositor) in kendra"
+                f" (House {positions[dispositor]['house']}) from lagna"
+            )
+
+        if conditions:
+            results.append({
+                "planet": name,
+                "debilitated_in": RASHI_NAMES[deb_rashi_idx],
+                "house": deb_house,
+                "conditions_met": conditions,
+                "status": "CONFIRMED" if len(conditions) >= 2 else "LIKELY",
+            })
+
+    return results
+
+
+def detect_yogas(positions, lagna_rashi_idx):
+    """Detect common yogas in the chart.
+
+    Detects: Budha-Aditya, Gaja-Kesari, Pancha Mahapurusha,
+    Vipareeta Raja Yoga, and basic conjunctions.
+    """
+    kendra_houses = {1, 4, 7, 10}
+    yogas = []
+
+    # 1. Budha-Aditya Yoga: Sun + Mercury in same sign
+    if positions["Sun"]["rashi_idx"] == positions["Mercury"]["rashi_idx"]:
+        # Check combustion (Mercury within 14 deg of Sun if retro, 12 deg if direct)
+        sep = abs(positions["Sun"]["sidereal_lon"] - positions["Mercury"]["sidereal_lon"])
+        if sep > 180:
+            sep = 360 - sep
+        combust_limit = 14 if positions["Mercury"]["retrograde"] else 12
+        combust = sep < combust_limit
+        strength = "WEAKENED" if combust else "STRONG"
+        yogas.append({
+            "name": "Budha-Aditya Yoga",
+            "planets": ["Sun", "Mercury"],
+            "house": positions["Sun"]["house"],
+            "strength": strength,
+            "notes": f"Sun-Mercury conjunction in H{positions['Sun']['house']}."
+                     + (f" Mercury combust ({sep:.1f} deg separation)." if combust else ""),
+        })
+
+    # 2. Gaja-Kesari Yoga: Jupiter in kendra from Moon
+    moon_rashi = positions["Moon"]["rashi_idx"]
+    jup_rashi = positions["Jupiter"]["rashi_idx"]
+    dist_from_moon = (jup_rashi - moon_rashi) % 12
+    if dist_from_moon in (0, 3, 6, 9):  # 1st, 4th, 7th, 10th from Moon
+        yogas.append({
+            "name": "Gaja-Kesari Yoga",
+            "planets": ["Jupiter", "Moon"],
+            "house": positions["Jupiter"]["house"],
+            "strength": "STRONG" if get_dignity(
+                "Jupiter", jup_rashi, positions["Jupiter"]["degree"]
+            ) in ("exalted", "own", "moolatrikona") else "MODERATE",
+            "notes": f"Jupiter in kendra from Moon (house {dist_from_moon + 1} from Moon).",
+        })
+
+    # 3. Pancha Mahapurusha Yogas (Mars/Mercury/Jupiter/Venus/Saturn in
+    #    own/exalted/moolatrikona AND in kendra from lagna)
+    mahapurusha_names = {
+        "Mars": "Ruchaka", "Mercury": "Bhadra", "Jupiter": "Hamsa",
+        "Venus": "Malavya", "Saturn": "Sasa",
+    }
+    for planet, yoga_name in mahapurusha_names.items():
+        pos = positions[planet]
+        dignity = get_dignity(planet, pos["rashi_idx"], pos["degree"])
+        if dignity in ("exalted", "own", "moolatrikona") and pos["house"] in kendra_houses:
+            yogas.append({
+                "name": f"{yoga_name} Yoga (Pancha Mahapurusha)",
+                "planets": [planet],
+                "house": pos["house"],
+                "strength": "STRONG",
+                "notes": f"{planet} {dignity} in kendra (H{pos['house']}).",
+            })
+
+    # 4. Vipareeta Raja Yoga: 6L/8L/12L in 6th/8th/12th houses
+    dusthana_houses = {6, 8, 12}
+    dusthana_lords = {}
+    for h in [6, 8, 12]:
+        rashi_idx = (lagna_rashi_idx + h - 1) % 12
+        lord = RASI_LORD[rashi_idx]
+        dusthana_lords[h] = lord
+
+    for h, lord in dusthana_lords.items():
+        if lord in positions and positions[lord]["house"] in dusthana_houses:
+            yogas.append({
+                "name": "Vipareeta Raja Yoga",
+                "planets": [lord],
+                "house": positions[lord]["house"],
+                "strength": "MODERATE",
+                "notes": f"{lord} (lord of H{h}) in H{positions[lord]['house']} (dusthana in dusthana).",
+            })
+
+    return yogas
+
+
+def compute_digbala(positions):
+    """Check which planets have directional strength (digbala)."""
+    results = []
+    for planet, target_house in DIGBALA.items():
+        if planet in positions and positions[planet]["house"] == target_house:
+            results.append({
+                "planet": planet,
+                "house": target_house,
+            })
+    return results
+
+
+def build_computed_analysis(lagna_rashi_idx, positions):
+    """Build the full computed_analysis section for birth_data.yaml."""
+    fn = compute_functional_nature(lagna_rashi_idx)
+    badhaka = compute_badhaka(lagna_rashi_idx)
+    marakas = compute_marakas(lagna_rashi_idx)
+    neecha_bhanga = detect_neecha_bhanga(positions, lagna_rashi_idx)
+    yogas = detect_yogas(positions, lagna_rashi_idx)
+    digbala = compute_digbala(positions)
+
+    # Build key strengths and vulnerabilities summary
+    strengths = []
+    vulnerabilities = []
+
+    for db in digbala:
+        strengths.append(f"{db['planet']}: digbala in H{db['house']}")
+
+    for nb in neecha_bhanga:
+        strengths.append(
+            f"{nb['planet']}: neecha bhanga raja yoga ({nb['status']})"
+        )
+
+    for y in yogas:
+        if y["strength"] in ("STRONG", "MODERATE"):
+            strengths.append(f"{y['name']} ({', '.join(y['planets'])})")
+
+    for name, pos in positions.items():
+        if name in ("Rahu", "Ketu"):
+            continue
+        dignity = get_dignity(name, pos["rashi_idx"], pos["degree"])
+        if dignity == "debilitated":
+            # Check if neecha bhanga applies
+            has_bhanga = any(nb["planet"] == name for nb in neecha_bhanga)
+            if has_bhanga:
+                vulnerabilities.append(
+                    f"{name}: debilitated in {pos['rashi']} (neecha bhanga applies)"
+                )
+            else:
+                vulnerabilities.append(
+                    f"{name}: debilitated in {pos['rashi']}"
+                )
+        elif dignity == "enemy":
+            vulnerabilities.append(
+                f"{name}: in enemy sign ({pos['rashi']})"
+            )
+
+    # Check sole benefic
+    if len(fn["functional_benefics"]) == 1:
+        sole = fn["functional_benefics"][0]
+        if sole in positions:
+            h = positions[sole]["house"]
+            vulnerabilities.append(
+                f"{sole}: sole functional benefic, in H{h}"
+            )
+
+    return {
+        "functional_nature": fn,
+        "badhaka": badhaka,
+        "marakas": marakas,
+        "neecha_bhanga": neecha_bhanga if neecha_bhanga else "none",
+        "yogas": yogas if yogas else "none detected",
+        "digbala": digbala if digbala else "none",
+        "key_strengths": strengths if strengths else ["none identified"],
+        "key_vulnerabilities": vulnerabilities if vulnerabilities else ["none identified"],
+    }
+
+
+# ---------------------------------------------------------------------------
 # YAML Output
 # ---------------------------------------------------------------------------
 
 def build_birth_data_dict(args, lagna, ayanamsha, positions, dasha,
-                          house_summary, use_true_node):
+                          house_summary, use_true_node, computed_analysis=None):
     """Build the full birth_data dict matching the YAML template."""
     # Parse place into city / state / country
     place_parts = [p.strip() for p in args.place.split(",")]
@@ -512,6 +819,10 @@ def build_birth_data_dict(args, lagna, ayanamsha, positions, dasha,
             "rasi": hs["rasi"],
             "planets": hs["planets"],
         }
+
+    # Computed analysis (if provided)
+    if computed_analysis:
+        data["computed_analysis"] = computed_analysis
 
     return data
 
@@ -675,10 +986,13 @@ def main(argv=None):
     # House summary
     house_summary = build_house_summary(asc_rashi_idx, positions)
 
+    # Computed analysis
+    computed_analysis = build_computed_analysis(asc_rashi_idx, positions)
+
     # Build and write YAML
     birth_data = build_birth_data_dict(
         args, lagna, ayanamsha, positions, dasha,
-        house_summary, args.true_node
+        house_summary, args.true_node, computed_analysis
     )
     file_path = write_birth_data_yaml(birth_data, args.name)
 
