@@ -1,0 +1,804 @@
+# =============================================================================
+# Eclipse Rules for Mundane (Medini) Jyotish
+# =============================================================================
+# Classical interpretation rules for how eclipses affect nations, rulers, and
+# the world at large. Compiled from Varahamihira's Brihat Samhita (Ch 5:
+# Rahuchara), B.V. Raman's works on Mundane Astrology, Skyscript classical
+# eclipse rules, and standard Medini Jyotish texts.
+# =============================================================================
+
+source: >
+  Varahamihira (Brihat Samhita Ch 5 - Rahuchara), B.V. Raman (Hindu Predictive
+  Astrology, Mundane Astrology), Skyscript classical eclipse compendium,
+  Sarvatobhadra Chakra traditions, classical Medini Jyotish texts
+
+# =============================================================================
+# GENERAL RULES
+# =============================================================================
+
+general_rules:
+
+  solar_eclipse:
+    significance: >
+      Affects rulers, government, authority figures, heads of state, and the
+      executive branch of governance. Solar eclipses indicate potential
+      disruptions to sovereignty, national prestige, and the ruling class.
+      Varahamihira states that solar eclipses carry stronger mundane effects
+      than lunar eclipses.
+    duration_rule: >
+      Effects last for as many months as the eclipse duration in hours.
+      If an eclipse lasts 2 hours, effects manifest over the following 2 months.
+      A total eclipse lasting 3+ hours can affect a nation for a full quarter.
+      Varahamihira further states that if an eclipse is total (Avamardana),
+      chief provinces will suffer and rulers will be afflicted with miseries
+      for a prolonged period.
+    timing_rule: >
+      Solar eclipse effects begin immediately if the eclipse occurs in the
+      first decanate (0-10 degrees) of a sign. Effects begin after 4 months
+      if in the second decanate (10-20 degrees), and after 8 months if in
+      the third decanate (20-30 degrees). B.V. Raman further notes that
+      effects manifest most strongly when Mars or Saturn later transits the
+      eclipse degree.
+    visibility_rule: >
+      An eclipse affects primarily those regions where it is visible. A total
+      eclipse has the strongest effect on nations at the path of totality.
+      Partial visibility yields proportionally reduced effects. Nations where
+      the eclipse is invisible experience negligible direct effects, though
+      indirect consequences through trade and diplomatic links may still occur.
+    color_rule: >
+      Varahamihira describes eclipse appearances: if the disc appears dark
+      (black), severe famine and death follow. If reddish, wars and bloodshed
+      are indicated. If yellowish or pale, epidemics and diseases spread.
+      If only slightly obscured like a mirror covered with vapour (Aghrata),
+      there will be good rainfall.
+    multiple_eclipses_rule: >
+      If both a lunar and solar eclipse occur in the same month, princes will
+      suffer from dissensions among their own armies and from external wars.
+      Multiple eclipses in a short span intensify malefic effects.
+    timing_accuracy_rule: >
+      Per Brihat Samhita: if an eclipse occurs before the calculated time,
+      there will be miscarriage of pregnancy and wars in the land. If it
+      occurs after the calculated time, flowers and fruits will perish and
+      there will be fear and crop blight.
+    eclipse_types:
+      nirodha: >
+        Eclipse commences at the edge and travels inward, remaining partial.
+        All creatures will be happy; relatively benign.
+      avamardana: >
+        Total eclipse that continues for a time. Chief provinces suffer and
+        rulers are afflicted with miseries. Most severe type.
+      aghrata: >
+        Small portion of disc slightly eclipsed, resembling a mirror covered
+        with vapour. Indicates good rainfall and mild effects.
+      madhya_tamas: >
+        Eclipse begins at the centre of the disc. Effects are moderate but
+        focused on the capital or seat of government.
+
+  lunar_eclipse:
+    significance: >
+      Affects the public, agriculture, water bodies, women, emotional well-being
+      of the populace, food supply, and maritime affairs. Lunar eclipses
+      indicate disruption to public sentiment, popular movements, and the
+      common people's welfare.
+    duration_rule: >
+      Effects last for as many fortnights (paksha) as the eclipse duration
+      in hours. A 3-hour lunar eclipse produces effects lasting about 6 weeks.
+      Generally shorter and less severe than solar eclipse effects.
+    timing_rule: >
+      Lunar eclipse effects are quicker than solar — they begin manifesting
+      within weeks of the eclipse rather than months. The full impact is
+      felt within the first fortnight.
+    health_effects: >
+      Lunar eclipses worsen mental health conditions in the populace, increase
+      emotional volatility, and aggravate water-borne diseases.
+    agricultural_effects: >
+      Crops planted near a lunar eclipse are vulnerable. Water sources may
+      become contaminated. Fishing and maritime industries face disruption.
+
+  common_principles:
+    malefic_aspect_rule: >
+      Eclipse effects are intensified when natural malefic planets (Mars,
+      Saturn, Rahu, Ketu) conjoin or aspect the eclipsed luminary. Benefic
+      aspects (Jupiter, Venus) mitigate the severity.
+    personal_vulnerability: >
+      A person suffers in whose Lagna or Nakshatra the Sun or Moon is eclipsed.
+      Also vulnerable: persons whose natal Moon is in the 19th nakshatra from
+      the eclipse nakshatra, unless they perform expiatory rites.
+    remedial_measures: >
+      Varahamihira prescribes: gifts, fire ceremonies (homa), worship of
+      deities, japa (mantra recitation), and ceremonial ablutions during
+      eclipse. Making a gold or flour serpent and gifting to Brahmins on
+      eclipse day. Reciting Mrityunjaya and other protective mantras.
+    nakshatra_spoilage_rule: >
+      The nakshatra in which an eclipse falls, and whatever it symbolizes,
+      is considered spoiled for the following six months. Persons born under
+      that nakshatra face heightened challenges.
+    trigger_transits: >
+      Eclipse effects are triggered or intensified when Mars or Saturn later
+      transits the eclipse degree. The subsequent solar square (approximately
+      3 months later) also activates eclipse effects.
+
+# =============================================================================
+# SIGN EFFECTS (Eclipse in each Rashi)
+# =============================================================================
+# Based on Brihat Samhita Ch 5, verses 35-46, and B.V. Raman's Mundane Astrology.
+# Classical texts name ancient peoples/regions; modern interpretations follow.
+
+sign_effects:
+
+  mesham:
+    classical_reference: "Brihat Samhita Ch 5, v.35"
+    nature_of_events:
+      - "Danger to leaders and rulers of Aries-ruled nations; military commanders face peril"
+      - "Military conflicts, wars, and armed aggression escalate"
+      - "Fire-related disasters: conflagrations, forest fires, industrial explosions"
+      - "Fever epidemics and pestilence among soldiers and martial communities"
+    classical_peoples: "Panchalas, Kalingas, Surasenas, Kambojas, Odhras, Kiratas, soldiers, persons who live by fire"
+    bv_raman_notes: "Incendiarism, forest fires, fever, pestilence, abortive births, danger to women"
+
+  rishabham:
+    classical_reference: "Brihat Samhita Ch 5, v.36"
+    nature_of_events:
+      - "Economic disruption in Taurus-ruled nations; trade and commerce suffer"
+      - "Agricultural problems: cattle disease, crop failure, dairy shortages"
+      - "Shepherds, cattle-owners, and eminent merchants face losses"
+      - "High mortality among livestock, especially cattle and horses"
+    classical_peoples: "Shepherds, cows, their owners, eminent men"
+    bv_raman_notes: "Business and trade disruption, high mortality in cattle and horses"
+
+  mithunam:
+    classical_reference: "Brihat Samhita Ch 5, v.37"
+    nature_of_events:
+      - "Threats to intellectuals, scholars, writers, and diplomats"
+      - "Communication breakdowns and media disruptions"
+      - "Religious and trade conflicts; learned persons face disgrace"
+      - "Women of high standing face danger; powerful petty chiefs challenged"
+    classical_peoples: "Chaste women, princes, powerful petty chiefs, learned men, people of Yamuna banks, Bahlikas, Matsya"
+    bv_raman_notes: "Disease from fowl, religious and trade conflict, loss through deaths of great persons"
+
+  katakam:
+    classical_reference: "Brihat Samhita Ch 5, v.38"
+    nature_of_events:
+      - "Political upheaval and treaty violations in Cancer-ruled nations"
+      - "Naval and maritime disasters; dangerous navigation conditions"
+      - "Stomach illnesses, water contamination, food supply disruptions"
+      - "Tribal and indigenous peoples face hardship; food grains destroyed"
+    classical_peoples: "Abhiras, Sabaras, Pallavas, Mallas, Matsyas, Kurus, Sakas, Panchalas, Vikalas"
+    bv_raman_notes: "Political upheaval, treaty violations, dangerous navigation, stomach illnesses"
+
+  simham:
+    classical_reference: "Brihat Samhita Ch 5, v.39"
+    nature_of_events:
+      - "Death or misfortune for royalty, heads of state, and prominent leaders"
+      - "Hill tribes and forest communities face severe hardship"
+      - "Military forces with unified command face disruption or defeat"
+      - "Building destruction; clergy division; scarcity of horses and grain"
+    classical_peoples: "Hill men, prince-like people, princes, forest men"
+    bv_raman_notes: "Death or misfortune for royalty, building destruction, clergy division, horse and grain scarcity"
+
+  kanni:
+    classical_reference: "Brihat Samhita Ch 5, v.40"
+    nature_of_events:
+      - "Crops fail; rice-producing regions face severe agricultural damage"
+      - "Poets, writers, scholars, and singers face disgrace or loss"
+      - "Drought and plague; scarcity of essential commodities"
+      - "Death of great and learned persons; intellectual life disrupted"
+    classical_peoples: "Crops, poets, writers, singers; rice fields of Ashmaka and Tripura"
+    bv_raman_notes: "Death of great men, plague, drought, crop failure, scarcity of all things"
+
+  thulam:
+    classical_reference: "Brihat Samhita Ch 5, v.41"
+    nature_of_events:
+      - "Trading and mercantile classes face economic disruption"
+      - "Border regions and western territories suffer instability"
+      - "Air corruption, contagious diseases, bad weather patterns"
+      - "Youth incited to wantonness; moral and social disruptions"
+    classical_peoples: "People of extreme border lands on the west, people of Sindha, trading classes, people of Kaccha"
+    bv_raman_notes: "Air corruption, contagious diseases, bad weather, youth incited to wantonness"
+
+  viruchigam:
+    classical_reference: "Brihat Samhita Ch 5, v.42"
+    nature_of_events:
+      - "Treasonous acts, military depositions, and coups d'etat"
+      - "Thunder, lightning, earthquakes, and severe natural disasters"
+      - "Soldiers using chemical or poisonous weapons face defeat"
+      - "Pestilence, disease outbreaks, and public health emergencies"
+    classical_peoples: "Udambaras, Madras, Colas, Yaudheyas, soldiers with poisoned weapons"
+    bv_raman_notes: "Treasonous acts, military deposition, disease, thunder, lightning, earthquakes"
+
+  dhanusu:
+    classical_reference: "Brihat Samhita Ch 5, v.43"
+    nature_of_events:
+      - "Ministers and senior government officials face downfall"
+      - "Horse affliction, vehicle-related disruptions, transport crises"
+      - "Physicians, merchants, and arms dealers face losses or death"
+      - "Religious intolerance and sectarian conflicts; piracy increases"
+    classical_peoples: "Ministers, fine horses, Videhas, Mallanas, Panchalas, physicians, merchants, weapon-users"
+    bv_raman_notes: "Horse affliction, religious intolerance, destruction of fowls, piracy increase"
+
+  makaram:
+    classical_reference: "Brihat Samhita Ch 5, v.44"
+    nature_of_events:
+      - "Death of worthy and prominent persons; false accusations and conspiracies"
+      - "Ministers and senior administrators face ruin"
+      - "Military invasions and hostile occupations; ship losses at sea"
+      - "Skilled magicians, physicians, and old soldiers perish"
+    classical_peoples: "Fish, families of ministers, Chandalas, skilled magicians, physicians, old soldiers"
+    bv_raman_notes: "Death of worthy people, false accusations, conspiracies, military invasions, ship loss"
+
+  kumbham:
+    classical_reference: "Brihat Samhita Ch 5, v.45"
+    nature_of_events:
+      - "People of mountainous and western regions suffer severely"
+      - "Floods, water-related disasters, and infrastructure damage"
+      - "Carriers, robbers, and shepherds face peril; serpent-related dangers"
+      - "Building damage; public mourning; church/temple controversies"
+    classical_peoples: "Hill men, men of western countries, carriers, robbers, shepherds, serpents, worthy men, lions, citizens, people of Barbara"
+    bv_raman_notes: "Floods, cattle affliction, public mourning, building damage, church controversies"
+
+  meenam:
+    classical_reference: "Brihat Samhita Ch 5, v.46"
+    nature_of_events:
+      - "Maritime misfortunes: shipping disasters, fishing industry collapse"
+      - "Persons of learning and respectability face disgrace"
+      - "Coastal and riverine communities suffer; water-dependent livelihoods ruined"
+      - "Lawyers and clergy embroiled in scandal; illustrious deaths"
+    classical_peoples: "Products of the sea beach and of the sea, men of respectability and learning, persons that live by water"
+    bv_raman_notes: "Maritime misfortune, fishing industry corruption, illustrious deaths, lawyer and clergy scandal"
+
+# =============================================================================
+# NAKSHATRA EFFECTS (Eclipse in each Nakshatra)
+# =============================================================================
+# Based on Brihat Samhita, B.V. Raman, and classical Medini Jyotish texts.
+# Each nakshatra's mundane significations are affected when eclipsed.
+# The deity, ruling planet, and symbolism of each nakshatra inform the effects.
+
+nakshatra_effects:
+
+  ashwini:
+    ruler: Ketu
+    deity: Ashwini Kumaras (celestial physicians)
+    effects:
+      - "Travel-related disruptions; vehicle and transport accidents"
+      - "Medical profession faces scandal or crisis; pharmaceutical disruptions"
+      - "Horse-related industries affected; equine diseases"
+    affected_professions: "Physicians, healers, transporters, horse-keepers"
+
+  bharani:
+    ruler: Venus
+    deity: Yama (god of death)
+    effects:
+      - "Deaths of important and prominent persons"
+      - "Judicial system faces crisis; severe punishments enacted"
+      - "Fertility and reproductive health issues in the populace"
+    affected_professions: "Judges, undertakers, fertility specialists"
+
+  krittika:
+    ruler: Sun
+    deity: Agni (fire god)
+    effects:
+      - "Fire disasters: conflagrations, industrial fires, military aggression"
+      - "Religious leaders and Brahmins face disgrace or danger"
+      - "Purification crises; food contamination scares"
+    affected_professions: "Military commanders, priests, fire service workers"
+
+  rohini:
+    ruler: Moon
+    deity: Brahma (Prajapati)
+    effects:
+      - "Agricultural devastation; crop destruction and famine conditions"
+      - "Cattle disease and livestock mortality"
+      - "Commerce and trade severely disrupted; luxury goods markets crash"
+    affected_professions: "Farmers, cattle-owners, merchants, jewellers"
+
+  mrigashira:
+    ruler: Mars
+    deity: Soma (Moon god)
+    effects:
+      - "Drought and water scarcity; perfume and textile industries disrupted"
+      - "Hunting accidents; wildlife conservation crises"
+      - "Border disputes between neighbouring territories intensify"
+    affected_professions: "Textile workers, perfumers, hunters, border guards"
+
+  ardra:
+    ruler: Rahu
+    deity: Rudra (storm god)
+    effects:
+      - "Severe storms, cyclones, and destructive weather events"
+      - "Epidemics and contagious diseases spread rapidly"
+      - "Political upheaval through sudden revolutionary movements"
+    affected_professions: "Meteorologists, researchers, revolutionaries"
+
+  punarvasu:
+    ruler: Jupiter
+    deity: Aditi (mother of gods)
+    effects:
+      - "Diplomatic failures; international agreements collapse"
+      - "Religious institutions face scandal; temples and churches disrupted"
+      - "Return of exiled leaders or displaced populations causes tension"
+    affected_professions: "Diplomats, priests, teachers, counsellors"
+
+  pushya:
+    ruler: Saturn
+    deity: Brihaspati (Jupiter, priest of gods)
+    effects:
+      - "Government advisors and ministers face downfall"
+      - "Nourishment crisis: food supply chains disrupted, famine conditions"
+      - "Religious and spiritual institutions lose public trust"
+    affected_professions: "Government ministers, counsellors, nutritionists, clergy"
+
+  ashlesha:
+    ruler: Mercury
+    deity: Sarpa (serpent deities)
+    effects:
+      - "Poisoning incidents: food, chemical, or environmental contamination"
+      - "Deception and treachery in political affairs exposed"
+      - "Serpent-related dangers; pharmaceutical and chemical industry crises"
+    affected_professions: "Chemists, pharmacists, spies, intelligence operatives"
+
+  magha:
+    ruler: Ketu
+    deity: Pitris (ancestral spirits)
+    effects:
+      - "Royal families and ruling dynasties face crisis or bereavement"
+      - "Government authority severely challenged; constitutional crises"
+      - "Ancestral properties and heritage sites face destruction or dispute"
+    affected_professions: "Rulers, aristocrats, genealogists, heritage custodians"
+
+  purva_phalguni:
+    ruler: Venus
+    deity: Bhaga (god of marital bliss)
+    effects:
+      - "Entertainment and arts industries face disruption or scandal"
+      - "Marriage-related social upheaval; divorce rates spike"
+      - "Financial markets in luxury and leisure sectors collapse"
+    affected_professions: "Artists, entertainers, marriage officiants, luxury traders"
+
+  uttara_phalguni:
+    ruler: Sun
+    deity: Aryaman (god of patronage)
+    effects:
+      - "Patronage systems and social contracts break down"
+      - "Government bureaucracy faces severe corruption exposure"
+      - "Leaders in the southern regions face particular danger"
+    affected_professions: "Patrons, philanthropists, civil servants, social workers"
+
+  hasta:
+    ruler: Moon
+    deity: Savitar (sun god of creativity)
+    effects:
+      - "Craftsmen and artisans face economic hardship"
+      - "Manual labour disruptions; manufacturing sector crises"
+      - "Theft and pickpocketing increase; skilled fraud cases emerge"
+    affected_professions: "Craftsmen, artisans, manufacturers, surgeons"
+
+  chitra:
+    ruler: Mars
+    deity: Vishwakarma (celestial architect)
+    effects:
+      - "Architecture and construction industries face catastrophic failures"
+      - "Building collapses and infrastructure disasters"
+      - "Precious gems and jewellery markets destabilized"
+    affected_professions: "Architects, engineers, jewellers, designers"
+
+  swati:
+    ruler: Rahu
+    deity: Vayu (wind god)
+    effects:
+      - "Wind-related disasters: tornados, hurricanes, severe gales"
+      - "Trade and commerce disrupted; import-export imbalances"
+      - "Independent movements and separatist agitation intensify"
+    affected_professions: "Traders, importers, sailors, wind energy workers"
+
+  vishakha:
+    ruler: Jupiter
+    deity: Indra-Agni (king of gods and fire)
+    effects:
+      - "Political ambition leads to dangerous power struggles"
+      - "Agricultural festivals and harvest disrupted"
+      - "Religious schisms and sectarian violence; temple disputes"
+    affected_professions: "Politicians, brewers, farmers, religious leaders"
+
+  anuradha:
+    ruler: Saturn
+    deity: Mitra (god of friendship)
+    effects:
+      - "International alliances and friendships between nations strained"
+      - "Organizational and institutional leadership challenged"
+      - "Travel to foreign lands becomes dangerous; expatriate communities suffer"
+    affected_professions: "Diplomats, organizational heads, foreign service officers"
+
+  jyeshtha:
+    ruler: Mercury
+    deity: Indra (king of gods)
+    effects:
+      - "Senior leaders and elder statesmen face humiliation or downfall"
+      - "Military intelligence failures; espionage scandals"
+      - "Protectors of the realm face betrayal from within"
+    affected_professions: "Chiefs, senior officials, intelligence officers, military leaders"
+
+  mula:
+    ruler: Ketu
+    deity: Nirrti (goddess of destruction)
+    effects:
+      - "Uprooting of established systems; fundamental institutional collapse"
+      - "Root-cause disasters: earthquakes, volcanic eruptions, foundational failures"
+      - "Pharmaceutical and herbal medicine industries face crisis"
+    affected_professions: "Researchers, herbalists, demolition workers, miners"
+
+  purva_ashadha:
+    ruler: Venus
+    deity: Apas (water deity)
+    effects:
+      - "Water-related disasters: floods, tsunamis, dam failures"
+      - "Naval forces face defeat or major incident"
+      - "Declarations of war that lead to eventual defeat"
+    affected_professions: "Naval officers, water engineers, shipping industry"
+
+  uttara_ashadha:
+    ruler: Sun
+    deity: Vishvedevas (universal gods)
+    effects:
+      - "Government leaders face irreversible challenges; final victories become defeats"
+      - "International law and universal principles violated"
+      - "High-ranking military officials face disgrace"
+    affected_professions: "Supreme commanders, judges, international law practitioners"
+
+  shravana:
+    ruler: Moon
+    deity: Vishnu (the preserver)
+    effects:
+      - "Media and communication industries face crisis; propaganda exposed"
+      - "Listening devices and surveillance scandals emerge"
+      - "Religious and spiritual teachers face disgrace"
+    affected_professions: "Media professionals, teachers, counsellors, musicians"
+
+  dhanishtha:
+    ruler: Mars
+    deity: Vasus (eight elemental gods)
+    effects:
+      - "Music, arts, and cultural institutions disrupted"
+      - "Real estate and property markets face severe corrections"
+      - "Martial communities face physical strain and hardship"
+    affected_professions: "Musicians, real estate dealers, soldiers, athletes"
+
+  shatabhisha:
+    ruler: Rahu
+    deity: Varuna (god of cosmic waters)
+    effects:
+      - "Mysterious epidemics and hard-to-diagnose diseases emerge"
+      - "Oceanographic and space-related disasters"
+      - "Secret societies and hidden networks exposed"
+    affected_professions: "Doctors, healers, marine scientists, space researchers"
+
+  purva_bhadrapada:
+    ruler: Jupiter
+    deity: Aja Ekapada (one-footed goat)
+    effects:
+      - "Extreme weather and fire-related disasters"
+      - "Radical ideologies gain dangerous momentum"
+      - "Financial speculation leads to market crashes"
+    affected_professions: "Ascetics, astrologers, financial speculators"
+
+  uttara_bhadrapada:
+    ruler: Saturn
+    deity: Ahir Budhnya (serpent of the deep)
+    effects:
+      - "Deep-sea and underground disasters: submarine incidents, mine collapses"
+      - "Retirement and pension systems face crisis"
+      - "Charitable institutions and endowments mismanaged or scandalized"
+    affected_professions: "Monks, retirees, charity workers, deep-sea workers"
+
+  revati:
+    ruler: Mercury
+    deity: Pushan (nourisher, guide of journeys)
+    effects:
+      - "Long-distance travel disruptions; aviation and shipping incidents"
+      - "Fisheries and aquaculture industries face collapse"
+      - "Safe passage compromised; pilgrimage routes become dangerous"
+    affected_professions: "Fishermen, travellers, guides, animal keepers"
+
+# =============================================================================
+# ECLIPSE IN HOUSE (of Mundane / National Chart)
+# =============================================================================
+# When an eclipse falls in a particular house of a nation's foundation chart
+# or the annual ingress chart (Varsha Pravesh), these effects follow.
+
+eclipse_in_house:
+
+  house_1:
+    effects: "National health crisis, general upheaval affecting the populace"
+    details: >
+      The nation's self-image and public health are directly impacted.
+      Recently initiated national projects face obstacles. Young people
+      and new ventures suffer. If a benefic aspects the Lagna, effects
+      are moderated. Malefic aspect indicates danger and unhappy events.
+
+  house_2:
+    effects: "Economic disruption, financial loss to the national treasury"
+    details: >
+      National revenue, banking sector, and food supply chains face stress.
+      Currency devaluation, stock market instability, and budgetary crises.
+      Speech and communication of national leaders comes under scrutiny.
+
+  house_3:
+    effects: "Communication breakdowns, transport accidents, media crisis"
+    details: >
+      Telecommunications, railways, roads, and postal services disrupted.
+      Neighbouring countries create diplomatic friction. Media and press
+      face censorship or credibility crisis. Short-distance travel becomes
+      hazardous.
+
+  house_4:
+    effects: "Natural disasters, agricultural damage, opposition party crisis"
+    details: >
+      Earthquakes, floods, and severe weather damage homeland territory.
+      Real estate markets destabilized. Mining and underground resources
+      affected. The opposition party or domestic politics face turmoil.
+      Agricultural output declines sharply.
+
+  house_5:
+    effects: "Diplomatic crises, problems with allies, children and education affected"
+    details: >
+      Diplomatic relations deteriorate. Education system faces disruption.
+      Birth rate concerns. Stock market speculation leads to losses.
+      Creative and entertainment industries face scandal. National sports
+      teams face embarrassment.
+
+  house_6:
+    effects: "Military conflicts, epidemics, labour unrest"
+    details: >
+      Armed forces face challenges in conflict zones. Epidemics and public
+      health crises emerge. Labour strikes and industrial disputes. Debt
+      crises at the national level. Service sector disruptions. Increase
+      in crime and litigation.
+
+  house_7:
+    effects: "International tensions, war risk, diplomatic breakdown"
+    details: >
+      Foreign relations severely strained; risk of open warfare. Treaties
+      and international agreements violated or abandoned. Trade wars and
+      economic sanctions. Marriage and partnership laws face reform pressure.
+      Contentious elections and political polarization.
+
+  house_8:
+    effects: "Mass casualties, economic collapse risk, national transformation"
+    details: >
+      Catastrophic events with significant death toll possible. Insurance
+      and pension systems face crisis. National debt crisis deepens.
+      Secrets of state exposed. Assassination attempts on leaders.
+      Fundamental transformation of national institutions.
+
+  house_9:
+    effects: "Religious upheaval, judicial crises, higher education disrupted"
+    details: >
+      Courts and the judiciary face credibility crisis. Religious
+      institutions scandalized. Universities and higher learning disrupted.
+      International law violations. Publishing and media face censorship.
+      Long-distance travel and pilgrimages become dangerous.
+
+  house_10:
+    effects: "Government change, ruler's downfall, national prestige damaged"
+    details: >
+      The head of state faces serious challenges, removal, or death.
+      Government policy faces dramatic reversal. National reputation on
+      the world stage suffers. The ruling party loses mandate. Middle-aged
+      persons in positions of authority face crisis.
+
+  house_11:
+    effects: "Parliament/legislature crisis, loss of allies, revenue shortfall"
+    details: >
+      Legislative bodies face dysfunction or dissolution. International
+      alliances fracture. National income and tax revenue fall short.
+      Elder children of the nation (established institutions) face crisis.
+      Friendly nations withdraw support.
+
+  house_12:
+    effects: "Secret plots exposed, increased national expenditure, institutional failures"
+    details: >
+      Hidden enemies and conspiracies come to light. National expenditure
+      spirals out of control. Prisons, hospitals, and asylums face crisis.
+      Foreign intelligence operations exposed. Espionage scandals. Exile
+      of prominent persons. Increased isolation on the world stage.
+
+# =============================================================================
+# CONJUNCTION WITH PLANETS
+# =============================================================================
+# When an eclipse occurs in close conjunction with a planet, the planet's
+# significations are severely disrupted in the mundane sphere.
+
+conjunction_with_planets:
+
+  eclipse_conjunct_sun:
+    effects: "Ruler's authority directly challenged; government crisis"
+    details: >
+      The head of state faces personal danger, illness, or removal from
+      power. National prestige suffers a severe blow. Government authority
+      is undermined. Gold prices fluctuate sharply. Father figures and
+      authority in society face disgrace.
+
+  eclipse_conjunct_moon:
+    effects: "Public unrest, emotional upheaval, women and children affected"
+    details: >
+      The general populace becomes restless and emotionally volatile.
+      Women face particular danger. Food and water supply disruptions.
+      Silver and commodity prices fluctuate. Mental health crises in the
+      population. Public opinion turns sharply against the establishment.
+
+  eclipse_conjunct_mars:
+    effects: "Violence, wars, fires, bloodshed, military crises"
+    details: >
+      Armed conflicts escalate or new wars begin. Fire-related disasters
+      increase dramatically. Military forces suffer casualties or face
+      mutiny. Blood diseases and surgical complications increase. Police
+      and military leadership face scandal. Industrial accidents involving
+      machinery and sharp instruments.
+
+  eclipse_conjunct_mercury:
+    effects: "Communication failures, trade disruptions, intellectual fraud"
+    details: >
+      Media and telecommunications face severe disruption. Trade agreements
+      collapse. Intellectual property disputes intensify. Education system
+      faces crisis. Postal and courier services disrupted. Youth and
+      students face particular challenges. Accounting fraud and financial
+      misrepresentation exposed.
+
+  eclipse_conjunct_jupiter:
+    effects: "Religious crisis, judicial failures, financial institution collapse"
+    details: >
+      Though Jupiter is naturally benefic and can moderate eclipse effects,
+      conjunction with the eclipse point damages Jupiterian significations:
+      religion, law, banking, and higher education face crisis. Priests,
+      judges, and bankers face disgrace. Moral and ethical standards
+      decline in public life.
+
+  eclipse_conjunct_venus:
+    effects: "Cultural upheaval, arts disrupted, women's issues, diplomatic failure"
+    details: >
+      Diplomatic relations suffer. Arts, entertainment, and culture face
+      scandal or suppression. Women's rights issues come to the fore.
+      Marriage institution faces challenges. Luxury markets crash. Sugar,
+      textiles, and cosmetics industries disrupted. Venus conjunction
+      may moderate overall severity compared to Mars or Saturn.
+
+  eclipse_conjunct_saturn:
+    effects: "Famine, epidemics, grief, restrictions, institutional collapse"
+    details: >
+      Severe deprivation: famine conditions, economic depression, and
+      widespread grief. Government imposes harsh restrictions and
+      austerity measures. Elderly population faces higher mortality.
+      Mining disasters. Infrastructure failures and building collapses.
+      Labour crises deepen. Cold weather extremes. Oil and mineral
+      industries disrupted.
+
+  eclipse_conjunct_rahu:
+    effects: "Intensified malefic effects, mass deception, epidemics of unknown origin"
+    details: >
+      All negative eclipse effects are amplified and distorted. Mass
+      delusion and propaganda reach dangerous levels. Epidemics with
+      unclear origins spread. Foreign or unconventional threats emerge.
+      Technology-related crises: cyberattacks, infrastructure hacking.
+      Poisoning, chemical weapons, or contamination events. Eclipse
+      with Rahu is considered one of the most severe combinations.
+
+  eclipse_conjunct_ketu:
+    effects: "Spiritual crisis, sudden unexpected events, military reversals"
+    details: >
+      Sudden and unexpected catastrophic events. Military reversals and
+      unexpected defeats. Spiritual and religious institutions face
+      fundamental crisis. Ghost-like phenomena: unexplained events
+      terrorize populations. Assassination or sudden death of a leader.
+      Liberation movements gain force. Past karmic debts of the nation
+      come due.
+
+# =============================================================================
+# ECLIPSE IN LUNAR MONTH (Masa)
+# =============================================================================
+# Brihat Samhita provides effects based on the lunar month in which the
+# eclipse falls.
+
+eclipse_in_lunar_month:
+
+  chaitra:
+    effects: >
+      Painters, writers, singers, prostitutes, men learned in the Vedas,
+      and dealers in gold will suffer. People of Poundra, Audra, Kekaya,
+      and Ashmaka face distress.
+
+  vaishakha:
+    effects: >
+      People of Magadha, people living on the banks of rivers, and
+      people of Kosala will be afflicted. Crops sown in spring face
+      destruction.
+
+  jyeshtha:
+    effects: >
+      Ministers, rulers, and powerful persons face danger. Crops of the
+      summer season are destroyed. People dependent on rivers suffer.
+
+  ashadha:
+    effects: >
+      Warriors and soldiers face defeat. Rainy season crops affected.
+      People of frontier regions face invasions.
+
+  shravana:
+    effects: >
+      Persons skilled in arts, musicians, and dancers face hardship.
+      Crops of the monsoon season face damage.
+
+  bhadrapada:
+    effects: >
+      Brahmins, ascetics, and religious persons face distress. Cattle
+      and agriculture of the autumn season suffer.
+
+  ashwina:
+    effects: >
+      Women, children, and merchants face particular danger. Trade
+      routes become hazardous. Autumn harvests face destruction.
+
+  kartika:
+    effects: >
+      Military commanders and generals face peril. Fire-related
+      calamities increase. People of western regions suffer.
+
+  margashirsha:
+    effects: >
+      People of Panchala, Kuru, and Jangala regions suffer. Winter
+      crops face blight. Scholars face disgrace.
+
+  pausha:
+    effects: >
+      People of Sindhu and Sauvira face danger. Extreme cold causes
+      suffering. Oil and fuel shortages.
+
+  magha:
+    effects: >
+      Rulers and their ministers face overthrow. People of Avanti and
+      eastern regions face crisis.
+
+  phalguna:
+    effects: >
+      People of Vanga, Ashmaka, Avantika, and Mekalas afflicted with
+      disease. Dancers, food crops, chaste women, bow-makers, Kshatriyas,
+      and ascetics suffer.
+
+# =============================================================================
+# ADDITIONAL CLASSICAL RULES
+# =============================================================================
+
+additional_rules:
+
+  eclipse_at_rising_or_setting:
+    rule: >
+      If an eclipse occurs at the time of rising or setting of the luminary,
+      the crops of Sharat (October-November) will perish and princes will
+      suffer.
+
+  total_eclipse_with_malefic:
+    rule: >
+      In total eclipses, if the eclipsed Sun or Moon is subject to malefic
+      planetary influence (conjunction or aspect of Mars, Saturn, Rahu),
+      there will be death and famine in the land.
+
+  eclipse_direction:
+    north: "Eclipse commencing from the north affects Brahmins and religious affairs"
+    south: "Eclipse commencing from the south affects Kshatriyas and military affairs"
+    east: "Eclipse commencing from the east affects Vaishyas and trade"
+    west: "Eclipse commencing from the west affects Shudras and labour"
+
+  eclipse_color:
+    tawny: "Indicates famine and drought"
+    white: "Indicates floods and water-related calamities"
+    red: "Indicates wars, bloodshed, and military conflicts"
+    black: "Indicates death, epidemics, and severe national mourning"
+    multi_colored: "Indicates mixed results; multiple types of calamity"
+
+  saros_cycle_note: >
+    Eclipses belonging to the same Saros cycle carry forward themes.
+    A nation affected by one eclipse in a Saros family may face recurring
+    challenges when subsequent eclipses in the same family occur.
+
+  prenatal_eclipse: >
+    The most recent solar eclipse before a nation's foundation chart
+    (prenatal eclipse) holds special significance. Transits activating
+    this degree bring national-level events to the fore.
