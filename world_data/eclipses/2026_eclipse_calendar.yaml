@@ -1,0 +1,41 @@
+year: 2026
+total_eclipses: 4
+solar_count: 2
+lunar_count: 2
+eclipses:
+- date: '2026-02-17'
+  type: solar
+  subtype: annular
+  sign: Kumbham
+  nakshatra: Dhanishta
+  nakshatra_pada: 4
+  degree_in_sign: 4.6143
+  sidereal_longitude: 304.6143
+  maximum_utc: '2026-02-17T12:11:53'
+- date: '2026-03-03'
+  type: lunar
+  subtype: total
+  sign: Simham
+  nakshatra: Purva Phalguni
+  nakshatra_pada: 2
+  degree_in_sign: 18.6366
+  sidereal_longitude: 138.6366
+  maximum_utc: '2026-03-03T11:33:42'
+- date: '2026-08-12'
+  type: solar
+  subtype: total
+  sign: Katakam
+  nakshatra: Ashlesha
+  nakshatra_pada: 3
+  degree_in_sign: 25.8102
+  sidereal_longitude: 115.8102
+  maximum_utc: '2026-08-12T17:45:57'
+- date: '2026-08-28'
+  type: lunar
+  subtype: partial
+  sign: Kumbham
+  nakshatra: Shatabhisha
+  nakshatra_pada: 2
+  degree_in_sign: 10.6231
+  sidereal_longitude: 310.6231
+  maximum_utc: '2026-08-28T04:12:58'

@@ -1,0 +1,141 @@
+eclipse:
+  type: lunar
+  subtype: total
+  date_utc: '2026-03-03'
+  maximum_utc: '2026-03-03T11:33:42'
+  sign: Simham
+  nakshatra: Purva Phalguni
+  nakshatra_pada: 2
+  degree_in_sign: 18.6366
+  sidereal_longitude: 138.6366
+  place:
+    latitude: 28.6139
+    longitude: 77.209
+    timezone: 5.5
+  duration_minutes: 207.2
+ayanamsha: 24.222656
+ayanamsha_type: Lahiri
+lagna:
+  rasi: Simham
+  degree: 2.4666
+  nakshatra: Magha
+  pada: 1
+planetary_positions:
+  surya:
+    rasi: Kumbham
+    degree: 18.6726
+    nakshatra: Shatabhisha
+    pada: 4
+    retrograde: false
+    house: 7
+    dignity: enemy
+  chandra:
+    rasi: Simham
+    degree: 18.6366
+    nakshatra: Purva Phalguni
+    pada: 2
+    retrograde: false
+    house: 1
+    dignity: friend
+  mangal:
+    rasi: Kumbham
+    degree: 6.4765
+    nakshatra: Dhanishta
+    pada: 4
+    retrograde: false
+    house: 7
+    dignity: neutral
+  budha:
+    rasi: Kumbham
+    degree: 26.2703
+    nakshatra: Purva Bhadrapada
+    pada: 2
+    retrograde: true
+    house: 7
+    dignity: neutral
+  guru:
+    rasi: Mithunam
+    degree: 20.9608
+    nakshatra: Punarvasu
+    pada: 1
+    retrograde: true
+    house: 11
+    dignity: enemy
+  shukra:
+    rasi: Meenam
+    degree: 2.0842
+    nakshatra: Purva Bhadrapada
+    pada: 4
+    retrograde: false
+    house: 8
+    dignity: exalted
+  shani:
+    rasi: Meenam
+    degree: 7.7985
+    nakshatra: Uttara Bhadrapada
+    pada: 2
+    retrograde: false
+    house: 8
+    dignity: neutral
+  rahu:
+    rasi: Kumbham
+    degree: 14.6929
+    nakshatra: Shatabhisha
+    pada: 3
+    retrograde: true
+    house: 7
+    dignity: ''
+  ketu:
+    rasi: Simham
+    degree: 14.6929
+    nakshatra: Purva Phalguni
+    pada: 1
+    retrograde: true
+    house: 1
+    dignity: ''
+house_summary:
+  house_1:
+    rasi: Simham
+    planets:
+    - chandra
+    - ketu
+  house_2:
+    rasi: Kanni
+    planets: []
+  house_3:
+    rasi: Thulam
+    planets: []
+  house_4:
+    rasi: Viruchikam
+    planets: []
+  house_5:
+    rasi: Dhanusu
+    planets: []
+  house_6:
+    rasi: Makaram
+    planets: []
+  house_7:
+    rasi: Kumbham
+    planets:
+    - surya
+    - mangal
+    - budha
+    - rahu
+  house_8:
+    rasi: Meenam
+    planets:
+    - shukra
+    - shani
+  house_9:
+    rasi: Mesham
+    planets: []
+  house_10:
+    rasi: Rishabham
+    planets: []
+  house_11:
+    rasi: Mithunam
+    planets:
+    - guru
+  house_12:
+    rasi: Katakam
+    planets: []
