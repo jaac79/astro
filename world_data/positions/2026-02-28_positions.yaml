@@ -1,0 +1,59 @@
+date: '2026-02-28'
+time_utc: 00:00:00
+ayanamsha: 24.222522
+ayanamsha_type: Lahiri
+planetary_positions:
+  surya:
+    rasi: Kumbham
+    degree: 15.1795
+    nakshatra: Shatabhisha
+    pada: 3
+    retrograde: false
+  chandra:
+    rasi: Katakam
+    degree: 0.9504
+    nakshatra: Punarvasu
+    pada: 4
+    retrograde: false
+  mangal:
+    rasi: Kumbham
+    degree: 3.7333
+    nakshatra: Dhanishta
+    pada: 4
+    retrograde: false
+  budha:
+    rasi: Kumbham
+    degree: 28.1037
+    nakshatra: Purva Bhadrapada
+    pada: 3
+    retrograde: true
+  guru:
+    rasi: Mithunam
+    degree: 21.0678
+    nakshatra: Punarvasu
+    pada: 1
+    retrograde: true
+  shukra:
+    rasi: Kumbham
+    degree: 27.7451
+    nakshatra: Purva Bhadrapada
+    pada: 3
+    retrograde: false
+  shani:
+    rasi: Meenam
+    degree: 7.3826
+    nakshatra: Uttara Bhadrapada
+    pada: 2
+    retrograde: false
+  rahu:
+    rasi: Kumbham
+    degree: 14.8774
+    nakshatra: Shatabhisha
+    pada: 3
+    retrograde: true
+  ketu:
+    rasi: Simham
+    degree: 14.8774
+    nakshatra: Purva Phalguni
+    pada: 1
+    retrograde: true
