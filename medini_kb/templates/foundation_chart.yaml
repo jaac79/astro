@@ -1,0 +1,85 @@
+# Foundation Chart Schema Template
+# Used by medini_calc.py to produce country/entity foundation charts.
+
+entity:
+  name: "<Country/Entity Name>"
+  type: "<nation | organization | city | market>"
+  foundation_event: "<Independence | Constitution | Founding | etc.>"
+  date: '<YYYY-MM-DD>'
+  time: '<HH:MM:SS>'
+  timezone: '<UTC+/-H:MM>'
+  place:
+    city: "<Capital City>"
+    state: "<State/Province, if applicable>"
+    latitude: 0.0
+    longitude: 0.0
+  notes: "<Brief note on chart choice>"
+  alternate_times:
+    - time: '<HH:MM:SS>'
+      source: "<Why this time is used>"
+
+# Computed by medini_calc.py country command:
+
+ayanamsha: 0.0
+ayanamsha_type: "Lahiri"
+
+lagna:
+  rasi: "<sign name>"
+  degree: 0.0
+  nakshatra: "<nakshatra name>"
+  pada: 0
+
+chandra:
+  rasi: "<sign name>"
+  degree: 0.0
+  nakshatra: "<nakshatra name>"
+  pada: 0
+
+planetary_positions:
+  surya: { rasi: "", degree: 0.0, nakshatra: "", pada: 0, retrograde: false, house: 0, dignity: "" }
+  chandra: { rasi: "", degree: 0.0, nakshatra: "", pada: 0, retrograde: false, house: 0, dignity: "" }
+  mangal: { rasi: "", degree: 0.0, nakshatra: "", pada: 0, retrograde: false, house: 0, dignity: "" }
+  budha: { rasi: "", degree: 0.0, nakshatra: "", pada: 0, retrograde: false, house: 0, dignity: "" }
+  guru: { rasi: "", degree: 0.0, nakshatra: "", pada: 0, retrograde: false, house: 0, dignity: "" }
+  shukra: { rasi: "", degree: 0.0, nakshatra: "", pada: 0, retrograde: false, house: 0, dignity: "" }
+  shani: { rasi: "", degree: 0.0, nakshatra: "", pada: 0, retrograde: false, house: 0, dignity: "" }
+  rahu: { rasi: "", degree: 0.0, nakshatra: "", pada: 0, retrograde: true, house: 0, dignity: "" }
+  ketu: { rasi: "", degree: 0.0, nakshatra: "", pada: 0, retrograde: true, house: 0, dignity: "" }
+
+vimshottari_dasha:
+  balance_at_birth:
+    lord: ""
+    remaining_years: 0
+    remaining_months: 0
+    remaining_days: 0
+  sequence: []
+
+house_summary:
+  house_1: { rasi: "", planets: [] }
+  house_2: { rasi: "", planets: [] }
+  house_3: { rasi: "", planets: [] }
+  house_4: { rasi: "", planets: [] }
+  house_5: { rasi: "", planets: [] }
+  house_6: { rasi: "", planets: [] }
+  house_7: { rasi: "", planets: [] }
+  house_8: { rasi: "", planets: [] }
+  house_9: { rasi: "", planets: [] }
+  house_10: { rasi: "", planets: [] }
+  house_11: { rasi: "", planets: [] }
+  house_12: { rasi: "", planets: [] }
+
+computed_analysis:
+  functional_nature:
+    yogakarakas: []
+    benefics: []
+    malefics: []
+    neutrals: []
+  badhaka:
+    sign_type: ""
+    sthana: 0
+    rasi: ""
+    lord: ""
+  marakas: []
+  yogas: []
+  key_strengths: []
+  key_vulnerabilities: []
