@@ -1,0 +1,203 @@
+# Planet Mundane Significations for Medini Jyotish (Mundane Astrology)
+# Compiled from classical and modern sources for worldastro agent use.
+#
+# These are MUNDANE (national/political/economic/weather) significations,
+# NOT natal/personal astrology significations.
+
+source: "Compiled from B.V. Raman (Mundane Astrology), Varahamihira (Brihat Samhita), and modern Medini Jyotish texts"
+
+significations:
+
+  surya:
+    english: Sun
+    mundane_significations:
+      - king / head of state / president / prime minister
+      - government authority, power, and administrative machinery
+      - national prestige, honor, and sovereignty
+      - gold and gold trade
+      - father of the nation / founding leaders
+      - public health vitality of the nation
+      - copper trade and industry
+      - police and judiciary at the highest levels
+      - state-owned enterprises and public sector
+      - vision, motivation, and national purpose
+    rules:
+      - "Strong Sun in ingress chart = stable government, effective leadership, national confidence"
+      - "Afflicted Sun = political instability, leadership crisis, loss of national prestige"
+      - "Sun eclipsed = king/ruler faces downfall, health crisis, or removal from power (Brihat Samhita)"
+      - "Sun conjunct malefics in mundane chart = authoritarian tendencies, abuse of state power"
+
+  chandra:
+    english: Moon
+    mundane_significations:
+      - the public / common people / masses
+      - agriculture, food supply, and harvests
+      - water bodies, rainfall, floods, and drought
+      - women and women's issues in society
+      - public sentiment, opinion, and mood of the nation
+      - silver and pearls
+      - fertility rates and birth rates
+      - public health and sanitation
+      - real estate and housing for the masses
+      - currency strength and liquidity in the economy
+    rules:
+      - "Strong Moon = prosperous agriculture, content populace, plentiful harvests, public well-being"
+      - "Afflicted Moon = public unrest, food scarcity, drought or floods, discontent among masses"
+      - "Moon in watery signs afflicted by malefics = excessive rainfall, floods, waterborne epidemics"
+      - "Lunar eclipse = disruptions to public welfare, women's issues come to the fore, agricultural losses"
+
+  mangal:
+    english: Mars
+    mundane_significations:
+      - army, military, and defense forces
+      - police, paramilitary, and law enforcement
+      - war, armed conflict, and aggression between nations
+      - fires, explosions, and industrial accidents
+      - surgeons, engineers, and those working with fire and metals
+      - violence, terrorism, and criminal activity
+      - land disputes and border conflicts
+      - iron, steel, and heavy industry
+      - courage, boldness, and national defense capability
+      - epidemics of inflammatory and febrile diseases
+    rules:
+      - "Strong Mars = powerful military, strong defense, decisive national action"
+      - "Afflicted Mars = war, internal strife, communal violence, fires, and accidents"
+      - "Mars conjunct Saturn = severe violence, military coups, large-scale destruction"
+      - "Mars conjunct Rahu = terrorism, unconventional warfare, chemical or biological threats"
+
+  budha:
+    english: Mercury
+    mundane_significations:
+      - mass media, press, journalism, and communications
+      - trade, commerce, and business activity
+      - transport and transportation infrastructure
+      - education system and intellectual life of the nation
+      - ambassadors, diplomats, and envoys
+      - IT industry, telecommunications, and technology sector
+      - publishing, literature, and the arts of communication
+      - accountancy, banking operations, and financial markets
+      - strategists and advisors to heads of state
+      - youth and students
+    rules:
+      - "Strong Mercury = flourishing trade, free press, strong communications infrastructure, intellectual advancement"
+      - "Afflicted Mercury = trade disruptions, misinformation, communication breakdowns, transport strikes"
+      - "Mercury combust = suppression of free speech, censorship, propaganda by the state"
+      - "Mercury eclipsed = drought and famine in the land (Brihat Samhita)"
+
+  guru:
+    english: Jupiter
+    mundane_significations:
+      - judiciary, judges, and the justice system
+      - religion, temples, and religious institutions
+      - treasury, national wealth, and financial prosperity
+      - advisors and ministers to the head of state
+      - diplomats and international relations
+      - higher education, universities, and academia
+      - banking system and financial institutions
+      - law and lawmaking / legislature
+      - expansion, growth, and national optimism
+      - priests, clergy, and spiritual leaders
+    rules:
+      - "Strong Jupiter = just governance, prosperous treasury, religious harmony, economic growth"
+      - "Afflicted Jupiter = corruption in judiciary, financial crisis, religious strife, moral decline"
+      - "Jupiter-Saturn conjunction = beginning of a new socio-political era, major shifts in governance and economy"
+      - "Jupiter retrograde in mundane chart = delays in justice, review of financial policies, religious controversies"
+
+  shukra:
+    english: Venus
+    mundane_significations:
+      - women's welfare and women's rights
+      - arts, culture, entertainment, and cinema industry
+      - luxury goods, fashion, and cosmetics trade
+      - diplomacy, peace negotiations, and treaties
+      - marriages, birth rate, and social harmony
+      - music, dance, painting, and performing arts
+      - agriculture (especially flowers, fruits, and sugarcane)
+      - hotels, tourism, and hospitality industry
+      - aviation and transport of luxury
+      - medicines, medical research, and life-saving drugs
+    rules:
+      - "Strong Venus = cultural prosperity, peaceful diplomacy, flourishing arts, social harmony"
+      - "Afflicted Venus = moral degradation, failures in diplomacy, decline of arts, issues affecting women"
+      - "Venus combust = breakdown of peace talks, loss of cultural values, scandals involving public figures"
+      - "Venus-Mars conjunction = passionate public movements, social upheavals related to gender issues"
+
+  shani:
+    english: Saturn
+    mundane_significations:
+      - democracy, democratic institutions, and the common worker
+      - agriculture, farmers, and agrarian economy
+      - mining, minerals, oil, and natural resources
+      - labor class, servants, and working-class struggles
+      - old age, the elderly, and institutions for the aged/infirm
+      - famine, drought, scarcity, and economic depression
+      - iron, coal, crude oil, and base metals
+      - land, landowners, and real estate
+      - chronic diseases, epidemics, and death toll
+      - prisons, discipline, austerity, and restriction
+    rules:
+      - "Strong Saturn = stable democracy, productive agriculture, disciplined governance, resource wealth"
+      - "Afflicted Saturn = famine, labor unrest, economic depression, epidemics, oppression of the poor"
+      - "Saturn retrograde through Krittika to seven stars = famine in the land (Brihat Samhita)"
+      - "Saturn-Jupiter conjunction in earth signs = long-term economic restructuring, agricultural reform"
+
+  rahu:
+    english: Rahu (North Node)
+    mundane_significations:
+      - foreign invasion, infiltration, and espionage
+      - epidemics of mysterious or incurable diseases
+      - mass deception, propaganda, and misinformation campaigns
+      - corruption, scandals, and moral degradation in public life
+      - unconventional weapons and chemical/biological warfare
+      - drug trade, intoxicants, and substance abuse crises
+      - diplomatic manipulation and covert operations
+      - panic, mass hysteria, and irrational public fear
+      - technology disruptions and cyber warfare
+      - refugees, displaced populations, and immigration crises
+    rules:
+      - "Rahu afflicting Sun = foreign influence on government, coup attempts, leadership under covert attack"
+      - "Rahu afflicting Moon = mass panic, public deception, epidemics affecting the common people"
+      - "Rahu conjunct malefics in mundane chart = terrorism, unconventional threats, large-scale deception"
+      - "Solar eclipse on Rahu axis = political instability, leadership change, foreign policy crisis"
+
+  ketu:
+    english: Ketu (South Node)
+    mundane_significations:
+      - natural calamities (earthquakes, volcanic eruptions, tsunamis)
+      - epidemics of sudden or violent onset
+      - spiritual movements and religious revivalism
+      - liberation movements and revolutionary upheavals
+      - accidents, explosions, and sudden violent events
+      - isolation, sanctions, and withdrawal from alliances
+      - fanatic or extremist ideologies
+      - monks, ascetics, and renunciate movements
+      - medicines, vaccines, and alternative healing
+      - poverty, deprivation, and marginalized communities
+    rules:
+      - "Ketu afflicting lagna of mundane chart = natural disasters, sudden calamities, loss of national identity"
+      - "Ketu conjunct Mars = violent incidents, bomb blasts, sudden military conflicts"
+      - "Ketu in 6th or 8th house = epidemics, mysterious diseases, high mortality events"
+      - "Strong Ketu = rise of spiritual movements, national introspection, detachment from materialism"
+
+# Notes on usage in Medini Jyotish:
+#
+# 1. These significations apply when analyzing:
+#    - National foundation charts (independence/republic charts)
+#    - Solar ingress charts (Mesha Sankranti / Aries ingress)
+#    - Lunar ingress and New/Full Moon charts
+#    - Eclipse charts
+#    - Jupiter-Saturn conjunction charts (every ~20 years)
+#
+# 2. Slow-moving planets (Jupiter, Saturn, Rahu, Ketu) carry more weight
+#    in mundane predictions as their effects are long-lasting.
+#
+# 3. Planetary war (graha yuddha) between planets intensifies their
+#    mundane significations and often indicates conflict between the
+#    sectors those planets represent.
+#
+# 4. The house placement of planets in a mundane chart modifies their
+#    expression. See house_mundane_significations.yaml for house meanings.
+#
+# 5. Classical rule (Brihat Samhita): When a planet is retrograde, its
+#    mundane significations become intensified and often manifest as
+#    delays, reversals, or crises in the areas it governs.
