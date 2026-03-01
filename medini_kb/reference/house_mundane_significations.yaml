@@ -1,0 +1,291 @@
+# House Mundane Significations for Medini Jyotish (Mundane Astrology)
+# Compiled from classical and modern sources for worldastro agent use.
+#
+# These are MUNDANE (national/political/economic) house significations applied
+# to ingress charts, country foundation charts, and eclipse charts.
+# NOT natal/personal house meanings.
+
+source: "B.V. Raman (Mundane Astrology), Varahamihira (Brihat Samhita), classical Medini texts"
+
+significations:
+
+  house_1:
+    name: "First House (Lagna)"
+    mundane_keywords:
+      - the country as a whole, its general condition and well-being
+      - public health and vitality of the populace
+      - national character, identity, and self-image
+      - general law and order situation
+      - international standing and reputation of the nation
+      - government's reputation among the people
+      - overall prosperity or adversity of the state
+    natural_karaka: Sun
+    afflicted_effects:
+      - "National crisis, instability, and loss of direction"
+      - "Poor health of the populace, epidemics affecting the general population"
+      - "Setbacks to the nation's international reputation and standing"
+    strong_effects:
+      - "National prosperity, strong identity, and confident outlook"
+      - "Good public health, general contentment among the people"
+      - "Strong international standing and stable governance"
+
+  house_2:
+    name: "Second House (Dhana Bhava)"
+    mundane_keywords:
+      - national wealth, revenue, and economic strength
+      - banking system and financial institutions
+      - trade, commerce, and business activity
+      - food supply, food security, and granaries
+      - natural resources and national assets
+      - stock markets and financial exchanges
+      - currency strength and purchasing power of the people
+      - relations with neighboring countries (secondary signification)
+    natural_karaka: Jupiter
+    afflicted_effects:
+      - "Economic downturn, financial crisis, depletion of national reserves"
+      - "Food scarcity, inflation, and decline in purchasing power"
+      - "Banking failures and loss of national financial reputation"
+    strong_effects:
+      - "Robust national economy, strong revenue, and prosperous trade"
+      - "Plentiful food supply and stable financial institutions"
+      - "Strong currency and growth in national wealth"
+
+  house_3:
+    name: "Third House (Sahaja Bhava)"
+    mundane_keywords:
+      - communications — media, press, journalism, and publishing
+      - telecommunications, postal services, and IT infrastructure
+      - transportation — railways, roads, highways, and transit systems
+      - neighboring countries and border relations
+      - treaties, pacts, and agreements with neighbors
+      - short-distance travel within the nation
+      - courage and enterprise of the people
+      - democracy and free speech
+    natural_karaka: Mars
+    afflicted_effects:
+      - "Breakdowns in communication and transport infrastructure"
+      - "Hostile relations with neighbors, border tensions, and failed peace talks"
+      - "Suppression of free press, censorship, and accidents in transit systems"
+    strong_effects:
+      - "Flourishing media, strong communications infrastructure, technological progress"
+      - "Friendly relations with neighboring countries and successful treaties"
+      - "Well-functioning transportation networks and freedom of expression"
+
+  house_4:
+    name: "Fourth House (Sukha Bhava)"
+    mundane_keywords:
+      - agriculture, crops, and farming conditions
+      - land, real estate, and landed properties
+      - mines, minerals, and underground resources
+      - weather patterns, rainfall, and natural calamities
+      - opposition parties and political opposition
+      - common people's welfare and domestic happiness
+      - housing, urban development, and construction
+      - educational institutions at primary and secondary levels
+    natural_karaka: Moon
+    afflicted_effects:
+      - "Natural calamities — floods, earthquakes, droughts, and storms"
+      - "Agricultural failures, crop losses, and food production crises"
+      - "Political instability from opposition forces, communal disharmony"
+    strong_effects:
+      - "Bountiful harvests, agricultural prosperity, and favorable weather"
+      - "Stable domestic conditions, adequate housing, and thriving real estate"
+      - "Contentment among the common people and political stability"
+
+  house_5:
+    name: "Fifth House (Putra Bhava)"
+    mundane_keywords:
+      - diplomacy, ambassadors, and envoys
+      - children, birth rate, and population growth
+      - speculation, stock market, and financial investments
+      - national morale, emotional temper, and public sentiment
+      - entertainment, sports, cinema, and amusements
+      - education and universities (creative/higher aspects)
+      - morality and ethical standards of society
+      - high society, cultural elite, and intelligentsia
+    natural_karaka: Jupiter
+    afflicted_effects:
+      - "Decline in national morale, public discontent, and emotional instability"
+      - "Falling birth rates, crises affecting children and youth"
+      - "Stock market crashes, speculative losses, and diplomatic failures"
+    strong_effects:
+      - "High national morale, flourishing arts and entertainment"
+      - "Successful diplomacy, healthy population growth, and cultural vitality"
+      - "Strong financial markets and prosperous speculative activity"
+
+  house_6:
+    name: "Sixth House (Shatru/Ari Bhava)"
+    mundane_keywords:
+      - military, defense forces, army, navy, and air force
+      - public health services, hospitals, and disease control
+      - enemies of the state, both internal and external
+      - labor disputes, trade unions, and workforce issues
+      - civil servants, public employees, and bureaucracy
+      - national debt and loan obligations
+      - communal disharmony and social conflicts
+      - judicial functioning and law enforcement at lower levels
+    natural_karaka: Saturn
+    afflicted_effects:
+      - "Military setbacks, defeats, and weakened defense capability"
+      - "Epidemics, public health emergencies, and overburdened hospitals"
+      - "Labor strikes, civil unrest, and escalation of internal conflicts"
+    strong_effects:
+      - "Strong and capable military, effective defense, and national security"
+      - "Good public health, efficient health services, and disease control"
+      - "Stable labor relations and effective civil service"
+
+  house_7:
+    name: "Seventh House (Kalatra Bhava)"
+    mundane_keywords:
+      - foreign affairs and international relations
+      - wars, open hostilities, and armed conflicts with other nations
+      - treaties, alliances, and international agreements
+      - open enemies of the nation
+      - marriage and divorce rates in the country
+      - business partnerships and trade agreements
+      - living standards of the people
+      - tourism and international visitors
+    natural_karaka: Venus
+    afflicted_effects:
+      - "Wars, armed conflicts, and deterioration of international relations"
+      - "Failed treaties, broken alliances, and isolation on the world stage"
+      - "Decline in living standards, rising divorce rates, and social friction"
+    strong_effects:
+      - "Peaceful international relations, successful treaties, and strong alliances"
+      - "Thriving foreign trade, good living standards, and social harmony"
+      - "Growth in tourism and positive international partnerships"
+
+  house_8:
+    name: "Eighth House (Randhra Bhava)"
+    mundane_keywords:
+      - death rate, mortality, and public fatalities
+      - epidemics, pandemics, and mass casualties
+      - national debt, taxes, and insurance sector
+      - secret dealings, covert operations, and intelligence agencies
+      - losses from natural disasters and calamities
+      - legacies, inheritance laws, and capital gains
+      - financial relations with foreign countries
+      - occult movements and underground activities
+    natural_karaka: Saturn
+    afflicted_effects:
+      - "Spike in death rate, epidemics, and mass casualty events"
+      - "National debt crisis, tax burdens, and financial instability"
+      - "Threats to territorial integrity, covert attacks, and intelligence failures"
+    strong_effects:
+      - "Effective intelligence and security apparatus, low mortality"
+      - "Well-managed national debt, efficient taxation, and strong insurance sector"
+      - "Gains through legacies, foreign financial partnerships, and resource management"
+
+  house_9:
+    name: "Ninth House (Dharma Bhava)"
+    mundane_keywords:
+      - judiciary, supreme court, and the justice system
+      - religion, religious institutions, and temples/churches/mosques
+      - higher education, universities, and research institutions
+      - foreign trade, shipping, and long-distance commerce
+      - shipping, sea traffic, and air travel
+      - philosophy, ethics, and national moral compass
+      - foreign missions, embassies, and diplomatic outposts
+      - law, legal reform, and constitutional matters
+    natural_karaka: Jupiter
+    afflicted_effects:
+      - "Corrupt judiciary, miscarriage of justice, and legal system failures"
+      - "Religious strife, sectarian violence, and moral decline in society"
+      - "Decline in higher education, disruptions to foreign trade and shipping"
+    strong_effects:
+      - "Just and effective legal system, strong judiciary, and rule of law"
+      - "Religious harmony, thriving universities, and national moral strength"
+      - "Prosperous foreign trade, safe shipping, and flourishing academic research"
+
+  house_10:
+    name: "Tenth House (Karma/Rajya Bhava)"
+    mundane_keywords:
+      - government, ruler, president, or prime minister
+      - executive power and political authority
+      - national honor, prestige, and sovereignty
+      - law and order enforcement at the national level
+      - foreign trade and international commerce (at state level)
+      - administration and governance machinery
+      - political leadership and direction of the nation
+      - national achievements and accomplishments
+    natural_karaka: Sun
+    afflicted_effects:
+      - "Political instability, leadership crisis, and government downfall"
+      - "Loss of national honor, international disgrace, and policy failures"
+      - "Breakdown of law and order, ineffective governance"
+    strong_effects:
+      - "Strong, stable government and effective leadership"
+      - "National honor enhanced, successful domestic and foreign policy"
+      - "Efficient administration and high regard in the international community"
+
+  house_11:
+    name: "Eleventh House (Labha Bhava)"
+    mundane_keywords:
+      - legislature, parliament, and legislative assemblies
+      - allies, friends of the nation, and international partnerships
+      - gains to the national treasury and economic profits
+      - hopes, aspirations, and future plans of the nation
+      - city councils, local governance bodies, and municipal authorities
+      - legislation, bills, and new laws
+      - income from foreign sources and international aid
+      - social welfare programs and public benefit schemes
+    natural_karaka: Jupiter
+    afflicted_effects:
+      - "Legislative gridlock, failed legislation, and parliamentary crises"
+      - "Loss of allies, strained international partnerships, and economic setbacks"
+      - "Depletion of treasury gains and unfulfilled national aspirations"
+    strong_effects:
+      - "Effective legislation, productive parliament, and good governance through laws"
+      - "Strong alliances, reliable international friends, and gains to the treasury"
+      - "Successful social welfare programs and realization of national goals"
+
+  house_12:
+    name: "Twelfth House (Vyaya Bhava)"
+    mundane_keywords:
+      - secret enemies, espionage, and covert subversion
+      - hospitals, asylums, and long-term care institutions
+      - prisons, detention centers, and correctional facilities
+      - national expenditure and financial outflows
+      - foreign investments abroad and capital flight
+      - losses from wars, calamities, and mismanagement
+      - exile, refugees, and displaced populations
+      - smuggling, black market, and underground economy
+    natural_karaka: Saturn
+    afflicted_effects:
+      - "Excessive national expenditure, budget deficits, and financial drain"
+      - "Espionage threats, covert attacks by secret enemies, and intelligence leaks"
+      - "Overcrowded prisons and hospitals, humanitarian crises among refugees"
+    strong_effects:
+      - "Well-managed national expenditure, minimal losses, and efficient institutions"
+      - "Effective counter-intelligence and protection against secret enemies"
+      - "Productive foreign investments and well-functioning welfare institutions"
+
+# Notes on usage in Medini Jyotish:
+#
+# 1. These house significations apply when analyzing:
+#    - National foundation charts (independence/republic day charts)
+#    - Solar ingress charts (Mesha Sankranti / Aries ingress)
+#    - Lunar ingress and New/Full Moon charts
+#    - Eclipse charts cast for the capital of a country
+#    - Jupiter-Saturn conjunction charts (Vimsottari cycle)
+#
+# 2. The lord of each house and planets placed in the house both
+#    influence the mundane significations. A strong house lord placed
+#    well indicates prosperity for those significations.
+#
+# 3. Malefics (Saturn, Mars, Rahu, Ketu) in a house typically afflict
+#    its mundane significations unless they own the house or are in
+#    their own sign/exaltation.
+#
+# 4. Benefics (Jupiter, Venus, well-associated Mercury, strong Moon)
+#    in a house generally strengthen its mundane significations.
+#
+# 5. Transit of slow-moving planets (Jupiter, Saturn, Rahu/Ketu)
+#    over house cusps in a national chart activates those house
+#    significations for the duration of the transit.
+#
+# 6. The Dasas operating in a national chart determine which houses
+#    are activated during specific time periods.
+#
+# 7. Cross-reference with planet_mundane_significations.yaml for
+#    planet-level details when interpreting a mundane chart.
