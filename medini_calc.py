@@ -1004,6 +1004,626 @@ def cmd_eclipse(args):
 
 
 # ---------------------------------------------------------------------------
+# Panchanga command
+# ---------------------------------------------------------------------------
+
+# Vara (weekday) data — indexed by Julian Day % 7
+# JD 0 (Monday, Jan 1, 4713 BCE) -> index 0 = Monday
+# Formula: weekday = (int(jd + 1.5)) % 7 -> 0=Sun,1=Mon,...,6=Sat
+VARA_DATA = [
+    ("Ravivara", "Sunday", "Sun"),
+    ("Somavara", "Monday", "Moon"),
+    ("Mangalavara", "Tuesday", "Mars"),
+    ("Budhavara", "Wednesday", "Mercury"),
+    ("Guruvara", "Thursday", "Jupiter"),
+    ("Shukravara", "Friday", "Venus"),
+    ("Shanivara", "Saturday", "Saturn"),
+]
+
+# 30 Tithi names
+TITHI_NAMES = [
+    "Pratipada", "Dvitiya", "Tritiya", "Chaturthi", "Panchami",
+    "Shashthi", "Saptami", "Ashtami", "Navami", "Dashami",
+    "Ekadashi", "Dvadashi", "Trayodashi", "Chaturdashi", "Purnima",
+    "Pratipada", "Dvitiya", "Tritiya", "Chaturthi", "Panchami",
+    "Shashthi", "Saptami", "Ashtami", "Navami", "Dashami",
+    "Ekadashi", "Dvadashi", "Trayodashi", "Chaturdashi", "Amavasya",
+]
+
+# Tithi lords cycle (8 lords, repeating)
+TITHI_LORDS = ["Sun", "Moon", "Mars", "Mercury", "Jupiter", "Venus",
+               "Saturn", "Rahu"]
+
+# 27 Yoga names
+YOGA_NAMES = [
+    "Vishkambha", "Priti", "Ayushman", "Saubhagya", "Shobhana",
+    "Atiganda", "Sukarma", "Dhriti", "Shoola", "Ganda",
+    "Vriddhi", "Dhruva", "Vyaghata", "Harshana", "Vajra",
+    "Siddhi", "Vyatipata", "Variyan", "Parigha", "Shiva",
+    "Siddha", "Sadhya", "Shubha", "Shukla", "Brahma",
+    "Indra", "Vaidhriti",
+]
+
+# 11 Karana names: 4 fixed + 7 rotating
+# Fixed karanas appear once each: Kimstughna(first), Shakuni, Chatushpada, Naga(last three)
+# 7 rotating karanas repeat 8 times (karanas 2-57)
+KARANA_ROTATING = ["Bava", "Balava", "Kaulava", "Taitila", "Gara",
+                   "Vanija", "Vishti"]
+KARANA_FIXED_FIRST = "Kimstughna"
+KARANA_FIXED_LAST = ["Shakuni", "Chatushpada", "Naga"]
+
+
+def _get_karana_name(karana_index):
+    """Get karana name from 0-based index (0-59).
+
+    karana 0 = Kimstughna (fixed)
+    karanas 1-56 = rotating cycle of 7 (Bava..Vishti) x 8
+    karanas 57-59 = Shakuni, Chatushpada, Naga (fixed)
+    """
+    if karana_index == 0:
+        return KARANA_FIXED_FIRST
+    elif karana_index <= 56:
+        return KARANA_ROTATING[(karana_index - 1) % 7]
+    else:
+        return KARANA_FIXED_LAST[karana_index - 57]
+
+
+def cmd_panchanga(args):
+    """Compute panchanga (five-fold almanac) for a given date and place.
+
+    The five elements are:
+    1. Vara (weekday)
+    2. Tithi (lunar day based on Moon-Sun angular distance)
+    3. Nakshatra (Moon's sidereal asterism)
+    4. Yoga (Sun-Moon combination)
+    5. Karana (half-tithi)
+    """
+    target_date = datetime.strptime(args.date, "%Y-%m-%d").date()
+    lat = args.lat
+    lon = args.lon
+    tz = args.timezone
+
+    # Compute Julian Day at local sunrise approximation (06:00 local time)
+    # Convert local 06:00 to UTC
+    local_sunrise_hour = 6.0
+    utc_hour = local_sunrise_hour - tz
+    jd = swe.julday(target_date.year, target_date.month, target_date.day,
+                     utc_hour)
+
+    # Try to compute actual sunrise using swe.rise_trans
+    try:
+        # swe.rise_trans(jd_start, body, lon, lat, alt, pressure, temp, flag)
+        # flag: swe.CALC_RISE = 1
+        rsmi = swe.CALC_RISE | swe.BIT_DISC_CENTER
+        ret = swe.rise_trans(jd - 0.5, swe.SUN, "", 0, rsmi,
+                             (lon, lat, 0), 1013.25, 15)
+        if ret[0] == 0 and ret[1][0] > 0:
+            jd = ret[1][0]
+    except Exception:
+        pass  # fall back to 06:00 local
+
+    # --- Ayanamsha ---
+    swe.set_sid_mode(swe.SIDM_LAHIRI)
+    ayanamsha = swe.get_ayanamsa(jd)
+
+    # --- Tropical longitudes of Sun and Moon ---
+    sun_pos, _ = swe.calc_ut(jd, swe.SUN)
+    moon_pos, _ = swe.calc_ut(jd, swe.MOON)
+    sun_trop = sun_pos[0]
+    moon_trop = moon_pos[0]
+
+    # --- Sidereal longitudes ---
+    sun_sid = (sun_trop - ayanamsha) % 360
+    moon_sid = (moon_trop - ayanamsha) % 360
+
+    # ===================================================================
+    # 1. VARA (Weekday)
+    # ===================================================================
+    # Julian Day weekday: (int(jd + 1.5)) % 7 -> 0=Sun,1=Mon,...,6=Sat
+    vara_idx = int(jd + 1.5) % 7
+    vara_name, vara_english, vara_lord = VARA_DATA[vara_idx]
+
+    # ===================================================================
+    # 2. TITHI (Lunar Day)
+    # ===================================================================
+    moon_sun_angle = (moon_trop - sun_trop) % 360
+    tithi_number = int(moon_sun_angle / 12) + 1  # 1-30
+    tithi_name = TITHI_NAMES[tithi_number - 1]
+    paksha = "Shukla" if tithi_number <= 15 else "Krishna"
+    tithi_lord = TITHI_LORDS[(tithi_number - 1) % 8]
+
+    # Percent remaining in current tithi
+    tithi_progress = (moon_sun_angle % 12) / 12 * 100
+    tithi_remaining = round(100 - tithi_progress, 1)
+
+    # ===================================================================
+    # 3. NAKSHATRA (Moon's sidereal asterism)
+    # ===================================================================
+    nak_name, nak_lord, nak_pada, nak_deg = get_nakshatra(moon_sid)
+
+    # ===================================================================
+    # 4. YOGA (Sun-Moon combination)
+    # ===================================================================
+    sum_angle = (moon_trop + sun_trop) % 360
+    yoga_number = int(sum_angle / (13 + 1.0 / 3)) + 1  # 1-27
+    if yoga_number > 27:
+        yoga_number = 27
+    yoga_name = YOGA_NAMES[yoga_number - 1]
+
+    # ===================================================================
+    # 5. KARANA (Half-Tithi)
+    # ===================================================================
+    karana_index = int(moon_sun_angle / 6)  # 0-59
+    if karana_index > 59:
+        karana_index = 59
+    karana_name = _get_karana_name(karana_index)
+
+    # ===================================================================
+    # Planetary positions (sidereal, all 9 grahas)
+    # ===================================================================
+    planetary_positions = {}
+
+    for swe_id, eng_name, sans_name, yaml_key in GRAHA_LIST:
+        pos, _ret = swe.calc_ut(jd, swe_id)
+        tropical_lon = pos[0]
+        sid_lon = (tropical_lon - ayanamsha) % 360
+        speed = pos[3]
+
+        rashi_name, rashi_idx, deg = get_rashi(sid_lon)
+        p_nak_name, p_nak_lord, p_pada, _ = get_nakshatra(sid_lon)
+        retrograde = speed < 0
+
+        planetary_positions[yaml_key] = {
+            "rasi": rashi_name,
+            "degree": round(deg, 4),
+            "nakshatra": p_nak_name,
+            "pada": p_pada,
+            "retrograde": retrograde,
+        }
+
+    # Rahu (Mean Node)
+    node_pos, _ = swe.calc_ut(jd, swe.MEAN_NODE)
+    rahu_sid = (node_pos[0] - ayanamsha) % 360
+    rahu_rashi, _, rahu_deg = get_rashi(rahu_sid)
+    rahu_nak, rahu_nak_lord, rahu_pada, _ = get_nakshatra(rahu_sid)
+
+    planetary_positions["rahu"] = {
+        "rasi": rahu_rashi,
+        "degree": round(rahu_deg, 4),
+        "nakshatra": rahu_nak,
+        "pada": rahu_pada,
+        "retrograde": True,
+    }
+
+    # Ketu (180 degrees opposite Rahu)
+    ketu_sid = (rahu_sid + 180) % 360
+    ketu_rashi, _, ketu_deg = get_rashi(ketu_sid)
+    ketu_nak, ketu_nak_lord, ketu_pada, _ = get_nakshatra(ketu_sid)
+
+    planetary_positions["ketu"] = {
+        "rasi": ketu_rashi,
+        "degree": round(ketu_deg, 4),
+        "nakshatra": ketu_nak,
+        "pada": ketu_pada,
+        "retrograde": True,
+    }
+
+    # ===================================================================
+    # Assemble output
+    # ===================================================================
+    output = {
+        "panchanga": {
+            "date": str(target_date),
+            "place": {
+                "latitude": lat,
+                "longitude": lon,
+                "timezone": tz,
+            },
+            "vara": {
+                "name": vara_name,
+                "english": vara_english,
+                "lord": vara_lord,
+            },
+            "tithi": {
+                "number": tithi_number,
+                "name": tithi_name,
+                "paksha": paksha,
+                "lord": tithi_lord,
+                "percent_remaining": tithi_remaining,
+            },
+            "nakshatra": {
+                "name": nak_name,
+                "lord": nak_lord,
+                "pada": nak_pada,
+            },
+            "yoga": {
+                "number": yoga_number,
+                "name": yoga_name,
+            },
+            "karana": {
+                "name": karana_name,
+            },
+        },
+        "planetary_positions": planetary_positions,
+    }
+
+    # Write to file
+    panchanga_dir = os.path.join(WORLD_DATA_DIR, "panchanga")
+    os.makedirs(panchanga_dir, exist_ok=True)
+    out_file = os.path.join(panchanga_dir, f"{target_date}_panchanga.yaml")
+
+    with open(out_file, "w") as f:
+        yaml.dump(output, f, default_flow_style=False, sort_keys=False,
+                  allow_unicode=True)
+
+    # Print human-readable summary
+    if args.print_summary:
+        out = sys.stderr
+        out.write("=" * 60 + "\n")
+        out.write(f"  PANCHANGA -- {target_date}\n")
+        out.write(f"  Place: lat={lat}, lon={lon}, tz=UTC"
+                  f"{'+' if tz >= 0 else ''}{tz}\n")
+        out.write("=" * 60 + "\n")
+
+        out.write(f"\n  VARA:      {vara_name} ({vara_english})"
+                  f"  -- Lord: {vara_lord}\n")
+        out.write(f"  TITHI:     {tithi_name} ({paksha} Paksha,"
+                  f" Tithi {tithi_number})"
+                  f"  -- Lord: {tithi_lord}"
+                  f"  [{tithi_remaining}% remaining]\n")
+        out.write(f"  NAKSHATRA: {nak_name} Pada {nak_pada}"
+                  f"  -- Lord: {nak_lord}\n")
+        out.write(f"  YOGA:      {yoga_name} (#{yoga_number})\n")
+        out.write(f"  KARANA:    {karana_name}\n")
+
+        out.write("\n  " + "-" * 56 + "\n")
+        out.write(f"  {'Graha':<10} {'Rasi':<14} {'Degree':>7}"
+                  f"  {'Nakshatra':<20} {'Pada':>4} {'R':>2}\n")
+        out.write("  " + "-" * 56 + "\n")
+
+        graha_order = [
+            "surya", "chandra", "mangal", "budha",
+            "guru", "shukra", "shani", "rahu", "ketu",
+        ]
+        for key in graha_order:
+            p = planetary_positions[key]
+            retro = "R" if p["retrograde"] else ""
+            out.write(
+                f"  {key.capitalize():10s}  {p['rasi']:14s}"
+                f"  {p['degree']:7.2f}  {p['nakshatra']:20s}"
+                f"  {p['pada']:>4}  {retro:>2}\n"
+            )
+        out.write("=" * 60 + "\n")
+
+    # JSON status to stdout
+    status = {
+        "status": "success",
+        "file": out_file,
+        "date": str(target_date),
+        "vara": vara_english,
+        "tithi": f"{tithi_name} ({paksha})",
+        "nakshatra": nak_name,
+        "yoga": yoga_name,
+        "karana": karana_name,
+    }
+    print(json.dumps(status))
+
+
+# ---------------------------------------------------------------------------
+# Country (foundation chart) command
+# ---------------------------------------------------------------------------
+
+def parse_timezone_string(tz_str):
+    """Parse timezone string like 'UTC+5:30' or 'UTC-5:00' to float offset.
+
+    Examples:
+        'UTC+5:30' -> 5.5
+        'UTC-5:00' -> -5.0
+        'UTC+0'    -> 0.0
+        'UTC+9'    -> 9.0
+    """
+    s = tz_str.strip()
+    if s.upper().startswith("UTC"):
+        s = s[3:]
+    if not s or s == "+0" or s == "-0":
+        return 0.0
+    # Determine sign
+    sign = 1
+    if s.startswith("-"):
+        sign = -1
+        s = s[1:]
+    elif s.startswith("+"):
+        s = s[1:]
+    # Split hours and minutes
+    if ":" in s:
+        parts = s.split(":")
+        hours = int(parts[0])
+        minutes = int(parts[1])
+    else:
+        hours = int(s)
+        minutes = 0
+    return sign * (hours + minutes / 60.0)
+
+
+def cmd_country(args):
+    """Compute foundation chart for a country from world_data stub."""
+    country_name = args.name.lower().replace(" ", "_")
+    chart_path = os.path.join(
+        _SCRIPT_DIR, "world_data", country_name, "foundation_chart.yaml"
+    )
+
+    if not os.path.exists(chart_path):
+        print(json.dumps({
+            "status": "error",
+            "message": f"Foundation chart not found: {chart_path}",
+        }))
+        sys.exit(1)
+
+    # Read entity stub
+    with open(chart_path, "r") as f:
+        stub = yaml.safe_load(f)
+
+    entity = stub["entity"]
+    date_str = entity["date"]
+    time_str = entity["time"]
+    tz_str = entity["timezone"]
+    lat = entity["place"]["latitude"]
+    lon = entity["place"]["longitude"]
+    place_city = entity["place"].get("city", "")
+
+    # Parse date and time
+    dob_parts = [int(x) for x in date_str.split("-")]
+    tob_parts = [int(x) for x in time_str.split(":")]
+    year, month, day = dob_parts
+    hour = tob_parts[0]
+    minute = tob_parts[1]
+    second = tob_parts[2] if len(tob_parts) > 2 else 0
+
+    # Parse timezone
+    tz_offset = parse_timezone_string(tz_str)
+
+    # Initialize Swiss Ephemeris with Lahiri ayanamsha
+    swe.set_sid_mode(swe.SIDM_LAHIRI)
+
+    # Julian Day
+    jd = calculate_julian_day(year, month, day, hour, minute, second, tz_offset)
+
+    # Ascendant
+    asc_sid, ayanamsha = calculate_ascendant(jd, lat, lon)
+    asc_rashi, asc_rashi_idx, asc_deg = get_rashi(asc_sid)
+    asc_nak, asc_nak_lord, asc_pada, _ = get_nakshatra(asc_sid)
+
+    lagna = {
+        "rashi": asc_rashi,
+        "rashi_idx": asc_rashi_idx,
+        "degree": asc_deg,
+        "nakshatra": asc_nak,
+        "pada": asc_pada,
+    }
+
+    # All planetary positions (use Mean Node by default)
+    use_true_node = False
+    positions = calculate_all_positions(
+        jd, ayanamsha, asc_rashi_idx, use_true_node=use_true_node
+    )
+
+    # Vimshottari dasha
+    moon_lon = positions["Moon"]["sidereal_lon"]
+    foundation_date = date(year, month, day)
+    dasha = calculate_vimshottari_dasha(moon_lon, foundation_date)
+
+    # House summary
+    house_summary = build_house_summary(asc_rashi_idx, positions)
+
+    # Computed analysis
+    computed_analysis = build_computed_analysis(asc_rashi_idx, positions)
+
+    # Build output dict (entity instead of native)
+    data = {"entity": entity}
+
+    data["lagna"] = {
+        "rasi": lagna["rashi"],
+        "degree": round(lagna["degree"], 4),
+        "nakshatra": lagna["nakshatra"],
+        "pada": lagna["pada"],
+    }
+
+    data["chandra"] = {
+        "rasi": positions["Moon"]["rashi"],
+        "degree": round(positions["Moon"]["degree"], 4),
+        "nakshatra": positions["Moon"]["nakshatra"],
+        "pada": positions["Moon"]["pada"],
+    }
+
+    # Planetary positions
+    graha_order = [
+        "Sun", "Moon", "Mars", "Mercury", "Jupiter",
+        "Venus", "Saturn", "Rahu", "Ketu",
+    ]
+    data["planetary_positions"] = {}
+    for name in graha_order:
+        p = positions[name]
+        dignity = get_dignity(name, p["rashi_idx"], p["degree"])
+        entry = {
+            "rasi": p["rashi"],
+            "degree": round(p["degree"], 4),
+            "nakshatra": p["nakshatra"],
+            "pada": p["pada"],
+            "retrograde": p["retrograde"],
+            "house": p["house"],
+        }
+        if dignity:
+            entry["dignity"] = dignity
+        data["planetary_positions"][p["yaml_key"]] = entry
+
+    data["vimshottari_dasha"] = dasha
+
+    # House summary
+    data["house_summary"] = {}
+    for h in range(1, 13):
+        hs = house_summary[h]
+        data["house_summary"][f"house_{h}"] = {
+            "rasi": hs["rasi"],
+            "planets": hs["planets"],
+        }
+
+    data["notes"] = (
+        f"Ayanamsa: Lahiri ({round(ayanamsha, 6)})\n"
+        f"Node type: {'True Node' if use_true_node else 'Mean Node'}\n"
+        f"House system: Whole Sign\n"
+        f"Computed by medini_calc.py"
+    )
+
+    data["computed_analysis"] = computed_analysis
+
+    # Write enriched YAML
+    with open(chart_path, "w") as f:
+        yaml.dump(data, f, default_flow_style=False, sort_keys=False,
+                  allow_unicode=True)
+
+    # Print human-readable summary if requested
+    if args.print_summary:
+        print_country_chart_summary(
+            entity, lagna, positions, dasha, house_summary,
+            computed_analysis, ayanamsha, tz_offset
+        )
+
+    # JSON status to stdout
+    status = {
+        "status": "success",
+        "file": chart_path,
+        "entity": entity["name"],
+        "lagna": lagna["rashi"],
+        "moon_sign": positions["Moon"]["rashi"],
+    }
+    print(json.dumps(status))
+
+
+def print_country_chart_summary(entity, lagna, positions, dasha,
+                                 house_summary, computed_analysis,
+                                 ayanamsha, tz_offset):
+    """Print human-readable foundation chart summary to stderr."""
+    out = sys.stderr
+    name = entity["name"]
+    date_str = entity["date"]
+    time_str = entity["time"]
+    tz_str = entity["timezone"]
+    place = entity["place"]
+    lat = place["latitude"]
+    lon = place["longitude"]
+    city = place.get("city", "")
+
+    out.write("=" * 70 + "\n")
+    out.write(f"  FOUNDATION CHART -- {name.upper()}\n")
+    out.write("=" * 70 + "\n")
+    out.write(f"  Event: {entity.get('foundation_event', 'Foundation')}\n")
+    out.write(f"  Date: {date_str}  Time: {time_str}  TZ: {tz_str}\n")
+    out.write(f"  Place: {city}  Lat: {lat}  Lon: {lon}\n")
+    out.write(f"  Ayanamsa (Lahiri): {format_dms(ayanamsha)}\n")
+    if entity.get("notes"):
+        out.write(f"  Notes: {entity['notes']}\n")
+
+    out.write(f"\n  LAGNA: {lagna['rashi']} {format_dms(lagna['degree'])}\n")
+    out.write(f"         {lagna['nakshatra']} Pada {lagna['pada']}\n")
+
+    out.write("\n  " + "-" * 66 + "\n")
+    out.write(
+        f"  {'Graha':<10} {'Rashi':<14} {'Degree':<14} {'Nakshatra':<20} "
+        f"{'Pada':>4} {'H':>3} {'R':>2} {'Dignity'}\n"
+    )
+    out.write("  " + "-" * 66 + "\n")
+
+    graha_order = [
+        "Sun", "Moon", "Mars", "Mercury", "Jupiter",
+        "Venus", "Saturn", "Rahu", "Ketu",
+    ]
+    for g in graha_order:
+        p = positions[g]
+        dignity = get_dignity(g, p["rashi_idx"], p["degree"]) or ""
+        retro = "R" if p["retrograde"] else ""
+        out.write(
+            f"  {g:<10} {p['rashi']:<14} {format_dms(p['degree']):<14} "
+            f"{p['nakshatra']:<20} {p['pada']:>4} {p['house']:>3} "
+            f"{retro:>2} {dignity}\n"
+        )
+
+    out.write("\n  " + "-" * 66 + "\n")
+    out.write("  HOUSE SUMMARY (Whole Sign)\n")
+    out.write("  " + "-" * 66 + "\n")
+    for h in range(1, 13):
+        hs = house_summary[h]
+        planets_str = ", ".join(hs["planets"]) if hs["planets"] else "--"
+        out.write(f"  House {h:>2}  {hs['rasi']:<14} {planets_str}\n")
+
+    out.write("\n  " + "-" * 66 + "\n")
+    out.write("  VIMSHOTTARI DASHA\n")
+    out.write("  " + "-" * 66 + "\n")
+    bal = dasha["balance_at_birth"]
+    out.write(
+        f"  Balance at foundation: {bal['lord']} -- "
+        f"{bal['remaining_years']}y {bal['remaining_months']}m "
+        f"{bal['remaining_days']}d\n"
+    )
+    for entry in dasha["sequence"]:
+        out.write(
+            f"  {entry['lord']:<10} {entry['start']}  to  {entry['end']}\n"
+        )
+
+    # Computed analysis summary
+    if computed_analysis:
+        out.write("\n  " + "-" * 66 + "\n")
+        out.write("  COMPUTED ANALYSIS\n")
+        out.write("  " + "-" * 66 + "\n")
+        fn = computed_analysis.get("functional_nature", {})
+        if fn.get("yogakarakas"):
+            out.write(f"  Yogakarakas: {', '.join(fn['yogakarakas'])}\n")
+        if fn.get("functional_benefics"):
+            out.write(
+                f"  Functional Benefics: {', '.join(fn['functional_benefics'])}\n"
+            )
+        if fn.get("functional_malefics"):
+            out.write(
+                f"  Functional Malefics: {', '.join(fn['functional_malefics'])}\n"
+            )
+        bd = computed_analysis.get("badhaka", {})
+        if bd:
+            out.write(
+                f"  Badhaka: {bd.get('badhaka_sthana', '?')} "
+                f"(lord: {bd.get('lord', '?')})\n"
+            )
+        marakas = computed_analysis.get("marakas", [])
+        if marakas:
+            if isinstance(marakas[0], dict):
+                maraka_strs = [
+                    f"{m['planet']} ({m['reason']})" for m in marakas
+                ]
+            else:
+                maraka_strs = [str(m) for m in marakas]
+            out.write(f"  Marakas: {', '.join(maraka_strs)}\n")
+        yogas = computed_analysis.get("yogas", [])
+        if yogas:
+            out.write("  Yogas:\n")
+            for y in yogas:
+                if isinstance(y, dict):
+                    out.write(f"    - {y.get('name', '?')}: "
+                              f"{y.get('description', '')}\n")
+                else:
+                    out.write(f"    - {y}\n")
+        strengths = computed_analysis.get("key_strengths", [])
+        if strengths:
+            out.write("  Key Strengths:\n")
+            for s in strengths:
+                out.write(f"    + {s}\n")
+        vulns = computed_analysis.get("key_vulnerabilities", [])
+        if vulns:
+            out.write("  Key Vulnerabilities:\n")
+            for v in vulns:
+                out.write(f"    - {v}\n")
+
+    out.write("=" * 70 + "\n")
+
+
+# ---------------------------------------------------------------------------
 # Stub commands (to be implemented)
 # ---------------------------------------------------------------------------
 
@@ -1119,7 +1739,12 @@ def parse_args(argv=None):
         "country",
         help="Compute foundation chart for a country",
     )
-    ctry_parser.add_argument("--name", help="Country name")
+    ctry_parser.add_argument("--name", required=True,
+                              help="Country name (folder under world_data/)")
+    ctry_parser.add_argument(
+        "--print", dest="print_summary", action="store_true",
+        help="Print human-readable summary to stderr",
+    )
 
     # --- conjunction ---
     conj_parser = subparsers.add_parser(
@@ -1159,9 +1784,28 @@ def parse_args(argv=None):
     # --- panchanga ---
     panch_parser = subparsers.add_parser(
         "panchanga",
-        help="Compute panchanga for a date",
+        help="Compute panchanga (five-fold almanac) for a date",
     )
-    panch_parser.add_argument("--date", help="Date YYYY-MM-DD")
+    panch_parser.add_argument(
+        "--date", default=str(date.today()),
+        help="Date in YYYY-MM-DD format (default: today)",
+    )
+    panch_parser.add_argument(
+        "--lat", type=float, default=28.6139,
+        help="Latitude (default: 28.6139 = New Delhi)",
+    )
+    panch_parser.add_argument(
+        "--lon", type=float, default=77.2090,
+        help="Longitude (default: 77.2090 = New Delhi)",
+    )
+    panch_parser.add_argument(
+        "--timezone", type=float, default=5.5,
+        help="Timezone offset from UTC (default: 5.5 = IST)",
+    )
+    panch_parser.add_argument(
+        "--print", dest="print_summary", action="store_true",
+        help="Print human-readable summary to stderr",
+    )
 
     # --- ashtakavarga ---
     ashta_parser = subparsers.add_parser(
@@ -1195,12 +1839,12 @@ COMMAND_DISPATCH = {
     "ingress": cmd_ingress,
     "eclipse": cmd_eclipse,
     "eclipses": cmd_eclipses,
-    "country": cmd_stub,
+    "country": cmd_country,
     "conjunction": cmd_stub,
     "wars": cmd_stub,
     "retrogrades": cmd_stub,
     "sign-changes": cmd_stub,
-    "panchanga": cmd_stub,
+    "panchanga": cmd_panchanga,
     "ashtakavarga": cmd_stub,
     "sbc": cmd_stub,
 }
