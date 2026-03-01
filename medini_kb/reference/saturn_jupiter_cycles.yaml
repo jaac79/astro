@@ -1,0 +1,421 @@
+# =============================================================================
+# Saturn-Jupiter Cycles for Mundane (Medini) Jyotish
+# =============================================================================
+# The Jupiter-Saturn conjunction cycle is the most fundamental long-term
+# timing tool in mundane astrology. These conjunctions mark the structural
+# shifts in civilizations, governments, economies, and belief systems.
+# Compiled from classical Western mundane astrology (Abu Ma'shar), Vedic
+# tradition, B.V. Raman, and modern researchers.
+# =============================================================================
+
+source: >
+  Abu Ma'shar (Great Conjunctions), B.V. Raman (Mundane Astrology, Hindu
+  Predictive Astrology), Raymond Merriman (The Great Mutation), Richard
+  Tarnas (Cosmos and Psyche), classical Medini Jyotish texts, Wikipedia
+  (Great conjunction article)
+
+# =============================================================================
+# JUPITER-SATURN CONJUNCTION CYCLE (~20 YEARS)
+# =============================================================================
+
+jupiter_saturn_conjunction:
+
+  overview: >
+    Every approximately 20 years, Jupiter and Saturn form a conjunction in
+    the zodiac. This is known as a "Great Conjunction" and has been considered
+    the primary timer of civilizational change since antiquity. Each conjunction
+    inaugurates a new 20-year era with distinct political, economic, and social
+    themes determined by the sign and element of the conjunction.
+
+  orbital_mechanics:
+    jupiter_orbital_period: "11.86 years"
+    saturn_orbital_period: "29.46 years"
+    synodic_period: "19.86 years (~20 years)"
+    sign_advance: "Each successive conjunction advances approximately 243° (about 8 signs forward)"
+    element_pattern: >
+      Because of the ~243° advance, successive conjunctions tend to occur in
+      signs of the same element (fire, earth, air, water) for about 200 years
+      before shifting to the next element. This produces the Great Mutation cycle.
+
+  mundane_significance:
+    - "Marks turning points in governmental structures and political leadership"
+    - "Inaugurates new economic paradigms and financial systems"
+    - "Shifts in religious, philosophical, and ideological frameworks"
+    - "Changes in social organization and class structure"
+    - "New technologies or modes of production gaining dominance"
+    - "Rise and fall of empires, nations, and institutions"
+
+# =============================================================================
+# THE GREAT MUTATION CYCLE (~200 YEARS PER ELEMENT)
+# =============================================================================
+
+great_mutation:
+
+  overview: >
+    When the Jupiter-Saturn conjunctions shift from one elemental triplicity
+    to another (e.g., from earth signs to air signs), this is called a
+    "Great Mutation." Great Mutations mark the most profound civilizational
+    shifts—the rise of new world orders, new dominant modes of economy and
+    governance, and fundamental changes in how societies organize themselves.
+
+  element_cycle:
+    sequence: "Fire -> Earth -> Air -> Water -> Fire (repeats)"
+    duration_per_element: "~200 years (approximately 10 conjunctions per element)"
+    full_cycle: "~800 years for all four elements"
+
+  element_themes:
+
+    fire:
+      signs: ["Aries", "Leo", "Sagittarius"]
+      mundane_themes:
+        - "Conquest, expansion, and empire-building"
+        - "Religious crusades and ideological fervor"
+        - "Military dominance and warrior cultures"
+        - "Discovery, exploration, and pioneering ventures"
+        - "Charismatic leadership and divine-right governance"
+      energy_source: "Fire (literal); steam power in later fire eras"
+      historical_example: "Fire era ~1663-1842: Age of Enlightenment, colonial expansion, Industrial Revolution beginning"
+
+    earth:
+      signs: ["Taurus", "Virgo", "Capricorn"]
+      mundane_themes:
+        - "Material accumulation and industrial production"
+        - "Empire through economic dominance and colonialism"
+        - "Banking, finance, and corporate capitalism"
+        - "Infrastructure, manufacturing, and resource extraction"
+        - "Bureaucratic governance and institutional hierarchies"
+      energy_source: "Fossil fuels (coal, oil, gas)"
+      historical_example: "Earth era ~1842-2020: Industrial age, colonialism, world wars, corporate globalization, fossil fuel economy"
+
+    air:
+      signs: ["Gemini", "Libra", "Aquarius"]
+      mundane_themes:
+        - "Information, communication, and knowledge economies"
+        - "Networks, decentralization, and distributed power"
+        - "Technology, innovation, and digital transformation"
+        - "Democracy, human rights, and social movements"
+        - "Trade, commerce, and intellectual property"
+        - "Artificial intelligence, space technology, and new frontiers"
+      energy_source: "Electricity, solar, wind, and novel energy sources"
+      historical_example: "Air era ~2020-2220 (beginning): Digital age, AI revolution, decentralized governance, knowledge economy"
+
+    water:
+      signs: ["Cancer", "Scorpio", "Pisces"]
+      mundane_themes:
+        - "Emotional and spiritual evolution of societies"
+        - "Dissolution of rigid structures and boundaries"
+        - "Mysticism, art, compassion, and universal consciousness"
+        - "Oceanic exploration and resource utilization"
+        - "Healthcare, pharmaceuticals, and healing"
+        - "Ecological consciousness and stewardship"
+      energy_source: "Water, hydrogen, and bio-based energy"
+      historical_example: "Next water era begins approximately ~2220"
+
+  historical_great_mutations:
+    - year: "~1186"
+      from_element: "Water"
+      to_element: "Fire"
+      event: "Crusades intensify, Mongol expansion begins, age of religious warfare"
+    - year: "~1405"
+      from_element: "Fire"
+      to_element: "Water"
+      event: "Age of exploration begins, fall of Constantinople (1453), maritime empires"
+    - year: "~1603"
+      from_element: "Water"
+      to_element: "Fire"
+      event: "Enlightenment, scientific revolution, colonial expansion"
+    - year: "~1842"
+      from_element: "Fire"
+      to_element: "Earth"
+      event: "Industrial Revolution dominates, material production, colonial empires at peak"
+    - year: "2020"
+      from_element: "Earth"
+      to_element: "Air"
+      event: "Digital transformation, AI, decentralization, end of industrial-age paradigms, COVID-19 pandemic as symbolic threshold"
+
+# =============================================================================
+# KEY PAST CONJUNCTIONS (1842-2020)
+# =============================================================================
+
+key_conjunctions:
+
+  - year: 1842
+    date: "January 26, 1842"
+    sign: "Sagittarius (~8°)"
+    element: "Fire"
+    note: "Last fire-sign conjunction before earth era; transition conjunction"
+    historical_events:
+      - "First Anglo-Afghan War concludes"
+      - "Treaty of Nanking ends First Opium War"
+      - "Industrial Revolution accelerating globally"
+
+  - year: 1861
+    date: "October 21, 1861"
+    sign: "Virgo (~18°)"
+    element: "Earth"
+    historical_events:
+      - "American Civil War (1861-1865)"
+      - "Italian unification; German unification building"
+      - "Serfdom abolished in Russia (1861)"
+      - "Industrial capitalism consolidating"
+
+  - year: 1881
+    date: "April 18, 1881"
+    sign: "Taurus (~1°)"
+    element: "Earth"
+    historical_events:
+      - "Scramble for Africa intensifies"
+      - "Second Industrial Revolution (electricity, steel)"
+      - "Assassination of Tsar Alexander II"
+      - "Rise of labor movements and trade unions"
+
+  - year: 1901
+    date: "November 28, 1901"
+    sign: "Sagittarius (~14°) [temporary fire-sign reversion]"
+    element: "Fire"
+    note: "Brief reversion to fire element within the earth era"
+    historical_events:
+      - "Death of Queen Victoria; end of an era"
+      - "Rise of the United States as a world power"
+      - "Boxer Rebellion aftermath in China"
+      - "Oil industry beginning to transform economies"
+
+  - year: 1921
+    date: "September 10, 1921"
+    sign: "Virgo (~26°)"
+    element: "Earth"
+    historical_events:
+      - "Post-WWI reconstruction and new world order"
+      - "League of Nations established"
+      - "Russian Revolution aftermath; USSR forming"
+      - "Roaring Twenties economic expansion"
+
+  - year: 1940
+    date: "October 20, 1940 (first of triple conjunction: Aug 1940, Oct 1940, Feb 1941)"
+    sign: "Taurus (~9°)"
+    element: "Earth"
+    historical_events:
+      - "World War II in full force"
+      - "Battle of Britain; bombing of London"
+      - "Rise of totalitarian empires"
+      - "Nuclear age begins (Manhattan Project initiated 1942)"
+
+  - year: 1961
+    date: "February 18, 1961"
+    sign: "Capricorn (~25°)"
+    element: "Earth"
+    historical_events:
+      - "Kennedy inaugurated; New Frontier era"
+      - "Berlin Wall constructed"
+      - "Space race intensifies (Gagarin in space April 1961)"
+      - "Decolonization of Africa accelerating"
+      - "Non-Aligned Movement gaining strength"
+
+  - year: 1980
+    date: "December 31, 1980 (first of triple: Dec 1980, Mar 1981, Jul 1981)"
+    sign: "Libra (~9°)"
+    element: "Air"
+    note: >
+      Air-sign 'interruptor' conjunction breaking the earth-sign sequence.
+      Foreshadowed the coming air era. Associated with the information revolution.
+    historical_events:
+      - "Reagan and Thatcher inaugurate neoliberal era"
+      - "Iran-Iraq War begins"
+      - "Solidarity movement in Poland"
+      - "Personal computer revolution beginning (IBM PC 1981)"
+      - "MTV, CNN launched—media transformation"
+
+  - year: 2000
+    date: "May 28, 2000"
+    sign: "Taurus (~22°)"
+    element: "Earth"
+    note: "Final earth-sign conjunction of the 200-year earth era"
+    historical_events:
+      - "Dot-com bubble peak and collapse"
+      - "9/11 attacks (2001) reshape global security"
+      - "Globalization reaches peak; WTO expansion"
+      - "Euro currency introduced (2002)"
+      - "War on Terror begins"
+
+  - year: 2020
+    date: "December 21, 2020"
+    sign: "Aquarius (0°29')"
+    element: "Air"
+    note: >
+      GREAT MUTATION: First air-sign conjunction in ~600 years that begins
+      a sustained air-element sequence. Marks the definitive shift from the
+      200-year earth era to the 200-year air era. Occurred on the winter
+      solstice at 0° Aquarius—considered extraordinarily significant.
+    historical_events:
+      - "COVID-19 pandemic transforms global society"
+      - "Remote work and digital economy become mainstream"
+      - "AI revolution begins (GPT series, generative AI)"
+      - "Cryptocurrency and decentralized finance surge"
+      - "Social media reshapes political discourse globally"
+      - "Climate change driving policy transformation"
+    upcoming_effects:
+      - "Knowledge and information become primary economic resources"
+      - "Decentralized networks replace centralized institutions"
+      - "AI and automation reshape labor markets"
+      - "Space technology and exploration accelerate"
+      - "New forms of governance and social organization emerge"
+
+# =============================================================================
+# NEXT CONJUNCTION
+# =============================================================================
+
+  - year: 2040
+    date: "October 31, 2040 (approximate)"
+    sign: "Libra (~17°)"
+    element: "Air"
+    note: "Second air-sign conjunction of the new air era"
+    expected_themes:
+      - "Rebalancing of international alliances and partnerships"
+      - "Justice and fairness movements gain institutional power"
+      - "Diplomatic restructuring of world order"
+      - "Trade agreements and economic partnerships reshape global commerce"
+
+# =============================================================================
+# OTHER MAJOR PLANETARY CYCLES IN MUNDANE ASTROLOGY
+# =============================================================================
+
+other_mundane_cycles:
+
+  jupiter_return:
+    period: "~11.86 years (approximately 12 years)"
+    description: >
+      Jupiter returns to its natal position in a country's foundation chart
+      approximately every 12 years. This marks periods of expansion,
+      prosperity, or overextension for the nation.
+    mundane_effects:
+      positive:
+        - "Economic expansion and growth"
+        - "Judicial reform and legal milestones"
+        - "Religious and cultural renaissance"
+        - "Diplomatic breakthroughs and international gains"
+      negative:
+        - "Over-expansion and inflation"
+        - "Religious or ideological hubris"
+        - "Excessive government spending"
+    key_transits:
+      - "Jupiter over natal Sun: Leadership boost, government expansion"
+      - "Jupiter over natal Moon: Public welfare improvements, agricultural bounty"
+      - "Jupiter over natal Saturn: Institutional reform, balance of growth and discipline"
+
+  saturn_return:
+    period: "~29.46 years (approximately 29.5 years)"
+    description: >
+      Saturn returns to its natal position in a country's foundation chart
+      approximately every 29.5 years. This marks periods of structural testing,
+      institutional crisis, and forced maturation for nations.
+    mundane_effects:
+      testing_areas:
+        - "Constitutional crises and governance challenges"
+        - "Economic recessions or structural adjustments"
+        - "Infrastructure failures demanding rebuild"
+        - "Social contract renegotiations"
+        - "Generational power transitions"
+      historical_pattern: >
+        Nations often face their most defining crises at or near their Saturn
+        returns. The United States experienced the Civil War near its 3rd Saturn
+        return (1861), the Great Depression near its 5th (1929), and internal
+        upheaval near subsequent returns.
+    key_transits:
+      - "Saturn over natal Sun: Government crisis, leadership tested"
+      - "Saturn over natal Moon: Public hardship, agricultural crisis"
+      - "Saturn over natal Mars: Military setbacks, defense restructuring"
+
+  rahu_ketu_cycle:
+    period: "~18.6 years (18 years, 7 months)"
+    description: >
+      The nodal axis (Rahu-Ketu) returns to its natal position approximately
+      every 18.6 years. This activates the karmic themes of a nation's
+      foundation chart and often brings eclipses to sensitive points.
+    mundane_effects:
+      - "Eclipse patterns repeat, activating similar national themes"
+      - "Karmic reckoning for past national policies"
+      - "Foreign relations crises or breakthroughs"
+      - "Immigration and refugee issues resurface"
+      - "Hidden threats (espionage, epidemics) emerge"
+      - "Technology disruptions with transformative impact"
+    saros_connection: >
+      The 18.6-year nodal cycle is closely related to the Saros eclipse cycle
+      (18 years, 11 days, 8 hours). Eclipses in the same Saros family
+      share thematic connections across the centuries, making historical
+      eclipse analysis valuable for mundane prediction.
+
+  saturn_rahu_conjunction:
+    period: "~11.5 years"
+    description: >
+      Saturn-Rahu conjunctions are among the most feared combinations in
+      Medini Jyotish. They indicate periods of collective suffering,
+      epidemics, mass deception, and structural crises involving foreign
+      or hidden elements.
+    mundane_effects:
+      - "Pandemics and epidemic outbreaks"
+      - "Institutional corruption exposed"
+      - "Mass displacement and refugee crises"
+      - "Economic manipulation and financial fraud"
+      - "Terrorism and unconventional warfare"
+    recent_conjunctions:
+      - year: 2013
+        sign: "Libra"
+        events: "Syrian civil war escalation, ISIS rise, European refugee crisis building"
+      - year: 2025
+        sign: "Pisces"
+        events: "Current cycle—themes still unfolding"
+
+  jupiter_rahu_conjunction:
+    period: "~6.5 years"
+    description: >
+      Jupiter-Rahu conjunctions (Guru-Chandala Yoga in natal astrology)
+      in mundane context indicate periods where wisdom is corrupted,
+      religious extremism rises, and financial speculation reaches excess.
+    mundane_effects:
+      - "Religious extremism and fanaticism"
+      - "Financial bubbles and speculative excess"
+      - "Corruption in judiciary and educational institutions"
+      - "False prophets and misleading ideologies gain followers"
+      - "Unethical expansion and growth at any cost"
+
+# =============================================================================
+# INTERPRETATION GUIDELINES
+# =============================================================================
+
+interpretation_guidelines:
+
+  assessing_conjunction_strength:
+    - "Sign dignity of both planets at conjunction (own sign, exaltation = stronger effects)"
+    - "House placement in the country's ingress chart"
+    - "Aspects from other planets (benefic support or malefic affliction)"
+    - "Proximity to fixed stars of significance"
+    - "Whether the conjunction is direct or involves retrograde motion"
+    - "Nakshatra of the conjunction adds nuance (see nakshatra_mundane.yaml)"
+
+  timing_effects:
+    - "Effects begin building 1-2 years before exact conjunction"
+    - "Peak effects at the conjunction and for 2-3 years after"
+    - "Themes persist for the full 20-year cycle until the next conjunction"
+    - "Opposition point (~10 years after conjunction) marks the crisis or fulfillment of the cycle"
+    - "Square aspects (~5 and ~15 years) mark turning points within the cycle"
+
+  country_specific_analysis:
+    - "Cast the conjunction chart for the capital city of the country"
+    - "Note the house placement of the conjunction relative to the country's lagna"
+    - "Cross-reference with the country's foundation chart planetary positions"
+    - "Check if the conjunction degree aspects or conjoins foundation chart planets"
+    - "The house where the conjunction falls indicates the life-domain most affected"
+
+# =============================================================================
+# NOTES
+# =============================================================================
+# 1. The Jupiter-Saturn conjunction is the SINGLE most important long-term
+#    cycle in mundane astrology. Always check the current conjunction context.
+# 2. Great Mutations (element changes) are generational turning points that
+#    define centuries—not merely decades.
+# 3. The 2020 Great Mutation to Air at 0° Aquarius is considered one of the
+#    most significant astrological events of the millennium.
+# 4. Cross-reference with ingress_rules.yaml for the annual context.
+# 5. Cross-reference with eclipse_rules.yaml for eclipses activating the
+#    conjunction degree.
+# 6. For country-specific analysis, see country_sign_rulerships.yaml.

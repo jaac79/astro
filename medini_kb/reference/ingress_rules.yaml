@@ -1,0 +1,448 @@
+# =============================================================================
+# Ingress Rules for Mundane (Medini) Jyotish
+# =============================================================================
+# Rules governing solar ingress charts, year-lord determination, and seasonal
+# chart interpretation. Compiled from Tajaka tradition (Varsha Phala),
+# B.V. Raman's Mundane Astrology, Varahamihira's Brihat Samhita, and
+# classical Medini Jyotish texts.
+# =============================================================================
+
+source: >
+  Tajaka Neelakanthi, B.V. Raman (Mundane Astrology, Hindu Predictive
+  Astrology), Varahamihira (Brihat Samhita), Prof. R.M. Palaniappan
+  (Mundane Astrology), classical Medini Jyotish and Varsha Phala traditions
+
+# =============================================================================
+# YEAR LORD (VARSHESHWARA) DETERMINATION
+# =============================================================================
+
+year_lord:
+  definition: >
+    The Varsheshwara (year lord) for mundane predictions is the planet that
+    rules the weekday on which the Sun enters sidereal Aries (Mesha Sankranti).
+    This is the Hindu solar new year, typically falling on April 13 or 14.
+    The year lord governs the general character and themes of the ensuing
+    solar year for the entire world.
+
+  determination_method:
+    step_1: "Compute the exact moment the Sun enters 0° sidereal Aries (Mesha Sankranti)"
+    step_2: "Determine the weekday at the capital city of the country in question"
+    step_3: "The planet ruling that weekday becomes the year lord (Varsheshwara)"
+
+  weekday_rulerships:
+    sunday: Sun
+    monday: Moon
+    tuesday: Mars
+    wednesday: Mercury
+    thursday: Jupiter
+    friday: Venus
+    saturday: Saturn
+
+  year_lord_effects:
+
+    sun:
+      weekday: Sunday
+      general_theme: "Government authority, leadership, sovereignty"
+      positive_effects:
+        - "Strong government and decisive leadership"
+        - "National prestige enhanced on the world stage"
+        - "Gold prices tend to rise; government bonds strengthen"
+        - "Public health vitality improves"
+        - "Favorable for state-sponsored enterprises and infrastructure"
+      negative_effects:
+        - "Authoritarian tendencies in governance if Sun is afflicted"
+        - "Excessive centralization of power"
+        - "Droughts possible if Sun is in fire signs and afflicted"
+        - "Health of the head of state may become a concern"
+      commodities_affected: "Gold, wheat, government securities"
+      sectors_affected: "Government, public sector, energy"
+
+    moon:
+      weekday: Monday
+      general_theme: "Public welfare, agriculture, water, masses"
+      positive_effects:
+        - "Agricultural prosperity and abundant harvests"
+        - "Public sentiment is positive and constructive"
+        - "Women's welfare receives attention and improvement"
+        - "Favorable rainfall and water resources"
+        - "Silver and dairy industries prosper"
+      negative_effects:
+        - "Floods and waterborne diseases if Moon is afflicted"
+        - "Public mood swings and emotional unrest"
+        - "Food supply disruptions and price volatility"
+        - "Currency instability and liquidity concerns"
+      commodities_affected: "Silver, rice, pearls, dairy, water-related commodities"
+      sectors_affected: "Agriculture, real estate, food, water utilities"
+
+    mars:
+      weekday: Tuesday
+      general_theme: "Military, conflict, energy, construction"
+      positive_effects:
+        - "Strong defense capability and national security"
+        - "Engineering and construction sectors boom"
+        - "Industrial production increases, especially metals"
+        - "Sports and competitive achievements for the nation"
+        - "Decisive action in governance; reforms pushed through"
+      negative_effects:
+        - "Wars, armed conflicts, and border tensions escalate"
+        - "Fires, explosions, and industrial accidents increase"
+        - "Violence, communal tensions, and terrorism threats"
+        - "Inflammatory diseases and epidemics"
+        - "Land and border disputes intensify"
+      commodities_affected: "Iron, steel, copper, weapons, real estate"
+      sectors_affected: "Military, construction, metals, energy"
+
+    mercury:
+      weekday: Wednesday
+      general_theme: "Trade, communication, education, technology"
+      positive_effects:
+        - "Flourishing trade and commercial activity"
+        - "Advances in technology and communications"
+        - "Strong media landscape and free press"
+        - "Educational reforms and intellectual achievement"
+        - "Diplomacy and negotiation efforts succeed"
+      negative_effects:
+        - "Trade disputes and commercial disruptions"
+        - "Misinformation, propaganda, and communication breakdowns"
+        - "Transport strikes and infrastructure failures"
+        - "Fraud, financial scams, and market manipulation"
+        - "Censorship and suppression of free speech if afflicted"
+      commodities_affected: "Technology stocks, green commodities, mercury"
+      sectors_affected: "IT, telecommunications, media, education, trade"
+
+    jupiter:
+      weekday: Thursday
+      general_theme: "Prosperity, law, religion, banking, expansion"
+      positive_effects:
+        - "National prosperity and economic growth"
+        - "Judiciary functions effectively; justice prevails"
+        - "Religious harmony and spiritual upliftment"
+        - "Banking sector strengthens; foreign investment increases"
+        - "Higher education and universities flourish"
+        - "Diplomatic success in international relations"
+      negative_effects:
+        - "Over-expansion leading to economic bubbles"
+        - "Religious extremism or sectarian conflict if afflicted"
+        - "Corruption in judiciary and financial institutions"
+        - "Inflation and excessive government spending"
+      commodities_affected: "Banking stocks, grains, sugar, yellow metals"
+      sectors_affected: "Banking, finance, law, education, religion"
+
+    venus:
+      weekday: Friday
+      general_theme: "Diplomacy, arts, luxury, women, peace"
+      positive_effects:
+        - "Peace treaties and successful diplomatic negotiations"
+        - "Arts, culture, and entertainment flourish"
+        - "Women's empowerment and gender equality advances"
+        - "Luxury goods and tourism industries thrive"
+        - "Social harmony and improved living standards"
+        - "Aviation and hospitality sectors grow"
+      negative_effects:
+        - "Moral decline and social decadence if Venus is afflicted"
+        - "Failed peace negotiations and diplomatic scandals"
+        - "Crises in the entertainment industry"
+        - "Issues affecting women's safety and welfare"
+      commodities_affected: "Diamonds, luxury goods, textiles, aviation stocks"
+      sectors_affected: "Entertainment, tourism, fashion, diplomacy, aviation"
+
+    saturn:
+      weekday: Saturday
+      general_theme: "Austerity, labor, agriculture, hardship, discipline"
+      positive_effects:
+        - "Disciplined governance and institutional reform"
+        - "Agricultural policy improvements and land reform"
+        - "Mining and natural resource management strengthens"
+        - "Democratic institutions and worker rights strengthened"
+        - "Long-term infrastructure projects initiated"
+      negative_effects:
+        - "Economic recession or depression"
+        - "Famine, drought, and agricultural failures"
+        - "Labor unrest, strikes, and class conflict"
+        - "Epidemics and chronic health crises"
+        - "Oppression of the poor and marginalized"
+        - "Natural disasters especially earthquakes"
+      commodities_affected: "Oil, coal, base metals, agricultural commodities"
+      sectors_affected: "Mining, agriculture, labor, construction, infrastructure"
+
+# =============================================================================
+# SEASONAL INGRESS CHARTS
+# =============================================================================
+
+seasonal_ingress_charts:
+
+  overview: >
+    The solar year is divided into four quarters, each governed by an ingress
+    chart cast for the moment the Sun enters a cardinal sign. The Aries ingress
+    (Mesha Sankranti) is the master chart for the entire year. The remaining
+    three ingress charts govern their respective 3-month seasons and provide
+    more detailed quarterly predictions.
+
+  aries_ingress:
+    sun_enters: "0° Aries (Mesha)"
+    approximate_date: "April 13-14"
+    governs: "Full solar year (April to following April)"
+    significance: >
+      The most important mundane chart of the year. The Aries ingress chart
+      cast for a nation's capital sets the tone for the entire year. All
+      planetary configurations at this moment describe the broad themes
+      for politics, economy, weather, and society.
+    classical_name: "Mesha Sankranti / Varsha Pravesha"
+
+  cancer_ingress:
+    sun_enters: "0° Cancer (Karka)"
+    approximate_date: "July 16-17"
+    governs: "July through September (monsoon/summer quarter)"
+    significance: >
+      Governs rainfall, agriculture, monsoon patterns, and the welfare of
+      the common people during the rainy season. Especially important for
+      agricultural nations. In Brihat Samhita, rainfall prediction heavily
+      relies on this chart.
+    special_focus:
+      - "Monsoon and rainfall predictions"
+      - "Agricultural output for the season"
+      - "Floods and water-related natural events"
+      - "Public health during the rainy season"
+
+  libra_ingress:
+    sun_enters: "0° Libra (Tula)"
+    approximate_date: "October 17-18"
+    governs: "October through December (autumn quarter)"
+    significance: >
+      Governs foreign relations, trade agreements, diplomatic developments,
+      and the post-harvest economic activity. Venus-ruled Libra emphasizes
+      diplomacy and partnerships.
+    special_focus:
+      - "International relations and treaties"
+      - "Trade and commercial activity"
+      - "Post-harvest economics"
+      - "Marriage and social harmony trends"
+
+  capricorn_ingress:
+    sun_enters: "0° Capricorn (Makara)"
+    approximate_date: "January 14-15"
+    governs: "January through March (winter quarter)"
+    significance: >
+      Governs government restructuring, annual budgets, austerity measures,
+      and long-term policy changes. Saturn-ruled Capricorn emphasizes
+      institutional matters and governance.
+    classical_name: "Makara Sankranti (Uttarayana)"
+    special_focus:
+      - "Government policy and budget"
+      - "Institutional reforms"
+      - "Infrastructure and development projects"
+      - "Winter crops and cold-weather agriculture"
+
+# =============================================================================
+# HOW TO READ AN INGRESS CHART FOR A COUNTRY
+# =============================================================================
+
+reading_ingress_chart:
+
+  chart_casting:
+    step_1: "Compute the exact moment of Sun entering the cardinal sign (0°00'00\" sidereal)"
+    step_2: "Set the location to the capital city of the country in question"
+    step_3: "Cast the chart using sidereal zodiac (Lahiri or chosen ayanamsha)"
+    step_4: "The Ascendant (Lagna) at that moment for the capital city becomes the chart lagna"
+    note: >
+      Different countries will have different lagnas for the same ingress
+      moment, producing different predictions for each nation. This is the
+      classical method prescribed by B.V. Raman and is standard in Medini Jyotish.
+
+  key_factors_to_assess:
+
+    lagna_lord:
+      significance: "Represents the country as a whole—its health, identity, and general direction"
+      strong: "Nation thrives, positive outlook, strong identity"
+      weak: "National crisis, confused direction, health issues in the populace"
+      assessment:
+        - "Check dignity (own sign, exaltation, debilitation, friend/enemy sign)"
+        - "Check house placement (kendras/trikonas = strong; dusthanas = challenges)"
+        - "Check aspects from benefics (supportive) or malefics (obstructive)"
+        - "Check if combust, retrograde, or in planetary war"
+
+    tenth_lord:
+      significance: "Represents the government, executive authority, head of state"
+      strong: "Stable government, effective leadership, policy success"
+      weak: "Political instability, leadership crisis, government dysfunction"
+      assessment:
+        - "House placement of 10th lord indicates where government focus lies"
+        - "10th lord in 6th/8th/12th = government faces obstacles"
+        - "10th lord conjunct benefics = policy success"
+        - "10th lord conjunct malefics = government controversies"
+
+    moon:
+      significance: "Represents the masses, public sentiment, agriculture, and the general mood"
+      strong: "Public content, good harvests, favorable weather"
+      weak: "Public unrest, agricultural problems, emotional instability in society"
+      assessment:
+        - "Paksha bala (waxing Moon stronger than waning)"
+        - "Moon in benefic signs and nakshatras = positive public mood"
+        - "Moon afflicted by malefics = public suffering and discontent"
+        - "Moon's nakshatra dispositor indicates underlying currents in public consciousness"
+
+    strongest_planet:
+      significance: "The planet with most strength (shadbala or overall dignity) dominates the year's themes"
+      assessment:
+        - "Identify by shadbala, or by dignity + house placement + aspects"
+        - "The themes of this planet color the entire period"
+        - "If a malefic is strongest, its negative significations become prominent"
+        - "If a benefic is strongest, growth and prosperity in its significations"
+
+    additional_factors:
+      - factor: "6th house and lord"
+        significance: "Military, defense, enemies, public health, labor"
+      - factor: "7th house and lord"
+        significance: "Foreign relations, wars, treaties, international standing"
+      - factor: "8th house and lord"
+        significance: "Mass casualties, natural disasters, national debt, covert threats"
+      - factor: "Rahu-Ketu axis"
+        significance: "Direction of karmic lessons for the nation; eclipse-sensitive axis"
+      - factor: "Saturn's position"
+        significance: "Where the nation faces delays, hardship, discipline, and restructuring"
+      - factor: "Jupiter's position"
+        significance: "Where the nation finds growth, expansion, protection, and wisdom"
+
+# =============================================================================
+# TAJAKA RULES FOR VARSHA PHALA (ANNUAL PREDICTION)
+# =============================================================================
+
+tajaka_varsha_phala:
+
+  overview: >
+    The Tajaka system (Indo-Persian astrological tradition) provides specific
+    techniques for annual predictions. While originally developed for personal
+    Varsha Phala (solar return), these techniques are adapted in Medini Jyotish
+    for national annual predictions using the Mesha Sankranti chart.
+
+  five_office_bearers:
+    description: >
+      The Pancha-Adhikaris (five office bearers) are five types of lagna lords
+      that hold special significance in the annual chart. They collectively
+      describe the administrative hierarchy of the year.
+    bearers:
+      - name: "Varsheshwara (Year Lord)"
+        role: "Overall ruler of the year; the planet with highest Pancha-Vargiya Bala"
+        mundane_analogy: "The prime minister or president—sets the overall direction"
+      - name: "Dina-Ratri Pati (Day/Night Lord)"
+        role: "Lord of the Sun sign (daytime entry) or Moon sign (nighttime entry)"
+        mundane_analogy: "The cabinet—manages day-to-day governance"
+      - name: "Muntha Pati (Muntha Lord)"
+        role: "Lord of the sign where the Muntha falls in the annual chart"
+        mundane_analogy: "The legislature—creates the policy framework"
+      - name: "Tri-Rashi Pati (Tri-Rashi Lord)"
+        role: "Lord of the trinal sign from the Muntha"
+        mundane_analogy: "The judiciary—ensures balance and justice"
+      - name: "Lagna Lord (of annual chart)"
+        role: "Lord of the ascendant in the annual chart"
+        mundane_analogy: "The nation itself—its identity and direction"
+
+  tajaka_yogas_in_mundane:
+    description: >
+      Tajaka yogas (special configurations) apply to the ingress chart and
+      modify the predictions. Key Tajaka yogas relevant for mundane analysis:
+    yogas:
+      - name: "Ishkavala Yoga"
+        condition: "Benefics in kendras (1, 4, 7, 10) from lagna or Moon"
+        mundane_effect: "National prosperity, stable governance, international goodwill"
+      - name: "Induvara Yoga"
+        condition: "Benefics in panapharas (2, 5, 8, 11) from lagna or Moon"
+        mundane_effect: "Gradual financial growth, moderate improvements in public welfare"
+      - name: "Ithasala Yoga"
+        condition: "Faster planet applying to conjunction/aspect with slower planet, both within orb"
+        mundane_effect: "Events signified by both planets will manifest in the year"
+      - name: "Ishrafa Yoga"
+        condition: "Faster planet separating from conjunction/aspect with slower planet"
+        mundane_effect: "Signified events were attempted but fail or lose momentum"
+      - name: "Nakta Yoga"
+        condition: "No direct Ithasala but a third planet transfers light between two significators"
+        mundane_effect: "Mediation or third-party intervention brings results"
+      - name: "Yamaya Yoga"
+        condition: "Slow planet applies to fast planet (reverse application)"
+        mundane_effect: "Unexpected developments; the larger force pursues the smaller"
+      - name: "Manaú Yoga"
+        condition: "No applying aspects between significators at all"
+        mundane_effect: "Stagnation; the matters signified do not progress during the year"
+      - name: "Kamboola Yoga"
+        condition: "Moon in Ithasala with the year lord and lagna lord simultaneously"
+        mundane_effect: "Strong year; public support for governance; national unity"
+      - name: "Durapha Yoga"
+        condition: "Negative Tajaka aspects afflicting key significators"
+        mundane_effect: "Hardship, obstacles, and setbacks in the indicated domains"
+
+  sahams_for_mundane:
+    description: >
+      Sahams (Arabic Parts / Lots) computed from the ingress chart provide
+      sensitive points for specific domains. Key mundane-relevant sahams:
+    sahams:
+      - name: "Saham of Kingdom (Rajya Saham)"
+        formula: "Ascendant + Saturn - Sun (daytime); Ascendant + Sun - Saturn (nighttime)"
+        mundane_use: "Government stability and sovereign authority"
+      - name: "Saham of Wealth (Dhana Saham)"
+        formula: "Ascendant + Cusp of 2nd house - Lord of 2nd house"
+        mundane_use: "National wealth, treasury, and economic health"
+      - name: "Saham of War (Yuddha Saham)"
+        formula: "Ascendant + 7th lord - Sun"
+        mundane_use: "Risk of armed conflict with foreign powers"
+      - name: "Saham of Disease (Roga Saham)"
+        formula: "Ascendant + Mars - Saturn"
+        mundane_use: "Public health emergencies and epidemics"
+      - name: "Saham of Death (Mrityu Saham)"
+        formula: "Ascendant + 8th cusp - Moon"
+        mundane_use: "Mass casualties, mortality rate, disaster potential"
+      - name: "Saham of Crops (Sasya Saham)"
+        formula: "Ascendant + Moon - Saturn"
+        mundane_use: "Agricultural output and food production"
+
+# =============================================================================
+# SPECIAL INGRESS RULES
+# =============================================================================
+
+special_rules:
+
+  retrograde_planets_at_ingress:
+    rule: >
+      Retrograde planets at the time of ingress indicate unresolved issues
+      from the previous year that carry over. The significations of the
+      retrograde planet face delays, reversals, or require rework.
+    examples:
+      - "Mercury retrograde: Trade deals stall, communication infrastructure problems"
+      - "Jupiter retrograde: Financial reviews, judicial delays, religious controversies"
+      - "Saturn retrograde: Labor unrest from previous year continues, infrastructure delays"
+      - "Venus retrograde: Failed treaties revisited, cultural debates reopen"
+      - "Mars retrograde: Military standoffs unresolved, border tensions linger"
+
+  combustion_at_ingress:
+    rule: >
+      Planets combust (too close to the Sun) at ingress have their
+      significations suppressed or overshadowed by government authority.
+    examples:
+      - "Mercury combust: State-controlled media, suppressed free speech"
+      - "Venus combust: Peace talks overshadowed by governmental agenda"
+      - "Mars combust: Military under direct political control, constrained defense spending"
+
+  eclipse_on_ingress_degree:
+    rule: >
+      If an eclipse occurs close to the ingress degree (0° of a cardinal sign)
+      within the same year, the themes of that ingress chart are dramatically
+      intensified. This is considered a highly significant mundane configuration.
+
+  gandanta_ingress:
+    rule: >
+      If key planets or the lagna falls in Gandanta zones (junction of water
+      and fire signs: 29° Cancer-0° Leo, 29° Scorpio-0° Sagittarius,
+      29° Pisces-0° Aries) at the time of ingress, this indicates deep
+      karmic upheaval and transformative crises for the nation.
+
+# =============================================================================
+# NOTES
+# =============================================================================
+# 1. The Aries ingress chart is the single most important mundane chart of
+#    the year and should always be analyzed first.
+# 2. Seasonal ingress charts refine the annual picture for their respective
+#    quarters and should be read in the context of the annual chart.
+# 3. The year lord's position in the ingress chart (house, sign, aspects)
+#    provides the most concise summary of the year's character.
+# 4. For specific country analysis, always set the chart for the capital city.
+# 5. Cross-reference with eclipse_rules.yaml for eclipses falling in the year.
+# 6. Cross-reference with saturn_jupiter_cycles.yaml for long-term context.

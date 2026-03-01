@@ -1,0 +1,762 @@
+# =============================================================================
+# Nakshatra Mundane Significations for Medini Jyotish
+# =============================================================================
+# All 27 nakshatras with their mundane (world event) associations for use
+# in mundane astrology predictions. Compiled from Varahamihira (Brihat
+# Samhita), B.V. Raman, and classical Medini Jyotish texts.
+# =============================================================================
+
+source: >
+  Varahamihira (Brihat Samhita Ch 9-12: Nakshatras and planetary transits),
+  B.V. Raman (Mundane Astrology, Hindu Predictive Astrology),
+  David Frawley (Shaktis of the Nakshatras), K.N. Rao (Vedic Astrology
+  lectures), classical Medini Jyotish texts, Sarvatobhadra Chakra tradition
+
+# =============================================================================
+# NAKSHATRAS
+# =============================================================================
+
+nakshatras:
+
+  # -------------------------------------------------------------------------
+  # 1. ASHWINI (0°00' - 13°20' Aries)
+  # -------------------------------------------------------------------------
+  ashwini:
+    number: 1
+    span: "0°00' - 13°20' Aries"
+    ruling_planet: Ketu
+    deity: "Ashwini Kumaras (divine twin physicians)"
+    shakti: "Shidhra vyapani shakti (power to quickly reach things)"
+    mundane_keywords:
+      - "Speed, rapid onset, and swift developments"
+      - "Transportation and transit systems"
+      - "Medical breakthroughs and emergency healing"
+      - "New beginnings and pioneering initiatives"
+      - "Horse-related events, racing, equestrian"
+    event_associations:
+      - "Sudden transportation accidents or breakthroughs in transit"
+      - "Emergency medical situations; swift deployment of medical aid"
+      - "Rapid political changes—coups, surprise elections, sudden leadership shifts"
+      - "New technology launches; pioneering scientific discoveries"
+      - "Start of military operations (swift, surprise attacks)"
+    brihat_samhita: >
+      Planets transiting Ashwini affect horse traders, physicians, those
+      who travel quickly, and military scouts. Malefics here cause accidents
+      to vehicles and animals of transport.
+
+  # -------------------------------------------------------------------------
+  # 2. BHARANI (13°20' - 26°40' Aries)
+  # -------------------------------------------------------------------------
+  bharani:
+    number: 2
+    span: "13°20' - 26°40' Aries"
+    ruling_planet: Venus
+    deity: "Yama (lord of death and dharma)"
+    shakti: "Apabharani shakti (power to take things away)"
+    mundane_keywords:
+      - "Death, endings, and mortality events"
+      - "Judicial punishment and capital sentences"
+      - "Transformation and rebirth of institutions"
+      - "Reproductive rights and fertility issues"
+      - "Restraint, restriction, and moral reckoning"
+    event_associations:
+      - "High-profile deaths of leaders or public figures"
+      - "Mass casualty events—natural disasters, epidemics"
+      - "Landmark judicial verdicts and death sentences"
+      - "End of political regimes or institutional collapse"
+      - "Reproductive health crises or legislation"
+    brihat_samhita: >
+      Planets transiting Bharani affect those in bondage, condemned persons,
+      and matters of fertility and death. Malefics here indicate increased
+      mortality and harsh judicial actions.
+
+  # -------------------------------------------------------------------------
+  # 3. KRITTIKA (26°40' Aries - 10°00' Taurus)
+  # -------------------------------------------------------------------------
+  krittika:
+    number: 3
+    span: "26°40' Aries - 10°00' Taurus"
+    ruling_planet: Sun
+    deity: "Agni (god of fire)"
+    shakti: "Dahana shakti (power to burn and purify)"
+    mundane_keywords:
+      - "Fire, explosions, and conflagrations"
+      - "Military action and surgical strikes"
+      - "Cutting, surgery, and sharp interventions"
+      - "Purification and cleansing of corrupt systems"
+      - "Food preparation and cooking industries"
+    event_associations:
+      - "Large-scale fires—wildfires, industrial fires, urban fires"
+      - "Military strikes and precision attacks"
+      - "Major surgical breakthroughs or medical emergencies"
+      - "Anti-corruption drives and institutional purges"
+      - "Volcanic eruptions and heat waves"
+    brihat_samhita: >
+      Saturn transiting Krittika causes famine and fire in the land.
+      Malefics here trigger fires, military aggression, and destruction
+      of crops by heat or conflagration.
+
+  # -------------------------------------------------------------------------
+  # 4. ROHINI (10°00' - 23°20' Taurus)
+  # -------------------------------------------------------------------------
+  rohini:
+    number: 4
+    span: "10°00' - 23°20' Taurus"
+    ruling_planet: Moon
+    deity: "Brahma / Prajapati (the creator)"
+    shakti: "Rohana shakti (power of growth and creation)"
+    mundane_keywords:
+      - "Agriculture, prosperity, and abundant growth"
+      - "Fertility, birth rates, and population growth"
+      - "Beauty, fashion, and luxury industries"
+      - "Economic prosperity and commercial success"
+      - "Dairy farming and animal husbandry"
+    event_associations:
+      - "Bumper harvests and agricultural prosperity"
+      - "Economic booms and market rallies"
+      - "Cultural renaissance and artistic achievements"
+      - "Population milestones and fertility trends"
+      - "Real estate price surges"
+    brihat_samhita: >
+      Rohini is considered the most auspicious nakshatra for agriculture
+      and growth. Benefics transiting here indicate abundance. Saturn
+      transiting Rohini causes drought and cattle disease.
+
+  # -------------------------------------------------------------------------
+  # 5. MRIGASHIRA (23°20' Taurus - 6°40' Gemini)
+  # -------------------------------------------------------------------------
+  mrigashira:
+    number: 5
+    span: "23°20' Taurus - 6°40' Gemini"
+    ruling_planet: Mars
+    deity: "Soma (the moon god)"
+    shakti: "Prinana shakti (power of fulfillment and searching)"
+    mundane_keywords:
+      - "Searching, exploration, and investigation"
+      - "Trade disputes and commercial negotiations"
+      - "Hunting and pursuit of fugitives"
+      - "Research and discovery"
+      - "Restlessness and wandering of populations"
+    event_associations:
+      - "Major search and rescue operations"
+      - "Trade negotiations and commercial disputes"
+      - "Scientific exploration and discovery missions"
+      - "Refugee movements and displaced populations seeking shelter"
+      - "Intelligence and espionage activities"
+    brihat_samhita: >
+      Planets transiting Mrigashira affect hunters, travelers, merchants,
+      and those engaged in seeking. Malefics here cause border disputes
+      and commercial disagreements.
+
+  # -------------------------------------------------------------------------
+  # 6. ARDRA (6°40' - 20°00' Gemini)
+  # -------------------------------------------------------------------------
+  ardra:
+    number: 6
+    span: "6°40' - 20°00' Gemini"
+    ruling_planet: Rahu
+    deity: "Rudra (the howler / storm god)"
+    shakti: "Yatna shakti (power of effort and struggle)"
+    mundane_keywords:
+      - "Storms, cyclones, and destructive weather"
+      - "Destruction, tears, and mass suffering"
+      - "Transformation through crisis"
+      - "Technology disruptions and cyber events"
+      - "Emotional upheaval in the public"
+    event_associations:
+      - "Severe storms, cyclones, hurricanes, and tornadoes"
+      - "Destructive floods and water damage"
+      - "Terrorist attacks causing mass grief"
+      - "Technology infrastructure failures and cyberattacks"
+      - "Major political upheavals and popular uprisings"
+    brihat_samhita: >
+      Planets transiting Ardra, especially malefics, indicate storms,
+      destruction of ships, and calamities from wind and water. Ardra
+      is the nakshatra of the monsoon onset in India.
+
+  # -------------------------------------------------------------------------
+  # 7. PUNARVASU (20°00' Gemini - 3°20' Cancer)
+  # -------------------------------------------------------------------------
+  punarvasu:
+    number: 7
+    span: "20°00' Gemini - 3°20' Cancer"
+    ruling_planet: Jupiter
+    deity: "Aditi (mother of the gods / boundless)"
+    shakti: "Vasutva prapana shakti (power of renewal and return)"
+    mundane_keywords:
+      - "Recovery, rebuilding, and restoration"
+      - "Return to normalcy after crisis"
+      - "Humanitarian aid and relief efforts"
+      - "Religious and spiritual revival"
+      - "Economic recovery and market rebounds"
+    event_associations:
+      - "Post-disaster recovery and reconstruction efforts"
+      - "Economic recoveries after recessions"
+      - "Return of exiled leaders or displaced populations"
+      - "Renewal of diplomatic relations after breakdowns"
+      - "Rebuilding of institutions after collapse"
+    brihat_samhita: >
+      Punarvasu means 'return of the light.' Benefics transiting here
+      indicate restoration and recovery. It is favorable for rebuilding
+      after the destruction indicated by Ardra.
+
+  # -------------------------------------------------------------------------
+  # 8. PUSHYA (3°20' - 16°40' Cancer)
+  # -------------------------------------------------------------------------
+  pushya:
+    number: 8
+    span: "3°20' - 16°40' Cancer"
+    ruling_planet: Saturn
+    deity: "Brihaspati (Jupiter / preceptor of the gods)"
+    shakti: "Brahmavarchasa shakti (power of spiritual and creative energy)"
+    mundane_keywords:
+      - "Nourishment, governance, and public welfare"
+      - "Spiritual prosperity and religious institutions"
+      - "Government aid programs and social welfare"
+      - "Agriculture and food distribution"
+      - "Charitable institutions and philanthropy"
+    event_associations:
+      - "Major government welfare initiatives launched"
+      - "Religious ceremonies and spiritual gatherings of national importance"
+      - "Agricultural policy reforms benefiting farmers"
+      - "Charitable drives and humanitarian programs"
+      - "Educational reforms and institutional strengthening"
+    brihat_samhita: >
+      Pushya is the most auspicious nakshatra for governance and
+      coronation. Kings crowned under Pushya enjoy stable, prosperous
+      reigns. Benefics here strengthen national institutions.
+
+  # -------------------------------------------------------------------------
+  # 9. ASHLESHA (16°40' - 30°00' Cancer)
+  # -------------------------------------------------------------------------
+  ashlesha:
+    number: 9
+    span: "16°40' - 30°00' Cancer"
+    ruling_planet: Mercury
+    deity: "Naga (serpent deities)"
+    shakti: "Vishasleshana shakti (power of poisoning and dissolving)"
+    mundane_keywords:
+      - "Poisons, toxins, and chemical hazards"
+      - "Epidemics and disease outbreaks"
+      - "Deception, fraud, and covert manipulation"
+      - "Serpents, reptiles, and venomous creatures"
+      - "Pharmaceutical industry and drug regulation"
+    event_associations:
+      - "Disease outbreaks and epidemic scares"
+      - "Chemical spills and industrial poisoning events"
+      - "Political scandals involving deception and fraud"
+      - "Drug-related crises (narcotics, pharmaceutical scandals)"
+      - "Espionage revelations and intelligence leaks"
+    brihat_samhita: >
+      Planets transiting Ashlesha affect those who deal in poisons,
+      medicines, and serpents. Malefics here indicate epidemics,
+      poisoning events, and treachery in governance.
+
+  # -------------------------------------------------------------------------
+  # 10. MAGHA (0°00' - 13°20' Leo)
+  # -------------------------------------------------------------------------
+  magha:
+    number: 10
+    span: "0°00' - 13°20' Leo"
+    ruling_planet: Ketu
+    deity: "Pitris (ancestors / forefathers)"
+    shakti: "Tyage kshepani shakti (power to leave the body / transition)"
+    mundane_keywords:
+      - "Royal and governmental events"
+      - "Power transitions and succession"
+      - "Ancestral heritage and tradition"
+      - "State ceremonies and coronations"
+      - "Death of prominent leaders"
+    event_associations:
+      - "Changes in head of state—elections, abdications, successions"
+      - "State funerals and national mourning"
+      - "Constitutional amendments and governance reforms"
+      - "Heritage site events (discoveries, destructions, restorations)"
+      - "Military parades and displays of sovereign power"
+    brihat_samhita: >
+      Magha relates to the throne and lineage. Planets transiting here
+      affect rulers and their families. Malefics indicate succession
+      crises and instability at the highest levels of governance.
+
+  # -------------------------------------------------------------------------
+  # 11. PURVA PHALGUNI (13°20' - 26°40' Leo)
+  # -------------------------------------------------------------------------
+  purva_phalguni:
+    number: 11
+    span: "13°20' - 26°40' Leo"
+    ruling_planet: Venus
+    deity: "Bhaga (god of delight and fortune)"
+    shakti: "Prajanana shakti (power of procreation and creative union)"
+    mundane_keywords:
+      - "Celebrations, festivals, and public entertainment"
+      - "Marriages and social unions"
+      - "Creative arts and cultural events"
+      - "Luxury consumption and indulgence"
+      - "Public displays of wealth and power"
+    event_associations:
+      - "National celebrations and festivals"
+      - "Royal weddings and high-profile marriages"
+      - "Major entertainment events (film festivals, concerts, sports)"
+      - "Economic prosperity driven by consumer spending"
+      - "Scandals involving luxury, indulgence, or excess"
+    brihat_samhita: >
+      Planets transiting Purva Phalguni affect artists, performers,
+      courtesans, and those engaged in pleasure. Benefics here bring
+      national celebrations; malefics bring scandals.
+
+  # -------------------------------------------------------------------------
+  # 12. UTTARA PHALGUNI (26°40' Leo - 10°00' Virgo)
+  # -------------------------------------------------------------------------
+  uttara_phalguni:
+    number: 12
+    span: "26°40' Leo - 10°00' Virgo"
+    ruling_planet: Sun
+    deity: "Aryaman (god of contracts and patronage)"
+    shakti: "Chayani shakti (power of giving prosperity through union)"
+    mundane_keywords:
+      - "Contracts, treaties, and formal agreements"
+      - "Alliances and partnerships between nations"
+      - "Patronage, aid, and international assistance"
+      - "Marriage laws and social legislation"
+      - "Social contracts and governance frameworks"
+    event_associations:
+      - "International treaties and trade agreements signed"
+      - "Military alliances formed or renewed"
+      - "Social welfare legislation enacted"
+      - "Bilateral aid packages and development agreements"
+      - "Constitutional agreements and governance pacts"
+    brihat_samhita: >
+      Uttara Phalguni is favorable for forming alliances and contracts.
+      Benefics transiting here strengthen international partnerships.
+      It is one of the most auspicious nakshatras for treaty-making.
+
+  # -------------------------------------------------------------------------
+  # 13. HASTA (10°00' - 23°20' Virgo)
+  # -------------------------------------------------------------------------
+  hasta:
+    number: 13
+    span: "10°00' - 23°20' Virgo"
+    ruling_planet: Moon
+    deity: "Savitar (the sun god as vivifier)"
+    shakti: "Hasta sthapaniya agama shakti (power to manifest what is sought)"
+    mundane_keywords:
+      - "Trade, craftsmanship, and manual labor"
+      - "Manufacturing and production"
+      - "Skill development and vocational training"
+      - "Commerce and marketplace activity"
+      - "Healing arts and hand-based therapies"
+    event_associations:
+      - "Trade fairs and commercial exhibitions"
+      - "Manufacturing sector expansion or contraction"
+      - "Skilled labor movements and vocational reforms"
+      - "Marketplace regulations and consumer protection laws"
+      - "Medical advances in surgery and manual therapies"
+    brihat_samhita: >
+      Hasta relates to the hand and skill. Planets transiting here
+      affect artisans, traders, and those who work with their hands.
+      It is favorable for commercial and manufacturing activity.
+
+  # -------------------------------------------------------------------------
+  # 14. CHITRA (23°20' Virgo - 6°40' Libra)
+  # -------------------------------------------------------------------------
+  chitra:
+    number: 14
+    span: "23°20' Virgo - 6°40' Libra"
+    ruling_planet: Mars
+    deity: "Tvashtar / Vishwakarma (divine architect)"
+    shakti: "Punya chayani shakti (power of accumulating merit through creation)"
+    mundane_keywords:
+      - "Architecture, construction, and engineering"
+      - "Beauty, design, and aesthetic achievements"
+      - "Urban planning and infrastructure development"
+      - "Monumental construction projects"
+      - "Art exhibitions and design innovation"
+    event_associations:
+      - "Major construction projects inaugurated or completed"
+      - "Architectural landmarks and infrastructure milestones"
+      - "Urban development and city planning initiatives"
+      - "Cultural exhibitions and art world events"
+      - "Engineering feats and technological construction"
+    brihat_samhita: >
+      Chitra relates to creation and brilliance. Planets transiting here
+      affect architects, engineers, jewelers, and those who create
+      beautiful things. Major construction begins under Chitra.
+
+  # -------------------------------------------------------------------------
+  # 15. SWATI (6°40' - 20°00' Libra)
+  # -------------------------------------------------------------------------
+  swati:
+    number: 15
+    span: "6°40' - 20°00' Libra"
+    ruling_planet: Rahu
+    deity: "Vayu (god of wind)"
+    shakti: "Pradhvamsa shakti (power to scatter like the wind)"
+    mundane_keywords:
+      - "Wind storms and atmospheric disturbances"
+      - "Trade, commerce, and independent enterprise"
+      - "Independence movements and self-determination"
+      - "Air travel and aviation"
+      - "Diplomatic flexibility and negotiation"
+    event_associations:
+      - "Severe wind storms, tornadoes, and cyclones"
+      - "Independence referendums and sovereignty movements"
+      - "Aviation incidents or breakthroughs"
+      - "International trade negotiations"
+      - "Grassroots political movements and democratic uprisings"
+    brihat_samhita: >
+      Malefics transiting Swati cause wind damage, storms, and
+      disruption to air travel. Swati is associated with independent
+      spirit and can trigger separatist movements.
+
+  # -------------------------------------------------------------------------
+  # 16. VISHAKHA (20°00' Libra - 3°20' Scorpio)
+  # -------------------------------------------------------------------------
+  vishakha:
+    number: 16
+    span: "20°00' Libra - 3°20' Scorpio"
+    ruling_planet: Jupiter
+    deity: "Indra-Agni (king of gods and fire god)"
+    shakti: "Vyapana shakti (power of achieving many things)"
+    mundane_keywords:
+      - "Political power struggles and ambition"
+      - "Determination, persistence, and single-minded pursuit"
+      - "Elections and political campaigns"
+      - "Religious fervor and ideological movements"
+      - "Triumph after prolonged struggle"
+    event_associations:
+      - "Fiercely contested elections and political campaigns"
+      - "Political power grabs and leadership challenges"
+      - "Religious and ideological conflicts intensify"
+      - "Major policy victories after long battles"
+      - "Public protests and demonstrations for change"
+    brihat_samhita: >
+      Vishakha means 'forked branch'—indicating dual paths and
+      choices. Planets here indicate power struggles and the
+      determination to achieve goals regardless of obstacles.
+
+  # -------------------------------------------------------------------------
+  # 17. ANURADHA (3°20' - 16°40' Scorpio)
+  # -------------------------------------------------------------------------
+  anuradha:
+    number: 17
+    span: "3°20' - 16°40' Scorpio"
+    ruling_planet: Saturn
+    deity: "Mitra (god of friendship and partnership)"
+    shakti: "Radhana shakti (power of worship and devotion)"
+    mundane_keywords:
+      - "International cooperation and alliances"
+      - "Friendship between nations"
+      - "Devotional and spiritual gatherings"
+      - "Organizations and group endeavors"
+      - "Scientific collaboration and research partnerships"
+    event_associations:
+      - "International summits and cooperative agreements"
+      - "Formation of multilateral alliances"
+      - "Scientific research collaborations (space, health, etc.)"
+      - "Religious pilgrimages and spiritual gatherings"
+      - "Resolution of long-standing disputes through friendship"
+    brihat_samhita: >
+      Anuradha is favorable for forming bonds and partnerships.
+      Benefics here strengthen international cooperation. Even
+      Saturn, the ruler, can bring disciplined cooperation.
+
+  # -------------------------------------------------------------------------
+  # 18. JYESHTHA (16°40' - 30°00' Scorpio)
+  # -------------------------------------------------------------------------
+  jyeshtha:
+    number: 18
+    span: "16°40' - 30°00' Scorpio"
+    ruling_planet: Mercury
+    deity: "Indra (king of gods)"
+    shakti: "Arohana shakti (power to rise and conquer)"
+    mundane_keywords:
+      - "Elder statesmen and senior leadership"
+      - "Power struggles and authority conflicts"
+      - "Seniority and hierarchical disputes"
+      - "Protective measures and defense"
+      - "Intelligence and strategic thinking"
+    event_associations:
+      - "Power transitions involving senior leaders"
+      - "Succession crises in governments and institutions"
+      - "Military strategy and intelligence operations"
+      - "Controversies over seniority and authority"
+      - "Protective military actions and defense buildups"
+    brihat_samhita: >
+      Jyeshtha means 'eldest' and relates to authority, seniority,
+      and protection. Planets here affect senior leaders and those
+      in positions of highest authority. Malefics create power vacuums.
+
+  # -------------------------------------------------------------------------
+  # 19. MOOLA (0°00' - 13°20' Sagittarius)
+  # -------------------------------------------------------------------------
+  moola:
+    number: 19
+    span: "0°00' - 13°20' Sagittarius"
+    ruling_planet: Ketu
+    deity: "Nirriti (goddess of destruction and calamity)"
+    shakti: "Barhana shakti (power to destroy and uproot)"
+    mundane_keywords:
+      - "Destruction, uprooting, and fundamental changes"
+      - "Root-cause analysis and foundational reform"
+      - "Natural disasters and calamities"
+      - "Regime changes and overthrow of established order"
+      - "Pharmaceutical and herbal medicine"
+    event_associations:
+      - "Major natural disasters—earthquakes, tsunamis, volcanic eruptions"
+      - "Overthrow of governments and revolutionary changes"
+      - "Fundamental economic or social reforms (root-level change)"
+      - "Archaeological discoveries and unearthing of hidden things"
+      - "Drug discoveries and breakthroughs in root-cause medicine"
+    brihat_samhita: >
+      Moola means 'root.' Malefics transiting Moola indicate destruction
+      from the roots—complete uprooting of established systems. It is
+      the most feared nakshatra for natural calamities in mundane astrology.
+
+  # -------------------------------------------------------------------------
+  # 20. PURVA ASHADHA (13°20' - 26°40' Sagittarius)
+  # -------------------------------------------------------------------------
+  purva_ashadha:
+    number: 20
+    span: "13°20' - 26°40' Sagittarius"
+    ruling_planet: Venus
+    deity: "Apas (water deity)"
+    shakti: "Varchograhana shakti (power of invigoration)"
+    mundane_keywords:
+      - "Water resources and naval power"
+      - "Diplomatic victories and moral high ground"
+      - "Purification and renewal through water"
+      - "Maritime events and naval operations"
+      - "Media wars and propaganda campaigns"
+    event_associations:
+      - "Naval operations and maritime confrontations"
+      - "Water resource disputes between nations"
+      - "Floods and water-related disasters"
+      - "Diplomatic victories through moral persuasion"
+      - "Propaganda campaigns and information warfare"
+    brihat_samhita: >
+      Purva Ashadha relates to water and invincibility. Planets here
+      affect naval forces, maritime trade, and water resources. Malefics
+      indicate floods, naval conflicts, and water contamination.
+
+  # -------------------------------------------------------------------------
+  # 21. UTTARA ASHADHA (26°40' Sagittarius - 10°00' Capricorn)
+  # -------------------------------------------------------------------------
+  uttara_ashadha:
+    number: 21
+    span: "26°40' Sagittarius - 10°00' Capricorn"
+    ruling_planet: Sun
+    deity: "Vishve Devas (ten universal gods)"
+    shakti: "Apradhrishya shakti (power to grant unchallengeable victory)"
+    mundane_keywords:
+      - "Final victory and decisive outcomes"
+      - "Universal leadership and global governance"
+      - "United Nations and international organizations"
+      - "Moral authority and righteous governance"
+      - "Permanent institutions and lasting structures"
+    event_associations:
+      - "Decisive military victories or war endings"
+      - "Formation or reform of international institutions"
+      - "Constitutional amendments with lasting impact"
+      - "Universal declarations and global agreements"
+      - "Permanent peace settlements"
+    brihat_samhita: >
+      Uttara Ashadha means 'later victory'—the final, permanent triumph.
+      Benefics here indicate lasting institutional achievements.
+      It is favorable for establishing permanent governance structures.
+
+  # -------------------------------------------------------------------------
+  # 22. SHRAVANA (10°00' - 23°20' Capricorn)
+  # -------------------------------------------------------------------------
+  shravana:
+    number: 22
+    span: "10°00' - 23°20' Capricorn"
+    ruling_planet: Moon
+    deity: "Vishnu (the preserver)"
+    shakti: "Samhanana shakti (power of connection and linking)"
+    mundane_keywords:
+      - "Communication, media, and broadcast"
+      - "Learning and knowledge dissemination"
+      - "Listening, intelligence gathering, and surveillance"
+      - "Preservation of traditions and heritage"
+      - "Global connectivity and networks"
+    event_associations:
+      - "Major media events and broadcast milestones"
+      - "Intelligence breakthroughs and surveillance revelations"
+      - "Educational reforms and knowledge initiatives"
+      - "Global communication infrastructure developments"
+      - "Preservation efforts for cultural heritage"
+    brihat_samhita: >
+      Shravana means 'hearing.' It relates to knowledge through
+      listening and learning. Planets here affect communications,
+      media, and the dissemination of information across nations.
+
+  # -------------------------------------------------------------------------
+  # 23. DHANISHTHA (23°20' Capricorn - 6°40' Aquarius)
+  # -------------------------------------------------------------------------
+  dhanishtha:
+    number: 23
+    span: "23°20' Capricorn - 6°40' Aquarius"
+    ruling_planet: Mars
+    deity: "Vasus (eight elemental gods)"
+    shakti: "Khyapayitri shakti (power of abundance and fame)"
+    mundane_keywords:
+      - "Wealth, prosperity, and material abundance"
+      - "Music, rhythm, and cultural celebrations"
+      - "Military marches and disciplined formations"
+      - "Real estate and property development"
+      - "National pride and collective achievement"
+    event_associations:
+      - "Economic prosperity and wealth creation"
+      - "Major musical and cultural events"
+      - "Military achievements and defense milestones"
+      - "Property market booms"
+      - "National celebrations of collective achievement"
+    brihat_samhita: >
+      Dhanishtha means 'the wealthiest.' Planets here affect the
+      national treasury and economic prosperity. Benefics bring
+      abundance; malefics bring economic disputes and greed.
+
+  # -------------------------------------------------------------------------
+  # 24. SHATABHISHA (6°40' - 20°00' Aquarius)
+  # -------------------------------------------------------------------------
+  shatabhisha:
+    number: 24
+    span: "6°40' - 20°00' Aquarius"
+    ruling_planet: Rahu
+    deity: "Varuna (god of cosmic waters and law)"
+    shakti: "Bheshaja shakti (power of healing)"
+    mundane_keywords:
+      - "Healing, medicine, and public health"
+      - "Technology and innovation"
+      - "Secrecy, concealment, and covert operations"
+      - "Ocean and space exploration"
+      - "Democratic reforms and people's movements"
+    event_associations:
+      - "Medical breakthroughs and vaccine developments"
+      - "Public health campaigns and epidemic responses"
+      - "Space exploration milestones"
+      - "Revelations of government secrets"
+      - "Technology-driven social movements"
+    brihat_samhita: >
+      Shatabhisha means 'hundred healers.' Planets here affect
+      physicians, healers, and those who work with medicines.
+      Malefics here indicate mysterious diseases and poisoning.
+
+  # -------------------------------------------------------------------------
+  # 25. PURVA BHADRAPADA (20°00' Aquarius - 3°20' Pisces)
+  # -------------------------------------------------------------------------
+  purva_bhadrapada:
+    number: 25
+    span: "20°00' Aquarius - 3°20' Pisces"
+    ruling_planet: Jupiter
+    deity: "Aja Ekapada (one-footed goat / fire serpent)"
+    shakti: "Yajamana udyamana shakti (power of spiritual fire and elevation)"
+    mundane_keywords:
+      - "Radical transformation and revolutionary movements"
+      - "Religious extremism and fanaticism"
+      - "Fire-related events and explosions"
+      - "Occult movements and secret societies"
+      - "Extreme weather and atmospheric phenomena"
+    event_associations:
+      - "Revolutionary uprisings and radical political movements"
+      - "Religious extremism and sectarian violence"
+      - "Major explosions and fire-related disasters"
+      - "Secret society revelations and conspiracy events"
+      - "Extreme atmospheric phenomena (lightning storms, electrical events)"
+    brihat_samhita: >
+      Purva Bhadrapada relates to the burning intensity of
+      transformation. Malefics here indicate violent upheavals,
+      religious conflict, and destructive fires. One of the more
+      feared nakshatras for social instability.
+
+  # -------------------------------------------------------------------------
+  # 26. UTTARA BHADRAPADA (3°20' - 16°40' Pisces)
+  # -------------------------------------------------------------------------
+  uttara_bhadrapada:
+    number: 26
+    span: "3°20' - 16°40' Pisces"
+    ruling_planet: Saturn
+    deity: "Ahir Budhnya (serpent of the deep / kundalini)"
+    shakti: "Varshodyamana shakti (power of rain and fertility)"
+    mundane_keywords:
+      - "Deep wisdom and esoteric knowledge"
+      - "Rainfall, monsoons, and water abundance"
+      - "Charitable works and humanitarian missions"
+      - "Spiritual leadership and renunciation"
+      - "Underwater and subterranean events"
+    event_associations:
+      - "Exceptional rainfall and flooding (especially monsoon-related)"
+      - "Major humanitarian missions and charitable initiatives"
+      - "Spiritual leaders gaining public prominence"
+      - "Submarine and undersea events (earthquakes, explorations)"
+      - "Deep institutional reforms and structural transformations"
+    brihat_samhita: >
+      Uttara Bhadrapada relates to the depths. Planets here affect
+      subterranean events, deep waters, and hidden forces. Benefics
+      bring beneficial rains and spiritual growth for the nation.
+
+  # -------------------------------------------------------------------------
+  # 27. REVATI (16°40' - 30°00' Pisces)
+  # -------------------------------------------------------------------------
+  revati:
+    number: 27
+    span: "16°40' - 30°00' Pisces"
+    ruling_planet: Mercury
+    deity: "Pushan (nourisher / god of journeys)"
+    shakti: "Kshiradyapani shakti (power of nourishment and safe travel)"
+    mundane_keywords:
+      - "Safe travel and transportation"
+      - "Nourishment and welfare of the vulnerable"
+      - "Completion of cycles and endings"
+      - "Compassion and humanitarian aid"
+      - "Fisheries, marine resources, and oceanic events"
+    event_associations:
+      - "Safe resolution of humanitarian crises"
+      - "Completion of long-term projects and cycles"
+      - "Improvements in transportation safety"
+      - "Marine and fisheries industry events"
+      - "International aid and refugee assistance programs"
+    brihat_samhita: >
+      Revati is the final nakshatra, signifying completion and
+      nourishment. Benefics here indicate safe journeys and
+      compassionate governance. It marks the end of a cycle
+      before the new beginning at Ashwini.
+
+# =============================================================================
+# SARVATOBHADRA CHAKRA (SBC) RELEVANCE
+# =============================================================================
+
+sarvatobhadra_chakra:
+  overview: >
+    The Sarvatobhadra Chakra is a 9x9 grid that maps all 27/28 nakshatras,
+    vowels, consonants, weekdays, and zodiac signs. When a planet transits
+    a nakshatra, it creates 'vedha' (obstruction/influence) along three
+    lines emanating from that nakshatra's position in the grid. This is
+    a key technique in Medini Jyotish for timing specific events.
+
+  mundane_application:
+    - "Map the transit planet's nakshatra on the SBC grid"
+    - "Identify which nakshatras receive vedha along the three lines"
+    - "Nations, cities, and events associated with those nakshatras are affected"
+    - "Benefic planets (Jupiter, Venus, well-placed Mercury, strong Moon) give positive vedha"
+    - "Malefic planets (Saturn, Mars, Rahu, Ketu, weak Moon) give negative vedha"
+
+  vedha_effects:
+    one_vedha: "Mild conflict or disruption in the affected domain"
+    two_vedhas: "Significant loss of wealth or resources"
+    three_vedhas: "Defeat, failure, or major setback"
+    four_vedhas: "Catastrophic event or complete destruction in the domain"
+
+# =============================================================================
+# NOTES
+# =============================================================================
+# 1. Nakshatra transits of slow-moving planets (Saturn, Jupiter, Rahu/Ketu)
+#    carry the most weight in mundane prediction—effects last months.
+# 2. Fast-moving planet transits (Moon, Sun, Mercury, Venus, Mars) activate
+#    nakshatra themes briefly—use for timing specific events.
+# 3. Eclipses in specific nakshatras dramatically amplify those nakshatras'
+#    mundane associations. Cross-reference with eclipse_rules.yaml.
+# 4. The Sarvatobhadra Chakra vedha system adds precision to transit timing.
+# 5. Always consider the nakshatra deity and shakti for deeper interpretation.
+# 6. Cross-reference with country_sign_rulerships.yaml to determine which
+#    nations are affected by specific nakshatra transits.

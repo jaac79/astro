@@ -1,0 +1,546 @@
+# =============================================================================
+# Natural Events Rules for Mundane (Medini) Jyotish
+# =============================================================================
+# Varahamihira's classical rules and modern Medini Jyotish indicators for
+# natural phenomena: earthquakes, floods, droughts, storms, epidemics,
+# volcanic eruptions, famine, and fires.
+# =============================================================================
+
+source: >
+  Varahamihira (Brihat Samhita Ch 32-35: Earthquakes, rainfall, portents),
+  B.V. Raman (Astrology of Predicting Weather and Earthquakes, Mundane
+  Astrology), K.N. Rao (Mundane Astrology), classical Medini Jyotish texts,
+  modern seismic and weather astrology research
+
+# =============================================================================
+# EARTHQUAKES
+# =============================================================================
+
+earthquakes:
+
+  overview: >
+    Varahamihira classified earthquakes into four types based on the dominant
+    element (vayu/wind, agni/fire, Indra/water, Varuna/ocean). In Brihat
+    Samhita Chapter 32, he described planetary combinations, nakshatras,
+    and signs that trigger seismic activity. Modern Medini Jyotish adds
+    eclipse and nodal axis involvement.
+
+  planetary_triggers:
+    primary:
+      - planet_combination: "Mars-Saturn conjunction or opposition"
+        effect: "Strongest earthquake indicator; especially in earth or fixed signs"
+        classical_reference: "Brihat Samhita Ch 32"
+      - planet_combination: "Mars-Ketu conjunction"
+        effect: "Sudden, violent seismic activity with minimal warning"
+        classical_reference: "Classical Medini texts"
+      - planet_combination: "Saturn-Rahu conjunction in earth signs"
+        effect: "Prolonged seismic unrest; deep underground shifts"
+        classical_reference: "Modern Medini Jyotish"
+    secondary:
+      - planet_combination: "Mars aspecting the 4th house or its lord"
+        effect: "Seismic activity affecting the homeland; land disturbances"
+      - planet_combination: "Ketu in the 4th house of an ingress or eclipse chart"
+        effect: "Sudden underground events; volcanic tremors and earthquakes"
+      - planet_combination: "Multiple malefics in fixed signs (Taurus, Leo, Scorpio, Aquarius)"
+        effect: "Earth-sign involvement increases earthquake probability"
+
+  sign_triggers:
+    high_risk:
+      - sign: "Taurus"
+        reason: "Earth sign; Venus-ruled; affects land and physical structures"
+      - sign: "Virgo"
+        reason: "Earth sign; Mercury-ruled; affects populated areas and infrastructure"
+      - sign: "Capricorn"
+        reason: "Earth sign; Saturn-ruled; deep underground activity"
+    moderate_risk:
+      - sign: "Scorpio"
+        reason: "Fixed water sign; subterranean and underground forces"
+      - sign: "Aquarius"
+        reason: "Fixed sign; unexpected and sudden seismic events"
+      - sign: "Leo"
+        reason: "Fixed fire sign; volcanic earthquakes and magma movement"
+
+  house_triggers:
+    - house: "4th house"
+      significance: "Primary house of land, underground resources, and natural calamities"
+    - house: "8th house"
+      significance: "House of sudden destruction, death, and catastrophic events"
+    - house: "12th house"
+      significance: "House of losses and hidden destructions"
+
+  nakshatra_triggers:
+    - "Moola: Destruction from the roots; most feared for earthquakes"
+    - "Ashlesha: Underground serpentine energy; tectonic movements"
+    - "Jyeshtha: Authority and power disrupted by underground forces"
+    - "Ardra: Destructive storms that may accompany seismic events"
+
+  varahamihira_four_types:
+    vayu_earthquake:
+      element: "Wind/Air"
+      nakshatras: "Swati, Hasta, Shravana, Dhanishtha, Shatabhisha, Punarvasu, Ashwini"
+      effects: "Shaking with rumbling sound; trees sway; light structures damaged"
+    agni_earthquake:
+      element: "Fire"
+      nakshatras: "Krittika, Bharani, Pushya, Magha, Purva Phalguni, Purva Ashadha, Purva Bhadrapada"
+      effects: "Ground cracks with heat; fires break out; volcanic activity"
+    indra_earthquake:
+      element: "Water (Indra)"
+      nakshatras: "Rohini, Ardra, Uttara Phalguni, Vishakha, Uttara Ashadha, Uttara Bhadrapada, Revati"
+      effects: "Accompanied by heavy rain; landslides; water bodies disturbed"
+    varuna_earthquake:
+      element: "Ocean (Varuna)"
+      nakshatras: "Mrigashira, Ashlesha, Chitra, Anuradha, Jyeshtha, Moola, Shravana"
+      effects: "Tsunamis; coastal areas affected; submarine earthquakes"
+
+  timing_rules:
+    - "Eclipses in earth signs followed by Mars transit to the eclipse degree"
+    - "Mars-Saturn conjunction within 5 degrees in any sign"
+    - "Full Moon in earth signs with Mars or Saturn aspecting"
+    - "Ketu transiting over the 4th house cusp of a national chart"
+
+# =============================================================================
+# FLOODS
+# =============================================================================
+
+floods:
+
+  overview: >
+    Flood prediction is one of the strongest areas of classical Medini Jyotish.
+    Varahamihira dedicated multiple chapters of Brihat Samhita to rainfall
+    prediction (Meghadhyaya). Moon, Cancer, and the 4th house are primary
+    indicators, along with water signs and specific nakshatras.
+
+  planetary_triggers:
+    primary:
+      - planet_combination: "Afflicted Moon in water signs (Cancer, Scorpio, Pisces)"
+        effect: "Excessive rainfall and flooding; waterborne diseases"
+        classical_reference: "Brihat Samhita, Meghadhyaya"
+      - planet_combination: "Moon conjunct or aspected by malefics in Cancer"
+        effect: "Severe flooding in agricultural regions"
+      - planet_combination: "Jupiter in water signs aspected by Saturn"
+        effect: "Prolonged floods and water-logging; slow drainage"
+    secondary:
+      - planet_combination: "4th house occupied by Moon and malefics together"
+        effect: "Homeland flooding; displacement of populations"
+      - planet_combination: "Venus-Saturn conjunction in water signs"
+        effect: "Dam failures, reservoir overflows, irrigation disasters"
+      - planet_combination: "Rahu in Cancer or Pisces"
+        effect: "Unexpected and unusual flooding; contaminated water"
+
+  sign_triggers:
+    high_risk:
+      - sign: "Cancer"
+        reason: "Cardinal water sign; Moon-ruled; primary flood indicator"
+      - sign: "Pisces"
+        reason: "Mutable water sign; Jupiter-ruled; oceanic and river flooding"
+      - sign: "Scorpio"
+        reason: "Fixed water sign; underground water, dam breaks, flash floods"
+
+  house_triggers:
+    - house: "4th house"
+      significance: "Land, weather, natural calamities, and domestic conditions"
+    - house: "1st house"
+      significance: "General welfare of the nation; widespread flooding"
+    - house: "12th house"
+      significance: "Losses, displacement, and refugee crises from flooding"
+
+  nakshatra_triggers:
+    - "Ardra: Storm and flood nakshatra; onset of monsoon in India"
+    - "Ashlesha: Serpentine waters; poisonous and contaminated floods"
+    - "Purva Ashadha: Water deity Apas; naval and water events"
+    - "Uttara Bhadrapada: Deep waters, submarine events, oceanic flooding"
+    - "Shatabhisha: Ocean-related (Varuna); tidal and coastal flooding"
+
+  varahamihira_rainfall_rules:
+    - "When Jupiter transits Ardra, heavy rains are expected"
+    - "Saturn in watery nakshatras indicates prolonged wet conditions"
+    - "Moon conjunct Venus in water signs = abundant rainfall"
+    - "Mars in water signs adds violence to the water events (flash floods)"
+    - "Multiple planets in Cancer = water-related emergencies"
+
+# =============================================================================
+# DROUGHTS
+# =============================================================================
+
+droughts:
+
+  overview: >
+    Drought is indicated by affliction to the Sun (excessive heat), Saturn
+    (denial and restriction of resources), and the 4th house (agriculture
+    and weather). Fire and earth signs predominating in the ingress chart,
+    combined with a weak or afflicted Moon, are the classical markers.
+
+  planetary_triggers:
+    primary:
+      - planet_combination: "Sun conjunct Saturn in fire signs"
+        effect: "Severe heat and drought; scorching of crops"
+        classical_reference: "Brihat Samhita"
+      - planet_combination: "Saturn afflicting Moon (conjunction, aspect, or opposition)"
+        effect: "Denial of rainfall; agricultural distress; public suffering"
+      - planet_combination: "Weak or debilitated Moon without benefic aspects"
+        effect: "Insufficient moisture; crop failures; water scarcity"
+    secondary:
+      - planet_combination: "Mars in fire signs aspecting the 4th house"
+        effect: "Excessive heat; heat waves; crop damage from high temperatures"
+      - planet_combination: "4th lord debilitated or combust"
+        effect: "Agricultural failure; land becomes unproductive"
+      - planet_combination: "Ketu afflicting the 4th house"
+        effect: "Sudden and unexpected drought conditions"
+
+  sign_triggers:
+    high_risk:
+      - sign: "Aries"
+        reason: "Fire sign; Mars-ruled; excessive heat and dryness"
+      - sign: "Leo"
+        reason: "Fire sign; Sun-ruled; scorching conditions"
+      - sign: "Sagittarius"
+        reason: "Fire sign; Jupiter-ruled; large-scale drought across regions"
+    moderate_risk:
+      - sign: "Taurus"
+        reason: "Earth sign; land drying out; agricultural drought"
+      - sign: "Virgo"
+        reason: "Barren earth sign; crop failure and infertile land"
+      - sign: "Capricorn"
+        reason: "Earth sign; cold drought; frozen conditions preventing agriculture"
+
+  house_triggers:
+    - house: "4th house"
+      significance: "Agriculture, weather, and crops—primary drought indicator when afflicted"
+    - house: "2nd house"
+      significance: "Food supply and national reserves—depletion during drought"
+    - house: "6th house"
+      significance: "Public health deterioration from drought"
+
+  varahamihira_rules:
+    - "Saturn retrograde transiting through Krittika to Vishakha = famine in the land"
+    - "Sun and Mars together in the 4th house without benefic aspect = severe drought"
+    - "No planets in water signs in the Aries ingress chart = dry year"
+    - "Moon eclipsed in fire signs = drought affecting the region"
+
+# =============================================================================
+# STORMS AND CYCLONES
+# =============================================================================
+
+storms_cyclones:
+
+  overview: >
+    Storm prediction relies on the involvement of Vayu tattva (air element)
+    signs, Rahu (unpredictable force), and specific nakshatras associated
+    with wind and destruction. Ardra and Swati are the primary storm
+    nakshatras. Mars adds violence; Saturn adds duration.
+
+  planetary_triggers:
+    primary:
+      - planet_combination: "Rahu or Ketu in air signs (Gemini, Libra, Aquarius)"
+        effect: "Unpredictable and unusual storm patterns"
+      - planet_combination: "Mars-Rahu conjunction in air signs"
+        effect: "Violent storms with destructive force; tornadoes"
+      - planet_combination: "Saturn in air signs afflicting Moon"
+        effect: "Prolonged storms; extended period of bad weather"
+    secondary:
+      - planet_combination: "Mercury afflicted in air signs"
+        effect: "Communication disruptions from storms; transport chaos"
+      - planet_combination: "Moon in Ardra or Swati with malefic aspects"
+        effect: "Severe cyclones and hurricanes"
+      - planet_combination: "Multiple planets transiting Ardra nakshatra"
+        effect: "Destructive storm season"
+
+  sign_triggers:
+    high_risk:
+      - sign: "Gemini"
+        reason: "Air sign; Mercury-ruled; wind storms and communication disruption"
+      - sign: "Libra"
+        reason: "Air sign; Venus-ruled; autumn storms and wind damage"
+      - sign: "Aquarius"
+        reason: "Air sign; Saturn-ruled; winter storms and extreme weather"
+
+  nakshatra_triggers:
+    primary:
+      - nakshatra: "Ardra"
+        association: "Rudra (storm god); cyclones, hurricanes, and monsoon storms"
+      - nakshatra: "Swati"
+        association: "Vayu (wind god); tornadoes, wind damage, and atmospheric disturbances"
+    secondary:
+      - nakshatra: "Punarvasu"
+        association: "Post-storm recovery; but can indicate follow-up storms"
+      - nakshatra: "Purva Bhadrapada"
+        association: "Lightning storms and electrical atmospheric events"
+      - nakshatra: "Shatabhisha"
+        association: "Varuna (ocean god); oceanic storms and coastal events"
+
+# =============================================================================
+# EPIDEMICS
+# =============================================================================
+
+epidemics:
+
+  overview: >
+    Epidemic prediction in Medini Jyotish involves the 8th house (mass death),
+    the 6th house (disease), specific nakshatras (Ashlesha for poisons),
+    and the Saturn-Rahu combination which is the classical epidemic marker.
+    The 1st house (general health) and Moon (public welfare) are also critical.
+
+  planetary_triggers:
+    primary:
+      - planet_combination: "Saturn-Rahu conjunction or close aspect"
+        effect: "Primary epidemic indicator; mysterious or incurable diseases"
+        classical_reference: "Standard Medini Jyotish rule"
+      - planet_combination: "8th house heavily afflicted by malefics"
+        effect: "Mass mortality events; high death toll"
+      - planet_combination: "Afflicted Moon in Ashlesha nakshatra"
+        effect: "Poisoning, contamination, and disease spread through food/water"
+    secondary:
+      - planet_combination: "Mars-Saturn in the 6th or 8th house"
+        effect: "Violent febrile diseases; surgical emergencies at mass scale"
+      - planet_combination: "Rahu in the 1st or 6th house"
+        effect: "Mysterious new diseases; difficult to diagnose"
+      - planet_combination: "Ketu in the 6th or 8th house"
+        effect: "Sudden onset epidemics; viral outbreaks"
+
+  sign_triggers:
+    - sign: "Cancer"
+      reason: "Public health, food supply, and waterborne diseases"
+    - sign: "Scorpio"
+      reason: "Hidden diseases, sexually transmitted infections, death"
+    - sign: "Pisces"
+      reason: "Contagion through water, hospitals overwhelmed"
+    - sign: "Virgo"
+      reason: "Health and hygiene breakdowns; digestive epidemics"
+
+  house_triggers:
+    - house: "1st house"
+      significance: "General health of the populace"
+    - house: "6th house"
+      significance: "Disease, hospitals, and health services"
+    - house: "8th house"
+      significance: "Death toll and mass mortality"
+    - house: "12th house"
+      significance: "Hospitals, isolation, quarantine"
+
+  nakshatra_triggers:
+    - "Ashlesha: Primary epidemic nakshatra; poisons and serpentine diseases"
+    - "Moola: Diseases from unknown root causes; autoimmune conditions"
+    - "Jyeshtha: Disease among the elderly and senior population"
+    - "Shatabhisha: Both healing and disease; pharmaceutical developments"
+    - "Bharani: Death-related; high mortality epidemics"
+
+  historical_patterns:
+    - event: "COVID-19 pandemic (2020)"
+      indicators: "Saturn-Jupiter conjunction, Saturn-Pluto conjunction in Capricorn; eclipse activations"
+    - event: "Spanish Flu (1918-1919)"
+      indicators: "Saturn in Cancer (debilitated); multiple afflictions to Moon"
+    - event: "Plague outbreaks (historical)"
+      indicators: "Saturn-Rahu conjunctions in water signs; 8th house afflictions"
+
+# =============================================================================
+# VOLCANIC ERUPTIONS
+# =============================================================================
+
+volcanic_eruptions:
+
+  overview: >
+    Volcanic activity is primarily indicated by Mars-Ketu combinations
+    (sudden underground fire), fire sign involvement, and the 4th house
+    (underground resources). Ketu represents the subterranean forces,
+    and Mars provides the fire and explosive energy.
+
+  planetary_triggers:
+    primary:
+      - planet_combination: "Mars-Ketu conjunction"
+        effect: "Primary volcanic eruption indicator; sudden, explosive"
+      - planet_combination: "Mars in fire signs afflicting the 4th house"
+        effect: "Underground fire; volcanic tremors and eruptions"
+      - planet_combination: "Ketu in the 4th house in fire signs"
+        effect: "Sudden volcanic activity; underground heat"
+    secondary:
+      - planet_combination: "Sun-Mars conjunction in fire signs"
+        effect: "Excessive heat underground; magma movement"
+      - planet_combination: "Saturn-Mars opposition across fire/earth axis"
+        effect: "Tectonic pressure building toward volcanic release"
+      - planet_combination: "Rahu in fire signs near the 4th house"
+        effect: "Unusual volcanic events; eruptions in unexpected locations"
+
+  sign_triggers:
+    - sign: "Aries"
+      reason: "Mars-ruled fire sign; explosive and sudden eruptions"
+    - sign: "Leo"
+      reason: "Sun-ruled fire sign; magma, heat, and underground fire"
+    - sign: "Sagittarius"
+      reason: "Jupiter-ruled fire sign; large-scale volcanic events"
+    - sign: "Scorpio"
+      reason: "Mars-ruled water sign; underwater volcanic activity"
+
+  nakshatra_triggers:
+    - "Krittika: Fire deity Agni; primary volcanic nakshatra"
+    - "Moola: Uprooting from below; catastrophic volcanic events"
+    - "Purva Bhadrapada: Intense fire; sudden explosive energy"
+    - "Ashwini: Sudden onset; unexpected volcanic activity"
+
+# =============================================================================
+# FAMINE
+# =============================================================================
+
+famine:
+
+  overview: >
+    Famine is indicated by Saturn afflicting the 2nd house (food supply)
+    and 4th house (agriculture), a weak Moon (poor harvests), and barren
+    signs. Varahamihira's rules on Saturn's transit through specific
+    nakshatras are the most classical famine prediction technique.
+
+  planetary_triggers:
+    primary:
+      - planet_combination: "Saturn afflicting the 2nd and 4th houses simultaneously"
+        effect: "Food scarcity and agricultural failure"
+        classical_reference: "Brihat Samhita"
+      - planet_combination: "Weak or debilitated Moon without benefic aspects"
+        effect: "Crop failures, inadequate rainfall, food insecurity"
+      - planet_combination: "Saturn retrograde in barren signs"
+        effect: "Prolonged food scarcity; stored grains depleted"
+    secondary:
+      - planet_combination: "Mars afflicting the 2nd house"
+        effect: "Destruction of food supplies through fire, war, or contamination"
+      - planet_combination: "Rahu afflicting Moon and 4th lord together"
+        effect: "Foreign-caused food crisis; import disruptions"
+      - planet_combination: "Eclipse on the 2nd house cusp"
+        effect: "Sudden food supply disruption"
+
+  barren_signs:
+    - "Gemini (mithuna)"
+    - "Leo (simha)"
+    - "Virgo (kanya)"
+
+  varahamihira_saturn_transit_famine_rule: >
+    When Saturn transits retrograde from Krittika through Vishakha
+    (spanning approximately Taurus through Libra), it causes scarcity,
+    famine, and distress to agricultural communities. This is one of
+    the most cited classical rules for famine prediction.
+
+  nakshatra_triggers:
+    - "Krittika: Burning of crops; heat-related crop failure"
+    - "Rohini: Disease of cattle and dairy; agricultural pest infestations"
+    - "Bharani: Starvation and death from food scarcity"
+    - "Ashlesha: Contamination of food supply; poisoned or spoiled food"
+
+# =============================================================================
+# FIRES (LARGE-SCALE)
+# =============================================================================
+
+fires:
+
+  overview: >
+    Large-scale fire events are primarily indicated by Mars in fire signs,
+    Mars-Sun combinations, and affliction to the 4th house (land and
+    property). The nakshatra Krittika (ruled by Agni) is the primary
+    fire nakshatra. Urban fires, wildfires, and industrial conflagrations
+    are all covered.
+
+  planetary_triggers:
+    primary:
+      - planet_combination: "Mars in fire signs (Aries, Leo, Sagittarius)"
+        effect: "General fire risk; increased incidence of fires"
+      - planet_combination: "Mars-Sun conjunction in fire signs"
+        effect: "Large-scale conflagrations; wildfires"
+      - planet_combination: "Mars-Ketu conjunction"
+        effect: "Sudden, explosive fires; industrial explosions"
+    secondary:
+      - planet_combination: "Mars aspecting the 4th house from a fire sign"
+        effect: "Property fires; urban fires"
+      - planet_combination: "Sun in Krittika nakshatra afflicted by Mars"
+        effect: "Forest fires and wildfires"
+      - planet_combination: "Mars-Rahu conjunction"
+        effect: "Arson, man-made fires, and suspicious conflagrations"
+
+  sign_triggers:
+    - sign: "Aries"
+      reason: "Cardinal fire; sudden, fast-spreading fires"
+    - sign: "Leo"
+      reason: "Fixed fire; sustained, hard-to-control fires"
+    - sign: "Sagittarius"
+      reason: "Mutable fire; forest fires covering large areas"
+
+  nakshatra_triggers:
+    - "Krittika: Primary fire nakshatra; Agni deity; all fire events"
+    - "Purva Phalguni: Performance venue fires; entertainment industry"
+    - "Purva Bhadrapada: Explosive fires; electrical fires"
+    - "Bharani: Fires causing death; cremation-related events"
+
+  house_triggers:
+    - house: "4th house"
+      significance: "Property and land fires; residential area conflagrations"
+    - house: "10th house"
+      significance: "Government building fires; workplace fires"
+    - house: "3rd house"
+      significance: "Transport fires; vehicle and railway fires"
+
+# =============================================================================
+# TSUNAMIS
+# =============================================================================
+
+tsunamis:
+
+  overview: >
+    Tsunamis are underwater earthquake-triggered events involving both
+    seismic (Mars-Saturn, earth signs) and water (Moon, Cancer, water
+    signs) indicators simultaneously.
+
+  planetary_triggers:
+    - planet_combination: "Mars-Saturn in water signs"
+      effect: "Underwater seismic activity triggering tsunamis"
+    - planet_combination: "Ketu in Cancer or Pisces afflicting the 4th house"
+      effect: "Sudden oceanic upheaval"
+    - planet_combination: "Eclipse in water signs with Mars aspect"
+      effect: "Tsunami risk elevated for 6 months post-eclipse"
+
+  nakshatra_triggers:
+    - "Moola: Destruction from below; ocean floor disruption"
+    - "Uttara Bhadrapada: Deep oceanic events"
+    - "Shatabhisha: Varuna (ocean lord) related events"
+    - "Purva Ashadha: Water deity; naval and oceanic disasters"
+
+# =============================================================================
+# PREDICTION METHODOLOGY
+# =============================================================================
+
+prediction_methodology:
+
+  step_1: >
+    Identify planetary combinations from the lists above in the current
+    ingress chart, eclipse chart, or national chart.
+
+  step_2: >
+    Check house placements—4th house affliction is the primary indicator
+    for all natural events.
+
+  step_3: >
+    Identify the sign and nakshatra involvement to determine the TYPE
+    of natural event (earthquake vs flood vs storm etc.).
+
+  step_4: >
+    Determine timing—events manifest when:
+    a) A fast planet (Mars, Sun, Moon) transits the sensitive degree
+    b) An eclipse falls on the sensitive degree
+    c) The sensitive degree is activated by lunar node transit
+
+  step_5: >
+    Determine location by cross-referencing the activated signs with
+    country_sign_rulerships.yaml to identify affected regions.
+
+  step_6: >
+    Assess severity by counting the number of converging indicators.
+    More indicators = more severe event.
+
+# =============================================================================
+# NOTES
+# =============================================================================
+# 1. Natural events are among the most classically documented areas of
+#    Medini Jyotish. Varahamihira's Brihat Samhita remains the primary
+#    classical source.
+# 2. The 4th house is the MASTER house for all natural events—always
+#    check it first.
+# 3. Eclipses dramatically amplify natural event potential when they
+#    fall in sensitive signs/nakshatras. See eclipse_rules.yaml.
+# 4. Multiple converging indicators increase both probability and severity.
+# 5. For location mapping, cross-reference with country_sign_rulerships.yaml.
+# 6. Saturn's transit through specific nakshatras (Varahamihira's famine
+#    rule) is one of the oldest and most reliable mundane prediction tools.

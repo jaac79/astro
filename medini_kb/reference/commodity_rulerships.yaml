@@ -1,0 +1,508 @@
+# =============================================================================
+# Commodity & Market Rulerships for Mundane (Medini) Jyotish
+# =============================================================================
+# Planetary rulerships over commodities, markets, and economic sectors.
+# Used for economic and financial predictions in mundane astrology.
+# Compiled from B.V. Raman (Mundane Astrology, Planetary Influences on
+# Human Affairs), classical Medini texts, and modern financial astrology.
+# =============================================================================
+
+source: >
+  B.V. Raman (Mundane Astrology, Planetary Influences on Human Affairs),
+  Varahamihira (Brihat Samhita), classical Medini Jyotish texts,
+  modern financial astrology practitioners
+
+# =============================================================================
+# PLANETARY COMMODITY RULERSHIPS
+# =============================================================================
+
+planetary_commodities:
+
+  sun:
+    english: Sun
+    primary_commodities:
+      - commodity: "Gold"
+        notes: "The most classical Sun-commodity association; gold prices rise when Sun is strong in mundane charts"
+      - commodity: "Wheat"
+        notes: "Major grain crop ruled by the Sun; wheat prices affected by Sun's dignity"
+      - commodity: "Government bonds / sovereign debt"
+        notes: "Government-backed securities reflect the authority of the state (Sun)"
+    secondary_commodities:
+      - "Copper"
+      - "Saffron and turmeric (golden-colored spices)"
+      - "Timber and hardwoods"
+      - "State-backed currencies"
+    market_sectors:
+      - "Government and public sector enterprises"
+      - "Energy (solar energy, power generation)"
+      - "Healthcare (state-run hospitals, public health)"
+      - "Gold mining and precious metals"
+    transit_effects:
+      strong_sun: "Gold appreciates, government securities stable, energy sector grows"
+      weak_sun: "Gold volatile, government debt downgraded, energy shortages"
+      sun_eclipsed: "Sharp sell-off in gold, political crisis affecting markets, government bond volatility"
+
+  moon:
+    english: Moon
+    primary_commodities:
+      - commodity: "Silver"
+        notes: "Most classical Moon-commodity association; silver tracks public sentiment"
+      - commodity: "Rice and food grains"
+        notes: "Staple food of the masses; directly affected by Moon's condition"
+      - commodity: "Pearls"
+        notes: "Classical Moon gem; pearl market follows Moon's strength"
+      - commodity: "Water"
+        notes: "All water-related resources, including drinking water and irrigation"
+      - commodity: "Dairy products"
+        notes: "Milk, butter, ghee, cheese—all Moon-ruled"
+    secondary_commodities:
+      - "Cotton"
+      - "Fish and seafood"
+      - "Camphor and white-colored substances"
+      - "Salt"
+      - "Beverages (non-alcoholic)"
+    market_sectors:
+      - "Agriculture and food production"
+      - "Real estate and housing"
+      - "Water utilities and irrigation"
+      - "Dairy industry"
+      - "FMCG (fast-moving consumer goods)"
+      - "Shipping and maritime trade"
+    transit_effects:
+      strong_moon: "Silver rises, food prices stabilize, real estate appreciates, consumer sentiment positive"
+      weak_moon: "Silver drops, food price spikes, real estate stagnation, consumer confidence declines"
+      moon_eclipsed: "Agricultural commodities volatile, public panic affects consumer markets"
+
+  mars:
+    english: Mars
+    primary_commodities:
+      - commodity: "Iron and steel"
+        notes: "Most classical Mars-commodity; steel prices track Mars strength"
+      - commodity: "Copper"
+        notes: "Secondary metal of Mars (shared with Sun); industrial copper"
+      - commodity: "Red commodities"
+        notes: "Red lentils (masoor dal), red chili, red-colored grains"
+      - commodity: "Weapons and armaments"
+        notes: "Defense equipment, arms trade, ammunition"
+      - commodity: "Real estate and land"
+        notes: "Mars as karaka for land and property"
+    secondary_commodities:
+      - "Nickel and manganese"
+      - "Petroleum products (refined fuels)"
+      - "Tobacco"
+      - "Surgical instruments and medical equipment"
+      - "Machinery and heavy equipment"
+    market_sectors:
+      - "Military and defense industry"
+      - "Construction and infrastructure"
+      - "Metals and mining (ferrous)"
+      - "Automobile manufacturing"
+      - "Pharmaceutical (surgical/acute care)"
+      - "Sports and fitness industry"
+    transit_effects:
+      strong_mars: "Steel and copper rally, defense stocks rise, construction boom, land prices increase"
+      weak_mars: "Metal prices decline, defense sector scandals, construction accidents, land disputes"
+      mars_combust: "Military spending curtailed, defense industry under government control"
+
+  mercury:
+    english: Mercury
+    primary_commodities:
+      - commodity: "Technology stocks"
+        notes: "IT sector, software, and tech companies directly ruled by Mercury"
+      - commodity: "Trade goods (general commerce)"
+        notes: "All items of trade and barter; Mercury rules commercial exchange"
+      - commodity: "Green commodities"
+        notes: "Green gram (moong dal), green vegetables, green-colored items"
+      - commodity: "Mercury (element)"
+        notes: "The liquid metal, also rare earth elements used in electronics"
+    secondary_commodities:
+      - "Paper and printing materials"
+      - "Books and publishing"
+      - "Telecommunications equipment"
+      - "Accounting and auditing services"
+      - "Stationery and office supplies"
+    market_sectors:
+      - "Information technology and software"
+      - "Telecommunications"
+      - "Media, publishing, and journalism"
+      - "Education and edtech"
+      - "Transport and logistics"
+      - "Fintech and digital payments"
+      - "E-commerce and online retail"
+    transit_effects:
+      strong_mercury: "Tech stocks rally, trade volumes increase, communication sectors thrive"
+      weak_mercury: "Tech sector correction, trade disputes, logistics disruptions"
+      mercury_retrograde: "Tech glitches, contract disputes, trade deal delays, market volatility from misinformation"
+
+  jupiter:
+    english: Jupiter
+    primary_commodities:
+      - commodity: "Banking and financial services"
+        notes: "Banking stocks and financial instruments; Jupiter governs wealth expansion"
+      - commodity: "Grains (large-scale food production)"
+        notes: "Wheat, barley, and other grains in bulk; Jupiter is the karaka for abundance"
+      - commodity: "Yellow metals"
+        notes: "Gold (shared with Sun), brass; yellow-colored metals and alloys"
+      - commodity: "Finance sector instruments"
+        notes: "Bonds, insurance products, mutual funds"
+      - commodity: "Sugar"
+        notes: "Sweetness and abundance; sugar and jaggery prices track Jupiter"
+    secondary_commodities:
+      - "Rubber"
+      - "Chickpea (chana dal) and yellow lentils"
+      - "Tin"
+      - "Honey"
+      - "Sandalwood"
+    market_sectors:
+      - "Banking and finance"
+      - "Insurance"
+      - "Higher education"
+      - "Legal services"
+      - "Religious and spiritual industries"
+      - "Pharmaceutical (wholesale and distribution)"
+    transit_effects:
+      strong_jupiter: "Banking sector grows, grains abundant, sugar prices moderate, finance sector thrives"
+      weak_jupiter: "Banking crisis, grain shortages, inflation in food prices, financial fraud exposed"
+      jupiter_retrograde: "Financial reviews, loan restructuring, banking regulations tightened"
+
+  venus:
+    english: Venus
+    primary_commodities:
+      - commodity: "Luxury goods"
+        notes: "All premium and luxury items; Venus governs refinement and beauty"
+      - commodity: "Textiles and garments"
+        notes: "Fashion, clothing, silk, and fine fabrics"
+      - commodity: "Diamonds and precious gems"
+        notes: "Diamond is the gemstone of Venus; all precious stones except ruby and pearl"
+      - commodity: "Entertainment"
+        notes: "Cinema, music, performing arts, streaming services"
+      - commodity: "Tourism and hospitality"
+        notes: "Hotels, travel, airlines, and leisure industry"
+      - commodity: "Aviation"
+        notes: "Airlines, aircraft, and aerospace (civilian)"
+    secondary_commodities:
+      - "Perfumes and cosmetics"
+      - "Flowers and ornamental plants"
+      - "Wine and spirits"
+      - "Chocolate and confectionery"
+      - "Art and antiques"
+      - "Platinum"
+    market_sectors:
+      - "Entertainment and media"
+      - "Tourism and hospitality"
+      - "Fashion and luxury retail"
+      - "Aviation (civilian)"
+      - "Cosmetics and beauty"
+      - "Art market and auction houses"
+      - "Wedding and events industry"
+    transit_effects:
+      strong_venus: "Luxury stocks rally, tourism booms, entertainment sector thrives, diamond prices rise"
+      weak_venus: "Luxury sector slumps, tourism declines, entertainment scandals, failed peace talks"
+      venus_retrograde: "Relationship-oriented industries falter, fashion trends reverse, art market volatility"
+
+  saturn:
+    english: Saturn
+    primary_commodities:
+      - commodity: "Crude oil and petroleum"
+        notes: "Saturn rules all underground resources; oil is the primary Saturn commodity"
+      - commodity: "Coal"
+        notes: "Black, underground, heavy—quintessential Saturn substance"
+      - commodity: "Mining products and base metals"
+        notes: "Lead, zinc, iron ore, bauxite, and all mined materials"
+      - commodity: "Agricultural produce (basic staples)"
+        notes: "Subsistence-level agriculture; crops requiring hard labor"
+      - commodity: "Labor-intensive industries"
+        notes: "Manufacturing, textiles (basic), and manual labor sectors"
+    secondary_commodities:
+      - "Lead"
+      - "Zinc"
+      - "Black sesame and black lentils (urad dal)"
+      - "Mustard oil"
+      - "Cement and building materials"
+      - "Leather"
+    market_sectors:
+      - "Oil and gas"
+      - "Mining and minerals"
+      - "Agriculture (commodity crops)"
+      - "Construction (basic infrastructure)"
+      - "Real estate (low-end/affordable housing)"
+      - "Labor and employment agencies"
+      - "Waste management and sanitation"
+    transit_effects:
+      strong_saturn: "Oil prices stabilize, mining output increases, infrastructure investment grows"
+      weak_saturn: "Oil price shocks, mining accidents, agricultural failures, labor strikes"
+      saturn_retrograde: "Oil supply disruptions, mining regulations tightened, infrastructure delays"
+
+  rahu:
+    english: "Rahu (North Node)"
+    primary_commodities:
+      - commodity: "Technology (cutting-edge and disruptive)"
+        notes: "AI, blockchain, quantum computing—Rahu rules the unconventional and futuristic"
+      - commodity: "Foreign goods and investments"
+        notes: "Imports, FDI, and foreign-denominated assets"
+      - commodity: "Speculation"
+        notes: "Derivatives, futures, options, and speculative instruments"
+      - commodity: "Cryptocurrency"
+        notes: "Decentralized, borderless, and unconventional—quintessential Rahu asset"
+    secondary_commodities:
+      - "Plastics and synthetic materials"
+      - "Tobacco and intoxicants"
+      - "Viral media and social media platforms"
+      - "Electric vehicles and disruptive transport"
+      - "Drones and unmanned systems"
+    market_sectors:
+      - "Emerging technology and startups"
+      - "Cryptocurrency and DeFi"
+      - "Foreign exchange and forex"
+      - "Social media and digital platforms"
+      - "Gambling and speculative markets"
+      - "Biotech and genetic engineering"
+    transit_effects:
+      rahu_strong: "Tech stocks surge, crypto rallies, foreign investment flows in, speculation increases"
+      rahu_weak: "Tech crashes, crypto collapses, foreign investment flees, speculative bubbles burst"
+      rahu_eclipsing: "Market panic, flash crashes, manipulation exposed, foreign currency crises"
+
+  ketu:
+    english: "Ketu (South Node)"
+    primary_commodities:
+      - commodity: "Alternative medicine and supplements"
+        notes: "Ayurveda, homeopathy, herbal remedies, and nutraceuticals"
+      - commodity: "Spiritual goods"
+        notes: "Religious items, incense, gemstones (for spiritual use), yoga equipment"
+      - commodity: "Pharmaceuticals"
+        notes: "Drugs, vaccines, and medical research products (Ketu rules sudden healing/disease)"
+    secondary_commodities:
+      - "Organic and natural products"
+      - "Recycled and reclaimed materials"
+      - "Nuclear materials and radioactive substances"
+      - "Traditional handicrafts"
+      - "Monastery and ashram economies"
+    market_sectors:
+      - "Pharmaceuticals and biomedical research"
+      - "Alternative and complementary medicine"
+      - "Spiritual and wellness industry"
+      - "Nuclear energy"
+      - "Waste recycling and circular economy"
+      - "End-of-life services"
+    transit_effects:
+      ketu_strong: "Pharma stocks rise, spiritual industry grows, alternative medicine gains mainstream acceptance"
+      ketu_weak: "Drug safety crises, vaccine controversies, spiritual fraud exposed"
+      ketu_eclipsing: "Sudden health crises, pharma scandals, mysterious market movements"
+
+# =============================================================================
+# HOUSE RULERSHIPS OVER ECONOMIC SECTORS
+# =============================================================================
+
+house_economic_sectors:
+
+  house_1:
+    sector: "General economic health and national sentiment"
+    description: >
+      The lagna of a mundane chart represents the overall economic outlook
+      and public confidence. A strong lagna and lagna lord indicate positive
+      economic sentiment; affliction indicates recession fears and pessimism.
+    key_indicators:
+      - "Consumer confidence index"
+      - "National GDP outlook"
+      - "Public spending patterns"
+
+  house_2:
+    sector: "Banking, national reserves, and revenue"
+    description: >
+      The 2nd house governs the national treasury, banking system, revenue
+      collection, and stored wealth. It is the primary house for assessing
+      a nation's financial health.
+    key_indicators:
+      - "Banking sector health and profitability"
+      - "Foreign exchange reserves"
+      - "Tax revenue collection"
+      - "National savings rate"
+      - "Currency strength"
+    afflicted: "Banking crises, depleted reserves, revenue shortfalls, currency depreciation"
+    strong: "Robust banking sector, healthy reserves, strong revenue, appreciating currency"
+
+  house_3:
+    sector: "Communications, transport, and media"
+    description: >
+      The 3rd house governs the communications infrastructure, media industry,
+      and transportation sector. Critical for assessing information flow
+      and logistics.
+    key_indicators:
+      - "Telecom sector revenue"
+      - "Media company valuations"
+      - "Transport and logistics volumes"
+
+  house_4:
+    sector: "Real estate, agriculture, and mining"
+    description: >
+      The 4th house governs land, property, agriculture, and underground
+      resources. Key house for commodity and real estate market predictions.
+    key_indicators:
+      - "Real estate prices and transaction volumes"
+      - "Agricultural output and crop prices"
+      - "Mining production and mineral prices"
+      - "Weather impact on commodities"
+
+  house_5:
+    sector: "Stock market, speculation, and entertainment"
+    description: >
+      The 5th house is the primary house for stock market activity,
+      speculative investments, and entertainment industry performance.
+      A strong 5th house indicates bullish markets.
+    key_indicators:
+      - "Stock market indices (primary indicator)"
+      - "IPO activity and market capitalization"
+      - "Speculative trading volumes"
+      - "Gambling and lottery revenues"
+      - "Entertainment sector box office and streaming"
+    afflicted: "Stock market crashes, speculative losses, entertainment industry slumps"
+    strong: "Bull markets, successful IPOs, speculative profits, entertainment boom"
+    special_rule: >
+      The 5th lord transiting through the 11th house (gains) indicates
+      strong stock market performance. The 5th lord transiting through
+      the 8th or 12th house indicates market declines.
+
+  house_6:
+    sector: "Service sector, labor, and public health spending"
+    description: >
+      The 6th house governs the workforce, labor conditions, healthcare
+      spending, and service industry. Also governs national debt.
+    key_indicators:
+      - "Employment and unemployment rates"
+      - "Healthcare sector spending"
+      - "Labor disputes and strike activity"
+      - "National debt levels"
+
+  house_7:
+    sector: "Foreign trade, imports/exports, and international business"
+    description: >
+      The 7th house is the primary house for international trade, foreign
+      commercial partnerships, and import/export activity.
+    key_indicators:
+      - "Trade balance (exports vs imports)"
+      - "Foreign direct investment (inbound)"
+      - "International trade agreements"
+      - "Cross-border mergers and acquisitions"
+    afflicted: "Trade deficits, trade wars, sanctions, collapsed trade agreements"
+    strong: "Trade surplus, new trade agreements, foreign investment inflows"
+
+  house_8:
+    sector: "Insurance, shared resources, debt, and hidden wealth"
+    description: >
+      The 8th house governs insurance, inheritance, joint ventures, national
+      debt management, and resources shared between nations. Also covers
+      underground economy.
+    key_indicators:
+      - "Insurance sector premiums and claims"
+      - "National debt-to-GDP ratio"
+      - "Foreign debt obligations"
+      - "Tax evasion and black money"
+      - "Joint venture and M&A activity"
+    afflicted: "Insurance crises, debt defaults, black money scandals, tax system failures"
+    strong: "Healthy insurance sector, manageable debt, effective tax collection"
+
+  house_9:
+    sector: "Shipping, long-distance trade, and legal sector"
+    description: >
+      The 9th house governs international shipping, long-distance commerce,
+      and the legal framework governing trade and finance.
+    key_indicators:
+      - "Shipping indices (Baltic Dry Index)"
+      - "Legal sector activity"
+      - "International arbitration"
+      - "Trade law and regulatory changes"
+
+  house_10:
+    sector: "Government economic policy and sovereign standing"
+    description: >
+      The 10th house governs the government's economic policies, fiscal
+      direction, and the nation's standing among international financial
+      institutions.
+    key_indicators:
+      - "Government economic policy direction"
+      - "Sovereign credit rating"
+      - "Central bank policy (interest rates)"
+      - "Fiscal policy (budget, taxation)"
+
+  house_11:
+    sector: "Corporate profits, income, and economic gains"
+    description: >
+      The 11th house is the house of gains and income. In mundane astrology,
+      it governs corporate profitability, national income, and economic gains.
+    key_indicators:
+      - "Corporate earnings (aggregate)"
+      - "National income growth"
+      - "Dividend payouts and shareholder returns"
+      - "Social welfare program funding"
+      - "International aid and grants received"
+    afflicted: "Corporate losses, income inequality widening, economic stagnation"
+    strong: "Corporate profits surging, income growth, successful welfare programs"
+
+  house_12:
+    sector: "Foreign investment outflows, expenditure, and losses"
+    description: >
+      The 12th house governs capital outflows, foreign investments made by
+      the country abroad, national expenditure, and economic losses.
+    key_indicators:
+      - "Capital flight and outward investment"
+      - "Government expenditure and deficit"
+      - "Financial losses from disasters or mismanagement"
+      - "Foreign aid given"
+      - "Underground economy and black market"
+
+# =============================================================================
+# COMMODITY PREDICTION METHODOLOGY
+# =============================================================================
+
+prediction_methodology:
+
+  step_1_identify_ruling_planet:
+    description: >
+      For any commodity or market sector, identify the primary ruling planet
+      from the lists above. Some commodities have dual rulership (e.g., gold
+      is ruled by both Sun and Jupiter).
+
+  step_2_check_transit:
+    description: >
+      Check the current transit position, dignity, and aspects of the ruling
+      planet. A planet in its own sign or exalted tends to strengthen its
+      commodities; debilitated or afflicted weakens them.
+
+  step_3_check_house:
+    description: >
+      In the current ingress chart, check which house the ruling planet
+      occupies and rules. Cross-reference with the house economic sectors
+      above for a more nuanced prediction.
+
+  step_4_check_aspects:
+    description: >
+      Aspects from benefics (Jupiter, Venus) to a commodity's ruling planet
+      indicate price rises and sector growth. Aspects from malefics (Saturn,
+      Mars, Rahu) indicate price drops, disruptions, or volatility.
+
+  step_5_check_retrograde:
+    description: >
+      When a commodity's ruling planet is retrograde, expect supply-chain
+      disruptions, price reversals, and market uncertainty in that commodity.
+
+  step_6_check_eclipses:
+    description: >
+      Eclipses aspecting or conjunct a commodity's ruling planet can cause
+      sudden and dramatic price movements. Solar eclipses tend to suppress;
+      lunar eclipses tend to create volatility.
+
+# =============================================================================
+# NOTES
+# =============================================================================
+# 1. These are BROAD rulerships—specific commodities may be influenced by
+#    multiple planets. Always consider the full chart context.
+# 2. For stock market predictions, the 5th house is primary; for trade
+#    and commerce, the 7th house; for banking, the 2nd house.
+# 3. Slow-moving planet transits (Jupiter, Saturn, Rahu/Ketu) have longer-
+#    lasting effects on markets than fast-moving planets.
+# 4. Always cross-reference with ingress_rules.yaml for the year lord's
+#    effect on markets.
+# 5. Eclipse effects on commodities are sudden and often last 3-6 months
+#    (see eclipse_rules.yaml).
+# 6. The element of the current Jupiter-Saturn conjunction colors the
+#    overall economic paradigm (see saturn_jupiter_cycles.yaml).

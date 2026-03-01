@@ -1,0 +1,435 @@
+# =============================================================================
+# War & Conflict Rules for Mundane (Medini) Jyotish
+# =============================================================================
+# Classical and modern indicators for wars, armed conflicts, terrorism,
+# revolutions, peace, and military events. Compiled from B.V. Raman
+# (Mundane Astrology), Varahamihira (Brihat Samhita), K.N. Rao, and
+# Prof. R.M. Palaniappan.
+# =============================================================================
+
+source: >
+  B.V. Raman (Mundane Astrology, Hindu Predictive Astrology), Varahamihira
+  (Brihat Samhita), K.N. Rao (Mundane astrology lectures), Prof. R.M.
+  Palaniappan (Mundane Astrology), classical Medini Jyotish texts
+
+# =============================================================================
+# CLASSICAL WAR INDICATORS
+# =============================================================================
+
+war_indicators:
+
+  overview: >
+    War and armed conflict are among the most critical predictions in
+    Medini Jyotish. Mars (military), the 6th house (enemies), and the
+    7th house (foreign adversaries) form the core framework. The classical
+    rule is: Mars-Saturn aspects or conjunctions, especially in the 7th
+    house of a national chart, are the strongest war indicators.
+
+  primary_indicators:
+
+    mars_saturn_aspects:
+      description: >
+        Mars-Saturn conjunctions, oppositions, or squares are the single
+        strongest indicator of armed conflict in mundane astrology. The
+        sign, house, and additional aspects determine the nature and
+        severity of conflict.
+      conjunction_effect: "Direct military confrontation; large-scale armed conflict"
+      opposition_effect: "Standoff between opposing forces; cold war turning hot"
+      square_effect: "Military tensions that may or may not escalate to war"
+      historical_examples:
+        - event: "Operation Blue Star (1984)"
+          configuration: "Mars-Saturn conjunction in 6th house of India's chart"
+        - event: "Gulf War (1990)"
+          configuration: "Mars-Saturn conjunction in Sagittarius"
+        - event: "Iraq War (2003)"
+          configuration: "Mars-Saturn opposition across Scorpio-Taurus"
+
+    seventh_house_affliction:
+      description: >
+        The 7th house represents open enemies, foreign adversaries, and
+        war. When the 7th house is afflicted by malefics—especially Mars,
+        Saturn, or Rahu—the risk of armed conflict with foreign powers
+        increases significantly.
+      key_rules:
+        - "Mars in the 7th house: Direct war or armed confrontation"
+        - "Saturn in the 7th house: Prolonged tension; cold war; siege"
+        - "Rahu in the 7th house: Unconventional warfare; covert military operations"
+        - "Ketu in the 7th house: Sudden military events; surprise attacks"
+        - "Mars-Saturn conjunction in the 7th house: Strongest war indicator"
+      classical_reference: "B.V. Raman: Mars-Saturn in the 7th house = war is imminent"
+
+    sixth_house_affliction:
+      description: >
+        The 6th house represents enemies (both internal and external),
+        military strength, and conflicts. Affliction indicates the nation
+        faces hostile forces. Strong 6th house can also indicate military
+        readiness and capability.
+      key_rules:
+        - "Malefics in 6th: Military engaged in conflict; enemies active"
+        - "6th lord in 7th: Internal enemies collude with foreign adversaries"
+        - "6th lord conjunct 7th lord: War combining internal and external threats"
+        - "Benefics in 6th: Military capability strong; enemies subdued"
+
+    eclipses_in_martial_signs:
+      description: >
+        Eclipses occurring in Aries or Scorpio (Mars-ruled signs) are
+        classical indicators of military conflicts. The effects are
+        amplified when Mars also aspects or conjoins the eclipse degree.
+      key_rules:
+        - "Solar eclipse in Aries: Government involved in military action"
+        - "Solar eclipse in Scorpio: Covert military operations; intelligence wars"
+        - "Lunar eclipse in Aries/Scorpio: Public affected by military conflict"
+        - "Eclipse in 7th house of national chart in martial sign: War most likely"
+
+    mars_in_kendras:
+      description: >
+        Mars in kendra houses (1st, 4th, 7th, 10th) from the national
+        lagna strongly activates military themes. The specific kendra
+        determines the nature and direction of military involvement.
+      placements:
+        - house: "1st (Lagna)"
+          effect: "Nation adopts aggressive posture; military buildup; martial national mood"
+        - house: "4th"
+          effect: "Homeland security threats; internal military operations; border defense"
+        - house: "7th"
+          effect: "Direct confrontation with foreign adversary; offensive warfare"
+        - house: "10th"
+          effect: "Government leads military campaign; war as state policy"
+
+  secondary_indicators:
+
+    mars_rahu_conjunction:
+      effect: "Terrorism, unconventional warfare, chemical or biological threats"
+      description: >
+        Mars-Rahu conjunction is the primary terrorism indicator. Rahu
+        adds deception, unconventional methods, and foreign involvement
+        to Mars' military energy. This combination in sensitive houses
+        (1st, 6th, 7th, 8th) raises the threat level significantly.
+
+    mars_ketu_conjunction:
+      effect: "Sudden military events; bomb blasts; explosive violence"
+      description: >
+        Mars-Ketu combines explosive energy with sudden, unexpected
+        manifestation. This is the primary indicator for bombings,
+        surprise attacks, and sudden escalation of violence.
+
+    saturn_in_martial_signs:
+      effect: "Prolonged military standoffs; siege warfare; attrition"
+      description: >
+        Saturn in Aries or Scorpio indicates prolonged, grinding military
+        situations. Saturn's slow movement ensures these situations last
+        for extended periods (2-2.5 years in the sign).
+
+    rahu_in_seventh:
+      effect: "Covert warfare; foreign infiltration; diplomatic deception"
+      description: >
+        Rahu in the 7th house of a national chart indicates that
+        adversaries use deception, infiltration, and unconventional
+        means rather than direct military confrontation.
+
+# =============================================================================
+# MILITARY BUILDUP INDICATORS
+# =============================================================================
+
+military_buildup:
+
+  overview: >
+    Military buildup precedes actual conflict. Astrological indicators
+    of buildup include Mars strengthening in martial signs, 6th house
+    activation, and the movement of slow planets toward conflict
+    configurations.
+
+  indicators:
+    - indicator: "Mars transiting own signs (Aries or Scorpio) in a national chart's kendras"
+      effect: "Active military mobilization and defense spending increase"
+    - indicator: "Mars approaching conjunction with Saturn (within 15° and closing)"
+      effect: "Tensions building; military preparations underway"
+    - indicator: "6th lord strengthening by transit (entering own sign or exaltation)"
+      effect: "Military capability and readiness improving"
+    - indicator: "Rahu transiting the 6th or 7th house"
+      effect: "Covert military preparations; intelligence operations intensifying"
+    - indicator: "Mars dasha or antardasha operating in a national chart"
+      effect: "National policy becomes defense-oriented; military assertive"
+    - indicator: "Multiple planets transiting fire signs simultaneously"
+      effect: "General martial atmosphere; increased aggression in foreign policy"
+
+# =============================================================================
+# INTERNAL CONFLICT INDICATORS
+# =============================================================================
+
+internal_conflict:
+
+  overview: >
+    Internal conflicts—civil war, insurgency, communal violence,
+    separatism—are indicated by the 6th house, the 4th house
+    (opposition and domestic conditions), and combinations involving
+    Mars, Saturn, and Rahu afflicting the lagna or Moon.
+
+  indicators:
+    civil_war:
+      - "Mars-Saturn in the 1st or 4th house: Civil war or internal military action"
+      - "6th lord in the 1st house: Enemies within the nation rise up"
+      - "Mars afflicting the 4th house: Domestic violence and internal conflict"
+      - "Rahu in the 1st house with malefic aspects: Internal chaos and confusion"
+
+    communal_violence:
+      - "Mars-Saturn-Rahu combination in the 9th house: Religious violence"
+      - "9th lord afflicted by malefics: Sectarian conflict"
+      - "Eclipses in the 9th house of national chart: Religious tensions escalate"
+      - "Mars in fire signs aspecting the 9th house: Religious extremism"
+
+    separatism:
+      - "4th house severely afflicted: Breakup of territorial unity"
+      - "Rahu in the 4th house: Foreign-influenced separatist movements"
+      - "Saturn-Ketu in the 4th: Detachment from homeland; partition"
+      - "Swati nakshatra activated with malefics: Independence movements"
+
+    labor_unrest:
+      - "Saturn afflicting the 6th house: Worker strikes and labor disputes"
+      - "Saturn-Mars conjunction or opposition: Violent labor protests"
+      - "6th house lord debilitated: Breakdown in employer-labor relations"
+      - "Saturn dasha operating: Labor issues dominate national agenda"
+
+# =============================================================================
+# EXTERNAL WAR INDICATORS
+# =============================================================================
+
+external_war:
+
+  overview: >
+    External war (with foreign nations) is primarily indicated by the
+    7th house (foreign adversaries), 10th house (government policy),
+    and the placement and condition of Mars in relation to these houses.
+
+  indicators:
+    full_scale_war:
+      - "Mars-Saturn conjunction in the 7th house: Strongest war indicator"
+      - "7th lord conjunct Mars with no benefic aspect: Open warfare"
+      - "Eclipse in the 7th house in a martial sign: War within the eclipse effect period"
+      - "Mars in the 7th aspected by Saturn: Prolonged and destructive war"
+
+    border_skirmish:
+      - "Mars transiting the 3rd house (neighbors): Border tensions"
+      - "Mars-Saturn in the 3rd house: Border skirmishes with neighboring countries"
+      - "3rd lord afflicted by Mars: Hostile relations with neighboring nations"
+
+    naval_conflict:
+      - "Mars in water signs (Cancer, Scorpio, Pisces) in the 7th house: Naval warfare"
+      - "4th house afflicted with Mars in water signs: Coastal attacks"
+      - "Purva Ashadha nakshatra activated with Mars: Maritime military operations"
+
+    air_warfare:
+      - "Mars in air signs (Gemini, Libra, Aquarius) in kendras: Air strikes"
+      - "Mercury (aviation) afflicted by Mars: Aircraft involved in conflict"
+      - "Swati nakshatra activated with Mars: Aerial bombardment"
+
+# =============================================================================
+# TERRORISM INDICATORS
+# =============================================================================
+
+terrorism:
+
+  overview: >
+    Terrorism in Medini Jyotish involves Rahu (deception, foreign elements),
+    Ketu (sudden violence), Mars (aggression), and the 8th house (hidden
+    destruction) and 12th house (secret enemies). The Rahu-Mars combination
+    is the primary terrorism signature.
+
+  indicators:
+    primary:
+      - "Mars-Rahu conjunction: Primary terrorism indicator; unconventional attacks"
+      - "Rahu in the 8th house: Hidden threats; covert operations against the nation"
+      - "Ketu in the 1st house: Sudden attacks on national identity/sovereignty"
+      - "Mars-Ketu in the 8th or 12th house: Bomb blasts and explosive attacks"
+
+    secondary:
+      - "8th house lord conjunct Rahu: Secret organizations threatening the nation"
+      - "12th house afflicted by Mars: Secret enemies planning violence"
+      - "Rahu in martial nakshatras (Mrigashira, Chitra, Dhanishtha): Militant threats"
+      - "Eclipse in the 8th or 12th house: Covert threats activated"
+
+    specific_types:
+      - type: "Bombing/explosions"
+        indicators: "Mars-Ketu conjunction; Mars in fire signs in 8th house"
+      - type: "Chemical/biological attack"
+        indicators: "Mars-Rahu in water signs; Ashlesha activation"
+      - type: "Cyber terrorism"
+        indicators: "Mercury-Rahu in air signs; Rahu afflicting 3rd house"
+      - type: "Suicide attacks"
+        indicators: "Ketu-Mars in 8th house; Bharani nakshatra activation"
+      - type: "Hostage/kidnapping"
+        indicators: "Rahu in 12th house; Saturn-Rahu afflicting Moon"
+
+# =============================================================================
+# REVOLUTION AND UPRISING INDICATORS
+# =============================================================================
+
+revolution_uprising:
+
+  overview: >
+    Revolutions and popular uprisings are indicated by Saturn-Rahu
+    combinations (collective suffering plus deception leading to uprising),
+    4th house affliction (domestic discontent), and the activation of
+    democratic and populist nakshatras.
+
+  indicators:
+    revolution:
+      - "Saturn-Rahu conjunction afflicting the 4th house: Popular revolution"
+      - "Saturn in the 10th house afflicted: Government overthrown by the people"
+      - "Mars-Saturn in the 1st house: Violent revolution changing national identity"
+      - "Rahu in the 10th house: Foreign-influenced regime change"
+      - "Eclipse on the 10th house: Government crisis leading to revolution"
+
+    mass_protest:
+      - "Saturn afflicting Moon: Public suffering leads to mass demonstrations"
+      - "4th house afflicted without 10th house affliction: Protests short of revolution"
+      - "Mars transiting over natal Saturn in a national chart: Labor uprising"
+      - "Rahu-Moon conjunction or opposition: Mass hysteria and emotional protests"
+
+    coup_detat:
+      - "Mars in the 10th house with Rahu aspect: Military coup"
+      - "Saturn-Ketu in the 10th house: Leadership removed through conspiracy"
+      - "Mars-Rahu conjunction in the 10th house: Foreign-backed military takeover"
+      - "Eclipse on the MC (10th house cusp): Sudden government change"
+
+# =============================================================================
+# PEACE AND TREATY INDICATORS
+# =============================================================================
+
+peace_treaty:
+
+  overview: >
+    Peace indicators are the counterpoint to war indicators. Jupiter
+    (wisdom, justice), Venus (diplomacy, harmony), and strong 7th house
+    configurations indicate successful peace negotiations and lasting
+    treaties.
+
+  indicators:
+    ceasefire:
+      - "Jupiter transiting the 7th house: Ceasefire and peace negotiations begin"
+      - "Venus transiting through the 7th house: Diplomatic breakthrough"
+      - "Benefics aspecting the 7th house lord: Peace talks progress"
+      - "Mars leaving kendras: Military aggression subsides"
+
+    lasting_peace:
+      - "Jupiter-Venus conjunction in the 7th house: Enduring peace treaty"
+      - "7th lord in the 9th house (dharma): Peace based on justice and righteousness"
+      - "Strong Venus unafflicted: Diplomatic success and harmonious relations"
+      - "Benefics in the 1st and 7th houses simultaneously: Mutual peace"
+
+    failed_peace:
+      - "Mars afflicting the 7th house despite benefic transits: Peace talks collapse"
+      - "Rahu conjunct Venus in the 7th: Deceptive peace offers; betrayal"
+      - "Saturn aspecting Jupiter in the 7th: Peace delayed or denied"
+      - "Eclipse in the 7th house: Peace agreement disrupted"
+
+    alliance_formation:
+      - "Jupiter in the 11th house: Formation of beneficial alliances"
+      - "Venus in the 7th aspected by Jupiter: Strong bilateral partnerships"
+      - "Anuradha nakshatra activated with benefics: International cooperation"
+      - "Uttara Phalguni nakshatra activated: Treaty-making and formal agreements"
+
+# =============================================================================
+# NUCLEAR AND WMD INDICATORS
+# =============================================================================
+
+nuclear_wmd:
+
+  overview: >
+    Nuclear weapons and weapons of mass destruction involve Ketu
+    (nuclear energy, sudden annihilation), Rahu (unconventional weapons),
+    Mars (aggression), and the 8th house (mass destruction).
+
+  indicators:
+    nuclear_threat:
+      - "Mars-Ketu conjunction in fire signs: Nuclear threat escalation"
+      - "Ketu in the 8th house afflicted by Mars: Nuclear weapon testing or deployment"
+      - "Rahu-Mars-Ketu all in kendras: Maximum WMD risk"
+      - "Eclipse in Moola nakshatra with Mars aspect: Nuclear incident risk"
+
+    nuclear_accident:
+      - "Ketu in the 4th house afflicted: Nuclear facility accidents"
+      - "Mars-Ketu in earth signs near 4th house: Radiation leaks"
+      - "Saturn-Ketu afflicting the 1st house: Slow radiation exposure affecting populace"
+
+# =============================================================================
+# CONFLICT SEVERITY SCALE
+# =============================================================================
+
+severity_scale:
+
+  level_1_tension:
+    indicators: "1-2 secondary indicators present"
+    description: "Diplomatic tensions; harsh rhetoric; no military action"
+    examples: "Trade disputes, diplomatic expulsions, sanctions threats"
+
+  level_2_crisis:
+    indicators: "2-3 primary indicators present"
+    description: "Military mobilization; breaking of diplomatic relations"
+    examples: "Border standoffs, military exercises, withdrawal of ambassadors"
+
+  level_3_armed_conflict:
+    indicators: "3-4 primary indicators present"
+    description: "Active military engagement; limited warfare"
+    examples: "Border skirmishes, limited strikes, naval confrontations"
+
+  level_4_war:
+    indicators: "5+ primary indicators with eclipse confirmation"
+    description: "Full-scale war; major military operations"
+    examples: "Invasion, carpet bombing, naval blockade, sustained ground operations"
+
+  level_5_catastrophic:
+    indicators: "Multiple primary indicators plus nuclear/WMD indicators"
+    description: "Catastrophic conflict; potential nuclear exchange"
+    examples: "Nuclear confrontation, use of WMDs, total war"
+
+# =============================================================================
+# ASSESSMENT METHODOLOGY
+# =============================================================================
+
+assessment_methodology:
+
+  step_1: >
+    Examine the current ingress chart for the country. Check Mars
+    placement, 6th and 7th house conditions, and the presence of
+    Mars-Saturn aspects.
+
+  step_2: >
+    Check the national foundation chart for dasha/antardasha periods
+    activating martial planets or conflict houses.
+
+  step_3: >
+    Examine recent and upcoming eclipses for activation of martial
+    signs or conflict houses in the national chart.
+
+  step_4: >
+    Assess transit triggers—Mars transit over sensitive degrees,
+    Saturn-Mars aspects forming, and Rahu-Ketu axis alignment
+    with conflict-sensitive points.
+
+  step_5: >
+    Count total indicators and map to the severity scale above.
+    Cross-reference with the adversary nation's chart for
+    mutual conflict indicators.
+
+  step_6: >
+    Determine timing by identifying when the maximum number of
+    indicators converge. Mars transit is typically the final
+    trigger for actual outbreak of hostilities.
+
+# =============================================================================
+# NOTES
+# =============================================================================
+# 1. War prediction is one of the most sensitive areas of mundane astrology.
+#    Always assess the full context—not just individual indicators.
+# 2. Mars-Saturn conjunction in the 7th house remains the single strongest
+#    classical war indicator.
+# 3. Eclipses in martial signs amplify conflict potential dramatically.
+# 4. Internal conflict (6th house) and external war (7th house) should
+#    be analyzed separately.
+# 5. Peace indicators should always be checked alongside war indicators—
+#    conflict is not inevitable even when war indicators are present.
+# 6. Cross-reference with the adversary nation's chart for a complete
+#    picture. See country_sign_rulerships.yaml for nation-sign mappings.
+# 7. Nuclear/WMD indicators require multiple confirmations before any
+#    such prediction is made.

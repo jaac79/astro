@@ -1,0 +1,506 @@
+# =============================================================================
+# Medini Jyotish Scorecards (Floodlight Scorecard for Mundane Analysis)
+# =============================================================================
+# Adapted from the Floodlight Scorecard approach for Medini (mundane)
+# astrology. Provides a structured framework for scoring and weighting
+# mundane predictions across seven national domains.
+# =============================================================================
+
+source: >
+  Adapted from the Floodlight Scorecard design for Vedic astrology,
+  combined with classical Medini Jyotish domain analysis from B.V. Raman
+  (Mundane Astrology), Varahamihira (Brihat Samhita), and modern
+  mundane astrology practice
+
+# =============================================================================
+# SEVEN MEDINI DOMAINS
+# =============================================================================
+
+domains:
+
+  political_stability:
+    id: 1
+    name: "Political Stability"
+    description: "Government, leadership, law & order, governance effectiveness"
+    primary_houses: [1, 10]
+    secondary_houses: [4, 6, 9]
+    primary_planets: ["Sun", "Jupiter"]
+    key_indicators:
+      - "Lagna lord strength and placement"
+      - "10th lord strength and placement"
+      - "Sun's dignity and aspects"
+      - "Afflictions to the 1st and 10th houses"
+      - "Eclipse impact on 1st or 10th houses"
+      - "Saturn's relationship to the 10th house"
+      - "Rahu/Ketu axis in 1-7 or 4-10"
+    scoring_criteria:
+      strong_positive: "10th lord strong in kendra/trikona, Sun well-dignified, Jupiter aspecting 10th"
+      positive: "10th lord reasonably well-placed, no heavy affliction to 1st or 10th"
+      neutral: "Mixed indicators; some strength, some affliction"
+      negative: "Malefics in 10th, 10th lord in dusthana, Sun combust or afflicted"
+      strong_negative: "Mars-Saturn in 10th, eclipse on 10th cusp, 10th lord debilitated in 8th/12th"
+    reference_files:
+      - "house_mundane_significations.yaml (houses 1, 10)"
+      - "planet_mundane_significations.yaml (Sun, Jupiter)"
+      - "ingress_rules.yaml (10th lord assessment)"
+
+  economy:
+    id: 2
+    name: "Economy"
+    description: "Wealth, trade, banking, agriculture, national revenue"
+    primary_houses: [2, 11]
+    secondary_houses: [4, 5, 7, 9]
+    primary_planets: ["Jupiter", "Venus", "Mercury"]
+    key_indicators:
+      - "2nd house lord strength and placement"
+      - "11th house lord strength and placement"
+      - "Jupiter's dignity and house placement"
+      - "5th house condition (stock market/speculation)"
+      - "7th house condition (foreign trade)"
+      - "Saturn-Jupiter cycle context (current element era)"
+      - "Year lord's relationship to 2nd/11th houses"
+    scoring_criteria:
+      strong_positive: "2nd and 11th lords strong, Jupiter in kendra well-dignified, benefics in 2nd/5th/11th"
+      positive: "2nd lord reasonably strong, no heavy affliction to 2nd or 11th"
+      neutral: "Mixed signals; growth in some sectors, contraction in others"
+      negative: "2nd lord in dusthana, malefics afflicting 2nd/11th, Jupiter weak"
+      strong_negative: "2nd lord debilitated, eclipse on 2nd cusp, Saturn-Mars afflicting 2nd/11th"
+    reference_files:
+      - "house_mundane_significations.yaml (houses 2, 5, 7, 11)"
+      - "commodity_rulerships.yaml"
+      - "saturn_jupiter_cycles.yaml"
+
+  natural_events:
+    id: 3
+    name: "Natural Events"
+    description: "Weather, natural disasters, agriculture, environmental conditions"
+    primary_houses: [4]
+    secondary_houses: [1, 2, 8]
+    primary_planets: ["Moon", "Saturn", "Mars"]
+    key_indicators:
+      - "4th house condition (affliction = natural calamities)"
+      - "Moon's strength and aspects (agriculture and rainfall)"
+      - "Mars-Saturn combinations (earthquakes)"
+      - "Water sign involvement (floods vs fire sign = drought)"
+      - "Nakshatra of slow planets (Ardra = storms, Moola = earthquakes)"
+      - "Eclipse falling in 4th house or earth/water signs"
+    scoring_criteria:
+      strong_positive: "4th lord strong in own sign, Moon well-placed, benefics in 4th, no malefic aspects"
+      positive: "4th house reasonably clear, Moon in good dignity, adequate benefic support"
+      neutral: "Mixed indicators; some risk areas balanced by benefic influence"
+      negative: "Malefics in 4th, Moon afflicted, Mars-Saturn forming stressful aspect"
+      strong_negative: "Mars-Saturn in 4th, eclipse in 4th, Moon debilitated and afflicted, Moola/Ardra activation"
+    reference_files:
+      - "natural_events.yaml"
+      - "nakshatra_mundane.yaml (Ardra, Moola, etc.)"
+      - "eclipse_rules.yaml"
+
+  military_conflict:
+    id: 4
+    name: "Military / Conflict"
+    description: "Wars, defense, terrorism, internal security, border issues"
+    primary_houses: [6, 7]
+    secondary_houses: [3, 8, 12]
+    primary_planets: ["Mars", "Saturn", "Rahu"]
+    key_indicators:
+      - "Mars placement and strength (military capability)"
+      - "7th house condition (foreign adversaries)"
+      - "6th house condition (enemies and defense)"
+      - "Mars-Saturn aspects or conjunctions"
+      - "Mars-Rahu combinations (terrorism)"
+      - "Eclipse in martial signs (Aries/Scorpio)"
+      - "Rahu in 7th or 8th house"
+    scoring_criteria:
+      strong_positive: "Benefics in 7th, Mars strong but not in 7th, no Mars-Saturn stress, Venus in 7th"
+      positive: "7th house clear of malefics, Mars in non-conflict placement, no major military stress"
+      neutral: "Mars in kendras but without Saturn contact; some tension but contained"
+      negative: "Mars-Saturn aspect forming, malefics in 7th, Rahu in 6th/7th"
+      strong_negative: "Mars-Saturn in 7th, eclipse in Aries/Scorpio in 7th house, Mars-Rahu conjunction"
+    reference_files:
+      - "war_conflict_rules.yaml"
+      - "house_mundane_significations.yaml (houses 6, 7)"
+      - "eclipse_rules.yaml"
+
+  public_health:
+    id: 5
+    name: "Public Health"
+    description: "Epidemics, general health conditions, healthcare systems"
+    primary_houses: [1, 6]
+    secondary_houses: [8, 12]
+    primary_planets: ["Moon", "Saturn", "Rahu"]
+    key_indicators:
+      - "1st house condition (general vitality of populace)"
+      - "6th house condition (disease and health services)"
+      - "Saturn-Rahu combinations (epidemic indicator)"
+      - "8th house affliction (mass mortality)"
+      - "Moon's condition (public welfare)"
+      - "Ashlesha nakshatra activation (poisons/epidemics)"
+      - "12th house (hospitals and quarantine)"
+    scoring_criteria:
+      strong_positive: "Lagna lord strong, 6th house clear of severe malefics, Moon well-placed, no Saturn-Rahu stress"
+      positive: "Reasonable health indicators, no epidemic markers active"
+      neutral: "Some health concerns but no major epidemic indicators"
+      negative: "Saturn-Rahu forming aspect, malefics in 6th/8th, Moon afflicted"
+      strong_negative: "Saturn-Rahu conjunction, 8th house heavily afflicted, eclipse activating 6th/8th, Ashlesha triggered"
+    reference_files:
+      - "natural_events.yaml (epidemics section)"
+      - "nakshatra_mundane.yaml (Ashlesha)"
+      - "planet_mundane_significations.yaml (Saturn, Rahu)"
+
+  foreign_relations:
+    id: 6
+    name: "Foreign Relations"
+    description: "Diplomacy, international standing, treaties, alliances"
+    primary_houses: [7, 9]
+    secondary_houses: [3, 5, 11]
+    primary_planets: ["Venus", "Jupiter", "Mercury"]
+    key_indicators:
+      - "7th house condition (international relations)"
+      - "9th house condition (foreign missions and higher principles)"
+      - "Venus's strength (diplomacy and peace)"
+      - "Jupiter's aspects to 7th/9th (wisdom in foreign policy)"
+      - "Mercury's condition (communications and negotiations)"
+      - "3rd house (neighboring countries)"
+      - "11th house (allies and partnerships)"
+    scoring_criteria:
+      strong_positive: "Venus strong in 7th, Jupiter aspecting 7th, 7th lord in friendly sign, benefics in 9th/11th"
+      positive: "7th house not heavily afflicted, Venus reasonably well-placed"
+      neutral: "Mixed diplomatic picture; some successful, some strained relations"
+      negative: "Malefics in 7th without benefic support, Venus weak, 7th lord in dusthana"
+      strong_negative: "Mars-Saturn in 7th, Rahu in 7th, Venus combust, eclipse in 7th, 7th lord debilitated"
+    reference_files:
+      - "house_mundane_significations.yaml (houses 3, 7, 9, 11)"
+      - "war_conflict_rules.yaml (peace indicators section)"
+      - "planet_mundane_significations.yaml (Venus, Jupiter, Mercury)"
+
+  markets_finance:
+    id: 7
+    name: "Markets / Finance"
+    description: "Stock markets, commodities, currency, financial markets"
+    primary_houses: [2, 5]
+    secondary_houses: [8, 11]
+    primary_planets: ["Jupiter", "Mercury", "Venus", "Rahu"]
+    key_indicators:
+      - "5th house condition (stock market and speculation)"
+      - "5th lord placement and strength"
+      - "2nd house condition (banking and reserves)"
+      - "Jupiter's transit and dignity (finance sector)"
+      - "Mercury's condition (trade and technology stocks)"
+      - "Rahu's involvement (speculation, crypto, tech)"
+      - "8th house (insurance, debt, shared resources)"
+      - "Commodity-ruling planet transits and dignities"
+    scoring_criteria:
+      strong_positive: "5th lord strong in 11th, Jupiter well-placed, Mercury strong, benefics aspecting 2nd/5th"
+      positive: "5th house not afflicted, financial planets reasonably well-placed"
+      neutral: "Mixed market signals; sector rotation rather than clear trend"
+      negative: "5th lord in 8th/12th, malefics afflicting 5th, Mercury weak or retrograde"
+      strong_negative: "5th lord debilitated in 8th, eclipse on 5th cusp, Mars-Saturn afflicting 2nd/5th, Rahu in 8th"
+    reference_files:
+      - "commodity_rulerships.yaml"
+      - "house_mundane_significations.yaml (houses 2, 5, 8, 11)"
+      - "saturn_jupiter_cycles.yaml (current element era)"
+
+# =============================================================================
+# WEIGHT SCALE
+# =============================================================================
+
+weight_scale:
+  description: >
+    Standard 5-point weight scale for scoring each domain in a
+    mundane analysis. Scores are assigned based on the balance of
+    positive and negative indicators in the chart being analyzed.
+  values:
+    strong_negative:
+      score: -2
+      label: "Strong Negative"
+      description: "Multiple strong negative indicators converge; severe adverse outcomes expected"
+    negative:
+      score: -1
+      label: "Negative"
+      description: "Negative indicators outweigh positive; challenges and setbacks likely"
+    neutral:
+      score: 0
+      label: "Neutral"
+      description: "Balanced indicators; no strong direction; ordinary conditions"
+    positive:
+      score: 1
+      label: "Positive"
+      description: "Positive indicators outweigh negative; favorable developments expected"
+    strong_positive:
+      score: 2
+      label: "Strong Positive"
+      description: "Multiple strong positive indicators converge; highly favorable outcomes"
+
+# =============================================================================
+# MEDINI-SPECIFIC MODIFIERS
+# =============================================================================
+
+modifiers:
+
+  description: >
+    These modifiers adjust the base domain score up or down based on
+    additional Medini-specific confirmations or denials. Apply all
+    relevant modifiers to the base score for each domain.
+
+  positive_modifiers:
+
+    eclipse_confirmation:
+      modifier: "+1.0"
+      condition: "An eclipse confirms the theme of this domain (e.g., eclipse in 7th house confirms military/foreign relations theme)"
+      description: >
+        When an eclipse falls in a house directly related to the domain
+        being scored AND the eclipse supports the predicted direction,
+        add +1.0 to the score. For example, a beneficial eclipse
+        configuration supporting the economy domain.
+
+    sav_strength:
+      modifier: "+0.5"
+      condition: "Sarvashtakavarga (SAV) bindus in the transited sign are above 28"
+      description: >
+        When the key planet(s) for a domain transit a sign with SAV
+        strength greater than 28 bindus, the transit produces stronger
+        and more positive effects. Add +0.5 to the domain score.
+
+    dasha_support:
+      modifier: "+0.5"
+      condition: "The operating dasha lord in the national chart supports the domain"
+      description: >
+        When the Vimsottari dasha lord in the national foundation chart
+        is a natural benefic for the domain (e.g., Jupiter dasha for
+        economy, Venus dasha for foreign relations), add +0.5.
+
+    specialist_convergence:
+      modifier: "+1.0"
+      condition: "Three or more independent specialist techniques converge on the same prediction"
+      description: >
+        When three or more of the following independent techniques agree
+        on the same prediction for a domain, add +1.0: ingress chart
+        analysis, eclipse analysis, Saturn-Jupiter cycle analysis,
+        national chart dasha, Sarvatobhadra Chakra vedha, nakshatra
+        transit analysis, annual Tajaka analysis.
+
+  negative_modifiers:
+
+    eclipse_affliction:
+      modifier: "-1.0"
+      condition: "An eclipse afflicts the house relevant to this domain"
+      description: >
+        When a malefic eclipse (especially solar) falls in a house
+        directly related to the domain AND creates affliction, subtract
+        1.0 from the score. For example, a solar eclipse in the 10th
+        house afflicting political stability.
+
+    dasha_affliction:
+      modifier: "-0.5"
+      condition: "The operating dasha lord in the national chart afflicts the domain"
+      description: >
+        When the dasha lord is a natural malefic for the domain (e.g.,
+        Saturn dasha afflicting public health, Mars dasha activating
+        military conflict), subtract 0.5.
+
+    sbc_vedha:
+      modifier: "-1.0"
+      condition: "Sarvatobhadra Chakra vedha from malefic on relevant nakshatra"
+      description: >
+        When a malefic planet's transit creates Sarvatobhadra Chakra
+        vedha (obstruction) on a nakshatra directly relevant to the
+        domain, subtract 1.0. This is particularly significant for
+        timing specific negative events.
+
+# =============================================================================
+# CONFIDENCE THRESHOLDS
+# =============================================================================
+
+confidence_thresholds:
+
+  description: >
+    Confidence level is determined by the number of independent
+    astrological indicators that converge on the same prediction
+    for a domain. More converging indicators = higher confidence.
+
+  low:
+    threshold: "Fewer than 5 converging indicators"
+    label: "LOW"
+    description: >
+      Preliminary assessment based on limited data. The prediction
+      may change as more chart layers are analyzed. Treat as
+      directional guidance only.
+    recommended_action: "Note the trend but do not make strong predictions"
+
+  medium:
+    threshold: "5 to 10 converging indicators"
+    label: "MEDIUM"
+    description: >
+      Moderate confidence based on multiple confirming indicators.
+      The prediction has reasonable astrological support but may
+      not manifest at full intensity.
+    recommended_action: "State the prediction with appropriate caveats"
+
+  high:
+    threshold: "More than 10 converging indicators"
+    label: "HIGH"
+    description: >
+      High confidence with strong multi-technique convergence.
+      Multiple independent methods (ingress, eclipse, dasha,
+      transit, SBC, Tajaka) all point to the same conclusion.
+    recommended_action: "State the prediction with confidence; note the convergence"
+
+# =============================================================================
+# SCORING EXAMPLE TEMPLATE
+# =============================================================================
+
+scoring_example:
+
+  description: >
+    Template for how a Medini scorecard should be structured when
+    analyzing a specific country for a specific time period.
+
+  template:
+    country: "[Country Name]"
+    period: "[Date range]"
+    chart_basis: "[Aries ingress 20XX / Eclipse chart / National chart dasha]"
+
+    domain_scores:
+      - domain: "Political Stability"
+        base_score: 0
+        modifiers_applied:
+          - modifier: "Eclipse confirmation"
+            value: "+1.0"
+            reason: "[Specific eclipse configuration supporting this]"
+          - modifier: "Dasha affliction"
+            value: "-0.5"
+            reason: "[Specific dasha lord creating challenges]"
+        final_score: 0.5
+        confidence: "MEDIUM"
+        key_evidence:
+          - "[Indicator 1 from ingress chart]"
+          - "[Indicator 2 from eclipse analysis]"
+          - "[Indicator 3 from dasha analysis]"
+        prediction_summary: "[1-2 sentence prediction for this domain]"
+
+      - domain: "Economy"
+        base_score: 0
+        modifiers_applied: []
+        final_score: 0
+        confidence: "LOW"
+        key_evidence: []
+        prediction_summary: ""
+
+      - domain: "Natural Events"
+        base_score: 0
+        modifiers_applied: []
+        final_score: 0
+        confidence: "LOW"
+        key_evidence: []
+        prediction_summary: ""
+
+      - domain: "Military / Conflict"
+        base_score: 0
+        modifiers_applied: []
+        final_score: 0
+        confidence: "LOW"
+        key_evidence: []
+        prediction_summary: ""
+
+      - domain: "Public Health"
+        base_score: 0
+        modifiers_applied: []
+        final_score: 0
+        confidence: "LOW"
+        key_evidence: []
+        prediction_summary: ""
+
+      - domain: "Foreign Relations"
+        base_score: 0
+        modifiers_applied: []
+        final_score: 0
+        confidence: "LOW"
+        key_evidence: []
+        prediction_summary: ""
+
+      - domain: "Markets / Finance"
+        base_score: 0
+        modifiers_applied: []
+        final_score: 0
+        confidence: "LOW"
+        key_evidence: []
+        prediction_summary: ""
+
+    overall_assessment:
+      total_score: 0
+      dominant_theme: "[Most prominent domain]"
+      critical_periods: "[Dates when multiple domains converge]"
+      summary: "[3-5 sentence overview of the period]"
+
+# =============================================================================
+# INTERPRETATION GUIDELINES
+# =============================================================================
+
+interpretation_guidelines:
+
+  score_ranges:
+    - range: "Final score >= +3.0"
+      interpretation: "Strongly favorable for this domain. Expect significant positive developments."
+    - range: "+1.5 to +2.9"
+      interpretation: "Favorable conditions. Positive developments outweigh challenges."
+    - range: "+0.5 to +1.4"
+      interpretation: "Mildly favorable. Some positive movement but not dominant."
+    - range: "-0.4 to +0.4"
+      interpretation: "Neutral. No strong directional signal. Ordinary conditions prevail."
+    - range: "-0.5 to -1.4"
+      interpretation: "Mildly unfavorable. Some challenges but not severe."
+    - range: "-1.5 to -2.9"
+      interpretation: "Unfavorable conditions. Significant challenges and setbacks."
+    - range: "Final score <= -3.0"
+      interpretation: "Strongly unfavorable. Expect significant adverse developments in this domain."
+
+  cross_domain_analysis:
+    description: >
+      Domains do not exist in isolation. Cross-domain interactions
+      should be noted and factored into the overall assessment.
+    examples:
+      - "Military conflict (-2) + Economy (-1) often co-occur and reinforce each other"
+      - "Natural events (-2) impacts both Economy and Public Health"
+      - "Political stability (+2) generally supports Economy and Foreign Relations"
+      - "Public Health crisis (-2) often leads to Economy (-1) and Markets (-1)"
+
+  temporal_layering:
+    description: >
+      Score domains using multiple time-frame charts layered together
+      for comprehensive assessment.
+    layers:
+      - layer: "Jupiter-Saturn cycle"
+        timeframe: "20-year backdrop"
+        weight: "Background context; sets the generational tone"
+      - layer: "National chart dasha"
+        timeframe: "Varies (6-20 years per mahadasha)"
+        weight: "Primary timing mechanism for the nation"
+      - layer: "Aries ingress chart"
+        timeframe: "Annual (1 year)"
+        weight: "Main annual prediction framework"
+      - layer: "Seasonal ingress charts"
+        timeframe: "Quarterly (3 months each)"
+        weight: "Quarterly refinement of annual themes"
+      - layer: "Eclipse charts"
+        timeframe: "3-6 months per eclipse"
+        weight: "Event triggers and theme intensifiers"
+      - layer: "Transit triggers"
+        timeframe: "Days to weeks"
+        weight: "Precise timing of specific events"
+
+# =============================================================================
+# NOTES
+# =============================================================================
+# 1. The scorecard is a FRAMEWORK—astrological judgment is still required
+#    to assess the relative strength and importance of indicators.
+# 2. Confidence level is as important as the score itself. A high score
+#    at LOW confidence is less actionable than a moderate score at HIGH.
+# 3. Always note the chart basis (ingress, eclipse, dasha) for each score.
+# 4. Multiple domains scoring negative simultaneously indicates a period
+#    of national crisis requiring careful attention to all domains.
+# 5. The modifiers are additive to the base score—the base score should
+#    be set first based on the primary chart analysis.
+# 6. Cross-reference with all other medini_kb reference files for
+#    detailed domain-specific rules and indicators.
+# 7. This scorecard is designed to be used by the worldastro agent for
+#    structured, reproducible mundane predictions.
