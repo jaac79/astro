@@ -1,0 +1,227 @@
+ingress:
+  type: capricorn
+  year: 2026
+  exact_datetime_utc: '2026-01-14T09:34:53'
+  local_datetime: '2026-01-14T15:04:53'
+  weekday: Wednesday
+  year_lord: Mercury
+  place:
+    city: New Delhi
+    latitude: 28.6139
+    longitude: 77.209
+    timezone: 5.5
+lagna:
+  rasi: Rishabham
+  degree: 24.9155
+  nakshatra: Mrigashira
+  pada: 1
+chandra:
+  rasi: Viruchikam
+  degree: 10.7305
+  nakshatra: Anuradha
+  pada: 3
+planetary_positions:
+  surya:
+    rasi: Dhanusu
+    degree: 30.0
+    nakshatra: Uttara Ashadha
+    pada: 1
+    retrograde: false
+    house: 8
+    dignity: friend
+  chandra:
+    rasi: Viruchikam
+    degree: 10.7305
+    nakshatra: Anuradha
+    pada: 3
+    retrograde: false
+    house: 7
+    dignity: debilitated
+  mangal:
+    rasi: Dhanusu
+    degree: 28.7938
+    nakshatra: Uttara Ashadha
+    pada: 1
+    retrograde: false
+    house: 8
+    dignity: friend
+  budha:
+    rasi: Dhanusu
+    degree: 25.4377
+    nakshatra: Purva Ashadha
+    pada: 4
+    retrograde: false
+    house: 8
+    dignity: neutral
+  guru:
+    rasi: Mithunam
+    degree: 25.3434
+    nakshatra: Punarvasu
+    pada: 2
+    retrograde: true
+    house: 2
+    dignity: enemy
+  shukra:
+    rasi: Makaram
+    degree: 1.8418
+    nakshatra: Uttara Ashadha
+    pada: 2
+    retrograde: false
+    house: 9
+    dignity: friend
+  shani:
+    rasi: Meenam
+    degree: 2.8604
+    nakshatra: Purva Bhadrapada
+    pada: 4
+    retrograde: false
+    house: 11
+    dignity: neutral
+  rahu:
+    rasi: Kumbham
+    degree: 17.2406
+    nakshatra: Shatabhisha
+    pada: 4
+    retrograde: true
+    house: 10
+    dignity: neutral
+  ketu:
+    rasi: Simham
+    degree: 17.2406
+    nakshatra: Purva Phalguni
+    pada: 2
+    retrograde: true
+    house: 4
+    dignity: neutral
+house_summary:
+  house_1:
+    rasi: Rishabham
+    planets: []
+  house_2:
+    rasi: Mithunam
+    planets:
+    - Jupiter
+  house_3:
+    rasi: Katakam
+    planets: []
+  house_4:
+    rasi: Simham
+    planets:
+    - Ketu
+  house_5:
+    rasi: Kanni
+    planets: []
+  house_6:
+    rasi: Thulam
+    planets: []
+  house_7:
+    rasi: Viruchikam
+    planets:
+    - Moon
+  house_8:
+    rasi: Dhanusu
+    planets:
+    - Sun
+    - Mars
+    - Mercury
+  house_9:
+    rasi: Makaram
+    planets:
+    - Venus
+  house_10:
+    rasi: Kumbham
+    planets:
+    - Rahu
+  house_11:
+    rasi: Meenam
+    planets:
+    - Saturn
+  house_12:
+    rasi: Mesham
+    planets: []
+vimshottari_dasha:
+  balance_at_birth:
+    lord: Saturn
+    remaining_years: 8
+    remaining_months: 5
+    remaining_days: 15
+  sequence:
+  - lord: Saturn
+    start: '2026-01-14'
+    end: '2034-06-30'
+  - lord: Mercury
+    start: '2034-06-30'
+    end: '2051-06-30'
+  - lord: Ketu
+    start: '2051-06-30'
+    end: '2058-06-29'
+  - lord: Venus
+    start: '2058-06-29'
+    end: '2078-06-29'
+  - lord: Sun
+    start: '2078-06-29'
+    end: '2084-06-28'
+  - lord: Moon
+    start: '2084-06-28'
+    end: '2094-06-28'
+  - lord: Mars
+    start: '2094-06-28'
+    end: '2101-06-28'
+  - lord: Rahu
+    start: '2101-06-28'
+    end: '2119-06-28'
+  - lord: Jupiter
+    start: '2119-06-28'
+    end: '2135-06-28'
+computed_analysis:
+  functional_nature:
+    yogakarakas:
+    - Saturn
+    functional_benefics:
+    - Sun
+    - Mercury
+    - Saturn
+    functional_malefics:
+    - Moon
+    - Jupiter
+    - Venus
+    functional_neutrals:
+    - Mars
+  badhaka:
+    lagna_sign_type: fixed
+    badhaka_sthana: 9
+    badhaka_rasi: Makaram
+    badhaka_lord: Saturn
+  marakas:
+  - planet: Mars
+    reason: 7th lord (Viruchikam)
+  - planet: Mercury
+    reason: 2nd lord (Mithunam)
+  neecha_bhanga:
+  - planet: Moon
+    debilitated_in: Viruchikam
+    house: 7
+    conditions_met:
+    - Moon in kendra (House 7) from lagna
+    status: LIKELY
+  yogas:
+  - name: Budha-Aditya Yoga
+    planets:
+    - Sun
+    - Mercury
+    house: 8
+    strength: WEAKENED
+    notes: Sun-Mercury conjunction in H8. Mercury combust (4.6 deg separation).
+  - name: Vipareeta Raja Yoga
+    planets:
+    - Mars
+    house: 8
+    strength: MODERATE
+    notes: Mars (lord of H12) in H8 (dusthana in dusthana).
+  digbala: none
+  key_strengths:
+  - 'Moon: neecha bhanga raja yoga (LIKELY)'
+  - Vipareeta Raja Yoga (Mars)
+  key_vulnerabilities:
+  - 'Moon: debilitated in Viruchikam (neecha bhanga applies)'
+  - 'Jupiter: in enemy sign (Mithunam)'

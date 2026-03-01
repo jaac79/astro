@@ -180,6 +180,381 @@ def cmd_positions(args):
 
 
 # ---------------------------------------------------------------------------
+# Ingress command
+# ---------------------------------------------------------------------------
+
+# Cardinal sign ingress targets (sidereal longitudes)
+INGRESS_TARGETS = {
+    "aries": 0.0,
+    "cancer": 90.0,
+    "libra": 180.0,
+    "capricorn": 270.0,
+}
+
+# Ingress type -> readable sign name
+INGRESS_SIGN_NAMES = {
+    "aries": "Mesham",
+    "cancer": "Katakam",
+    "libra": "Thulam",
+    "capricorn": "Makaram",
+}
+
+# Weekday index (0=Monday in datetime) -> (day name, ruling planet)
+WEEKDAY_RULERS = {
+    0: ("Monday", "Moon"),
+    1: ("Tuesday", "Mars"),
+    2: ("Wednesday", "Mercury"),
+    3: ("Thursday", "Jupiter"),
+    4: ("Friday", "Venus"),
+    5: ("Saturday", "Saturn"),
+    6: ("Sunday", "Sun"),
+}
+
+
+def find_solar_ingress_jd(target_sid_lon, year):
+    """Find the exact Julian Day when the Sun crosses target_sid_lon (sidereal).
+
+    Uses swe.solcross_ut which finds when the Sun reaches a given tropical
+    longitude. We convert sidereal target to tropical by adding ayanamsha.
+
+    Because ayanamsha changes slightly between the initial estimate and the
+    actual crossing moment, we iterate: compute the crossing, get the exact
+    ayanamsha there, recompute the tropical target, and search again.
+    Typically converges in 2 iterations.
+
+    Returns (jd, ayanamsha) at the exact ingress moment.
+    """
+    swe.set_sid_mode(swe.SIDM_LAHIRI)
+
+    # Start searching from Jan 1 of the given year
+    jd_start = swe.julday(year, 1, 1, 0.0)
+
+    # Initial ayanamsha estimate
+    ayanamsha = swe.get_ayanamsa(jd_start)
+
+    # Iterate to refine (ayanamsha at crossing differs from Jan 1)
+    for _ in range(5):
+        tropical_target = (target_sid_lon + ayanamsha) % 360
+
+        if hasattr(swe, 'solcross_ut'):
+            jd_cross = swe.solcross_ut(tropical_target, jd_start, 0)
+        else:
+            jd_cross = _bisect_solar_crossing(tropical_target, jd_start)
+
+        ayanamsha_new = swe.get_ayanamsa(jd_cross)
+
+        # Check convergence (ayanamsha stable to ~0.01 arcsec)
+        if abs(ayanamsha_new - ayanamsha) < 1e-6:
+            break
+        ayanamsha = ayanamsha_new
+
+    return jd_cross, ayanamsha
+
+
+def _bisect_solar_crossing(tropical_target, jd_start):
+    """Fallback bisection method to find when Sun crosses tropical_target."""
+    jd = jd_start
+    prev_lon = None
+    for _ in range(400):
+        pos, _ = swe.calc_ut(jd, swe.SUN)
+        lon = pos[0]
+        if prev_lon is not None:
+            if _crosses_target(prev_lon, lon, tropical_target):
+                return _bisect(jd - 1.0, jd, tropical_target)
+        prev_lon = lon
+        jd += 1.0
+
+    raise ValueError(f"Could not find solar crossing of {tropical_target} "
+                     f"within 400 days of JD {jd_start}")
+
+
+def _crosses_target(lon1, lon2, target):
+    """Check if target is between lon1 and lon2, accounting for wraparound."""
+    if abs(lon2 - lon1) > 180:
+        return (lon1 <= target or target <= lon2) if lon2 < lon1 else (
+            lon2 <= target or target <= lon1)
+    return min(lon1, lon2) <= target <= max(lon1, lon2)
+
+
+def _bisect(jd_lo, jd_hi, target, tolerance=1e-8, max_iter=100):
+    """Bisect to find JD when Sun longitude = target."""
+    for _ in range(max_iter):
+        jd_mid = (jd_lo + jd_hi) / 2
+        pos, _ = swe.calc_ut(jd_mid, swe.SUN)
+        lon = pos[0]
+        diff = (lon - target + 180) % 360 - 180
+        if abs(diff) < tolerance:
+            return jd_mid
+        if diff < 0:
+            jd_lo = jd_mid
+        else:
+            jd_hi = jd_mid
+    return (jd_lo + jd_hi) / 2
+
+
+def jd_to_utc_datetime(jd):
+    """Convert Julian Day to Python datetime (UTC)."""
+    year, month, day, hour_frac = swe.revjul(jd)
+    hours = int(hour_frac)
+    minutes_frac = (hour_frac - hours) * 60
+    minutes = int(minutes_frac)
+    seconds_frac = (minutes_frac - minutes) * 60
+    seconds = int(seconds_frac)
+    microseconds = int((seconds_frac - seconds) * 1e6)
+    return datetime(year, month, day, hours, minutes, seconds, microseconds)
+
+
+def cmd_ingress(args):
+    """Compute solar ingress chart for a cardinal sign and year.
+
+    Finds the exact moment the Sun enters the target sidereal sign,
+    computes a full chart (lagna, planetary positions, dasha, yogas)
+    for that moment at the specified location, and writes a YAML file.
+    """
+    ingress_type = args.ingress_type
+    year = args.year
+    lat = args.lat
+    lon = args.lon
+    timezone = args.timezone
+    city = args.city
+
+    target_sid_lon = INGRESS_TARGETS[ingress_type]
+
+    # Initialize Swiss Ephemeris
+    swe.set_sid_mode(swe.SIDM_LAHIRI)
+
+    # Find exact ingress Julian Day
+    jd_ingress, ayanamsha = find_solar_ingress_jd(target_sid_lon, year)
+
+    # Convert to UTC datetime
+    utc_dt = jd_to_utc_datetime(jd_ingress)
+
+    # Local datetime
+    local_dt = utc_dt + timedelta(hours=timezone)
+
+    # Weekday and year lord
+    weekday_idx = local_dt.weekday()  # 0=Monday
+    weekday_name, year_lord = WEEKDAY_RULERS[weekday_idx]
+
+    # --- Build full chart at ingress moment for the given location ---
+
+    # Ascendant (lagna)
+    asc_sid, ayanamsha = calculate_ascendant(jd_ingress, lat, lon)
+    asc_rashi, asc_rashi_idx, asc_deg = get_rashi(asc_sid)
+    asc_nak, asc_nak_lord, asc_pada, _ = get_nakshatra(asc_sid)
+
+    lagna = {
+        "rashi": asc_rashi,
+        "rashi_idx": asc_rashi_idx,
+        "degree": asc_deg,
+        "nakshatra": asc_nak,
+        "pada": asc_pada,
+    }
+
+    # All planetary positions
+    positions = calculate_all_positions(jd_ingress, ayanamsha, asc_rashi_idx)
+
+    # Fix Sun's boundary condition: at ingress, Sun is exactly at 0 deg of
+    # the target sign, but floating-point can place it at 29.9999 of the
+    # prior sign. Force Sun to the target sign with degree 0.
+    target_rashi_idx = int(target_sid_lon / 30) % 12
+    sun = positions["Sun"]
+    if abs(sun["sidereal_lon"] - target_sid_lon) < 0.001 or (
+        target_sid_lon == 0 and sun["sidereal_lon"] > 359.999
+    ):
+        sun["sidereal_lon"] = target_sid_lon
+        sun["rashi"] = RASHI_NAMES[target_rashi_idx]
+        sun["rashi_idx"] = target_rashi_idx
+        sun["degree"] = 0.0
+        sun["house"] = ((target_rashi_idx - asc_rashi_idx) % 12) + 1
+        nak_name, nak_lord, pada, _ = get_nakshatra(target_sid_lon)
+        sun["nakshatra"] = nak_name
+        sun["nak_lord"] = nak_lord
+        sun["pada"] = pada
+
+    # Moon data for chandra section and dasha
+    moon = positions["Moon"]
+
+    chandra = {
+        "rasi": moon["rashi"],
+        "degree": round(moon["degree"], 4),
+        "nakshatra": moon["nakshatra"],
+        "pada": moon["pada"],
+    }
+
+    # Vimshottari dasha (from Moon position, using ingress date as "birth")
+    ingress_date_obj = utc_dt.date()
+    dasha = calculate_vimshottari_dasha(moon["sidereal_lon"], ingress_date_obj)
+
+    # House summary
+    house_summary = build_house_summary(asc_rashi_idx, positions)
+
+    # Computed analysis
+    computed_analysis = build_computed_analysis(asc_rashi_idx, positions)
+
+    # --- Build planetary_positions for YAML output ---
+    yaml_positions = {}
+    graha_order = [
+        "Sun", "Moon", "Mars", "Mercury", "Jupiter",
+        "Venus", "Saturn", "Rahu", "Ketu",
+    ]
+    for g in graha_order:
+        p = positions[g]
+        dignity = get_dignity(g, p["rashi_idx"], p["degree"])
+        yaml_key = p["yaml_key"]
+        yaml_positions[yaml_key] = {
+            "rasi": p["rashi"],
+            "degree": round(p["degree"], 4),
+            "nakshatra": p["nakshatra"],
+            "pada": p["pada"],
+            "retrograde": p["retrograde"],
+            "house": p["house"],
+            "dignity": dignity if dignity else "neutral",
+        }
+
+    # --- Build house_summary for YAML output ---
+    yaml_houses = {}
+    for h in range(1, 13):
+        hs = house_summary[h]
+        yaml_houses[f"house_{h}"] = {
+            "rasi": hs["rasi"],
+            "planets": hs["planets"] if hs["planets"] else [],
+        }
+
+    # --- Build dasha for YAML output ---
+    yaml_dasha = {
+        "balance_at_birth": dasha["balance_at_birth"],
+        "sequence": dasha["sequence"],
+    }
+
+    # --- Assemble full output ---
+    output = {
+        "ingress": {
+            "type": ingress_type,
+            "year": year,
+            "exact_datetime_utc": utc_dt.strftime("%Y-%m-%dT%H:%M:%S"),
+            "local_datetime": local_dt.strftime("%Y-%m-%dT%H:%M:%S"),
+            "weekday": weekday_name,
+            "year_lord": year_lord,
+            "place": {
+                "city": city,
+                "latitude": lat,
+                "longitude": lon,
+                "timezone": timezone,
+            },
+        },
+        "lagna": {
+            "rasi": lagna["rashi"],
+            "degree": round(lagna["degree"], 4),
+            "nakshatra": lagna["nakshatra"],
+            "pada": lagna["pada"],
+        },
+        "chandra": chandra,
+        "planetary_positions": yaml_positions,
+        "house_summary": yaml_houses,
+        "vimshottari_dasha": yaml_dasha,
+        "computed_analysis": computed_analysis,
+    }
+
+    # --- Write YAML file ---
+    ingress_dir = os.path.join(WORLD_DATA_DIR, "ingress")
+    os.makedirs(ingress_dir, exist_ok=True)
+    out_file = os.path.join(ingress_dir, f"{year}_{ingress_type}_ingress.yaml")
+
+    with open(out_file, "w") as f:
+        yaml.dump(output, f, default_flow_style=False, sort_keys=False,
+                  allow_unicode=True)
+
+    # --- Print human-readable summary ---
+    if args.print_summary:
+        _print_ingress_summary(
+            ingress_type, year, utc_dt, local_dt, weekday_name, year_lord,
+            city, lat, lon, timezone, ayanamsha,
+            lagna, positions, dasha, house_summary,
+        )
+
+    # --- JSON status to stdout ---
+    status = {
+        "status": "success",
+        "file": out_file,
+        "ingress_type": ingress_type,
+        "year": year,
+        "exact_datetime_utc": utc_dt.strftime("%Y-%m-%dT%H:%M:%S"),
+        "weekday": weekday_name,
+        "year_lord": year_lord,
+        "lagna": lagna["rashi"],
+        "moon_sign": moon["rashi"],
+    }
+    print(json.dumps(status))
+
+
+def _print_ingress_summary(ingress_type, year, utc_dt, local_dt,
+                           weekday_name, year_lord, city, lat, lon, timezone,
+                           ayanamsha, lagna, positions, dasha, house_summary):
+    """Print human-readable ingress chart summary to stderr."""
+    out = sys.stderr
+    sign_name = INGRESS_SIGN_NAMES[ingress_type]
+
+    out.write("=" * 70 + "\n")
+    out.write(f"  SOLAR INGRESS CHART -- {ingress_type.upper()} "
+              f"({sign_name}) {year}\n")
+    out.write("=" * 70 + "\n")
+    out.write(f"  Exact UTC:  {utc_dt.strftime('%Y-%m-%d %H:%M:%S')}\n")
+    out.write(f"  Local Time: {local_dt.strftime('%Y-%m-%d %H:%M:%S')} "
+              f"(UTC{'+' if timezone >= 0 else ''}{timezone})\n")
+    out.write(f"  Weekday:    {weekday_name}  |  Year Lord: {year_lord}\n")
+    out.write(f"  Place:      {city} ({lat}, {lon})\n")
+    out.write(f"  Ayanamsa:   {format_dms(ayanamsha)} (Lahiri)\n")
+
+    out.write(f"\n  LAGNA: {lagna['rashi']} {format_dms(lagna['degree'])}\n")
+    out.write(f"         {lagna['nakshatra']} Pada {lagna['pada']}\n")
+
+    out.write("\n  " + "-" * 66 + "\n")
+    out.write(
+        f"  {'Graha':<10} {'Rashi':<14} {'Degree':<14} {'Nakshatra':<20} "
+        f"{'Pada':>4} {'H':>3} {'R':>2} {'Dignity'}\n"
+    )
+    out.write("  " + "-" * 66 + "\n")
+
+    graha_order = [
+        "Sun", "Moon", "Mars", "Mercury", "Jupiter",
+        "Venus", "Saturn", "Rahu", "Ketu",
+    ]
+    for g in graha_order:
+        p = positions[g]
+        dignity = get_dignity(g, p["rashi_idx"], p["degree"]) or ""
+        retro = "R" if p["retrograde"] else ""
+        out.write(
+            f"  {g:<10} {p['rashi']:<14} {format_dms(p['degree']):<14} "
+            f"{p['nakshatra']:<20} {p['pada']:>4} {p['house']:>3} "
+            f"{retro:>2} {dignity}\n"
+        )
+
+    out.write("\n  " + "-" * 66 + "\n")
+    out.write("  HOUSE SUMMARY (Whole Sign)\n")
+    out.write("  " + "-" * 66 + "\n")
+    for h in range(1, 13):
+        hs = house_summary[h]
+        planets_str = ", ".join(hs["planets"]) if hs["planets"] else "\u2014"
+        out.write(f"  House {h:>2}  {hs['rasi']:<14} {planets_str}\n")
+
+    out.write("\n  " + "-" * 66 + "\n")
+    out.write("  VIMSHOTTARI DASHA (from ingress Moon)\n")
+    out.write("  " + "-" * 66 + "\n")
+    bal = dasha["balance_at_birth"]
+    out.write(
+        f"  Balance: {bal['lord']} -- "
+        f"{bal['remaining_years']}y {bal['remaining_months']}m "
+        f"{bal['remaining_days']}d\n"
+    )
+    for entry in dasha["sequence"]:
+        out.write(
+            f"  {entry['lord']:<10} {entry['start']}  to  {entry['end']}\n"
+        )
+    out.write("=" * 70 + "\n")
+
+
+# ---------------------------------------------------------------------------
 # Eclipse helpers
 # ---------------------------------------------------------------------------
 
@@ -817,7 +1192,7 @@ def parse_args(argv=None):
 
 COMMAND_DISPATCH = {
     "positions": cmd_positions,
-    "ingress": cmd_stub,
+    "ingress": cmd_ingress,
     "eclipse": cmd_eclipse,
     "eclipses": cmd_eclipses,
     "country": cmd_stub,

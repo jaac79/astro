@@ -1,0 +1,218 @@
+ingress:
+  type: cancer
+  year: 2026
+  exact_datetime_utc: '2026-07-16T18:05:30'
+  local_datetime: '2026-07-16T23:35:30'
+  weekday: Thursday
+  year_lord: Jupiter
+  place:
+    city: New Delhi
+    latitude: 28.6139
+    longitude: 77.209
+    timezone: 5.5
+lagna:
+  rasi: Meenam
+  degree: 24.4023
+  nakshatra: Revati
+  pada: 3
+chandra:
+  rasi: Simham
+  degree: 2.2119
+  nakshatra: Magha
+  pada: 1
+planetary_positions:
+  surya:
+    rasi: Katakam
+    degree: 0.0
+    nakshatra: Punarvasu
+    pada: 3
+    retrograde: false
+    house: 5
+    dignity: friend
+  chandra:
+    rasi: Simham
+    degree: 2.2119
+    nakshatra: Magha
+    pada: 1
+    retrograde: false
+    house: 6
+    dignity: friend
+  mangal:
+    rasi: Rishabham
+    degree: 18.401
+    nakshatra: Rohini
+    pada: 3
+    retrograde: false
+    house: 3
+    dignity: neutral
+  budha:
+    rasi: Mithunam
+    degree: 24.2416
+    nakshatra: Punarvasu
+    pada: 2
+    retrograde: true
+    house: 4
+    dignity: own
+  guru:
+    rasi: Katakam
+    degree: 9.3621
+    nakshatra: Pushya
+    pada: 2
+    retrograde: false
+    house: 5
+    dignity: exalted
+  shukra:
+    rasi: Simham
+    degree: 13.5398
+    nakshatra: Purva Phalguni
+    pada: 1
+    retrograde: false
+    house: 6
+    dignity: enemy
+  shani:
+    rasi: Meenam
+    degree: 20.4359
+    nakshatra: Revati
+    pada: 2
+    retrograde: false
+    house: 1
+    dignity: neutral
+  rahu:
+    rasi: Kumbham
+    degree: 7.5251
+    nakshatra: Shatabhisha
+    pada: 1
+    retrograde: true
+    house: 12
+    dignity: neutral
+  ketu:
+    rasi: Simham
+    degree: 7.5251
+    nakshatra: Magha
+    pada: 3
+    retrograde: true
+    house: 6
+    dignity: neutral
+house_summary:
+  house_1:
+    rasi: Meenam
+    planets:
+    - Saturn
+  house_2:
+    rasi: Mesham
+    planets: []
+  house_3:
+    rasi: Rishabham
+    planets:
+    - Mars
+  house_4:
+    rasi: Mithunam
+    planets:
+    - Mercury
+  house_5:
+    rasi: Katakam
+    planets:
+    - Sun
+    - Jupiter
+  house_6:
+    rasi: Simham
+    planets:
+    - Moon
+    - Venus
+    - Ketu
+  house_7:
+    rasi: Kanni
+    planets: []
+  house_8:
+    rasi: Thulam
+    planets: []
+  house_9:
+    rasi: Viruchikam
+    planets: []
+  house_10:
+    rasi: Dhanusu
+    planets: []
+  house_11:
+    rasi: Makaram
+    planets: []
+  house_12:
+    rasi: Kumbham
+    planets:
+    - Rahu
+vimshottari_dasha:
+  balance_at_birth:
+    lord: Ketu
+    remaining_years: 5
+    remaining_months: 10
+    remaining_days: 1
+  sequence:
+  - lord: Ketu
+    start: '2026-07-16'
+    end: '2032-05-17'
+  - lord: Venus
+    start: '2032-05-17'
+    end: '2052-05-17'
+  - lord: Sun
+    start: '2052-05-17'
+    end: '2058-05-17'
+  - lord: Moon
+    start: '2058-05-17'
+    end: '2068-05-16'
+  - lord: Mars
+    start: '2068-05-16'
+    end: '2075-05-16'
+  - lord: Rahu
+    start: '2075-05-16'
+    end: '2093-05-15'
+  - lord: Jupiter
+    start: '2093-05-15'
+    end: '2109-05-16'
+  - lord: Saturn
+    start: '2109-05-16'
+    end: '2128-05-15'
+  - lord: Mercury
+    start: '2128-05-15'
+    end: '2145-05-15'
+computed_analysis:
+  functional_nature:
+    yogakarakas: []
+    functional_benefics:
+    - Moon
+    - Mars
+    functional_malefics:
+    - Sun
+    - Mercury
+    - Venus
+    - Saturn
+    functional_neutrals:
+    - Jupiter
+  badhaka:
+    lagna_sign_type: dual
+    badhaka_sthana: 7
+    badhaka_rasi: Kanni
+    badhaka_lord: Mercury
+  marakas:
+  - planet: Mercury
+    reason: 7th lord (Kanni)
+  - planet: Mars
+    reason: 2nd lord (Mesham)
+  neecha_bhanga: none
+  yogas:
+  - name: Bhadra Yoga (Pancha Mahapurusha)
+    planets:
+    - Mercury
+    house: 4
+    strength: STRONG
+    notes: Mercury own in kendra (H4).
+  - name: Vipareeta Raja Yoga
+    planets:
+    - Venus
+    house: 6
+    strength: MODERATE
+    notes: Venus (lord of H8) in H6 (dusthana in dusthana).
+  digbala: none
+  key_strengths:
+  - Bhadra Yoga (Pancha Mahapurusha) (Mercury)
+  - Vipareeta Raja Yoga (Venus)
+  key_vulnerabilities:
+  - 'Venus: in enemy sign (Simham)'

@@ -1,0 +1,212 @@
+ingress:
+  type: libra
+  year: 2026
+  exact_datetime_utc: '2026-10-17T14:18:24'
+  local_datetime: '2026-10-17T19:48:24'
+  weekday: Saturday
+  year_lord: Saturn
+  place:
+    city: New Delhi
+    latitude: 28.6139
+    longitude: 77.209
+    timezone: 5.5
+lagna:
+  rasi: Rishabham
+  degree: 7.5657
+  nakshatra: Krittika
+  pada: 4
+chandra:
+  rasi: Dhanusu
+  degree: 18.2735
+  nakshatra: Purva Ashadha
+  pada: 2
+planetary_positions:
+  surya:
+    rasi: Kanni
+    degree: 30.0
+    nakshatra: Chitra
+    pada: 2
+    retrograde: false
+    house: 5
+    dignity: neutral
+  chandra:
+    rasi: Dhanusu
+    degree: 18.2735
+    nakshatra: Purva Ashadha
+    pada: 2
+    retrograde: false
+    house: 8
+    dignity: neutral
+  mangal:
+    rasi: Katakam
+    degree: 16.8287
+    nakshatra: Ashlesha
+    pada: 1
+    retrograde: false
+    house: 3
+    dignity: debilitated
+  budha:
+    rasi: Thulam
+    degree: 24.2407
+    nakshatra: Vishakha
+    pada: 2
+    retrograde: false
+    house: 6
+    dignity: friend
+  guru:
+    rasi: Katakam
+    degree: 28.1167
+    nakshatra: Ashlesha
+    pada: 4
+    retrograde: false
+    house: 3
+    dignity: exalted
+  shukra:
+    rasi: Thulam
+    degree: 10.3269
+    nakshatra: Swati
+    pada: 2
+    retrograde: true
+    house: 6
+    dignity: moolatrikona
+  shani:
+    rasi: Meenam
+    degree: 16.0576
+    nakshatra: Uttara Bhadrapada
+    pada: 4
+    retrograde: true
+    house: 11
+    dignity: neutral
+  rahu:
+    rasi: Kumbham
+    degree: 2.6049
+    nakshatra: Dhanishta
+    pada: 3
+    retrograde: true
+    house: 10
+    dignity: neutral
+  ketu:
+    rasi: Simham
+    degree: 2.6049
+    nakshatra: Magha
+    pada: 1
+    retrograde: true
+    house: 4
+    dignity: neutral
+house_summary:
+  house_1:
+    rasi: Rishabham
+    planets: []
+  house_2:
+    rasi: Mithunam
+    planets: []
+  house_3:
+    rasi: Katakam
+    planets:
+    - Mars
+    - Jupiter
+  house_4:
+    rasi: Simham
+    planets:
+    - Ketu
+  house_5:
+    rasi: Kanni
+    planets:
+    - Sun
+  house_6:
+    rasi: Thulam
+    planets:
+    - Mercury
+    - Venus
+  house_7:
+    rasi: Viruchikam
+    planets: []
+  house_8:
+    rasi: Dhanusu
+    planets:
+    - Moon
+  house_9:
+    rasi: Makaram
+    planets: []
+  house_10:
+    rasi: Kumbham
+    planets:
+    - Rahu
+  house_11:
+    rasi: Meenam
+    planets:
+    - Saturn
+  house_12:
+    rasi: Mesham
+    planets: []
+vimshottari_dasha:
+  balance_at_birth:
+    lord: Venus
+    remaining_years: 12
+    remaining_months: 7
+    remaining_days: 2
+  sequence:
+  - lord: Venus
+    start: '2026-10-17'
+    end: '2039-05-20'
+  - lord: Sun
+    start: '2039-05-20'
+    end: '2045-05-19'
+  - lord: Moon
+    start: '2045-05-19'
+    end: '2055-05-19'
+  - lord: Mars
+    start: '2055-05-19'
+    end: '2062-05-18'
+  - lord: Rahu
+    start: '2062-05-18'
+    end: '2080-05-17'
+  - lord: Jupiter
+    start: '2080-05-17'
+    end: '2096-05-17'
+  - lord: Saturn
+    start: '2096-05-17'
+    end: '2115-05-18'
+  - lord: Mercury
+    start: '2115-05-18'
+    end: '2132-05-17'
+  - lord: Ketu
+    start: '2132-05-17'
+    end: '2139-05-17'
+computed_analysis:
+  functional_nature:
+    yogakarakas:
+    - Saturn
+    functional_benefics:
+    - Sun
+    - Mercury
+    - Saturn
+    functional_malefics:
+    - Moon
+    - Jupiter
+    - Venus
+    functional_neutrals:
+    - Mars
+  badhaka:
+    lagna_sign_type: fixed
+    badhaka_sthana: 9
+    badhaka_rasi: Makaram
+    badhaka_lord: Saturn
+  marakas:
+  - planet: Mars
+    reason: 7th lord (Viruchikam)
+  - planet: Mercury
+    reason: 2nd lord (Mithunam)
+  neecha_bhanga: none
+  yogas:
+  - name: Vipareeta Raja Yoga
+    planets:
+    - Venus
+    house: 6
+    strength: MODERATE
+    notes: Venus (lord of H6) in H6 (dusthana in dusthana).
+  digbala: none
+  key_strengths:
+  - Vipareeta Raja Yoga (Venus)
+  key_vulnerabilities:
+  - 'Mars: debilitated in Katakam'
