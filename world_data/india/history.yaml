@@ -1,0 +1,168 @@
+# India - Major Historical Events for Dasha/Transit Validation
+# Used by worldastro agent to validate predictions against known outcomes
+
+events:
+  - date: '1947-08-15'
+    event: "Independence from British rule"
+    domain: political
+    significance: major
+
+  - date: '1948-01-30'
+    event: "Assassination of Mahatma Gandhi"
+    domain: political
+    significance: major
+
+  - date: '1950-01-26'
+    event: "Republic Day — Constitution comes into effect"
+    domain: political
+    significance: major
+
+  - date: '1962-10-20'
+    event: "Sino-Indian War begins"
+    domain: military
+    significance: major
+
+  - date: '1964-05-27'
+    event: "Death of PM Jawaharlal Nehru"
+    domain: political
+    significance: major
+
+  - date: '1965-09-06'
+    event: "India-Pakistan War begins"
+    domain: military
+    significance: major
+
+  - date: '1966-01-11'
+    event: "Death of PM Lal Bahadur Shastri (Tashkent)"
+    domain: political
+    significance: major
+
+  - date: '1971-12-03'
+    event: "India-Pakistan War — Bangladesh liberation"
+    domain: military
+    significance: major
+
+  - date: '1974-05-18'
+    event: "Pokhran-I — first nuclear test (Smiling Buddha)"
+    domain: military
+    significance: major
+
+  - date: '1975-06-25'
+    event: "Emergency declared by Indira Gandhi"
+    domain: political
+    significance: major
+
+  - date: '1977-03-21'
+    event: "Emergency lifted — Janata Party wins elections"
+    domain: political
+    significance: major
+
+  - date: '1984-06-06'
+    event: "Operation Blue Star — Golden Temple"
+    domain: military
+    significance: major
+
+  - date: '1984-10-31'
+    event: "Assassination of PM Indira Gandhi"
+    domain: political
+    significance: major
+
+  - date: '1991-05-21'
+    event: "Assassination of Rajiv Gandhi"
+    domain: political
+    significance: major
+
+  - date: '1991-07-24'
+    event: "Economic liberalization begins (LPG reforms)"
+    domain: economy
+    significance: major
+
+  - date: '1992-12-06'
+    event: "Babri Masjid demolition"
+    domain: political
+    significance: major
+
+  - date: '1993-03-12'
+    event: "Bombay serial bomb blasts"
+    domain: military
+    significance: major
+
+  - date: '1998-05-11'
+    event: "Pokhran-II nuclear tests"
+    domain: military
+    significance: major
+
+  - date: '1999-05-26'
+    event: "Kargil War begins"
+    domain: military
+    significance: major
+
+  - date: '2001-12-13'
+    event: "Parliament attack"
+    domain: military
+    significance: major
+
+  - date: '2004-12-26'
+    event: "Indian Ocean tsunami — massive coastal devastation"
+    domain: natural
+    significance: major
+
+  - date: '2008-11-26'
+    event: "Mumbai terrorist attacks (26/11)"
+    domain: military
+    significance: major
+
+  - date: '2013-06-17'
+    event: "Uttarakhand floods — devastating flash floods"
+    domain: natural
+    significance: major
+
+  - date: '2014-05-26'
+    event: "Modi government takes office — BJP majority"
+    domain: political
+    significance: major
+
+  - date: '2016-09-29'
+    event: "Surgical strikes across LoC"
+    domain: military
+    significance: moderate
+
+  - date: '2016-11-08'
+    event: "Demonetization of 500/1000 rupee notes"
+    domain: economy
+    significance: major
+
+  - date: '2017-07-01'
+    event: "GST implementation"
+    domain: economy
+    significance: major
+
+  - date: '2019-02-26'
+    event: "Balakot air strikes"
+    domain: military
+    significance: major
+
+  - date: '2019-08-05'
+    event: "Abrogation of Article 370 (J&K)"
+    domain: political
+    significance: major
+
+  - date: '2020-03-25'
+    event: "COVID-19 nationwide lockdown begins"
+    domain: health
+    significance: major
+
+  - date: '2020-06-15'
+    event: "Galwan Valley clash with China"
+    domain: military
+    significance: major
+
+  - date: '2021-04-01'
+    event: "COVID-19 second wave peak — oxygen crisis"
+    domain: health
+    significance: major
+
+  - date: '2023-09-09'
+    event: "G20 Summit hosted in New Delhi"
+    domain: foreign_relations
+    significance: major
