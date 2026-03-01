@@ -1627,6 +1627,590 @@ def print_country_chart_summary(entity, lagna, positions, dasha,
 
 
 # ---------------------------------------------------------------------------
+# Shared helpers for astronomical event finders
+# ---------------------------------------------------------------------------
+
+# Map planet names (lowercase) to Swiss Ephemeris IDs
+PLANET_NAME_TO_SWE = {
+    "sun": swe.SUN,
+    "moon": swe.MOON,
+    "mars": swe.MARS,
+    "mercury": swe.MERCURY,
+    "jupiter": swe.JUPITER,
+    "venus": swe.VENUS,
+    "saturn": swe.SATURN,
+}
+
+# Reverse: SWE ID to English name
+SWE_TO_PLANET_NAME = {v: k.capitalize() for k, v in PLANET_NAME_TO_SWE.items()}
+
+# Rahu / Ketu handled separately (mean node)
+PLANET_NAME_TO_SWE["rahu"] = swe.MEAN_NODE
+SWE_TO_PLANET_NAME[swe.MEAN_NODE] = "Rahu"
+
+
+def _sidereal_lon_at_jd(jd, planet_id):
+    """Return sidereal longitude of a planet at a given JD."""
+    swe.set_sid_mode(swe.SIDM_LAHIRI)
+    ayanamsha = swe.get_ayanamsa(jd)
+    pos, _ = swe.calc_ut(jd, planet_id)
+    return (pos[0] - ayanamsha) % 360
+
+
+def _ketu_sidereal_lon_at_jd(jd):
+    """Return sidereal longitude of Ketu at a given JD."""
+    return (_sidereal_lon_at_jd(jd, swe.MEAN_NODE) + 180) % 360
+
+
+def _angular_distance(lon1, lon2):
+    """Return the minimum angular distance between two sidereal longitudes."""
+    diff = abs(lon1 - lon2)
+    if diff > 180:
+        diff = 360 - diff
+    return diff
+
+
+def _position_at_jd(jd, planet_id):
+    """Compute sidereal position summary at a JD for output."""
+    swe.set_sid_mode(swe.SIDM_LAHIRI)
+    ayanamsha = swe.get_ayanamsa(jd)
+    pos, _ = swe.calc_ut(jd, planet_id)
+    sid_lon = (pos[0] - ayanamsha) % 360
+    rashi_name, rashi_idx, deg = get_rashi(sid_lon)
+    nak_name, nak_lord, pada, _ = get_nakshatra(sid_lon)
+    return {
+        "sidereal_lon": sid_lon,
+        "sign": rashi_name,
+        "degree": round(deg, 4),
+        "nakshatra": nak_name,
+        "pada": pada,
+    }
+
+
+def _bisect_conjunction_minimum(jd_lo, jd_hi, p1_id, p2_id, tol=1e-6,
+                                max_iter=80):
+    """Find JD of minimum angular distance using golden-section search."""
+    gr = (5 ** 0.5 + 1) / 2  # golden ratio
+    a, b = jd_lo, jd_hi
+    c = b - (b - a) / gr
+    d = a + (b - a) / gr
+
+    for _ in range(max_iter):
+        if abs(b - a) < tol:
+            break
+        fc = _angular_distance(
+            _sidereal_lon_at_jd(c, p1_id),
+            _sidereal_lon_at_jd(c, p2_id),
+        )
+        fd = _angular_distance(
+            _sidereal_lon_at_jd(d, p1_id),
+            _sidereal_lon_at_jd(d, p2_id),
+        )
+        if fc < fd:
+            b = d
+        else:
+            a = c
+        c = b - (b - a) / gr
+        d = a + (b - a) / gr
+
+    return (a + b) / 2
+
+
+def _bisect_speed_zero(jd_lo, jd_hi, planet_id, tol=1e-6, max_iter=80):
+    """Bisect to find the exact JD when a planet's speed crosses zero."""
+    for _ in range(max_iter):
+        jd_mid = (jd_lo + jd_hi) / 2
+        if (jd_hi - jd_lo) < tol:
+            break
+        pos, _ = swe.calc_ut(jd_mid, planet_id)
+        speed = pos[3]
+        pos_lo, _ = swe.calc_ut(jd_lo, planet_id)
+        speed_lo = pos_lo[3]
+        if (speed_lo > 0 and speed > 0) or (speed_lo < 0 and speed < 0):
+            jd_lo = jd_mid
+        else:
+            jd_hi = jd_mid
+    return (jd_lo + jd_hi) / 2
+
+
+def _bisect_sign_change(jd_lo, jd_hi, planet_id, sign_lo, is_ketu,
+                         tol=1e-6, max_iter=80):
+    """Bisect to find the exact JD when a planet crosses a sign boundary."""
+    for _ in range(max_iter):
+        jd_mid = (jd_lo + jd_hi) / 2
+        if (jd_hi - jd_lo) < tol:
+            break
+        if is_ketu:
+            lon = _ketu_sidereal_lon_at_jd(jd_mid)
+        else:
+            lon = _sidereal_lon_at_jd(jd_mid, planet_id)
+        sign_mid = int(lon / 30) % 12
+
+        if sign_mid == sign_lo:
+            jd_lo = jd_mid
+        else:
+            jd_hi = jd_mid
+    return (jd_lo + jd_hi) / 2
+
+
+# ---------------------------------------------------------------------------
+# Conjunction command
+# ---------------------------------------------------------------------------
+
+def cmd_conjunction(args):
+    """Find planetary conjunctions within a year.
+
+    Scans day-by-day for angular distance minima between two planets.
+    When a local minimum is detected (decreasing then increasing distance),
+    golden-section search narrows to the exact JD.  Events with min
+    distance < 15 deg are reported.
+    """
+    planet_names = [p.strip().lower() for p in args.planets.split(",")]
+    if len(planet_names) != 2:
+        print(json.dumps({"status": "error",
+                          "message": "Exactly two planets required (comma-separated)"}))
+        return
+
+    p1_name, p2_name = planet_names
+    if p1_name not in PLANET_NAME_TO_SWE or p2_name not in PLANET_NAME_TO_SWE:
+        print(json.dumps({"status": "error",
+                          "message": f"Unknown planet name. Valid: "
+                                     f"{list(PLANET_NAME_TO_SWE.keys())}"}))
+        return
+
+    p1_id = PLANET_NAME_TO_SWE[p1_name]
+    p2_id = PLANET_NAME_TO_SWE[p2_name]
+    year = args.year
+
+    swe.set_sid_mode(swe.SIDM_LAHIRI)
+
+    jd_start = swe.julday(year, 1, 1, 0.0)
+    jd_end = swe.julday(year + 1, 1, 1, 0.0)
+
+    events = []
+    jd = jd_start
+    prev_dist = None
+    prev_prev_dist = None
+
+    while jd <= jd_end:
+        lon1 = _sidereal_lon_at_jd(jd, p1_id)
+        lon2 = _sidereal_lon_at_jd(jd, p2_id)
+        dist = _angular_distance(lon1, lon2)
+
+        if prev_dist is not None and prev_prev_dist is not None:
+            if prev_prev_dist > prev_dist and dist > prev_dist:
+                # Local minimum around jd - 1.0
+                jd_min = _bisect_conjunction_minimum(
+                    jd - 2.0, jd, p1_id, p2_id)
+                min_dist = _angular_distance(
+                    _sidereal_lon_at_jd(jd_min, p1_id),
+                    _sidereal_lon_at_jd(jd_min, p2_id),
+                )
+
+                if min_dist < 15.0:
+                    dt = jd_to_utc_datetime(jd_min)
+                    pos1 = _position_at_jd(jd_min, p1_id)
+                    pos2 = _position_at_jd(jd_min, p2_id)
+                    events.append({
+                        "date_utc": dt.strftime("%Y-%m-%dT%H:%M:%S"),
+                        "min_distance_deg": round(min_dist, 4),
+                        "sign": pos1["sign"],
+                        "planet1_degree": pos1["degree"],
+                        "planet2_degree": pos2["degree"],
+                        "nakshatra": pos1["nakshatra"],
+                    })
+
+        prev_prev_dist = prev_dist
+        prev_dist = dist
+        jd += 1.0
+
+    output = {
+        "conjunction": {
+            "planet1": p1_name.capitalize(),
+            "planet2": p2_name.capitalize(),
+            "year": year,
+            "events": events,
+        }
+    }
+
+    # Write YAML
+    conj_dir = os.path.join(WORLD_DATA_DIR, "conjunctions")
+    os.makedirs(conj_dir, exist_ok=True)
+    out_file = os.path.join(conj_dir,
+                            f"{year}_{p1_name}_{p2_name}_conjunction.yaml")
+    with open(out_file, "w") as f:
+        yaml.dump(output, f, default_flow_style=False, sort_keys=False,
+                  allow_unicode=True)
+
+    if args.print_summary:
+        print("=" * 70, file=sys.stderr)
+        print(f"  CONJUNCTIONS -- {p1_name.capitalize()} & "
+              f"{p2_name.capitalize()} in {year}", file=sys.stderr)
+        print("=" * 70, file=sys.stderr)
+        if not events:
+            print("  No conjunctions found (< 15 deg).", file=sys.stderr)
+        for ev in events:
+            print(f"  {ev['date_utc']}  dist={ev['min_distance_deg']:.4f} deg  "
+                  f"{ev['sign']}  "
+                  f"P1={ev['planet1_degree']:.2f} deg  "
+                  f"P2={ev['planet2_degree']:.2f} deg  "
+                  f"{ev['nakshatra']}", file=sys.stderr)
+        print("=" * 70, file=sys.stderr)
+
+    status = {"status": "success", "file": out_file,
+              "events_count": len(events)}
+    print(json.dumps(status))
+
+
+# ---------------------------------------------------------------------------
+# Wars (Graha Yuddha) command
+# ---------------------------------------------------------------------------
+
+def cmd_wars(args):
+    """Find planetary wars (graha yuddha) in a date range.
+
+    A planetary war occurs when two visible planets (Mars, Mercury, Jupiter,
+    Venus, Saturn) come within 1 degree of each other.  The winner is the
+    planet with higher latitude (more northerly).
+    """
+    from itertools import combinations
+
+    start_date = datetime.strptime(args.start, "%Y-%m-%d").date()
+    end_date = datetime.strptime(args.end, "%Y-%m-%d").date()
+
+    swe.set_sid_mode(swe.SIDM_LAHIRI)
+
+    war_planets = [
+        ("Mars", swe.MARS),
+        ("Mercury", swe.MERCURY),
+        ("Jupiter", swe.JUPITER),
+        ("Venus", swe.VENUS),
+        ("Saturn", swe.SATURN),
+    ]
+
+    jd_start = swe.julday(start_date.year, start_date.month,
+                           start_date.day, 0.0)
+    jd_end = swe.julday(end_date.year, end_date.month,
+                         end_date.day, 0.0)
+
+    events = []
+
+    for (name_a, id_a), (name_b, id_b) in combinations(war_planets, 2):
+        jd = jd_start
+        in_war = False
+        war_min_dist = 999
+        war_start_jd = None
+
+        while jd <= jd_end:
+            lon_a = _sidereal_lon_at_jd(jd, id_a)
+            lon_b = _sidereal_lon_at_jd(jd, id_b)
+            dist = _angular_distance(lon_a, lon_b)
+
+            if dist < 1.0:
+                if not in_war:
+                    in_war = True
+                    war_start_jd = jd
+                    war_min_dist = dist
+                if dist < war_min_dist:
+                    war_min_dist = dist
+            else:
+                if in_war:
+                    jd_min = _bisect_conjunction_minimum(
+                        max(war_start_jd - 1, jd_start),
+                        min(jd, jd_end + 1),
+                        id_a, id_b)
+                    refined_dist = _angular_distance(
+                        _sidereal_lon_at_jd(jd_min, id_a),
+                        _sidereal_lon_at_jd(jd_min, id_b),
+                    )
+
+                    # Winner = planet with higher latitude (more northerly)
+                    pos_a, _ = swe.calc_ut(jd_min, id_a)
+                    pos_b, _ = swe.calc_ut(jd_min, id_b)
+                    lat_a = pos_a[1]
+                    lat_b = pos_b[1]
+                    winner = name_a if lat_a > lat_b else name_b
+                    loser = name_b if winner == name_a else name_a
+
+                    dt_min = jd_to_utc_datetime(jd_min)
+                    p_a_pos = _position_at_jd(jd_min, id_a)
+                    p_b_pos = _position_at_jd(jd_min, id_b)
+
+                    events.append({
+                        "date_utc": dt_min.strftime("%Y-%m-%dT%H:%M:%S"),
+                        "planet1": name_a,
+                        "planet2": name_b,
+                        "min_distance_deg": round(refined_dist, 4),
+                        "sign": p_a_pos["sign"],
+                        "winner": winner,
+                        "loser": loser,
+                        "planet1_degree": p_a_pos["degree"],
+                        "planet2_degree": p_b_pos["degree"],
+                    })
+                    in_war = False
+                    war_min_dist = 999
+
+            jd += 1.0
+
+        # Handle war still active at end of range
+        if in_war:
+            jd_min = _bisect_conjunction_minimum(
+                max(war_start_jd - 1, jd_start),
+                jd_end, id_a, id_b)
+            refined_dist = _angular_distance(
+                _sidereal_lon_at_jd(jd_min, id_a),
+                _sidereal_lon_at_jd(jd_min, id_b),
+            )
+            pos_a, _ = swe.calc_ut(jd_min, id_a)
+            pos_b, _ = swe.calc_ut(jd_min, id_b)
+            winner = name_a if pos_a[1] > pos_b[1] else name_b
+            loser = name_b if winner == name_a else name_a
+            dt_min = jd_to_utc_datetime(jd_min)
+            p_a_pos = _position_at_jd(jd_min, id_a)
+            p_b_pos = _position_at_jd(jd_min, id_b)
+            events.append({
+                "date_utc": dt_min.strftime("%Y-%m-%dT%H:%M:%S"),
+                "planet1": name_a,
+                "planet2": name_b,
+                "min_distance_deg": round(refined_dist, 4),
+                "sign": p_a_pos["sign"],
+                "winner": winner,
+                "loser": loser,
+                "planet1_degree": p_a_pos["degree"],
+                "planet2_degree": p_b_pos["degree"],
+            })
+
+    events.sort(key=lambda e: e["date_utc"])
+
+    output = {
+        "wars": {
+            "start": str(start_date),
+            "end": str(end_date),
+            "events": events,
+        }
+    }
+
+    wars_dir = os.path.join(WORLD_DATA_DIR, "wars")
+    os.makedirs(wars_dir, exist_ok=True)
+    out_file = os.path.join(wars_dir,
+                            f"{start_date}_{end_date}_wars.yaml")
+    with open(out_file, "w") as f:
+        yaml.dump(output, f, default_flow_style=False, sort_keys=False,
+                  allow_unicode=True)
+
+    if args.print_summary:
+        print("=" * 70, file=sys.stderr)
+        print(f"  GRAHA YUDDHA (Planetary Wars) -- "
+              f"{start_date} to {end_date}", file=sys.stderr)
+        print("=" * 70, file=sys.stderr)
+        if not events:
+            print("  No planetary wars found.", file=sys.stderr)
+        for ev in events:
+            print(f"  {ev['date_utc']}  {ev['planet1']} vs {ev['planet2']}  "
+                  f"dist={ev['min_distance_deg']:.4f} deg  "
+                  f"{ev['sign']}  Winner: {ev['winner']}",
+                  file=sys.stderr)
+        print("=" * 70, file=sys.stderr)
+
+    status = {"status": "success", "file": out_file,
+              "events_count": len(events)}
+    print(json.dumps(status))
+
+
+# ---------------------------------------------------------------------------
+# Retrogrades command
+# ---------------------------------------------------------------------------
+
+def cmd_retrogrades(args):
+    """Find retrograde stations (Rx and D) for planets in a year.
+
+    Tracks daily speed of Mercury, Venus, Mars, Jupiter, Saturn.
+    When speed crosses zero: positive->negative = Rx station,
+    negative->positive = D (direct) station.
+    Bisection narrows to exact JD.
+    """
+    year = args.year
+    swe.set_sid_mode(swe.SIDM_LAHIRI)
+
+    retro_planets = [
+        ("Mercury", swe.MERCURY),
+        ("Venus", swe.VENUS),
+        ("Mars", swe.MARS),
+        ("Jupiter", swe.JUPITER),
+        ("Saturn", swe.SATURN),
+    ]
+
+    jd_start = swe.julday(year, 1, 1, 0.0)
+    jd_end = swe.julday(year + 1, 1, 1, 0.0)
+
+    events = []
+
+    for name, planet_id in retro_planets:
+        jd = jd_start
+        pos_prev, _ = swe.calc_ut(jd, planet_id)
+        speed_prev = pos_prev[3]
+        jd += 1.0
+
+        while jd <= jd_end:
+            pos_cur, _ = swe.calc_ut(jd, planet_id)
+            speed_cur = pos_cur[3]
+
+            if speed_prev > 0 and speed_cur < 0:
+                # Retrograde station (Rx)
+                jd_station = _bisect_speed_zero(jd - 1.0, jd, planet_id)
+                station_pos = _position_at_jd(jd_station, planet_id)
+                dt = jd_to_utc_datetime(jd_station)
+                events.append({
+                    "planet": name,
+                    "station": "Rx",
+                    "date_utc": dt.strftime("%Y-%m-%dT%H:%M:%S"),
+                    "sign": station_pos["sign"],
+                    "degree": station_pos["degree"],
+                    "nakshatra": station_pos["nakshatra"],
+                })
+            elif speed_prev < 0 and speed_cur > 0:
+                # Direct station (D)
+                jd_station = _bisect_speed_zero(jd - 1.0, jd, planet_id)
+                station_pos = _position_at_jd(jd_station, planet_id)
+                dt = jd_to_utc_datetime(jd_station)
+                events.append({
+                    "planet": name,
+                    "station": "D",
+                    "date_utc": dt.strftime("%Y-%m-%dT%H:%M:%S"),
+                    "sign": station_pos["sign"],
+                    "degree": station_pos["degree"],
+                    "nakshatra": station_pos["nakshatra"],
+                })
+
+            speed_prev = speed_cur
+            jd += 1.0
+
+    events.sort(key=lambda e: e["date_utc"])
+
+    output = {
+        "retrogrades": {
+            "year": year,
+            "events": events,
+        }
+    }
+
+    retro_dir = os.path.join(WORLD_DATA_DIR, "retrogrades")
+    os.makedirs(retro_dir, exist_ok=True)
+    out_file = os.path.join(retro_dir, f"{year}_retrogrades.yaml")
+    with open(out_file, "w") as f:
+        yaml.dump(output, f, default_flow_style=False, sort_keys=False,
+                  allow_unicode=True)
+
+    if args.print_summary:
+        print("=" * 70, file=sys.stderr)
+        print(f"  RETROGRADE STATIONS -- {year}", file=sys.stderr)
+        print("=" * 70, file=sys.stderr)
+        if not events:
+            print("  No retrograde stations found.", file=sys.stderr)
+        for ev in events:
+            print(f"  {ev['date_utc']}  {ev['planet']:8s}  "
+                  f"{ev['station']:2s}  {ev['sign']:14s}  "
+                  f"{ev['degree']:7.2f} deg  {ev['nakshatra']}",
+                  file=sys.stderr)
+        print("=" * 70, file=sys.stderr)
+
+    status = {"status": "success", "file": out_file,
+              "events_count": len(events)}
+    print(json.dumps(status))
+
+
+# ---------------------------------------------------------------------------
+# Sign-changes command
+# ---------------------------------------------------------------------------
+
+def cmd_sign_changes(args):
+    """Find when slow planets change sidereal signs in a year.
+
+    Tracks Saturn, Jupiter, Rahu, Ketu, Mars day-by-day.
+    When int(lon/30) changes, bisection narrows to exact JD.
+    Retrograde planets may re-enter old signs; all changes are tracked.
+    """
+    year = args.year
+    swe.set_sid_mode(swe.SIDM_LAHIRI)
+
+    sign_change_planets = [
+        ("Saturn", swe.SATURN, False),
+        ("Jupiter", swe.JUPITER, False),
+        ("Rahu", swe.MEAN_NODE, False),
+        ("Ketu", None, True),
+        ("Mars", swe.MARS, False),
+    ]
+
+    jd_start = swe.julday(year, 1, 1, 0.0)
+    jd_end = swe.julday(year + 1, 1, 1, 0.0)
+
+    events = []
+
+    for name, planet_id, is_ketu in sign_change_planets:
+        jd = jd_start
+
+        if is_ketu:
+            lon_prev = _ketu_sidereal_lon_at_jd(jd)
+        else:
+            lon_prev = _sidereal_lon_at_jd(jd, planet_id)
+        sign_prev = int(lon_prev / 30) % 12
+        jd += 1.0
+
+        while jd <= jd_end:
+            if is_ketu:
+                lon_cur = _ketu_sidereal_lon_at_jd(jd)
+            else:
+                lon_cur = _sidereal_lon_at_jd(jd, planet_id)
+            sign_cur = int(lon_cur / 30) % 12
+
+            if sign_cur != sign_prev:
+                jd_cross = _bisect_sign_change(
+                    jd - 1.0, jd, planet_id, sign_prev, is_ketu)
+                dt = jd_to_utc_datetime(jd_cross)
+                events.append({
+                    "planet": name,
+                    "date_utc": dt.strftime("%Y-%m-%dT%H:%M:%S"),
+                    "from_sign": RASHI_NAMES[sign_prev],
+                    "to_sign": RASHI_NAMES[sign_cur],
+                })
+
+            sign_prev = sign_cur
+            jd += 1.0
+
+    events.sort(key=lambda e: e["date_utc"])
+
+    output = {
+        "sign_changes": {
+            "year": year,
+            "events": events,
+        }
+    }
+
+    sc_dir = os.path.join(WORLD_DATA_DIR, "sign_changes")
+    os.makedirs(sc_dir, exist_ok=True)
+    out_file = os.path.join(sc_dir, f"{year}_sign_changes.yaml")
+    with open(out_file, "w") as f:
+        yaml.dump(output, f, default_flow_style=False, sort_keys=False,
+                  allow_unicode=True)
+
+    if args.print_summary:
+        print("=" * 70, file=sys.stderr)
+        print(f"  SIGN CHANGES (Slow Planets) -- {year}", file=sys.stderr)
+        print("=" * 70, file=sys.stderr)
+        if not events:
+            print("  No sign changes found.", file=sys.stderr)
+        for ev in events:
+            print(f"  {ev['date_utc']}  {ev['planet']:8s}  "
+                  f"{ev['from_sign']:14s}  -->  {ev['to_sign']}",
+                  file=sys.stderr)
+        print("=" * 70, file=sys.stderr)
+
+    status = {"status": "success", "file": out_file,
+              "events_count": len(events)}
+    print(json.dumps(status))
+
+
+# ---------------------------------------------------------------------------
 # Stub commands (to be implemented)
 # ---------------------------------------------------------------------------
 
@@ -1752,37 +2336,64 @@ def parse_args(argv=None):
     # --- conjunction ---
     conj_parser = subparsers.add_parser(
         "conjunction",
-        help="Find planetary conjunctions in a date range",
+        help="Find planetary conjunctions in a year",
     )
-    conj_parser.add_argument("--planets", help="Comma-separated planet pair")
-    conj_parser.add_argument("--start", help="Start date YYYY-MM-DD")
-    conj_parser.add_argument("--end", help="End date YYYY-MM-DD")
+    conj_parser.add_argument(
+        "--planets", required=True,
+        help="Comma-separated planet pair (e.g. saturn,jupiter)",
+    )
+    conj_parser.add_argument(
+        "--year", type=int, default=date.today().year,
+        help="Year to search (default: current year)",
+    )
+    conj_parser.add_argument(
+        "--print", dest="print_summary", action="store_true",
+        help="Print human-readable summary to stderr",
+    )
 
     # --- wars ---
     wars_parser = subparsers.add_parser(
         "wars",
         help="Find graha yuddha (planetary wars) in a date range",
     )
-    wars_parser.add_argument("--start", help="Start date YYYY-MM-DD")
-    wars_parser.add_argument("--end", help="End date YYYY-MM-DD")
+    wars_parser.add_argument(
+        "--start", required=True, help="Start date YYYY-MM-DD",
+    )
+    wars_parser.add_argument(
+        "--end", required=True, help="End date YYYY-MM-DD",
+    )
+    wars_parser.add_argument(
+        "--print", dest="print_summary", action="store_true",
+        help="Print human-readable summary to stderr",
+    )
 
     # --- retrogrades ---
     retro_parser = subparsers.add_parser(
         "retrogrades",
-        help="List retrograde periods for a planet in a date range",
+        help="List retrograde stations for all planets in a year",
     )
-    retro_parser.add_argument("--planet", help="Planet name")
-    retro_parser.add_argument("--start", help="Start date YYYY-MM-DD")
-    retro_parser.add_argument("--end", help="End date YYYY-MM-DD")
+    retro_parser.add_argument(
+        "--year", type=int, default=date.today().year,
+        help="Year to search (default: current year)",
+    )
+    retro_parser.add_argument(
+        "--print", dest="print_summary", action="store_true",
+        help="Print human-readable summary to stderr",
+    )
 
     # --- sign-changes ---
     sc_parser = subparsers.add_parser(
         "sign-changes",
-        help="List rasi transit dates for a planet in a date range",
+        help="List sign changes for slow planets in a year",
     )
-    sc_parser.add_argument("--planet", help="Planet name")
-    sc_parser.add_argument("--start", help="Start date YYYY-MM-DD")
-    sc_parser.add_argument("--end", help="End date YYYY-MM-DD")
+    sc_parser.add_argument(
+        "--year", type=int, default=date.today().year,
+        help="Year to search (default: current year)",
+    )
+    sc_parser.add_argument(
+        "--print", dest="print_summary", action="store_true",
+        help="Print human-readable summary to stderr",
+    )
 
     # --- panchanga ---
     panch_parser = subparsers.add_parser(
@@ -1843,10 +2454,10 @@ COMMAND_DISPATCH = {
     "eclipse": cmd_eclipse,
     "eclipses": cmd_eclipses,
     "country": cmd_country,
-    "conjunction": cmd_stub,
-    "wars": cmd_stub,
-    "retrogrades": cmd_stub,
-    "sign-changes": cmd_stub,
+    "conjunction": cmd_conjunction,
+    "wars": cmd_wars,
+    "retrogrades": cmd_retrogrades,
+    "sign-changes": cmd_sign_changes,
     "panchanga": cmd_panchanga,
     "ashtakavarga": cmd_stub,
     "sbc": cmd_stub,
