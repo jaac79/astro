@@ -1,0 +1,17 @@
+entity:
+  name: India
+  type: nation
+  foundation_event: Independence
+  date: '1947-08-15'
+  time: '00:00:00'
+  timezone: UTC+5:30
+  place:
+    city: New Delhi
+    latitude: 28.6139
+    longitude: 77.2090
+  notes: "Midnight chart — official transfer of power."
+  alternate_times:
+    - time: '00:00:00'
+      source: "Official midnight transfer of power (most widely used)"
+    - time: '08:15:00'
+      source: "Nehru's flag hoisting ceremony"

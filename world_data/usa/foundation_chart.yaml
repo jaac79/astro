@@ -1,0 +1,20 @@
+entity:
+  name: United States of America
+  type: nation
+  foundation_event: Declaration of Independence
+  date: '1776-07-04'
+  time: '17:10:00'
+  timezone: UTC-5:00
+  place:
+    city: Philadelphia
+    state: Pennsylvania
+    latitude: 39.9526
+    longitude: -75.1652
+  notes: "Sibly chart (5:10 PM LMT) — most commonly used."
+  alternate_times:
+    - time: '17:10:00'
+      source: "Ebenezer Sibly chart (most popular)"
+    - time: '02:13:00'
+      source: "Gemini rising chart"
+    - time: '12:00:00'
+      source: "Noon chart (Sun on MC)"
