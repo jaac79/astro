@@ -1588,8 +1588,9 @@ def print_country_chart_summary(entity, lagna, positions, dasha,
         bd = computed_analysis.get("badhaka", {})
         if bd:
             out.write(
-                f"  Badhaka: {bd.get('badhaka_sthana', '?')} "
-                f"(lord: {bd.get('lord', '?')})\n"
+                f"  Badhaka: H{bd.get('badhaka_sthana', '?')} "
+                f"{bd.get('badhaka_rasi', '')} "
+                f"(lord: {bd.get('badhaka_lord', '?')})\n"
             )
         marakas = computed_analysis.get("marakas", [])
         if marakas:
@@ -1601,12 +1602,14 @@ def print_country_chart_summary(entity, lagna, positions, dasha,
                 maraka_strs = [str(m) for m in marakas]
             out.write(f"  Marakas: {', '.join(maraka_strs)}\n")
         yogas = computed_analysis.get("yogas", [])
-        if yogas:
+        if yogas and yogas != "none detected":
             out.write("  Yogas:\n")
             for y in yogas:
                 if isinstance(y, dict):
-                    out.write(f"    - {y.get('name', '?')}: "
-                              f"{y.get('description', '')}\n")
+                    strength = y.get("strength", "")
+                    notes = y.get("notes", y.get("description", ""))
+                    out.write(f"    - {y.get('name', '?')} [{strength}]: "
+                              f"{notes}\n")
                 else:
                     out.write(f"    - {y}\n")
         strengths = computed_analysis.get("key_strengths", [])

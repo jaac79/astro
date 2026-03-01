@@ -10,11 +10,227 @@ entity:
     state: Pennsylvania
     latitude: 39.9526
     longitude: -75.1652
-  notes: "Sibly chart (5:10 PM LMT) — most commonly used."
+  notes: Sibly chart (5:10 PM LMT) — most commonly used.
   alternate_times:
-    - time: '17:10:00'
-      source: "Ebenezer Sibly chart (most popular)"
-    - time: '02:13:00'
-      source: "Gemini rising chart"
-    - time: '12:00:00'
-      source: "Noon chart (Sun on MC)"
+  - time: '17:10:00'
+    source: Ebenezer Sibly chart (most popular)
+  - time: 02:13:00
+    source: Gemini rising chart
+  - time: '12:00:00'
+    source: Noon chart (Sun on MC)
+lagna:
+  rasi: Viruchikam
+  degree: 21.4792
+  nakshatra: Jyeshtha
+  pada: 2
+chandra:
+  rasi: Kumbham
+  degree: 6.4287
+  nakshatra: Dhanishta
+  pada: 4
+planetary_positions:
+  surya:
+    rasi: Mithunam
+    degree: 22.5855
+    nakshatra: Punarvasu
+    pada: 1
+    retrograde: false
+    house: 8
+    dignity: neutral
+  chandra:
+    rasi: Kumbham
+    degree: 6.4287
+    nakshatra: Dhanishta
+    pada: 4
+    retrograde: false
+    house: 4
+    dignity: neutral
+  mangal:
+    rasi: Mithunam
+    degree: 0.6386
+    nakshatra: Mrigashira
+    pada: 3
+    retrograde: false
+    house: 8
+    dignity: enemy
+  budha:
+    rasi: Katakam
+    degree: 3.4607
+    nakshatra: Pushya
+    pada: 1
+    retrograde: true
+    house: 9
+    dignity: enemy
+  guru:
+    rasi: Mithunam
+    degree: 15.1965
+    nakshatra: Ardra
+    pada: 3
+    retrograde: false
+    house: 8
+    dignity: enemy
+  shukra:
+    rasi: Mithunam
+    degree: 12.3676
+    nakshatra: Ardra
+    pada: 2
+    retrograde: false
+    house: 8
+    dignity: friend
+  shani:
+    rasi: Kanni
+    degree: 24.0688
+    nakshatra: Chitra
+    pada: 1
+    retrograde: false
+    house: 11
+    dignity: friend
+  rahu:
+    rasi: Katakam
+    degree: 16.855
+    nakshatra: Ashlesha
+    pada: 1
+    retrograde: true
+    house: 9
+  ketu:
+    rasi: Makaram
+    degree: 16.855
+    nakshatra: Shravana
+    pada: 3
+    retrograde: true
+    house: 3
+vimshottari_dasha:
+  balance_at_birth:
+    lord: Mars
+    remaining_years: 0
+    remaining_months: 1
+    remaining_days: 15
+  sequence:
+  - lord: Mars
+    start: '1776-07-04'
+    end: '1776-08-18'
+  - lord: Rahu
+    start: '1776-08-18'
+    end: '1794-08-18'
+  - lord: Jupiter
+    start: '1794-08-18'
+    end: '1810-08-19'
+  - lord: Saturn
+    start: '1810-08-19'
+    end: '1829-08-18'
+  - lord: Mercury
+    start: '1829-08-18'
+    end: '1846-08-18'
+  - lord: Ketu
+    start: '1846-08-18'
+    end: '1853-08-17'
+  - lord: Venus
+    start: '1853-08-17'
+    end: '1873-08-17'
+  - lord: Sun
+    start: '1873-08-17'
+    end: '1879-08-17'
+  - lord: Moon
+    start: '1879-08-17'
+    end: '1889-08-16'
+house_summary:
+  house_1:
+    rasi: Viruchikam
+    planets: []
+  house_2:
+    rasi: Dhanusu
+    planets: []
+  house_3:
+    rasi: Makaram
+    planets:
+    - Ketu
+  house_4:
+    rasi: Kumbham
+    planets:
+    - Moon
+  house_5:
+    rasi: Meenam
+    planets: []
+  house_6:
+    rasi: Mesham
+    planets: []
+  house_7:
+    rasi: Rishabham
+    planets: []
+  house_8:
+    rasi: Mithunam
+    planets:
+    - Sun
+    - Mars
+    - Jupiter
+    - Venus
+  house_9:
+    rasi: Katakam
+    planets:
+    - Mercury
+    - Rahu
+  house_10:
+    rasi: Simham
+    planets: []
+  house_11:
+    rasi: Kanni
+    planets:
+    - Saturn
+  house_12:
+    rasi: Thulam
+    planets: []
+notes: 'Ayanamsa: Lahiri (20.736765)
+
+  Node type: Mean Node
+
+  House system: Whole Sign
+
+  Computed by medini_calc.py'
+computed_analysis:
+  functional_nature:
+    yogakarakas: []
+    functional_benefics:
+    - Moon
+    - Jupiter
+    functional_malefics:
+    - Mercury
+    - Venus
+    - Saturn
+    functional_neutrals:
+    - Sun
+    - Mars
+  badhaka:
+    lagna_sign_type: fixed
+    badhaka_sthana: 9
+    badhaka_rasi: Katakam
+    badhaka_lord: Moon
+  marakas:
+  - planet: Venus
+    reason: 7th lord (Rishabham)
+  - planet: Jupiter
+    reason: 2nd lord (Dhanusu)
+  neecha_bhanga: none
+  yogas:
+  - name: Vipareeta Raja Yoga
+    planets:
+    - Mars
+    house: 8
+    strength: MODERATE
+    notes: Mars (lord of H6) in H8 (dusthana in dusthana).
+  - name: Vipareeta Raja Yoga
+    planets:
+    - Venus
+    house: 8
+    strength: MODERATE
+    notes: Venus (lord of H12) in H8 (dusthana in dusthana).
+  digbala:
+  - planet: Moon
+    house: 4
+  key_strengths:
+  - 'Moon: digbala in H4'
+  - Vipareeta Raja Yoga (Mars)
+  - Vipareeta Raja Yoga (Venus)
+  key_vulnerabilities:
+  - 'Mars: in enemy sign (Mithunam)'
+  - 'Mercury: in enemy sign (Katakam)'
+  - 'Jupiter: in enemy sign (Mithunam)'

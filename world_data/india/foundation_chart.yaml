@@ -3,15 +3,242 @@ entity:
   type: nation
   foundation_event: Independence
   date: '1947-08-15'
-  time: '00:00:00'
+  time: 00:00:00
   timezone: UTC+5:30
   place:
     city: New Delhi
     latitude: 28.6139
-    longitude: 77.2090
-  notes: "Midnight chart — official transfer of power."
+    longitude: 77.209
+  notes: Midnight chart — official transfer of power.
   alternate_times:
-    - time: '00:00:00'
-      source: "Official midnight transfer of power (most widely used)"
-    - time: '08:15:00'
-      source: "Nehru's flag hoisting ceremony"
+  - time: 00:00:00
+    source: Official midnight transfer of power (most widely used)
+  - time: 08:15:00
+    source: Nehru's flag hoisting ceremony
+lagna:
+  rasi: Rishabham
+  degree: 7.7286
+  nakshatra: Krittika
+  pada: 4
+chandra:
+  rasi: Katakam
+  degree: 3.9799
+  nakshatra: Pushya
+  pada: 1
+planetary_positions:
+  surya:
+    rasi: Katakam
+    degree: 27.9854
+    nakshatra: Ashlesha
+    pada: 4
+    retrograde: false
+    house: 3
+    dignity: friend
+  chandra:
+    rasi: Katakam
+    degree: 3.9799
+    nakshatra: Pushya
+    pada: 1
+    retrograde: false
+    house: 3
+    dignity: own
+  mangal:
+    rasi: Mithunam
+    degree: 7.4526
+    nakshatra: Ardra
+    pada: 1
+    retrograde: false
+    house: 2
+    dignity: enemy
+  budha:
+    rasi: Katakam
+    degree: 13.6706
+    nakshatra: Pushya
+    pada: 4
+    retrograde: false
+    house: 3
+    dignity: enemy
+  guru:
+    rasi: Thulam
+    degree: 25.8741
+    nakshatra: Vishakha
+    pada: 2
+    retrograde: false
+    house: 6
+    dignity: enemy
+  shukra:
+    rasi: Katakam
+    degree: 22.5576
+    nakshatra: Ashlesha
+    pada: 2
+    retrograde: false
+    house: 3
+    dignity: enemy
+  shani:
+    rasi: Katakam
+    degree: 20.4694
+    nakshatra: Ashlesha
+    pada: 2
+    retrograde: false
+    house: 3
+    dignity: enemy
+  rahu:
+    rasi: Rishabham
+    degree: 5.0661
+    nakshatra: Krittika
+    pada: 3
+    retrograde: true
+    house: 1
+    dignity: exalted
+  ketu:
+    rasi: Viruchikam
+    degree: 5.0661
+    nakshatra: Anuradha
+    pada: 1
+    retrograde: true
+    house: 7
+    dignity: exalted
+vimshottari_dasha:
+  balance_at_birth:
+    lord: Saturn
+    remaining_years: 18
+    remaining_months: 0
+    remaining_days: 28
+  sequence:
+  - lord: Saturn
+    start: '1947-08-15'
+    end: '1965-09-12'
+  - lord: Mercury
+    start: '1965-09-12'
+    end: '1982-09-12'
+  - lord: Ketu
+    start: '1982-09-12'
+    end: '1989-09-11'
+  - lord: Venus
+    start: '1989-09-11'
+    end: '2009-09-11'
+  - lord: Sun
+    start: '2009-09-11'
+    end: '2015-09-11'
+  - lord: Moon
+    start: '2015-09-11'
+    end: '2025-09-10'
+  - lord: Mars
+    start: '2025-09-10'
+    end: '2032-09-09'
+  - lord: Rahu
+    start: '2032-09-09'
+    end: '2050-09-09'
+  - lord: Jupiter
+    start: '2050-09-09'
+    end: '2066-09-09'
+house_summary:
+  house_1:
+    rasi: Rishabham
+    planets:
+    - Rahu
+  house_2:
+    rasi: Mithunam
+    planets:
+    - Mars
+  house_3:
+    rasi: Katakam
+    planets:
+    - Sun
+    - Moon
+    - Mercury
+    - Venus
+    - Saturn
+  house_4:
+    rasi: Simham
+    planets: []
+  house_5:
+    rasi: Kanni
+    planets: []
+  house_6:
+    rasi: Thulam
+    planets:
+    - Jupiter
+  house_7:
+    rasi: Viruchikam
+    planets:
+    - Ketu
+  house_8:
+    rasi: Dhanusu
+    planets: []
+  house_9:
+    rasi: Makaram
+    planets: []
+  house_10:
+    rasi: Kumbham
+    planets: []
+  house_11:
+    rasi: Meenam
+    planets: []
+  house_12:
+    rasi: Mesham
+    planets: []
+notes: 'Ayanamsa: Lahiri (23.125451)
+
+  Node type: Mean Node
+
+  House system: Whole Sign
+
+  Computed by medini_calc.py'
+computed_analysis:
+  functional_nature:
+    yogakarakas:
+    - Saturn
+    functional_benefics:
+    - Sun
+    - Mercury
+    - Saturn
+    functional_malefics:
+    - Moon
+    - Jupiter
+    - Venus
+    functional_neutrals:
+    - Mars
+  badhaka:
+    lagna_sign_type: fixed
+    badhaka_sthana: 9
+    badhaka_rasi: Makaram
+    badhaka_lord: Saturn
+  marakas:
+  - planet: Mars
+    reason: 7th lord (Viruchikam)
+  - planet: Mercury
+    reason: 2nd lord (Mithunam)
+  neecha_bhanga: none
+  yogas:
+  - name: Budha-Aditya Yoga
+    planets:
+    - Sun
+    - Mercury
+    house: 3
+    strength: STRONG
+    notes: Sun-Mercury conjunction in H3.
+  - name: Gaja-Kesari Yoga
+    planets:
+    - Jupiter
+    - Moon
+    house: 6
+    strength: MODERATE
+    notes: Jupiter in kendra from Moon (house 4 from Moon).
+  - name: Vipareeta Raja Yoga
+    planets:
+    - Jupiter
+    house: 6
+    strength: MODERATE
+    notes: Jupiter (lord of H8) in H6 (dusthana in dusthana).
+  digbala: none
+  key_strengths:
+  - Budha-Aditya Yoga (Sun, Mercury)
+  - Gaja-Kesari Yoga (Jupiter, Moon)
+  - Vipareeta Raja Yoga (Jupiter)
+  key_vulnerabilities:
+  - 'Mars: in enemy sign (Mithunam)'
+  - 'Mercury: in enemy sign (Katakam)'
+  - 'Jupiter: in enemy sign (Thulam)'
+  - 'Venus: in enemy sign (Katakam)'
+  - 'Saturn: in enemy sign (Katakam)'
