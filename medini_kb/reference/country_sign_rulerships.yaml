@@ -1,0 +1,376 @@
+# Country-Sign Rulerships for Medini (Mundane) Jyotish
+# Maps zodiac signs (rasis) to countries and regions
+# Used to determine which nations are affected by eclipses, transits, and planetary events
+
+source: >
+  Varahamihira (Brihat Samhita, ch. 14 Kurma Vibhaga),
+  B.V. Raman (Mundane Astrology, Hindu Predictive Astrology),
+  Ptolemy (Tetrabiblos Book II), modern Medini Jyotish texts
+
+notes: >
+  Classical texts (Brihat Samhita, 6th century CE) mapped rasis to regions known at
+  that time using the Koorma Chakra (tortoise diagram) framework, which divides the
+  landmass into 9 directional zones governed by 27 nakshatras. Varahamihira's regions
+  correspond to ancient Indian subcontinent geography (janapadas). Western mundane
+  astrology follows Ptolemy's Tetrabiblos. Modern Medini astrologers have extended
+  these mappings to contemporary nations. Where classical and modern disagree, both
+  are listed. India's primary rulership is debated — Makaram (Capricorn) per many
+  North Indian Medini astrologers following the Koorma Chakra's northwest mapping,
+  though B.V. Raman and South Indian astrologers argue Kanni (Virgo) based on the
+  Koorma Chakra's south direction. The debate likely arises because different
+  directional sectors of the Koorma Chakra correspond to different rasis, and India
+  spans multiple sectors. Both attributions are noted under their respective signs.
+
+india_rulership_debate:
+  summary: >
+    The zodiac sign of India is contested in Medini Jyotish. No definitive sloka
+    in Brihat Samhita explicitly assigns Makaram to India, yet the tradition persists.
+  makaram_capricorn:
+    supporters: "North Indian astrologers, traditional Medini practice"
+    reasoning: >
+      The Koorma Chakra's northwest direction (Uttarashada, Sravana, Dhanishta
+      nakshatras) falls in Makaram. North and northwest India's geography and the
+      independence chart (15 Aug 1947) with Makaram lagna support this view.
+    independence_chart: "15 Aug 1947, 00:00 IST, Delhi — Makaram lagna"
+  kanni_virgo:
+    supporters: "B.V. Raman, South Indian astrologers"
+    reasoning: >
+      The Koorma Chakra's south direction (Uttaraphalguni, Hasta, Chitra nakshatras)
+      falls in Kanni. B.V. Raman used this for his successful mundane predictions.
+      The Republic Day chart (26 Jan 1950, 10:18 AM IST, Delhi) gives Meena lagna
+      but with significant Kanni involvement.
+  practical_note: >
+    For worldastro predictions, consider both signs when analysing transits and
+    eclipses affecting India. Events in Makaram or Kanni should both be examined.
+
+koorma_chakra:
+  description: >
+    The Koorma Chakra from Brihat Samhita (ch. 14) maps 27 nakshatras to 9
+    directional zones on a tortoise-shaped diagram. Each zone of 3 nakshatras
+    falls within specific rasis, linking geography to the zodiac.
+  mappings:
+    centre:
+      nakshatras: ["Krittika", "Rohini", "Mrigashira"]
+      rasis: ["Rishabham (Taurus)", "Mithunam (Gemini)"]
+      regions: "Madhyadesha — Rajasthan, Haryana, western UP, Madhya Pradesh, Chhattisgarh"
+    east:
+      nakshatras: ["Ardra", "Punarvasu", "Pushya"]
+      rasis: ["Mithunam (Gemini)", "Katakam (Cancer)"]
+      regions: "Bihar, Jharkhand, Bengal, Assam, northeast India, Bangladesh"
+    southeast:
+      nakshatras: ["Ashlesha", "Magha", "Purvaphalguni"]
+      rasis: ["Katakam (Cancer)", "Simham (Leo)"]
+      regions: "Orissa, Andhra Pradesh, southern West Bengal"
+    south:
+      nakshatras: ["Uttaraphalguni", "Hasta", "Chitra"]
+      rasis: ["Simham (Leo)", "Kanni (Virgo)"]
+      regions: "Tamil Nadu, Kerala, Karnataka, Sri Lanka, Konkan"
+    southwest:
+      nakshatras: ["Swati", "Vishakha", "Anuradha"]
+      rasis: ["Thulam (Libra)", "Vrischikam (Scorpio)"]
+      regions: "Goa, southwestern Maharashtra, coastal Karnataka"
+    west:
+      nakshatras: ["Jyeshtha", "Moola", "Purvashada"]
+      rasis: ["Vrischikam (Scorpio)", "Dhanusu (Sagittarius)"]
+      regions: "Western Maharashtra, Gujarat, Sindh, Baluchistan"
+    northwest:
+      nakshatras: ["Uttarashada", "Sravana", "Dhanishta"]
+      rasis: ["Dhanusu (Sagittarius)", "Makaram (Capricorn)"]
+      regions: "Punjab, Kashmir, Afghanistan, northern Pakistan, parts of Rajasthan"
+    north:
+      nakshatras: ["Satabhisha", "Purvabhadra", "Uttarabhadra"]
+      rasis: ["Kumbham (Aquarius)", "Meenam (Pisces)"]
+      regions: "Central Asia, northwest India, Gandhara, Kamboja"
+    northeast:
+      nakshatras: ["Revati", "Ashvini", "Bharani"]
+      rasis: ["Meenam (Pisces)", "Mesham (Aries)"]
+      regions: "Nepal, Sikkim, Bhutan, Tibet, China, Burma, Arunachal Pradesh"
+
+rulerships:
+  mesham:
+    english: Aries
+    lord: Mars
+    classical_regions:
+      - "Northeast in Koorma Chakra (Revati, Ashvini, Bharani nakshatras)"
+      - "Nepal, Tibet, China, Burma (Brihat Samhita, Kurma Vibhaga)"
+      - "Panchala, Kirata regions (mountainous and forested lands)"
+      - "Countries east of India, regions of mountains"
+    modern_countries:
+      - England
+      - Germany
+      - Denmark
+      - Poland
+      - Israel
+      - Palestine
+      - Japan
+      - Syria
+    notes: >
+      Fire sign ruled by Mars — nations known for military strength, pioneering
+      spirit, and independence movements. Classical association with mountainous
+      eastern regions aligns with Mars's aggressive, pioneering nature.
+
+  rishabham:
+    english: Taurus
+    lord: Venus
+    classical_regions:
+      - "Centre in Koorma Chakra (Krittika, Rohini nakshatras)"
+      - "Madhyadesha — heartland of ancient India"
+      - "Aparanta, Kaikeya (Brihat Samhita)"
+      - "Agricultural plains and fertile river valleys"
+    modern_countries:
+      - Ireland
+      - Cyprus
+      - Iran
+      - Switzerland
+      - Australia
+      - Georgia
+      - parts of Russia
+      - Greenland
+    notes: >
+      Earth sign ruled by Venus — nations with agricultural wealth, natural beauty,
+      and material stability. The Koorma Chakra places Rishabham in the fertile
+      central heartland, consistent with Taurus's association with agriculture.
+
+  mithunam:
+    english: Gemini
+    lord: Mercury
+    classical_regions:
+      - "Centre to East in Koorma Chakra (Mrigashira, Ardra nakshatras)"
+      - "Trade routes, commercial centres, learned cities"
+      - "Regions known for commerce and scholarship"
+    modern_countries:
+      - Belgium
+      - Wales
+      - Iceland
+      - Sardinia
+      - Morocco
+      - Norway
+      - Sweden
+      - "USA (eastern seaboard)"
+    notes: >
+      Air sign ruled by Mercury — nations with strong trade, communication, and
+      intellectual traditions. USA is associated with both Mithunam and Katakam;
+      the eastern seaboard's mercantile origins align with Gemini, while the
+      national chart (4 Jul 1776) has Cancer emphasis.
+
+  katakam:
+    english: Cancer
+    lord: Moon
+    classical_regions:
+      - "East in Koorma Chakra (Punarvasu, Pushya nakshatras)"
+      - "Bengal, Bihar, Kalinga (eastern coastal India)"
+      - "Maritime and riverine regions"
+      - "Lands near the sea, fertile deltas"
+    modern_countries:
+      - "USA (primary attribution)"
+      - Scotland
+      - Holland (Netherlands)
+      - Paraguay
+      - New Zealand
+      - Canada
+      - Algeria
+      - Colombia
+    notes: >
+      Water sign ruled by Moon — nations with strong maritime traditions, homeland
+      sentiment, and nurturing culture. USA's independence (4 Jul 1776) occurred
+      with Sun in Cancer. The 1781 Articles of Confederation chart has 20 deg
+      Cancer rising per B.V. Raman.
+
+  simham:
+    english: Leo
+    lord: Sun
+    classical_regions:
+      - "Southeast in Koorma Chakra (Magha, Purvaphalguni nakshatras)"
+      - "Orissa, Andhra, Kalinga (Brihat Samhita)"
+      - "Kingdoms of power and royal authority"
+      - "Mountainous and forested regions with strong rulers"
+    modern_countries:
+      - France
+      - Italy
+      - Romania
+      - Sicily
+      - Madagascar
+      - Indonesia
+      - Malaysia
+      - Jamaica
+    notes: >
+      Fire sign ruled by Sun — nations with strong central authority, cultural
+      grandeur, and historical empires. France's association with Leo reflects
+      its history of monarchy and centralized power (the Sun King, Louis XIV).
+
+  kanni:
+    english: Virgo
+    lord: Mercury
+    classical_regions:
+      - "South in Koorma Chakra (Uttaraphalguni, Hasta, Chitra nakshatras)"
+      - "Tamil Nadu, Kerala, Karnataka, Konkan, Kanchi"
+      - "Sri Lanka (Simhala)"
+      - "Southern India broadly (B.V. Raman's basis for India-Virgo)"
+    modern_countries:
+      - "India (per B.V. Raman, South Indian tradition)"
+      - Brazil
+      - Greece
+      - Switzerland
+      - Turkey
+      - Crete
+      - Uruguay
+      - Croatia
+    notes: >
+      Earth sign ruled by Mercury — nations with analytical traditions, service
+      orientation, and agricultural precision. India's attribution to Kanni is
+      supported by B.V. Raman and aligns with the Koorma Chakra's south direction.
+      See india_rulership_debate section for full discussion.
+
+  thulam:
+    english: Libra
+    lord: Venus
+    classical_regions:
+      - "Southwest in Koorma Chakra (Swati, Vishakha nakshatras)"
+      - "Goa, southwestern Maharashtra"
+      - "Regions known for trade, diplomacy, and cultural refinement"
+      - "Port cities and cosmopolitan centres"
+    modern_countries:
+      - China
+      - Japan
+      - Argentina
+      - Austria
+      - Burma (Myanmar)
+      - Canada
+      - Saudi Arabia
+      - Nigeria
+    notes: >
+      Air sign ruled by Venus — nations known for diplomacy, trade balance, and
+      cultural sophistication. China's dual Libra/Cancer attribution reflects its
+      vast geography and complex astrological profile.
+
+  vrischikam:
+    english: Scorpio
+    lord: Mars
+    classical_regions:
+      - "Southwest to West in Koorma Chakra (Anuradha, Jyeshtha nakshatras)"
+      - "Coastal western India, strategic waterways"
+      - "Regions with hidden power, mineral wealth"
+      - "Desert and arid lands with underground resources"
+    modern_countries:
+      - Morocco
+      - Norway
+      - Algeria
+      - Korea
+      - Turkey
+      - Philippines
+      - Latvia
+      - Angola
+    notes: >
+      Water sign ruled by Mars — nations with strategic depth, resource wealth
+      (especially underground), and transformative histories. The association
+      with secretive power and regeneration is characteristic.
+
+  dhanusu:
+    english: Sagittarius
+    lord: Jupiter
+    classical_regions:
+      - "West to Northwest in Koorma Chakra (Moola, Purvashada nakshatras)"
+      - "Western Maharashtra, Gujarat, Sindh"
+      - "Regions of religious learning and pilgrimage"
+      - "Expansive territories, open grasslands"
+    modern_countries:
+      - Spain
+      - Australia
+      - Chile
+      - Hungary
+      - Saudi Arabia
+      - Singapore
+      - South Africa
+      - Bangladesh
+    notes: >
+      Fire sign ruled by Jupiter — nations with expansive territory, philosophical
+      or religious heritage, and exploratory spirit. Spain and Australia reflect
+      the Sagittarian themes of exploration and vast lands.
+
+  makaram:
+    english: Capricorn
+    lord: Saturn
+    classical_regions:
+      - "Northwest in Koorma Chakra (Uttarashada, Sravana, Dhanishta nakshatras)"
+      - "Punjab, Kashmir, Afghanistan, northern Pakistan"
+      - "Regions of endurance, harsh climate, structured governance"
+      - "Bharatavarsha broadly (traditional North Indian attribution for India)"
+    modern_countries:
+      - "India (per North Indian tradition, independence chart)"
+      - Mexico
+      - Great Britain
+      - Bulgaria
+      - Afghanistan
+      - Albania
+      - Bosnia
+      - Greece
+    notes: >
+      Earth sign ruled by Saturn — nations with ancient civilisation, structured
+      governance, and enduring traditions. India's attribution to Makaram is the
+      dominant North Indian view and is supported by the independence chart
+      (15 Aug 1947, Makaram lagna). See india_rulership_debate section.
+
+  kumbham:
+    english: Aquarius
+    lord: Saturn
+    classical_regions:
+      - "North in Koorma Chakra (Satabhisha, Purvabhadra nakshatras)"
+      - "Central Asia, Gandhara, Kamboja"
+      - "Regions of innovation and unconventional governance"
+      - "Cold northern territories, frontier lands"
+    modern_countries:
+      - Russia
+      - Sweden
+      - Finland
+      - Iran
+      - Ethiopia
+      - Sri Lanka
+      - New Zealand
+      - Vatican City
+    notes: >
+      Air sign ruled by Saturn — nations with revolutionary traditions, communal
+      ideals, and progressive (sometimes radical) governance. Russia's strong
+      Aquarian attribution reflects its history of revolution and collectivism.
+
+  meenam:
+    english: Pisces
+    lord: Jupiter
+    classical_regions:
+      - "North to Northeast in Koorma Chakra (Uttarabhadra, Revati nakshatras)"
+      - "Regions near the sea, sacred rivers"
+      - "Lands of spiritual retreat and mysticism"
+      - "Islands and coastal territories"
+    modern_countries:
+      - Portugal
+      - Egypt
+      - Tunisia
+      - Mauritius
+      - Samoa
+      - Normandy (France)
+      - Scandinavia
+      - Namibia
+    notes: >
+      Water sign ruled by Jupiter — nations with maritime traditions, spiritual
+      depth, and artistic heritage. Portugal's Age of Discovery and Egypt's
+      mystical civilisation both resonate with Piscean themes.
+
+# Usage guidance for worldastro agent
+usage:
+  eclipse_analysis: >
+    When an eclipse occurs in a particular rasi, check which countries are ruled
+    by that rasi. Those nations are most likely to experience the eclipse's effects
+    (political upheaval, natural events, economic shifts) within the following
+    6-12 months for solar eclipses, 3-6 months for lunar eclipses.
+  transit_analysis: >
+    Slow-moving planets (Saturn, Jupiter, Rahu/Ketu) transiting through a rasi
+    bring sustained effects to the countries ruled by that rasi. Saturn transits
+    (~2.5 years per sign) are especially significant in Medini Jyotish.
+  conjunction_analysis: >
+    Major planetary conjunctions in a rasi intensify effects on the countries
+    ruled by that sign. The closer the conjunction to exact degrees, the stronger
+    the effect.
+  multiple_attributions: >
+    Some countries appear under multiple signs (e.g., India under Makaram and
+    Kanni, USA under Katakam and Mithunam). In such cases, analyse transits
+    through ALL associated signs for a complete picture. The primary attribution
+    carries more weight, but secondary signs should not be ignored.
