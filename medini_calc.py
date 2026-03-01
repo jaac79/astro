@@ -2211,6 +2211,658 @@ def cmd_sign_changes(args):
 
 
 # ---------------------------------------------------------------------------
+# Ashtakavarga command — BAV and SAV computation
+# ---------------------------------------------------------------------------
+
+# Bhinnashtakavarga (BAV) tables: benefic houses from each reference
+# Source: Parasara (BPHS), Chapter 12 of reference book
+# For each planet P, BAV_TABLES[P] = dict mapping each reference (planet or
+# "lagna") to the list of house numbers (1-12) where P receives a bindu.
+# Keys use lowercase planet names matching yaml_key convention.
+
+BAV_TABLES = {
+    "surya": {
+        "surya":   [1, 2, 4, 7, 8, 9, 10, 11],
+        "chandra": [3, 6, 10, 11],
+        "mangal":  [1, 2, 4, 7, 8, 9, 10, 11],
+        "budha":   [3, 5, 6, 9, 10, 11, 12],
+        "guru":    [5, 6, 9, 11],
+        "shukra":  [6, 7, 12],
+        "shani":   [1, 2, 4, 7, 8, 9, 10, 11],
+        "lagna":   [3, 4, 6, 10, 11, 12],
+    },
+    "chandra": {
+        "surya":   [3, 6, 7, 8, 10, 11],
+        "chandra": [1, 3, 6, 7, 9, 10, 11],
+        "mangal":  [2, 3, 5, 6, 10, 11],
+        "budha":   [1, 3, 4, 5, 7, 8, 10, 11],
+        "guru":    [1, 2, 4, 7, 8, 10, 11],
+        "shukra":  [3, 4, 5, 7, 9, 10, 11],
+        "shani":   [3, 5, 6, 11],
+        "lagna":   [3, 6, 10, 11],
+    },
+    "mangal": {
+        "surya":   [3, 5, 6, 10, 11],
+        "chandra": [3, 6, 11],
+        "mangal":  [1, 2, 4, 7, 8, 10, 11],
+        "budha":   [3, 5, 6, 11],
+        "guru":    [6, 10, 11, 12],
+        "shukra":  [6, 8, 11, 12],
+        "shani":   [1, 4, 7, 8, 9, 10, 11],
+        "lagna":   [1, 3, 6, 10, 11],
+    },
+    "budha": {
+        "surya":   [5, 6, 9, 11, 12],
+        "chandra": [2, 4, 8, 10, 11],
+        "mangal":  [1, 2, 4, 7, 8, 9, 10, 11],
+        "budha":   [1, 3, 5, 6, 9, 10, 11, 12],
+        "guru":    [6, 8, 11, 12],
+        "shukra":  [1, 2, 3, 4, 5, 8, 9, 11],
+        "shani":   [1, 2, 4, 7, 8, 9, 10, 11],
+        "lagna":   [1, 2, 4, 6, 8, 10, 11],
+    },
+    "guru": {
+        "surya":   [1, 2, 3, 4, 7, 8, 9, 10, 11],
+        "chandra": [2, 5, 7, 9, 11],
+        "mangal":  [1, 2, 4, 7, 8, 10, 11],
+        "budha":   [1, 2, 4, 5, 6, 9, 10, 11],
+        "guru":    [1, 2, 3, 7, 8, 11],
+        "shukra":  [2, 5, 6, 9, 10, 11],
+        "shani":   [3, 5, 6, 12],
+        "lagna":   [1, 2, 4, 5, 6, 7, 9, 10, 11],
+    },
+    "shukra": {
+        "surya":   [8, 11, 12],
+        "chandra": [1, 2, 3, 4, 8, 9, 11, 12],
+        "mangal":  [3, 4, 5, 6, 8, 9, 11, 12],
+        "budha":   [3, 5, 6, 9, 11],
+        "guru":    [5, 8, 9, 10, 11],
+        "shukra":  [1, 2, 3, 4, 5, 8, 9, 10, 11],
+        "shani":   [3, 4, 5, 8, 9, 10, 11],
+        "lagna":   [1, 2, 3, 4, 5, 8, 9, 11],
+    },
+    "shani": {
+        "surya":   [1, 2, 4, 7, 8, 10, 11],
+        "chandra": [3, 6, 10, 11],
+        "mangal":  [3, 5, 6, 10, 11, 12],
+        "budha":   [6, 8, 9, 10, 11, 12],
+        "guru":    [5, 6, 9, 10, 11],
+        "shukra":  [6, 11, 12],
+        "shani":   [3, 5, 6, 11],
+        "lagna":   [1, 3, 4, 6, 10, 11],
+    },
+}
+
+# The 7 planets whose BAV contributes to SAV (lagna BAV excluded from SAV)
+BAV_PLANETS = ["surya", "chandra", "mangal", "budha", "guru", "shukra", "shani"]
+
+# The 8 contributing references for each BAV
+BAV_REFERENCES = ["surya", "chandra", "mangal", "budha", "guru", "shukra",
+                   "shani", "lagna"]
+
+
+def _get_rashi_index_from_name(rashi_name):
+    """Return the 0-based rashi index from a rashi name."""
+    for idx, name in enumerate(RASHI_NAMES):
+        if name == rashi_name:
+            return idx
+    raise ValueError(f"Unknown rashi name: {rashi_name}")
+
+
+def compute_bav(planet_rashi_indices, lagna_rashi_idx):
+    """Compute Bhinnashtakavarga for all 7 planets.
+
+    Args:
+        planet_rashi_indices: dict mapping yaml_key (surya, chandra, etc.)
+            to 0-based rashi index (0=Mesham...11=Meenam)
+        lagna_rashi_idx: 0-based rashi index of lagna
+
+    Returns:
+        dict: planet_key -> list of 12 integers (bindus per rashi, index 0=Mesham)
+    """
+    bav = {}
+
+    for planet in BAV_PLANETS:
+        # Initialize 12 rashi slots to 0
+        bindus = [0] * 12
+
+        table = BAV_TABLES[planet]
+
+        for ref in BAV_REFERENCES:
+            # Get rashi index of the reference
+            if ref == "lagna":
+                ref_rashi_idx = lagna_rashi_idx
+            else:
+                ref_rashi_idx = planet_rashi_indices[ref]
+
+            # Get benefic house numbers from this reference
+            benefic_houses = table[ref]
+
+            for house_num in benefic_houses:
+                # House N from reference means rashi at (ref_rashi + N - 1) % 12
+                target_rashi = (ref_rashi_idx + house_num - 1) % 12
+                bindus[target_rashi] += 1
+
+        bav[planet] = bindus
+
+    return bav
+
+
+def compute_sav(bav):
+    """Compute Sarvashtakavarga from BAV.
+
+    SAV = sum of all 7 planet BAVs per rashi (lagna excluded).
+
+    Args:
+        bav: dict from compute_bav()
+
+    Returns:
+        list of 12 integers (SAV per rashi)
+    """
+    sav = [0] * 12
+    for planet in BAV_PLANETS:
+        for i in range(12):
+            sav[i] += bav[planet][i]
+    return sav
+
+
+def cmd_ashtakavarga(args):
+    """Compute BAV and SAV for a country's foundation chart."""
+    country_name = args.country.lower().replace(" ", "_")
+    chart_path = os.path.join(
+        _SCRIPT_DIR, "world_data", country_name, "foundation_chart.yaml"
+    )
+
+    if not os.path.exists(chart_path):
+        print(json.dumps({
+            "status": "error",
+            "message": f"Foundation chart not found: {chart_path}",
+        }))
+        sys.exit(1)
+
+    # Read foundation chart
+    with open(chart_path, "r") as f:
+        chart = yaml.safe_load(f)
+
+    # Extract rashi indices for the 7 planets
+    planet_rashi_indices = {}
+    for yaml_key in BAV_PLANETS:
+        rashi_name = chart["planetary_positions"][yaml_key]["rasi"]
+        planet_rashi_indices[yaml_key] = _get_rashi_index_from_name(rashi_name)
+
+    # Lagna rashi index
+    lagna_rashi_name = chart["lagna"]["rasi"]
+    lagna_rashi_idx = _get_rashi_index_from_name(lagna_rashi_name)
+
+    # Compute BAV and SAV
+    bav = compute_bav(planet_rashi_indices, lagna_rashi_idx)
+    sav = compute_sav(bav)
+    total_sav = sum(sav)
+
+    # Build output YAML
+    bav_output = {}
+    for planet in BAV_PLANETS:
+        bav_output[planet] = {
+            RASHI_NAMES[i]: bav[planet][i] for i in range(12)
+        }
+
+    sav_output = {RASHI_NAMES[i]: sav[i] for i in range(12)}
+
+    output = {
+        "ashtakavarga": {
+            "country": chart.get("entity", {}).get("name", country_name),
+            "lagna": lagna_rashi_name,
+            "bav": bav_output,
+            "sav": sav_output,
+            "total_sav": total_sav,
+        }
+    }
+
+    # Write to file
+    country_dir = os.path.join(WORLD_DATA_DIR, country_name)
+    os.makedirs(country_dir, exist_ok=True)
+    out_file = os.path.join(country_dir, "ashtakavarga.yaml")
+
+    with open(out_file, "w") as f:
+        yaml.dump(output, f, default_flow_style=False, sort_keys=False,
+                  allow_unicode=True)
+
+    # Print human-readable summary
+    if args.print_summary:
+        out = sys.stderr
+        out.write("=" * 70 + "\n")
+        out.write(f"  ASHTAKAVARGA -- {output['ashtakavarga']['country']}\n")
+        out.write(f"  Lagna: {lagna_rashi_name}\n")
+        out.write("=" * 70 + "\n")
+
+        # Planet positions
+        out.write("\n  Foundation chart planet positions (rashi):\n")
+        for pk in BAV_PLANETS:
+            rn = chart["planetary_positions"][pk]["rasi"]
+            out.write(f"    {pk.capitalize():10s}  {rn}\n")
+        out.write(f"    {'Lagna':10s}  {lagna_rashi_name}\n")
+
+        # BAV table
+        out.write("\n  BHINNASHTAKAVARGA (BAV):\n")
+        out.write("  " + "-" * 66 + "\n")
+        # Header
+        header = f"  {'Planet':10s}"
+        for rn in RASHI_NAMES:
+            header += f"  {rn[:4]:>4s}"
+        header += "  Total"
+        out.write(header + "\n")
+        out.write("  " + "-" * 66 + "\n")
+
+        for planet in BAV_PLANETS:
+            row = f"  {planet.capitalize():10s}"
+            planet_total = 0
+            for i in range(12):
+                row += f"  {bav[planet][i]:4d}"
+                planet_total += bav[planet][i]
+            row += f"  {planet_total:5d}"
+            out.write(row + "\n")
+
+        out.write("  " + "-" * 66 + "\n")
+        sav_row = f"  {'SAV':10s}"
+        for i in range(12):
+            sav_row += f"  {sav[i]:4d}"
+        sav_row += f"  {total_sav:5d}"
+        out.write(sav_row + "\n")
+        out.write("  " + "-" * 66 + "\n")
+
+        # SAV interpretation
+        out.write("\n  SAV INTERPRETATION:\n")
+        for i in range(12):
+            val = sav[i]
+            if val >= 30:
+                label = "STRONG"
+            elif val >= 25:
+                label = "Average"
+            else:
+                label = "WEAK"
+            house_num = ((i - lagna_rashi_idx) % 12) + 1
+            out.write(f"    {RASHI_NAMES[i]:14s} (H{house_num:2d}): "
+                      f"{val:2d} rekhas  [{label}]\n")
+
+        out.write("=" * 70 + "\n")
+
+    # JSON status
+    status = {
+        "status": "success",
+        "file": out_file,
+        "country": country_name,
+        "total_sav": total_sav,
+    }
+    print(json.dumps(status))
+
+
+# ---------------------------------------------------------------------------
+# SBC (Sarvatobhadra Chakra) command
+# ---------------------------------------------------------------------------
+
+# The 9x9 SBC grid maps nakshatras, vowels, tithis, and varas to cells.
+# For vedha computation, the key relationship is between nakshatras.
+# Each nakshatra occupies a specific cell in the grid; planets transiting
+# a nakshatra create vedha on nakshatras directly opposite (front aspect).
+
+# SBC Grid layout (standard): the 28 nakshatras (27 + Abhijit) occupy the
+# outer ring of the 9x9 grid. The vedha (front aspect) pairs are the
+# nakshatras directly across from each other in the grid.
+
+# SBC front-aspect vedha pairs: each nakshatra creates vedha on specific
+# other nakshatras across the grid. These pairs are derived from the
+# standard SBC grid arrangement.
+
+# Standard 9x9 SBC grid positions (row, col) for each nakshatra
+# The grid is numbered 0-8 for rows (top to bottom) and 0-8 for cols.
+# Nakshatras are placed around the perimeter of the grid.
+
+# Top row (row 0), cols 1-7 (left to right):
+#   Krittika, Rohini, Mrigashira, Ardra, Punarvasu, Pushya, Ashlesha
+# Right col (col 8), rows 1-7 (top to bottom):
+#   Magha, P.Phalguni, U.Phalguni, Hasta, Chitra, Swati, Vishakha
+# Bottom row (row 8), cols 7-1 (right to left):
+#   Anuradha, Jyeshtha, Mula, P.Ashadha, U.Ashadha, Abhijit, Shravana
+# Left col (col 0), rows 7-1 (bottom to top):
+#   Dhanishta, Shatabhisha, P.Bhadrapada, U.Bhadrapada, Revati, Ashwini, Bharani
+
+# Nakshatra index to name (0-based, standard 27)
+SBC_NAKSHATRA_NAMES = [n[0] for n in NAKSHATRAS]  # 27 nakshatras
+
+# The SBC grid positions for each nakshatra (including Abhijit at index 27)
+# Using (row, col) coordinates in the 9x9 grid
+SBC_GRID_POSITIONS = {
+    "Krittika":            (0, 1),
+    "Rohini":              (0, 2),
+    "Mrigashira":          (0, 3),
+    "Ardra":               (0, 4),
+    "Punarvasu":           (0, 5),
+    "Pushya":              (0, 6),
+    "Ashlesha":            (0, 7),
+    "Magha":               (1, 8),
+    "Purva Phalguni":      (2, 8),
+    "Uttara Phalguni":     (3, 8),
+    "Hasta":               (4, 8),
+    "Chitra":              (5, 8),
+    "Swati":               (6, 8),
+    "Vishakha":            (7, 8),
+    "Anuradha":            (8, 7),
+    "Jyeshtha":            (8, 6),
+    "Mula":                (8, 5),
+    "Purva Ashadha":       (8, 4),
+    "Uttara Ashadha":      (8, 3),
+    "Abhijit":             (8, 2),
+    "Shravana":            (8, 1),
+    "Dhanishta":           (7, 0),
+    "Shatabhisha":         (6, 0),
+    "Purva Bhadrapada":    (5, 0),
+    "Uttara Bhadrapada":   (4, 0),
+    "Revati":              (3, 0),
+    "Ashwini":             (2, 0),
+    "Bharani":             (1, 0),
+}
+
+# Build reverse lookup: (row, col) -> nakshatra name
+SBC_POS_TO_NAK = {v: k for k, v in SBC_GRID_POSITIONS.items()}
+
+
+def _sbc_front_vedha_targets(nak_name):
+    """Compute the front-aspect vedha targets for a nakshatra in the SBC grid.
+
+    In the SBC, front aspect means directly opposite across the grid center.
+    For nakshatras on:
+    - Top row (row=0): vedha goes to bottom row (row=8), same col
+    - Bottom row (row=8): vedha goes to top row (row=0), same col
+    - Left col (col=0): vedha goes to right col (col=8), same row
+    - Right col (col=8): vedha goes to left col (col=0), same row
+    - Corner positions: vedha goes diagonally opposite
+    """
+    if nak_name not in SBC_GRID_POSITIONS:
+        return []
+
+    row, col = SBC_GRID_POSITIONS[nak_name]
+    targets = []
+
+    # Determine which edge this nakshatra is on and compute opposite
+    if row == 0 and 1 <= col <= 7:
+        # Top row -> opposite is bottom row, same col
+        opp = (8, col)
+        if opp in SBC_POS_TO_NAK:
+            targets.append(SBC_POS_TO_NAK[opp])
+    elif row == 8 and 1 <= col <= 7:
+        # Bottom row -> opposite is top row, same col
+        opp = (0, col)
+        if opp in SBC_POS_TO_NAK:
+            targets.append(SBC_POS_TO_NAK[opp])
+    elif col == 0 and 1 <= row <= 7:
+        # Left col -> opposite is right col, same row
+        opp = (row, 8)
+        if opp in SBC_POS_TO_NAK:
+            targets.append(SBC_POS_TO_NAK[opp])
+    elif col == 8 and 1 <= row <= 7:
+        # Right col -> opposite is left col, same row
+        opp = (row, 0)
+        if opp in SBC_POS_TO_NAK:
+            targets.append(SBC_POS_TO_NAK[opp])
+
+    # Corner nakshatras: also vedha diagonally
+    # (0,1) <-> (8,7), (0,7) <-> (8,1), (1,0) <-> (7,8), (7,0) <-> (1,8)
+    # These are already handled above. Corners of the grid (0,0), (0,8),
+    # (8,0), (8,8) are occupied by varas/tithis, not nakshatras.
+
+    return targets
+
+
+def _sbc_left_vedha_targets(nak_name):
+    """Compute left-aspect vedha targets (90 degrees counter-clockwise).
+
+    From top row -> left col (at complementary position)
+    From right col -> top row
+    From bottom row -> right col
+    From left col -> bottom row
+    """
+    if nak_name not in SBC_GRID_POSITIONS:
+        return []
+
+    row, col = SBC_GRID_POSITIONS[nak_name]
+    targets = []
+
+    if row == 0 and 1 <= col <= 7:
+        # Top row -> left col: target is (9 - col, 0)
+        opp_row = 9 - col
+        if 1 <= opp_row <= 7 and (opp_row, 0) in SBC_POS_TO_NAK:
+            targets.append(SBC_POS_TO_NAK[(opp_row, 0)])
+    elif col == 8 and 1 <= row <= 7:
+        # Right col -> top row: target is (0, 9 - row)
+        opp_col = 9 - row
+        if 1 <= opp_col <= 7 and (0, opp_col) in SBC_POS_TO_NAK:
+            targets.append(SBC_POS_TO_NAK[(0, opp_col)])
+    elif row == 8 and 1 <= col <= 7:
+        # Bottom row -> right col: target is (9 - col, 8)
+        opp_row = 9 - col
+        if 1 <= opp_row <= 7 and (opp_row, 8) in SBC_POS_TO_NAK:
+            targets.append(SBC_POS_TO_NAK[(opp_row, 8)])
+    elif col == 0 and 1 <= row <= 7:
+        # Left col -> bottom row: target is (8, 9 - row)
+        opp_col = 9 - row
+        if 1 <= opp_col <= 7 and (8, opp_col) in SBC_POS_TO_NAK:
+            targets.append(SBC_POS_TO_NAK[(8, opp_col)])
+
+    return targets
+
+
+def _sbc_right_vedha_targets(nak_name):
+    """Compute right-aspect vedha targets (90 degrees clockwise).
+
+    From top row -> right col
+    From right col -> bottom row
+    From bottom row -> left col
+    From left col -> top row
+    """
+    if nak_name not in SBC_GRID_POSITIONS:
+        return []
+
+    row, col = SBC_GRID_POSITIONS[nak_name]
+    targets = []
+
+    if row == 0 and 1 <= col <= 7:
+        # Top row -> right col: target is (col, 8)
+        if 1 <= col <= 7 and (col, 8) in SBC_POS_TO_NAK:
+            targets.append(SBC_POS_TO_NAK[(col, 8)])
+    elif col == 8 and 1 <= row <= 7:
+        # Right col -> bottom row: target is (8, row)
+        if 1 <= row <= 7 and (8, row) in SBC_POS_TO_NAK:
+            targets.append(SBC_POS_TO_NAK[(8, row)])
+    elif row == 8 and 1 <= col <= 7:
+        # Bottom row -> left col: target is (col, 0)
+        if 1 <= col <= 7 and (col, 0) in SBC_POS_TO_NAK:
+            targets.append(SBC_POS_TO_NAK[(col, 0)])
+    elif col == 0 and 1 <= row <= 7:
+        # Left col -> top row: target is (0, row)
+        if 1 <= row <= 7 and (0, row) in SBC_POS_TO_NAK:
+            targets.append(SBC_POS_TO_NAK[(0, row)])
+
+    return targets
+
+
+def compute_sbc_vedha(transiting_planets):
+    """Compute SBC vedha from transiting planet nakshatras.
+
+    Args:
+        transiting_planets: list of dicts with 'planet' and 'nakshatra' keys
+
+    Returns:
+        dict mapping each of the 27 nakshatras to a list of vedha entries
+        (planet, aspect_type)
+    """
+    # Initialize vedha for all 27 standard nakshatras
+    vedha = {nak_name: [] for nak_name in SBC_NAKSHATRA_NAMES}
+
+    for tp in transiting_planets:
+        planet = tp["planet"]
+        nak = tp["nakshatra"]
+
+        # Front aspect vedha
+        front_targets = _sbc_front_vedha_targets(nak)
+        for target in front_targets:
+            if target in vedha and target != "Abhijit":
+                vedha[target].append({"planet": planet, "aspect": "front"})
+
+        # Left aspect vedha
+        left_targets = _sbc_left_vedha_targets(nak)
+        for target in left_targets:
+            if target in vedha and target != "Abhijit":
+                vedha[target].append({"planet": planet, "aspect": "left"})
+
+        # Right aspect vedha
+        right_targets = _sbc_right_vedha_targets(nak)
+        for target in right_targets:
+            if target in vedha and target != "Abhijit":
+                vedha[target].append({"planet": planet, "aspect": "right"})
+
+    return vedha
+
+
+def cmd_sbc(args):
+    """Compute Sarvatobhadra Chakra vedha for transiting planets on a date."""
+    target_date = datetime.strptime(args.date, "%Y-%m-%d").date()
+
+    # Compute planetary positions at 00:00 UTC
+    jd = swe.julday(target_date.year, target_date.month, target_date.day, 0.0)
+    swe.set_sid_mode(swe.SIDM_LAHIRI)
+    ayanamsha = swe.get_ayanamsa(jd)
+
+    # Compute sidereal positions for all 9 grahas
+    transiting_planets = []
+
+    for swe_id, eng_name, sans_name, yaml_key in GRAHA_LIST:
+        pos, _ret = swe.calc_ut(jd, swe_id)
+        sid_lon = (pos[0] - ayanamsha) % 360
+        nak_name, nak_lord, pada, _ = get_nakshatra(sid_lon)
+        rashi_name, _, deg = get_rashi(sid_lon)
+        speed = pos[3]
+
+        transiting_planets.append({
+            "planet": eng_name,
+            "nakshatra": nak_name,
+            "rasi": rashi_name,
+            "degree": round(deg, 4),
+            "retrograde": speed < 0,
+        })
+
+    # Rahu (Mean Node)
+    node_pos, _ = swe.calc_ut(jd, swe.MEAN_NODE)
+    rahu_sid = (node_pos[0] - ayanamsha) % 360
+    rahu_nak, _, rahu_pada, _ = get_nakshatra(rahu_sid)
+    rahu_rashi, _, rahu_deg = get_rashi(rahu_sid)
+
+    transiting_planets.append({
+        "planet": "Rahu",
+        "nakshatra": rahu_nak,
+        "rasi": rahu_rashi,
+        "degree": round(rahu_deg, 4),
+        "retrograde": True,
+    })
+
+    # Ketu
+    ketu_sid = (rahu_sid + 180) % 360
+    ketu_nak, _, ketu_pada, _ = get_nakshatra(ketu_sid)
+    ketu_rashi, _, ketu_deg = get_rashi(ketu_sid)
+
+    transiting_planets.append({
+        "planet": "Ketu",
+        "nakshatra": ketu_nak,
+        "rasi": ketu_rashi,
+        "degree": round(ketu_deg, 4),
+        "retrograde": True,
+    })
+
+    # Compute vedha
+    vedha = compute_sbc_vedha(transiting_planets)
+
+    # Count summary
+    under_vedha = sum(1 for nak in SBC_NAKSHATRA_NAMES if vedha[nak])
+    free_count = 27 - under_vedha
+
+    # Build output
+    vedha_list = []
+    for nak_name in SBC_NAKSHATRA_NAMES:
+        vedha_list.append({
+            "nakshatra": nak_name,
+            "vedha_from": vedha[nak_name] if vedha[nak_name] else [],
+        })
+
+    transit_list = []
+    for tp in transiting_planets:
+        entry = {"planet": tp["planet"], "nakshatra": tp["nakshatra"]}
+        if tp["retrograde"]:
+            entry["retrograde"] = True
+        transit_list.append(entry)
+
+    output = {
+        "sbc": {
+            "date": str(target_date),
+            "transiting_planets": transit_list,
+            "vedha": vedha_list,
+            "summary": {
+                "nakshatras_under_vedha": under_vedha,
+                "nakshatras_free": free_count,
+            },
+        }
+    }
+
+    # Write to file
+    sbc_dir = os.path.join(WORLD_DATA_DIR, "sbc")
+    os.makedirs(sbc_dir, exist_ok=True)
+    out_file = os.path.join(sbc_dir, f"{target_date}_sbc.yaml")
+
+    with open(out_file, "w") as f:
+        yaml.dump(output, f, default_flow_style=False, sort_keys=False,
+                  allow_unicode=True)
+
+    # Print human-readable summary
+    if args.print_summary:
+        out = sys.stderr
+        out.write("=" * 70 + "\n")
+        out.write(f"  SARVATOBHADRA CHAKRA -- {target_date}\n")
+        out.write("=" * 70 + "\n")
+
+        out.write("\n  TRANSITING PLANETS:\n")
+        out.write("  " + "-" * 56 + "\n")
+        for tp in transiting_planets:
+            retro = " (R)" if tp["retrograde"] else ""
+            out.write(f"    {tp['planet']:10s}  {tp['rasi']:14s}"
+                      f"  {tp['degree']:7.2f}°  {tp['nakshatra']}{retro}\n")
+
+        out.write("\n  VEDHA ANALYSIS:\n")
+        out.write("  " + "-" * 56 + "\n")
+        for nak_name in SBC_NAKSHATRA_NAMES:
+            v = vedha[nak_name]
+            if v:
+                sources = ", ".join(
+                    f"{e['planet']}({e['aspect']})" for e in v
+                )
+                out.write(f"    {nak_name:24s}  VEDHA from: {sources}\n")
+            else:
+                out.write(f"    {nak_name:24s}  free\n")
+
+        out.write("\n  " + "-" * 56 + "\n")
+        out.write(f"  Nakshatras under vedha: {under_vedha}\n")
+        out.write(f"  Nakshatras free:        {free_count}\n")
+        out.write("=" * 70 + "\n")
+
+    # JSON status
+    status = {
+        "status": "success",
+        "file": out_file,
+        "date": str(target_date),
+        "nakshatras_under_vedha": under_vedha,
+        "nakshatras_free": free_count,
+    }
+    print(json.dumps(status))
+
+
+# ---------------------------------------------------------------------------
 # Stub commands (to be implemented)
 # ---------------------------------------------------------------------------
 
@@ -2424,16 +3076,30 @@ def parse_args(argv=None):
     # --- ashtakavarga ---
     ashta_parser = subparsers.add_parser(
         "ashtakavarga",
-        help="Compute Sarvashtakavarga for current positions",
+        help="Compute BAV/SAV ashtakavarga for a country's foundation chart",
     )
-    ashta_parser.add_argument("--date", help="Date YYYY-MM-DD")
+    ashta_parser.add_argument(
+        "--country", required=True,
+        help="Country name (must have foundation_chart.yaml in world_data/)",
+    )
+    ashta_parser.add_argument(
+        "--print", dest="print_summary", action="store_true",
+        help="Print human-readable summary to stderr",
+    )
 
     # --- sbc (Sarvatobhadra Chakra) ---
     sbc_parser = subparsers.add_parser(
         "sbc",
-        help="Compute Sarvatobhadra Chakra for transit analysis",
+        help="Compute Sarvatobhadra Chakra vedha for transit analysis",
     )
-    sbc_parser.add_argument("--date", help="Date YYYY-MM-DD")
+    sbc_parser.add_argument(
+        "--date", default=str(date.today()),
+        help="Date in YYYY-MM-DD format (default: today)",
+    )
+    sbc_parser.add_argument(
+        "--print", dest="print_summary", action="store_true",
+        help="Print human-readable summary to stderr",
+    )
 
     args = parser.parse_args(argv)
 
@@ -2459,8 +3125,8 @@ COMMAND_DISPATCH = {
     "retrogrades": cmd_retrogrades,
     "sign-changes": cmd_sign_changes,
     "panchanga": cmd_panchanga,
-    "ashtakavarga": cmd_stub,
-    "sbc": cmd_stub,
+    "ashtakavarga": cmd_ashtakavarga,
+    "sbc": cmd_sbc,
 }
 
 

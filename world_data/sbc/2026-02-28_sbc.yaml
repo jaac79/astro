@@ -1,0 +1,133 @@
+sbc:
+  date: '2026-02-28'
+  transiting_planets:
+  - planet: Sun
+    nakshatra: Shatabhisha
+  - planet: Moon
+    nakshatra: Punarvasu
+  - planet: Mars
+    nakshatra: Dhanishta
+  - planet: Mercury
+    nakshatra: Purva Bhadrapada
+    retrograde: true
+  - planet: Jupiter
+    nakshatra: Punarvasu
+    retrograde: true
+  - planet: Venus
+    nakshatra: Purva Bhadrapada
+  - planet: Saturn
+    nakshatra: Uttara Bhadrapada
+  - planet: Rahu
+    nakshatra: Shatabhisha
+    retrograde: true
+  - planet: Ketu
+    nakshatra: Purva Phalguni
+    retrograde: true
+  vedha:
+  - nakshatra: Ashwini
+    vedha_from:
+    - planet: Ketu
+      aspect: front
+  - nakshatra: Bharani
+    vedha_from: []
+  - nakshatra: Krittika
+    vedha_from: []
+  - nakshatra: Rohini
+    vedha_from: []
+  - nakshatra: Mrigashira
+    vedha_from: []
+  - nakshatra: Ardra
+    vedha_from:
+    - planet: Saturn
+      aspect: right
+  - nakshatra: Punarvasu
+    vedha_from:
+    - planet: Mercury
+      aspect: right
+    - planet: Venus
+      aspect: right
+  - nakshatra: Pushya
+    vedha_from:
+    - planet: Sun
+      aspect: right
+    - planet: Rahu
+      aspect: right
+  - nakshatra: Ashlesha
+    vedha_from:
+    - planet: Mars
+      aspect: right
+    - planet: Ketu
+      aspect: left
+  - nakshatra: Magha
+    vedha_from: []
+  - nakshatra: Purva Phalguni
+    vedha_from: []
+  - nakshatra: Uttara Phalguni
+    vedha_from: []
+  - nakshatra: Hasta
+    vedha_from:
+    - planet: Saturn
+      aspect: front
+  - nakshatra: Chitra
+    vedha_from:
+    - planet: Moon
+      aspect: right
+    - planet: Mercury
+      aspect: front
+    - planet: Jupiter
+      aspect: right
+    - planet: Venus
+      aspect: front
+  - nakshatra: Swati
+    vedha_from:
+    - planet: Sun
+      aspect: front
+    - planet: Rahu
+      aspect: front
+  - nakshatra: Vishakha
+    vedha_from:
+    - planet: Mars
+      aspect: front
+  - nakshatra: Anuradha
+    vedha_from: []
+  - nakshatra: Jyeshtha
+    vedha_from: []
+  - nakshatra: Mula
+    vedha_from:
+    - planet: Moon
+      aspect: front
+    - planet: Jupiter
+      aspect: front
+    - planet: Saturn
+      aspect: left
+  - nakshatra: Purva Ashadha
+    vedha_from:
+    - planet: Mercury
+      aspect: left
+    - planet: Venus
+      aspect: left
+  - nakshatra: Uttara Ashadha
+    vedha_from:
+    - planet: Sun
+      aspect: left
+    - planet: Rahu
+      aspect: left
+  - nakshatra: Shravana
+    vedha_from: []
+  - nakshatra: Dhanishta
+    vedha_from: []
+  - nakshatra: Shatabhisha
+    vedha_from: []
+  - nakshatra: Purva Bhadrapada
+    vedha_from: []
+  - nakshatra: Uttara Bhadrapada
+    vedha_from:
+    - planet: Moon
+      aspect: left
+    - planet: Jupiter
+      aspect: left
+  - nakshatra: Revati
+    vedha_from: []
+  summary:
+    nakshatras_under_vedha: 13
+    nakshatras_free: 14

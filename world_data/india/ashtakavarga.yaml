@@ -1,0 +1,109 @@
+ashtakavarga:
+  country: India
+  lagna: Rishabham
+  bav:
+    surya:
+      Mesham: 6
+      Rishabham: 4
+      Mithunam: 4
+      Katakam: 4
+      Simham: 4
+      Kanni: 3
+      Thulam: 3
+      Viruchikam: 1
+      Dhanusu: 4
+      Makaram: 4
+      Kumbham: 5
+      Meenam: 6
+    chandra:
+      Mesham: 6
+      Rishabham: 6
+      Mithunam: 0
+      Katakam: 5
+      Simham: 2
+      Kanni: 5
+      Thulam: 5
+      Viruchikam: 5
+      Dhanusu: 3
+      Makaram: 5
+      Kumbham: 3
+      Meenam: 4
+    mangal:
+      Mesham: 3
+      Rishabham: 6
+      Mithunam: 2
+      Katakam: 4
+      Simham: 1
+      Kanni: 5
+      Thulam: 2
+      Viruchikam: 2
+      Dhanusu: 5
+      Makaram: 2
+      Kumbham: 3
+      Meenam: 4
+    budha:
+      Mesham: 4
+      Rishabham: 7
+      Mithunam: 4
+      Katakam: 4
+      Simham: 5
+      Kanni: 4
+      Thulam: 4
+      Viruchikam: 3
+      Dhanusu: 4
+      Makaram: 2
+      Kumbham: 5
+      Meenam: 7
+    guru:
+      Mesham: 5
+      Rishabham: 6
+      Mithunam: 3
+      Katakam: 3
+      Simham: 6
+      Kanni: 4
+      Thulam: 4
+      Viruchikam: 6
+      Dhanusu: 5
+      Makaram: 4
+      Kumbham: 2
+      Meenam: 6
+    shukra:
+      Mesham: 3
+      Rishabham: 8
+      Mithunam: 4
+      Katakam: 4
+      Simham: 5
+      Kanni: 6
+      Thulam: 4
+      Viruchikam: 4
+      Dhanusu: 2
+      Makaram: 2
+      Kumbham: 6
+      Meenam: 5
+    shani:
+      Mesham: 4
+      Rishabham: 7
+      Mithunam: 3
+      Katakam: 3
+      Simham: 4
+      Kanni: 2
+      Thulam: 3
+      Viruchikam: 2
+      Dhanusu: 4
+      Makaram: 1
+      Kumbham: 4
+      Meenam: 4
+  sav:
+    Mesham: 31
+    Rishabham: 44
+    Mithunam: 20
+    Katakam: 27
+    Simham: 27
+    Kanni: 29
+    Thulam: 25
+    Viruchikam: 23
+    Dhanusu: 27
+    Makaram: 20
+    Kumbham: 28
+    Meenam: 36
+  total_sav: 337
