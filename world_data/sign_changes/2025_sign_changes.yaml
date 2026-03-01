@@ -1,0 +1,55 @@
+sign_changes:
+  year: 2025
+  events:
+  - planet: Mars
+    date_utc: '2025-01-21T04:35:23'
+    from_sign: Katakam
+    to_sign: Mithunam
+  - planet: Saturn
+    date_utc: '2025-03-29T16:12:56'
+    from_sign: Kumbham
+    to_sign: Meenam
+  - planet: Mars
+    date_utc: '2025-04-02T19:58:47'
+    from_sign: Mithunam
+    to_sign: Katakam
+  - planet: Jupiter
+    date_utc: '2025-05-14T17:05:40'
+    from_sign: Rishabham
+    to_sign: Mithunam
+  - planet: Rahu
+    date_utc: '2025-05-18T14:10:35'
+    from_sign: Meenam
+    to_sign: Kumbham
+  - planet: Ketu
+    date_utc: '2025-05-18T14:10:35'
+    from_sign: Kanni
+    to_sign: Simham
+  - planet: Mars
+    date_utc: '2025-06-06T20:41:25'
+    from_sign: Katakam
+    to_sign: Simham
+  - planet: Mars
+    date_utc: '2025-07-28T14:27:11'
+    from_sign: Simham
+    to_sign: Kanni
+  - planet: Mars
+    date_utc: '2025-09-13T15:50:59'
+    from_sign: Kanni
+    to_sign: Thulam
+  - planet: Jupiter
+    date_utc: '2025-10-18T14:02:04'
+    from_sign: Mithunam
+    to_sign: Katakam
+  - planet: Mars
+    date_utc: '2025-10-27T10:11:17'
+    from_sign: Thulam
+    to_sign: Viruchikam
+  - planet: Jupiter
+    date_utc: '2025-12-05T12:16:21'
+    from_sign: Katakam
+    to_sign: Mithunam
+  - planet: Mars
+    date_utc: '2025-12-07T14:45:28'
+    from_sign: Viruchikam
+    to_sign: Dhanusu

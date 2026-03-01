@@ -1,0 +1,59 @@
+date: '2025-04-01'
+time_utc: 00:00:00
+ayanamsha: 24.209785
+ayanamsha_type: Lahiri
+planetary_positions:
+  surya:
+    rasi: Meenam
+    degree: 17.3048
+    nakshatra: Revati
+    pada: 1
+    retrograde: false
+  chandra:
+    rasi: Mesham
+    degree: 23.1805
+    nakshatra: Bharani
+    pada: 3
+    retrograde: false
+  mangal:
+    rasi: Mithunam
+    degree: 29.3909
+    nakshatra: Punarvasu
+    pada: 3
+    retrograde: false
+  budha:
+    rasi: Meenam
+    degree: 4.5361
+    nakshatra: Uttara Bhadrapada
+    pada: 1
+    retrograde: true
+  guru:
+    rasi: Rishabham
+    degree: 21.7682
+    nakshatra: Rohini
+    pada: 4
+    retrograde: false
+  shukra:
+    rasi: Meenam
+    degree: 3.3196
+    nakshatra: Purva Bhadrapada
+    pada: 4
+    retrograde: true
+  shani:
+    rasi: Meenam
+    degree: 0.2798
+    nakshatra: Purva Bhadrapada
+    pada: 4
+    retrograde: false
+  rahu:
+    rasi: Meenam
+    degree: 2.5218
+    nakshatra: Purva Bhadrapada
+    pada: 4
+    retrograde: true
+  ketu:
+    rasi: Kanni
+    degree: 2.5218
+    nakshatra: Uttara Phalguni
+    pada: 2
+    retrograde: true

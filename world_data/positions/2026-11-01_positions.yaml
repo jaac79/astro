@@ -1,0 +1,59 @@
+date: '2026-11-01'
+time_utc: 00:00:00
+ayanamsha: 24.231932
+ayanamsha_type: Lahiri
+planetary_positions:
+  surya:
+    rasi: Thulam
+    degree: 14.345
+    nakshatra: Swati
+    pada: 3
+    retrograde: false
+  chandra:
+    rasi: Katakam
+    degree: 3.2385
+    nakshatra: Punarvasu
+    pada: 4
+    retrograde: false
+  mangal:
+    rasi: Katakam
+    degree: 24.3898
+    nakshatra: Ashlesha
+    pada: 3
+    retrograde: false
+  budha:
+    rasi: Thulam
+    degree: 22.4295
+    nakshatra: Vishakha
+    pada: 1
+    retrograde: true
+  guru:
+    rasi: Simham
+    degree: 0.0913
+    nakshatra: Magha
+    pada: 1
+    retrograde: false
+  shukra:
+    rasi: Thulam
+    degree: 2.0152
+    nakshatra: Chitra
+    pada: 3
+    retrograde: true
+  shani:
+    rasi: Meenam
+    degree: 15.0545
+    nakshatra: Uttara Bhadrapada
+    pada: 4
+    retrograde: true
+  rahu:
+    rasi: Kumbham
+    degree: 1.8416
+    nakshatra: Dhanishta
+    pada: 3
+    retrograde: true
+  ketu:
+    rasi: Simham
+    degree: 1.8416
+    nakshatra: Magha
+    pada: 1
+    retrograde: true

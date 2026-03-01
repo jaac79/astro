@@ -1,0 +1,59 @@
+date: '2025-08-01'
+time_utc: 00:00:00
+ayanamsha: 24.214452
+ayanamsha_type: Lahiri
+planetary_positions:
+  surya:
+    rasi: Katakam
+    degree: 14.808
+    nakshatra: Pushya
+    pada: 4
+    retrograde: false
+  chandra:
+    rasi: Thulam
+    degree: 9.0431
+    nakshatra: Swati
+    pada: 1
+    retrograde: false
+  mangal:
+    rasi: Kanni
+    degree: 2.0863
+    nakshatra: Uttara Phalguni
+    pada: 2
+    retrograde: false
+  budha:
+    rasi: Katakam
+    degree: 14.7859
+    nakshatra: Pushya
+    pada: 4
+    retrograde: true
+  guru:
+    rasi: Mithunam
+    degree: 17.4983
+    nakshatra: Ardra
+    pada: 4
+    retrograde: false
+  shukra:
+    rasi: Mithunam
+    degree: 6.7519
+    nakshatra: Ardra
+    pada: 1
+    retrograde: false
+  shani:
+    rasi: Meenam
+    degree: 7.4244
+    nakshatra: Uttara Bhadrapada
+    pada: 2
+    retrograde: true
+  rahu:
+    rasi: Kumbham
+    degree: 26.0577
+    nakshatra: Purva Bhadrapada
+    pada: 2
+    retrograde: true
+  ketu:
+    rasi: Simham
+    degree: 26.0577
+    nakshatra: Purva Phalguni
+    pada: 4
+    retrograde: true

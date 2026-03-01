@@ -1,0 +1,59 @@
+date: '2025-10-01'
+time_utc: 00:00:00
+ayanamsha: 24.216785
+ayanamsha_type: Lahiri
+planetary_positions:
+  surya:
+    rasi: Kanni
+    degree: 13.8624
+    nakshatra: Hasta
+    pada: 2
+    retrograde: false
+  chandra:
+    rasi: Dhanusu
+    degree: 25.3047
+    nakshatra: Purva Ashadha
+    pada: 4
+    retrograde: false
+  mangal:
+    rasi: Thulam
+    degree: 11.6478
+    nakshatra: Swati
+    pada: 2
+    retrograde: false
+  budha:
+    rasi: Kanni
+    degree: 26.9699
+    nakshatra: Chitra
+    pada: 2
+    retrograde: false
+  guru:
+    rasi: Mithunam
+    degree: 28.2465
+    nakshatra: Punarvasu
+    pada: 3
+    retrograde: false
+  shukra:
+    rasi: Simham
+    degree: 19.8533
+    nakshatra: Purva Phalguni
+    pada: 2
+    retrograde: false
+  shani:
+    rasi: Meenam
+    degree: 3.5413
+    nakshatra: Uttara Bhadrapada
+    pada: 1
+    retrograde: true
+  rahu:
+    rasi: Kumbham
+    degree: 22.8251
+    nakshatra: Purva Bhadrapada
+    pada: 1
+    retrograde: true
+  ketu:
+    rasi: Simham
+    degree: 22.8251
+    nakshatra: Purva Phalguni
+    pada: 3
+    retrograde: true

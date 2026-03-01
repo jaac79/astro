@@ -1,0 +1,214 @@
+ingress:
+  type: aries
+  year: 2025
+  exact_datetime_utc: '2025-04-13T21:51:22'
+  local_datetime: '2025-04-14T03:21:22'
+  weekday: Monday
+  year_lord: Moon
+  place:
+    city: New Delhi
+    latitude: 28.6139
+    longitude: 77.209
+    timezone: 5.5
+lagna:
+  rasi: Kumbham
+  degree: 4.39
+  nakshatra: Dhanishta
+  pada: 4
+chandra:
+  rasi: Thulam
+  degree: 9.7091
+  nakshatra: Swati
+  pada: 1
+planetary_positions:
+  surya:
+    rasi: Mesham
+    degree: 0.0
+    nakshatra: Ashwini
+    pada: 1
+    retrograde: false
+    house: 3
+    dignity: exalted
+  chandra:
+    rasi: Thulam
+    degree: 9.7091
+    nakshatra: Swati
+    pada: 1
+    retrograde: false
+    house: 9
+    dignity: neutral
+  mangal:
+    rasi: Katakam
+    degree: 4.0677
+    nakshatra: Pushya
+    pada: 1
+    retrograde: false
+    house: 6
+    dignity: debilitated
+  budha:
+    rasi: Meenam
+    degree: 4.3705
+    nakshatra: Uttara Bhadrapada
+    pada: 1
+    retrograde: false
+    house: 2
+    dignity: debilitated
+  guru:
+    rasi: Rishabham
+    degree: 23.9192
+    nakshatra: Mrigashira
+    pada: 1
+    retrograde: false
+    house: 4
+    dignity: enemy
+  shukra:
+    rasi: Meenam
+    degree: 0.4295
+    nakshatra: Purva Bhadrapada
+    pada: 4
+    retrograde: false
+    house: 2
+    dignity: exalted
+  shani:
+    rasi: Meenam
+    degree: 1.7919
+    nakshatra: Purva Bhadrapada
+    pada: 4
+    retrograde: false
+    house: 2
+    dignity: neutral
+  rahu:
+    rasi: Meenam
+    degree: 1.8376
+    nakshatra: Purva Bhadrapada
+    pada: 4
+    retrograde: true
+    house: 2
+    dignity: neutral
+  ketu:
+    rasi: Kanni
+    degree: 1.8376
+    nakshatra: Uttara Phalguni
+    pada: 2
+    retrograde: true
+    house: 8
+    dignity: neutral
+house_summary:
+  house_1:
+    rasi: Kumbham
+    planets: []
+  house_2:
+    rasi: Meenam
+    planets:
+    - Mercury
+    - Venus
+    - Saturn
+    - Rahu
+  house_3:
+    rasi: Mesham
+    planets:
+    - Sun
+  house_4:
+    rasi: Rishabham
+    planets:
+    - Jupiter
+  house_5:
+    rasi: Mithunam
+    planets: []
+  house_6:
+    rasi: Katakam
+    planets:
+    - Mars
+  house_7:
+    rasi: Simham
+    planets: []
+  house_8:
+    rasi: Kanni
+    planets:
+    - Ketu
+  house_9:
+    rasi: Thulam
+    planets:
+    - Moon
+  house_10:
+    rasi: Viruchikam
+    planets: []
+  house_11:
+    rasi: Dhanusu
+    planets: []
+  house_12:
+    rasi: Makaram
+    planets: []
+vimshottari_dasha:
+  balance_at_birth:
+    lord: Rahu
+    remaining_years: 13
+    remaining_months: 10
+    remaining_days: 21
+  sequence:
+  - lord: Rahu
+    start: '2025-04-13'
+    end: '2039-03-05'
+  - lord: Jupiter
+    start: '2039-03-05'
+    end: '2055-03-05'
+  - lord: Saturn
+    start: '2055-03-05'
+    end: '2074-03-04'
+  - lord: Mercury
+    start: '2074-03-04'
+    end: '2091-03-04'
+  - lord: Ketu
+    start: '2091-03-04'
+    end: '2098-03-03'
+  - lord: Venus
+    start: '2098-03-03'
+    end: '2118-03-04'
+  - lord: Sun
+    start: '2118-03-04'
+    end: '2124-03-03'
+  - lord: Moon
+    start: '2124-03-03'
+    end: '2134-03-03'
+  - lord: Mars
+    start: '2134-03-03'
+    end: '2141-03-02'
+computed_analysis:
+  functional_nature:
+    yogakarakas:
+    - Venus
+    functional_benefics:
+    - Venus
+    - Saturn
+    functional_malefics:
+    - Moon
+    - Mars
+    - Jupiter
+    functional_neutrals:
+    - Sun
+    - Mercury
+  badhaka:
+    lagna_sign_type: fixed
+    badhaka_sthana: 9
+    badhaka_rasi: Thulam
+    badhaka_lord: Venus
+  marakas:
+  - planet: Sun
+    reason: 7th lord (Simham)
+  - planet: Jupiter
+    reason: 2nd lord (Meenam)
+  neecha_bhanga:
+  - planet: Mercury
+    debilitated_in: Meenam
+    house: 2
+    conditions_met:
+    - Jupiter (dispositor) in kendra (House 4) from lagna
+    status: LIKELY
+  yogas: none detected
+  digbala: none
+  key_strengths:
+  - 'Mercury: neecha bhanga raja yoga (LIKELY)'
+  key_vulnerabilities:
+  - 'Mars: debilitated in Katakam'
+  - 'Mercury: debilitated in Meenam (neecha bhanga applies)'
+  - 'Jupiter: in enemy sign (Rishabham)'

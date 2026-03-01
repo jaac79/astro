@@ -1,0 +1,59 @@
+date: '2026-01-01'
+time_utc: 00:00:00
+ayanamsha: 24.220304
+ayanamsha_type: Lahiri
+planetary_positions:
+  surya:
+    rasi: Dhanusu
+    degree: 16.3483
+    nakshatra: Purva Ashadha
+    pada: 1
+    retrograde: false
+  chandra:
+    rasi: Rishabham
+    degree: 12.4955
+    nakshatra: Rohini
+    pada: 1
+    retrograde: false
+  mangal:
+    rasi: Dhanusu
+    degree: 18.4679
+    nakshatra: Purva Ashadha
+    pada: 2
+    retrograde: false
+  budha:
+    rasi: Dhanusu
+    degree: 4.4313
+    nakshatra: Mula
+    pada: 2
+    retrograde: false
+  guru:
+    rasi: Mithunam
+    degree: 27.1374
+    nakshatra: Punarvasu
+    pada: 3
+    retrograde: true
+  shukra:
+    rasi: Dhanusu
+    degree: 14.9862
+    nakshatra: Purva Ashadha
+    pada: 1
+    retrograde: false
+  shani:
+    rasi: Meenam
+    degree: 1.947
+    nakshatra: Purva Bhadrapada
+    pada: 4
+    retrograde: false
+  rahu:
+    rasi: Kumbham
+    degree: 17.9504
+    nakshatra: Shatabhisha
+    pada: 4
+    retrograde: true
+  ketu:
+    rasi: Simham
+    degree: 17.9504
+    nakshatra: Purva Phalguni
+    pada: 2
+    retrograde: true

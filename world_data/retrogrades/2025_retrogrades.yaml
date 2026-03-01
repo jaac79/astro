@@ -1,0 +1,81 @@
+retrogrades:
+  year: 2025
+  events:
+  - planet: Jupiter
+    station: D
+    date_utc: '2025-02-04T09:40:44'
+    sign: Rishabham
+    degree: 17.0708
+    nakshatra: Rohini
+  - planet: Mars
+    station: D
+    date_utc: '2025-02-24T01:59:57'
+    sign: Mithunam
+    degree: 22.8068
+    nakshatra: Punarvasu
+  - planet: Venus
+    station: Rx
+    date_utc: '2025-03-02T00:36:01'
+    sign: Meenam
+    degree: 16.627
+    nakshatra: Uttara Bhadrapada
+  - planet: Mercury
+    station: Rx
+    date_utc: '2025-03-15T06:46:10'
+    sign: Meenam
+    degree: 15.3798
+    nakshatra: Uttara Bhadrapada
+  - planet: Mercury
+    station: D
+    date_utc: '2025-04-07T11:07:40'
+    sign: Meenam
+    degree: 2.6163
+    nakshatra: Purva Bhadrapada
+  - planet: Venus
+    station: D
+    date_utc: '2025-04-13T01:02:24'
+    sign: Meenam
+    degree: 0.4146
+    nakshatra: Purva Bhadrapada
+  - planet: Saturn
+    station: Rx
+    date_utc: '2025-07-13T04:07:01'
+    sign: Meenam
+    degree: 7.7207
+    nakshatra: Uttara Bhadrapada
+  - planet: Mercury
+    station: Rx
+    date_utc: '2025-07-18T04:45:04'
+    sign: Katakam
+    degree: 21.3613
+    nakshatra: Ashlesha
+  - planet: Mercury
+    station: D
+    date_utc: '2025-08-11T07:29:56'
+    sign: Katakam
+    degree: 10.0346
+    nakshatra: Pushya
+  - planet: Mercury
+    station: Rx
+    date_utc: '2025-11-09T19:01:46'
+    sign: Viruchikam
+    degree: 12.6436
+    nakshatra: Anuradha
+  - planet: Jupiter
+    station: Rx
+    date_utc: '2025-11-11T16:41:41'
+    sign: Katakam
+    degree: 0.9342
+    nakshatra: Punarvasu
+  - planet: Saturn
+    station: D
+    date_utc: '2025-11-28T03:51:30'
+    sign: Meenam
+    degree: 0.9386
+    nakshatra: Purva Bhadrapada
+  - planet: Mercury
+    station: D
+    date_utc: '2025-11-29T17:38:32'
+    sign: Thulam
+    degree: 26.4878
+    nakshatra: Vishakha

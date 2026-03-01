@@ -1,0 +1,75 @@
+retrogrades:
+  year: 2026
+  events:
+  - planet: Mercury
+    station: Rx
+    date_utc: '2026-02-26T06:48:13'
+    sign: Kumbham
+    degree: 28.3429
+    nakshatra: Purva Bhadrapada
+  - planet: Jupiter
+    station: D
+    date_utc: '2026-03-11T03:30:08'
+    sign: Mithunam
+    degree: 20.8644
+    nakshatra: Punarvasu
+  - planet: Mercury
+    station: D
+    date_utc: '2026-03-20T19:32:54'
+    sign: Kumbham
+    degree: 14.2674
+    nakshatra: Shatabhisha
+  - planet: Mercury
+    station: Rx
+    date_utc: '2026-06-29T17:35:59'
+    sign: Katakam
+    degree: 2.0302
+    nakshatra: Punarvasu
+  - planet: Mercury
+    station: D
+    date_utc: '2026-07-23T22:57:55'
+    sign: Mithunam
+    degree: 22.0884
+    nakshatra: Punarvasu
+  - planet: Saturn
+    station: Rx
+    date_utc: '2026-07-26T19:56:47'
+    sign: Meenam
+    degree: 20.5217
+    nakshatra: Revati
+  - planet: Venus
+    station: Rx
+    date_utc: '2026-10-03T07:15:50'
+    sign: Thulam
+    degree: 14.2603
+    nakshatra: Swati
+  - planet: Mercury
+    station: Rx
+    date_utc: '2026-10-24T07:12:47'
+    sign: Thulam
+    degree: 26.7474
+    nakshatra: Vishakha
+  - planet: Mercury
+    station: D
+    date_utc: '2026-11-13T15:53:56'
+    sign: Thulam
+    degree: 10.8011
+    nakshatra: Swati
+  - planet: Venus
+    station: D
+    date_utc: '2026-11-14T00:27:30'
+    sign: Kanni
+    degree: 28.6312
+    nakshatra: Chitra
+  - planet: Saturn
+    station: D
+    date_utc: '2026-12-10T23:31:02'
+    sign: Meenam
+    degree: 13.6976
+    nakshatra: Uttara Bhadrapada
+  - planet: Jupiter
+    station: Rx
+    date_utc: '2026-12-13T00:56:36'
+    sign: Simham
+    degree: 2.7911
+    nakshatra: Magha

@@ -1,0 +1,51 @@
+sign_changes:
+  year: 2026
+  events:
+  - planet: Mars
+    date_utc: '2026-01-15T22:55:16'
+    from_sign: Dhanusu
+    to_sign: Makaram
+  - planet: Mars
+    date_utc: '2026-02-23T06:16:57'
+    from_sign: Makaram
+    to_sign: Kumbham
+  - planet: Mars
+    date_utc: '2026-04-02T09:56:35'
+    from_sign: Kumbham
+    to_sign: Meenam
+  - planet: Mars
+    date_utc: '2026-05-11T07:05:34'
+    from_sign: Meenam
+    to_sign: Mesham
+  - planet: Jupiter
+    date_utc: '2026-06-01T20:06:04'
+    from_sign: Mithunam
+    to_sign: Katakam
+  - planet: Mars
+    date_utc: '2026-06-20T18:25:15'
+    from_sign: Mesham
+    to_sign: Rishabham
+  - planet: Mars
+    date_utc: '2026-08-02T17:15:57'
+    from_sign: Rishabham
+    to_sign: Mithunam
+  - planet: Mars
+    date_utc: '2026-09-18T10:59:47'
+    from_sign: Mithunam
+    to_sign: Katakam
+  - planet: Jupiter
+    date_utc: '2026-10-31T06:05:35'
+    from_sign: Katakam
+    to_sign: Simham
+  - planet: Mars
+    date_utc: '2026-11-12T14:41:31'
+    from_sign: Katakam
+    to_sign: Simham
+  - planet: Rahu
+    date_utc: '2026-12-05T18:09:19'
+    from_sign: Kumbham
+    to_sign: Makaram
+  - planet: Ketu
+    date_utc: '2026-12-05T18:09:19'
+    from_sign: Simham
+    to_sign: Katakam

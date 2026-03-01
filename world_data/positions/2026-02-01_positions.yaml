@@ -1,0 +1,59 @@
+date: '2026-02-01'
+time_utc: 00:00:00
+ayanamsha: 24.22149
+ayanamsha_type: Lahiri
+planetary_positions:
+  surya:
+    rasi: Makaram
+    degree: 17.9032
+    nakshatra: Shravana
+    pada: 3
+    retrograde: false
+  chandra:
+    rasi: Katakam
+    degree: 5.6892
+    nakshatra: Pushya
+    pada: 1
+    retrograde: false
+  mangal:
+    rasi: Makaram
+    degree: 12.5063
+    nakshatra: Shravana
+    pada: 1
+    retrograde: false
+  budha:
+    rasi: Makaram
+    degree: 25.2523
+    nakshatra: Dhanishta
+    pada: 1
+    retrograde: false
+  guru:
+    rasi: Mithunam
+    degree: 23.1391
+    nakshatra: Punarvasu
+    pada: 1
+    retrograde: true
+  shukra:
+    rasi: Makaram
+    degree: 23.9561
+    nakshatra: Dhanishta
+    pada: 1
+    retrograde: false
+  shani:
+    rasi: Meenam
+    degree: 4.4192
+    nakshatra: Uttara Bhadrapada
+    pada: 1
+    retrograde: false
+  rahu:
+    rasi: Kumbham
+    degree: 16.3082
+    nakshatra: Shatabhisha
+    pada: 3
+    retrograde: true
+  ketu:
+    rasi: Simham
+    degree: 16.3082
+    nakshatra: Purva Phalguni
+    pada: 1
+    retrograde: true

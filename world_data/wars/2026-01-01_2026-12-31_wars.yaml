@@ -1,0 +1,121 @@
+wars:
+  start: '2026-01-01'
+  end: '2026-12-31'
+  events:
+  - date_utc: '2026-01-08T02:43:16'
+    planet1: Mars
+    planet2: Venus
+    min_distance_deg: 0.0
+    sign: Dhanusu
+    winner: Venus
+    loser: Mars
+    planet1_degree: 23.9355
+    planet2_degree: 23.9355
+  - date_utc: '2026-01-18T07:40:31'
+    planet1: Mars
+    planet2: Mercury
+    min_distance_deg: 0.0
+    sign: Makaram
+    winner: Mars
+    loser: Mercury
+    planet1_degree: 1.8359
+    planet2_degree: 1.8359
+  - date_utc: '2026-01-29T10:17:06'
+    planet1: Mercury
+    planet2: Venus
+    min_distance_deg: 0.0
+    sign: Makaram
+    winner: Venus
+    loser: Mercury
+    planet1_degree: 20.7288
+    planet2_degree: 20.7288
+  - date_utc: '2026-02-28T05:35:00'
+    planet1: Mercury
+    planet2: Venus
+    min_distance_deg: 0.0
+    sign: Kumbham
+    winner: Mercury
+    loser: Venus
+    planet1_degree: 28.0352
+    planet2_degree: 28.0352
+  - date_utc: '2026-03-08T13:39:38'
+    planet1: Venus
+    planet2: Saturn
+    min_distance_deg: 0.0
+    sign: Meenam
+    winner: Venus
+    loser: Saturn
+    planet1_degree: 8.415
+    planet2_degree: 8.415
+  - date_utc: '2026-03-15T08:07:57'
+    planet1: Mars
+    planet2: Mercury
+    min_distance_deg: 0.0
+    sign: Kumbham
+    winner: Mercury
+    loser: Mars
+    planet1_degree: 15.8155
+    planet2_degree: 15.8155
+  - date_utc: '2026-04-19T22:43:58'
+    planet1: Mars
+    planet2: Saturn
+    min_distance_deg: 0.0
+    sign: Meenam
+    winner: Mars
+    loser: Saturn
+    planet1_degree: 13.6394
+    planet2_degree: 13.6394
+  - date_utc: '2026-04-20T11:22:09'
+    planet1: Mercury
+    planet2: Saturn
+    min_distance_deg: 0.0
+    sign: Meenam
+    winner: Saturn
+    loser: Mercury
+    planet1_degree: 13.702
+    planet2_degree: 13.702
+  - date_utc: '2026-04-20T21:44:44'
+    planet1: Mars
+    planet2: Mercury
+    min_distance_deg: 0.0
+    sign: Meenam
+    winner: Mars
+    loser: Mercury
+    planet1_degree: 14.3808
+    planet2_degree: 14.3808
+  - date_utc: '2026-06-09T19:59:14'
+    planet1: Jupiter
+    planet2: Venus
+    min_distance_deg: 0.0
+    sign: Katakam
+    winner: Venus
+    loser: Jupiter
+    planet1_degree: 1.5516
+    planet2_degree: 1.5516
+  - date_utc: '2026-08-15T11:22:57'
+    planet1: Mercury
+    planet2: Jupiter
+    min_distance_deg: 0.0
+    sign: Katakam
+    winner: Mercury
+    loser: Jupiter
+    planet1_degree: 15.922
+    planet2_degree: 15.922
+  - date_utc: '2026-10-07T00:10:21'
+    planet1: Mercury
+    planet2: Venus
+    min_distance_deg: 0.0
+    sign: Thulam
+    winner: Mercury
+    loser: Venus
+    planet1_degree: 13.9908
+    planet2_degree: 13.9908
+  - date_utc: '2026-11-16T06:23:48'
+    planet1: Mars
+    planet2: Jupiter
+    min_distance_deg: 0.0
+    sign: Simham
+    winner: Mars
+    loser: Jupiter
+    planet1_degree: 1.6567
+    planet2_degree: 1.6567

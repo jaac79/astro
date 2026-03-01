@@ -1,0 +1,59 @@
+date: '2025-06-01'
+time_utc: 00:00:00
+ayanamsha: 24.212119
+ayanamsha_type: Lahiri
+planetary_positions:
+  surya:
+    rasi: Rishabham
+    degree: 16.5592
+    nakshatra: Rohini
+    pada: 2
+    retrograde: false
+  chandra:
+    rasi: Katakam
+    degree: 21.281
+    nakshatra: Ashlesha
+    pada: 2
+    retrograde: false
+  mangal:
+    rasi: Katakam
+    degree: 26.8461
+    nakshatra: Ashlesha
+    pada: 4
+    retrograde: false
+  budha:
+    rasi: Rishabham
+    degree: 18.8238
+    nakshatra: Rohini
+    pada: 3
+    retrograde: false
+  guru:
+    rasi: Mithunam
+    degree: 3.7874
+    nakshatra: Mrigashira
+    pada: 4
+    retrograde: false
+  shukra:
+    rasi: Mesham
+    degree: 0.7154
+    nakshatra: Ashwini
+    pada: 1
+    retrograde: false
+  shani:
+    rasi: Meenam
+    degree: 6.2738
+    nakshatra: Uttara Bhadrapada
+    pada: 1
+    retrograde: false
+  rahu:
+    rasi: Kumbham
+    degree: 29.2896
+    nakshatra: Purva Bhadrapada
+    pada: 3
+    retrograde: true
+  ketu:
+    rasi: Simham
+    degree: 29.2896
+    nakshatra: Uttara Phalguni
+    pada: 1
+    retrograde: true

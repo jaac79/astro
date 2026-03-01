@@ -1,0 +1,41 @@
+year: 2025
+total_eclipses: 4
+solar_count: 2
+lunar_count: 2
+eclipses:
+- date: '2025-03-14'
+  type: lunar
+  subtype: total
+  sign: Simham
+  nakshatra: Uttara Phalguni
+  nakshatra_pada: 1
+  degree_in_sign: 29.7677
+  sidereal_longitude: 149.7677
+  maximum_utc: '2025-03-14T06:58:47'
+- date: '2025-03-29'
+  type: solar
+  subtype: partial
+  sign: Meenam
+  nakshatra: Uttara Bhadrapada
+  nakshatra_pada: 4
+  degree_in_sign: 14.7847
+  sidereal_longitude: 344.7847
+  maximum_utc: '2025-03-29T10:47:26'
+- date: '2025-09-07'
+  type: lunar
+  subtype: total
+  sign: Kumbham
+  nakshatra: Purva Bhadrapada
+  nakshatra_pada: 1
+  degree_in_sign: 21.1883
+  sidereal_longitude: 321.1883
+  maximum_utc: '2025-09-07T18:11:48'
+- date: '2025-09-21'
+  type: solar
+  subtype: partial
+  sign: Kanni
+  nakshatra: Uttara Phalguni
+  nakshatra_pada: 3
+  degree_in_sign: 4.8612
+  sidereal_longitude: 154.8612
+  maximum_utc: '2025-09-21T19:42:00'
