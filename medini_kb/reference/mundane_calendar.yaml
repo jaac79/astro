@@ -1,0 +1,225 @@
+# =============================================================================
+# Mundane Events Calendar for Medini Jyotish
+# =============================================================================
+# Recurring scheduled events that can OVERRIDE or AMPLIFY planetary signals.
+# Based on validation of Jan 2025 - Feb 2026 predictions:
+#   - Policy decisions dominated market direction over planetary transits
+#   - Earnings strength overrode retrograde bearishness
+#   - Fed rate decisions overrode eclipse signals
+#
+# RULE: Always check this calendar before making market/economy predictions.
+# If a scheduled event falls in the same month as a planetary signal,
+# the scheduled event takes priority for market direction.
+# =============================================================================
+
+source: >
+  Empirically derived from validation of Medini predictions (Jan 2025 - Feb 2026)
+  against real-world events. These recurring events demonstrated the ability to
+  override planetary transit signals for markets and economy.
+
+# =============================================================================
+# US FEDERAL RESERVE MEETINGS (FOMC)
+# =============================================================================
+# 8 scheduled meetings per year. Rate decisions dominate market direction.
+
+fed_meetings:
+  frequency: "8 per year (approximately every 6-7 weeks)"
+  impact_domain: "Markets / Finance, Economy, Gold"
+  override_strength: "VERY HIGH — overrides planetary signals for markets"
+
+  mechanism: >
+    Rate cuts are bullish for equities and gold (more liquidity).
+    Rate hikes are bearish for equities, mixed for gold.
+    Unexpected decisions create maximum volatility.
+    The market prices in expectations BEFORE the meeting — the delta
+    between expectation and actual decision drives the move.
+
+  validated_overrides:
+    - event: "Sep 17, 2025 — First rate cut of 2025 (25bps to 4.00-4.25%)"
+      planetary_signal: "Eclipse pair → BEARISH for markets"
+      actual: "S&P 500 +3.6%, 8 record highs — Fed dominated"
+    - event: "Oct 29, 2025 — Second cut (25bps to 3.75-4.00%)"
+      planetary_signal: "Jupiter exalted → BULLISH (aligned)"
+      actual: "Nasdaq ATH — both signals aligned = strong confirmation"
+    - event: "Dec 10, 2025 — Third cut (25bps to 3.50-3.75%)"
+      planetary_signal: "Jupiter exits exaltation → CORRECTION"
+      actual: "S&P 500 -0.05% — mild decline, planet signal slightly right"
+
+  rule_for_predictions: >
+    1. Check if a Fed meeting falls in the prediction month
+    2. If YES and planetary signal is BEARISH: downgrade bearish conviction
+       (Fed can override with dovish surprise)
+    3. If YES and planetary signal is BULLISH: upgrade bullish conviction
+       (policy + planets aligned = strong)
+    4. If NO Fed meeting: planetary signals are more reliable
+
+  2025_dates:
+    - "Jan 28-29"
+    - "Mar 18-19"
+    - "May 6-7"
+    - "Jun 17-18"
+    - "Jul 29-30"
+    - "Sep 16-17"
+    - "Oct 28-29"
+    - "Dec 9-10"
+
+  2026_dates:
+    - "Jan 27-28"
+    - "Mar 17-18"
+    - "May 5-6"
+    - "Jun 16-17"
+    - "Jul 28-29"
+    - "Sep 15-16"
+    - "Oct 27-28"
+    - "Dec 8-9"
+
+# =============================================================================
+# EARNINGS SEASONS
+# =============================================================================
+# Major US corporate earnings reports cluster in 4 windows per year.
+# Strong earnings can override retrograde/eclipse bearishness.
+
+earnings_seasons:
+  frequency: "4 per year (quarterly)"
+  impact_domain: "Markets / Finance, Technology"
+  override_strength: "HIGH — strong earnings override retrograde signals"
+
+  mechanism: >
+    Corporate earnings are the FUNDAMENTAL driver of stock prices.
+    When earnings beat expectations, markets rally regardless of planetary
+    configurations. When earnings miss, markets fall regardless of benefic
+    transits. The planetary signal provides the SENTIMENT backdrop; earnings
+    provide the FUNDAMENTAL direction.
+
+  validated_overrides:
+    - event: "Jul 2025 — Microsoft Q4 earnings ($76.4B revenue, Azure +39%)"
+      planetary_signal: "Mercury Rx + Saturn Rx → BEARISH CORRECTION"
+      actual: "S&P 500 +2.17%, Microsoft crossed $4T — earnings dominated"
+    - event: "Feb 2026 — Nvidia Q4 earnings ($68.1B revenue, up 73%)"
+      planetary_signal: "Eclipse + Mercury Rx → CRASH"
+      actual: "Nvidia beat but stock dropped 5.46% — sell-the-news"
+
+  approximate_windows:
+    q1_reports: "Mid-January to mid-February (covers Oct-Dec quarter)"
+    q2_reports: "Mid-April to mid-May (covers Jan-Mar quarter)"
+    q3_reports: "Mid-July to mid-August (covers Apr-Jun quarter)"
+    q4_reports: "Mid-October to mid-November (covers Jul-Sep quarter)"
+
+  key_bellwether_companies:
+    - "Apple, Microsoft, Nvidia, Alphabet, Amazon, Meta (Magnificent 7)"
+    - "JPMorgan Chase, Goldman Sachs (banking sector)"
+    - "Exxon Mobil (energy)"
+
+  rule_for_predictions: >
+    1. Check if earnings season overlaps the prediction month
+    2. If YES and retrograde/eclipse predicts BEARISH:
+       Note that strong earnings can override — score as VOLATILE not BEARISH
+    3. If YES and planetary signal is BULLISH:
+       Strong earnings confirm — upgrade conviction
+    4. Nvidia earnings specifically affect tech sentiment (Jan, May, Aug, Nov)
+
+# =============================================================================
+# TRADE/TARIFF EVENTS
+# =============================================================================
+# Tariff decisions are UNPREDICTABLE policy shocks with no chart signature.
+
+tariff_events:
+  impact_domain: "Markets / Finance, Economy, Foreign Relations"
+  override_strength: "EXTREME — tariff announcements are the strongest market movers"
+
+  validated_shocks:
+    - event: "Apr 2, 2025 — 'Liberation Day' tariff announcement"
+      impact: "$6.6 TRILLION erased in 2 days. S&P dropped 10%."
+      chart_signal: "NONE — completely unpredictable from charts"
+    - event: "Apr 9, 2025 — 90-day tariff pause"
+      impact: "S&P surged +9.5% in one day (3rd best since 1940)"
+      chart_signal: "NONE"
+    - event: "Aug 7, 2025 — Tariffs resumed (modified rates)"
+      impact: "Markets absorbed without major disruption"
+      chart_signal: "NONE"
+
+  rule_for_predictions: >
+    Tariff decisions CANNOT be predicted from charts. They are discrete
+    human decisions by political leaders. The correct approach:
+    1. Flag tariff-related dates as UNCERTAINTY MULTIPLIERS
+    2. If a known tariff deadline exists, note it as a volatility risk
+    3. Never predict specific tariff outcomes from planetary configurations
+    4. Mars-Saturn aspects may coincide with trade tensions but cannot
+       predict the specific policy response
+
+# =============================================================================
+# MAJOR ELECTIONS
+# =============================================================================
+
+elections:
+  impact_domain: "Political Stability, Markets / Finance, Foreign Relations"
+  override_strength: "HIGH for 3-6 months before the election"
+
+  mechanism: >
+    Election uncertainty increases market volatility. Policy platforms of
+    candidates can shift sector expectations. The 6 months before a major
+    election are inherently more volatile regardless of planetary transits.
+
+  key_elections_2025_2026:
+    - country: "Germany"
+      date: "2025-02-23"
+      impact: "EU policy direction, trade relations"
+    - country: "Canada"
+      date: "2025-04-28"
+      impact: "US-Canada trade relations"
+    - country: "Australia"
+      date: "2025-05-03"
+      impact: "Asia-Pacific alignment"
+
+  rule_for_predictions: >
+    1. Check if a major election falls within 3 months of prediction period
+    2. If YES: add volatility multiplier to Political Stability and Markets
+    3. Election results can shift foreign relations overnight
+
+# =============================================================================
+# GEOPOLITICAL CALENDAR EVENTS
+# =============================================================================
+
+geopolitical_calendar:
+  description: >
+    Known annual events that create geopolitical tension or opportunity.
+    These are BACKGROUND factors, not direct market movers.
+
+  recurring_events:
+    - event: "UN General Assembly (September)"
+      impact: "Diplomatic activity peaks; speeches can shift relations"
+    - event: "G7/G20 Summits"
+      impact: "Trade deal announcements, policy coordination"
+    - event: "Davos World Economic Forum (January)"
+      impact: "Global economic sentiment, policy signaling"
+    - event: "NATO Summit"
+      impact: "Defense spending, alliance commitments"
+    - event: "COP Climate Conference (November-December)"
+      impact: "Energy policy, commodity regulation"
+    - event: "Chinese New Year (January-February)"
+      impact: "Asian market closures, manufacturing slowdown"
+    - event: "OPEC+ Meetings (quarterly)"
+      impact: "Oil prices, energy sector"
+
+# =============================================================================
+# INTEGRATION WITH MEDINI ANALYSIS
+# =============================================================================
+
+integration_rules:
+
+  priority_order:
+    1: "Policy shocks (tariffs, surprise decisions) — HIGHEST PRIORITY"
+    2: "Fed rate decisions — overrides most planetary signals for markets"
+    3: "Earnings season — overrides retrograde/eclipse for market direction"
+    4: "Elections — volatility multiplier for affected countries"
+    5: "Planetary transits — primary driver for war/conflict, secondary for markets"
+    6: "Dasha periods — primary driver for country-specific timing"
+    7: "Eclipse pairs — primary driver for conflict, secondary for markets"
+
+  note: >
+    Planetary transits remain the PRIMARY driver for war/conflict predictions
+    (67.9% accuracy in validation). For markets and economy, planetary signals
+    provide BACKGROUND MOOD while policy/earnings provide DIRECTION.
+    The ideal prediction combines both layers:
+    "Eclipse month with no policy counterweight = BEARISH (confirmed Mar 2025)"
+    "Eclipse month with Fed rate cut = BULLISH (confirmed Sep 2025)"

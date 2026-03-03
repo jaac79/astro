@@ -84,6 +84,29 @@ significations:
       - "Mercury combust = suppression of free speech, censorship, propaganda by the state"
       - "Mercury eclipsed = drought and famine in the land (Brihat Samhita)"
 
+    # VALIDATED CORRECTION (Jan 2025 - Feb 2026):
+    # Mercury retrograde is an INFLECTION POINT, not purely negative.
+    # Every Mercury Rx period produced BOTH disruption AND innovation.
+    retrograde_dual_nature:
+      classical_view: "Mercury Rx = communication breakdowns, trade disruptions, tech failures"
+      validated_view: "Mercury Rx = INFLECTION POINT — disruption of the old AND birth of the new"
+      scoring: "Score tech/trade as VOLATILE during Mercury Rx, NOT purely BEARISH"
+      validated_examples:
+        - period: "Mar 2025 Mercury Rx (debilitated in Meenam)"
+          disruption: "EC findings against Google, Apple regulatory pressure, Yale New Haven 5.5M breach"
+          innovation: "AI regulatory frameworks solidifying, tech repositioning"
+        - period: "Jul 2025 Mercury Rx (Katakam)"
+          disruption: "62,075 job cuts (+140% over prior year), Microsoft cut 9K, Intel 15%"
+          innovation: "Microsoft blowout earnings $76.4B, crossed $4T market cap, Azure +39%"
+        - period: "Feb 2026 Mercury Rx (Kumbham)"
+          disruption: "Match Group 10M records breach, Target 860GB stolen, ICE data leak, Conduent 15.4M affected"
+          innovation: "GPT-5.3-Codex, Claude Opus 4.6, GLM-5, Gemini 3.1 Pro ALL released on Feb 7"
+      note: >
+        The classical model treats Mercury Rx as purely negative because it
+        focuses on the EXISTING systems being disrupted. But in modern tech
+        markets, disruption of incumbents IS the mechanism of innovation.
+        Mercury Rx = creative destruction (Schumpeterian cycle), not just destruction.
+
   guru:
     english: Jupiter
     mundane_significations:
@@ -201,3 +224,9 @@ significations:
 # 5. Classical rule (Brihat Samhita): When a planet is retrograde, its
 #    mundane significations become intensified and often manifest as
 #    delays, reversals, or crises in the areas it governs.
+#
+# 6. VALIDATED CORRECTION: Mercury retrograde is an INFLECTION POINT.
+#    See budha.retrograde_dual_nature above. Score tech/trade as VOLATILE
+#    during Mercury Rx, not purely BEARISH. Retrograde in general for other
+#    planets should be scored as a RISK FLAG (50% hit rate in validation),
+#    not a certainty of negative outcomes.

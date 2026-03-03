@@ -1,0 +1,17 @@
+conjunction:
+  planet1: Saturn
+  planet2: Jupiter
+  year: 2020
+  events:
+  - date_utc: '2020-05-18T04:50:59'
+    min_distance_deg: 4.6968
+    sign: Makaram
+    planet1_degree: 7.7748
+    planet2_degree: 3.078
+    nakshatra: Uttara Ashadha
+  - date_utc: '2020-12-21T18:20:36'
+    min_distance_deg: 0.0
+    sign: Makaram
+    planet1_degree: 6.3361
+    planet2_degree: 6.3361
+    nakshatra: Uttara Ashadha

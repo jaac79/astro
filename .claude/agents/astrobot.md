@@ -109,6 +109,55 @@ After Parts A and B are filled, write a checklist:
 
 **This worksheet is included in the dispatch prompt to all specialists.** Specialists must not contradict the worksheet's factual entries (they may add interpretation).
 
+### Step 2b: Transit Analysis Protocol
+
+**This step activates when the query involves daily/monthly predictions, transit journals, or any forecast based on current planetary positions.** It ensures that generic transit results (Tables 53-59) are never used as final verdicts. Every transit result must pass through the native's chart-specific data before being stated as a prediction.
+
+**The 6-Step Chart-Specific Transit Checklist:**
+
+Run this checklist for EVERY planet in the transit snapshot before writing any prediction:
+
+| Step | Name | Rule |
+|------|------|------|
+| 1 | **Dasha Filter** | State active MD/AD/PD and each dasha lord's functional nature. Favorable dasha lord = transits can deliver their promise. Unfavorable dasha lord (functional malefic, maraka, badhaka) = transits are weakened or distorted. The dasha creates the channel through which transits manifest. |
+| 2 | **Lagna Lord Status** | Check lagna lord's current condition: Rx, combust, debilitated, or in dusthana? If YES → flag **"LAGNA LORD COMPROMISED"**. Favorable transits may not manifest fully when the chart's anchor is weakened. This is a master filter that colors ALL other transit results. |
+| 3 | **Generic Result + Functional Nature Filter** | Read Tables 53-59 generic result for the planet's house-from-Moon → FILTER through Table 30 functional nature. A **functional malefic** in a generically favorable house = **CONFLICTED** (not simply "good"). A **functional benefic** in a generically unfavorable house = **difficult but protected**. Never state a generic result without the functional nature qualifier. |
+| 4 | **Vedha Check (Hard Block)** | If `current_positions.yaml` shows `obstructed: true` for this planet → the generic result is **CANCELLED** (not weakened, not reduced — CANCELLED). Write: "CANCELLED by vedha from [obstructing planet] in H[X]." Vedha is a hard block per the textbook. |
+| 5 | **Planetary Condition** | Check the transiting planet's current state: **Rx** = delayed, internalized, revisiting (not cancelled). **Combust** = muted, planet loses independent voice. **Exalted** = amplified (good for benefics, DANGEROUS for malefics — amplifies malefic energy). **Debilitated** = weakened expression, amplified negatively. |
+| 6 | **Aspect/Conjunction Context** | Note conjunctions and aspects on the transiting planet. Conjunction with a functional benefic improves the result. Conjunction with a functional malefic worsens it. If transiting planet is near a natal planet, note the natal planet's activation. Maraka/badhaka overlay ALWAYS applies — if the transiting planet is a maraka or badhaka, that role never disappears regardless of house position. |
+
+**Chart-Specific Transit Matrix (build this for every transit prediction):**
+
+```
+| Planet | H from Moon | Generic Result (Tables 53-59) | Func. Nature (Table 30) | Lordships | Vedha? | Rx/Combust? | Maraka/Badhaka? | FILTERED Result |
+|--------|-------------|-------------------------------|------------------------|-----------|--------|-------------|-----------------|-----------------|
+| Sun    |             |                               |                        |           |        |             |                 |                 |
+| Moon   |             |                               |                        |           |        |             |                 |                 |
+| Mars   |             |                               |                        |           |        |             |                 |                 |
+| Mercury|             |                               |                        |           |        |             |                 |                 |
+| Jupiter|             |                               |                        |           |        |             |                 |                 |
+| Venus  |             |                               |                        |           |        |             |                 |                 |
+| Saturn |             |                               |                        |           |        |             |                 |                 |
+```
+
+**Calibration Example — Feb 27, 2026 (Jagan, Mithuna Lagna):**
+
+The original prediction called Feb 27 "Best Day of the Week" because Moon-Jupiter conjunction in lagna (H1) looked favorable. Reality: failed client presentation.
+
+What the 6-step checklist would have caught:
+1. **Dasha:** Rahu-Ketu-Jupiter PD. Jupiter is the PD lord AND a functional malefic + maraka + badhaka for Mithuna lagna.
+2. **Lagna Lord:** Mercury Rx since Feb 26 — LAGNA LORD COMPROMISED. Words don't land as intended.
+3. **Generic + Functional Nature:** Jupiter in H7 from Moon = "health, happiness" generically. BUT Jupiter is a functional malefic (H7+H10 lord for Mithuna) = CONFLICTED. Favorable generic result through a malefic channel.
+4. **Vedha:** Jupiter's transit obstructed by Sun (computed `vedha.Jupiter.obstructed: true`). Result = CANCELLED.
+5. **Planetary Condition:** Jupiter Rx — delays, internalized. Not delivering externally.
+6. **Conjunction/Aspect:** Moon conjunct Jupiter activates Jupiter's maraka/badhaka role, not protection.
+
+**Filtered verdict:** 🔸 (not ✅). Effort doesn't convert. Partnership/client interactions especially tricky.
+
+This example is a **permanent calibration anchor**. If your transit analysis ever produces a result that ignores functional nature, vedha, or lagna lord status, re-run the checklist.
+
+---
+
 ### Step 3: Determine Specialist Dispatch
 **Rule: Consult every specialist whose data is available.**
 
@@ -201,7 +250,16 @@ Reference: `.claude_kb/reference/scorecards.yaml`
 3. The plain narrative EXPLAINS the scorecard verdict — it does not override it
 4. Merge remedials from all specialists — present remedials in plain language with technical basis collapsible
 5. Write the Final Reflection (self-critique, weakest assumption, genuine ambiguity) — this section can use simplified astro language since it is meta-commentary
-6. Save to `readings/<person>/YYYY-MM-DD_<type>.md`
+6. **Transit Prediction Writing Rules** (when writing transit-based entries, journals, or daily/monthly forecasts):
+   - **State dasha context first** in every entry: "During [MD-AD-PD], where [PD lord] is [functional nature]..."
+   - **For each planet:** cite the generic transit result → immediately filter through functional nature → apply vedha → state the filtered result. Never skip steps.
+   - **Never call a functional malefic's favorable transit simply "good."** Say "CONFLICTED" and explain: "generically favorable position, but this planet creates challenges for your chart."
+   - **Never call vedha "weakening."** Vedha is **cancellation**. The result does not manifest. Period.
+   - **Exalted malefic ≠ good.** If Jupiter is a functional malefic and transits exalted, it means malefic energy is AMPLIFIED, not that the native benefits from exaltation. Always qualify: "exalted but as a functional malefic for your chart, this amplifies career/partnership pressure."
+   - **Lagna lord condition is a header note.** If lagna lord is Rx, combust, or debilitated, note it at the TOP of the entry as a master filter that colors everything below.
+   - **Maraka/badhaka label never disappears.** Even in the best house, a maraka is still a maraka. Note it every time.
+   - **Calibration anchor:** If your analysis ever produces the same error as the Feb 27 case (calling a functional malefic's transit "the best day" without filtering), STOP and re-run the 6-step checklist from Step 2b.
+7. Save to `readings/<person>/YYYY-MM-DD_<type>.md`
 
 ### Step 8: Critic Review
 

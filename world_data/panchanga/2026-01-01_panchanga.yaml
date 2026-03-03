@@ -1,0 +1,80 @@
+panchanga:
+  date: '2026-01-01'
+  place:
+    latitude: 28.6139
+    longitude: 77.209
+    timezone: 5.5
+  vara:
+    name: Guruvara
+    english: Thursday
+    lord: Jupiter
+  tithi:
+    number: 13
+    name: Trayodashi
+    paksha: Shukla
+    lord: Jupiter
+    percent_remaining: 79.7
+  nakshatra:
+    name: Rohini
+    lord: Moon
+    pada: 1
+  yoga:
+    number: 27
+    name: Vaidhriti
+  karana:
+    name: Kaulava
+planetary_positions:
+  surya:
+    rasi: Dhanusu
+    degree: 16.3695
+    nakshatra: Purva Ashadha
+    pada: 1
+    retrograde: false
+  chandra:
+    rasi: Rishabham
+    degree: 12.8077
+    nakshatra: Rohini
+    pada: 1
+    retrograde: false
+  mangal:
+    rasi: Dhanusu
+    degree: 18.4838
+    nakshatra: Purva Ashadha
+    pada: 2
+    retrograde: false
+  budha:
+    rasi: Dhanusu
+    degree: 4.4631
+    nakshatra: Mula
+    pada: 2
+    retrograde: false
+  guru:
+    rasi: Mithunam
+    degree: 27.1346
+    nakshatra: Punarvasu
+    pada: 3
+    retrograde: true
+  shukra:
+    rasi: Dhanusu
+    degree: 15.0124
+    nakshatra: Purva Ashadha
+    pada: 1
+    retrograde: false
+  shani:
+    rasi: Meenam
+    degree: 1.9482
+    nakshatra: Purva Bhadrapada
+    pada: 4
+    retrograde: false
+  rahu:
+    rasi: Kumbham
+    degree: 17.9493
+    nakshatra: Shatabhisha
+    pada: 4
+    retrograde: true
+  ketu:
+    rasi: Simham
+    degree: 17.9493
+    nakshatra: Purva Phalguni
+    pada: 2
+    retrograde: true

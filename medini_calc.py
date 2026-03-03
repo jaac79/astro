@@ -2863,6 +2863,470 @@ def cmd_sbc(args):
 
 
 # ---------------------------------------------------------------------------
+# Country Dasha command
+# ---------------------------------------------------------------------------
+
+def _load_foundation_chart(country_name):
+    """Load and return a country's foundation_chart.yaml."""
+    chart_path = os.path.join(
+        _SCRIPT_DIR, "world_data",
+        country_name.lower().replace(" ", "_"),
+        "foundation_chart.yaml",
+    )
+    if not os.path.exists(chart_path):
+        return None, chart_path
+    with open(chart_path, "r") as f:
+        return yaml.safe_load(f), chart_path
+
+
+def _compute_dashas_extended(moon_lon, birth_date_obj, end_date):
+    """Compute MD list cycling Vimsottari periods until end_date is covered.
+
+    For entities older than 120 years (countries), the 120-year cycle repeats.
+    Returns the full md_list covering birth through end_date.
+    """
+    nak_name, nak_lord, pada, deg_in_nak = get_nakshatra(moon_lon)
+    start_index = DASHA_SEQUENCE.index(nak_lord)
+    proportion_remaining = 1 - (deg_in_nak / NAKSHATRA_SPAN)
+
+    md_list = []
+
+    # First (partial) dasha
+    first_years = DASHA_YEARS[nak_lord]
+    balance_days = first_years * proportion_remaining * 365.25
+    md_start = birth_date_obj
+    md_end = birth_date_obj + timedelta(days=balance_days)
+    md_list.append({"lord": nak_lord, "start": md_start, "end": md_end,
+                    "years": first_years * proportion_remaining})
+
+    # Subsequent full dashas, cycling indefinitely until we pass end_date
+    cycle_pos = 1
+    while md_list[-1]["end"] < end_date:
+        lord = DASHA_SEQUENCE[(start_index + cycle_pos) % 9]
+        years = DASHA_YEARS[lord]
+        md_start = md_list[-1]["end"]
+        md_end = md_start + timedelta(days=years * 365.25)
+        md_list.append({"lord": lord, "start": md_start, "end": md_end,
+                        "years": years})
+        cycle_pos += 1
+
+    return md_list, nak_lord, start_index
+
+
+def _find_dasha_at_date(moon_lon, birth_date_obj, target_date):
+    """Find MD/AD/PD at a target date, handling multi-cycle countries."""
+    # Extend MDs past target_date
+    md_list, nak_lord, start_index = _compute_dashas_extended(
+        moon_lon, birth_date_obj, target_date + timedelta(days=1)
+    )
+
+    # Find the MD containing target_date
+    active_md = None
+    for md in md_list:
+        if md["start"] <= target_date <= md["end"]:
+            active_md = md
+            break
+    if active_md is None:
+        return None
+
+    md_lord = active_md["lord"]
+    md_start_idx = DASHA_SEQUENCE.index(md_lord)
+    md_total_days = (active_md["end"] - active_md["start"]).days
+
+    # Compute ADs within this MD
+    ad_start = active_md["start"]
+    active_ad = None
+    ad_lord = None
+    ad_end = None
+    for j in range(9):
+        ad_lord_j = DASHA_SEQUENCE[(md_start_idx + j) % 9]
+        ad_proportion = DASHA_YEARS[ad_lord_j] / 120.0
+        ad_days = md_total_days * ad_proportion
+        ad_end_j = ad_start + timedelta(days=ad_days)
+
+        if ad_start <= target_date <= ad_end_j:
+            active_ad = {"lord": ad_lord_j, "start": ad_start,
+                         "end": ad_end_j, "days": ad_days}
+            break
+        ad_start = ad_end_j
+
+    if active_ad is None:
+        return {"md": md_lord, "ad": "?", "pd": "?",
+                "md_start": active_md["start"].isoformat(),
+                "md_end": active_md["end"].isoformat()}
+
+    # Compute PDs within this AD
+    ad_lord = active_ad["lord"]
+    ad_start_idx = DASHA_SEQUENCE.index(ad_lord)
+    pd_start = active_ad["start"]
+    active_pd_lord = "?"
+    pd_start_date = active_ad["start"]
+    pd_end_date = active_ad["end"]
+
+    for k in range(9):
+        pd_lord = DASHA_SEQUENCE[(ad_start_idx + k) % 9]
+        pd_proportion = DASHA_YEARS[pd_lord] / 120.0
+        pd_days = active_ad["days"] * pd_proportion
+        pd_end = pd_start + timedelta(days=pd_days)
+
+        if pd_start <= target_date <= pd_end:
+            active_pd_lord = pd_lord
+            pd_start_date = pd_start
+            pd_end_date = pd_end
+            break
+        pd_start = pd_end
+
+    return {
+        "md": md_lord,
+        "ad": ad_lord,
+        "pd": active_pd_lord,
+        "md_start": active_md["start"].isoformat(),
+        "md_end": active_md["end"].isoformat(),
+        "ad_start": active_ad["start"].isoformat(),
+        "ad_end": active_ad["end"].isoformat(),
+        "pd_start": pd_start_date.isoformat(),
+        "pd_end": pd_end_date.isoformat(),
+    }
+
+
+def cmd_country_dasha(args):
+    """Compute Vimsottari dasha for a country's foundation chart at a date/range.
+
+    Handles multi-cycle countries (e.g., USA founded 1776 needs 2+ cycles).
+    Can output a single date lookup or a monthly range.
+    """
+    chart_data, chart_path = _load_foundation_chart(args.name)
+    if chart_data is None:
+        print(json.dumps({"status": "error",
+                          "message": f"Foundation chart not found: {chart_path}"}))
+        sys.exit(1)
+
+    # Get Moon longitude and birth date
+    moon_deg = chart_data["chandra"]["degree"]
+    moon_rasi = chart_data["chandra"]["rasi"]
+    rasi_idx = RASHI_NAMES.index(moon_rasi)
+    moon_lon = rasi_idx * 30.0 + moon_deg
+
+    entity = chart_data["entity"]
+    birth_date = datetime.strptime(entity["date"], "%Y-%m-%d").date()
+
+    # Determine date range
+    if args.range_start and args.range_end:
+        range_start = datetime.strptime(args.range_start, "%Y-%m-%d").date()
+        range_end = datetime.strptime(args.range_end, "%Y-%m-%d").date()
+    else:
+        target = datetime.strptime(args.date, "%Y-%m-%d").date()
+        range_start = target
+        range_end = target
+
+    # Build extended MD list
+    md_list, nak_lord, start_index = _compute_dashas_extended(
+        moon_lon, birth_date, range_end + timedelta(days=1)
+    )
+
+    # Collect dasha changes within range
+    results = []
+
+    if range_start == range_end:
+        # Single date lookup
+        dasha = _find_dasha_at_date(moon_lon, birth_date, range_start)
+        results.append({"date": range_start.isoformat(), "dasha": dasha})
+    else:
+        # Monthly range: compute dasha at 1st of each month
+        current = range_start.replace(day=1)
+        while current <= range_end:
+            dasha = _find_dasha_at_date(moon_lon, birth_date, current)
+            results.append({"date": current.isoformat(), "dasha": dasha})
+            # Next month
+            if current.month == 12:
+                current = current.replace(year=current.year + 1, month=1)
+            else:
+                current = current.replace(month=current.month + 1)
+
+    # Find dasha transitions in the range
+    transitions = []
+    for md in md_list:
+        if range_start <= md["start"].date() if hasattr(md["start"], 'date') else md["start"] <= range_end:
+            md_date = md["start"].date() if hasattr(md["start"], "date") else md["start"]
+            if range_start <= md_date <= range_end:
+                transitions.append({
+                    "date": md_date.isoformat(),
+                    "type": "maha_dasha_change",
+                    "new_lord": md["lord"],
+                })
+
+    output = {
+        "entity": entity["name"],
+        "moon_nakshatra": chart_data["chandra"].get("nakshatra", ""),
+        "moon_rasi": moon_rasi,
+        "dasha_at_dates": results,
+        "transitions_in_range": transitions,
+    }
+
+    if getattr(args, "print_summary", False):
+        import sys as _sys
+        _sys.stderr.write(f"\n=== {entity['name']} Dasha Analysis ===\n")
+        _sys.stderr.write(f"Foundation: {entity['date']} | Moon: {moon_rasi} "
+                          f"{chart_data['chandra'].get('nakshatra', '')}\n\n")
+        for r in results:
+            d = r["dasha"]
+            if d:
+                _sys.stderr.write(
+                    f"  {r['date']}: {d['md']}/{d['ad']}/{d['pd']}  "
+                    f"(MD: {d['md_start'][:10]}→{d['md_end'][:10]}  "
+                    f"AD: {d['ad_start'][:10]}→{d['ad_end'][:10]})\n"
+                )
+        if transitions:
+            _sys.stderr.write(f"\nDasha transitions in range:\n")
+            for t in transitions:
+                _sys.stderr.write(f"  {t['date']}: {t['type']} → {t['new_lord']}\n")
+        _sys.stderr.write("\n")
+
+    print(json.dumps(output, default=str))
+
+
+# ---------------------------------------------------------------------------
+# Transit Overlay command
+# ---------------------------------------------------------------------------
+
+# Graha drishti (aspect) rules: planet -> list of houses it aspects (from itself)
+GRAHA_DRISHTI = {
+    "Sun": [7],
+    "Moon": [7],
+    "Mars": [4, 7, 8],
+    "Mercury": [7],
+    "Jupiter": [5, 7, 9],
+    "Venus": [7],
+    "Saturn": [3, 7, 10],
+    "Rahu": [5, 7, 9],   # Like Jupiter
+    "Ketu": [5, 7, 9],   # Like Jupiter
+}
+
+# Sanskrit-to-English planet name mapping for chart data
+SANS_TO_ENG = {
+    "surya": "Sun", "chandra": "Moon", "mangal": "Mars",
+    "budha": "Mercury", "guru": "Jupiter", "shukra": "Venus",
+    "shani": "Saturn", "rahu": "Rahu", "ketu": "Ketu",
+}
+
+
+def cmd_transit_overlay(args):
+    """Overlay current transits on a country's foundation chart.
+
+    Shows: which natal houses are activated, conjunctions to natal planets,
+    aspects to natal planets, and transit over natal Moon (Gochar).
+    """
+    chart_data, chart_path = _load_foundation_chart(args.country)
+    if chart_data is None:
+        print(json.dumps({"status": "error",
+                          "message": f"Foundation chart not found: {chart_path}"}))
+        sys.exit(1)
+
+    target_date = datetime.strptime(args.date, "%Y-%m-%d").date()
+
+    # --- Compute transit positions ---
+    jd = swe.julday(target_date.year, target_date.month, target_date.day, 0.0)
+    swe.set_sid_mode(swe.SIDM_LAHIRI)
+    ayanamsha = swe.get_ayanamsa(jd)
+
+    transit_positions = {}
+    for swe_id, eng_name, sans_name, yaml_key in GRAHA_LIST:
+        pos, _ret = swe.calc_ut(jd, swe_id)
+        sid_lon = (pos[0] - ayanamsha) % 360
+        rashi_name, rashi_idx, deg = get_rashi(sid_lon)
+        transit_positions[eng_name] = {
+            "rasi": rashi_name, "rasi_idx": rashi_idx,
+            "degree": round(deg, 4), "sid_lon": sid_lon,
+        }
+    # Rahu/Ketu (mean node)
+    pos_rahu, _ = swe.calc_ut(jd, swe.MEAN_NODE)
+    rahu_sid = (pos_rahu[0] - ayanamsha) % 360
+    ketu_sid = (rahu_sid + 180) % 360
+    rahu_rashi, rahu_idx, rahu_deg = get_rashi(rahu_sid)
+    ketu_rashi, ketu_idx, ketu_deg = get_rashi(ketu_sid)
+    transit_positions["Rahu"] = {"rasi": rahu_rashi, "rasi_idx": rahu_idx,
+                                  "degree": round(rahu_deg, 4), "sid_lon": rahu_sid}
+    transit_positions["Ketu"] = {"rasi": ketu_rashi, "rasi_idx": ketu_idx,
+                                  "degree": round(ketu_deg, 4), "sid_lon": ketu_sid}
+
+    # --- Parse natal chart ---
+    lagna_rasi = chart_data["lagna"]["rasi"]
+    lagna_idx = RASHI_NAMES.index(lagna_rasi)
+
+    natal_positions = {}
+    for sans_key, p_data in chart_data["planetary_positions"].items():
+        eng_name = SANS_TO_ENG.get(sans_key, sans_key)
+        rasi_idx = RASHI_NAMES.index(p_data["rasi"])
+        natal_positions[eng_name] = {
+            "rasi": p_data["rasi"], "rasi_idx": rasi_idx,
+            "degree": p_data["degree"],
+            "house": (rasi_idx - lagna_idx) % 12 + 1,
+        }
+
+    natal_moon_rasi_idx = natal_positions["Moon"]["rasi_idx"]
+
+    # --- Compute overlay ---
+    overlay = {}
+    for t_planet, t_data in transit_positions.items():
+        t_rasi_idx = t_data["rasi_idx"]
+
+        # Which natal house is this transit in?
+        natal_house = (t_rasi_idx - lagna_idx) % 12 + 1
+
+        # House from natal Moon (for Gochar/Tara analysis)
+        house_from_moon = (t_rasi_idx - natal_moon_rasi_idx) % 12 + 1
+
+        # Tara classification (9-tara cycle)
+        tara_names = [
+            "Janma (1-Birth)", "Sampat (2-Wealth)", "Vipat (3-Danger)",
+            "Kshema (4-Prosperity)", "Pratyak (5-Obstacle)",
+            "Sadhana (6-Achievement)", "Naidhana (7-Death)",
+            "Mitra (8-Friend)", "Parama Mitra (9-Best Friend)",
+        ]
+        # Tarabala is based on house from Moon
+        tara_idx = (house_from_moon - 1) % 9
+        tara = tara_names[tara_idx]
+        tara_favorable = tara_idx in [1, 3, 5, 7, 8]  # 2,4,6,8,9 are good
+
+        # Conjunctions with natal planets (same rasi)
+        conjunctions = []
+        for n_planet, n_data in natal_positions.items():
+            if n_data["rasi_idx"] == t_rasi_idx:
+                sep = abs(t_data["degree"] - n_data["degree"])
+                conjunctions.append({
+                    "natal_planet": n_planet,
+                    "separation_deg": round(sep, 2),
+                    "tight": sep < 5.0,
+                })
+
+        # Aspects from transit planet to natal planets
+        aspects = []
+        if t_planet in GRAHA_DRISHTI:
+            for aspect_offset in GRAHA_DRISHTI[t_planet]:
+                aspected_rasi_idx = (t_rasi_idx + aspect_offset - 1) % 12
+                for n_planet, n_data in natal_positions.items():
+                    if n_data["rasi_idx"] == aspected_rasi_idx:
+                        aspects.append({
+                            "natal_planet": n_planet,
+                            "aspect_type": f"{aspect_offset}th aspect",
+                            "natal_house": n_data["house"],
+                        })
+
+        # Transit over natal Moon specifically
+        transit_on_moon = (t_rasi_idx == natal_moon_rasi_idx)
+
+        overlay[t_planet] = {
+            "transit_rasi": t_data["rasi"],
+            "transit_degree": t_data["degree"],
+            "natal_house": natal_house,
+            "house_from_moon": house_from_moon,
+            "tara": tara,
+            "tara_favorable": tara_favorable,
+            "conjunctions": conjunctions,
+            "aspects": aspects,
+            "transit_on_natal_moon": transit_on_moon,
+        }
+
+    # --- Key activations summary ---
+    activations = []
+    for t_planet, o_data in overlay.items():
+        for conj in o_data["conjunctions"]:
+            if conj["tight"]:
+                activations.append({
+                    "type": "tight_conjunction",
+                    "transit": t_planet,
+                    "natal": conj["natal_planet"],
+                    "natal_house": natal_positions[conj["natal_planet"]]["house"],
+                    "separation": conj["separation_deg"],
+                })
+        if o_data["transit_on_natal_moon"]:
+            activations.append({
+                "type": "transit_on_natal_moon",
+                "transit": t_planet,
+                "house_from_lagna": o_data["natal_house"],
+            })
+        for asp in o_data["aspects"]:
+            activations.append({
+                "type": "aspect",
+                "transit": t_planet,
+                "aspect": asp["aspect_type"],
+                "natal": asp["natal_planet"],
+                "natal_house": asp["natal_house"],
+            })
+
+    # --- Sensitive houses check ---
+    # Houses 1, 6, 8, 10 activations by malefics are significant
+    malefics = {"Mars", "Saturn", "Rahu", "Ketu", "Sun"}
+    sensitive_hits = []
+    for t_planet, o_data in overlay.items():
+        if t_planet in malefics and o_data["natal_house"] in [1, 6, 8, 10]:
+            sensitive_hits.append({
+                "planet": t_planet,
+                "house": o_data["natal_house"],
+                "rasi": o_data["transit_rasi"],
+            })
+
+    output = {
+        "entity": chart_data["entity"]["name"],
+        "date": target_date.isoformat(),
+        "lagna": lagna_rasi,
+        "natal_moon": natal_positions["Moon"]["rasi"],
+        "transit_overlay": overlay,
+        "key_activations": activations,
+        "malefic_sensitive_house_hits": sensitive_hits,
+    }
+
+    if getattr(args, "print_summary", False):
+        import sys as _sys
+        _sys.stderr.write(f"\n=== Transit Overlay: {chart_data['entity']['name']} "
+                          f"on {target_date} ===\n")
+        _sys.stderr.write(f"Lagna: {lagna_rasi} | Moon: "
+                          f"{natal_positions['Moon']['rasi']}\n\n")
+
+        _sys.stderr.write("Transit Positions on Natal Chart:\n")
+        _sys.stderr.write(f"  {'Planet':<10} {'Transit Rasi':<14} {'Natal H':<8} "
+                          f"{'From Moon':<10} {'Tara':<25} {'Notes'}\n")
+        _sys.stderr.write("  " + "-" * 90 + "\n")
+        for t_planet in ["Saturn", "Jupiter", "Rahu", "Ketu", "Mars",
+                         "Sun", "Moon", "Mercury", "Venus"]:
+            if t_planet not in overlay:
+                continue
+            o = overlay[t_planet]
+            notes = []
+            if o["conjunctions"]:
+                for c in o["conjunctions"]:
+                    tight = "*" if c["tight"] else ""
+                    notes.append(f"conj {c['natal_planet']}{tight}({c['separation_deg']}°)")
+            if o["aspects"]:
+                for a in o["aspects"]:
+                    notes.append(f"asp {a['natal_planet']}(H{a['natal_house']})")
+            fav = "+" if o["tara_favorable"] else "-"
+            _sys.stderr.write(
+                f"  {t_planet:<10} {o['transit_rasi']:<14} H{o['natal_house']:<7} "
+                f"H{o['house_from_moon']:<9} {o['tara']:<25} "
+                f"{', '.join(notes)}\n"
+            )
+
+        if sensitive_hits:
+            _sys.stderr.write(f"\nMalefic hits on sensitive houses (1/6/8/10):\n")
+            for h in sensitive_hits:
+                _sys.stderr.write(f"  {h['planet']} in H{h['house']} ({h['rasi']})\n")
+
+        if activations:
+            tight_conjs = [a for a in activations if a["type"] == "tight_conjunction"]
+            if tight_conjs:
+                _sys.stderr.write(f"\nTight conjunctions (<5°):\n")
+                for a in tight_conjs:
+                    _sys.stderr.write(
+                        f"  Transit {a['transit']} conj natal {a['natal']} "
+                        f"(H{a['natal_house']}, sep {a['separation']}°)\n"
+                    )
+        _sys.stderr.write("\n")
+
+    print(json.dumps(output, default=str))
+
+
+# ---------------------------------------------------------------------------
 # Stub commands (to be implemented)
 # ---------------------------------------------------------------------------
 
@@ -3101,6 +3565,50 @@ def parse_args(argv=None):
         help="Print human-readable summary to stderr",
     )
 
+    # --- country-dasha ---
+    cd_parser = subparsers.add_parser(
+        "country-dasha",
+        help="Compute Vimsottari dasha for a country at a date or range",
+    )
+    cd_parser.add_argument(
+        "--name", required=True,
+        help="Country name (folder under world_data/)",
+    )
+    cd_parser.add_argument(
+        "--date", default=str(date.today()),
+        help="Single date to look up (default: today)",
+    )
+    cd_parser.add_argument(
+        "--range-start", dest="range_start", default=None,
+        help="Start date for monthly range (YYYY-MM-DD)",
+    )
+    cd_parser.add_argument(
+        "--range-end", dest="range_end", default=None,
+        help="End date for monthly range (YYYY-MM-DD)",
+    )
+    cd_parser.add_argument(
+        "--print", dest="print_summary", action="store_true",
+        help="Print human-readable summary to stderr",
+    )
+
+    # --- transit-overlay ---
+    to_parser = subparsers.add_parser(
+        "transit-overlay",
+        help="Overlay current transits on a country's foundation chart",
+    )
+    to_parser.add_argument(
+        "--country", required=True,
+        help="Country name (must have foundation_chart.yaml in world_data/)",
+    )
+    to_parser.add_argument(
+        "--date", default=str(date.today()),
+        help="Date in YYYY-MM-DD format (default: today)",
+    )
+    to_parser.add_argument(
+        "--print", dest="print_summary", action="store_true",
+        help="Print human-readable summary to stderr",
+    )
+
     args = parser.parse_args(argv)
 
     if args.command is None:
@@ -3127,6 +3635,8 @@ COMMAND_DISPATCH = {
     "panchanga": cmd_panchanga,
     "ashtakavarga": cmd_ashtakavarga,
     "sbc": cmd_sbc,
+    "country-dasha": cmd_country_dasha,
+    "transit-overlay": cmd_transit_overlay,
 }
 
 

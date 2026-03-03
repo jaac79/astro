@@ -492,6 +492,125 @@ prediction_methodology:
       lunar eclipses tend to create volatility.
 
 # =============================================================================
+# GOLD SECULAR REGIME (Validated Jan 2025 - Feb 2026)
+# =============================================================================
+# CRITICAL: The classical gold model was WRONG in validation.
+# Gold predicted to dip when Jupiter was exalted (Oct 2025) — instead hit ATH.
+# This section corrects the model based on post-2022 structural shift.
+
+gold_secular_regime:
+
+  description: >
+    Gold's market structure fundamentally changed after 2022. Central banks
+    now buy 1,000+ tonnes/year as reserve diversification, making gold a
+    STRUCTURAL reserve asset rather than purely a fear-driven commodity.
+    Classical Medini rotation signals (Jupiter strong → capital exits gold)
+    NO LONGER work reliably.
+
+  pre_2022_classical_model:
+    driver: "Fear and uncertainty"
+    logic: "Banking confidence down → gold up; confidence up → gold down"
+    jupiter_exalted_effect: "Gold dips as capital rotates to equities"
+    status: "DEPRECATED for monthly direction predictions"
+
+  post_2022_structural_model:
+    driver: "Central bank reserve diversification + fear + inflation hedge"
+    annual_sovereign_buying: "1,000+ tonnes/year (2022-2026 sustained)"
+    key_buyers: "China (PBoC), India (RBI), Poland, Singapore, Turkey"
+    structural_floor: "Sovereign buying creates a FLOOR regardless of confidence"
+    jupiter_exalted_effect: "Gold MAY pause or consolidate but does NOT dip"
+
+  validated_2025_gold_performance:
+    jan_2025: "$2,624 (year open)"
+    mar_2025: "$3,124 (broke $3,000 — eclipse + double Rx correctly predicted)"
+    apr_2025: "$3,500 (ATH)"
+    sep_2025: "$3,858 (eclipse pair + Fed cut → correctly predicted spike)"
+    oct_2025: "$4,379 (ATH — Jupiter exalted FAILED to cause dip)"
+    dec_2025: "$4,533 intraday high"
+    jan_2026: "$5,594-$5,626 (ATH — then crashed 9% on Warsh nomination)"
+    full_year_2025_gain: "+65-67% — gold's best year in decades"
+
+  revised_prediction_rules:
+
+    annual_direction:
+      rule: "In a sovereign-buying regime, bias annual gold direction UP"
+      confidence: "HIGH"
+      note: "Gold rose in 12 of 14 months in the validation period"
+
+    monthly_direction:
+      rule: "Use fear/uncertainty signals for RELATIVE intensity, not direction"
+      confidence: "MODERATE"
+      note: "Eclipse and retrograde months see LARGER gains, not reversals"
+
+    eclipse_months:
+      rule: "Eclipse months produce gold SPIKES above the rising trend"
+      confidence: "HIGH (67%)"
+      validated: "Mar 2025 (+9.3%), Sep 2025 (10+ ATHs)"
+
+    jupiter_exalted:
+      rule: "Jupiter exalted = gold CONSOLIDATION (sideways), NOT decline"
+      confidence: "MODERATE"
+      note: "Classical rotation to equities is partially true (markets DO rally)
+        but gold does NOT decline — both asset classes can rise simultaneously
+        in a liquidity-abundant environment"
+
+    policy_shocks:
+      rule: "Policy surprises (Fed Chair nomination, rate decisions) can cause
+        sharp 1-3 day moves that override any planetary signal"
+      confidence: "N/A — unpredictable"
+      validated: "Jan 30 2026: Warsh nomination → gold crashed 9-11% in one day"
+
+    retrograde_months:
+      rule: "Mercury/Saturn Rx months produce gold STRENGTH (risk-off flows)"
+      confidence: "MODERATE (60%)"
+      validated: "Mar 2025 (HIT), Jul 2025 (MISS), Feb 2026 (partial)"
+
+# =============================================================================
+# STOCK MARKET POLICY OVERRIDE RULE (Validated Jan 2025 - Feb 2026)
+# =============================================================================
+
+stock_market_policy_override:
+
+  description: >
+    Stock market direction is primarily driven by POLICY (Fed rates, tariffs,
+    trade deals, earnings) rather than planetary transits. Planetary transits
+    set the BACKGROUND MOOD but policy decisions DOMINATE direction.
+
+  rule: >
+    When a major policy event falls in the same month as a planetary signal,
+    ALWAYS weight the policy event higher. Planetary signals provide
+    background risk assessment, not directional certainty.
+
+  validated_overrides:
+    - month: "Sep 2025"
+      planetary_signal: "Eclipse pair → BEARISH"
+      policy_event: "Fed cut rates 25bps (first cut of 2025)"
+      actual: "S&P 500 +3.6%, 8 record highs"
+      winner: "POLICY"
+    - month: "Apr 2025"
+      planetary_signal: "Mercury/Venus direct → RECOVERY"
+      policy_event: "Liberation Day tariffs → $6.6T erased"
+      actual: "S&P 500 -0.76% with massive intra-month volatility"
+      winner: "POLICY"
+    - month: "Jul 2025"
+      planetary_signal: "Saturn Rx + Mercury Rx → BEARISH CORRECTION"
+      policy_event: "Microsoft blowout earnings, crossed $4T market cap"
+      actual: "S&P 500 +2.17%"
+      winner: "EARNINGS"
+    - month: "Oct 2025"
+      planetary_signal: "Jupiter exalted → STRONG BULLISH"
+      policy_event: "Gov shutdown, China tariff threats"
+      actual: "S&P 500 +2%, Nasdaq ATH — Jupiter + policy aligned"
+      winner: "BOTH (convergence)"
+
+  recommended_approach: >
+    1. Use planetary signals to identify RISK WINDOWS (not direction)
+    2. Check for known policy events in the month (Fed meetings, earnings, tariff deadlines)
+    3. If policy event exists, weight it 2x over planetary signal
+    4. If no policy event, planetary signals are more reliable
+    5. Eclipse months without policy counterweight ARE bearish (Mar 2025 confirmed)
+
+# =============================================================================
 # NOTES
 # =============================================================================
 # 1. These are BROAD rulerships—specific commodities may be influenced by
@@ -506,3 +625,7 @@ prediction_methodology:
 #    (see eclipse_rules.yaml).
 # 6. The element of the current Jupiter-Saturn conjunction colors the
 #    overall economic paradigm (see saturn_jupiter_cycles.yaml).
+# 7. ALWAYS check gold_secular_regime before predicting gold direction.
+#    The classical model is DEPRECATED for post-2022 markets.
+# 8. ALWAYS check stock_market_policy_override before predicting market direction.
+#    Policy decisions dominate over planetary signals.

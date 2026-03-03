@@ -63,3 +63,26 @@ computed_analysis:
 3. If a planet has both neecha bhanga AND digbala, treat it as career-positive
 4. Analyze EVERY antardasha in the current/recent mahadasha -- never skip periods
 5. Validate interpretations against known life events before predicting future
+
+## Transit Analysis Lessons (Feb 27, 2026 Failure)
+
+### The Case
+- Jagan, Mithuna lagna, Feb 27 2026
+- Original prediction: "Best Day of the Week" — Moon-Jupiter conjunction in lagna
+- Reality: Failed client presentation, no satisfactory response
+- Root cause: Generic transit results (Tables 53-59) used as final verdicts without filtering through chart-specific data
+- Jupiter is FUNCTIONAL MALEFIC + MARAKA + BADHAKA for Mithuna lagna, was vedha-obstructed, and Mercury (lagna lord) was Rx
+
+### 6 Non-Negotiable Transit Rules
+
+1. **Never use generic transit results as final verdicts.** Always run the 6-step chart-specific transit checklist (Step 2b in astrobot.md). Generic results are starting points, not conclusions.
+
+2. **Functional nature is the first filter after generic result.** A functional malefic in a generically favorable house = CONFLICTED, not good. A functional benefic in a generically unfavorable house = difficult but protected. Table 30 is mandatory.
+
+3. **Vedha = hard cancellation, not weakening.** If `current_positions.yaml` shows `obstructed: true`, the result is CANCELLED. Do not say "weakened" or "reduced." The textbook is explicit: vedha blocks the result entirely.
+
+4. **Lagna lord condition is a master filter.** If lagna lord is Rx, combust, debilitated, or in dusthana, flag "LAGNA LORD COMPROMISED" and apply it as an overlay to ALL transit results. When the chart's anchor is weakened, favorable transits may not manifest.
+
+5. **Maraka/badhaka overlay always applies.** A planet's maraka or badhaka role never disappears regardless of house position, dignity, or transit result. Jupiter exalted in H2 for Mithuna lagna is still a maraka and badhaka — exaltation amplifies the maraka energy, not the benefic role.
+
+6. **Read computed data before interpreting.** Always check `vedha`, `special_timing` (kantaka shani, sade sati, ashtama shani), and planetary conditions in `current_positions.yaml` BEFORE writing any transit interpretation. The computed data is ground truth.

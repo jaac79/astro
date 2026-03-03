@@ -1,0 +1,80 @@
+panchanga:
+  date: '2026-02-28'
+  place:
+    latitude: 28.6139
+    longitude: 77.209
+    timezone: 5.5
+  vara:
+    name: Shanivara
+    english: Saturday
+    lord: Saturn
+  tithi:
+    number: 12
+    name: Dvadashi
+    paksha: Shukla
+    lord: Mercury
+    percent_remaining: 66.3
+  nakshatra:
+    name: Punarvasu
+    lord: Jupiter
+    pada: 4
+  yoga:
+    number: 8
+    name: Dhriti
+  karana:
+    name: Bava
+planetary_positions:
+  surya:
+    rasi: Kumbham
+    degree: 15.2004
+    nakshatra: Shatabhisha
+    pada: 3
+    retrograde: false
+  chandra:
+    rasi: Katakam
+    degree: 1.2424
+    nakshatra: Punarvasu
+    pada: 4
+    retrograde: false
+  mangal:
+    rasi: Kumbham
+    degree: 3.7497
+    nakshatra: Dhanishta
+    pada: 4
+    retrograde: false
+  budha:
+    rasi: Kumbham
+    degree: 28.0979
+    nakshatra: Purva Bhadrapada
+    pada: 3
+    retrograde: true
+  guru:
+    rasi: Mithunam
+    degree: 21.0671
+    nakshatra: Punarvasu
+    pada: 1
+    retrograde: true
+  shukra:
+    rasi: Kumbham
+    degree: 27.7711
+    nakshatra: Purva Bhadrapada
+    pada: 3
+    retrograde: false
+  shani:
+    rasi: Meenam
+    degree: 7.3851
+    nakshatra: Uttara Bhadrapada
+    pada: 2
+    retrograde: false
+  rahu:
+    rasi: Kumbham
+    degree: 14.8763
+    nakshatra: Shatabhisha
+    pada: 3
+    retrograde: true
+  ketu:
+    rasi: Simham
+    degree: 14.8763
+    nakshatra: Purva Phalguni
+    pada: 1
+    retrograde: true
